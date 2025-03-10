@@ -1,0 +1,34 @@
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   </head>
+   <body>
+
+    <ol>
+        <li>один</li>
+        <li>два</li>
+         <span id="tri"></span> <!--здесь должно быть "3.три" -->
+    </ol>
+<button id="pip">Нажми</button>
+
+<script>
+    function plus (){
+        i++
+        if(i===3){
+            triJs.textContent = '<li>три</li>'
+
+}
+    }
+ const triJs = document.getElementById('tri');
+ const pipJs = document.getElementById('pip');
+ let i = 0;
+
+ pipJs.onclick = plus
+
+</script>
+
+   </body>
+   </html>
