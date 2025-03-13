@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>HTML + CSS</title>
+  <link href="style.css" rel=stylesheet type="text/css">
+
+</head>
+<body>
+  
+ <div class="SNAP"> 
+   <button id="snap"><img src="/envelope.png" width="100%"></button> 
+ </div>
+   
+   <div id="formWrite">
+    <form action="" method="post">
+    <label>Напишите нам</label>
+    <input class="poleText" type="text" placeholder="Ваш вопрос" value="">
+    <button type="reset">Отправить</button>
+   </div>
+
+     
+     <p>Привет <span>человек (people)</span>, привет, <b style="color: red"><big>ЧЕЛОВЕЧИЩЕ</big></b>!!!</p>
+  <div id="someText">
+  </div>
+      <button id="snap1">Отправить письмо</button> 
+
+     
+     <script>
+     const snapJs = document.getElementById('snap');
+     const formWriteJs = document.getElementById('formWrite');
+     const snap1Js = document.getElementById('snap1');
+     
+     snapJs.addEventListener('click', () => {formWriteJs.style.display = 'block'})
+     snap1Js.addEventListener('click', () => {formWriteJs.style.display = 'block'})
+     
+     
+     //snapJs.onclick = test;
+     
+     </script>
+
+ 
+  
+  
+  
+</body>
+</html>
