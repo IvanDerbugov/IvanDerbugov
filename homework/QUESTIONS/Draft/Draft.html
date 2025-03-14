@@ -199,8 +199,20 @@ div ol li a:activ {
 
 
 
- <div class="SNAP"> <button class="snap"><img src="../Draft/img/envelope.png" alt="конверт"></button> </div>
+ <div class="SNAP"> <button class="snap"><a href="#formWrite"><img src="../Draft/img/envelope.png" alt="конверт" width="100%"></a></button> </div>
  
+ <script>
+  const snapJs = document.getElementById('snap');
+  const formWriteJs = document.getElementById('formWrite');
+  
+  
+  snapJs.addEventListener('click', () => {formWriteJs.style.display = 'block'})
+ 
+  
+  
+  //snapJs.onclick = test;
+  
+  </script>
 
 
 
@@ -706,6 +718,13 @@ function startMathTest(){
 4. Кефир должен быть однородным по консистенции. Если есть комочки и хлопья, значит, продукт неправильно хранили и срок годности его истек. Качество кефира определяется по содержанию в нем белка. В хорошем продукте его должно быть не менее 3%. Информацию об этом ищите на упаковке.
 </p>
   <hr>
+
+  <div id="formWrite">
+    <form action="" method="post">
+    <label>Напишите нам</label><br>
+    <input class="poleText" type="text" placeholder="Ваш вопрос" value=""><br>
+    <button type="reset">Отправить</button>
+   </div>
 
   <!--Остались вопросы? <a href="mailto:i.derbugoff2001@gmail.com">Пиши</a>
 <form action="/" method="post">
