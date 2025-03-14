@@ -23,24 +23,19 @@
       </ul>
     </li>
     <li><a href="https://edostavka.by/product/1031653?utm_source=google_pmax&utm_medium=cpc&utm_campaign=ed_ed_dostavka_produktov_competitors_sign_up_keyword_rb_google_pmax&utm_content=banner&utm_term=&gad_source=1" target="_blank">Кефир</a><input id="kefirNumber" class="inputForJs" type="number" value="0">штук <input id="kefirPrice" class="inputForJs" type="number" value="0">руб. за 1 единицу</li>
-    <span id="bonusMarmelad>"></span>
+    <span id="bonusMarmelad"></span>
    
   </ol>
-  <button id ="pipGas">газ</button>
+  <button id="pipGas">газ</button>
   
   
-  
-  <script defer>
- const bonusMarmeladJs = document.getElementById('bonusMarmelad');
- const pipGasJs = document.getElementById('pipGas');
+<script>
+  const test = document.getElementById('bonusMarmelad');
+  const test1 = document.getElementById('pipGas');
 
- 
- pipGasJs.onclick = go
-    
-    function go () {
-    
-      bonusMarmeladJs.innerHTML = '<li>good</li>';
-    }
- </script>
+  test1.addEventListener('click', () => {
+    test.innerHTML = '<li>hello</li>'
+  })
+</script>
 </body>
 </html>
