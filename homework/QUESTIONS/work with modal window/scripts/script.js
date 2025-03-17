@@ -39,7 +39,7 @@ btnClose: '.modal__close'
  })
  
  modalController({
-modal: 'modal',
-btnOpen: '.snap',
+modal: '.modal1',
+btnOpen: '.SNAP',
 btnClose: '.modal__close'
  })

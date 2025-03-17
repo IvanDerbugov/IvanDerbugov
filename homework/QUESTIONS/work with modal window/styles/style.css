@@ -138,10 +138,15 @@ outline-color: green;
   height: 60px;
   line-height: 10px;
   border-radius: 50%;
-
+  cursor: pointer;
   bottom: 0;
-  font-size: 2em
+  font-size: 2em;
  }
+
+ .snap:hover {
+  background-color: red;
+ 
+}
 
 /* #formWrite{
    display: none
