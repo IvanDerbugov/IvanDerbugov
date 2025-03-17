@@ -128,7 +128,7 @@ outline-color: green;
   margin: 60px;
  }
 
- #snap{
+ .snap{
   position: fixed;
   text-align: center;
   align-items: center;
@@ -143,6 +143,7 @@ outline-color: green;
   font-size: 2em
  }
 
- #formWrite{
+/* #formWrite{
    display: none
  }
+*/
