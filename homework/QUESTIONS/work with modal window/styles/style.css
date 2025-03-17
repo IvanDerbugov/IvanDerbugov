@@ -121,3 +121,28 @@ cursor: default;
 .modal__close:focus-visible{
 outline-color: green;
 }
+
+ .SNAP{
+  position: relative;
+  float: right;
+  margin: 60px;
+ }
+
+ #snap{
+  position: fixed;
+  text-align: center;
+  align-items: center;
+  color: white;
+  background: aqua;
+  width: 60px;
+  height: 60px;
+  line-height: 10px;
+  border-radius: 50%;
+
+  bottom: 0;
+  font-size: 2em
+ }
+
+ #formWrite{
+   display: none
+ }
