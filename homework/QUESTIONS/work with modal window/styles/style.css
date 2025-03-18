@@ -140,6 +140,7 @@ outline-color: green;
   border-radius: 50%;
   cursor: pointer;
   bottom: 0;
+  right: 10px;
   font-size: 2em;
  }
 
