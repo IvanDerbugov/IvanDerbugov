@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>images test</title>
     <style>
+        
         p {
             text-align: center;
             vertical-align: text-top;
 
-        }
-        #muka {color: #360305;}
+        };
+        #muka {color: red};
+        #plus{list-style-image: url('../imagesWebP/img/icons/10195195.gif')};
+        #minus{list-style-image: url('../imagesWebP/img/ball.png')};
     </style>
 </head>
 <body>
@@ -75,7 +78,7 @@
             <td>
                 <p>
                     Плюсы WebP:
-                    <ul>
+                    <ul id="plus">
                         <li>Меньший размер (на 26%) без потери качества по сравнению с PNG</li>
                         <li>Поддерживает анимацию, в отличии от PNG</li>
                     </ul>
@@ -84,7 +87,7 @@
             <td>
                 <p>
                     Минусы WebP:
-                    <ul>
+                    <ul id="minus">
                         <li>Более долгое декодирование анимаций</li>
                         <li>Не везде поддерживается</li>
                     </ul>
