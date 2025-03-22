@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>images test</title>
     <style>
-        p {text-align: center;}
+        p {
+            text-align: center;
+            vertical-align: text-top;
+
+        }
+        #muka {color: #360305;}
     </style>
 </head>
 <body>
@@ -39,6 +44,51 @@
                   <img src="../imagesWebP/img/fir.webp" alt="" width="208px" height="300px">
   
               </p>
+            </td>
+          </tr>
+
+        <tr>
+            <td>
+              <p>
+              PNG размер 1400 кБ <br>
+              <img src="../imagesWebP/img/ball.png" alt="" width="300px" height="300px">
+              </p>
+            </td>
+            <td>
+              <p>
+                  WebP размер 1400 кБ <br>
+                  <img src="../imagesWebP/img/ball.webp" alt="" width="300px" height="300px">
+  
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+                <p>
+                    Итого: спустя 2 часа <span id="muka" title="е*атни">преобразований</span>, разницы в качестве между статичными изображениями PNG и WebP выявлено не было.
+                </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+                <p>
+                    Плюсы WebP:
+                    <ul>
+                        <li>Меньший размер (на 26%) без потери качества по сравнению с PNG</li>
+                        <li>Поддерживает анимацию, в отличии от PNG</li>
+                    </ul>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Минусы WebP:
+                    <ul>
+                        <li>Более долгое декодирование анимаций</li>
+                        <li>Не везде поддерживается</li>
+                    </ul>
+                </p>
             </td>
           </tr>
     </table>
