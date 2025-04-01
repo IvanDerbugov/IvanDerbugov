@@ -1,0 +1,48 @@
+.shadow{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.modal{
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: azure;
+    margin-left: -250px;
+    margin-top: -150px;
+}
+
+.SNAP{
+    position: relative;
+    float: right;
+    margin: 60px;
+   }
+  
+   .snap{
+    position: fixed;
+    text-align: center;
+    align-items: center;
+    color: white;
+    background: aqua;
+    width: 60px;
+    height: 60px;
+    line-height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    bottom: 0;
+    right: 10px;
+    font-size: 2em;
+   }
+  
+   .snap:hover {
+    background-color: red;
+   
+  }
+  
+  
