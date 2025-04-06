@@ -1,77 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Рамка</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Rubik+Distressed&family=Stick&display=swap"
+        rel="stylesheet">
+
     <style>
-      body{
-        height: 1000px;
-      }
-      .ramkaL{ 
-        background: url(img/ramkaLR0.png) repeat-y;
-        /* height: 100px */
-      }
-      .ramkaR{
-        background: url(img/ramkaLR0.png) repeat-y right;
-        /* height: 100px */
-      }
-      .ramkaLV{
-        background: url(img/ramkaLV1.png) no-repeat left top;
-          /* height: 91px; */
-      }
-      .ramkaRV{
-        background: url(img/ramkaRV2.png) no-repeat right top;
-          /* height: 91px; */
-      }
-      .ramkaLN{
-        background: url(img/ramkaLN3.png) no-repeat left bottom;
-          /* height: 91px; */
-      }
-      .ramkaRN{
-        background: url(img/ramkaRN4.png) no-repeat right bottom;
-          /* height: 91px; */
-      }
-      .ramkaV{
-        background: url(img/ramkaVN0.png) repeat-x top;
-          /* height: 91px; */
-      }
-      .ramkaN{
-        background: url(img/ramkaN.png) repeat-x bottom;
-          /* height: 91px; */
-      }
-      .text{
-        padding: 50px;
-      }
-      .width{
-        max-width: fit-content;
-      }
+        body {
+            height: 1000px;
+        }
+
+        .ramkaL {
+            background: url(img/ramkaLR0.png) repeat-y;
+            /* height: 100px */
+        }
+
+        .ramkaR {
+            background: url(img/ramkaLR0.png) repeat-y right;
+            /* height: 100px */
+        }
+
+        .ramkaLV {
+            background: url(img/ramkaLV1.png) no-repeat left top;
+            /* height: 91px; */
+        }
+
+        .ramkaRV {
+            background: url(img/ramkaRV2.png) no-repeat right top;
+            /* height: 91px; */
+        }
+
+        .ramkaLN {
+            background: url(img/ramkaLN3.png) no-repeat left bottom;
+            /* height: 91px; */
+        }
+
+        .ramkaRN {
+            background: url(img/ramkaRN4.png) no-repeat right bottom;
+            /* height: 91px; */
+        }
+
+        .ramkaV {
+            background: url(img/ramkaVN0.png) repeat-x top;
+            /* height: 91px; */
+        }
+
+        .ramkaN {
+            background: url(img/ramkaN.png) repeat-x bottom;
+            /* height: 91px; */
+        }
+
+        .text {
+            padding: 50px;
+        }
+
+        .width {
+            max-width: fit-content;
+        }
+
+
+        #btn1 {
+            font-family: "Marck Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        #btn2 {
+            font-family: "Stick", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        #btn3 {
+            font-family: "Rubik Distressed", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
     </style>
 </head>
+
 <body>
-        <div class="ramkaL width">
-          <div class="ramkaR width">
+    <div class="ramkaL width">
+        <div class="ramkaR width">
             <div class="ramkaV width">
-              <div class="ramkaN width">
-                <div class="ramkaRN width">
-                  <div class="ramkaRV width">
-                    <div class="ramkaLN width">
-                      <div class="ramkaLV width">
-                        <div class="text width">
-                            Изысканный тайваньский улун, <br>
-                            приготовленный с полным соблюдением всех циклов производства ГАБА-чаев. <br>
-                            Многократная скрутка, глубокая ферментация о особый прогрев. <br>
-                            В итоге чай получился ярким, многогранным, упоительный и очень вкусным. <br>
-                            Отличное соотношение цены и качества. <br>
-                            Идеально подойдет для послеобеденного чая, <br>
+                <div class="ramkaN width">
+                    <div class="ramkaRN width">
+                        <div class="ramkaRV width">
+                            <div class="ramkaLN width">
+                                <div class="ramkaLV width">
+                                    <div class="text width">
+                                        Изысканный тайваньский улун, <br>
+                                        приготовленный с полным соблюдением всех циклов производства ГАБА-чаев. <br>
+                                        Многократная скрутка, глубокая ферментация о особый прогрев. <br>
+                                        В итоге чай получился ярким, многогранным, упоительный и очень вкусным. <br>
+                                        Отличное соотношение цены и качества. <br>
+                                        Идеально подойдет для послеобеденного чая, <br>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                      </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
+    </div>
+
+    <button id="btn1">
+        Шрифт №1
+    </button>
+
+    <button id="btn2">
+        Шрифт №2
+    </button>
+
+    <button id="btn3">
+        Шрифт №3
+    </button>
+
+    <script>
+        const btn1JS = document.getElementById('btn1');
+        const btn2JS = document.getElementById('btn2');
+        const btn3JS = document.getElementById('btn3');
+        const textJS = document.getElementsByClassName('text');
+
+        btn1JS.addEventListener('click', () => {
+            //textJS.style.font.family = 'Marck Script';
+            textJS[0].style= "font-family: 'Marck Script', cursive; font-weight: 400; font-style: normal;";
+            // textJS[0].style.color = 'red';
+            // textJS[0].style.color = 'red';
+            // textJS.style.cssText = `
+            // color: 'red';
+            // `;
+
+            })
+
+        btn2JS.addEventListener('click', () => {
+            textJS[0].style= "font-family: 'Stick', sans-serif; font-weight: 400; font-style: normal;";
+
+        })
+
+        btn3JS.addEventListener('click', () => {
+            textJS[0].style= "font-family: 'Rubik Distressed', system-ui; font-weight: 400; font-style: normal;";
+
+        })
+
+
+    </script>
 </body>
+
 </html>
