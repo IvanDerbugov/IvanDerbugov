@@ -69,18 +69,22 @@
             font-family: "Marck Script", cursive;
             font-weight: 400;
             font-style: normal;
+            color: red;
+
         }
 
         #btn2 {
             font-family: "Stick", sans-serif;
             font-weight: 400;
             font-style: normal;
+            color: blue;
         }
 
         #btn3 {
             font-family: "Rubik Distressed", system-ui;
             font-weight: 400;
             font-style: normal;
+            color: purple;
         }
     </style>
 </head>
@@ -130,24 +134,32 @@
         const textJS = document.getElementsByClassName('text');
 
         btn1JS.addEventListener('click', () => {
-            //textJS.style.font.family = 'Marck Script';
-            textJS[0].style= "font-family: 'Marck Script', cursive; font-weight: 400; font-style: normal;";
-            
             
             textJS[0].style.cssText = `
+            font-family: "Marck Script", cursive;
+            font-weight: 400;
+            font-style: normal;
             color: red;
             `;
 
             })
 
         btn2JS.addEventListener('click', () => {
-            textJS[0].style= "font-family: 'Stick', sans-serif; font-weight: 400; font-style: normal;";
-
+            textJS[0].style.cssText = `
+              font-family: "Stick", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: blue;
+              `
         })
 
         btn3JS.addEventListener('click', () => {
-            textJS[0].style= "font-family: 'Rubik Distressed', system-ui; font-weight: 400; font-style: normal;";
-
+            textJS[0].style.cssText = `
+               font-family: "Rubik Distressed", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            color: purple;
+              `
         })
 
 
