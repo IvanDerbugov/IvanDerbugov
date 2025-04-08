@@ -138,7 +138,7 @@
         const btn3JS = document.getElementById('btn3');
         const btn4JS = document.getElementById('btn4');
         const textJS = document.getElementsByClassName('text');
-
+        let i = ''
         btn1JS.addEventListener('click', () => {
             
             textJS[0].style.cssText = `
@@ -148,7 +148,7 @@
             color: red;
             `;
 
-            })
+        })
 
         btn2JS.addEventListener('click', () => {
             textJS[0].style.cssText = `
@@ -167,9 +167,10 @@
             color: purple;
               `
         })
-
-        btn3JS.addEventListener('click', () => {
         
+        btn4JS.addEventListener('click', () => {
+        i = prompt('Напишите свой текст', 'Мама мыла раму Мама мыла раму Мама мыла раму Мама мыла раму Мама мыла раму Мама мыла раму Мама мыла раму Мама мыла раму Мама мыла раму Мама мыла раму Мама мыла раму Мама мыла раму')
+        textJS[0].textContent = i
         })
     </script>
 </body>
