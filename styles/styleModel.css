@@ -1,30 +1,50 @@
 .shadow {
-    width: 100vw;
-    height: 100vh;
+    width:min-content;
+    height:min-content;
     background-color: aqua;
     position: fixed;
-    left: 0;
-    top: 0;
+    left: 40%;
+    top: 40%;
     display: none;
-    position: relative;
-    /* max-width: 600px;
 
+    /* position: relative; */
+    /* max-width: 600px;*/
+}
+
+#formWrite{
+    text-align: center;
+    vertical-align: middle;
+    /* height: 50vh; */
+}
+
+#form{
+    /* height: 50vh; */
+    /* vertical-align: middle; */
+padding-top: 30%;
+padding-bottom: 30%;
+
+}
+
+#close{
+    float: right;
+}
+/*
 margin: auto;
 color: #000;
 border-radius: 15px;
 padding: 30px;
-cursor: default; */
-}
+cursor: default; 
+}*/
 
-.modal {
+/* .modal {
     width: 500px;
     height: 300px;
-    position: absolute;
+    position:fixed;
     left: 50%;
     top: 50%;
     background-color: aqua;
     margin-left: -250px;
-    margin-top: -150px;
+    margin-top: -150px; */
 
     /* position: relative;
     max-width: 600px;
@@ -32,8 +52,8 @@ cursor: default; */
     color: #000;
     border-radius: 15px;
     padding: 30px;
-    cursor: default; */
-}
+    cursor: default; 
+}*/
 
 .SNAP {
     position: relative;
