@@ -1,3 +1,7 @@
+.modal{
+position: fixed;
+}
+
 .shadow {
     width:min-content;
     height:min-content;
@@ -6,6 +10,11 @@
     left: 40%;
     top: 40%;
     display: none;
+    max-width: 600px;
+    padding: 10px;
+    border-radius: 15px;
+    margin: auto;
+
 
     /* position: relative; */
     /* max-width: 600px;*/
