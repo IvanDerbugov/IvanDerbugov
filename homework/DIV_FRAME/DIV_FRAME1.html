@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +13,19 @@
             min-height: 100px;
             text-align: center;
             max-width: fit-content;
+            background:
+                url(img/ramkaLV1.png) no-repeat left top,
+                url(img/ramkaRV2.png) no-repeat right top,
+                url(img/ramkaLN3.png) no-repeat left bottom,
+                url(img/ramkaRN4.png) no-repeat right bottom,
 
+                url(img/ramkaLR0.png) repeat-y left,
+                url(img/ramkaLR0.png) repeat-y right,
+                url(img/ramkaVN0.png) repeat-x top,
+                url(img/ramkaN.png) repeat-x bottom;
         }
-    
-        .frame::before {
+
+        /* .frame::before {
             content: "";
             position: absolute;
             top: 0;
@@ -44,14 +54,25 @@
                         url(img/ramkaRN4.png) no-repeat right bottom;
             background-size: auto, auto;
             z-index: -1;
-        }
+        } */
     </style>
 </head>
+
 <body>
 
     <div class="frame">
-        <p>Some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed accusantium, quos veritatis quisquam magnam aperiam beatae labore praesentium voluptate provident obcaecati modi temporibus quae ut distinctio nobis id aliquam ad qui! Nostrum atque placeat possimus ratione explicabo laborum perspiciatis dignissimos? Explicabo sit, iste itaque laudantium amet beatae quibusdam porro at, quasi perspiciatis deserunt laboriosam. Laboriosam et voluptate non dicta eaque ducimus molestias officiis magnam? Quasi illum nostrum harum debitis dolores adipisci laborum voluptate error exercitationem voluptatem aliquam rem architecto neque obcaecati perferendis iste libero sapiente ratione optio similique, quis amet. Nisi consequuntur quisquam quis velit voluptatum, at ea illum dolores! <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quos ipsum laborum expedita, accusantium exercitationem, voluptatum vero eveniet voluptatem dolore voluptas obcaecati a nesciunt tempora, accusamus reiciendis vitae nulla odio.</p>
+        <p>Some text Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed accusantium, quos veritatis quisquam
+            magnam aperiam beatae labore praesentium voluptate provident obcaecati modi temporibus quae ut distinctio
+            nobis id aliquam ad qui! Nostrum atque placeat possimus ratione explicabo laborum perspiciatis dignissimos?
+            Explicabo sit, iste itaque laudantium amet beatae quibusdam porro at, quasi perspiciatis deserunt
+            laboriosam. Laboriosam et voluptate non dicta eaque ducimus molestias officiis magnam? Quasi illum nostrum
+            harum debitis dolores adipisci laborum voluptate error exercitationem voluptatem aliquam rem architecto
+            neque obcaecati perferendis iste libero sapiente ratione optio similique, quis amet. Nisi consequuntur
+            quisquam quis velit voluptatum, at ea illum dolores! <br>Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Labore quos ipsum laborum expedita, accusantium exercitationem, voluptatum vero eveniet voluptatem
+            dolore voluptas obcaecati a nesciunt tempora, accusamus reiciendis vitae nulla odio.</p>
     </div>
-    
+
 </body>
+
 </html>
