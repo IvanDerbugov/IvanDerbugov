@@ -27,6 +27,25 @@
         .FootballH2 {
             text-align: center;
         }
+
+
+
+        .ball {
+            background: url(../img/ball.png) repeat-y right;
+            background-size: 75px 75px;
+            /* opacity: 0.5;  */
+            
+        }
+
+        /* .ball::before {
+            content: '';
+            z-index: -1;
+            background: url(../img/ball.png) repeat-y right;
+            background-size: 75px 75px;
+            opacity: 0.5;
+            width: 100%;
+            height: 100%;
+        } */
     </style>
 </head>
 
@@ -66,9 +85,10 @@
                 </ul>
             </td>
 
-            <td>
+            <td class="ball">
                 <h2 class="FootballH2">ФУТБОЛ</h2>
                 <img class="FootballImg" src="../img/cup.png" alt="">
+                <!-- <img class="ball" src="../img/ball.png" alt=""> -->
                 <p>
                     Футбол - командный вид
                     спорта, в котором целью
