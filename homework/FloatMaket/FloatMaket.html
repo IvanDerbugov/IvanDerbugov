@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Maket</title>
+    <style>
+        .clearfix::after {
+            content: '';
+            display: block;
+            /* height: 1px; */
+            /* background-color: black; */
+            clear: both;
+        }
+
+        header {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: aqua;
+        }
+
+
+        header div {
+            background-color:burlywood;
+            height: 10px;
+            width: 50px;
+            float: left;
+            margin: 5px;
+        }
+
+        .menu {
+            background-color: chartreuse;
+            height: 300px;
+            width: 150px;
+            float: left;
+        }
+
+        .banner{
+            background-color: chartreuse;
+            height: 300px;
+            width: 150px;
+            float: right;
+        }
+
+        .content{
+            background-color:burlywood;
+            height: 200px;
+        }
+
+        footer{
+        height: 30px;
+        background-color: aqua;
+        }
+
+        .wrap{
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <header class="clearfix">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </header>
+
+    <div class="clearfix wrap">
+        <div class="menu"></div>
+        <div class="banner"></div>
+        <div class="content"></div>
+    </div>
+
+    <footer></footer>
+</body>
+</html>
