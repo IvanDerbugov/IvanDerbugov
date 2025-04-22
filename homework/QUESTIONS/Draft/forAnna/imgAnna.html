@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img Anna</title>
+    <style>
+        .SBig {
+            display: none;
+        }
+
+        .SBig:target {
+            display: block !important;
+        }
+
+        .ded {
+            color: red;
+        }
+
+        .fish {
+            color: blue;
+        }
+
+        .queen {
+            color: deeppink;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="ded" href="#dedDiv">Дед мороз да снегурка</a>
+    <a class="fish" href="#fishDiv">Рыбы фугу</a>
+    <a class="queen" href="#queenDiv">Шальная императрица</a>
+
+    <div class="SBig" id="dedDiv"><img src="img/anna1.png" alt="ded" height="256px" width="192px"></div>
+    <div class="SBig" id="fishDiv"><img src="img/anna2.png" alt="fish" height="256px" width="192px"></div>
+    <div class="SBig" id="queenDiv"><img src="img/anna3.png" alt="queen" height="256px" width="192px"></div>
+
+</body>
+
+</html>
