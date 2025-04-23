@@ -1,0 +1,16 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ] # Укажите вашу ветку
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/configure-pages@v2
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: './'
+      - uses: actions/deploy-pages@v2
