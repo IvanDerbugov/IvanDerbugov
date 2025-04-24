@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.conteiner{
+    width: 1440px;
+    margin: 0 auto;
+}
+
+.clearfix::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+
+header{
+    background-image: url('img/fonHeader.png');
+}
+
+.head{
+
+}
+
+.logo{
+float: left;
+
+}
+
+#PSKv{
+    border-left: solid 1px;
+}
+
+.icons{
+float: right;
+}
+
+.headButtons{
+
+}
