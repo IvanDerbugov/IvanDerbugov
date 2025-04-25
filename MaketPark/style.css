@@ -1,41 +1,70 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-.conteiner{
-    width: 1440px;
+body{
+    /* width: 1440px; */
+}
+.conteiner {
+    width: 1140px;
     margin: 0 auto;
 }
 
-.clearfix::after{
+.clearfix::after {
     display: block;
     content: '';
     clear: both;
 }
 
-header{
-    background-image: url('img/fonHeader.png');
+header {
+    /* width: 4096px;
+    height: 3072px; */
+    background: url('img/fonHeader.png') no-repeat
+        /*4096px 3072px; */
 }
 
-.head{
+.head {}
 
+
+.logo {
+    float: left;
+padding-right: 10px
 }
 
-.logo{
-float: left;
-
+#border{
+    border-left: solid 3px white;
+    float: left;
+    /* display: none; */
 }
 
-#PSKv{
-    border-left: solid 1px;
+#PSKv {
+    float: left;
+    margin-left: 5px;
 }
 
-.icons{
-float: right;
+
+
+
+
+.icons {
+    float: right;
 }
 
-.headButtons{
+.headButtons {
+    text-align: center;
+    /* background-color: rgba(28,28,28,0) */
+}
 
+.btn{
+    background-color: rgba(0,0,0,0);
+    border: none; 
+    /* outline: none; */
+    cursor: pointer;
+}
+
+hr{
+width: 5px;
+color: white;
+size: 5px;
 }
