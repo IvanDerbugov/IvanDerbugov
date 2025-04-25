@@ -17,7 +17,10 @@
     }
 
     body>ul span{
-      color: rosybrown;
+      color: pink;
+    }
+    li>div>ul>li:first-child{
+      color: indigo;
     }
     li ul span{
       color: brown;
@@ -37,8 +40,11 @@
     p:last-of-type{
       color: white;
     }
-    body>ul>li:nth-of-type(1){
-      color: orange; /*не работает */
+    body>ul>li:first-child{
+      color: orange;
+    }
+    body>ul>li:first-child>em{
+      color: violet;
     }
   </style>
 </head>
