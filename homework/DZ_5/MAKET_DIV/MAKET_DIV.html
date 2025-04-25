@@ -21,7 +21,7 @@
             width: 200px;
             float: left;
             padding: 5px;
-
+            /* border: 5px solid purple; */
         }
 
         .VSportText {
@@ -38,23 +38,30 @@
         }
 
         .ball {
+            margin-left: 230px;
+            /* border: solid 5px green; */
+            background: url(../img/a_ball.gif) repeat-y right;
             background-size: 75px 75px;
-            /* background-color: white; */
+            background-color: white;
             /* opacity: 0.5;  */
 
         }
 
-        .clearfix::after {
+        /* .clearfix::after {
             content: '';
             display: block;
             height: 1px; 
             background-color: black;
             clear: both;
-        }
+        } */
         .wrap{
-            background: url(../img/a_ball.gif) repeat-y right;
+            /* background: url(../img/a_ball.gif) repeat-y right; */
             background-color: yellow;
             /*background-image: url(../img/a_ball.gif) right ; */
+        }
+        .clear{
+            clear: both;
+            /* border: solid 5px blue; */
         }
     </style>
 </head>
@@ -110,6 +117,7 @@
                 физическими возможностями, Законы очень часто формулирова-
                 лись в общих чертах, которые позволяют упростить их применения в зависимости от характера игры.
             </p>
+            <div class="clear"></div>
         </div>
     </div>
     <div class="h1">
