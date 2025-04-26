@@ -20,7 +20,8 @@ body{
 header {
     /* width: 4096px;
     height: 3072px; */
-    background: url('img/fonHeader.png') no-repeat
+    background: url('img/fonHeader.png') no-repeat;
+    /* background-size: cover; */
         /*4096px 3072px; */
 }
 
@@ -61,6 +62,12 @@ padding-right: 10px
     border: none; 
     /* outline: none; */
     cursor: pointer;
+}
+
+.callUs{
+    background-color: #F8B806;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 hr{
