@@ -1,10 +1,10 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 5px;
+    padding: 1px;
     box-sizing: border-box;
 }
 body{
-    /* width: 1440px; */
+    width: 100%;
 }
 .conteiner {
     width: 1140px;
@@ -25,7 +25,6 @@ header {
         /*4096px 3072px; */
 }
 
-.head {}
 
 
 .logo {
@@ -33,9 +32,17 @@ header {
 padding-right: 10px
 }
 
-#border{
+.border{
     border-left: solid 3px white;
     float: left;
+    /* display: none; */
+}
+
+.border1{
+    border-right: solid 3px red;
+    float: right;
+    /* margin: 1px;
+    padding: 1px; */
     /* display: none; */
 }
 
@@ -68,10 +75,13 @@ padding-right: 10px
     background-color: #F8B806;
     border-radius: 5px;
     padding: 10px;
+    margin-top: -50px /* не поднимает */
 }
 
+ 
+
 hr{
-width: 5px;
-color: white;
-size: 5px;
+/* width: 5px; */
+color: blue;
+size: 50px;
 }
