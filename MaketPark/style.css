@@ -133,3 +133,7 @@ hr {
     border-radius: 10px;
     padding: 10px;
 }
+
+.video{
+    float: right;
+}
