@@ -3,9 +3,18 @@
     padding: 1px;
     box-sizing: border-box;
 }
-body{
+
+body {
     width: 100%;
+    color: white;
+    font-family: "Cuprum", sans-serif;
+    /* font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal; */
+    
+
 }
+
 .conteiner {
     width: 1140px;
     margin: 0 auto;
@@ -17,30 +26,34 @@ body{
     clear: both;
 }
 
+.fonHead{
+    background: url('img/fonHeader.png') no-repeat;
+
+}
+
 header {
     /* width: 4096px;
     height: 3072px; */
-    background: url('img/fonHeader.png') no-repeat;
     /* background-size: cover; */
-        /*4096px 3072px; */
+    /*4096px 3072px; */
 }
 
 
 
 .logo {
     float: left;
-padding-right: 10px
+    padding-right: 10px
 }
 
-.border{
+.border {
     border-left: solid 3px white;
     float: left;
     /* display: none; */
 }
 
-.border1{
-    border-right: solid 3px red;
-    float: right;
+.border1 {
+    border-right: solid 3px wheat;
+    float: left;
     /* margin: 1px;
     padding: 1px; */
     /* display: none; */
@@ -61,27 +74,63 @@ padding-right: 10px
 
 .headButtons {
     text-align: center;
+    /* display: inline-block; */
+    /* vertical-align: middle; */
     /* background-color: rgba(28,28,28,0) */
 }
 
-.btn{
-    background-color: rgba(0,0,0,0);
-    border: none; 
-    /* outline: none; */
+.btn {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
     cursor: pointer;
+    color: white;
+    /* padding-top: -30px; */
+    /* vertical-align: middle; */
+    /* outline: none; */
+    /* margin-top: -40px; */
 }
 
-.callUs{
+.WrapBtns {
+    /* border: solid 3px red; */
+}
+
+.callUs {
+    float: right;
     background-color: #F8B806;
     border-radius: 5px;
     padding: 10px;
-    margin-top: -50px /* не поднимает */
+    /* margin-top: -50px не поднимает */
 }
 
- 
+.instLogo {
+    float: left;
+}
 
-hr{
-/* width: 5px; */
-color: blue;
-size: 50px;
+/* .instLogo::before{
+    content: "12341235";
+    border-right: solid 3px red;
+} */
+
+.tgLogo {
+    float: left;
+}
+
+.yandexLogo {
+    float: left;
+    margin-top: -3px;
+}
+
+hr {
+    /* width: 5px; */
+    color: blue;
+    size: 50px;
+}
+
+.parkH1{
+    margin-top: 100px;
+}
+
+.btnLookPl{
+    border-radius: 10px;
+    padding: 10px;
 }
