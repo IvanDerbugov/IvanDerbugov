@@ -94,12 +94,12 @@ header {
     /* border: solid 3px red; */
 }
 
-.callUs {
+.btnCallUs {
     float: right;
     background-color: #F8B806;
     border-radius: 5px;
     padding: 10px;
-    /* margin-top: -50px не поднимает */
+    cursor: pointer;
 }
 
 .instLogo {
@@ -120,20 +120,45 @@ header {
     margin-top: -3px;
 }
 
-hr {
+/* hr {
     color: blue;
     size: 50px;
-}
+} */
 
 .parkH1{
+    font-size: 3em;
     margin-top: 100px;
 }
 
 .btnLookPl{
     border-radius: 10px;
     padding: 10px;
+    cursor: pointer;
+}
+
+/* .block1{
+    float: left;
 }
 
 .video{
     float: right;
+} */ /*они гасят фон*/
+
+.video{
+    margin-left: 410px;
+    margin-top: -200px;
 }
+
+
+
+
+.modal1{
+    position: fixed;
+    inset:0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    cursor: pointer;
+    padding: 30px;
+    overflow-y: auto;
+    display: none;
+    }
