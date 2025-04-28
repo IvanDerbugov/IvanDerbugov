@@ -11,7 +11,7 @@ body {
     /* font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal; */
-    
+
 
 }
 
@@ -26,7 +26,7 @@ body {
     clear: both;
 }
 
-.fonHead{
+.fonHead {
     background: url('img/fonHeader.png') no-repeat;
 
 }
@@ -125,12 +125,12 @@ header {
     size: 50px;
 } */
 
-.parkH1{
+.parkH1 {
     font-size: 3em;
     margin-top: 100px;
 }
 
-.btnLookPl{
+.btnLookPl {
     border-radius: 10px;
     padding: 10px;
     cursor: pointer;
@@ -142,23 +142,59 @@ header {
 
 .video{
     float: right;
-} */ /*они гасят фон*/
+} */
+/*они гасят фон*/
 
-.video{
-    margin-left: 410px;
+.video {
+    margin-left: 590px;
     margin-top: -200px;
+    width: 535px;
+    height: 380px
 }
 
 
 
 
-.modal1{
+.modal {
     position: fixed;
-    inset:0;
+    inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     cursor: pointer;
     padding: 30px;
     overflow-y: auto;
     display: none;
-    }
+}
+
+.shadow {
+    width: min-content;
+    height: min-content;
+    background-color: aqua;
+    position: fixed;
+    left: 40%;
+    top: 40%;
+    /* display: none; */
+    max-width: 600px;
+    padding: 10px;
+    border-radius: 15px;
+    margin: auto;
+}
+
+#formWrite {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#form {
+    padding-top: 30%;
+    padding-bottom: 30%;
+}
+
+#close {
+    float: right;
+}
+
+.contaks{
+    color: black;
+    /* margin-top: -20px; */
+}

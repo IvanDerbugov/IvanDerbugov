@@ -33,7 +33,7 @@ const modalController = ({modal, btnOpen, btnClose}) => {
  }
 
  modalController({
-    modal: '.modal1',
+    modal: '.modal',
     btnOpen: '.btnCallUs',
-    btnClose: '.modal__close'
+    btnClose: '#close'
      })
