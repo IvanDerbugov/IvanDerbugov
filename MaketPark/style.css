@@ -145,35 +145,6 @@ header {
 } */
 /*они гасят фон*/
 
-.imgVideo {
-    margin-left: 590px;
-    margin-top: -200px;
-    width: 535px;
-    height: 380px
-}
-
-.video {
-    margin-left: 590px;
-    margin-top: -200px;
-    width: 535px;
-    height: 380px;
-    background-image: url(img/video1.png);
-    border-radius: 20px;
-    text-align: center;
-    /* vertical-align: middle; */
-
-}
-
-.video button {
-    width: 70px;
-    height: 70px;
-    /* background-color: rgba(0, 0, 0, 0); */
-    /* vertical-align: middle; */
-    background: url(img/btnPlay.png) 50% 50%;
-    border: 0;
-}
-
-
 
 
 .imgWrapper {
@@ -264,4 +235,15 @@ header {
 .contaks {
     color: black;
     /* margin-top: -20px; */
+}
+
+.block1 {
+    max-width: 40%;
+}
+
+.wrapFlex{
+    display: flex;
+    align-items: center; /* по вертикали выровнять по центру */
+    justify-content: space-between; /* чтобы блоки были по краям */
+    gap: 20px; /* расстояние между блоками */
 }
