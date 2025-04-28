@@ -165,8 +165,12 @@ header {
 }
 
 .video button {
-    background-color: rgba(0, 0, 0, 0);
+    width: 70px;
+    height: 70px;
+    /* background-color: rgba(0, 0, 0, 0); */
     /* vertical-align: middle; */
+    background: url(img/btnPlay.png) 50% 50%;
+    border: 0;
 }
 
 
