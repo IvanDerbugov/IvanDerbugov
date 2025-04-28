@@ -145,13 +145,29 @@ header {
 } */
 /*они гасят фон*/
 
-.video {
+.imgVideo {
     margin-left: 590px;
     margin-top: -200px;
     width: 535px;
     height: 380px
 }
 
+.video {
+    margin-left: 590px;
+    margin-top: -200px;
+    width: 535px;
+    height: 380px;
+    background-image: url(img/video1.png);
+    border-radius: 20px;
+    text-align: center;
+    /* vertical-align: middle; */
+
+}
+
+.video button {
+    background-color: rgba(0, 0, 0, 0);
+    /* vertical-align: middle; */
+}
 
 
 
@@ -194,7 +210,7 @@ header {
     float: right;
 }
 
-.contaks{
+.contaks {
     color: black;
     /* margin-top: -20px; */
 }
