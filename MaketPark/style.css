@@ -1,5 +1,5 @@
 * {
-    margin: 5px;
+    margin: 0px;
     padding: 1px;
     box-sizing: border-box;
 }
@@ -141,20 +141,21 @@ header {
 
 
 .imgWrapper {
+    float: right;
     position: relative;
     display: inline-block;
-    width: 535px;
-    height: 380px;
+    width: 600px;
+    height: 425px;
 }
 
 .imgWrapper img {
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
     display: block;
     object-fit: cover;
     border-radius: 30px;
-    margin-left: 395px;
-    margin-top: 143px;
+    /* margin-left: 95px;
+    margin-top: 209px; */
 
 }
 
@@ -174,8 +175,8 @@ header {
     justify-content: center;
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    margin-left: 395px;
-    margin-top: 143px;
+    /* margin-left: 95px;
+    margin-top: 209px; */
 
 }
 
@@ -240,11 +241,42 @@ header {
 
 .block1 {
     max-width: 40%;
+    font-size: 1.65em;
+    float: left;
 }
 
-.wrapFlex{
+.wrapFlex {
+    margin-bottom: 0;
+    padding-bottom: 0;
     display: flex;
-    align-items: center; /* по вертикали выровнять по центру */
-    justify-content: space-between; /* чтобы блоки были по краям */
-    gap: 20px; /* расстояние между блоками */
+    margin-top: 180px;
+    margin-bottom: 180px;
+    align-items: center;
+    /* по вертикали выровнять по центру */
+    justify-content: space-between;
+    /* чтобы блоки были по краям */
+    gap: 20px;
+    /* расстояние между блоками */
+}
+
+
+.typeHouses{
+    display: flex;
+    justify-content: center;   /* по горизонтали */
+    align-items: center;       /* по вертикали */
+    height: 273px;
+    padding: 0;
+    margin: 0;
+    background: url(img/points.png) left no-repeat,
+                url(img/lines.png) right no-repeat,
+                black;
+}
+
+.typeHouses h1{
+    text-align: center;
+    margin: 0;
+}
+
+.main{
+    margin: 0;
 }
