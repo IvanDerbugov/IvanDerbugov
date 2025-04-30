@@ -79,6 +79,10 @@ header {
     /* background-color: rgba(28,28,28,0) */
 }
 
+.headButtons button{
+margin: 10px;
+}
+
 .btn {
     background-color: rgba(0, 0, 0, 0);
     border: none;
@@ -100,10 +104,12 @@ header {
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .instLogo {
     float: left;
+    margin-right: 10px;
 }
 
 /* .instLogo::before{
@@ -113,11 +119,14 @@ header {
 
 .tgLogo {
     float: left;
+    margin-left: 10px;
 }
 
 .yandexLogo {
     float: left;
     margin-top: -3px;
+    margin-right: 40px;
+    /* margin-left: 40px; */
 }
 
 /* hr {
@@ -248,7 +257,7 @@ header {
 .wrapFlex {
     margin-bottom: 0;
     padding-bottom: 0;
-    display: flex;
+    display: block;
     margin-top: 180px;
     margin-bottom: 180px;
     align-items: center;
@@ -265,18 +274,11 @@ header {
     justify-content: center;   /* по горизонтали */
     align-items: center;       /* по вертикали */
     height: 273px;
-    padding: 0;
-    margin: 0;
     background: url(img/points.png) left no-repeat,
                 url(img/lines.png) right no-repeat,
                 black;
 }
 
-.typeHouses h1{
-    text-align: center;
-    margin: 0;
-}
 
-.main{
-    margin: 0;
-}
+
+
