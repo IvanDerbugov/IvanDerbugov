@@ -79,8 +79,8 @@ header {
     /* background-color: rgba(28,28,28,0) */
 }
 
-.headButtons button{
-margin: 10px;
+.headButtons button {
+    margin: 10px;
 }
 
 .btn {
@@ -200,7 +200,9 @@ margin: 10px;
     border-radius: 0;
 }
 
-
+main {
+    padding: 0;
+}
 
 
 
@@ -269,16 +271,46 @@ margin: 10px;
 }
 
 
-.typeHouses{
+.typeHousesText {
     display: flex;
-    justify-content: center;   /* по горизонтали */
-    align-items: center;       /* по вертикали */
-    height: 273px;
+    justify-content: center;
+    /* по горизонтали */
+    align-items: center;
+    /* по вертикали */
+    height: 200px;
+    max-width: 1920px;
+    font-size: 2em;
     background: url(img/points.png) left no-repeat,
                 url(img/lines.png) right no-repeat,
                 black;
+    background-size:
+        400px 200px,
+        /*размер точек*/
+        700px 200px,
+        /*размер линий*/
+        auto;
 }
 
+.typeHousesCards {
+    display: inline-block;
+    height: 400px;
+}
 
+.typeHousesCards div {
+    /* width: 25%; */
+    float: left;
+    padding: 0;
+}
 
+.typeHousesCards div img {
+    width: 480px;
+    padding: 0;
+}
 
+.typeHousesCards div map {
+    padding: 0;
+}
+
+.typeHousesCards div map area {
+    padding: 0;
+}
