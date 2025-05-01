@@ -88,6 +88,7 @@ header {
     border: none;
     cursor: pointer;
     color: white;
+    height: 35px;
     /* padding-top: -30px; */
     /* vertical-align: middle; */
     /* outline: none; */
@@ -129,10 +130,9 @@ header {
     /* margin-left: 40px; */
 }
 
-/* hr {
-    color: blue;
-    size: 50px;
-} */
+hr {
+    width: 1920px;
+}
 
 .parkH1 {
     font-size: 3em;
@@ -281,8 +281,8 @@ main {
     max-width: 1920px;
     font-size: 2em;
     background: url(img/points.png) left no-repeat,
-                url(img/lines.png) right no-repeat,
-                black;
+        url(img/lines.png) right no-repeat,
+        black;
     background-size:
         400px 200px,
         /*размер точек*/
@@ -293,17 +293,18 @@ main {
 
 .typeHousesCards {
     display: inline-block;
-    height: 400px;
+    /* height: 400px; */
 }
 
 .typeHousesCards div {
     /* width: 25%; */
+    width: 480px;
     float: left;
     padding: 0;
 }
 
 .typeHousesCards div img {
-    width: 480px;
+    /* width: 480px; */
     padding: 0;
 }
 
@@ -313,4 +314,24 @@ main {
 
 .typeHousesCards div map area {
     padding: 0;
+}
+
+.consult {
+    padding: 0;
+    text-align: center;
+    width: 1920px;
+    height: 150px;
+    background-color: #242424;
+}
+
+.btnGetConsultation {
+    margin-top: 30px;
+    background-color: #F8B806;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.fonSelAp{
+    background-color: #242424;
 }
