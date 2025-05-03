@@ -325,7 +325,7 @@ main {
     display: flex;
     justify-content: center;
     /* по горизонтали */
-    align-items:normal;
+    align-items: normal;
     padding: 0;
     /* text-align: center; */
     /* width: 1920px; */
@@ -342,25 +342,26 @@ main {
     cursor: pointer;
 }
 
-.fonSelAp{
+.fonSelAp {
     background-color: #242424;
 }
 
-.numberHouse{
+.numberHouse {
     margin-top: 20px;
     margin-bottom: 15px;
+    font-size: 2em;
 
 }
 
-.selectionAp{
-  font-size: 3.5em;
+.selectionAp {
+    font-size: 3.5em;
 }
 
-.fonGetConsult{
+.fonGetConsult {
     background-color: #242424;
 }
 
-.btnnumberHouse{
+.btnnumberHouse {
     height: 50px;
     width: 50px;
     color: white;
@@ -370,8 +371,16 @@ main {
     cursor: pointer;
 }
 
-.btnnumberHouse:active{
-background-color: #F8B806;
+.btnnumberHouse:focus {
+    background-color: #F8B806;
+}
+
+.btnnumberHouse:active {
+    background-color: red;
+}
+
+.btnnumberHouse:visited {
+    background-color: rgb(16, 28, 161);
 }
 
 .SBig {
@@ -380,4 +389,35 @@ background-color: #F8B806;
 
 .SBig:target {
     display: block !important;
+}
+
+.selectFloor{
+    background-color: rgb(69, 69, 69);
+    color: white;
+    width: 500px;
+    font-size: 5em;
+}
+
+.wrapperImg{
+    float: left;
+}
+
+.wrapperSel{
+    float: left;
+    padding-left: 20px;
+}
+
+.numbersOfRooms{
+    font-size: 2em;
+}
+
+.btnNumbersOfRooms{
+height: 50px;
+width: 50px;
+background-color: rgb(69, 69, 69);
+color: white;
+}
+
+.btnNumbersOfRooms:focus{
+    background-color: #F8B806;
 }
