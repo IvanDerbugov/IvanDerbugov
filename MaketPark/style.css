@@ -353,7 +353,7 @@ main {
 }
 
 .selectionAp{
-  font-size: 3em;
+  font-size: 3.5em;
 }
 
 .fonGetConsult{
@@ -372,4 +372,12 @@ main {
 
 .btnnumberHouse:active{
 background-color: #F8B806;
+}
+
+.SBig {
+    display: none;
+}
+
+.SBig:target {
+    display: block !important;
 }
