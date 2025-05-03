@@ -11,9 +11,11 @@ body {
     /* font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal; */
-
-
 }
+
+/* .allFon{
+    background-color: black;
+} */
 
 .conteiner {
     width: 1140px;
@@ -357,9 +359,21 @@ main {
     font-size: 3.5em;
 }
 
+
+
 .fonGetConsult {
-    background-color: #242424;
+    background: url(img/pointsRight.png) right no-repeat,
+        #242424;
 }
+
+/* .fonGetConsult .conteiner{
+background-image: url(img/pointsLeft.png) right no-repeat ;
+} */
+
+/* .conteiner1920{
+width: 1920px;
+background-image: url(img/pointsLeft.png) right no-repeat ;
+} */
 
 .btnnumberHouse {
     height: 50px;
@@ -391,33 +405,82 @@ main {
     display: block !important;
 }
 
-.selectFloor{
+.selectFloor {
     background-color: rgb(69, 69, 69);
     color: white;
     width: 500px;
     font-size: 5em;
 }
 
-.wrapperImg{
+.wrapperImg {
     float: left;
 }
 
-.wrapperSel{
+.wrapperSel {
     float: left;
     padding-left: 20px;
 }
 
-.numbersOfRooms{
+.numbersOfRooms {
     font-size: 2em;
 }
 
-.btnNumbersOfRooms{
-height: 50px;
-width: 50px;
-background-color: rgb(69, 69, 69);
-color: white;
+.btnNumbersOfRooms {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(69, 69, 69);
+    color: white;
 }
 
-.btnNumbersOfRooms:focus{
+.btnNumbersOfRooms:focus {
     background-color: #F8B806;
+}
+
+.aboutPark {
+    background-color: #242424;
+    padding: 50px 0px;
+}
+
+.aboutPark h1 {
+    font-size: 3em;
+}
+
+.aboutPark p {
+    font-size: 1.5em;
+    /* font-weight: 200; */ /*Почему не срабатывает?*/
+    margin: 7px 0;
+}
+
+.aboutPark p:first-of-type {
+    margin: auto;
+}
+
+.aboutPark p:last-of-type {
+    margin-bottom: 100px;
+}
+
+.aboutPark a {
+    font-size: 1.5em;
+}
+
+.aboutPark a:link,
+.aboutPark a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.imgHrLine {
+    display: inline-block;
+}
+
+.aboutPark h6 {
+    display: inline-block;
+}
+
+.wrapAboutPark{
+    float: left;
+}
+
+.imgAboutPart {
+    float: right;
 }
