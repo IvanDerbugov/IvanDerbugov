@@ -346,8 +346,30 @@ main {
     background-color: #242424;
 }
 
+.numberHouse{
+    margin-top: 20px;
+    margin-bottom: 15px;
+
+}
+
 .selectionAp{
-    float: none;
-    display: block;
+  font-size: 3em;
+}
+
+.fonGetConsult{
+    background-color: #242424;
+}
+
+.btnnumberHouse{
     height: 50px;
+    width: 50px;
+    color: white;
+    background-color: rgb(69, 69, 69);
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+}
+
+.btnnumberHouse:active{
+background-color: #F8B806;
 }
