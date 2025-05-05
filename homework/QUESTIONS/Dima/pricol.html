@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAADMUExURQAAACIgKiEgKSEfKSIfKSMgKiMhKyIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKiIgKgAAAP9ZWbkAAABCdFJOUwAAAAAAAABi62ETzhTR0FvuVc9XCMQCGMngIBlgpPZfWPmWF139Fvf1zfy/p+xx/qZO+m/Bpe3qxTZ0c6+uwNRNVIhq2E4AAAABYktHRACIBR1IAAAAB3RJTUUH6QUFFDMxvDvxDgAAAYNJREFUOMuFU9lCwjAQZCxKaUILgQIlgILlvuRUvND8/0eZJoUUEJinzXaazO7OplIJABnbzgKpS4BDhCDOGQEKUUBzQrgUyZyOHUedAC+f93S0zylCgbGiPMhEyfdLUGGRkcKe4DB5sYM7oFypVitlwAJ1jRo48hDUAF5vkGaTNB45UAuEYHsCntyg1X4O3Y5Q6LCw224FbvGgAbTW7pG+OKA/6LVrNFkGuoPow3A0nmjKoGvKlEgjVP+P6P10pu8IkU52ijOVfgHmC30F40aBRF3rs5fzVSyjU4+bCSrFlNdxerY4CG3IflBZaIa4XokTcQbCS16OZFO2EHm/2oxSm02S0Kz6eSFeE4S37dY/I9jyiVz8xDvwoaWuR0PzhBH5yfmX0r8E/TYiTZnD3W4YERY/eBibMo8apbGaTyemUQpW3OoYi1nUauvIk3pYBslhRf6T4x6cjjvhyaI2DLtkGGO5tbJc/dRysWkt2Q/+r2kv2f7XOOL64txcvdvLe3X9/wDGeF6/+Y6pBQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyNS0wNS0wNVQyMDo1MTozMiswMDowMGUt1IUAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjUtMDUtMDVUMjA6NTE6MzIrMDA6MDAUcGw5AAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDI1LTA1LTA1VDIwOjUxOjQ5KzAwOjAwS6cQBQAAAABJRU5ErkJggg=="
+        type="image/x-icon">
+    <title>Получи сска</title>
+    <style>
+        .div1, .div2 {
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body id="B">
+    <div class="div1">
+        Я встроился в твоё устройство, мой друг, незаметно я буду отправлять твои данные в базы данных мошенников, а
+        после удалять их и потихоньку уничтожать твоё устройство.
+    </div>
+
+    <div class="div2">
+        ЗАПОМНИ МОЁ ЛИЦО!
+        <img src="smile.png" alt="">
+    </div>
+
+
+    <script>
+        const Body = document.getElementById('B')
+        const d1 = document.getElementsByClassName('div1')
+        const d2 = document.getElementsByClassName('div2')
+
+        alert('Привет, я новый вирус трояна v13842.2')
+
+        
+
+        function fon() {
+            Body.style.background = "url('bitiEcran.png')"
+        }
+        function text1 () {
+            d1[0].style.cssText = `
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: red;
+                font-size: 5em;
+            `
+        }
+        function text2 () {
+            d2[0].style.cssText = `
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: red;
+                font-size: 5em;
+            `
+        }
+        function virus() {
+            alert('нажми ОК чтобы закрыть меня')
+            // return virus()
+        }
+
+
+        setTimeout(fon, 3000)
+        setTimeout(text1, 6000)
+        setTimeout(text2, 10000)
+        setInterval(virus, 1500)
+    </script>
+
+</body>
+
+</html>
