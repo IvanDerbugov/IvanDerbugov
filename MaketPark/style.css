@@ -374,6 +374,7 @@ main {
 .fonGetConsult {
     background: url(img/pointsRight.png) right no-repeat,
         #242424;
+    margin-bottom: 50px;
 }
 
 /* .fonGetConsult .conteiner{
@@ -453,7 +454,8 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
 
 .aboutPark {
     background-color: #242424;
-    padding: 50px 0px;
+    padding: 0;
+    height: 777px;
 }
 
 .aboutPark h1 {
@@ -499,18 +501,6 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
     float: left;
 }
 
-/* .fonAboutPart {
-    background: url(img/pointsAboutPark.png);
-    background-size: 900px 900px;
-    float: right;
-    width: 900px;
-    height: 900px;
-} */
-
-.wrapImgAboutPark{
-
-}
-
 .fonAboutPartImg {
     position: relative;
     top: 120px;
@@ -529,3 +519,49 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
 
 }
 
+
+.plusLivingComplex {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* по горизонтали */
+    align-items: center;
+    /* по вертикали */
+    height: 200px;
+    /* max-width: 1920px; */
+    font-size: 2em;
+    background: url(img/pointsPlusLivingComplex.png) left no-repeat,
+        url(img/lines.png) right no-repeat,
+        #242424;
+    background-size:
+        400px 200px,
+        /*размер точек*/
+        700px 200px,
+        /*размер линий*/
+        cover;
+}
+
+.iconsPlusLivingCoplex {
+    height: 580px;
+}
+
+/* .firstRow div, .secondRow div {
+    float: left;
+    width: 240px;
+} */
+
+.iconDivPlusDiv {
+    float: left;
+    width: 240px;
+    margin: 45px;
+}
+
+.wrapImgIcon {
+    text-align: center;
+}
+
+.textIconPlusLiving {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 25px;
+}
