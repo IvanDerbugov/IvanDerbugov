@@ -13,25 +13,29 @@
             display: none;
         }
 
+        span{
+            font-weight: 900;
+        }
     </style>
 </head>
 
 <body id="B">
     <div class="div1">
         Я встроился в твоё устройство, мой друг, незаметно я буду отправлять твои данные в базы данных мошенников, а
-        после удалять их и потихоньку уничтожать твоё устройство.
-    </div>
-
-    <div class="div2">
-        <h3>ЗАПОМНИ МОЁ ЛИЦО!</h3><br>
+        после удалять их и потихоньку уничтожать твоё устройство.<br><span>ЗАПОМНИ МОЁ ЛИЦО!</span><br>
         <img src="smile.png" alt="">
     </div>
+
+    <!-- <div class="div2">
+        <h3>ЗАПОМНИ МОЁ ЛИЦО!</h3><br>
+        <img src="smile.png" alt="">
+    </div> -->
 
 
     <script>
         const Body = document.getElementById('B')
         const d1 = document.getElementsByClassName('div1')
-        const d2 = document.getElementsByClassName('div2')
+        // const d2 = document.getElementsByClassName('div2')
 
         alert('Привет, я новый вирус трояна v13842.2')
 
@@ -66,7 +70,7 @@
 
         setTimeout(fon, 3000)
         setTimeout(text1, 6000)
-        setTimeout(text2, 10000)
+        // setTimeout(text2, 10000)
         setInterval(virus, 1500)
     </script>
 
