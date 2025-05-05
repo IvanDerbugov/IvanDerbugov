@@ -500,6 +500,7 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
 
 .wrapAboutPark {
     float: left;
+    font-weight: 100;
 }
 
 .fonAboutPartImg {
