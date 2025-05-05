@@ -13,12 +13,12 @@ body {
     font-style: normal;
 }
 
-.allFon {
+/* .allFon {
     width: 6000px;
     background-color: black;
     background-size: cover;
     margin: 0 auto;
-}
+} */
 
 .conteinerGrey {
     width: 1920px;
@@ -167,6 +167,7 @@ hr {
     display: inline-block;
     width: 600px;
     height: 425px;
+    border-radius: 50px;
 }
 
 .imgWrapper img {
