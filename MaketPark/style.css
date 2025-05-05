@@ -8,14 +8,24 @@ body {
     width: 100%;
     color: white;
     font-family: "Cuprum", sans-serif;
-    /* font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal; */
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
 }
 
-/* .allFon{
+.allFon {
+    width: 6000px;
     background-color: black;
-} */
+    background-size: cover;
+    margin: 0 auto;
+}
+
+.conteinerGrey {
+    width: 1920px;
+    background-color: #242424;
+    background-size: cover;
+    margin: 0 auto;
+}
 
 .conteiner {
     width: 1140px;
@@ -284,7 +294,7 @@ main {
     font-size: 2em;
     background: url(img/points.png) left no-repeat,
         url(img/lines.png) right no-repeat,
-        black;
+        #242424;
     background-size:
         400px 200px,
         /*размер точек*/
@@ -385,9 +395,14 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
     cursor: pointer;
 }
 
-.btnnumberHouse:focus {
+.btnnumberHouse:hover {
     background-color: #F8B806;
 }
+
+/* .btnnumberHouse:focus {
+    background-color: #F8B806;
+}
+
 
 .btnnumberHouse:active {
     background-color: red;
@@ -395,7 +410,7 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
 
 .btnnumberHouse:visited {
     background-color: rgb(16, 28, 161);
-}
+} */
 
 .SBig {
     display: none;
@@ -432,7 +447,7 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
     color: white;
 }
 
-.btnNumbersOfRooms:focus {
+.btnNumbersOfRooms:hover {
     background-color: #F8B806;
 }
 
@@ -447,7 +462,8 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
 
 .aboutPark p {
     font-size: 1.5em;
-    /* font-weight: 200; */ /*Почему не срабатывает?*/
+    /* font-weight: 200; */
+    /*Почему не срабатывает?*/
     margin: 7px 0;
 }
 
@@ -460,7 +476,8 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
 }
 
 .aboutPark a {
-    font-size: 1.5em;
+    font-size: 24px;
+    font-weight: 100;
 }
 
 .aboutPark a:link,
@@ -475,12 +492,40 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
 
 .aboutPark h6 {
     display: inline-block;
+    font-size: 20px;
 }
 
-.wrapAboutPark{
+.wrapAboutPark {
     float: left;
 }
 
-.imgAboutPart {
+/* .fonAboutPart {
+    background: url(img/pointsAboutPark.png);
+    background-size: 900px 900px;
     float: right;
+    width: 900px;
+    height: 900px;
+} */
+
+.wrapImgAboutPark{
+
 }
+
+.fonAboutPartImg {
+    position: relative;
+    top: 120px;
+    left: 25px;
+    /* float: right;
+    width: 900px;
+    height: 900px; */
+}
+
+.imgAboutPart {
+    position: relative;
+    bottom: 345px;
+    float: right;
+    width: 512px;
+    height: 420px;
+
+}
+
