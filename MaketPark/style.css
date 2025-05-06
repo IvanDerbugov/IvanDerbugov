@@ -603,3 +603,8 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
     text-align: center;
     margin-top: 25px;
 }
+
+.position{
+    height: 653px;
+    background-image: url('img/position.png');
+}
