@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ссылки</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .metod1 a {
+            float: left;
+            padding-top: 15px;
+            color: green;
+        }
+
+        .metod1 div {
+            height: 30px;
+            border-left: solid 3px red;
+            margin: 10px;
+            float: left;
+        }
+
+        .clearfix::after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+        .metod2 span{
+            display: inline-block;
+            height: 30px;
+            visibility: hidden;
+        }
+
+        .metod2 a {
+            display: inline-block;
+            height: 30px;
+            border-right: solid 3px red;
+            margin-left: 5px;
+            color: green;
+        }
+
+        .metod2 a:last-child{
+            border-right: 0;
+        }
+
+        a:link {
+            color: green;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        .metod3 {
+            height: 35px;
+            width: 610px;
+        }
+
+        .metod3 div {
+            display: inline-block;
+            color: #fff;
+        }
+
+        .metod3 div a {
+            opacity: 0;
+        }
+        
+        .metod3 div a:first-child:hover {
+          opacity: 1;
+        }
+
+        .metod3 div:first-child {
+            background: url('hrefGreen.png') no-repeat;
+            background-size: 560px 30px;
+            height: 35px;
+            width: 110px;
+        }
+        
+        .metod3 div:nth-child(2) {
+            margin-left: 4px;
+            background: url('hrefGreen.png') no-repeat;
+            background-size: 560px 30px;
+            background-position: -112px;
+            height: 35px;
+            width: 110px;
+        }
+        .metod3 div:nth-child(3) {
+            margin-left: 4px;
+            background: url('hrefGreen.png') no-repeat;
+            background-size: 560px 30px;
+            background-position: -224px;
+            height: 35px;
+            width: 110px;
+        }
+        .metod3 div:nth-child(4) {
+            margin-left: 10px;
+            background: url('hrefGreen.png') no-repeat;
+            background-size: 560px 30px;
+            background-position: -340px;
+            height: 35px;
+            width: 130px;
+        }
+        .metod3 div:last-child {
+            margin-left: 4px;
+            background: url('hrefGreen.png') no-repeat;
+            background-size: 560px 30px;
+            background-position: -475px;
+            height: 35px;
+            width: 110px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="metod1 clearfix">
+        <!--Супер-пупер-шмупер способ с помощью float:left для всех элементов в div class="metod1" красный разделитель при помощи пустого div с border, padding, margin-->
+        <a href='https://www.instagram.com/it_academy.by/p/CeX2EEroH2j/' target="_blank">первая ссылка </a>
+        <div></div>
+        <a href='https://www.instagram.com/it_academy.by/p/CeX2EEroH2j/' target="_blank">вторая ссылка</a>
+        <div></div>
+        <a href='https://www.instagram.com/it_academy.by/p/CeX2EEroH2j/' target="_blank">третья ссылка</a>
+        <div></div>
+        <a href='https://www.instagram.com/it_academy.by/p/CeX2EEroH2j/' target="_blank">четвёртая ссылка</a>
+        <div></div>
+        <a href='https://www.instagram.com/it_academy.by/p/CeX2EEroH2j/' target="_blank">пятая ссылка</a>
+    </div>
+    <br>
+     <div class="metod2"> <!--Я в конце каждой ссылки поставил невидимые <span>..</span> для пустого пространства для ссылок border:right поставил m-l для ссылок также-->
+        <a href='https://www.instagram.com/it_academy.by/p/CeX2EEroH2j/'target="_blank">первая ссылка<span>..</span></a>
+        <a href='https://www.instagram.com/it_academy.by/p/CeX2EEroH2j/'target="_blank">вторая ссылка<span>..</span></a>
+        <a href='https://www.instagram.com/it_academy.by/p/CeX2EEroH2j/'target="_blank">третья ссылка<span>...</span></a>
+        <a href='https://www.instagram.com/it_academy.by/p/CeX2EEroH2j/'target="_blank">четвёртая ссылка<span>..</span></a>
+        <a href='https://www.instagram.com/it_academy.by/p/CeX2EEroH2j/'target="_blank">пятая ссылка</a>
+    </div>
+    <br>
+    <div class="metod3">
+        <div><a href='https://www.instagram.com/it_academy.by/p/CeX2EEroH2j/'target="_blank"><img src="href1Red.png" alt="" width="110px"></a></div>
+        <div><a href='https://www.instagram.com/it_academy.by/p/CeX2EEroH2j/'target="_blank"><img src="href2Red.png" alt="" width="110px"></a></div>
+        <div><a href='https://www.instagram.com/it_academy.by/p/CeX2EEroH2j/'target="_blank"><img src="href3Red.png" alt="" width="110px"></a></div>
+        <div><a href='https://www.instagram.com/it_academy.by/p/CeX2EEroH2j/'target="_blank"><img src="href4Red.png" alt="" width="120px"></a></div>
+        <div><a href='https://www.instagram.com/it_academy.by/p/CeX2EEroH2j/'target="_blank"><img src="href5Red.png" alt="" width="100px"></a></div>
+    </div>
+</body>
+
+</html>
