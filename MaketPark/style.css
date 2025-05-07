@@ -51,6 +51,13 @@ header {
     /*4096px 3072px; */
 }
 
+p {
+    font-weight: 200;
+}
+
+button {
+    color: white;
+}
 
 
 .logo {
@@ -542,7 +549,7 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
     position: relative;
     top: 120px;
     left: 25px;
-    
+
     /* float: right;
     width: 900px;
     height: 900px; */
@@ -604,7 +611,188 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
     margin-top: 25px;
 }
 
-.position{
+.position {
     height: 653px;
     background-image: url('img/position.png');
+}
+
+.optionsLayoutBlock {
+    background: url('img/pointsForOptionsLayout.png') right no-repeat,
+        rgb(128, 128, 128, 0.2);
+
+}
+
+.optionsLayoutText {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* по горизонтали */
+    align-items: center;
+    /* по вертикали */
+    height: 200px;
+    /* max-width: 1920px; */
+    font-size: 2em;
+    background: url(img/pointsPlusLivingComplex.png) left no-repeat,
+        url(img/lines.png) right no-repeat,
+        #242424;
+    background-size:
+        400px 200px,
+        /*размер точек*/
+        700px 200px,
+        /*размер линий*/
+        cover;
+}
+
+.imgOptionsLayout {
+    float: left;
+    margin: 10px;
+    margin-left: 0;
+    width: 545px;
+    height: 377px;
+    background: url('img/optionLayout1.png');
+    background-size: 545px 377px;
+}
+
+.SBig2 {
+    display: none;
+}
+
+.SBig2:target {
+    display: block !important;
+}
+
+.aboutOptionsLayout {
+    float: left;
+    font-size: 1.5em;
+    margin: 10px;
+    margin-right: 0;
+}
+
+.aboutOptionsLayout p {
+    font-size: 0.8em;
+    margin: 10px 0px 25px 10px;
+}
+
+.aboutOptionsLayout p:last-child {
+    margin-bottom: 10px;
+}
+
+.aboutOptionsLayout p:last-child {
+    font-style: italic;
+}
+
+.aboutOptionsLayout p:nth-child(4) {
+    font-weight: 400;
+}
+
+.optionsLayoutBlock a {
+    float: left;
+    margin-top: -30px;
+    margin-right: 5px;
+}
+
+.optionsLayoutBlock a:hover {
+    border: #f7bf23 solid 6px;
+}
+
+.optionsLayoutBlock button {
+    float: left;
+    width: 575px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #F8B806;
+}
+
+
+.comfortableLifeText {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* по горизонтали */
+    align-items: center;
+    /* по вертикали */
+    height: 200px;
+    /* max-width: 1920px; */
+    font-size: 2em;
+    background: url(img/pointsForComfLive.png) right no-repeat,
+        url(img/linesForComfLive.svg) left no-repeat,
+        #242424;
+    background-size:
+        600px 200px,
+        /*размер точек*/
+        500px 200px,
+        /*размер линий*/
+        cover;
+}
+
+.quote {
+    display: inline-block;
+    float: left;
+    width: 500px;
+    margin-top: -45px;
+    /* height: 1310px; */
+}
+
+.comfortableLifeBlock {}
+
+.quote div:first-child {
+    font-size: 15em;
+    margin-bottom: -80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.quote div:last-child {
+    font-size: 15em;
+    float: right;
+    margin-top: -165px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.quote p {
+    font-size: 1.8em;
+}
+
+.comfortableLifeBlock img[src="img/comfortLive1.png"] {
+    width: 610px;
+    margin-left: 30px;
+}
+
+
+.SBig3 {
+    display: none;
+}
+
+.SBig3:target {
+    display: block !important;
+}
+
+.btnsComfortLive {
+    margin: 40px 0 25px;
+
+}
+
+.btnsComfortLive button {
+    background-color: #797979;
+    width: 20%;
+    height: 50px;
+    margin: auto -2px auto -2px;
+    border: none;
+    cursor: pointer;
+}
+
+.btnsComfortLive button:hover {
+    background-color: #F8B806;
+}
+
+.imgComfLive {
+    width: 1140px;
+    height: 578px;
+    background: url('img/ComfLandscaping.png');
+    background-size: 1140px 578px;
+}
+
+.imgComfLive img {
+    width: 1140px;
+    height: 578px;
 }
