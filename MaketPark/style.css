@@ -39,7 +39,7 @@ body {
 }
 
 .fonHead {
-    background: url('img/fonHeader.png') no-repeat;
+    background: url('img/fonHeader.jpeg') no-repeat;
     background-size: cover;
     padding: 1px;
 }
@@ -163,6 +163,7 @@ hr {
     border-radius: 10px;
     padding: 10px;
     cursor: pointer;
+    color: black;
 }
 
 
@@ -795,4 +796,108 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
 .imgComfLive img {
     width: 1140px;
     height: 578px;
+}
+
+.imgComfLive div:last-child {
+    width: 590px;
+    height: 620px;
+    background: url(img/pointsForComfLiveBlock.png);
+    background-size: 590px 620px;
+    float: right;
+    /* margin-top: -150px; */
+    margin-right: -50px;
+}
+
+.flatFromOwner {
+    margin-bottom: 1px;
+}
+
+.flatFromOwner h1 {
+    font-size: 4.5em;
+}
+
+.flatFromOwner h2 {
+    font-size: 4em;
+    margin: 30px 32px auto 0;
+    /* display: inline-block; */
+}
+
+.flatFromOwner p {
+    margin-bottom: 105px;
+    font-size: 2em;
+    font-weight: 100;
+    /* display: inline-block; */
+}
+
+.flatFromOwner div:last-of-type {
+    width: 842px;
+    height: 858px;
+    margin-left: 688px;
+    margin-top: -875px;
+    /* background-color: rgba(186, 70, 70, 0.5); */
+}
+
+.flatFromOwner div:first-of-type {
+    /* display: inline-block; */
+}
+
+img[src="img/flatFromOwner1.png"] {
+    /* margin-right: 15px; */
+    margin-top: 20px;
+}
+
+img[src="img/flatFromOwner2.png"] {}
+
+img[src="img/flatFromOwner3.png"] {}
+
+img[src="img/flatFromOwner4.png"] {}
+
+
+.requestBlock {
+    background: url('img/pointsForRequest.png') left no-repeat,
+        rgb(128, 128, 128, 0.2);
+}
+
+.requestBlock h4 {
+    font-size: 2em;
+    margin: 20px auto;
+}
+
+.requestBlock input:first-child,
+.requestBlock input:first-child+input {
+    background-color: rgb(84, 84, 84);
+    border-radius: 15px;
+    width: 370px;
+    height: 50px;
+}
+
+.btnLeaveRequest {
+    width: 370px;
+    height: 50px;
+    background-color: #F8B806;
+    color: black;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.wrapInputs1Line {
+    margin-bottom: 20px;
+}
+
+#agreePersDate {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#agreePersDateText1 {
+    font-size: 1.5em;
+    font-weight: 100;
+    color: red;
+}
+
+#agreePersDateText2 {
+    font-size: 1.5em;
+    font-weight: 100;
+    color: orange;
 }
