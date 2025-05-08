@@ -901,3 +901,16 @@ img[src="img/flatFromOwner4.png"] {}
     font-weight: 100;
     color: orange;
 }
+
+.wrapInputs3Line button {
+    background-color: rgb(84, 84, 84);
+    border-radius: 15px;
+    width: 1000px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.wrapInputs3Line button:last-child, .wrapInputs3Line button:first-child + button {
+    width: 50px;
+    /* margin-top: 10px; */
+}
