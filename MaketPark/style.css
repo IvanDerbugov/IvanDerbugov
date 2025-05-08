@@ -156,7 +156,7 @@ hr {
 
 .parkH1 {
     font-size: 3em;
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 
 .btnLookPl {
@@ -292,6 +292,11 @@ main {
     /* расстояние между блоками */
 }
 
+.block1 h2 {
+margin: 20px;
+margin-left: 0;
+}
+
 
 .typeHousesText {
     display: flex;
@@ -362,6 +367,7 @@ main {
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
+    color: black;
 }
 
 .fonSelAp {
@@ -580,7 +586,7 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
         url(img/lines.png) right no-repeat,
         #242424;
     background-size:
-        400px 200px,
+        600px 200px,
         /*размер точек*/
         700px 200px,
         /*размер линий*/
@@ -667,6 +673,10 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
     font-size: 1.5em;
     margin: 10px;
     margin-right: 0;
+}
+
+.aboutOptionsLayout button {
+    color: black;
 }
 
 .aboutOptionsLayout p {
@@ -902,15 +912,71 @@ img[src="img/flatFromOwner4.png"] {}
     color: orange;
 }
 
+/* .wrapInputs3Line {
+    height: 50px;
+} */
+
 .wrapInputs3Line button {
     background-color: rgb(84, 84, 84);
     border-radius: 15px;
-    width: 1000px;
-    height: 50px;
+    width: 900px;
+    height: 60px;
     cursor: pointer;
+    margin-right: 15px;
 }
 
 .wrapInputs3Line button:last-child, .wrapInputs3Line button:first-child + button {
-    width: 50px;
+    width: 60px;
     /* margin-top: 10px; */
+}
+
+
+/* .wrapFooter1 {
+    height: 500px;
+} */
+
+.footerBlock1 {
+    float: left;
+}
+.footerBlock2 {
+    float: right;
+    margin-top: 177px;
+}
+.footerBlock2 p, .footerBlock3 p {
+   margin-bottom: 10px;
+   font-size: 1.5em;
+}
+.footerBlock3 {
+    float: right;
+    margin-top: 177px;
+    margin-right: 60px;
+}
+
+#logoFooter {
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+.phoneNumber {
+    margin-bottom: 60px;
+}
+.heartService {
+    display: flex;
+    justify-content: center;
+    /* по горизонтали */
+    align-items: center;
+    /* по вертикали */
+    width: 200px;
+    height: 60px;
+    /* padding: 16px; */
+    background-color: #F8B806;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+#heartLogo {
+    /* margin: 10px 10px auto auto; */
+}
+.heartService p {
+    text-align: left;
+    margin-left: 10px;
 }
