@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>*** unnamed text ***</title>
+</head>
+
+<body>
+    <style>
+        table.CHESS {
+            border-collapse: collapse;
+        }
+
+        table.CHESS td {
+            width: 50px;
+            height: 50px;
+            border: solid gray 1px;
+        }
+
+        tr:nth-of-type(odd) td:nth-of-type(even) {
+            background-color: black;
+        }
+
+        tr:nth-of-type(even) td:nth-of-type(odd) {
+            background-color:rgb(37, 37, 52);
+        }
+
+        
+        .CHESS tr:first-child td:nth-of-type(even), 
+        .CHESS tr:first-child td:nth-of-type(odd),
+        /* чётные  и не чётные элементы первой горизонтальной строки */
+       
+        .CHESS tr:last-child td:nth-of-type(even),
+        .CHESS tr:last-child td:nth-of-type(odd), 
+        /* чётные и нечётные элементы последней горизонтальной строки */
+        .CHESS tr td:first-child,
+        /* первая вертикальная */
+        .CHESS tr td:last-child 
+        /* последняя вертикальная */ {
+            background-color: greenyellow;
+            height: 20px;
+            width: 50;
+        }
+        .CHESS tr td:first-child,
+        /* первая вертикальная */
+        .CHESS tr td:last-child 
+        /* последняя вертикальная */ {
+            height: 50px;
+            width: 20px;
+        }
+
+        .CHESS tr:first-child td:first-child,
+        .CHESS tr:first-child td:last-child,
+        .CHESS tr:last-child td:first-child,
+        .CHESS tr:last-child td:last-child 
+        /* угловые квадратики */ {
+            width: 20px;
+            height: 20px;
+        }
+
+
+
+    </style>
+
+    <table class='CHESS'>
+        <!-- начало верхней строчки бордера -->
+         <tr> <!--firstString -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- конец верхней строчки бордера -->
+
+        <tr>
+            <td></td> <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><!-- right -->
+        </tr>
+        <tr>
+            <td></td><!--left  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><!-- right -->
+        </tr>
+        <tr>
+            <td></td><!--left  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><!--right  -->
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td><!--  right-->
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <!-- начало нижней строчки бордера -->
+        <tr> <!--lastString  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- конец нижней строчки бордера -->
+    </table>
+
+</body>
+
+</html>
