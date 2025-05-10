@@ -922,7 +922,9 @@ img[src="img/flatFromOwner4.png"] {}
 /* .wrapInputs3Line {
     height: 50px;
 } */
-
+#btnInst {
+    margin-top: 10px;
+}
 .wrapInputs3Line button {
     background-color: rgb(84, 84, 84);
     border-radius: 15px;

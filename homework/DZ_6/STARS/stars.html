@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div {
+            display: inline-block;
+            background-image: url('star0.png');
+        }
+        img {
+            opacity: 0;
+        }
+        img:hover {
+            opacity: 1
+        }*/
+        .wrapper {
+            float: left;
+        }
+
+        div img {
+            float: right;
+        }
+        div img {
+            content: url('star0.png');
+            
+        }
+        div img:hover,
+        div img:hover ~ img {
+            content: url('star1.png');
+        }
+    </style> 
+</head>
+<body>
+
+    <div class="wrapper">
+        <div>
+            <img alt="">
+        
+            <img alt="">
+        
+            <img alt="">
+       
+            <img alt="">
+      
+            <img alt="">
+        </div>
+    </div>
+</body>
+</html>
