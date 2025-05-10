@@ -1,0 +1,29 @@
+@media all and (max-width: 600px) {
+    .ball {
+        background: none;
+        margin: auto;
+    }
+
+    .VSport {
+        display: none;
+    }
+
+    .wrap {
+        background: none;
+    }
+
+    button {
+        display: block;
+        margin-top: -25px;
+    }
+    button:hover {
+        cursor: pointer;
+        background-color: blue;
+    }
+
+    #close {
+        display: block;
+        float: right;
+        margin-top: -43px;
+    }
+}

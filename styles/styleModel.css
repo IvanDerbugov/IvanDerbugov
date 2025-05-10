@@ -37,32 +37,6 @@ padding-bottom: 30%;
 #close{
     float: right;
 }
-/*
-margin: auto;
-color: #000;
-border-radius: 15px;
-padding: 30px;
-cursor: default; 
-}*/
-
-/* .modal {
-    width: 500px;
-    height: 300px;
-    position:fixed;
-    left: 50%;
-    top: 50%;
-    background-color: aqua;
-    margin-left: -250px;
-    margin-top: -150px; */
-
-    /* position: relative;
-    max-width: 600px;
-    margin: auto;
-    color: #000;
-    border-radius: 15px;
-    padding: 30px;
-    cursor: default; 
-}*/
 
 .SNAP {
     position: relative;

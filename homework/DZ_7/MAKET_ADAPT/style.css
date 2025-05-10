@@ -1,0 +1,49 @@
+* {
+    margin: 0px;
+}
+
+.h1 {
+    color: blue;
+    background-color: darkcyan;
+    text-align: center;
+}
+
+.VSport {
+    background-color: yellow;
+    width: 200px;
+    float: left;
+    padding: 5px;
+}
+
+.VSportText {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.FootballImg {
+    float: left;
+}
+
+.FootballH2 {
+    text-align: center;
+}
+
+.ball {
+    margin-left: 230px;
+    background: url(../img/a_ball.gif) repeat-y right;
+    background-size: 75px 75px;
+    background-color: white;
+
+}
+
+.wrap {
+    background-color: yellow;
+}
+
+.clear {
+    clear: both;
+}
+
+button {
+display: none;
+}
