@@ -5,10 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        p {
+            display: inline-block;
+        }
+
+        .textForm {
+            float: left;
+            width: 20%;
+        }
+
+        .inputsForm {
+            /* display: inline-block; */
+            float: left;
+            width: 80%;
+        }
+
+        .clearfix::after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+        .widthInput {
+            width: 100%
+        }
+    </style>
 </head>
 
 <body>
-    <form action="http://fe.it-academy.by/TestForm.php" method="post" target="_blank">
+    <!-- <form action="http://fe.it-academy.by/TestForm.php" method="post" target="_blank">
         Для публикации следующей статьи заполните, пожалуйста, следующую форму:<br>
         Название статьи:
         <input type="text" name="nameArticle"> <br>
@@ -22,12 +52,63 @@
         <input type="radio" name="publication" value="fromWebsity"> на сайте
         <input type="radio" name="publication" value="fromMagazine"> в журнале
         <input type="radio" name="publication" value="everywhere"> на сайте и в журнале <br>
-        Разрешить комментарии: 
+        Разрешить комментарии:
         <input type="checkbox" name="allowComments"> <br>
         Текст статьи: <br>
         <textarea name="textArticle" id=""></textarea>
         <br>
         <button type="submit">Опубликовать</button>
+    </form>
+    <hr> -->
+
+
+
+
+
+
+
+
+
+    <form action="http://fe.it-academy.by/TestForm.php" method="post" target="_blank" name="publicationArticle">
+
+        <div class="clearfix">
+            <p>Для публикации следующей статьи заполните, пожалуйста, следующую форму:</p><br>
+            <div class="textForm">
+                <p> Название статьи: </p><br>
+                <p>Рубрика: </p><br>
+                <p> Публикация: </p><br>
+                <p>Разрешить комментарии: </p><br>
+                <p>Текст статьи: </p><br>
+            </div>
+
+            <div class="inputsForm">
+
+                <p class="widthInput"><input class="widthInput" type="text" name="nameArticle"></p> <br>
+
+                <p>
+                    <select name="heading" id="">
+                        <option value="IT">программирование</option>
+                        <option value="news">новости</option>
+                        <option value="science">наука</option>
+                    </select>
+                </p> <br>
+                <p>
+                    <input type="radio" name="publication" value="fromWebsity"> на сайте
+                    <input type="radio" name="publication" value="fromMagazine"> в журнале
+                    <input type="radio" name="publication" value="everywhere"> на сайте и в журнале
+                </p> <br>
+                <p><input type="checkbox" name="allowComments"></p> <br>
+
+            </div>
+            <br>
+        </div>
+        <div class="publication">
+
+            <textarea name="textArticle" class="widthInput" id=""></textarea>
+            <br>
+            <button type="submit">Опубликовать</button>
+
+        </div>
     </form>
 </body>
 
