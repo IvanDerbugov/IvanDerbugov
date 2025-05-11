@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+
+<body>
+    <form action="http://fe.it-academy.by/TestForm.php" method="post" target="_blank">
+        Для публикации следующей статьи заполните, пожалуйста, следующую форму:<br>
+        Название статьи:
+        <input type="text" name="nameArticle"> <br>
+        Рубрика:
+        <select name="heading" id="">
+            <option value="IT">программирование</option>
+            <option value="news">новости</option>
+            <option value="science">наука</option>
+        </select> <br>
+        Публикация:
+        <input type="radio" name="publication" value="fromWebsity"> на сайте
+        <input type="radio" name="publication" value="fromMagazine"> в журнале
+        <input type="radio" name="publication" value="everywhere"> на сайте и в журнале <br>
+        Разрешить комментарии: 
+        <input type="checkbox" name="allowComments"> <br>
+        Текст статьи: <br>
+        <textarea name="textArticle" id=""></textarea>
+        <br>
+        <button type="submit">Опубликовать</button>
+    </form>
+</body>
+
+</html>
