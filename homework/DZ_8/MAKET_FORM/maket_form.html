@@ -4,15 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="media600.css">
     <title>form</title>
     <style>
         * {
             box-sizing: border-box;
-        }
-
-        #adaptiv {
-            display: none;
         }
 
         p {
@@ -43,12 +38,27 @@
         #resolfCom {
             white-space: nowrap;
         }
+
+        #adaptiv {
+            display: none;
+        }
+
+        @media all and (max-width: 600px) {
+            #notAdaptiv {
+                display: none;
+            }
+
+            #adaptiv {
+                display: block;
+            }
+        }
     </style>
 </head>
 
 <body>
-    
-    <form action="http://fe.it-academy.by/TestForm.php" method="post" target="_blank" name="publicationArticle" id="notAdaptiv">
+
+    <form action="http://fe.it-academy.by/TestForm.php" method="post" target="_blank" name="publicationArticle"
+        id="notAdaptiv">
 
         <div class="clearfix">
             <p>Для публикации следующей статьи заполните, пожалуйста, следующую форму:</p><br>

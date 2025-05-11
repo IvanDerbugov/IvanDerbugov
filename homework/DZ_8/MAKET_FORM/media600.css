@@ -1,9 +1,0 @@
-@media all and (max-width: 600px) {
-    #notAdaptiv {
-        display: none;
-    }
-
-    #adaptiv {
-        display: block;
-    }
-}
