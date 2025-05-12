@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class form</title>
+    <style>
+        .star {
+            color: red;
+            position: relative;
+            top: -6px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Форма заявк на работу в зоопарке
+    </h1>
+    <p>
+        Пожалуйста заполните форму. Обязательные поля помечены<span class="star">&lowast;</span>
+    </p>
+
+      <form action="http://fe.it-academy.by/TestForm.php" method="post" target="_blank" name="JobApplication">
+
+        <fieldset>
+            <legend>Контактная информация</legend>
+            <label for="">
+                Имя<span class="star">&lowast;</span>
+                <input type="text">
+            </label><br>
+            <label for="">
+                Телефон
+                <input type="text">
+            </label> <br>
+            <label for="">
+                Email<span class="star">&lowast;</span>
+                <input type="text">
+            </label>
+        </fieldset>
+   </form>
+</body>
+</html>

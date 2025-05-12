@@ -21,7 +21,7 @@ body {
 } */
 
 .conteinerGrey {
-    width: 1920px;
+    /* width: 1920px; */
     background-color: #242424;
     background-size: cover;
     margin: 0 auto;
@@ -919,12 +919,14 @@ img[src="img/flatFromOwner4.png"] {}
     color: orange;
 }
 
-/* .wrapInputs3Line {
-    height: 50px;
-} */
-#btnInst {
-    margin-top: 10px;
+
+.wrapInputs3Line button:nth-child(2),
+.wrapInputs3Line button:last-child {
+    display: inline-block;
+    position: relative;
+    top: 13px;
 }
+
 .wrapInputs3Line button {
     background-color: rgb(84, 84, 84);
     border-radius: 15px;
