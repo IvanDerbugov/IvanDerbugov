@@ -191,6 +191,11 @@ hr {
 }
 
 .playBtn {
+    display: block;
+    /* padding: 100px 100px; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -201,9 +206,7 @@ hr {
     width: 60px;
     /* размер кнопки */
     height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     /* margin-left: 95px;
@@ -218,15 +221,9 @@ hr {
     margin: 0;
     padding: 0;
     display: block;
-    transform: translateX(3px);
+    transform: translateX(20px);
     border-radius: 0;
 }
-
-main {
-    padding: 0;
-}
-
-
 
 .modal {
     position: fixed;
@@ -293,17 +290,17 @@ main {
 }
 
 .block1 h2 {
-margin: 20px;
-margin-left: 0;
+    margin: 20px;
+    margin-left: 0;
 }
 
 
 .typeHousesText {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    /* по горизонтали */
-    align-items: center;
-    /* по вертикали */
+    align-items: center; */
+    display: block;
+    text-align: center;
     height: 200px;
     /* max-width: 1920px; */
     font-size: 2em;
@@ -318,43 +315,37 @@ margin-left: 0;
         cover;
 }
 
+.typeHousesText h1 {
+    padding: 64px 0;
+}
+
 .typeHousesCards {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    /* по горизонтали */
-    align-items: center;
-    /* по вертикали */
-    /* width: 100%; */
+    align-items: center; */
+    display: inline-block;
+    text-align: center;
+    width: 100%;
     /* height: 400px; */
 }
 
 .typeHousesCards div {
-    /* width: 25%; */
+    width: 25%;
     /* width: 480px; */
-    /* float: left; */
-    padding: 0;
+    float: left;
 }
 
-.typeHousesCards div img {
-    /* width: 480px; */
-    padding: 0;
-}
+.typeHousesCards img {
+    width: 24.8%;
 
-.typeHousesCards div map {
-    padding: 0;
-}
-
-.typeHousesCards div map area {
-    padding: 0;
 }
 
 .consult {
-    display: flex;
+    display: block;
+    text-align: center;
+    /* display: flex;
     justify-content: center;
-    /* по горизонтали */
-    align-items: normal;
-    padding: 0;
-    /* text-align: center; */
+    align-items: normal; */
     /* width: 1920px; */
     /* height: 150px; */
     background-color: #242424;
@@ -364,10 +355,15 @@ margin-left: 0;
     margin-top: 30px;
     margin-bottom: 120px;
     background-color: #F8B806;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 10px;
     cursor: pointer;
     color: black;
+    font-size: 3em;
+}
+
+.consult div {
+    padding: 20px;
 }
 
 .fonSelAp {
@@ -573,12 +569,12 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
 
 
 .plusLivingComplex {
-    padding: 0;
-    display: flex;
+    display: block;
+    text-align: center;
+    /* padding: 40px 0; */
+    /*display: flex;
     justify-content: center;
-    /* по горизонтали */
-    align-items: center;
-    /* по вертикали */
+    align-items: center; */
     height: 200px;
     /* max-width: 1920px; */
     font-size: 2em;
@@ -591,6 +587,10 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
         700px 200px,
         /*размер линий*/
         cover;
+}
+.plusLivingComplex h1 {
+        padding: 64px 0;
+
 }
 
 .iconsPlusLivingCoplex {
@@ -630,12 +630,11 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
 }
 
 .optionsLayoutText {
-    padding: 0;
-    display: flex;
+    display: block;
+    text-align: center;
+    /* display: flex;
     justify-content: center;
-    /* по горизонтали */
-    align-items: center;
-    /* по вертикали */
+    align-items: center; */
     height: 200px;
     /* max-width: 1920px; */
     font-size: 2em;
@@ -649,6 +648,9 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
         /*размер линий*/
         cover;
 }
+ .optionsLayoutText h1{
+     padding: 64px 0;
+ }
 
 .imgOptionsLayout {
     float: left;
@@ -716,12 +718,11 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
 
 
 .comfortableLifeText {
-    padding: 0;
-    display: flex;
+    display: block;
+    text-align: center;
+    /* display: flex;
     justify-content: center;
-    /* по горизонтали */
-    align-items: center;
-    /* по вертикали */
+    align-items: center; */
     height: 200px;
     /* max-width: 1920px; */
     font-size: 2em;
@@ -735,6 +736,9 @@ background-image: url(img/pointsLeft.png) right no-repeat ;
         /*размер линий*/
         cover;
 }
+.comfortableLifeText h1{
+     padding: 64px 0;
+ }
 
 .quote {
     display: inline-block;
@@ -873,10 +877,10 @@ img[src="img/flatFromOwner4.png"] {}
 .requestBlock h4 {
     font-size: 2em;
     margin: 20px auto;
-    
+
 }
 
-.wrapRequest{
+.wrapRequest {
     padding: 50px auto;
 }
 
@@ -936,7 +940,8 @@ img[src="img/flatFromOwner4.png"] {}
     margin-right: 15px;
 }
 
-.wrapInputs3Line button:last-child, .wrapInputs3Line button:first-child + button {
+.wrapInputs3Line button:last-child,
+.wrapInputs3Line button:first-child+button {
     width: 60px;
     /* margin-top: 10px; */
 }
@@ -947,21 +952,25 @@ img[src="img/flatFromOwner4.png"] {}
 } */
 
 
-/* .wrapFooter1 {
-    height: 500px;
-} */
+.wrapFooter1 {
+    padding: 10px 0;
+}
 
 .footerBlock1 {
     float: left;
 }
+
 .footerBlock2 {
     float: right;
     margin-top: 177px;
 }
-.footerBlock2 p, .footerBlock3 p {
-   margin-bottom: 10px;
-   font-size: 1.5em;
+
+.footerBlock2 p,
+.footerBlock3 p {
+    margin-bottom: 10px;
+    font-size: 1.5em;
 }
+
 .footerBlock3 {
     float: right;
     margin-top: 177px;
@@ -972,27 +981,33 @@ img[src="img/flatFromOwner4.png"] {}
     padding-top: 50px;
     padding-bottom: 10px;
 }
+
 .phoneNumber {
     margin-bottom: 60px;
 }
+
 .heartService {
-    display: flex;
+    display: block;
+    text-align: center;
+    /* display: flex;
     justify-content: center;
-    /* по горизонтали */
-    align-items: center;
-    /* по вертикали */
+    align-items: center; */
     width: 200px;
     height: 60px;
-    /* padding: 16px; */
+    padding: 10px 15px;
     background-color: #F8B806;
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 50px;
 }
+
+
 #heartLogo {
-    /* margin: 10px 10px auto auto; */
+  float: left;
 }
+
 .heartService p {
+    float: left;
     text-align: left;
     margin-left: 10px;
 }
