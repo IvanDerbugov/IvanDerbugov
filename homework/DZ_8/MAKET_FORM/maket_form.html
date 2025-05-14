@@ -17,6 +17,7 @@
         .textForm {
             float: left;
             width: 170px;
+            /* max-width: 30%; */
         }
 
         .inputsForm {
@@ -43,10 +44,17 @@
             display: none;
         }
 
+        .opasity {
+            display: inline-block;
+            width: 170px;
+            height: 40px;
+        }
+
         .publication {
-            width: 90%;
-            /* margin-left: 170px;
-            width: calc(100% - 170px); */
+            display: inline-block;
+            width: 89%;
+            margin-left: -170px;
+            /* width: calc(100% - 170px); */
         }
 
         @media all and (max-width: 600px) {
@@ -96,8 +104,10 @@
             </div>
             <br>
         </div>
-        <div class="publication">
 
+        <div class="opasity"></div>
+        
+        <div class="publication">
             <textarea name="textArticle" class="widthInput" id=""></textarea>
             <br>
             <button type="submit">Опубликовать</button>
