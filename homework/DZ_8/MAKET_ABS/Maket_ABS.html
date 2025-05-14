@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABS Position</title>
+    <style>
+        #wrap {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            text-align: center;
+            /* background-color: #575555; */
+        }
+
+        #imgs {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 400px;
+            text-align: center;
+            vertical-align: middle;
+            /* padding: 100px; */
+            /* background-color: #e73737; */
+            display: inline-block;
+        }
+
+        img {
+            position: absolute;
+
+        }
+
+        img[src*='biohazard'] {
+            z-index: 1;
+            left: 50px;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+        img[src*='biohazard']:hover {
+            z-index: 3;
+        }
+
+        img[src*='Man'] {
+            z-index: 1;
+            left: 280px;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+        img[src*='Man']:hover {
+            z-index: 3;
+        }
+
+        img[src*='smoking'] {
+            z-index: 2;
+            left: 130px;
+            top: 50px;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        img[src*='Yin_and_Yang'] {
+            z-index: 1;
+            left: 162px;
+            top: 186px;
+            right: 0px;
+            bottom: 0px;
+        }
+        img[src*='Yin_and_Yang']:hover {
+            z-index: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem numquam ullam qui, natus voluptate praesentium
+        consequatur incidunt aliquam libero vitae sed adipisci distinctio corporis dolore eaque quas temporibus,
+        blanditiis aliquid quibusdam. Quam sit provident accusamus voluptas dicta error consectetur odio quibusdam enim
+        nostrum ipsum fugiat modi neque, quis ullam sapiente aperiam numquam? Ratione explicabo culpa eveniet hic, id in
+        perspiciatis, voluptatem dolore odio illo sapiente cupiditate adipisci molestias autem eos sequi consequuntur!
+        Enim unde numquam accusantium sunt architecto obcaecati mollitia autem adipisci quaerat pariatur veniam commodi
+        nulla eius ad rem, quisquam consequatur saepe doloremque, alias, minima magnam? Quod, exercitationem quidem?
+    </p>
+
+    <div id="wrap">
+        <div id="imgs">
+            <img src="biohazard.png" alt="">
+            <img src="Man-and-woman.png" alt="">
+            <img src="No_smoking.png" alt="">
+            <img src="Yin_and_Yang.png" alt="">
+        </div>
+    </div>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo porro accusantium error dolor, expedita dolore
+        suscipit eligendi! Consequuntur fuga nostrum corporis molestias veritatis ipsum minima, quasi est nobis sapiente
+        excepturi quam labore aspernatur architecto adipisci debitis, natus vero nihil numquam maxime, amet doloremque
+        delectus? Id architecto saepe provident voluptas sit.
+    </p>
+</body>
+
+</html>
