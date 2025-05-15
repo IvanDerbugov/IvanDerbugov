@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balls</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
         .clearfix::after {
             display: block;
             content: '';
@@ -14,36 +19,92 @@
 
         .clear {
             clear: both;
-
+            /* border: red 3px solid; */
         }
 
+        /* #menu,
+        #banner,
+        #content {
+            padding-bottom: 999px;
+            margin-bottom: -999px;
+            min-height: 1px;
+        } */
+
+
         #wrap {
-            background-color: tomato;
+            /* background-color: tomato; */
+            /* overflow: hidden; */
         }
 
         #menu {
             float: left;
             background-color: #1cb3a6;
             width: 20%;
+            position: relative;
         }
-
-        /* #B-C-Ber {
-            height: 10px;
-            background-color: #1cb3a6; 
-            
-         } */
 
         #banner {
             float: right;
             background-color: purple;
             width: 200px;
+            position: relative;
+
         }
 
         #content {
             background-color: tomato;
             margin-right: 200px;
             margin-left: 20%;
+            position: relative;
 
+        }
+
+        img[alt='1'] {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        img[alt='2'] {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        img[alt='3'] {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        img[alt='4'] {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        .relative {
+            position: relative;
+        }
+        #addMenu {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            /* background-color: #1cb3a6; */
+        }
+
+        #addBanner {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: purple;
+        }
+
+        #addContent {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: tomato;
         }
     </style>
 </head>
@@ -55,8 +116,12 @@
                 width 20% width 20% width 20% width 20% width 20% width 20% width 20% width 20% width 20% width 20%
                 width 20% width 20% width 20% width 20%
             </p>
-            <!-- <div id="B-C-Ber"></div> -->
-
+            <img src="ball3.png" alt="1">
+            <img src="ball3.png" alt="2">
+            <div class="clear"></div>
+            <div class="relative">
+                <div id="addMenu"><img src="ball3.png" alt="3"><img src="ball3.png" alt="4"></div>
+            </div>
         </div>
 
         <div id="banner">
@@ -66,6 +131,12 @@
                 width 200px width 200px width 200px width 200px width 200px width 200px width 200px width 200px width
                 200px
             </p>
+            <img src="ball3.png" alt="1">
+            <img src="ball3.png" alt="2">
+            <div class="clear"></div>
+            <div class="relative">
+                <div id="addBanner"><img src="ball3.png" alt="3"><img src="ball3.png" alt="4"></div>
+            </div>
         </div>
 
         <div id="content">
@@ -74,8 +145,13 @@
                 контент контент контент контент контент контент контент контент контент контент контент контент контент
                 контент контент контент контент контент контент контент
             </p>
+            <img src="ball3.png" alt="1">
+            <img src="ball3.png" alt="2">
+            <div class="clear"></div>
+            <div class="relative">
+                <div id="addContent"><img src="ball3.png" alt="3"><img src="ball3.png" alt="4"></div>
+            </div>
         </div>
-        <div class="clear"></div>
     </div>
 </body>
 
