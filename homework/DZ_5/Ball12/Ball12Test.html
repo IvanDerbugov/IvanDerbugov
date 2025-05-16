@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #block {
+            /* background: */
+                /* url(fonBlueGreen.jpg) repeat-y; */
+                /* url(fonTomato+Purple.jpg) right repeat-y */
+                /* background-position: -35% ; */
+        }
+        .wrap {
+            background:
+                /* url(fonBlueGreen.jpg) left repeat-y, */
+                url(fonTomato+Purple.jpg) right repeat-y
+                /* url(fonRight.jpg) right top; */
+                /* background-position: -35% ; */
+        }
+        #wrapMenu {
+            float: left;
+            width: 20%;
+            height: 100%;
+            background:
+                url(fonBlueGreen.jpg) left repeat-y
+        }
+
+        
+
+        .clearfix::after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+        #menu {
+            /* float: left;
+            background:
+                url(ball3.png) left top no-repeat,
+                url(fonBlueGreen.jpg) repeat-y,
+                #1cb3a6; */
+            width: 100%;
+        }
+
+        #banner {
+            background:
+                /* url(fonRight.jpg) no-repeat top right,
+                url(fonRight.jpg) no-repeat bottom right, */
+                purple;
+            width: 200px;
+            float: right;
+        }
+
+        #content {
+            background:
+                /* url(ball3.png) right top no-repeat, */
+                tomato;
+            margin-right: 200px;
+            margin-left: 20%;
+            margin-right: 200px;
+            min-width: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="block">
+        <div class="wrap clearfix">
+            <div id="wrapMenu">
+                <div id="menu">
+                    <p>
+                        width 20% width 20% width 20% width 20% width 20% width 20% width 20% width 20% width 20% width 20%
+                        width 20% width 20% width 20% width 20%
+                    </p>
+                </div>
+            </div>
+            <div id="banner" class="clearfix">
+                <p>
+                    width 200px width 200px width 200px width 200px width 200px width 200px width 200px width 200px
+                    width
+                    200px
+                    width 200px width 200px width 200px width 200px width 200px width 200px width 200px width 200px
+                    width
+                    200px
+                </p>
+            </div>
+            <div id="content" class="clearfix">
+                <p>
+                    контент контент контент контент контент контент контент контент контент контент контент контент
+                    контент
+                    контент контент контент контент контент контент контент контент контент контент контент контент
+                    контент
+                    контент контент контент контент контент контент контент
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
