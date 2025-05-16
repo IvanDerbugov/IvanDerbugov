@@ -33,6 +33,11 @@
         }
 
         .widthInput {
+            /* width: 100%; */
+            margin-left: 170px;
+            margin-top: 12px;
+        }
+        .widthInput input {
             width: 100%;
         }
 
@@ -44,17 +49,28 @@
             display: none;
         }
 
-        .opasity {
+        /* .opasity {
             display: inline-block;
             width: 170px;
             height: 40px;
-        }
+        } */
 
         .publication {
-            display: inline-block;
-            width: 89%;
-            margin-left: -170px;
+            /* display: inline-block; */
+            width: 100%;
+            /* margin-left: -170px; */
             /* width: calc(100% - 170px); */
+        }
+        textarea {
+            width: 100%;
+        }
+
+
+        #nameArticle {
+            width: 100%;
+        }
+        #OptionIT {
+            width: 100%;
         }
 
         @media all and (max-width: 600px) {
@@ -71,7 +87,8 @@
 
 <body>
 
-    <form action="http://fe.it-academy.by/TestForm.php" method="post" target="_blank" name="publicationArticle" id="notAdaptiv">
+    <form action="http://fe.it-academy.by/TestForm.php" method="post" target="_blank" name="publicationArticle"
+        id="notAdaptiv">
 
         <div class="clearfix">
             <p>Для публикации следующей статьи заполните, пожалуйста, следующую форму:</p><br>
@@ -83,10 +100,8 @@
                 <p>Текст статьи: </p><br>
             </div>
 
+            <div class="widthInput"><input type="text" name="nameArticle"></div> <br>
             <div class="inputsForm">
-
-                <p class="widthInput"><input class="widthInput" type="text" name="nameArticle"></p> <br>
-
                 <p>
                     <select name="heading" id="">
                         <option value="IT">программирование</option>
@@ -105,10 +120,10 @@
             <br>
         </div>
 
-        <div class="opasity"></div>
-        
+        <!-- <div class="opasity"></div> -->
+
         <div class="publication">
-            <textarea name="textArticle" class="widthInput" id=""></textarea>
+            <textarea name="textArticle" id=""></textarea>
             <br>
             <button type="submit">Опубликовать</button>
 
@@ -127,10 +142,10 @@
     <form action="http://fe.it-academy.by/TestForm.php" method="post" target="_blank" id="adaptiv">
         Для публикации следующей статьи заполните, пожалуйста, следующую форму:<br><br>
         Название статьи: <br>
-        <input type="text" name="nameArticle" class="widthInput"> <br>
-        Рубрика:
-        <select name="heading" id="" class="widthInput">
-            <option value="IT">программирование</option>
+        <input type="text" id="nameArticle" name="nameArticle"> <br>
+        Рубрика: <br>
+        <select name="heading" id="OptionIT">
+            <option id="" value="IT">программирование</option>
             <option value="news">новости</option>
             <option value="science">наука</option>
         </select> <br>
@@ -141,7 +156,7 @@
         Разрешить комментарии:
         <input type="checkbox" name="allowComments"> <br>
         Текст статьи: <br>
-        <textarea name="textArticle" id="" class="widthInput"></textarea>
+        <textarea name="textArticle" id=""></textarea>
         <br>
         <button type="submit">Опубликовать</button>
     </form>
