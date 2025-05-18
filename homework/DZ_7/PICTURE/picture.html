@@ -24,10 +24,11 @@
     </p>
     <picture>
         <source 
-            srcset="img/computer.jpg 1000w,
-                    img/mobile.jpg 400w"
-            sizes="(min-width: 1000px) 1000px,
-                   (min-width: 400px) 400px">
+            srcset="img/computer.jpg width: 600px"
+            media="(min-width: 1000px)">
+        <source 
+            srcset="img/mobile.jpg width: 300px"
+            media="(max-width: 999px)">
         <img src="img/mobile.jpg" alt="Адаптивное изображение">
     </picture>
 </body>
