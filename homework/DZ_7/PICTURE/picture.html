@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>teg picture</title>
     <style>
+        img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
+
+        @media (max-width: 999px) {
+            img {
+                max-width: 400px;
+            }
+        }
     </style>
 </head>
 
@@ -24,12 +35,23 @@
     </p>
     <picture>
         <source 
-            srcset="img/computer.jpg width='600px'"
+            srcset="img/computer.jpg"
             media="(min-width: 1000px)">
         <source 
-            srcset="img/mobile.jpg width='300px'"
+            srcset="img/mobile.jpg"
             media="(max-width: 999px)">
         <img src="img/mobile.jpg" alt="Адаптивное изображение">
+    </picture>
+<br>
+
+    <picture>
+        <source 
+            srcset="img/yesWEBP.webp"
+            type="image/webp">
+        <source 
+            srcset="img/noWEBP.jpg"
+            type="image/jpeg">
+        <img src="img/noWEBP.jpg" alt="Адаптивное изображение">
     </picture>
 </body>
 
