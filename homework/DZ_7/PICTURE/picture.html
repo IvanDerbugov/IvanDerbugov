@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teg picture</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- <div id="mobile">
+        <p>mobile</p>
+    </div>
+    <div id="computer">
+        <p>computer</p>
+    </div> -->
+    <h2>
+        Вы в курсе, что мы следим за вами?
+    </h2>
+    <p>
+        Вот так perplexity воспринимает вас в данный момент!
+    </p>
+    <picture>
+        <source 
+            srcset="img/computer.jpg 1000w,
+                    img/mobile.jpg 400w"
+            sizes="(min-width: 1000px) 1000px,
+                   (min-width: 400px) 400px">
+        <img src="img/mobile.jpg" alt="Адаптивное изображение">
+    </picture>
+</body>
+
+</html>
