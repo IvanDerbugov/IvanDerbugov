@@ -47,6 +47,10 @@
     cursor: pointer;
 }
 
+button {
+    cursor: pointer;
+}
+
 
 
 
@@ -201,18 +205,51 @@
     margin: 117px auto;
 }
 
-.frame {
-    padding: 28px;
-    margin-right: 60px;
-    border: 1px solid #000;
-    width: 416px;
-    height: 600px;
+.list2 div:first-of-type {
+    background: url(img/list2.jpg);
 }
 
-.frame div {
+.wrapFrame {
+    position: relative;
+    margin-right: 60px;
     width: 360px;
     height: 544px;
-    background: url(img/list2.jpg);
+}
+
+.frame1 {
+    position: absolute;
+    top: 0;
+    right: -28px;
+    width: 2px;
+    height: 100px;
+    border-right: 2px solid #000;
+}
+
+.frame2 {
+    position: absolute;
+    top: -28px;
+    right: 0px;
+    width: 100px;
+    height: 2px;
+    border-top: 2px solid #000;
+}
+
+.frame3 {
+    position: absolute;
+    bottom: -28px;
+    left: 0px;
+    width: 119px;
+    height: 2px;
+    border-top: 2px solid #000;
+}
+
+.frame4 {
+    position: absolute;
+    bottom: 0px;
+    left: -28px;
+    width: 2px;
+    height: 103px;
+    border-left: 2px solid #000;
 }
 
 .list2 h1 {
@@ -230,9 +267,189 @@
 .aboutUs h1 {
     text-align: center;
     margin: 59px auto 40px;
-} 
+}
 
 .aboutUs p {
- font-size: 30px;
- color: #000;
+    font-size: 30px;
+    color: #000;
+}
+
+.WhyChooseUs {
+    margin: 145px auto;
+}
+
+.WhyChooseUs h1 {
+    font-size: 63px;
+}
+
+.iconWithText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 152px;
+}
+
+.iconWithText span {
+    margin-top: 18px;
+    font-size: 26px;
+    color: #000;
+    text-align: center;
+}
+
+.BTNIcons {
+    margin: 79px auto 19px;
+}
+
+.BTNIcons button {
+    width: 152px;
+    height: 152px;
+    border: none;
+}
+
+.icon1 {
+    height: 142px;
+    background: url(img/logos/WhyChooseUs1.png) no-repeat;
+}
+
+.icon2 {
+    background: url(img/logos/WhyChooseUs2.png) no-repeat;
+}
+
+.icon3 {
+    background: url(img/logos/WhyChooseUs3.png) no-repeat;
+}
+
+.icon4 {
+    background: url(img/logos/WhyChooseUs4.png) no-repeat;
+}
+
+.icon5 {
+    background: url(img/logos/WhyChooseUs5.png) no-repeat;
+}
+
+.icon6 {
+    background: url(img/logos/WhyChooseUs6.png) no-repeat;
+}
+
+.payLater {
+    text-align: center;
+    margin-left: 87px;
+}
+
+.frameForPayLater1 {
+    width: 936px;
+    height: 68px;
+    border-left: 2px solid #AF9678;
+}
+
+.frameForPayLater2 {
+    justify-content: center;
+    position: relative;
+    width: 936px;
+    height: 122px;
+    border-right: 2px solid #AF9678;
+    border-top: 2px solid #AF9678;
+}
+
+.frameForPayLater2 div {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 400px;
+    height: 1px;
+    border-bottom: 2px solid #AF9678;
+    color: #000;
+}
+
+
+.catalog h1 {
+    margin: 145px auto 125px;
+}
+
+.catalogImg {
+    width: 332px;
+    height: 608px;
+    /* padding: 50px auto; */
+}
+
+.catalogImg p {
+    color: #fff;
+    text-align: center;
+}
+.catalogText1 {
+    margin: 285px auto;
+    font-size: 33px;
+}
+.catalogText2 {
+    font-size: 29px;
+    margin: 265px auto;
+}
+.catalogText3 {
+    margin: 285px auto;
+    font-size: 35px;
+}
+
+.catalog .flexConteiner div:nth-of-type(1) {
+    background: 
+    url(img/catalogFonForImg.png),
+    url(img/catalogImg1.jpg);
+}
+
+.catalog .flexConteiner div:nth-of-type(2) {
+    background: 
+    url(img/catalogFonForImg.png),
+    url(img/catalogImg2.jpg);
+}
+
+.catalog .flexConteiner div:nth-of-type(3) {
+    background: 
+    url(img/catalogFonForImg.png),
+    url(img/catalogImg3.jpg);
+}
+
+
+.modernMaterials h1 {
+margin: 159px auto 100px;
+}
+
+.matFit {
+    justify-content: space-around;
+}
+
+
+.matFit button {
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: #000;
+}
+
+/* .matFit button:nth-of-type(1) {
+text-decoration: underline;
+} */
+
+.matFit div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 337px;
+    height: 63px;
+}
+.matFit div:first-of-type {
+    border-bottom: 2px solid #000;
+}
+
+.materials {
+    margin: 59px auto 149px 120px;
+}
+.materials button {
+    background: none;
+    border: none;
+}
+.materials div:last-of-type {
+    overflow: hidden;
+}
+
+.materials button img {
+    
 }
