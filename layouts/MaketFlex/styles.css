@@ -38,6 +38,17 @@
     align-items: center;
 }
 
+.fixed {
+    position: fixed;
+    right: -20px;
+    bottom: -20px;
+    width: 76px;
+    height: 76px;
+}
+
+.wrapBtnTop {
+    position: relative;
+}
 
 
 
@@ -186,15 +197,17 @@
 
 .list2 {
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
     margin: 117px auto;
 }
 
 .frame {
     padding: 28px;
+    margin-right: 60px;
     border: 1px solid #000;
     width: 416px;
     height: 600px;
-    margin-right: 7px;
 }
 
 .frame div {
