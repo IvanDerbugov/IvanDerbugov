@@ -38,17 +38,16 @@
     align-items: center;
 }
 
-.fixed {
+.BTNfixed {
     position: fixed;
-    right: -20px;
-    bottom: -20px;
+    right: 56px;
+    bottom: 56px;
     width: 76px;
     height: 76px;
+    cursor: pointer;
 }
 
-.wrapBtnTop {
-    position: relative;
-}
+
 
 
 
@@ -224,3 +223,16 @@
     margin: 26px auto 34px;
 }
 
+.aboutUs {
+    border-top: 2px solid #AF9678;
+}
+
+.aboutUs h1 {
+    text-align: center;
+    margin: 59px auto 40px;
+} 
+
+.aboutUs p {
+ font-size: 30px;
+ color: #000;
+}
