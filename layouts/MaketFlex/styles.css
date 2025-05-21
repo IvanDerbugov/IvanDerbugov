@@ -376,40 +376,43 @@ button {
     color: #fff;
     text-align: center;
 }
+
 .catalogText1 {
     margin: 285px auto;
     font-size: 33px;
 }
+
 .catalogText2 {
     font-size: 29px;
     margin: 265px auto;
 }
+
 .catalogText3 {
     margin: 285px auto;
     font-size: 35px;
 }
 
 .catalog .flexConteiner div:nth-of-type(1) {
-    background: 
-    url(img/catalogFonForImg.png),
-    url(img/catalogImg1.jpg);
+    background:
+        url(img/catalogFonForImg.png),
+        url(img/catalogImg1.jpg);
 }
 
 .catalog .flexConteiner div:nth-of-type(2) {
-    background: 
-    url(img/catalogFonForImg.png),
-    url(img/catalogImg2.jpg);
+    background:
+        url(img/catalogFonForImg.png),
+        url(img/catalogImg2.jpg);
 }
 
 .catalog .flexConteiner div:nth-of-type(3) {
-    background: 
-    url(img/catalogFonForImg.png),
-    url(img/catalogImg3.jpg);
+    background:
+        url(img/catalogFonForImg.png),
+        url(img/catalogImg3.jpg);
 }
 
 
 .modernMaterials h1 {
-margin: 159px auto 100px;
+    margin: 159px auto 100px;
 }
 
 .matFit {
@@ -435,6 +438,7 @@ text-decoration: underline;
     width: 337px;
     height: 63px;
 }
+
 .matFit div:first-of-type {
     border-bottom: 2px solid #000;
 }
@@ -442,24 +446,28 @@ text-decoration: underline;
 .materials {
     margin: 59px auto 149px 120px;
 }
+
 .materials button {
     background: none;
     border: none;
 }
+
 /* .materials button:first-of-type {
     margin-right: -30px;
 }
 .materials button:last-of-type {
     margin-left: -30px;
 } */
-.materials div{
+.materials div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .materials div:last-of-type {
     overflow: hidden;
 }
+
 .materials span {
     margin-top: 18px;
     font-size: 30px;
@@ -483,6 +491,7 @@ text-decoration: underline;
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .offer1 {
     background: url(img/offer1.jpg);
 }
@@ -511,8 +520,8 @@ text-decoration: underline;
     position: relative;
     width: 340px;
     height: 432px;
-    /* margin: 0; */
 }
+
 .optionOffer {
     position: absolute;
     top: -20px;
@@ -521,9 +530,56 @@ text-decoration: underline;
     color: #fff;
     background-color: #11100E;
     padding: 10px 19px;
-   }
-   .nameOffer {
-    margin-top: 24px;
-   }
+}
 
-  
+.nameOffer {
+    margin-top: 24px;
+}
+
+.priceOffer {
+    font-size: 28px;
+    color: #E52B2B;
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+.riviera1Price,
+.riviera5Price {
+    color: #937A60;
+}
+
+.riviera5Price {
+    font-size: 25px;
+}
+
+.oldPrice {
+    font-size: 13px;
+    color: #937A60;
+    margin-right: 8px;
+}
+
+.riviera5OldPrice {
+    color: #E52B2B;
+}
+
+.flexPriceOffer {
+    /* display: flex; */
+}
+
+/* .price-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+} */
+
+.wrapFlexForDescription {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.wrapFlexForPrice {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
