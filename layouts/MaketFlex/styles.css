@@ -603,14 +603,16 @@ text-decoration: underline;
 }
 
 .followUs {
+    position: relative;
+    z-index: 2;
     margin: 104px auto 148px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background:
-        url(img/iphone.png) no-repeat,
+        /* url(img/iphone.png) no-repeat, */
         #161513;
-    background-position: 1034px 125px;
+    /* background-position: 1034px 125px; */
 }
 
 .followUs h1 {
@@ -623,11 +625,24 @@ text-decoration: underline;
     color: #fff;
 }
 
+/* .wrapInputNumber {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:
+        url(img/iphone.png) no-repeat;
+    background-position: 1034px 125px;
+    z-index: -1;
+} */
+
 .followUs input {
     width: 758px;
     height: 64px;
     border-radius: 8px;
     font-size: 30px;
+    /* background:
+        url(img/iphone.png) no-repeat;
+    background-position: 1034px 125px; */
 }
 
 .BTNReference {
@@ -690,11 +705,245 @@ text-decoration: underline;
     height: 26px;
     background: #fff;
     border-radius: 50%;
-    border: solid 1px #937A60 ;
+    border: solid 1px #937A60;
 }
 
 .switchReview button:nth-of-type(1) {
     background: #937A60;
 }
 
+.production {
+    margin: 149px auto;
+}
+
+.production h1 {
+    margin-bottom: 116px;
+}
+
+.productionImg {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    height: 604px;
+    position: relative;
+}
+
+.productionImgLeft {
+    flex-grow: 1;
+    height: 100%;
+    background: url(img/productionImgLeft.jpg) no-repeat;
+    background-size: cover;
+}
+
+.productionImgRight {
+    /* width: 69%; */
+    flex-grow: 2;
+    height: 100%;
+    background: url(img/productionImgRight.jpg) no-repeat;
+    background-size: cover;
+}
+
+.productionImgFonText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 132px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 948px;
+    height: 340px;
+    background: url(img/fonForProduction.png) no-repeat;
+}
+
+.productionImgFonText p {
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+.productionImgFonText p span {
+    font-size: 49px;    
+    position: relative;
+}
+
+.productionImgFonText p span::before {
+    content: url(img/logos/0.png);
+    position: absolute;
+    top: -5px;
+    left: -7px;
+    z-index: -1;
+}
+
+.planWork h1 {
+    margin-bottom: 97px;
+}
+
+.workPlanFlex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.workPlanText {
+    font-size: 30px;
+    color: #000;
+    margin-left: 28px;
+}
+
+img[src="img/logos/rightArrow1.png"] {
+    margin-left: 55px;
+    margin-right: 36px;
+}
+
+.workPlanLine2 {
+    margin: 71px auto;
+}
+
+img[src="img/logos/leftArrow2.png"] {
+    margin-left: 77px;
+    margin-right: 52px;
+}
+
+.pRelative {
+    position: relative;
+}
+
+img[alt="bottomArrow2"] {
+    position: absolute;
+    top: -110px;
+    left: 69px;
+}
+
+img[alt="bottomArrow3"] {
+    position: absolute;
+    top: -110px;
+    left: -10px;
+}
+
+img[alt="rightArrow3"] {
+    margin-left: 71px;
+    margin-right: 79px;
+}
+
+
+.askPrice {
+    margin: 148px auto;
+    background-color: #11100E;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.askPriceText {
+    margin-left: 70px;
+}
+
+.askPriceText h1 {
+    font-size: 68px;
+    color: #fff;
+}
+
+.askPriceText p {
+    font-size: 30px;
+    color: #fff;
+    margin-top: 26px;
+    margin-bottom: 34px;
+}
+
+
+.contactsText {}
+
+.wrapOrderConsultation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 540px;
+    height: 720px;
+    background: url(img/fonOrderConsultation.jpg);
+
+}
+
+.orderConsultation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formOrderConsultation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.orderConsultation p {
+    font-size: 30px;
+    color: #fff;
+    margin-top: 90px;
+    margin-bottom: 36px;
+}
+
+.formOrderConsultation input {
+    font-size: 26px;
+    width: 412px;
+    height: 56px;
+    border-radius: 10px;
+}
+
+.formOrderConsultation input:nth-of-type(2) {
+    margin: 32px auto;
+}
+
+.formOrderConsultation textarea {
+    font-size: 26px;
+    width: 412px;
+    height: 242px;
+    border-radius: 10px;
+}
+
+.formOrderConsultation button {
+    margin: 50px auto 66px;
+}
+
+.contactsText {
+    font-size: 30px;
+    color: #000;
+    margin-left: 83px;
+}
+
+.contactsText p {
+    margin-bottom: 50px;
+
+}
+
+.messengersSprite {
+    height: 40px;
+}
+
+.messengersSpriteViber {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url(img/logos/messengersSprite.png);
+    background-position: 0 0;
+}
+.messengersSpriteTelegram {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url(img/logos/messengersSprite.png);
+    background-position: -57px 0;
+}
+
+.messengersSpriteWhatsapp {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url(img/logos/messengersSprite.png);
+    background-position: -115px 0;
+}
 
