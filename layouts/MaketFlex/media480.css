@@ -1,0 +1,22 @@
+@media (max-width: 480px) {
+    .wrapMenu {
+        display: none;
+    }
+
+    .telTimeWork {
+        display: none;
+    }
+
+    .btnMenu {
+        display: block;
+        width: 26px;
+        height: 17px;
+    }
+
+    .btnMenu button {
+        background: none;
+        border: none;
+        width: 26px;
+        height: 17px;
+    }
+}

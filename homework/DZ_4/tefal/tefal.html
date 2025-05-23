@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tefal</title>
+    <style>
+        .backgrounds {
+            width: 1000px;
+            height: 1000px;
+            background: url('bitTefal.png') no-repeat center center,
+            url('BigTefal.png') no-repeat center center;
+            background-size: 700px 265px, cover;
+            background-position: 142px 494px, 0 0;
+        }
+
+        .position {
+            width: 1000px;
+            height: 1000px;
+            position: relative;
+        }
+
+        .position div img:first-of-type {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <h1>С помощью backgrounds</h1>
+    <div class="backgrounds"></div>
+
+    <h1>С помощью position</h1>
+    <div class="position">
+        <img src="BigTefal.png" alt="" width="1000px" height="1080px">
+        <div>
+            <img src="bitTefal.png" alt="" width="700px" height="265px">
+        </div>
+    </div>
+</body>
+</html>

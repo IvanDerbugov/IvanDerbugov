@@ -81,6 +81,10 @@ button {
     margin-right: 50px;
 }
 
+.btnMenu {
+    display: none;
+}
+
 .header ul {
     display: flex;
     gap: 45px;
