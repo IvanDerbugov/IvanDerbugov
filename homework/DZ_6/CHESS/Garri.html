@@ -8,7 +8,16 @@
         a[href^='https']::before {
             content: url('extref.png');
         }
+        /* @media print {
+            a::before {
+                display: none;
+            }
 
+            a::before {
+                display: block;
+                content: ('ссылка ');
+            }
+        } */
     </style>
 </head>
 <body>

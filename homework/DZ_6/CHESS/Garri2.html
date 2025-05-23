@@ -11,6 +11,35 @@
             /* display: inline-block;
             width: 100px; */
         }
+    
+
+            @media print {
+                a[href^='https'] {
+                    background: none;
+                }
+
+                a[href^='https']::before {
+                    content: "ссылка '";
+                }
+
+                a[href^='https']::after {
+                    content: "' на https://chesspro.ru/statistic/botvinnik.shtml";
+                }
+
+
+                a:not([href^='https']) {
+                    background: none;
+                }
+
+                a:not([href^='https'])::before {
+                    content: "ссылка '";
+                }
+
+                a:not([href^='https'])::after {
+                    content: "' на вверх данной страницы";
+                }
+            }
+        
 
     </style>
 </head>
