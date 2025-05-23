@@ -227,26 +227,32 @@
                 </button>
             </div>
         </div>
-    </div>
 
-    <div class="flexConteiner materials">
-        <button>
-            <img src="img/BtnLeft.png" alt="">
-        </button>
-        <div>
-            <img src="img/materialsImg1.jpg" alt="">
-            <span>Лдсп</span>
-        </div>
-        <div>
-            <img src="img/materialsImg2.jpg" alt="">
-            <span>Стекло</span>
-        </div>
-        <button>
-            <img src="img/BtnRight.png" alt="">
-        </button>
-        <div>
+
+        <div class="conteiner materials">
+
+            <div class="wrapMaterials">
+                <div class="materialsImg">
+                    <img src="img/materialsImg1.jpg" alt="">
+                    <span>Лдсп</span>
+                </div>
+                <div class="materialsImg">
+                    <img src="img/materialsImg2.jpg" alt="">
+                    <span>Стекло</span>
+
+                </div>
+            </div>
+            <button>
+                <img src="img/BtnLeft.png" alt="">
+            </button>
+            <button>
+                <img src="img/BtnRight.png" alt="">
+            </button>
+
+            <!-- <div>
             <img src="img/materialsImg3.jpeg" alt="" width="509px" height="323px">
             <span>Ламинат</span>
+        </div> -->
         </div>
     </div>
 
@@ -341,20 +347,21 @@
 
     <form action="">
         <div class="followUs">
-            <h1 class="h1Title">
-                Акции
-            </h1>
-            <p class="pDiscraption">
-                Узнай первым об акциях и скидках
-            </p>
+            <div class="wrapFollowUs">
+                <h1 class="h1Title">
+                    Акции
+                </h1>
+                <p class="pDiscraption">
+                    Узнай первым об акциях и скидках
+                </p>
 
-            <!-- <div class="wrapInputNumber"></div>  -->
-            <input type="text" placeholder="    введите номер телефона или email">
+                <div class="wrapInputNumber"></div>
+                <input type="text" placeholder="    введите номер телефона или email">
 
-            <button class="BTNReference">
-                Подписаться
-            </button>
-
+                <button class="BTNReference">
+                    Подписаться
+                </button>
+            </div>
         </div>
     </form>
     <div class="conteiner reviews">
@@ -467,7 +474,7 @@
         <h1 class="h1Title">
             Контакты
         </h1>
-        <div class="flexConteiner">
+        <div class="wrapContacts">
             <div class="contactsText">
                 <p class="">
                     Адрес офиса:<br>
@@ -483,9 +490,12 @@
                     Режим работы:<br>пн-вс 9:00-21:00
                 </p>
                 <p class="">
-                    <a href=""><div class="messengersSpriteViber"></div></a>
-                    <a href="www.telegram.com"><div class="messengersSpriteTelegram"></div></a>
-                    <a href="www.whatsapp.com"><div class="messengersSpriteWhatsapp"></div></a>
+                    <a href="www.viber.com" class="messengersSpriteViber">
+                    </a>
+                    <a href="www.telegram.com" class="messengersSpriteTelegram">
+                    </a>
+                    <a href="www.whatsapp.com" class="messengersSpriteWhatsapp">
+                    </a>
                 </p>
             </div>
 
@@ -511,6 +521,25 @@
             </div>
         </div>
     </div>
+
+    <footer class="">
+        <div class="conteiner wrapFooter flexConteiner">
+            <p class="footerLogo">
+                MADESHKAF
+            </p>
+            <div>
+                <p>О нас</p>
+                <p>Каталог</p>
+                <p>Материалы</p>
+                <p>Цены</p>
+                <p>Отзывы</p>
+                <p>Контакты</p>
+            </div>
+            <div>
+                <img src="img/mapFooter.jpg" alt="">
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

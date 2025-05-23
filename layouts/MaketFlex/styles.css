@@ -444,21 +444,36 @@ text-decoration: underline;
 }
 
 .materials {
-    margin: 59px auto 149px 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 59px auto 149px;
+}
+
+.wrapMaterials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
 .materials button {
+    position: absolute;
     background: none;
     border: none;
 }
 
-/* .materials button:first-of-type {
-    margin-right: -30px;
+.materials button:first-of-type {
+    left: 15px;
+    top: 42%;
 }
 .materials button:last-of-type {
-    margin-left: -30px;
-} */
-.materials div {
+    right: 15px;
+    top: 42%;
+}
+
+.materialsImg {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -603,16 +618,17 @@ text-decoration: underline;
 }
 
 .followUs {
-    position: relative;
-    z-index: 2;
+
     margin: 104px auto 148px;
+    background-color: #161513;
+    z-index: 1;
+}
+
+.wrapFollowUs {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background:
-        /* url(img/iphone.png) no-repeat, */
-        #161513;
-    /* background-position: 1034px 125px; */
+    align-items: center; 
 }
 
 .followUs h1 {
@@ -625,21 +641,22 @@ text-decoration: underline;
     color: #fff;
 }
 
-/* .wrapInputNumber {
+.wrapInputNumber {
+    width: 455px;
+    height: 464px;
     position: absolute;
-    top: 0;
-    left: 0;
-    background:
-        url(img/iphone.png) no-repeat;
-    background-position: 1034px 125px;
-    z-index: -1;
-} */
+    top: 18%;
+    left: 60%;
+    background:url(img/iphone.png) no-repeat;
+    z-index: 0;
+}
 
 .followUs input {
     width: 758px;
     height: 64px;
     border-radius: 8px;
     font-size: 30px;
+    z-index: 1;
     /* background:
         url(img/iphone.png) no-repeat;
     background-position: 1034px 125px; */
@@ -854,9 +871,6 @@ img[alt="rightArrow3"] {
     margin-bottom: 34px;
 }
 
-
-.contactsText {}
-
 .wrapOrderConsultation {
     display: flex;
     justify-content: center;
@@ -909,6 +923,12 @@ img[alt="rightArrow3"] {
     margin: 50px auto 66px;
 }
 
+.wrapContacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 .contactsText {
     font-size: 30px;
     color: #000;
@@ -918,10 +938,6 @@ img[alt="rightArrow3"] {
 .contactsText p {
     margin-bottom: 50px;
 
-}
-
-.messengersSprite {
-    height: 40px;
 }
 
 .messengersSpriteViber {
@@ -947,3 +963,29 @@ img[alt="rightArrow3"] {
     background-position: -115px 0;
 }
 
+footer {
+    padding: 53px 0;
+    margin-top: 190px;
+    background-color: #937A60;
+}
+
+footer p {
+    margin-bottom: 9px;
+    font-size: 30px;
+    color: #fff;
+}
+
+.footerLogo {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.wrapFooter div p:last-of-type {
+   margin-bottom: 0;
+}
+
+footer img {
+    border-radius: 8px;
+}
