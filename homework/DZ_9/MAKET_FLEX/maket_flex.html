@@ -19,7 +19,6 @@
         .VSport {
             background-color: yellow;
             width: 200px;
-            /* float: left; */
             padding: 5px;
             /* border: 5px solid purple; */
         }
@@ -30,7 +29,9 @@
         }
 
         .FootballImg {
-            /* float: left; */
+            height: auto;
+            flex-shrink: 0;
+            display: block;
         }
 
         .FootballH2 {
@@ -38,24 +39,82 @@
         }
 
         .ball {
-            /* margin-left: 230px; */
-            height: 100%;
-            border: solid 5px green;
+            /* border: solid 5px green; */
             background: url(img/a_ball.gif) repeat-y right;
-            background-size: 75px 75px;
             background-color: white;
 
         }
 
-      
-        .wrap{
+
+        .wrap {
             display: flex;
             justify-content: flex-start;
-            align-items: center;
+            align-items: stretch;
+            gap: 20px;
+            background-size: 75px 75px;
+        }
+
+        .wrapImgText {
+            display: flex;
+            align-items: flex-start;
+            max-width: 100%;
             gap: 20px;
         }
 
-        
+        .ballText {
+            flex: 1;
+            align-self: stretch;
+        }
+
+
+
+
+        @media (max-width: 400px) {
+            .h1 {
+                display: none;
+            }
+
+            .VSport {
+                background-color: #fff;
+            }
+
+            .wrap {
+                flex-direction: column-reverse;
+            }
+
+            .wrapImgText {
+                flex-direction: column;
+            }
+
+            .FootballImg {
+                width: 100%;
+            }
+
+            .FootballH2 {
+                margin-bottom: 20px;
+            }
+
+            .ball {
+                background: none;
+            }
+
+            .VSportText {
+                padding: 0;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .VSport {
+                width: 100%;
+            }
+            li{
+                margin-right: 10px;
+                
+            }
+        }
     </style>
 </head>
 
@@ -92,31 +151,36 @@
 
         <div class="ball">
             <h2 class="FootballH2">ФУТБОЛ</h2>
-            <img class="FootballImg" src="img/cup.png" alt="">
-            <!-- <img class="ball" src="../img/ball.png" alt=""> -->
-            <p>
-                Футбол - командный вид
-                спорта, в котором целью
-                является забить мяч в ворота
-                соперника ногами или другими
-                частями тела (кроме рук)
-                большее количество раз, чем
-                команда соперника.
-                Есть 17 официальных правил
-                игры, каждое из которых содержит список соворок и руково-
-                дящих принципов. Эти правила предназначены для применения
-                на всех уровнях футбола, хотя есть некоторые изменения для та-
-                ких групп, как юниоры, взрослые, женщины и люди с ограниченными
-                физическими возможностями, Законы очень часто формулирова-
-                лись в общих чертах, которые позволяют упростить их применения в зависимости от характера игры.
-            </p>
-            <div class="clear"></div>
+            <div class="wrapImgText">
+                <img class="FootballImg" src="img/cup.png" alt="">
+                <div class="ballText">
+                    <p>
+                        Футбол - командный вид
+                        спорта, в котором целью
+                        является забить мяч в ворота
+                        соперника ногами или другими
+                        частями тела (кроме рук)
+                        большее количество раз, чем
+                        команда соперника.
+                    </p><br>
+                    <p>
+                        Есть 17 официальных правил
+                        игры, каждое из которых содержит список соворок и руково-
+                        дящих принципов. Эти правила предназначены для применения
+                        на всех уровнях футбола, хотя есть некоторые изменения для та-
+                        ких групп, как юниоры, взрослые, женщины и люди с ограниченными
+                        физическими возможностями, Законы очень часто формулирова-
+                        лись в общих чертах, которые позволяют упростить их применения в зависимости от характера игры.
+                    </p>
+
+                </div>
+            </div>
         </div>
     </div>
     <div class="h1">
         <h1>ГЛАВНОЕ НЕ ПОБЕДА, А УЧАСТИЕ!</h1>
     </div>
-    
+
 </body>
 
 </html>
