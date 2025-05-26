@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #house {
+            fill: #fff;
+        }
+        #house:hover {
+            fill: #bfa77f;
+        }
+        #roof {
+            fill: #fff;
+        }
+        #roof:hover {
+            fill: #bfa77f;
+        }
+        #door {
+            fill: #fff;
+        }
+        #door:hover {
+            fill: #000;
+        }
+        #doorHandle {
+            fill: #fff;
+        }
+        #doorHandle:hover {
+            fill: #FFD700;
+        }
+        #catBody {
+            fill: #fff;
+        }
+        #catBody:hover {
+            fill: #d1bfa3;
+        }
+        #catHead {
+            fill: #fff;
+        }
+        #catHead:hover {
+            fill: #d1bfa3;
+        }
+        #sun {
+            fill: #fff;
+        }
+        #sun:hover {
+            fill: #FFD700;
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="900" height="500" xmlns="http://www.w3.org/2000/svg">
+        <!-- Дом -->
+        <rect id="house" x="300" y="150" width="300" height="300" fill="correntColor" stroke="#bfa77f" stroke-width="1" />
+        <!-- Крыша -->
+        <!-- Крыша -->
+        <polygon id="roof" points="300,150 450,50 600,150" fill="currentColor" stroke="#bfa77f" stroke-width="1" />     
+        <!-- Дверь -->
+        <rect id="door" x="410" y="270" width="80" height="140" fill="currentColor" stroke="black" stroke-width="1" />        
+        <!-- Дверная ручка -->
+        <circle id="doorHandle" cx="440" cy="340" r="10" fill="currentColor" stroke="#ece16c" stroke-width="2" />       
+        <!-- Солнце -->
+        <circle id="sun" cx="800" cy="80" r="60" fill="currentColor" stroke="yellow" stroke-width="3" />
+        <!-- Лучи солнца -->
+        <g stroke="yellow" stroke-width="3">
+            <line x1="800" y1="20" x2="800" y2="0" />
+            <line x1="800" y1="140" x2="800" y2="170" />
+            <line x1="740" y1="80" x2="710" y2="80" />
+            <line x1="860" y1="80" x2="890" y2="80" />
+            <line x1="755" y1="35" x2="740" y2="20" />
+            <line x1="845" y1="35" x2="860" y2="20" />
+            <line x1="755" y1="125" x2="740" y2="140" />
+            <line x1="845" y1="125" x2="860" y2="140" />
+            <line x1="770" y1="25" x2="765" y2="10" />
+            <line x1="830" y1="25" x2="835" y2="10" />
+            <line x1="770" y1="135" x2="765" y2="150" />
+            <line x1="830" y1="135" x2="835" y2="150" />
+            <line x1="858" y1="100" x2="880" y2="115" />
+            <line x1="742" y1="100" x2="720" y2="115" />
+            <line x1="858" y1="60" x2="880" y2="45" />
+            <line x1="742" y1="60" x2="720" y2="45" />
+        </g>
+        <!-- Кот -->
+        <!-- Туловище -->
+        <ellipse id="catBody" cx="200" cy="450" rx="40" ry="22" fill="currentColor" stroke="#a68b6b" stroke-width="2" />        
+        <!-- Голова -->
+        <circle id="catHead" cx="200" cy="420" r="18" fill="currentColor" stroke="#a68b6b" stroke-width="2" />        
+        <!-- Левое ухо -->
+        <polygon points="186,410 193,400 196,413" fill="#d1bfa3" stroke="#a68b6b" stroke-width="2" />
+        <!-- Правое ухо -->
+        <polygon points="214,410 207,400 204,413" fill="#d1bfa3" stroke="#a68b6b" stroke-width="2" />
+        <!-- Хвост -->
+        <path d="M240,455 Q265,455 250,430" fill="none" stroke="#a68b6b" stroke-width="5" stroke-linecap="round" />
+        <!-- Лапы -->
+        <ellipse cx="180" cy="470" rx="8" ry="4" fill="#d1bfa3" stroke="#a68b6b" stroke-width="2" />
+        <ellipse cx="220" cy="470" rx="8" ry="4" fill="#d1bfa3" stroke="#a68b6b" stroke-width="2" />
+        <!-- Мордочка -->
+        <circle cx="194" cy="418" r="2" fill="#333" />
+        <circle cx="206" cy="418" r="2" fill="#333" />
+        <ellipse cx="200" cy="425" rx="4" ry="2" fill="none" stroke="#333" stroke-width="1" />
+        <!-- Усики -->
+        <line x1="188" y1="425" x2="180" y2="427" stroke="#333" stroke-width="1" />
+        <line x1="188" y1="428" x2="180" y2="432" stroke="#333" stroke-width="1" />
+        <line x1="212" y1="425" x2="220" y2="427" stroke="#333" stroke-width="1" />
+        <line x1="212" y1="428" x2="220" y2="432" stroke="#333" stroke-width="1" />
+    </svg>
+
+    <script>
+        
+    </script>
+</body>
+
+</html>
