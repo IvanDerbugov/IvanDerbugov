@@ -9,43 +9,43 @@
         #house {
             fill: #fff;
         }
-        #house:hover {
+        #house:hover, #house.active {
             fill: #bfa77f;
         }
         #roof {
             fill: #fff;
         }
-        #roof:hover {
+        #roof:hover, #roof.active {
             fill: #bfa77f;
         }
         #door {
             fill: #fff;
         }
-        #door:hover {
+        #door:hover, #door.active {
             fill: #000;
         }
         #doorHandle {
             fill: #fff;
         }
-        #doorHandle:hover {
+        #doorHandle:hover, #doorHandle.active {
             fill: #FFD700;
         }
         #catBody {
             fill: #fff;
         }
-        #catBody:hover {
+        #catBody:hover, #catBody.active {
             fill: #d1bfa3;
         }
         #catHead {
             fill: #fff;
         }
-        #catHead:hover {
+        #catHead:hover, #catHead.active {
             fill: #d1bfa3;
         }
         #sun {
             fill: #fff;
         }
-        #sun:hover {
+        #sun:hover, #sun.active {
             fill: #FFD700;
         }
     </style>
@@ -107,9 +107,30 @@
         <line x1="212" y1="425" x2="220" y2="427" stroke="#333" stroke-width="1" />
         <line x1="212" y1="428" x2="220" y2="432" stroke="#333" stroke-width="1" />
     </svg>
+    <h1>
+        Это разукрашка. Покликай по коту, чтобы он мяукал!
+    </h1>
 
     <script>
+        // Получаем все элементы, которые нужно обрабатывать
+        const elements = ['house', 'roof', 'door', 'doorHandle', 'catBody', 'catHead', 'sun'];
         
+        // Создаем объект аудио
+        const catSound = new Audio('catVoice.mp3');
+        
+        // Добавляем обработчики событий для каждого элемента
+        elements.forEach(id => {
+            const element = document.getElementById(id);
+            element.addEventListener('click', function() {
+                this.classList.toggle('active');
+                
+                // Если кликнули по коту (тело или голова), воспроизводим звук
+                if (id === 'catBody' || id === 'catHead') {
+                    catSound.currentTime = 0; // Сбрасываем время воспроизведения
+                    catSound.play(); // Воспроизводим звук
+                }
+            });
+        });
     </script>
 </body>
 
