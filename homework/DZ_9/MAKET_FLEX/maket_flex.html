@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maket Div</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        .h1 {
+            color: blue;
+            background-color: darkcyan;
+            text-align: center;
+        }
+
+        .VSport {
+            background-color: yellow;
+            width: 200px;
+            /* float: left; */
+            padding: 5px;
+            /* border: 5px solid purple; */
+        }
+
+        .VSportText {
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .FootballImg {
+            /* float: left; */
+        }
+
+        .FootballH2 {
+            text-align: center;
+        }
+
+        .ball {
+            /* margin-left: 230px; */
+            height: 100%;
+            border: solid 5px green;
+            background: url(img/a_ball.gif) repeat-y right;
+            background-size: 75px 75px;
+            background-color: white;
+
+        }
+
+      
+        .wrap{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="h1">
+        <h1>ПРИВЕТ УЧАСТНИКАМ СОРЕВНОВАНИЙ!</h1>
+    </div>
+    <div class="wrap">
+        <div class="VSport">
+            <p class="VSportText">Виды спорта:</p>
+            <ul>
+                <li><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%8C%D0%BA%D0%BE%D0%B1%D0%B5%D0%B6%D0%BD%D1%8B%D0%B9_%D1%81%D0%BF%D0%BE%D1%80%D1%82"
+                        target="_blank">конькобежный спорт</a></li>
+                <li><a href="https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D0%B0%D1%82%D0%BB%D0%BE%D0%BD"
+                        target="_blank">биатлон</a></li>
+                <li><a href="https://ru.wikipedia.org/wiki/%D0%A4%D1%83%D1%82%D0%B1%D0%BE%D0%BB"
+                        target="_blank">футбол</a></li>
+                <li><a href="https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D0%B5%D0%BB%D1%8C%D0%B1%D0%B0_%D0%B8%D0%B7_%D0%BB%D1%83%D0%BA%D0%B0"
+                        target="_blank">стрельба из лука</a></li>
+                <li><a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D1%8B%D0%B6%D0%BE%D0%BA_%D0%B2_%D0%B4%D0%BB%D0%B8%D0%BD%D1%83"
+                        target="_blank">прыжки в длину</a></li>
+                <li><a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D1%8B%D0%B6%D0%BE%D0%BA_%D0%B2_%D0%B2%D1%8B%D1%81%D0%BE%D1%82%D1%83"
+                        target="_blank">прыжки в высоту</a></li>
+                <li><a href="https://ru.wikipedia.org/wiki/%D0%A4%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D0%B5_%D0%BA%D0%B0%D1%82%D0%B0%D0%BD%D0%B8%D0%B5"
+                        target="_blank">фигурное катание</a></li>
+                <li><a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D0%BB%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5"
+                        target="_blank">синхронное плавание</a></li>
+                <li><a href="https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D1%85%D0%BC%D0%B0%D1%82%D1%8B"
+                        target="_blank">шахматы</a></li>
+                <li><a href="https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D1%88%D0%BA%D0%B8" target="_blank">шашки</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="ball">
+            <h2 class="FootballH2">ФУТБОЛ</h2>
+            <img class="FootballImg" src="img/cup.png" alt="">
+            <!-- <img class="ball" src="../img/ball.png" alt=""> -->
+            <p>
+                Футбол - командный вид
+                спорта, в котором целью
+                является забить мяч в ворота
+                соперника ногами или другими
+                частями тела (кроме рук)
+                большее количество раз, чем
+                команда соперника.
+                Есть 17 официальных правил
+                игры, каждое из которых содержит список соворок и руково-
+                дящих принципов. Эти правила предназначены для применения
+                на всех уровнях футбола, хотя есть некоторые изменения для та-
+                ких групп, как юниоры, взрослые, женщины и люди с ограниченными
+                физическими возможностями, Законы очень часто формулирова-
+                лись в общих чертах, которые позволяют упростить их применения в зависимости от характера игры.
+            </p>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="h1">
+        <h1>ГЛАВНОЕ НЕ ПОБЕДА, А УЧАСТИЕ!</h1>
+    </div>
+    
+</body>
+
+</html>
