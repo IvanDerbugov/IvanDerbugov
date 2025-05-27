@@ -13,7 +13,7 @@
         .wrap {
             display: grid;
             grid-template-columns: 200px 200px 1fr;
-            grid-template-rows: 40px 27px 1fr 40px;
+            grid-template-rows: auto 27px 1fr auto;
         }
 
         .fonBall {
@@ -27,7 +27,7 @@
             background-color: darkcyan;
             text-align: center;
             grid-column: 1 / 4;
-
+            /* white-space: nowrap; */
         }
 
         .h1:first-of-type {
@@ -43,6 +43,10 @@
             grid-column: 1;
             grid-row: 2/4;
         }
+        .menu p {
+            font-weight: bold;
+        }
+        
 
         h2 {
             text-align: center;
@@ -58,36 +62,51 @@
         .footballText {
             grid-column: 3;
             grid-row: 3;
-            /* background: url(img/a_ball.gif) repeat-y right; */
         }
 
-        /* .content {
-            grid-column: 2;
-            grid-row: 2;
-        } */
 
-        /* .imgText {
+        @media (max-width: 400px) {
+            .wrap {
             display: grid;
-            grid-template-columns: 200px 1fr;
-            grid-template-rows: 27px 1fr;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto auto;
+            row-gap: 20px;
         }
+            
+            .h1 {
+                display: none;
+            }
+            .fonBall {
+                display: none;
+            }
 
-
-
-        .imgText img {
-            grid-column: 1;
-            grid-row: 2;
+            h2 {
+                grid-column: 1;
+                grid-row: 1;
+            }
+            img {
+                grid-column: 1;
+                grid-row: 2;
+                width: 100%;
+            }
+            .footballText {
+                grid-column: 1;
+                grid-row: 3;
+            }
+            .menu {
+                grid-column: 1;
+                grid-row: 4;
+                background-color: #fff;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            li {
+                display: inline;
+                margin-right: 10px;
+            }
         }
-
-        .imgText div {
-            grid-column: 2;
-            grid-row: 2;
-        } */
-
-        /* img {
-            grid-column: 2;
-            grid-row: 2
-        } */
     </style>
 </head>
 
