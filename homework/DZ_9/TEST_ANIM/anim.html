@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анимация</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .block{
+            position: relative;
+            width: 100%;
+            height: 500px;
+            animation: BackgroundAnim 3s infinite linear;
+        }
+        
+        .block:hover img[src="img/bullet.png"]{
+            animation: BulletAnim 10s linear infinite;
+        }
+        .block:hover .girlSprit{
+            background: url(img/girlSprit2.png) 0px 0px;
+            background-size: auto;
+            animation: GirlAnimPosition 1s steps(4) infinite, GirlAnimRunning 10s linear infinite;
+        }
+        img[src="img/pistolet.png"]{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            bottom: 200px;
+            left: 50px;
+        }
+        img[src="img/bullet.png"]{
+            width: 25px;
+            height: 19px;
+            position: absolute;
+            bottom: 266px;
+            left: 150px;
+            /* animation: BulletAnim 10s linear infinite; */
+        }
+        .girlSprit{
+            position: absolute;
+            left: 270px;
+            bottom: 0;
+            width: 150px;
+            height: 300px;
+            /* background: url(img/girlSprit2.png) 0px 0px; */
+            /* background-size: auto; */
+            /* animation: GirlAnimPosition 1s steps(4) infinite, GirlAnimRunning 10s linear infinite; */
+        }
+            
+            
+        @Keyframes BackgroundAnim{
+            from{background-color: rgb(117, 74, 74);}
+            to{background-color: rgb(84, 84, 154);}
+        }
+        
+        @Keyframes BulletAnim{
+            from{left: 150px;}
+            to{left: 100vw;}
+        }
+        
+        @Keyframes GirlAnimPosition{
+            from{background: url(img/girlSprit2.png) 0 0;}
+            to{background: url(img/girlSprit2.png) -651px 0;}
+        }
+
+        @Keyframes GirlAnimRunning{
+            from{left: 270px;}
+            to{left: 100vw;}
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="block">
+        <img src="img/pistolet.png" alt="">
+        <img src="img/bullet.png" alt="">
+        <div class="girlSprit"></div>
+    </div>
+</body>
+</html>
