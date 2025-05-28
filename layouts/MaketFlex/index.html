@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">    
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="media480.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
     <title>Madeshaf</title>
 </head>
@@ -45,7 +46,7 @@
                     Шкафы на заказ
                 </h1>
                 <p>
-                    По заявке с сайта скидка 10% каждому покупателю
+                    По заявке с сайта скидка 10% <span class="perenos"></span>каждому покупателю
                 </p>
                 <p>
                     До конца скидки осталось:
@@ -77,21 +78,35 @@
                             Получить скидку
                         </button>
                     </form>
+                    <div class="telMessengMobil">
+                        <div>
+                            <ul class="linksMasangersIcons">
+                                <li><a href=""></a><img src="img/logos/viber.png" alt="viber"></li>
+                                <li><a href=""></a><img src="img/logos/tg.png" alt="telegram"></li>
+                                <li><a href=""></a><img src="img/logos/what'sApp.png" alt="whatsapp"></li>
+                            </ul>
+                        </div>
+                        <p>
+                            +375259199290
+                            <br>
+                            Пн-Пт: 10:00-18:00
+                        </p>
+                    </div>
+
                 </div>
             </div>
             <div class="linksMasangers">
                 <div>
 
                 </div>
-                <div>
-                    <ul>
+                <div class="wrapLinksMasangers">
+                    <ul class="linksMasangersIcons">
                         <li><a href=""></a><img src="img/logos/viber.png" alt="viber"></li>
                         <li><a href=""></a><img src="img/logos/tg.png" alt="telegram"></li>
                         <li><a href=""></a><img src="img/logos/what'sApp.png" alt="whatsapp"></li>
                     </ul>
-                </div>
-                <div>
 
+                    
                 </div>
             </div>
         </div>
@@ -109,7 +124,7 @@
                 Узнайте стоимость<br>мебели
             </h1>
             <p class="pDiscraption">
-                Ответь на вопросы,получи скидку и бесплатный<br>дизайн проект
+                Ответь на вопросы, получи скидку<span class="perenos"></span> и бесплатный<span class="noPerenos"><br></span>дизайн проект
             </p>
             <button class="BTNReference">
                 Пройти тест
@@ -128,15 +143,24 @@
         <p>
             Мы рады видеть вас на нашем сайте, здесь представлены примеры наших работ и мебель, которую мы можем
             изготовить, в том числе по вашим индивидуальным запросам.
-            Мы поможем сделать вашу квартиру, дом или офис более комфортным, функциональным и привлекательным. В
-            производстве мебели мы используем лучшие материалы и современное оборудование, чтобы создавать по-настоящему
-            красивую, удобную и качественную мебель.
+            <div class="dNoneMobile">
+                Мы поможем сделать вашу квартиру, дом или офис более комфортным, функциональным и привлекательным. В
+                производстве мебели мы используем лучшие материалы и современное оборудование, чтобы создавать по-настоящему
+                красивую, удобную и качественную мебель.
+            </div>
+            <div class="flexConteiner">
+                <div class="wrapSeeMoreMobile">
+                    <button class="seeMoreMobile">
+                        Смотреть больше
+                    </button>
+                </div>
+            </div>
         </p>
     </div>
 
     <div class="conteiner WhyChooseUs">
         <h1 class="h1Title">
-            Почему более 14 лет клиенты выбирают нас:
+            Почему более 14 лет<span class="perenos"></span> клиенты выбирают<span class="perenos"></span> нас:
         </h1>
         <div class="BTNIcons flexConteiner">
             <div class="iconWithText">
@@ -362,7 +386,7 @@
                     Узнай первым об акциях и скидках
                 </p>
 
-                <div class="wrapInputNumber"></div>
+                <!-- <div class="wrapInputNumber"></div> -->
                 <input type="text" placeholder="    введите номер телефона или email">
 
                 <button class="BTNReference">

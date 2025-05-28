@@ -1,9 +1,68 @@
 @media (max-width: 480px) {
-    .wrapMenu {
+    body {
+        width: 119%;
+    }
+    .flexConteiner {
+        justify-content: center;
+    }
+    .conteiner {
+        width: 100%;
+        margin: 0px;
+        padding: 0px 16px;
+    }
+    .BTNReference {
+        width: 209px;
+        font-size: 18px;
+        margin: 0;
+    }
+    .wrapList1 {
+        width: 752px;
+    }
+    .h1Title {
+        font-size: 39px;
+    }
+    .pDiscraption {
+        font-size: 20px;
+    }
+    .perenos::before {
+        content: "\A";
+        white-space: pre;
+    }
+    .noPerenos {
+        content: '';
         display: none;
     }
+    .dNoneMobile {
+        display: none;
+    }
+    .wrapSeeMoreMobile {
+        width: 178px;
+        border-bottom: 1px solid #937A60; 
+        display: flex;
+        justify-content: center;
+    }
+    .seeMoreMobile {
+        display: block;
+        color: #937A60;
+        font-size: 19px;
+        background: none;
+        border: none;
+        margin-top: 37px;
+    }
 
-    .telTimeWork {
+
+    .wrapList1 {
+        height: 752px;
+    }
+    .list1 {
+        background: url('img/fonMobilHeader.png') no-repeat center,
+        url('img/fonHeaderMobil1.jpg') no-repeat center;
+        /* background-position: 0px 162px, 0px 0px; */
+        background-size: 100%, 100%;
+    }
+
+
+    .wrapMenu {
         display: none;
     }
 
@@ -19,4 +78,141 @@
         width: 26px;
         height: 17px;
     }
+
+    .discount {
+        /* background: url(img/fonMobilHeader.png) no-repeat; */
+    }
+
+    .discount h1 {
+        font-size: 39px;
+        margin-bottom: 23px;
+        /* margin-top: 32px; */
+        position: relative;
+       
+    }
+
+    .discount h1::before {
+        content: url(img/promotion.png);
+        position: absolute;
+        top: -63px;
+        left: -16px;
+    }
+
+    .discount p:first-of-type {
+        font-size: 20px;
+        margin-bottom: 17px;
+    }
+    
+    .discount p:nth-of-type(2) {
+        font-size: 18px;
+        margin-bottom: 11px;
+    }
+
+    .discount input {
+        width: 320px;
+        font-size: 19px;
+        margin-top: 21px;
+    }
+
+    .square {
+        width: 30px;
+        height: 30px;
+        font-size: 19px;
+    }
+
+    .discount span {
+        font-size: 15px;
+    }
+
+    .discount span:nth-of-type(1) {
+        margin-right: 17px;
+    }
+    
+    .discount span:nth-of-type(3) {
+        margin-right: 19px;
+    }
+
+    .timer button {
+        margin-bottom: 32px;
+    }
+
+    .telTimeWork {
+        display: none;
+    }
+
+    .telMessengMobil {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 76px;
+    }
+
+    .linksMasangersIcons li {
+        list-style: none;
+        display: inline-block;
+        margin-right: 15px;
+    }
+
+    .telMessengMobil p {
+        text-align: center;
+        font-size: 19px;
+    }
+
+
+    .list2 {
+        margin-top: 70px;
+        margin-bottom: 130px;
+        justify-content: center;
+    }
+
+    .list2 div:last-of-type {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list2 .wrapFrame {
+        display: none;
+    }
+
+    .list2 .pDiscraption {
+        text-align: center;
+    }
+
+    .list2 button {
+        font-size: 26px;
+    }
+
+    .aboutUs {
+        margin-bottom: 100px
+    }
+
+    .WhyChooseUs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .WhyChooseUs h1 {
+        font-size: 39px;
+    }
+
+    .BTNIcons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        max-width: 100%;
+    }
+
+    .iconWithText {
+        width: 140px;
+    }
+
+    .payLater {
+        display: none
+    }
+    
+    
 }
