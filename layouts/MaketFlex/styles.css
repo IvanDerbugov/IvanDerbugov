@@ -383,6 +383,10 @@ button {
     /* padding: 50px auto; */
 }
 
+.catalogImgMobile {
+    display: none;
+}
+
 .catalogImg p {
     color: #fff;
     text-align: center;

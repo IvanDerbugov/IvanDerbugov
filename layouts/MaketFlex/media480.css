@@ -202,7 +202,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px;
+        gap: 50px;
         max-width: 100%;
     }
 
@@ -213,6 +213,258 @@
     .payLater {
         display: none
     }
+
+    /* .iconWithText:nth-of-type(3)::before {
+        content: 'Возможность рассрочки от нашей компании с 0% переплат!';
+        display: block;
+        font-size: 20px;
+        width: 100%;
+        height: 175px;
+    }
+     */
+
+    .catalog h1 {
+        margin: 100px auto 38px;
+    }
+
+    .catalogImg:nth-of-type(2) {
+        display: none;
+    }
+
+    .catalogImg div {
+        display: none;
+    }
+
+    .catalogImg {
+        width: 144px;
+        height: 267px;
+    }
+
+    .catalog .flexConteiner div:nth-of-type(1) {
+        background:
+            url(img/catalogFonForImgMobile.png),
+            url(img/catalogImg1Mobile.jpg);
+    }
+
+    .catalog .flexConteiner div:nth-of-type(3) {
+        background:
+            url(img/catalogFonForImgMobile.png),
+            url(img/catalogImg2Mobile.jpg);
+    }
+
+    .catalogText1, .catalogText3 {
+        margin: 121px auto;
+        font-size: 23px;
+    }
+
+    .catalogText2 {
+        margin: 0;
+        font-size: 23px;
+        color: #fff;
+        text-align: center;
+    }
+
+    .catalogImgMobile {
+        width: 318px;
+        height: 144px;
+        display: block;
+        background:
+            url(img/catalogFonForImgMobile3.png),
+            url(img/catalogImg3Mobile.jpg);
+        padding: 46px 0;
+    }
+
+    .modernMaterials h1 {
+        margin: 102px auto 40px;
+    }
+
+
+    .matFit div {
+        width: 160px;
+        height: 28px;
+        margin-bottom: 26px;
+    }
+
+    .matFit button {
+        font-size: 25px;
+    }
+
+    .materials {
+        margin-bottom: 104px;
+    }
+
+    .materialsImg:nth-of-type(2) {
+        display: none;
+    }
+
+    .materialsImg:nth-of-type(1) {
+        width: 248px;
+        height: 200px;
+    }
+    .materialsImg span {
+        font-size: 20px;
+        margin-top: 19px;
+    }
+    img[src="img/materialsImg1.jpg"] {
+        width: 248px;
+        height: 174px;
+    }
+
+
+    .materials button {
+        position: static;
+        margin-top: -46px;
+    }
+
+    .materials button:first-of-type {
+        margin-right: 20px;
+    }
+    .materials button:last-of-type {
+        margin-left: 20px;
+    }
+
+    .flexOffers {
+        
+    }
+
+    .flexPriceOffer:nth-of-type(3), .flexPriceOffer:nth-of-type(6) {
+        display: none;
+    }
+
+    [class^='offer'] {
+        width: 144px;
+        height: 203px;
+    }
+
+    .optionOffer {
+        /* width: 87px; */
+        height: 31px;
+        font-size: 11px;
+        padding: 12px;
+    }
+
+    .nameOffer {
+        font-size: 16px;
+    }
+
+    .priceOffer {
+        font-size: 19px;
+    }
+
+    .comfort3Price, .riviera5Price {
+        font-size: 16px;
+    }
+
+    .wrapFollowUs {
+        background: none;
+    }
+
+    .followUs {
+        margin: 58px auto;
+    }
+
+    .followUs h1 {
+        margin: 57px auto 20px;
+    }
+
+    .followUs p {
+        margin-bottom: 25px;
+    }
+
+    .followUs input {
+        width: 328px;
+        height: 56px;
+        font-size: 20px;
+        margin-bottom: 35px;
+    }
+
+    .followUs button {
+        width: 248px;
+        height: 49px;
+        font-size: 20px;
+        margin-bottom: 58px;
+    }
+
+    .reviews {
+        margin-bottom: 103px;
+    }
+
+    .wrapReview {
+        margin: 0;
+    }
+
+    .reviewName {
+        margin: 41px auto 24px 9px;
+        font-size: 22px;
+    }
+
+    .review1 {
+        font-size: 19px;
+    }
+
+    .switchReview button {
+        width: 16px;
+        height: 16px;
+    }
+
+    .productionImg {
+        height: 466px;
+        gap: 5px;
+    }
+
+    .productionImg img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .productionImgFonText {
+        width: 288px;
+        height: 379px;
+    }
+
+    .productionImgFonText p {
+        font-size: 20px;
+    }
+
+    .productionImgFonText {
+        left: 67px;
+        top: 74px;
+        transform: none;
+    }
     
+/* 
+    .productionImgFonText {
+        position: absolute;
+        left: 50%;
+        top: 40px; 
+        transform: translateX(-50%);
+        width: 90vw;
+        max-width: 320px;
+        min-width: unset;
+        height: auto;
+        min-height: 255px;
+        background: url('img/fonForProduction.png') no-repeat center center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 24px 10px;
+        box-sizing: border-box;
+    }
     
+    .productionImgFonText p {
+        font-size: 16px;
+        line-height: 1.3;
+        margin: 0 0 12px 0;
+        text-align: center;
+    }
+    
+    .productionImgFonText p span {
+        font-size: 28px;
+        margin-right: 8px;
+    } */
+
 }
+
+    
