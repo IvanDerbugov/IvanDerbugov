@@ -596,16 +596,6 @@ text-decoration: underline;
     color: #E52B2B;
 }
 
-.flexPriceOffer {
-    /* display: flex; */
-}
-
-/* .price-row {
-    display: flex;
-    align-items: flex-end;
-    gap: 12px;
-} */
-
 .wrapFlexForDescription {
     display: flex;
     justify-content: space-between;
@@ -793,23 +783,27 @@ text-decoration: underline;
     background: url(img/fonForProduction.png) no-repeat;
 }
 
-.productionImgFonText p {
+.productionImgFonText div {
     font-size: 30px;
     color: #fff;
     text-align: center;
 }
 
-.productionImgFonText p span {
+.productionImgFonText div span {
     font-size: 49px;    
     position: relative;
 }
 
-.productionImgFonText p span::before {
+.productionImgFonText div span::before {
     content: url(img/logos/0.png);
     position: absolute;
     top: -5px;
     left: -7px;
     z-index: -1;
+}
+
+.planWorkMobile {
+    display: none;
 }
 
 .planWork h1 {
@@ -870,6 +864,10 @@ img[alt="rightArrow3"] {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+img[src="img/askPriceImgMobile.jpg"] {
+    display: none;
 }
 
 .askPriceText {
@@ -984,6 +982,10 @@ footer {
     padding: 53px 0;
     margin-top: 190px;
     background-color: #937A60;
+}
+
+img[src="img/mapFooterMobile.jpg"] {
+    display: none;
 }
 
 footer p {
