@@ -3,6 +3,7 @@
         width: 119%;
     }
     .flexConteiner {
+        display: flex;
         justify-content: center;
     }
     .conteiner {
@@ -14,9 +15,6 @@
         width: 209px;
         font-size: 18px;
         margin: 0;
-    }
-    .wrapList1 {
-        width: 752px;
     }
     .h1Title {
         font-size: 39px;
@@ -58,9 +56,21 @@
         display: none;
     }
 
+    .header {
+        /* margin-top: 26px; */
+    }
+
+    .logo, .btnMenu {
+        margin-top: 26px;
+        margin-bottom: 133px;
+    }
+
+
 
     .wrapList1 {
-        height: 752px;
+        /* height: 752px; */
+        height: auto;
+        justify-content: flex-start;
     }
     .list1 {
         background: url('img/fonMobilHeader.png') no-repeat center,
@@ -149,6 +159,11 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 76px;
+        margin-bottom: 56px;
+    }
+
+    .linksMasangers{
+        display: none;
     }
 
     .linksMasangersIcons li {
@@ -278,6 +293,11 @@
         text-align: center;
     }
 
+    .WrapCatalogImgMobile {
+        display: flex;
+        justify-content: center;
+    }
+
     .catalogImgMobile {
         width: 318px;
         height: 144px;
@@ -286,6 +306,15 @@
             url(img/catalogFonForImgMobile3.png),
             url(img/catalogImg3Mobile.jpg);
         padding: 46px 0;
+        margin-top: 30px;
+    }
+
+    .catalog .flexConteiner {
+        gap: 20px;
+    }
+
+    .wrapFrame {
+        margin-right: 0px;
     }
 
     .modernMaterials h1 {
@@ -401,6 +430,10 @@
 
     .wrapReview {
         margin: 0;
+    }
+
+    .wrapReview>button {
+        display: none;
     }
 
     .reviewName {
@@ -567,7 +600,7 @@
 
     .wrapOrderConsultation {
         background-size: cover;
-        width: auto;
+        width: 100%;
         height: auto;
         border-radius: 8px;
         margin-bottom: 38px;
@@ -619,8 +652,25 @@
         justify-content: flex-start;
     }
 
-    .wrapFooter div:nth-of-type(2) {
+    .wrapFooter div:nth-of-type(1) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footerLogo {
+        font-size: 25px;
+    }
+
+    .wrapFooter div:nth-of-type(2) p {
         margin-left: 32px;
+        font-size: 20px;
+    }
+
+    footer {
+        margin-top: 100px;
     }
 
     
