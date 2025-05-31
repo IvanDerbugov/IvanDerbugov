@@ -47,8 +47,13 @@
     cursor: pointer;
 }
 
-button {
+button, li {
     cursor: pointer;
+}
+
+li a{
+    text-decoration: none;
+    color: #fff;
 }
 
 .seeMoreMobile {
@@ -56,7 +61,9 @@ button {
 }
 
 
-
+.perenos {
+    display: none;
+}
 
 
 
@@ -173,7 +180,7 @@ button {
     top: 0;
 }
 
-.linksMasangers div:nth-of-type(1) {
+.linksMasangers div:nth-of-type(1), .linksMasangers div:nth-of-type(3) {
     width: 1px;
     height: 450px;
     border-right: 1px solid #fff;
@@ -278,6 +285,10 @@ button {
 .aboutUs h1 {
     text-align: center;
     margin: 59px auto 40px;
+}
+
+.dNoneMobile {
+    display: none;
 }
 
 .aboutUs p {
@@ -679,6 +690,8 @@ text-decoration: underline;
 }
 
 .wrapReview {
+    width: 100%;
+    /* max-width: 700px; */
     margin-left: 47px;
     position: relative;
 }
@@ -690,10 +703,17 @@ text-decoration: underline;
     color: #000;
 }
 
-.review1 {
+.reviewText {
     font-size: 30px;
     color: #000;
 }
+
+/* .review2, .review3, .review4 {
+    display: none;
+} */
+
+.review { display: none; }
+.review.active { display: block; }
 
 .reviews button {
     background: none;
@@ -988,10 +1008,11 @@ img[src="img/mapFooterMobile.jpg"] {
     display: none;
 }
 
-footer p {
+footer li, footer p {
     margin-bottom: 9px;
     font-size: 30px;
     color: #fff;
+    list-style: none;
 }
 
 .footerLogo {
@@ -1001,10 +1022,11 @@ footer p {
     margin: 0;
 }
 
-.wrapFooter div p:last-of-type {
+.wrapFooter li:last-of-type {
    margin-bottom: 0;
 }
 
 footer img {
     border-radius: 8px;
 }
+

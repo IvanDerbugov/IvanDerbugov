@@ -441,13 +441,21 @@
         font-size: 22px;
     }
 
-    .review1 {
+    .reviewText {
         font-size: 19px;
     }
 
     .switchReview button {
         width: 16px;
         height: 16px;
+    }
+
+    .production {
+        margin: 0 auto 102px;
+    }
+
+    .production h1 {
+        margin-bottom: 40px;
     }
 
     .productionImg {
@@ -664,16 +672,17 @@
         font-size: 25px;
     }
 
-    .wrapFooter div:nth-of-type(2) p {
+    .wrapFooter ul {
         margin-left: 32px;
-        font-size: 20px;
     }
 
     footer {
         margin-top: 100px;
     }
 
-    
+    footer li, footer p {
+        font-size: 20px;
+    }
 
 
 
