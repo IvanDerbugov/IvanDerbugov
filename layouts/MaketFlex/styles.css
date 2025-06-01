@@ -64,15 +64,15 @@ li a{
     display: none;
 }
 
-input[type='text'] {
+input[type='text'], textarea {
     outline: 2px solid #937A60;
     box-shadow: 0 0 4px #937A60;
 }
-input[type="text"]::placeholder {
+input[type="text"]::placeholder, textarea::placeholder {
     color: #bcbcbc;
     transition: color 0.2s;
 }
-input[type="text"]:focus::placeholder {
+input[type="text"]:focus::placeholder, textarea:focus::placeholder {
     color: transparent;
 }
 
