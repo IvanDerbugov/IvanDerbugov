@@ -1,3 +1,34 @@
+const btnMenuButton = document.querySelector('.btnMenu button');
+const menuMobile = document.querySelector('.menuMobile');
+const close = document.querySelector('#close');
+const menuItems = document.querySelectorAll('.menuMobile ul li');
+
+btnMenuButton.onclick = () => {
+    menuMobile.style.display = 'block';
+}
+
+close.onclick = () => {
+    menuMobile.style.display = 'none';
+}
+
+menuItems.forEach(item => {
+    item.onclick = () => {
+        menuMobile.style.display = 'none'
+    }
+})
+
+document.addEventListener('click', function(event) {
+    if (menuMobile.style.display === 'block') {
+        if (!menuMobile.contains(event.target) && !btnMenuButton.contains(event.target)) {
+            menuMobile.style.display = 'none';
+        }
+    }
+})
+
+
+
+
+
 const reviews = document.querySelectorAll('.review');
 const dots = document.querySelectorAll('.switchReview button');
 const btnLeft = document.querySelector('.BtnLeft');
@@ -27,3 +58,9 @@ dots.forEach((dots, i) =>{
 })
 
 showReview(current);
+
+
+
+
+
+
