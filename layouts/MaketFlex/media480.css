@@ -76,8 +76,6 @@
         padding: 20px 50px 10px 15px;
     }
 
-    
-
     #close {
         position: absolute;
         top: 10px;
@@ -186,6 +184,21 @@
         margin-bottom: 32px;
     }
 
+    .modalThanks {
+        padding: 70px 79px;
+    }
+
+    .modalThanks p {
+        width: 210px;
+        font-size: 24px !important;
+        white-space: pre-wrap;
+    }
+
+    .modalThanks button {
+        width: 165px;
+        margin-top: 19px;
+    }
+
     .telTimeWork {
         display: none;
     }
@@ -240,6 +253,16 @@
 
     .aboutUs {
         margin-bottom: 100px
+    }
+
+    .dNoneMobile {
+        display: none;
+        font-size: 20px !important;
+    }
+    
+    .dBlockMobile {
+        display: block;
+        font-size: 20px !important;
     }
 
     .WhyChooseUs {

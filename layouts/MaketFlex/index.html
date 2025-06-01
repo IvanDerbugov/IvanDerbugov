@@ -18,7 +18,8 @@
             <div class="btnMenu">
                 <button>
                     <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.5 12V10.5H30V12H4.5ZM30 18V19.5H4.5V18H30ZM4.5 25.5H30V27H4.5V25.5Z" fill="#currentColor"/>
+                        <path d="M4.5 12V10.5H30V12H4.5ZM30 18V19.5H4.5V18H30ZM4.5 25.5H30V27H4.5V25.5Z"
+                            fill="#currentColor" />
                     </svg>
                 </button>
                 <div class="menuMobile">
@@ -84,13 +85,23 @@
                     <span>Дни</span><span>Часы</span><span>Мин</span><span>Сек</span>
 
 
-                    <form action="https://fe.it-academy.by/TestForm.php">
+                    <form action="">
                         <input type="text" placeholder="    Введите номер телефона">
                         <br>
-                        <button class="BTNReference" type="submit">
+                        <button class="BTNReference getDiscount" type="reset">
                             Получить скидку
                         </button>
                     </form>
+
+                    <div class="overlay"></div>
+                    <div class="modalThanks">
+                        <p>Мы свяжемся с вами в ближайшее время</p>
+                        <p>Спасибо что выбираете нас!</p>
+                        <button class="BTNReference" type="reset">
+                            Закрыть
+                        </button>
+                    </div>
+
                     <div class="telMessengMobil">
                         <div>
                             <ul class="linksMasangersIcons">
@@ -155,14 +166,15 @@
         <h1 class="h1Title">
             О нас
         </h1>
-        <p>
+        <p class="dBlockMobile">
             Мы рады видеть вас на нашем сайте, здесь представлены примеры наших работ и мебель, которую мы можем
             изготовить, в том числе по вашим индивидуальным запросам.
-        <div class="dNoneMobile">
+        </p>
+        <p class="dNoneMobile">
             Мы поможем сделать вашу квартиру, дом или офис более комфортным, функциональным и привлекательным. В
             производстве мебели мы используем лучшие материалы и современное оборудование, чтобы создавать по-настоящему
             красивую, удобную и качественную мебель.
-        </div>
+        </p>
         <div class="flexConteiner">
             <div class="wrapSeeMoreMobile">
                 <button class="seeMoreMobile">
@@ -170,7 +182,7 @@
                 </button>
             </div>
         </div>
-        </p>
+        
     </div>
 
     <div class="conteiner WhyChooseUs">
@@ -419,7 +431,7 @@
             </div>
         </div>
     </form>
-    
+
     <div class="conteiner reviews" id="reviews">
         <h1 class="h1Title">
             Отзывы

@@ -60,13 +60,21 @@ li a{
     display: none;
 }
 
-
 .perenos {
     display: none;
 }
 
-
-
+input[type='text'] {
+    outline: 2px solid #937A60;
+    box-shadow: 0 0 4px #937A60;
+}
+input[type="text"]::placeholder {
+    color: #bcbcbc;
+    transition: color 0.2s;
+}
+input[type="text"]:focus::placeholder {
+    color: transparent;
+}
 
 
 
@@ -213,6 +221,45 @@ li a{
     margin-bottom: 44px;
 }
 
+/* Overlay for modal */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(26,23,23,0.4);
+    z-index: 1;
+}
+
+.modalThanks {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 163px 222px;
+    z-index: 2;
+}
+
+.modalThanks button {
+    margin: 0;
+    margin-top: 42px;
+}
+
+.modalThanks p {
+    font-size: 34px !important;
+    font-weight: 600;
+    color: #000;
+    white-space: nowrap;
+}
+
 .telMessengMobil {
     display: none;
 }
@@ -289,6 +336,10 @@ li a{
 }
 
 .dNoneMobile {
+    display: block;
+}
+
+.dBlockMobile {
     display: none;
 }
 
@@ -1043,5 +1094,6 @@ footer li, footer p {
 
 .pointFooterMobile {
     display: none;
-}   
+}
+
 

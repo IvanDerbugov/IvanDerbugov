@@ -28,6 +28,56 @@ document.addEventListener('click', function(event) {
 
 
 
+const dNoneMobile = document.querySelector('.dNoneMobile');
+const dBlockMobile = document.querySelector('.dBlockMobile');
+const seeMoreMobile = document.querySelector('.seeMoreMobile');
+
+seeMoreMobile.onclick = () => {
+    if (dNoneMobile.style.display === 'block') {
+        dNoneMobile.style.display = 'none';
+        dBlockMobile.style.display = 'block';
+        seeMoreMobile.textContent = 'Смотреть больше';
+    } else {
+        dNoneMobile.style.display = 'block';
+        dBlockMobile.style.display = 'none';
+        seeMoreMobile.textContent = 'Скрыть';
+    }
+}
+
+
+
+
+
+
+
+const modalThanks = document.querySelector('.modalThanks');
+const getDiscount = document.querySelector('.getDiscount');
+const closeModalThanks = document.querySelector('.modalThanks button');
+const overlay = document.querySelector('.overlay');
+
+getDiscount.onclick = (event) => {
+    event.stopPropagation();
+    modalThanks.style.display = 'flex';
+    overlay.style.display = 'block';
+}
+
+closeModalThanks.onclick = (event) => {
+    event.stopPropagation();
+    modalThanks.style.display = 'none';
+    overlay.style.display = 'none';
+}
+
+// document.addEventListener('click', function(event) {
+//     if (modalThanks.style.display === 'block') {
+//         if (!modalThanks.contains(event.target) && !closeModalThanks.contains(event.target)) {
+//             modalThanks.style.display = 'none';
+//         }
+//     }
+// })
+
+
+
+
 
 const reviews = document.querySelectorAll('.review');
 const dots = document.querySelectorAll('.switchReview button');
