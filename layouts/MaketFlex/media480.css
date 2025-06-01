@@ -1,7 +1,7 @@
 @media (max-width: 480px) {
-    body {
+    /* body {
         width: 119%;
-    }
+    } */
     .flexConteiner {
         display: flex;
         justify-content: center;
@@ -56,16 +56,18 @@
         display: none;
     }
 
-    .header {
-        /* margin-top: 26px; */
-    }
-
     .logo, .btnMenu {
-        margin-top: 26px;
+        margin-top: 6px;
         margin-bottom: 133px;
     }
 
+    .logo {
+        margin-top: 26px;
+    }
 
+    .btnMenu svg path {
+        fill: #fff !important;
+    }
 
     .wrapList1 {
         /* height: 752px; */
@@ -373,6 +375,7 @@
     [class^='offer'] {
         width: 144px;
         height: 203px;
+        background-size: 144px 203px;
     }
 
     .optionOffer {
@@ -648,16 +651,8 @@
     }
 
 
-    img[src="img/mapFooter.jpg"] {
-        display: none;
-    }
-
-    img[src="img/mapFooterMobile.jpg"] {
-        display: block;
-    }
-
     .wrapFooter {
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     .wrapFooter div:nth-of-type(1) {
@@ -666,6 +661,24 @@
         justify-content: center;
         flex-direction: column;
         gap: 8px;
+        position: relative;
+    }
+
+    
+    .mapFooter {
+        display: none;
+    }
+
+    .mapFooterMobile {
+        display: block;
+        border-radius: 8px;
+    }
+
+    .pointFooterMobile {
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: 44px;
     }
 
     .footerLogo {
@@ -684,6 +697,9 @@
         font-size: 20px;
     }
 
+    .pointFooter {
+        display: none;
+    }
 
 
 }

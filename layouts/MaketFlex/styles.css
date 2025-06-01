@@ -88,6 +88,7 @@ li a{
 .logo {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
+    font-weight: 700;
     color: #C0AD95;
     margin-right: 50px;
 }
@@ -386,6 +387,10 @@ li a{
 
 .catalog h1 {
     margin: 145px auto 125px;
+}
+
+.catalog a {
+    text-decoration: none;
 }
 
 .catalogImg {
@@ -1004,10 +1009,6 @@ footer {
     background-color: #937A60;
 }
 
-img[src="img/mapFooterMobile.jpg"] {
-    display: none;
-}
-
 footer li, footer p {
     margin-bottom: 9px;
     font-size: 30px;
@@ -1026,7 +1027,21 @@ footer li, footer p {
    margin-bottom: 0;
 }
 
-footer img {
+.wrapFooter div:last-of-type {
+    position: relative;
+}
+
+.mapFooter {
     border-radius: 8px;
 }
+
+.pointFooter {
+    position: absolute;
+    top: 124px;
+    left: 232px;
+}
+
+.pointFooterMobile {
+    display: none;
+}   
 

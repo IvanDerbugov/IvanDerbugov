@@ -1,0 +1,71 @@
+.list1 {
+background: none;
+}
+
+.header, ul li a {
+    color: #000;
+}
+
+.catalogPath {
+    margin: 80px auto 85px;
+}
+
+.catalogPath a {
+color: #11100E;
+font-size: 14px;
+font-weight: 400;
+}
+
+.catalogPath a:not(:last-of-type) {
+    text-decoration: none;
+}
+
+.offer7 {
+    background: url(../img/offer7.jpg);
+}
+
+.offer8 {
+    background: url(../img/offer8.jpg);
+}
+
+.offer9 {
+    background: url(../img/offer9.jpg);
+}
+
+.offer10 {
+    background: url(../img/offer10.jpg);
+}
+
+.offer11 {
+    background: url(../img/offer11.jpg);
+}
+
+.offer12 {
+    background: url(../img/offer12.jpg);
+}
+
+.offer13 {
+    background: url(../img/offer13.jpg);
+}
+
+.offer14 {
+    background: url(../img/offer14.jpg);
+}   
+
+.offer15 {
+    background: url(../img/offer15.jpg);
+}
+
+.pagination {
+    display: none;
+}
+
+footer li a {
+    color: #fff;
+}
+
+.mapFooterMobile {
+    display: none;
+}
+
+

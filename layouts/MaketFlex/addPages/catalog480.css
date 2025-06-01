@@ -1,0 +1,65 @@
+@media (max-width: 480px) {
+    .btnMenu svg path {
+        fill: #937A60;
+    }
+
+    .logo, .btnMenu {
+        margin-bottom: 31px;
+    }
+
+    .catalogPath {
+        margin-top: 0;
+        margin-bottom: 46px;
+    }
+
+    .flexPriceOffer:last-of-type {
+        display: none;
+    }
+
+    [class^='offer'] {
+        background-size: 144px 203px;
+    }
+
+
+
+    .pagination {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        margin: 32px 0;
+      }
+      
+      .pagination-btn {
+        width: 38px;
+        height: 38px;
+        border: 1px solid #bca98a;
+        background: #fff;
+        color: #937A60;
+        font-size: 20px;
+        border-radius: 0;
+        cursor: pointer;
+        transition: background 0.2s;
+        outline: none;
+        padding: 0;
+      }
+      
+      .pagination-btn.active,
+      .pagination-btn:disabled {
+        background: #f5f1ec;
+        color: #bca98a;
+        cursor: default;
+      }
+      
+      .pagination-btn:not(:disabled):hover {
+        background: #f5f1ec;
+      }
+
+      .arrow-left {
+        transform: scaleX(-1);
+      }
+    
+
+    .mapFooterMobile {
+        display: block;
+    }  
+}
