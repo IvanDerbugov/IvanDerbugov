@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if</title>
+</head>
+<body>
+    <h2>ваше ФИО: <span id="fullName"></span></h2>
+    <h2>ваш возраст в годах: <span id="age"></span></h2>
+    <h2>ваш возраст в днях: <span id="ageInDays"></span></h2>
+    <h2>ваш возраст в Сталинах: <span id="ageInStalin"></span></h2>
+    <h2>через 5 лет вам будет: <span id="ageIn5Years"></span></h2>
+    <h2>ваш пол: <span id="gender"></span></h2>
+    <h2>вы на пенсии: <span id="isPensioner"></span></h2>
+
+
+    <script>
+        alert('Здарова!')
+        var Surname = prompt('Напишите фамилию, голубчик', "Иванов")
+        var Name = prompt('Напишите имя, голубчик', "Иван")
+        var Patronymic = prompt('Напишите отчество, голубчик', "Иванович")
+        var Age = +prompt('Напишите возраст, голубчик', 20)
+        var gender = confirm('Ваш пол - мужской?')
+
+        // var fullName = Surname + ' ' + Name + ' ' + Patronymic
+        var FinalGender = ''
+        var FinalPensioner = ''
+        if(gender===true) {FinalGender = 'мужской'} else {FinalGender = 'женский'}
+        if(gender===true) {if(Age>=63) {FinalPensioner = 'да'} else {FinalPensioner = 'нет'}} else {if(Age>=58) {FinalPensioner = 'да'} else {FinalPensioner = 'нет'}}
+        document.getElementById('fullName').innerHTML = Surname + ' ' + Name + ' ' + Patronymic
+        document.getElementById('age').innerHTML = Age
+        document.getElementById('ageInDays').innerHTML = Age * 365
+        document.getElementById('ageInStalin').innerHTML = (Age / 75).toFixed(2) + ' Сталина'
+        document.getElementById('ageIn5Years').innerHTML = Age + 5
+        document.getElementById('gender').innerHTML = FinalGender
+        document.getElementById('isPensioner').innerHTML = FinalPensioner
+    </script>
+</body>
+</html>

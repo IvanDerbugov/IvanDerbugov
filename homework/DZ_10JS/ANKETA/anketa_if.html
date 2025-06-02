@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if</title>
+    <style>
+        body {
+            background: url('danceCat.gif') no-repeat center center fixed;
+            background-size: contain;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        var Surname = prompt('Напишите фамилию, голубчик', "Иванов")
+        var Name = prompt('Напишите имя, голубчик', "Иван")
+        var Patronymic = prompt('Напишите отчество, голубчик', "Иванович")
+        var Age = +prompt('Напишите возраст, голубчик', 20)
+        var gender = confirm('Ваш пол - мужской?')
+        var FinalGender = ''
+        var FinalPensioner = ''
+        if(gender===true) {FinalGender = 'мужской'} else {FinalGender = 'женский'}
+        if(gender===true) {if(Age>=63) {FinalPensioner = 'да'} else {FinalPensioner = 'нет'}} else {if(Age>=58) {FinalPensioner = 'да'} else {FinalPensioner = 'нет'}}
+        
+        var result =
+            "Ваше ФИО: " + Surname + " " + Name + " " + Patronymic + "\n" +
+            "Ваш возраст в годах: " + Age + "\n" +
+            "Ваш возраст в днях: " + (Age * 365) + "\n" +
+            "Ваш возраст в Сталинах: " + (Age / 75).toFixed(2) + "\n" +
+            "Через 5 лет вам будет: " + (Age + 5) + "\n" +
+            "Ваш пол: " + FinalGender + "\n" +
+            "Вы на пенсии: " + FinalPensioner;
+
+        alert(result);
+        console.log(result);
+    </script>
+</body>
+
+</html>
