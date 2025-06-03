@@ -589,6 +589,10 @@ text-decoration: underline;
     margin: 0 auto;
 }
 
+a[href*='addPages'] {
+    text-decoration: none;
+}
+
 .offer1 {
     background: url(img/offer1.jpg);
 }

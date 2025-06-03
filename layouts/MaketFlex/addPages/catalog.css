@@ -16,6 +16,10 @@ font-size: 14px;
 font-weight: 400;
 }
 
+.catalogPath {
+    font-size: 16px;
+}
+
 .catalogPath a:not(:last-of-type) {
     text-decoration: none;
 }
