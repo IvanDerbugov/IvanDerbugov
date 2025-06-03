@@ -1,0 +1,84 @@
+/* Сброс и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Базовые стили элементов */
+html {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #2B2B2B;
+    color: #fff;
+}
+
+/* Убираем маркеры списков */
+ul, ol {
+    list-style: none;
+}
+
+/* Убираем подчёркивание у ссылок */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Делаем картинки адаптивными */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Стили для кнопок */
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+}
+
+/* Стили для форм */
+input, textarea, select {
+    font: inherit;
+    border: none;
+    outline: none;
+}
+
+/* Убираем стандартные стили фокуса */
+:focus {
+    outline: none;
+}
+
+/* Утилитарные классы */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+/* Утилиты для отступов */
+.m-0 { margin: 0; }
+.p-0 { padding: 0; }
+.mt-1 { margin-top: 0.25rem; }
+.mb-1 { margin-bottom: 0.25rem; }
+.ml-1 { margin-left: 0.25rem; }
+.mr-1 { margin-right: 0.25rem; }
+.p-1 { padding: 0.25rem; }
