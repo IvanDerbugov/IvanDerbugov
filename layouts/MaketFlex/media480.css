@@ -425,7 +425,7 @@
         margin-left: 20px;
     }
 
-    .flexPriceOffer:nth-of-type(3), .flexPriceOffer:nth-of-type(6) {
+    .compVersion {
         display: none;
     }
 
