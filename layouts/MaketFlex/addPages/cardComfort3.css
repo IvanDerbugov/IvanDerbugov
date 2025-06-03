@@ -1,3 +1,11 @@
+.mobileVersion {
+    display: none;
+}
+
+.compVersion {
+    display: block;
+}
+
 .imgsCard {
     display: flex;
     flex-direction: column;
