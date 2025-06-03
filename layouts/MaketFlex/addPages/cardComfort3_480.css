@@ -16,6 +16,11 @@
         align-items: center;
     }
 
+    img[alt="mainImg"] {
+        width: 288px;
+        height: 268px;
+    }   
+
     .imgsCard > div:nth-of-type(1) {
         width: 288px;
         height: 268px;
