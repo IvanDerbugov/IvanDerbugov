@@ -1,25 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>NFTs</title>
 </head>
+
 <body>
-    <div class="header">
+    <header>
         <div class="headerTop flex">
-            <div>
-                data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEYSURBVHgB7ZXNjcIwEIXfZDlw3BJ2K4ESOAISECoAKiBUwt+BdAF0ABVACVw5wDC2+HGQAyghgIQ/KYpnnhO/jJUx4Ph2yAyGFV5J4g8ZwsC6MaH/U+whzk1GvGKN5KgtUNcr9ZwZ3Nv/LHQPbyZqgLBRt36Jf68n9v1LLq0ea4AYCz3Io3098WcL/xyk0Jkxj6xpBuMyF5kwVePdHh1sMdAu82gRITDnJtYZzXpIA6sBxbDKgVSiCws7Rs/zdKUS682QAjNn7QujihTqMmMjrpfy0qAW0kzrZfYl78uw8KCu978+ocf6kDIQMZGSW+/7sN/QGXAGnAFn4A3krNlj/35mOxbWtqS1AvoojXkgEfJB6iSEw2HhAEiniwi3RIzYAAAAAElFTkSuQmCC
+            <div class="flex">
+                <div class="flex headerTopLeft">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEYSURBVHgB7ZXNjcIwEIXfZDlw3BJ2K4ESOAISECoAKiBUwt+BdAF0ABVACVw5wDC2+HGQAyghgIQ/KYpnnhO/jJUx4Ph2yAyGFV5J4g8ZwsC6MaH/U+whzk1GvGKN5KgtUNcr9ZwZ3Nv/LHQPbyZqgLBRt36Jf68n9v1LLq0ea4AYCz3Io3098WcL/xyk0Jkxj6xpBuMyF5kwVePdHh1sMdAu82gRITDnJtYZzXpIA6sBxbDKgVSiCws7Rs/zdKUS682QAjNn7QujihTqMmMjrpfy0qAW0kzrZfYl78uw8KCu978+ocf6kDIQMZGSW+/7sN/QGXAGnAFn4A3krNlj/35mOxbWtqS1AvoojXkgEfJB6iSEw2HhAEiniwi3RIzYAAAAAElFTkSuQmCC"
+                        alt="logoHeaderTop">
+                    <!-- <img src="img/LogoNFTMarketplace.png" alt="logoNFTMarketplace"> -->
+                    <p>NFT Marketplace</p>
+                </div>
+            </div>
+            <div class="flex headerTopRight">
+                <p class="flex">
+                    Marketplace
+                </p>
+                <p class="flex">
+                    Rankings
+                </p>
+                <p class="flex">
+                    Connect a wallet
+                </p>
+                <button class="buttonWithIcon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADfSURBVHgB1VPBDcIwDHRZgG6AR2CEjtAROkI2SDeAjVomYITCBIUJgo1OIkQNSegDcdI9El9OtmMT/QLOOVbSGohBLbTC2b0wCQ8aKzVjPFYanPfCzrvnEsNBeF7KBJlrbMg1a1Ae0+cKFE0Y2yzoW+GpqqoLRYDYCG3SUMucKI2rcJtjeBMypbET3pOqtT2MPcj55ZFyEcxhhxlkzORXc1hjI/wt8WGyDUXYwkjZ48yg9vfoZ58ys8igd4l9hUZhYwIDQUeZQH+fLQgDjBINFQKJzG8V4ROKzXxT+hs8AF5EYIqcCQYsAAAAAElFTkSuQmCC"
+                        alt="logoUser">
+                    <p>Sign Up</p>
+                </button>
+            </div>
+        </div>
+
+        <div class="container flex headerMain">
+            <div class="headerMainLeft">
+                <h1>
+                    Discover digital art & Collect NFTs
+                </h1>
                 <p>
-                    
+                    NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT
+                    artists.
+                </p>
+                <button class="buttonWithIcon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAD5SURBVHgB3ZNhDcMgEIXJFDAHSKiEzkElVEIddBJwsE1B62ASmilgDiqB3SXvGsKg0H/LLnkpuYOPd0CV+svw3rekG2mBOqmdDnAYpElPGrLOpAfpRRrV0SCQITk4MkF+4Nzewoa0+nQwTEfzZ26/BLM4J1aPXApmsFG3B7tm2oxhGrWsO140ycIK2IK6yQFtdFZrAeazsGhyi5v7chfBvDoScctRm30OeEqARm6Xhuzsgq88Zsm9VaWrEWfXBy2K0+0CcCy+psXtTaEth/Eg42BjVwJuvxAcOHmT4giOpYumBJyDS+CwQU0jN1XBAod3fHWibqthPx0fWV/ottxDwOwAAAAASUVORK5CYII="
+                        alt="RocketLaunch">
+                    <p>
+                        Get Started
+                    </p>
+                </button>
+                <div class="flex indicators">
+                    <div>
+                        <h3>
+                            240k+
+                        </h3>
+                        <p>
+                            Total Sale
+                        </p>
+                    </div>
+                    <div>
+                        <h3>
+                            100k+
+                        </h3>
+                        <p>
+                            Auctions
+                        </p>
+                    </div>
+                    <div>
+                        <h3>
+                            240k+
+                        </h3>
+                        <p>
+                            Artists
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="headerMainRight">
+                <img src="img/headerMainImg1.jpg" alt="headerMainImg">
+                <div>
+                    <h5>
+                        Space Walking
+                    </h5>
+                    <div class="flex">
+                        <img src="img/headerAvatar.png" alt="headerAvatar">
+                        <p>
+                            Animakid
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container treadingCollections">
+        <div>
+            <div>
+                <h2>
+                    Trending Collections
+                </h2>
+                <p>
+                    Checkout our weekly updated trending collection.
                 </p>
             </div>
-            <div>
-
-            </div>
+            
         </div>
     </div>
 </body>
+
 </html>

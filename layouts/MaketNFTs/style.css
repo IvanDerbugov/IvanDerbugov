@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #2B2B2B;
@@ -31,17 +31,18 @@ a {
 }
 
 /* Делаем картинки адаптивными */
-img {
+/* img {
     max-width: 100%;
     height: auto;
     display: block;
-}
+} */
 
 /* Стили для кнопок */
 button {
     cursor: pointer;
     border: none;
-    background: none;
+    background: #A259FF;
+    border-radius: 20px;
     font: inherit;
     color: inherit;
 }
@@ -68,6 +69,7 @@ input, textarea, select {
 
 .flex {
     display: flex;
+    align-items: center;
 }
 
 .grid {
@@ -77,8 +79,142 @@ input, textarea, select {
 /* Утилиты для отступов */
 .m-0 { margin: 0; }
 .p-0 { padding: 0; }
-.mt-1 { margin-top: 0.25rem; }
-.mb-1 { margin-bottom: 0.25rem; }
-.ml-1 { margin-left: 0.25rem; }
-.mr-1 { margin-right: 0.25rem; }
-.p-1 { padding: 0.25rem; }
+
+.buttonWithIcon {
+    display: flex;
+    align-items: center;
+    padding: 19px 50px;
+    font-size: 16px;
+    font-weight: 600;
+    gap: 12px;
+}
+
+h2 {
+    font-size: 38px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+.headerTop {
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.headerTopRight {
+    gap: 10px;
+}
+
+.headerTopRight p {
+    padding: 12px 20px;
+}
+
+.headerTopRight button {
+    padding: 19px 30px;
+}
+
+.headerTopRight button p {
+    padding: 0;
+}
+
+.headerTopLeft {
+    gap: 12px;
+    height: 32px;
+}
+
+img[alt="logoUser"] {
+    width: 20px;
+    height: 20px;
+}
+
+.headerTopLeft p {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+
+.headerMain {
+    align-items: flex-start;
+    gap: 30px;
+    margin: 80px auto;
+}
+
+.headerMainLeft h1 {
+    font-size: 67px;
+    font-weight: 600;
+}
+
+.headerMainLeft p {
+    font-size: 22px;
+}
+
+.headerMainLeft button {
+    margin: 30px 0;
+}
+
+.headerMainLeft button img {
+    width: 20px;
+    height: 20px;
+}
+
+.headerMainLeft button p {
+    padding: 0;
+}
+
+.indicators {
+    gap: 30px;
+}
+
+.indicators div {
+    width: 150px;
+}
+
+.indicators h3 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.indicators p {
+    font-size: 24px;
+}
+
+
+.headerMainRight>div {
+    background-color: #3B3B3B;
+    border-radius:0 0 24px 24px;
+    padding: 22px 20px;
+    margin-top: -6px;
+}
+
+.headerMainRight h5 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+img[alt="headerMainImg"] {
+    border-radius: 24px 24px 0 0;
+}
+
+img[alt="headerAvatar"] {
+    margin-right: 12px;
+}
+
+
+
+.treadingCollections {
+    margin: 80px 0;
+}
+
+
+
