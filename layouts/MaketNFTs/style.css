@@ -30,23 +30,6 @@ a {
     color: inherit;
 }
 
-/* Делаем картинки адаптивными */
-/* img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-} */
-
-/* Стили для кнопок */
-button {
-    cursor: pointer;
-    border: none;
-    background: #A259FF;
-    border-radius: 20px;
-    font: inherit;
-    color: inherit;
-}
-
 /* Стили для форм */
 input, textarea, select {
     font: inherit;
@@ -79,6 +62,17 @@ input, textarea, select {
 /* Утилиты для отступов */
 .m-0 { margin: 0; }
 .p-0 { padding: 0; }
+.m-160 { margin: 160px 0; }
+
+/* Стили для кнопок */
+button {
+    cursor: pointer;
+    border: none;
+    background: #A259FF;
+    border-radius: 20px;
+    font: inherit;
+    color: inherit;
+}
 
 .buttonWithIcon {
     display: flex;
@@ -87,6 +81,16 @@ input, textarea, select {
     font-size: 16px;
     font-weight: 600;
     gap: 12px;
+}
+
+.btnSeeMore {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 19px 50px;
+    font-size: 16px;
+    border: 1px solid #A259FF;
+    background-color: transparent;
 }
 
 h2 {
@@ -212,9 +216,257 @@ img[alt="headerAvatar"] {
 
 
 
-.treadingCollections {
-    margin: 80px 0;
+/* .treadingCollections {
+    margin: 160px 0;
+} */
+
+.trendingCollectionsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
 }
 
+.collectionCard {
+    display: flex;
+    flex-direction: column;
+}
+
+img[src^="img/TrendingCollectionBig"] {
+    width: 330px;
+    height: 330px;
+    border-radius: 25px;
+    margin-bottom: 15px;
+}
+
+img[alt^="miniCard"] {
+    border-radius: 23px;
+}
+
+.colectionMiniCard {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.cardMore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 23px;
+    background-color: #A259FF;
+    width: 100px;
+    height: 100px;
+}
+
+.collectionCardTitle {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.collectionCardAuthor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* .topCreators {
+    margin: 160px 0;
+} */
+
+.topCreators .flex {
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.topCreators .buttonWithIcon {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #A259FF;
+}
+
+.topCreators .buttonWithIcon svg {
+    color: #A259FF;
+}
+
+
+.topCreatorsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.creatorCard {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    background-color: #3B3B3B;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.number {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    color: #858584;
+    background-color: #2B2B2B;
+    border-radius: 50%;
+    width: 30px;         
+    height: 30px;        
+    display: flex;       
+    align-items: center; 
+    justify-content: center; 
+    font-size: 16px;
+}
+
+.creatorCard p:first-of-type {
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.creatorCard p:last-of-type {
+    font-size: 16px;
+}
+
+.creatorCard p span {
+    color: #858584;
+}
+
+
+
+/* .categories {
+    margin: 160px 0;
+} */
+
+.categories h2 {
+    margin-bottom: 60px;
+}
+
+.categoriesGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.category {
+    width: 240px;
+    height: 316px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.category div:first-of-type {
+    /* background: url(img/categoryFon1.jpg); */
+    height: 240px;
+}
+
+.category div:last-of-type {
+    height: 76px;
+    background-color: #3B3B3B;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 30px;
+}
+
+.category div:last-of-type p {
+    font-weight: 600;
+}
+
+.category:nth-last-of-type(1) div:first-of-type {
+    background: url(img/categoryFon1.jpg);
+}
+
+.category:nth-last-of-type(2) div:first-of-type {
+    background: url(img/categoryFon2.jpg);
+}
+
+.category:nth-last-of-type(3) div:first-of-type {
+    background: url(img/categoryFon3.jpg);
+}
+
+.category:nth-last-of-type(4) div:first-of-type {
+    background: url(img/categoryFon4.jpg);
+}
+
+.category:nth-last-of-type(5) div:first-of-type {
+    background: url(img/categoryFon5.jpg);
+}   
+
+.category:nth-last-of-type(6) div:first-of-type {
+    background: url(img/categoryFon6.jpg);
+}
+
+.category:nth-last-of-type(7) div:first-of-type {
+    background: url(img/categoryFon7.jpg);
+}   
+
+.category:nth-last-of-type(8) div:first-of-type {
+    background: url(img/categoryFon8.jpg);
+}
+
+
+
+.moreNFTs > .flex{
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.moreNFTsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 30px;
+}
+
+.moreNFTsCard {
+    width: 330px;
+    background-color: #3B3B3B;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+img[alt^='moreNFTsAvatar'] {
+    margin-right: 12px;
+}
+
+.moreNFTsCardPrice {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.moreNFTsCard>div {
+    padding: 20px 30px 25px;
+}
+
+.moreNFTsCard>div>p {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.moreNFTsCardPrice span {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: #858584
+}
+
+.moreNFTsCardPrice p {
+    font-size: 16px;
+}
+
+
+
+.magicMashrooms {
+    height: 640px;
+    
+}
 
 

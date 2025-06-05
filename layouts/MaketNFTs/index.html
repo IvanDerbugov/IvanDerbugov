@@ -4,13 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>NFTs</title>
 </head>
 
 <body>
+    <svg style="display:none;">
+        <symbol id="icon-rocket" viewBox="0 0 20 20" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M6.17053 12.4494C6.28055 12.7766 6.10451 13.131 5.77734 13.241C4.71792 13.5973 4.15489 14.4866 3.85373 15.391C3.73414 15.7501 3.66189 16.0958 3.61848 16.3817C3.90434 16.3383 4.25006 16.266 4.60917 16.1464C5.51355 15.8453 6.4029 15.2823 6.75916 14.2228C6.86918 13.8957 7.2236 13.7196 7.55078 13.8296C7.87795 13.9397 8.05399 14.2941 7.94396 14.6213C7.4096 16.2103 6.08801 16.9715 5.00411 17.3324C4.45655 17.5148 3.94395 17.6048 3.5698 17.6497C3.38182 17.6722 3.22641 17.6836 3.116 17.6894C3.06074 17.6924 3.01658 17.6939 2.98505 17.6946C2.96928 17.695 2.95666 17.6952 2.94737 17.6954L2.93596 17.6955L2.93217 17.6955L2.93077 17.6955L2.93019 17.6955C2.92993 17.6955 2.92969 17.6955 2.92969 17.0705C2.30469 17.0705 2.30469 17.0702 2.30469 17.07L2.30469 17.0694L2.30469 17.068L2.30471 17.0642L2.30481 17.0528C2.30493 17.0435 2.30514 17.0309 2.30553 17.0151C2.30631 16.9836 2.30782 16.9394 2.31072 16.8842C2.31653 16.7738 2.32797 16.6184 2.35052 16.4304C2.3954 16.0562 2.48542 15.5436 2.66776 14.9961C3.0287 13.9122 3.78989 12.5906 5.37891 12.0562C5.70608 11.9462 6.0605 12.1222 6.17053 12.4494ZM2.92969 17.0705H2.30469C2.30469 17.4157 2.58451 17.6955 2.92969 17.6955V17.0705Z"
+                fill="currentColor" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M16.5462 3.45406C15.8208 3.34943 14.0351 3.31002 12.2076 5.13753L7.34482 10.0003L10 12.6555L14.8627 7.79271C16.6903 5.9652 16.6508 4.17951 16.5462 3.45406ZM16.7275 2.21727C15.7298 2.07282 13.5058 2.07157 11.3237 4.25365L6.019 9.55834C5.90179 9.67555 5.83594 9.83452 5.83594 10.0003C5.83594 10.166 5.90179 10.325 6.019 10.4422L9.55806 13.9813C9.80214 14.2254 10.1979 14.2254 10.4419 13.9813L15.7466 8.67659C17.9287 6.49452 17.9275 4.27052 17.783 3.27282C17.7465 3.0058 17.6235 2.75803 17.4329 2.5674C17.2422 2.37678 16.9945 2.25382 16.7275 2.21727Z"
+                fill="currentColor" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M14.422 8.49219C14.7672 8.49219 15.047 8.77201 15.047 9.11719V14.1641L15.0469 14.173C15.0423 14.5013 14.9086 14.8145 14.675 15.045L12.1527 17.575C11.9926 17.7349 11.7921 17.8484 11.5725 17.9033C11.353 17.9582 11.1227 17.9524 10.9061 17.8867C10.6896 17.8209 10.495 17.6976 10.343 17.5299C10.1912 17.3623 10.0877 17.1567 10.0435 16.9349C10.0434 16.9347 10.0435 16.9351 10.0435 16.9349L9.38731 13.6619C9.31946 13.3235 9.53882 12.9941 9.87727 12.9263C10.2157 12.8584 10.5451 13.0778 10.6129 13.4162L11.2694 16.6906L13.797 14.1552V9.11719C13.797 8.77201 14.0768 8.49219 14.422 8.49219Z"
+                fill="currentColor" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5.82722 4.95319L5.83612 4.95312H10.883C11.2282 4.95312 11.508 5.23295 11.508 5.57812C11.508 5.9233 11.2282 6.20312 10.883 6.20312H5.84496L5.83991 6.20828L5.83988 6.20825L3.30957 8.73075L3.31054 8.73094L6.58398 9.38719C6.92242 9.45504 7.14178 9.78441 7.07393 10.1229C7.00608 10.4613 6.67671 10.6807 6.33827 10.6128L3.0658 9.95675C3.06562 9.95671 3.06543 9.95668 3.06524 9.95664C2.84349 9.91244 2.63788 9.80892 2.47031 9.65711C2.3026 9.50516 2.17928 9.31054 2.11351 9.094C2.04775 8.87746 2.042 8.64712 2.09689 8.42757C2.15178 8.20802 2.26525 8.00749 2.42518 7.84738L2.42612 7.84644L2.42612 7.84644L4.95522 5.32514C5.18573 5.09151 5.49894 4.95786 5.82722 4.95319Z"
+                fill="currentColor" />
+        </symbol>
+    </svg>
+
     <header>
         <div class="headerTop flex">
             <div class="flex">
@@ -34,7 +51,7 @@
                 <button class="buttonWithIcon">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADfSURBVHgB1VPBDcIwDHRZgG6AR2CEjtAROkI2SDeAjVomYITCBIUJgo1OIkQNSegDcdI9El9OtmMT/QLOOVbSGohBLbTC2b0wCQ8aKzVjPFYanPfCzrvnEsNBeF7KBJlrbMg1a1Ae0+cKFE0Y2yzoW+GpqqoLRYDYCG3SUMucKI2rcJtjeBMypbET3pOqtT2MPcj55ZFyEcxhhxlkzORXc1hjI/wt8WGyDUXYwkjZ48yg9vfoZ58ys8igd4l9hUZhYwIDQUeZQH+fLQgDjBINFQKJzG8V4ROKzXxT+hs8AF5EYIqcCQYsAAAAAElFTkSuQmCC"
                         alt="logoUser">
-                    <p>Sign Up</p>
+                    Sign Up
                 </button>
             </div>
         </div>
@@ -49,11 +66,10 @@
                     artists.
                 </p>
                 <button class="buttonWithIcon">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAD5SURBVHgB3ZNhDcMgEIXJFDAHSKiEzkElVEIddBJwsE1B62ASmilgDiqB3SXvGsKg0H/LLnkpuYOPd0CV+svw3rekG2mBOqmdDnAYpElPGrLOpAfpRRrV0SCQITk4MkF+4Nzewoa0+nQwTEfzZ26/BLM4J1aPXApmsFG3B7tm2oxhGrWsO140ycIK2IK6yQFtdFZrAeazsGhyi5v7chfBvDoScctRm30OeEqARm6Xhuzsgq88Zsm9VaWrEWfXBy2K0+0CcCy+psXtTaEth/Eg42BjVwJuvxAcOHmT4giOpYumBJyDS+CwQU0jN1XBAod3fHWibqthPx0fWV/ottxDwOwAAAAASUVORK5CYII="
-                        alt="RocketLaunch">
-                    <p>
-                        Get Started
-                    </p>
+                    <svg width="20" height="20">
+                        <use xlink:href="#icon-rocket" />
+                    </svg>
+                    Get Started
                 </button>
                 <div class="flex indicators">
                     <div>
@@ -90,7 +106,7 @@
                         Space Walking
                     </h5>
                     <div class="flex">
-                        <img src="img/headerAvatar.png" alt="headerAvatar">
+                        <img src="img/Avatars/headerAvatar.png" alt="headerAvatar">
                         <p>
                             Animakid
                         </p>
@@ -100,18 +116,468 @@
         </div>
     </header>
 
-    <div class="container treadingCollections">
+    <div class="container treadingCollections m-160">
         <div>
+            <h2>
+                Trending Collections
+            </h2>
+            <p>
+                Checkout our weekly updated trending collection.
+            </p>
+        </div>
+
+
+        <div class="trendingCollectionsList">
+            <!-- первая карточка -->
+            <div class="collectionCard">
+                <img src="img/TrendingCollectionBig1.jpg" alt="card_Animals">
+                <div class="colectionMiniCard">
+                    <img src="img/TrendingCollection1_mini1.jpg" alt="miniCard_1">
+                    <img src="img/TrendingCollection1_mini2.jpg" alt="miniCard_2">
+                    <div class="cardMore">1025+</div>
+                </div>
+                <div class="collectionCardInfo">
+                    <div class="collectionCardTitle">DSGN Animals</div>
+                    <div class="collectionCardAuthor">
+                        <img src="img/Avatars/AvatarMrFox.png" alt="AvatarMrFox">
+                        <span>MrFox</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- вторая карточка -->
+            <div class="collectionCard">
+                <img src="img/TrendingCollectionBig2.jpg" alt="card_Mushrooms">
+                <div class="colectionMiniCard">
+                    <img src="img/TrendingCollection1_mini2_1.jpg" alt="miniCard_3">
+                    <img src="img/TrendingCollection1_mini2_2.jpg" alt="miniCard_4">
+                    <div class="cardMore">1025+</div>
+                </div>
+                <div class="collectionCardInfo">
+                    <div class="collectionCardTitle">Magic Mushrooms</div>
+                    <div class="collectionCardAuthor">
+                        <img src="img/Avatars/AvatarShroomie.png" alt="AvatarShroomie">
+                        <span>Shroomie</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- третья карточка -->
+            <div class="collectionCard">
+                <img src="img/TrendingCollectionBig3.jpg" alt="card_Disco">
+                <div class="colectionMiniCard">
+                    <img src="img/TrendingCollection1_mini3_1.jpg" alt="miniCard_5">
+                    <img src="img/TrendingCollection1_mini3_2.jpg" alt="miniCard_6">
+                    <div class="cardMore">1025+</div>
+                </div>
+                <div class="collectionCardInfo">
+                    <div class="collectionCardTitle">Disco Machines</div>
+                    <div class="collectionCardAuthor">
+                        <img src="img/Avatars/AvatarBeKind2Robots.png" alt="AvatarBeKind2Robots">
+                        <span>BeKind2Robots</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container topCreators m-160">
+        <div class="flex">
             <div>
                 <h2>
-                    Trending Collections
+                    Top Creators
                 </h2>
                 <p>
-                    Checkout our weekly updated trending collection.
+                    Checkout Top Rated Creators on the NFT Marketplace
                 </p>
             </div>
-            
+
+            <button class="buttonWithIcon">
+                <svg width="20" height="20">
+                    <use xlink:href="#icon-rocket" />
+                </svg>
+                Get Started
+            </button>
         </div>
+
+        <div class="topCreatorsGrid">
+            <div class="creatorCard">
+                <div class="number">1</div>
+                <img src="img/Avatars/topCreator1.png" alt="topCreator1">
+                <p>Keepitreal</p>
+                <p><span>Total Sales: </span>34.53 ETH</p>
+            </div>
+            <div class="creatorCard">
+                <div class="number">2</div>
+                <img src="img/Avatars/topCreator2.png" alt="topCreator2">
+                <p>DigiLab</p>
+                <p><span>Total Sales: </span>34.53 ETH</p>
+            </div>
+            <div class="creatorCard">
+                <div class="number">3</div>
+                <img src="img/Avatars/topCreator3.png" alt="topCreator3">
+                <p>GravityOne</p>
+                <p><span>Total Sales: </span>34.53 ETH</p>
+            </div>
+            <div class="creatorCard">
+                <div class="number">4</div>
+                <img src="img/Avatars/topCreator4.png" alt="topCreator4">
+                <p>Juaniе</p>
+                <p><span>Total Sales: </span>34.53 ETH</p>
+            </div>
+            <div class="creatorCard">
+                <div class="number">5</div>
+                <img src="img/Avatars/topCreator5.png" alt="topCreator5">
+                <p>BlueWhale</p>
+                <p><span>Total Sales: </span>34.53 ETH</p>
+            </div>
+            <div class="creatorCard">
+                <div class="number">6</div>
+                <img src="img/Avatars/topCreator6.png" alt="topCreator6">
+                <p>Mr Fox</p>
+                <p><span>Total Sales: </span>34.53 ETH</p>
+            </div>
+            <div class="creatorCard">
+                <div class="number">7</div>
+                <img src="img/Avatars/topCreator7.png" alt="topCreator7">
+                <p>Shroomie</p>
+                <p><span>Total Sales: </span>34.53 ETH</p>
+            </div>
+            <div class="creatorCard">
+                <div class="number">8</div>
+                <img src="img/Avatars/topCreator8.png" alt="topCreator8">
+                <p>Robotica</p>
+                <p><span>Total Sales: </span>34.53 ETH</p>
+            </div>
+            <div class="creatorCard">
+                <div class="number">9</div>
+                <img src="img/Avatars/topCreator9.png" alt="topCreator9">
+                <p>RustyRobot</p>
+                <p><span>Total Sales: </span>34.53 ETH</p>
+            </div>
+            <div class="creatorCard">
+                <div class="number">10</div>
+                <img src="img/Avatars/topCreator10.png" alt="topCreator10">
+                <p>Animakid</p>
+                <p><span>Total Sales: </span>34.53 ETH</p>
+            </div>
+            <div class="creatorCard">
+                <div class="number">11</div>
+                <img src="img/Avatars/topCreator11.png" alt="topCreator11">
+                <p>Dotgu</p>
+                <p><span>Total Sales: </span>34.53 ETH</p>
+            </div>
+            <div class="creatorCard">
+                <div class="number">12</div>
+                <img src="img/Avatars/topCreator12.png" alt="topCreator12">
+                <p>Ghiblier</p>
+                <p><span>Total Sales: </span>34.53 ETH</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container categories m-160">
+        <h2>
+            Browse Categories
+        </h2>
+        <div class="categoriesGrid">
+            <div class="category">
+                <div>
+                    <!-- <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7.8125 84.375H35.9375C39.9549 84.375 43.8821 83.1837 47.2225 80.9517C50.5629 78.7198 53.1664 75.5474 54.7038 71.8358C56.2412 68.1241 56.6435 64.04 55.8597 60.0997C55.0759 56.1595 53.1414 52.5402 50.3006 49.6994C47.4598 46.8586 43.8405 44.9241 39.9003 44.1403C35.96 43.3565 31.8759 43.7588 28.1642 45.2962C24.4526 46.8336 21.2802 49.4371 19.0483 52.7775C16.8163 56.1179 15.625 60.0451 15.625 64.0625C15.625 78.125 7.8125 84.375 7.8125 84.375Z"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M43.9053 45.3906C51.4053 35.2734 70.4678 12.1094 87.8896 12.1094C87.8896 29.5312 64.7256 48.5938 54.6084 56.0938"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M51.9531 35.3906C57.246 38.3777 61.6223 42.754 64.6094 48.0469" stroke="white"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg> -->
+                </div>
+                <div>
+                    <p>
+                        Art
+                    </p>
+                </div>
+            </div>
+            <div class="category">
+                <div>
+                    <!-- <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M14.3355 67.5784L23.7887 14.0237C23.8547 13.6195 24.0006 13.2325 24.2178 12.8853C24.4349 12.538 24.719 12.2375 25.0535 12.0011C25.388 11.7648 25.7662 11.5974 26.166 11.5087C26.5659 11.4201 26.9794 11.4119 27.3824 11.4846L48.9449 15.2737C49.7596 15.426 50.482 15.8919 50.9568 16.5713C51.4316 17.2506 51.6209 18.0891 51.484 18.9065L41.9918 72.7737C41.3417 76.4009 39.2977 79.6295 36.2972 81.7685C33.2966 83.9076 29.578 84.7872 25.9371 84.219C18.1637 82.969 12.9684 75.3518 14.3355 67.5784Z"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M46.21 48.7501L74.6865 38.3985C75.0737 38.2556 75.4853 38.1907 75.8977 38.2077C76.31 38.2247 76.7149 38.3232 77.089 38.4976C77.4631 38.6719 77.7989 38.9186 78.0771 39.2234C78.3553 39.5282 78.5704 39.8851 78.71 40.2735L86.21 60.8204C86.4866 61.5976 86.4447 62.4526 86.0935 63.199C85.7422 63.9454 85.1101 64.5226 84.335 64.8048L32.9287 83.5157"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M85.9375 63.4766V81.25C85.9375 82.0788 85.6083 82.8737 85.0222 83.4597C84.4362 84.0458 83.6413 84.375 82.8125 84.375H28.125"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M28.125 75C30.7138 75 32.8125 72.9013 32.8125 70.3125C32.8125 67.7237 30.7138 65.625 28.125 65.625C25.5362 65.625 23.4375 67.7237 23.4375 70.3125C23.4375 72.9013 25.5362 75 28.125 75Z"
+                            fill="white" />
+                    </svg> -->
+                </div>
+                <div>
+                    <p>
+                        Collectibles
+                    </p>
+                </div>
+            </div>
+            <div class="category">
+                <div>
+                    <!-- <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M70.3125 78.125C76.3531 78.125 81.25 73.2281 81.25 67.1875C81.25 61.1469 76.3531 56.25 70.3125 56.25C64.2719 56.25 59.375 61.1469 59.375 67.1875C59.375 73.2281 64.2719 78.125 70.3125 78.125Z"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M20.3125 90.625C26.3531 90.625 31.25 85.7281 31.25 79.6875C31.25 73.6469 26.3531 68.75 20.3125 68.75C14.2719 68.75 9.375 73.6469 9.375 79.6875C9.375 85.7281 14.2719 90.625 20.3125 90.625Z"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M81.25 31.25L31.25 43.75" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M31.25 79.6875V25L81.25 12.5V67.1875" stroke="white" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg> -->
+                </div>
+                <div>
+                    <p>
+                        Music
+                    </p>
+                </div>
+            </div>
+            <div class="category">
+                <div>
+                    <!-- <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M81.25 81.25H18.75C17.0924 81.25 15.5027 80.5915 14.3306 79.4194C13.1585 78.2473 12.5 76.6576 12.5 75V31.25C12.5 29.5924 13.1585 28.0027 14.3306 26.8306C15.5027 25.6585 17.0924 25 18.75 25H31.25L37.5 15.625H62.5L68.75 25H81.25C82.9076 25 84.4973 25.6585 85.6694 26.8306C86.8415 28.0027 87.5 29.5924 87.5 31.25V75C87.5 76.6576 86.8415 78.2473 85.6694 79.4194C84.4973 80.5915 82.9076 81.25 81.25 81.25Z"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M50 65.625C57.7665 65.625 64.0625 59.329 64.0625 51.5625C64.0625 43.796 57.7665 37.5 50 37.5C42.2335 37.5 35.9375 43.796 35.9375 51.5625C35.9375 59.329 42.2335 65.625 50 65.625Z"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg> -->
+                </div>
+                <div>
+                    <p>
+                        Photography
+                    </p>
+                </div>
+            </div>
+            <div class="category">
+                <div>
+                    <!-- <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.375 23.4375H59.375C62.6902 23.4375 65.8696 24.7545 68.2138 27.0987C70.558 29.4429 71.875 32.6223 71.875 35.9375V73.4375C71.875 74.2663 71.5458 75.0612 70.9597 75.6472C70.3737 76.2333 69.5788 76.5625 68.75 76.5625H18.75C15.4348 76.5625 12.2554 75.2455 9.91117 72.9013C7.56696 70.5571 6.25 67.3777 6.25 64.0625V26.5625C6.25 25.7337 6.57924 24.9388 7.16529 24.3528C7.75134 23.7667 8.5462 23.4375 9.375 23.4375V23.4375Z"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M71.875 43.75L93.75 31.25V68.75L71.875 56.25" stroke="white" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg> -->
+                </div>
+                <div>
+                    <p>
+                        Video
+                    </p>
+                </div>
+            </div>
+            <div class="category">
+                <div>
+                    <!-- <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M84.375 50V68.75" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M75 59.375H93.75" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M32.8125 15.625V31.25" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M25 23.4375H40.625" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M65.625 71.875V84.375" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M59.375 78.125H71.875" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path
+                            d="M72.8218 14.6987L14.7341 72.7864C13.5137 74.0068 13.5137 75.9854 14.7341 77.2058L22.8134 85.285C24.0338 86.5054 26.0124 86.5054 27.2328 85.285L85.3205 27.1973C86.5409 25.9769 86.5409 23.9983 85.3205 22.7779L77.2413 14.6987C76.0209 13.4783 74.0422 13.4783 72.8218 14.6987Z"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M56.25 31.25L68.75 43.75" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg> -->
+                </div>
+                <div>
+                    <p>
+                        Utility
+                    </p>
+                </div>
+            </div>
+            <div class="category">
+                <div>
+                    <!-- <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M50 87.5C70.7107 87.5 87.5 70.7107 87.5 50C87.5 29.2893 70.7107 12.5 50 12.5C29.2893 12.5 12.5 29.2893 12.5 50C12.5 70.7107 29.2893 87.5 50 87.5Z"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M23.4375 23.5176C30.449 30.5474 34.383 40.0732 34.375 50.002C34.383 59.9307 30.449 69.4565 23.4375 76.4863"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M76.5642 23.5176C69.5608 30.5526 65.6289 40.0752 65.6289 50.002C65.6289 59.9287 69.5608 69.4513 76.5642 76.4863"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12.5 50H87.5" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M50 12.5V87.5" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg> -->
+                </div>
+                <div>
+                    <p>
+                        Sport
+                    </p>
+                </div>
+            </div>
+            <div class="category">
+                <div>
+                    <!-- <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M50 84.375C68.9848 84.375 84.375 68.9848 84.375 50C84.375 31.0152 68.9848 15.625 50 15.625C31.0152 15.625 15.625 31.0152 15.625 50C15.625 68.9848 31.0152 84.375 50 84.375Z"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M71.9529 23.5547C82.7732 20.586 90.8982 20.8594 93.3201 25C97.617 32.461 81.7186 49.7266 57.8123 63.5157C33.9061 77.3047 11.0154 82.461 6.6795 75C4.29669 70.8594 8.12481 63.6719 16.0936 55.7813"
+                            stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg> -->
+                </div>
+                <div>
+                    <p>
+                        Virtual Worlds
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container moreNFTs m-160">
+        <div class="flex">
+            <div>
+                <h2>
+                    Top Creators
+                </h2>
+                <p>
+                    Checkout Top Rated Creators on the NFT Marketplace
+                </p>
+            </div>
+
+            <button class="btnSeeMore">
+                <img src="img/EyeIcon.png" alt="EyeIcon">
+                See More
+            </button>
+        </div>
+
+        <!-- первая карточка -->
+        <div class="moreNFTsGrid">
+            <div class="moreNFTsCard">
+                <img src="img/moreNFTsCard1.jpg" alt="moreNFTsCard1">
+                <div>
+                    <p>
+                        Distant Galaxy
+                    </p>
+                    <div class="flex">
+                        <img src="img/Avatars/moreNFTsAvatar1.png" alt="moreNFTsAvatar1">
+                        <span>
+                            MoonDancer
+                        </span>
+                    </div>
+
+                    <div class="moreNFTsCardPrice">
+                        <div>
+                            <span>
+                                Price
+                            </span>
+                            <p>
+                                1.63 ETH
+                            </p>
+                        </div>
+                        <div>
+                            <span>
+                                Highest Bid
+                            </span>
+                            <p>
+                                0.33 wETH
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- вторая карточка -->
+            <div class="moreNFTsCard">
+                <img src="img/moreNFTsCard2.jpg" alt="moreNFTsCard2">
+                <div>
+                    <p>
+                        Life On Edena
+                    </p>
+                    <div class="flex">
+                        <img src="img/Avatars/moreNFTsAvatar2.png" alt="moreNFTsAvatar2">
+                        <span>
+                            NebulaKid
+                        </span>
+                    </div>
+
+                    <div class="moreNFTsCardPrice">
+                        <div>
+                            <span>
+                                Price
+                            </span>
+                            <p>
+                                1.63 ETH
+                            </p>
+                        </div>
+                        <div>
+                            <span>
+                                Highest Bid
+                            </span>
+                            <p>
+                                0.33 wETH
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- третья карточка -->
+            <div class="moreNFTsCard">
+                <img src="img/moreNFTsCard3.jpg" alt="moreNFTsCard3">
+                <div>
+                    <p>
+                        AstroFiction
+                    </p>
+                    <div class="flex">
+                        <img src="img/Avatars/moreNFTsAvatar3.png" alt="moreNFTsAvatar3">
+                        <span>
+                            Spaceone
+                        </span>
+                    </div>
+
+                    <div class="moreNFTsCardPrice">
+                        <div>
+                            <span>
+                                Price
+                            </span>
+                            <p>
+                                1.63 ETH
+                            </p>
+                        </div>
+                        <div>
+                            <span>
+                                Highest Bid
+                            </span>
+                            <p>
+                                0.33 wETH
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="magicMashrooms">
+        <!-- <img src="img/magicMashroomsFon.png" alt="magicMashrooms"> -->
     </div>
 </body>
 
