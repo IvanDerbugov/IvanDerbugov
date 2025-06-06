@@ -173,7 +173,7 @@ p {
     padding: 0;
 }
 
-.headerTopLeft {
+.NFTMarketplace {
     gap: 12px;
     height: 32px;
 }
@@ -188,7 +188,7 @@ img[alt="logoUser"] {
     height: 20px;
 }
 
-.headerTopLeft p {
+.NFTMarketplace p {
     font-size: 22px;
     font-weight: 500;
 }
@@ -203,10 +203,12 @@ img[alt="logoUser"] {
 .headerMainLeft h1 {
     font-size: 67px;
     font-weight: 600;
+    text-transform: capitalize;
 }
 
 .headerMainLeft p {
     font-size: 22px;
+    text-transform: capitalize;
 }
 
 .headerMainLeft button {
@@ -519,9 +521,9 @@ img[alt^="miniCard"] {
     inset: 0;
     background: 
                 linear-gradient(180deg, rgba(162,89,255,0.1) 0%, rgba(144,72,255,0.9) 100%),
-                url('img/magicMashroomsFon.png');
-    background-size: cover;
-    background-position: 0 0, 0 -380px;
+                url('img/magicMashroomsFon.png') no-repeat;
+    background-size: cover, 100% auto;
+    background-position: 0 0, 0 -400px;
     z-index: 2;
     pointer-events: none;
 }
@@ -685,3 +687,62 @@ text-transform: capitalize;
     position: relative;
     left: -40px;
 }
+
+
+
+footer>.flex {
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+footer h5 {
+    font-family: 'Space Mono', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+footer p {
+    font-size: 16px;
+    color: #ccc;
+    text-transform: capitalize;
+    margin: 20px 0;
+}
+
+.socialIcons {
+    font-size: 31px;
+    color: #858583;
+}
+
+.socialIcons i {
+    margin-right: 10px;
+}
+
+footer>.flex>div:last-of-type {
+    margin-right: -40px;
+}
+
+footer input {
+    height: 60px;
+    border-radius: 20px;
+    padding: 0 45px;
+}
+
+footer button {
+    position: relative;
+    left: -40px;
+}
+
+footer>div:last-of-type {
+    border-top: 1px solid #ccc;
+    margin-top: 30px;
+}
+
+footer>div:last-of-type p {
+    margin-top: 20px;
+}
+
+
+
+
+
