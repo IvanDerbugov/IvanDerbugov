@@ -62,7 +62,7 @@ input, textarea, select {
 /* Утилиты для отступов */
 .m-0 { margin: 0; }
 .p-0 { padding: 0; }
-.m-160 { margin: 160px 0; }
+.m-160 { margin: 160px auto; }
 
 /* Стили для кнопок */
 button {
@@ -83,6 +83,11 @@ button {
     gap: 12px;
 }
 
+.buttonWithIcon i {
+    font-weight: 600 !important;
+    margin-bottom: -6px;
+}
+
 .btnSeeMore {
     display: flex;
     align-items: center;
@@ -91,6 +96,12 @@ button {
     font-size: 16px;
     border: 1px solid #A259FF;
     background-color: transparent;
+}
+
+.btnSeeMore i {
+    font-weight: 600 !important;
+    margin-bottom: -6px;
+    color: #A259FF;
 }
 
 h2 {
@@ -103,6 +114,37 @@ p {
     font-weight: 400;
 }
 
+.fs16 {
+    font-size: 16px;
+}
+
+.avatar {
+    width: 24px;
+    height: 24px;
+    background-image: url('img/Avatars/AvatarSprites3px.png');
+    background-size: 429px 24px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+/* Позиции для каждой иконки */
+.avatar--1  { background-position:    0px 0; } /* 1 очкастая девушка */
+.avatar--2  { background-position:  -24px 0; } /* 2 девушка с чёрным каре */
+.avatar--3  { background-position:  -48px 0; } /* 3 мужик в очках */
+.avatar--4  { background-position:  -72px 0; } /* 4 лис в очках */
+.avatar--5  { background-position:  -96px 0; } /* 5 девушка с синими волосами */
+.avatar--6  { background-position: -120px 0; } /* 6 опра с цветными волосами */
+.avatar--7  { background-position: -144px 0; } /* 7 японка */
+.avatar--8  { background-position: -168px 0; } /* 8 японец с усами и повязкой */
+.avatar--9  { background-position: -191px 0; } /* 9 робот с жёлтым лицом */
+.avatar--10 { background-position: -215px 0; } /* 10 киборг с полосками на лице */
+.avatar--11 { background-position: -239px 0; } /* 11 робот с голубыми глазами */
+.avatar--12 { background-position: -263px 0; } /* 12 собака-робот */
+.avatar--13 { background-position: -286px 0; } /* 13 робот с круглой головой */
+.avatar--14 { background-position: -310px 0; } /* 14 аватар с азиатской внешностью */
+.avatar--15 { background-position: -334px 0; } /* 15 парень в шлеме сердечки-глаза */
+.avatar--16 { background-position: -358px 0; } /* 16 тёмный аватар */
+.avatar--17 { background-position: -382px 0; } /* 17 робот с цилиндром */
 
 
 
@@ -112,7 +154,7 @@ p {
 
 .headerTop {
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 20px 50px;
 }
 
 .headerTopRight {
@@ -134,6 +176,11 @@ p {
 .headerTopLeft {
     gap: 12px;
     height: 32px;
+}
+
+.icon-Storefront:before {
+    color: #A259FF;
+    font-size: 27px;
 }
 
 img[alt="logoUser"] {
@@ -206,19 +253,20 @@ img[alt="logoUser"] {
     margin-bottom: 10px;
 }
 
+.headerMainRight p {
+    margin-left: 12px;
+}
+
 img[alt="headerMainImg"] {
     border-radius: 24px 24px 0 0;
 }
 
-img[alt="headerAvatar"] {
+/* img[alt="headerAvatar"] {
     margin-right: 12px;
-}
-
-
-
-/* .treadingCollections {
-    margin: 160px 0;
 } */
+
+
+
 
 .trendingCollectionsList {
     display: grid;
@@ -272,13 +320,15 @@ img[alt^="miniCard"] {
 }
 
 
-/* .topCreators {
-    margin: 160px 0;
-} */
 
 .topCreators .flex {
     justify-content: space-between;
     margin-bottom: 60px;
+}
+
+.topCreators i {
+    color: #A259FF;
+    font-weight: 800;
 }
 
 .topCreators .buttonWithIcon {
@@ -331,9 +381,9 @@ img[alt^="miniCard"] {
     margin-top: 20px;
 }
 
-.creatorCard p:last-of-type {
+/* .creatorCard p:last-of-type {
     font-size: 16px;
-}
+} */
 
 .creatorCard p span {
     color: #858584;
@@ -341,9 +391,6 @@ img[alt^="miniCard"] {
 
 
 
-/* .categories {
-    margin: 160px 0;
-} */
 
 .categories h2 {
     margin-bottom: 60px;
@@ -363,7 +410,6 @@ img[alt^="miniCard"] {
 }
 
 .category div:first-of-type {
-    /* background: url(img/categoryFon1.jpg); */
     height: 240px;
 }
 
@@ -380,39 +426,42 @@ img[alt^="miniCard"] {
     font-weight: 600;
 }
 
-.category:nth-last-of-type(1) div:first-of-type {
+.category:nth-of-type(1) div:first-of-type {
     background: url(img/categoryFon1.jpg);
 }
 
-.category:nth-last-of-type(2) div:first-of-type {
+.category:nth-of-type(2) div:first-of-type {
     background: url(img/categoryFon2.jpg);
 }
 
-.category:nth-last-of-type(3) div:first-of-type {
+.category:nth-of-type(3) div:first-of-type {
     background: url(img/categoryFon3.jpg);
 }
 
-.category:nth-last-of-type(4) div:first-of-type {
+.category:nth-of-type(4) div:first-of-type {
     background: url(img/categoryFon4.jpg);
 }
 
-.category:nth-last-of-type(5) div:first-of-type {
+.category:nth-of-type(5) div:first-of-type {
     background: url(img/categoryFon5.jpg);
 }   
 
-.category:nth-last-of-type(6) div:first-of-type {
+.category:nth-of-type(6) div:first-of-type {
     background: url(img/categoryFon6.jpg);
 }
 
-.category:nth-last-of-type(7) div:first-of-type {
+.category:nth-of-type(7) div:first-of-type {
     background: url(img/categoryFon7.jpg);
 }   
 
-.category:nth-last-of-type(8) div:first-of-type {
+.category:nth-of-type(8) div:first-of-type {
     background: url(img/categoryFon8.jpg);
 }
 
 
+.moreNFTs {
+    margin: 160px auto 80px
+}
 
 .moreNFTs > .flex{
     justify-content: space-between;
@@ -432,8 +481,8 @@ img[alt^="miniCard"] {
     overflow: hidden;
 }
 
-img[alt^='moreNFTsAvatar'] {
-    margin-right: 12px;
+.moreNFTsCard .flex {
+    gap: 12px;
 }
 
 .moreNFTsCardPrice {
@@ -458,15 +507,181 @@ img[alt^='moreNFTsAvatar'] {
     color: #858584
 }
 
-.moreNFTsCardPrice p {
-    font-size: 16px;
-}
-
-
-
-.magicMashrooms {
+.mushroom-gradient-bg {
+    position: relative;
+    overflow: hidden;
     height: 640px;
-    
+}
+
+.mushroom-gradient-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+                linear-gradient(180deg, rgba(162,89,255,0.1) 0%, rgba(144,72,255,0.9) 100%),
+                url('img/magicMashroomsFon.png');
+    background-size: cover;
+    background-position: 0 0, 0 -380px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.mushroom-gradient-bg>.flex {
+    z-index: 3;
+    position: relative;
+    height: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 60px;
+}
+
+.magicMashroom > div {
+    display: inline-block;
+}
+
+.magicMashroom h2 {
+    font-size: 51px;
+    margin: 30px 0;
+}
+
+.magicMashroom > div > .flex {
+    padding: 11px 14px;
+    background-color: #3B3B3B;
+    border-radius: 20px;
+    gap: 12px;
+}
+
+.magicMashroom .btnSeeMore {
+    background-color: #fff;
+    color: #000;
+}
+
+.timer {
+    padding: 32px 40px;
+    background: rgba(59, 59, 59, 0.5);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.timer-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+.timer-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.timer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 38px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+}
+
+.timer-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: #fff;
+    margin-top: 8px;
+    letter-spacing: 2px;
+}
+
+.timer-sep {
+    font-family: 'Space Mono', monospace;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 8px;
+    line-height: 1;
+    position: relative;
+    top: -35px;
 }
 
 
+.HowItWorks {
+    margin: 80px auto 120px;
+}
+
+
+.howItWorksGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 30px;
+}
+
+.HowItWorks > p {
+    margin: 10px 0 48px;
+}
+
+.howItWorksGrid > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #3B3B3B;
+    border-radius: 24px;
+    padding: 10px 30px 30px;
+}
+
+.howItWorksGrid > div > p:first-of-type {
+    font-weight: 600;
+    margin: 20px 0 10px;
+}
+
+.howItWorksGrid > div > p:last-of-type {
+    font-size: 16px;
+    text-align: center;
+}
+
+
+
+.JoinUs {
+    margin-bottom: 80px;
+    justify-content: space-between;
+    border-radius: 20px;
+    background-color: #3B3B3B;
+    padding: 60px;
+}
+
+
+.JoinUs > img {
+    border-radius: 24px;
+}
+
+.JoinUs h3 {
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.JoinUs p {
+margin-bottom: 40px;
+text-transform: capitalize;
+}
+
+.JoinUs input {
+    height: 60px;
+    border-radius: 20px;
+    padding: 0 45px;
+}
+
+.JoinUs button {
+    position: relative;
+    left: -40px;
+}
