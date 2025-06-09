@@ -104,9 +104,14 @@ button {
     color: #A259FF;
 }
 
+.burgerMenuMobile, #close {
+    background-color: transparent;
+}
+
 h2 {
     font-size: 38px;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 p {
@@ -173,6 +178,10 @@ p {
     padding: 0;
 }
 
+#close {
+    display: none;
+}
+
 .NFTMarketplace {
     gap: 12px;
     height: 32px;
@@ -188,9 +197,15 @@ img[alt="logoUser"] {
     height: 20px;
 }
 
-.NFTMarketplace p {
+.NFTMarketplace h5 {
+    font-family: 'Space Mono', monospace;
     font-size: 22px;
-    font-weight: 500;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.burgerMenuMobile {
+    display: none;
 }
 
 
@@ -209,6 +224,9 @@ img[alt="logoUser"] {
 .headerMainLeft p {
     font-size: 22px;
     text-transform: capitalize;
+}
+.headerMainLeft .description {
+    margin: 20px 0;
 }
 
 .headerMainLeft button {
@@ -259,13 +277,9 @@ img[alt="logoUser"] {
     margin-left: 12px;
 }
 
-img[alt="headerMainImg"] {
+.headerMainRight picture img {
     border-radius: 24px 24px 0 0;
 }
-
-/* img[alt="headerAvatar"] {
-    margin-right: 12px;
-} */
 
 
 
@@ -280,6 +294,10 @@ img[alt="headerMainImg"] {
 .collectionCard {
     display: flex;
     flex-direction: column;
+}
+
+.collectionCard {
+    width: 330px;
 }
 
 img[src^="img/TrendingCollectionBig"] {
@@ -383,9 +401,9 @@ img[alt^="miniCard"] {
     margin-top: 20px;
 }
 
-/* .creatorCard p:last-of-type {
-    font-size: 16px;
-} */
+.creatorCardInfo {
+    text-align: center;
+}
 
 .creatorCard p span {
     color: #858584;

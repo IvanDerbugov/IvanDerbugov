@@ -1,0 +1,146 @@
+@media (max-width: 1070px) {
+    .container {
+        max-width: 690px;
+        padding: 0 20px;
+    }
+
+    .perenosDesktop {
+        display: none;
+    }
+
+    .desktop {
+        display: none;
+    }
+    
+    h1 {
+    font-size: 30px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .NFTMarketplace {
+        height: 24px;
+    }
+
+    .NFTMarketplace h5 {
+        font-size: 22px;
+    }
+
+    .headerTopRight {
+        display: none;
+    }
+
+    .burgerMenuMobile {
+        display: block;
+    }
+
+    .headerTopRight {
+        flex-direction: column;
+        background: #3b3b3b;
+        position: fixed;
+        top: 20px;
+        right: 50px;
+        width: 100%;
+        max-width: 220px;
+        border-radius: 20px;
+        padding: 20px;
+        z-index: 4;
+    }
+    .elMenu {
+        justify-content: center;
+    }
+    .headerTopRight button:last-of-type {
+        padding: 14px 46px;
+    }
+
+    #close {
+        display: block;
+        position: absolute;
+        top: -13px;
+        right: -21px;
+    }
+
+
+    .headerMainLeft h1 {
+        font-size: 38px;
+    }
+    .headerMainLeft p {
+        font-size: 16px;
+    }
+
+    .indicators h3 {
+        font-size: 22px;
+    }
+
+    .indicators div {
+        width: 90px;
+    }
+
+
+    .trendingCollectionsList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .topCreators .flex {
+        align-items: flex-end;
+    }
+
+    .topCreators>.flex>div {
+        width: 343px;
+    }
+
+    .creatorCard {
+        flex-direction: row;
+        width: 330px;
+        height: 100px;
+    }
+
+    .number {
+        top: 13px;
+        left: 12px;
+    }
+
+    .creatorCardInfo {
+        text-align: left;
+        margin: 20px;
+        margin-bottom: 22px;
+    }
+
+    .creatorCardInfo p:first-of-type {
+        margin-top: 0;
+    }
+
+    img[alt^='topCreator'] {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    
+    .categoriesGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .category {
+        width: 150px;
+        height: 209px;
+    }
+
+    .categoryFon {
+        height: 142px !important;
+        background-size: 150px 142px !important;
+        background-repeat: no-repeat !important;
+    }
+
+
+
+
+
+}
