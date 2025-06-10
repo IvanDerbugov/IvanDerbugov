@@ -77,6 +77,18 @@
             <img src="bitTefal.png" alt="" width="700px" height="265px">
         </div>
     </div>
+
+    <script>
+        const audio = new Audio('tefal.mp3');
+        audio.loop = true;
+        document.querySelector('.overlay').addEventListener('mouseover', () => {
+            audio.play();
+        });
+        document.querySelector('.overlay').addEventListener('mouseout', () => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+    </script>
 </body>
 
 </html>
