@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tefal</title>
     <style>
+        .overlay {
+            width: 1000px;
+            height: 1000px;
+            background: url('bigBitTefal.png') no-repeat,
+                url('littleTefal.png') no-repeat,
+                url('bigTefal.png') no-repeat;
+            background-size: calc(100% / 2 - 106px), calc(100% / 2 - 106px), calc(100% / 2);
+            background-position: 189px 498px, 200px 420px, 143px 180px;
+        }
+
+        @keyframes move {
+            0% {
+                background-position: 189px 498px, 200px 420px, 143px 180px;
+            }
+
+            50% {
+                background-position: 189px 498px, 200px 20px, 143px 180px;
+            }
+
+            100% {
+                background-position: 189px 498px, 200px 420px, 143px 180px;
+            }
+        }
+
+        .overlay:hover {
+            animation: move 3s infinite;
+        }
+
+
+
         .backgrounds {
             width: 1000px;
             height: 1000px;
             background: url('bitTefal.png') no-repeat center center,
-            url('BigTefal.png') no-repeat center center;
+                url('BigTefal.png') no-repeat center center;
             background-size: 700px 265px, cover;
             background-position: 142px 494px, 0 0;
         }
@@ -25,11 +56,17 @@
             top: 495px;
             left: 140px;
         }
-        
-        
     </style>
 </head>
+
 <body>
+    <h1>Как надо</h1>
+    <div class="overlay">
+
+    </div>
+
+
+
     <h1>С помощью backgrounds</h1>
     <div class="backgrounds"></div>
 
@@ -41,4 +78,5 @@
         </div>
     </div>
 </body>
+
 </html>
