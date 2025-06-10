@@ -24,6 +24,10 @@
         font-size: 16px;
     }
 
+    .m-160 {
+        margin: 80px auto;
+    }
+
     .NFTMarketplace {
         height: 24px;
     }
@@ -88,8 +92,13 @@
     }
 
 
+    .topCreatorsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .topCreators .flex {
         align-items: flex-end;
+        width: 690px;
     }
 
     .topCreators>.flex>div {
@@ -117,7 +126,7 @@
         margin-top: 0;
     }
 
-    img[alt^='topCreator'] {
+    .creatorCard img {
         width: 60px;
         height: 60px;
     }
@@ -140,7 +149,61 @@
     }
 
 
+    .moreNFTs > .flex {
+        width: 690px;
+    }
 
+    .mushroom-gradient-bg::before {
+        background-position: 0 0, 0 -130px;
+    }
+
+    .moreNFTsCard:last-of-type {
+        display: none;
+    }
+
+
+    .magicMashroom h2 {
+        font-size: 38px;
+        white-space: nowrap;
+    }   
+
+    .timer {
+        padding: 27px;
+        width: 295px;
+        height: 144px;
+    }
+
+    .timer-row {
+        gap: 0;
+    }
+
+    .timer-label {
+        margin-bottom: 10px;
+    }
+
+
+    .howItWorksGrid > div {
+        width: 210px;
+        padding: 10px 20px 30px;
+    }
+
+    .howItWorksGrid > div > p:last-of-type {
+        font-size: 12px;
+    }
+
+    .howItWorksGrid > div > img {
+        width: 180px;
+    }
+
+
+
+    .JoinUs > div {
+        width: 300px;
+    }
+
+    .JoinUs h3 {
+        font-size: 28px;
+    }
 
 
 }

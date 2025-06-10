@@ -45,7 +45,7 @@ input, textarea, select {
 /* Утилитарные классы */
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1050px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -286,7 +286,7 @@ img[alt="logoUser"] {
 
 .trendingCollectionsList {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     margin-top: 60px;
 }
@@ -344,6 +344,7 @@ img[src*="TrendingCollection1_mini"] {
 .topCreators .flex {
     justify-content: space-between;
     margin-bottom: 60px;
+    width: 1050px;
 }
 
 .topCreators i {
@@ -364,7 +365,7 @@ img[src*="TrendingCollection1_mini"] {
 
 .topCreatorsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
@@ -418,7 +419,7 @@ img[src*="TrendingCollection1_mini"] {
 
 .categoriesGrid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
@@ -480,17 +481,18 @@ img[src*="TrendingCollection1_mini"] {
 
 
 .moreNFTs {
-    margin: 160px auto 80px
+    margin: 160px auto 80px;
 }
 
 .moreNFTs > .flex{
     justify-content: space-between;
     margin-bottom: 60px;
+    width: 1050px;
 }
 
 .moreNFTsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
@@ -635,12 +637,13 @@ img[src*="TrendingCollection1_mini"] {
 
 .HowItWorks {
     margin: 80px auto 120px;
+    transform: translateX(-15px);
 }
 
 
 .howItWorksGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
@@ -656,6 +659,7 @@ img[src*="TrendingCollection1_mini"] {
     background-color: #3B3B3B;
     border-radius: 24px;
     padding: 10px 30px 30px;
+    width: 330px;
 }
 
 .howItWorksGrid > div > p:first-of-type {
@@ -679,8 +683,14 @@ img[src*="TrendingCollection1_mini"] {
 }
 
 
-.JoinUs > img {
+.JoinUs > picture img{
     border-radius: 24px;
+}
+
+.JoinUs > div {
+    flex-shrink: 0;
+    width: 500px;
+    transform: translateX(40px);
 }
 
 .JoinUs h3 {
@@ -704,7 +714,7 @@ text-transform: capitalize;
 .JoinUs button {
     position: relative;
     left: -40px;
-}
+} 
 
 
 
