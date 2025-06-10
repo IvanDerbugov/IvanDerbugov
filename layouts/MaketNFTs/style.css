@@ -307,7 +307,7 @@ img[src^="img/TrendingCollectionBig"] {
     margin-bottom: 15px;
 }
 
-img[src^="TrendingCollection1_mini"] {
+img[src*="TrendingCollection1_mini"] {
     border-radius: 23px;
 }
 
