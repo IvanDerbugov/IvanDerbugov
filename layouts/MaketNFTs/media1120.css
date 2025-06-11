@@ -1,7 +1,7 @@
-@media (max-width: 1070px) {
+@media (max-width: 1120px) {
     .container {
         max-width: 690px;
-        padding: 0 20px;
+        padding: 0;
     }
 
     .perenosDesktop {
@@ -148,6 +148,38 @@
         background-repeat: no-repeat !important;
     }
 
+    .category:nth-of-type(1) div:first-of-type {
+        background: url(img/categoryFon1tablet.jpg);
+    }
+    
+    .category:nth-of-type(2) div:first-of-type {
+        background: url(img/categoryFon2tablet.jpg);
+    }
+    
+    .category:nth-of-type(3) div:first-of-type {
+        background: url(img/categoryFon3tablet.jpg);
+    }
+    
+    .category:nth-of-type(4) div:first-of-type {
+        background: url(img/categoryFon4tablet.jpg);
+    }
+    
+    .category:nth-of-type(5) div:first-of-type {
+        background: url(img/categoryFon5tablet.jpg);
+    }   
+    
+    .category:nth-of-type(6) div:first-of-type {
+        background: url(img/categoryFon6tablet.jpg);
+    }
+    
+    .category:nth-of-type(7) div:first-of-type {
+        background: url(img/categoryFon7tablet.jpg);
+    }   
+    
+    .category:nth-of-type(8) div:first-of-type {
+        background: url(img/categoryFon8tablet.jpg);
+    }
+
 
     .moreNFTs > .flex {
         width: 690px;
@@ -157,9 +189,9 @@
         background-position: 0 0, 0 -130px;
     }
 
-    .moreNFTsCard:last-of-type {
+    /* .moreNFTsCard:last-of-type {
         display: none;
-    }
+    } */
 
 
     .magicMashroom h2 {
@@ -182,6 +214,10 @@
     }
 
 
+    .HowItWorks {
+        margin: 63px auto 80px;
+    }
+
     .howItWorksGrid > div {
         width: 210px;
         padding: 10px 20px 30px;
@@ -196,14 +232,43 @@
     }
 
 
+    .JoinUs {
+        padding: 40px 30px;
+    }
 
     .JoinUs > div {
         width: 300px;
+        transform: translateX(0);
     }
 
     .JoinUs h3 {
         font-size: 28px;
     }
+
+    .wrapInputBtn {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .wrapInputBtn input {
+        width: 300px;
+        height: 46px;
+    }
+
+    .wrapInputBtn button {
+        width: 300px;
+        height: 46px;
+        position: static;
+    }
+
+
+    footer > .flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+   
+    
+
 
 
 }

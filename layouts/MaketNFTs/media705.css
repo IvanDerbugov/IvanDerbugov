@@ -1,0 +1,212 @@
+@media (max-width: 705px) {
+
+    .container {
+        max-width: 315px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .tablet {
+        display: none;
+    }
+    .mobile {
+        display: block !important;
+    }
+
+    .headerMain {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .headerMain .description {
+        margin: 10px 0 0;
+    }
+
+    header .mobile button {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    header .mobile p {
+        font-size: 16px;
+    }
+
+    .headerMainRight img {
+        width: 315px;
+        height: 206px;
+    }
+
+    .indicators div {
+        width: 85px;
+    }
+
+
+    img[src^="img/TrendingCollectionBig"] {
+        width: 315px;
+        height: 315px;
+    }
+
+    img[src*="TrendingCollection1_mini"], .cardMore {
+        width: 95px;
+        height: 95px;
+    }
+
+
+    .topCreatorsGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .creatorCard {
+        width: 315px;
+    }
+
+
+    .topCreators > .flex p {
+        max-width: 315px;
+    }
+
+    .topCreatorsGrid {
+        gap: 20px;
+    }
+
+    .topCreators button:not(.tablet) {
+        display: flex !important;
+        width: 100%;
+        margin-top: 40px;
+        justify-content: center;
+    }
+
+
+    .category {
+        width: 147px;
+    }
+
+    .categories h2 {
+        margin-bottom: 40px;
+    }
+
+    .categoriesGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+
+    .moreNFTsGrid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+    .moreNFTsCard {
+        width: 315px;
+    }
+
+    .moreNFTsCard img {
+        width: 315px;
+        height: 238px;
+    }
+
+    .moreNFTsGrid button {
+        margin-top: 20px;
+    }
+
+
+    .mushroom-gradient-bg {
+        height: 590px;
+    }
+
+    .mushroom-gradient-bg::before {
+        background-size: cover, 138% auto;
+        background-position: 0 0, 43% 0;
+    }
+
+    .mushroom-gradient-bg>.flex {
+        flex-direction: column;
+        justify-content: flex-end;
+        bottom: 70px;
+    }
+
+    .timer {
+        width: 315px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 0;
+    }
+
+    .wrapTimer {
+        padding: 27px;
+    }
+
+    .timer button {
+        display: flex !important;
+        justify-content: center;
+        width: 315px;
+        height: 60px;
+        background-color: #fff;
+        color: #2b2b2b;
+        
+    }
+
+    .magicMashroom h2 {
+        white-space: wrap;
+    }
+
+
+    .HowItWorks {
+        margin-top: 40px;
+    }
+
+    .howItWorksGrid > div {
+        flex-direction: row;
+    }
+
+    .HowItWorks > p {
+        margin-bottom: 40px;
+    }
+
+    .howItWorksGrid {
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
+
+
+    .JoinUs {
+        flex-direction: column;
+        background-color: transparent;
+        padding: 0;
+        margin: 80px auto 40px;
+    }
+
+    .JoinUs > picture img {
+        width: 315px;
+        height: 255px;
+    }
+
+    .wrapInputBtn button {
+        justify-content: center;
+    }
+
+
+    footer p {
+        max-width: 315px;
+    }
+    
+    footer > div div:last-of-type .flex {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    footer > div div:last-of-type .flex input,
+    footer > div div:last-of-type .flex button {
+        width: 315px;
+        height: 46px;
+        position: static;
+        justify-content: center;
+    }
+
+}

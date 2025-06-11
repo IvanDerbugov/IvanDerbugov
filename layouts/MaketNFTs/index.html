@@ -10,7 +10,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="fonts/css/iconFont.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="media1070.css">
+    <link rel="stylesheet" href="media1120.css">
+    <link rel="stylesheet" href="media705.css">
     <title>NFTs</title>
 </head>
 
@@ -55,6 +56,60 @@
                 <p class="description">
                     NFT marketplace UI created with Anima for <i class="perenosDesktop"><br></i> Figma. Collect, buy and sell art from more <i class="perenosDesktop"><br></i> than 20k NFT artists.
                 </p>
+                <div class="tablet">
+                    <button class="buttonWithIcon">
+                        <i class="icon-Rocket"></i>
+                        Get Started
+                    </button>
+                    <div class="flex indicators">
+                        <div>
+                            <h3>
+                                240k+
+                            </h3>
+                            <p>
+                                Total Sale
+                            </p>
+                        </div>
+                        <div>
+                            <h3>
+                                100k+
+                            </h3>
+                            <p>
+                                Auctions
+                            </p>
+                        </div>
+                        <div>
+                            <h3>
+                                240k+
+                            </h3>
+                            <p>
+                                Artists
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="headerMainRight">
+                <picture>
+                    <source srcset="img/headerMainImg1.jpg" media="(min-width: 1120px)">
+                    <source srcset="img/headerMainImg1tablet.jpg" media="(max-width: 1120px)">
+                    <img src="img/headerMainImg1.jpg" alt="headerMainImg">
+                </picture>
+                <div>
+                    <h5>
+                        Space Walking
+                    </h5>
+                    <div class="flex">
+                        <div class="avatar avatar--15"></div>
+                        <p>
+                            Animakid
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile">
                 <button class="buttonWithIcon">
                     <i class="icon-Rocket"></i>
                     Get Started
@@ -82,25 +137,6 @@
                         </h3>
                         <p>
                             Artists
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="headerMainRight">
-                <picture>
-                    <source srcset="img/headerMainImg1.jpg" media="(min-width: 1070px)">
-                    <source srcset="img/headerMainImg1tablet.jpg" media="(max-width: 1070px)">
-                    <img src="img/headerMainImg1.jpg" alt="headerMainImg">
-                </picture>
-                <div>
-                    <h5>
-                        Space Walking
-                    </h5>
-                    <div class="flex">
-                        <div class="avatar avatar--15"></div>
-                        <p>
-                            Animakid
                         </p>
                     </div>
                 </div>
@@ -138,7 +174,7 @@
             </div>
 
             <!-- вторая карточка -->
-            <div class="collectionCard">
+            <div class="collectionCard tablet">
                 <img src="img/TrendingCollectionBig2.jpg" alt="card_Mushrooms">
                 <div class="colectionMiniCard">
                     <img src="img/TrendingCollection1_mini2_1.jpg" alt="miniCard_3">
@@ -184,9 +220,9 @@
                 </p>
             </div>
 
-            <button class="buttonWithIcon">
+            <button class="buttonWithIcon tablet">
                 <i class="icon-Rocket"></i>
-                Get Started
+                View Rankings
             </button>
         </div>
 
@@ -231,7 +267,7 @@
                     <p class="fs16"><span>Total Sales: </span>34.53 ETH</p>
                 </div>
             </div>
-            <div class="creatorCard">
+            <div class="creatorCard tablet">
                 <div class="number">6</div>
                 <img src="img/Avatars/topCreator6.png" alt="topCreator6">
                 <div class="creatorCardInfo">
@@ -288,6 +324,11 @@
                 </div>
             </div>
         </div>
+
+        <button class="buttonWithIcon mobile">
+            <i class="icon-Rocket"></i>
+            View Rankings
+        </button>
     </div>
 
     <div class="container categories m-160">
@@ -390,14 +431,15 @@
                 </p>
             </div>
 
-            <button class="btnSeeMore">
+            <button class="btnSeeMore tablet">
                 <i class="icon-eye"></i>
                 See All
             </button>
         </div>
 
-        <!-- первая карточка -->
+        
         <div class="moreNFTsGrid">
+            <!-- первая карточка -->
             <div class="moreNFTsCard">
                 <img src="img/moreNFTsCard1.jpg" alt="moreNFTsCard1">
                 <div>
@@ -468,7 +510,7 @@
             </div>
 
             <!-- третья карточка -->
-            <div class="moreNFTsCard">
+            <div class="moreNFTsCard tablet mobile">
                 <img src="img/moreNFTsCard3.jpg" alt="moreNFTsCard3">
                 <div>
                     <p>
@@ -501,6 +543,10 @@
                     </div>
                 </div>
             </div>
+            <button class="btnSeeMore mobile">
+                <i class="icon-eye"></i>
+                See All
+            </button>
         </div>
     </div>
 
@@ -515,29 +561,35 @@
                     </div>
                 </div>
                 <h2>Magic Mashrooms</h2>
-                <button class="btnSeeMore">
+                <button class="btnSeeMore tablet">
                     <i class="icon-eye"></i>
                     See NFT
                 </button>
             </div>
             <div class="timer">
-                <p class="timer-label">Auction ends in:</p>
-                <div class="timer-row">
-                    <div class="timer-col">
-                        <span class="timer-num">59</span>
-                        <span class="timer-text">Hours</span>
-                    </div>
-                    <span class="timer-sep">:</span>
-                    <div class="timer-col">
-                        <span class="timer-num">59</span>
-                        <span class="timer-text">Minutes</span>
-                    </div>
-                    <span class="timer-sep">:</span>
-                    <div class="timer-col">
-                        <span class="timer-num">59</span>
-                        <span class="timer-text">Seconds</span>
+                <div class="wrapTimer">
+                    <p class="timer-label">Auction ends in:</p>
+                    <div class="timer-row">
+                        <div class="timer-col">
+                            <span class="timer-num">59</span>
+                            <span class="timer-text">Hours</span>
+                        </div>
+                        <span class="timer-sep">:</span>
+                        <div class="timer-col">
+                            <span class="timer-num">59</span>
+                            <span class="timer-text">Minutes</span>
+                        </div>
+                        <span class="timer-sep">:</span>
+                        <div class="timer-col">
+                            <span class="timer-num">59</span>
+                            <span class="timer-text">Seconds</span>
+                        </div>
                     </div>
                 </div>
+                <button class="btnSeeMore mobile">
+                    <i class="icon-eye"></i>
+                    See NFT
+                </button>
             </div>
         </div>
     </div>
@@ -575,14 +627,14 @@
 
     <div class="container flex JoinUs">
         <picture>
-            <source srcset="img/spaceman.jpg" media="(min-width: 1070px)">
-            <source srcset="img/spacemanTablet.jpg" media="(max-width: 1070px)">
+            <source srcset="img/spaceman.jpg" media="(min-width: 1120px)">
+            <source srcset="img/spacemanTablet.jpg" media="(max-width: 1120px)">
             <img src="img/spaceman.jpg" alt="spaceman">
         </picture>
         <div>
             <h3>Join our weekly <br> digest</h3>
             <p>Get exclusive promotions & updates <br> straight to your inbox.</p>
-            <div class="flex">
+            <div class="flex wrapInputBtn">
                 <input type="text" placeholder="Enter your email here">
                 <button class="buttonWithIcon">
                     <i class="icon-Envelope"></i>
@@ -592,8 +644,8 @@
         </div>
     </div>
 
-    <footer class="container">
-        <div class="flex">
+    <footer>
+        <div class="flex container">
             <div>
                 <div class="flex NFTMarketplace">
                     <i class="icon-Storefront"></i>
@@ -601,7 +653,7 @@
                 </div>
 
                 <p>
-                    NFT marketplace UI created <br> with Anima for Figma.
+                    NFT marketplace UI created with Anima for Figma.
                 </p>
                 <p>
                     Join our community
@@ -622,7 +674,7 @@
             </div>
             <div>
                 <h5>Join our weekly digest</h5>
-                <p>Get exclusive promotions & updates <br> straight to your inbox.</p>
+                <p>Get exclusive promotions & updates straight to your inbox.</p>
                 <div class="flex">
                     <input type="text" placeholder="Enter your email here">
                     <button class="buttonWithIcon">
@@ -633,7 +685,7 @@
             </div>
         </div>
 
-        <div>
+        <div class="container">
             <p>&copy; NFT Market. Use this template freely.</p>
         </div>
     </footer>

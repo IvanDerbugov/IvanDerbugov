@@ -55,8 +55,8 @@ input, textarea, select {
     align-items: center;
 }
 
-.grid {
-    display: grid;
+.mobile {
+    display: none !important;
 }
 
 /* Утилиты для отступов */
@@ -717,6 +717,11 @@ text-transform: capitalize;
 } 
 
 
+
+footer {
+    background-color: #3B3B3B;
+    padding: 40px 0;
+}
 
 footer>.flex {
     justify-content: space-between;
