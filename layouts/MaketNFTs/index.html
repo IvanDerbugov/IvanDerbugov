@@ -510,7 +510,7 @@
             </div>
 
             <!-- третья карточка -->
-            <div class="moreNFTsCard tablet mobile">
+            <div class="moreNFTsCard mobile tablet desktop">
                 <img src="img/moreNFTsCard3.jpg" alt="moreNFTsCard3">
                 <div>
                     <p>
@@ -605,11 +605,14 @@
 
         <div class="howItWorksGrid">
             <div>
-                <picture>
-                    <source srcset="img/HowItWorks1.png" media="(min-width: 705px)">
-                    <source srcset="img/HowItWorks1Mobile.png" width="100px" height="100px" media="(max-width: 705px)">
-                    <img src="img/HowItWorks1.png" alt="HowItWorks1">
-                </picture>
+                <div class="wrapPicture">
+                    <picture class="picture-1">
+                        <source srcset="img/HowItWorks1Mobile.png" media="(max-width: 705px)">
+                        <source srcset="img/HowItWorks1Tablet.png" media="(max-width: 1120px)">
+                        <source srcset="img/HowItWorks1.png" media="(min-width: 1120px)">
+                        <img src="img/HowItWorks1.png" alt="HowItWorks1">
+                    </picture>
+                </div>
                 <div class="flex">
                     <p>
                         Setup Your wallet
@@ -621,11 +624,14 @@
                 </div>
             </div>
             <div>
-                <picture>
-                    <source srcset="img/HowItWorks2.png" media="(min-width: 705px)">
-                    <source srcset="img/HowItWorks2Mobile.png" width="100px" height="100px" media="(max-width: 705px)">
-                    <img src="img/HowItWorks2.png" alt="HowItWorks2">
-                </picture>
+                <div class="wrapPicture">
+                    <picture class="picture-2">
+                        <source srcset="img/HowItWorks2Mobile.png" media="(max-width: 705px)">
+                        <source srcset="img/HowItWorks2Tablet.png" media="(max-width: 1120px)">
+                        <source srcset="img/HowItWorks2.png" media="(min-width: 1120px)">
+                        <img src="img/HowItWorks2.png" alt="HowItWorks2">
+                    </picture>
+                </div>
                 <div class="flex">
                     <p>
                         Create Collection
@@ -636,11 +642,16 @@
                 </div>
             </div>
             <div>
-                <picture>
-                    <source srcset="img/HowItWorks3.png" media="(min-width: 705px)">
-                    <source srcset="img/HowItWorks3Mobile.png" width="100px" height="100px" media="(max-width: 705px)">
-                    <img src="img/HowItWorks3.png" alt="HowItWorks3">
-                </picture>
+                <div class="wrapPicture">
+                    <div class="wrapPicture">
+                        <picture class="picture-3">
+                            <source srcset="img/HowItWorks3Mobile.png" media="(max-width: 705px)">
+                            <source srcset="img/HowItWorks3Tablet.png" media="(max-width: 1120px)">
+                            <source srcset="img/HowItWorks3.png" media="(min-width: 1120px)">
+                            <img src="img/HowItWorks3.png" alt="HowItWorks3">
+                        </picture>
+                    </div>
+                </div>
                 <div class="flex">
                     <p>
                         Start Earning
@@ -719,7 +730,7 @@
             <p>&copy; NFT Market. Use this template freely.</p>
         </div>
     </footer>
-
+ 
     <script src="js/burgerMenu.js"></script>
 </body>
 

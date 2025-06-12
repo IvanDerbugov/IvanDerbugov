@@ -159,27 +159,47 @@
 
     .HowItWorks {
         margin-top: 40px;
+        transform: translateX(2px);
     }
 
     .howItWorksGrid > div {
         flex-direction: row;
+        justify-content: space-between;
         width: 315px;
+        padding: 20px;
+    }
+    
+    .wrapPicture {
+        width: 100px;
+        height: 100px;
+    }
+
+    .howItWorksGrid picture {
+        bottom: 35%;
+        right: 32% !important;
     }
 
     .HowItWorks > p {
         margin-bottom: 40px;
     }
 
-    .howItWorksGrid > div .flex p {
-        text-align: start !important;
+    .howItWorksGrid > div .flex {
+        width: 155px;
+        align-items: flex-start;
     }
 
     .howItWorksGrid {
         grid-template-columns: repeat(1, 1fr);
     }
 
+    .howItWorksGrid > div p:first-of-type {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
     .howItWorksGrid > div p:last-of-type {
         font-size: 12px;
+        text-align: start;
     }
 
 
@@ -193,6 +213,7 @@
     .JoinUs > picture img {
         width: 315px;
         height: 255px;
+        margin-bottom: 30px;
     }
 
     .wrapInputBtn button {

@@ -189,9 +189,9 @@
         background-position: 0 0, 0 -130px;
     }
 
-    /* .moreNFTsCard:last-of-type {
-        display: none;
-    } */
+    .moreNFTsGrid > .desktop {
+        display: none !important;
+    }
 
 
     .magicMashroom h2 {
@@ -223,7 +223,24 @@
         padding: 10px 20px 30px;
     }
 
-    .howItWorksGrid > div > p:last-of-type {
+    .wrapPicture {
+        width: 160px;
+        height: 160px;
+    }
+
+    .howItWorksGrid picture {
+        position: relative;
+        bottom: 10%;
+        right: 18%;
+    }
+    .picture-2 {
+        right: 12% !important;
+    }
+    .picture-3 {
+        right: 9% !important;
+    }
+
+    .howItWorksGrid > div .flex p:last-of-type {
         font-size: 12px;
     }
 

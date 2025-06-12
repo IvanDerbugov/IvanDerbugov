@@ -59,6 +59,10 @@ input, textarea, select {
     display: none !important;
 }
 
+/* .desktop {
+    display: block !important;
+} */
+
 /* Утилиты для отступов */
 .m-0 { margin: 0; }
 .p-0 { padding: 0; }
@@ -496,6 +500,10 @@ img[src*="TrendingCollection1_mini"] {
     gap: 30px;
 }
 
+.moreNFTsGrid > .desktop {
+    display: block !important;
+}
+
 .moreNFTsCard {
     width: 330px;
     background-color: #3B3B3B;
@@ -664,6 +672,7 @@ img[src*="TrendingCollection1_mini"] {
 
 .howItWorksGrid > div .flex {
     flex-direction: column;
+    text-align: center;
 }
 
 .howItWorksGrid > div p:first-of-type {
