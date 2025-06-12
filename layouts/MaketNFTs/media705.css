@@ -64,7 +64,7 @@
     }
 
 
-    .topCreators > .flex p {
+    .topCreators > .flex {
         max-width: 315px;
     }
 
@@ -93,6 +93,10 @@
         gap: 20px;
     }
 
+
+    .moreNFTs > .flex {
+        max-width: 315px;
+    }
 
     .moreNFTsGrid {
         display: grid;

@@ -20,13 +20,15 @@
     <header>
         <div class="headerTop flex">
             <div class="flex">
-                <div class="flex NFTMarketplace">
-                    <i class="icon-Storefront"></i>
-                    <h5>NFT Marketplace</h5>
-                </div>
+                <a href="index.html" target="_blank">
+                    <div class="flex NFTMarketplace">
+                        <i class="icon-Storefront"></i>
+                        <h5>NFT Marketplace</h5>
+                    </div>
+                </a>
             </div>
 
-            
+
             <div class="flex headerTopRight">
                 <button id="close">&#10006</button>
                 <p class="flex elMenu">
@@ -51,10 +53,12 @@
         <div class="container flex headerMain">
             <div class="headerMainLeft">
                 <h1>
-                    Discover <i class="perenosDesktop"><br></i> digital art & <i class="perenosDesktop"><br></i> Collect NFTs
+                    Discover <i class="perenosDesktop"><br></i> digital art & <i class="perenosDesktop"><br></i> Collect
+                    NFTs
                 </h1>
                 <p class="description">
-                    NFT marketplace UI created with Anima for <i class="perenosDesktop"><br></i> Figma. Collect, buy and sell art from more <i class="perenosDesktop"><br></i> than 20k NFT artists.
+                    NFT marketplace UI created with Anima for <i class="perenosDesktop"><br></i> Figma. Collect, buy and
+                    sell art from more <i class="perenosDesktop"><br></i> than 20k NFT artists.
                 </p>
                 <div class="tablet">
                     <button class="buttonWithIcon">
@@ -437,7 +441,7 @@
             </button>
         </div>
 
-        
+
         <div class="moreNFTsGrid">
             <!-- первая карточка -->
             <div class="moreNFTsCard">
@@ -571,17 +575,17 @@
                     <p class="timer-label">Auction ends in:</p>
                     <div class="timer-row">
                         <div class="timer-col">
-                            <span class="timer-num">59</span>
+                            <span class="timer-num" id="hours">59</span>
                             <span class="timer-text">Hours</span>
                         </div>
                         <span class="timer-sep">:</span>
                         <div class="timer-col">
-                            <span class="timer-num">59</span>
+                            <span class="timer-num" id="minutes">59</span>
                             <span class="timer-text">Minutes</span>
                         </div>
                         <span class="timer-sep">:</span>
                         <div class="timer-col">
-                            <span class="timer-num">59</span>
+                            <span class="timer-num" id="seconds">59</span>
                             <span class="timer-text">Seconds</span>
                         </div>
                     </div>
@@ -700,10 +704,10 @@
                     Join our community
                 </p>
                 <div class="flex socialIcons">
-                    <i class="icon-Discord"></i>
-                    <i class="icon-youtube"></i>
-                    <i class="icon-twitter"></i>
-                    <i class="icon-instagram"></i>
+                    <a href="https://discord.com/" target="_blank"><i class="icon-Discord"></i></a>
+                    <a href="https://www.youtube.com/" target="_blank"><i class="icon-youtube"></i></a>
+                    <a href="https://x.com/" target="_blank"><i class="icon-twitter"></i></a>
+                    <a href="https://www.instagram.com/prosto_van/" target="_blank"><i class="icon-instagram"></i></a>
                 </div>
             </div>
 
@@ -719,7 +723,7 @@
                 <div class="flex">
                     <input type="text" placeholder="Enter your email here">
                     <button class="buttonWithIcon">
-                        <i class="icon-Envelope"></i>
+                        <i class="icon-Envelope mobile"></i>
                         Subscribe
                     </button>
                 </div>
@@ -730,8 +734,9 @@
             <p>&copy; NFT Market. Use this template freely.</p>
         </div>
     </footer>
- 
+
     <script src="js/burgerMenu.js"></script>
+    <script src="js/timer.js"></script>
 </body>
 
 </html>
