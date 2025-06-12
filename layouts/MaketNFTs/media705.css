@@ -163,15 +163,23 @@
 
     .howItWorksGrid > div {
         flex-direction: row;
+        width: 315px;
     }
 
     .HowItWorks > p {
         margin-bottom: 40px;
     }
 
+    .howItWorksGrid > div .flex p {
+        text-align: start !important;
+    }
+
     .howItWorksGrid {
         grid-template-columns: repeat(1, 1fr);
-        
+    }
+
+    .howItWorksGrid > div p:last-of-type {
+        font-size: 12px;
     }
 
 
@@ -208,5 +216,7 @@
         position: static;
         justify-content: center;
     }
+
+
 
 }

@@ -662,12 +662,16 @@ img[src*="TrendingCollection1_mini"] {
     width: 330px;
 }
 
-.howItWorksGrid > div > p:first-of-type {
+.howItWorksGrid > div .flex {
+    flex-direction: column;
+}
+
+.howItWorksGrid > div p:first-of-type {
     font-weight: 600;
     margin: 20px 0 10px;
 }
 
-.howItWorksGrid > div > p:last-of-type {
+.howItWorksGrid > div p:last-of-type {
     font-size: 16px;
     text-align: center;
 }
