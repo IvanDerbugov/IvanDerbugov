@@ -63,6 +63,10 @@ input, textarea, select {
     display: block !important;
 } */
 
+.active {
+    display: block !important;
+}   
+
 /* Утилиты для отступов */
 .m-0 { margin: 0; }
 .p-0 { padding: 0; }
