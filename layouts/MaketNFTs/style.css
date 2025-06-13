@@ -47,7 +47,12 @@ input, textarea, select {
     width: 100%;
     max-width: 1050px;
     margin: 0 auto;
-    padding: 0 15px;
+    /* padding: 0 15px; */
+}
+
+.container-1280 {
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 .flex {
@@ -649,7 +654,6 @@ img[src*="TrendingCollection1_mini"] {
 
 .HowItWorks {
     margin: 80px auto 120px;
-    transform: translateX(-15px);
 }
 
 
@@ -779,9 +783,9 @@ footer p {
     margin-right: 10px;
 }
 
-footer>.flex>div:last-of-type {
+/* footer>.flex>div:last-of-type {
     margin-right: -40px;
-}
+} */
 
 footer input {
     height: 60px;
