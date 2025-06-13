@@ -50,14 +50,15 @@
         position: fixed;
         top: 20px;
         right: 50px;
-        width: 100%;
-        max-width: 220px;
         border-radius: 20px;
         padding: 20px;
         z-index: 4;
     }
-    .elMenu {
-        justify-content: center;
+
+    .headerTopRight a {
+        display: flex;
+        margin-left: 5px;
+        margin-right: 5px;
     }
     .headerTopRight button:last-of-type {
         padding: 14px 46px;
@@ -66,8 +67,8 @@
     #close {
         display: block;
         position: absolute;
-        top: -13px;
-        right: -21px;
+        top: 0;
+        right: -27px;
     }
 
 

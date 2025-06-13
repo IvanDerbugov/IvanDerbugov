@@ -179,6 +179,11 @@ p {
     gap: 10px;
 }
 
+.elMenu {
+    justify-content: center;
+    text-align: right;
+}
+
 .headerTopRight p {
     padding: 12px 20px;
 }
