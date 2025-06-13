@@ -1,0 +1,94 @@
+.headerTop .NFTMarketplace,
+.headerTop .buttonWithIcon {
+    transform: translateY(-10px);
+}
+
+
+main {
+    margin: auto;
+    gap: 60px;
+    transform: translateX(50px);
+}
+
+.createAccount {
+    max-width: 460px;
+}
+
+h1, p {
+    text-transform: capitalize;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    margin: 20px 0 40px;
+}
+
+.createAccount input, .createAccount button {
+    width: 330px;
+    height: 46px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.createAccount input {
+    padding-left: 52px;
+}
+
+.createAccount button {
+    margin-bottom: 40px;
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon i, .input-icon img {
+    position: absolute;
+    left: 20px;
+    top: 14px;
+    color: #c1c1c1;
+}
+
+
+.createAccount button {
+    margin-top: 30px;
+    justify-content: center;
+}
+
+
+
+
+@media (max-width: 1200px) {
+    main {
+        gap: 40px;
+    }
+
+    .createAccount {
+        max-width: 325px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+
+
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+    }
+
+}
+
+
+
+
+
