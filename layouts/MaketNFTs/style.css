@@ -164,6 +164,16 @@ p {
 .avatar--16 { background-position: -358px 0; } /* 16 тёмный аватар */
 .avatar--17 { background-position: -382px 0; } /* 17 робот с цилиндром */
 
+.avatar18-19 {
+    width: 24px;
+    height: 24px;
+    background-image: url('img/Avatars/AvatarSprites1px.png');
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.avatar--18 { background-position: -1px -1px; } /* 18 горилла */
+.avatar--19 { background-position: -27px -1px; } /* 19 баба в скафандре */
+
 
 
 

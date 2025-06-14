@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Животные</title>
+    <style>
+        .overlay {
+            width: 400px;
+            height: 400px;
+            background: url(img/bigBitTefal.png) no-repeat, url(img/littleTefal.png) no-repeat, url(img/BigTefal.png) no-repeat;
+            background-size: calc(100% / 2 - 44px), calc(100% / 2 - 69px), calc(100% / 2);
+            background-position: 163px 308px, 178px 280px, 143px 181px;
+
+        }
+
+        @keyframes move {
+            0% {
+                background-position: 163px 308px, 178px 280px, 143px 181px;
+            }
+
+            50% {
+                background-position: 163px 308px, 178px 140px, 143px 181px;
+            }
+
+            100% {
+                background-position: 163px 308px, 178px 280px, 143px 181px;
+            }
+        }
+
+        .overlay:hover {
+            animation: move 3s;
+        }
+
+
+
+
+
+
+
+
+        .wrap {
+            display: flex;
+            gap: 10px;
+        }
+
+
+        .cat {
+            width: 150px;
+            height: 166px;
+            background: url(img/cat.png) no-repeat;
+            background-size: cover;
+        }
+
+
+        .dog {
+            width: 150px;
+            height: 166px;
+            background: url(img/dog.png) no-repeat;
+            background-size: cover;
+        }
+
+        .fox {
+            width: 150px;
+            height: 166px;
+            background: url(img/fox.png) no-repeat;
+            background-size: cover;
+        }
+
+        .snake {
+            width: 150px;
+            height: 166px;
+            background: url(img/snake.jpg) no-repeat;
+            background-size: cover;
+        }
+
+        .hedgehog {
+            width: 150px;
+            height: 166px;
+            background: url(img/hedgehog.png) no-repeat;
+            background-size: 150px;
+        }
+
+        .ram {
+            width: 150px;
+            height: 166px;
+            background: url(img/ram.jpg) no-repeat;
+            background-size: 150px;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="overlay">
+    </div>
+
+<div class="wrap">
+        <div class="cat"></div>
+    
+        <div class="dog"></div>
+
+        <div class="fox"></div>
+</div>
+
+<div class="wrap">
+    <div class="snake"></div>
+
+    <div class="hedgehog"></div>
+
+    <div class="ram"></div>
+</div>
+
+
+
+    <script>
+        const audio = new Audio('img/tefal.mp3');
+        audio.loop = true;
+        document.querySelector('.overlay').addEventListener('mouseover', () => {
+            audio.play();
+        });
+        document.querySelector('.overlay').addEventListener('mouseout', () => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+
+
+
+        const audioCat = new Audio('img/catVoice.mp3');
+        document.querySelector('.cat').addEventListener('mouseover', () => {
+            audioCat.play();
+        });
+        document.querySelector('.cat').addEventListener('mouseout', () => {
+            audioCat.pause();
+            audioCat.currentTime = 0;
+        });
+
+
+        const audioDog = new Audio('img/dogVoice.mp3');
+        document.querySelector('.dog').addEventListener('mouseover', () => {
+            audioDog.play();
+        });
+        document.querySelector('.dog').addEventListener('mouseout', () => {
+            audioDog.pause();
+            audioDog.currentTime = 0;
+        });
+
+        const audioFox = new Audio('img/foxVoice.mp3');
+        document.querySelector('.fox').addEventListener('mouseover', () => {
+            audioFox.play();
+        });
+        document.querySelector('.fox').addEventListener('mouseout', () => {
+            audioFox.pause();
+            audioFox.currentTime = 0;
+        });
+
+
+        const audioSnake = new Audio('img/snakeVoice.mp3');
+        document.querySelector('.snake').addEventListener('mouseover', () => {
+            audioSnake.play();
+        });
+        document.querySelector('.snake').addEventListener('mouseout', () => {
+            audioSnake.pause();
+            audioSnake.currentTime = 0;
+        });
+
+        const audioHedgehog = new Audio('img/hedgehogVoice.mp3');
+        document.querySelector('.hedgehog').addEventListener('mouseover', () => {
+            audioHedgehog.play();
+        });
+        document.querySelector('.hedgehog').addEventListener('mouseout', () => {
+            audioHedgehog.pause();
+            audioHedgehog.currentTime = 0;
+        });
+
+        const audioRam = new Audio('img/ramVoice.mp3');
+        document.querySelector('.ram').addEventListener('mouseover', () => {
+            audioRam.play();
+        });
+        document.querySelector('.ram').addEventListener('mouseout', () => {
+            audioRam.pause();
+            audioRam.currentTime = 0;
+        });
+    </script>
+</body>
+ 
+</html>
