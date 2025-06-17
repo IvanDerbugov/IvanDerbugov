@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countries</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button{
+            min-width: 500px;
+            padding: 10px;
+            margin: 10px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="addCountry">Ввод информации о стране</button><br>
+    <button id="getCountryInfo">Получение информации о стране</button><br>
+    <button id="listCountrys">Перечень всех стран</button><br>
+    <button id="deleteCountry">Удаление информации о стране</button><br>
+
+
+
+
+    
+    <script>
+        const addCountryBtn = document.getElementById('addCountry');
+        const getCountryInfoBtn = document.getElementById('getCountryInfo');
+        const listCountrysBtn = document.getElementById('listCountrys');
+        const deleteCountryBtn = document.getElementById('deleteCountry');
+
+
+        addCountryBtn.addEventListener('click', function add(){
+            const countryName = prompt('Введите название страны');
+            const capitalName = prompt('Введите название столицы');
+            if (countryName && capitalName){
+            addCountry(countryName, capitalName);
+            alert(`Страна ${countryName} добавлена`);
+            } else {
+                alert('Введите название страны и столицы!');
+                add();
+            }
+        });
+
+        getCountryInfoBtn.addEventListener('click', function(){
+            const countryName = prompt('Введите название страны');
+            const result = getCountryInfo(countryName);
+            alert(result);
+        });
+
+        listCountrysBtn.addEventListener('click', function(){
+            const result = listCountrys();
+            alert(result);
+        });
+
+        deleteCountryBtn.addEventListener('click', function(){
+            const countryName = prompt('Введите название страны');
+            deleteCountry(countryName);
+            alert(`Страна ${countryName} удалена`);
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+        var countrysH={};
+    
+        function addCountry(countryName,capitalName) {
+            countrysH[countryName]=capitalName;
+        }
+    
+        function deleteCountry(countryName) {
+            delete countrysH[countryName];
+        }
+    
+        function getCountryInfo(countryName) {
+            if ( countryName in countrysH )
+                return 'страна: ' + countryName + ' столица: ' + countrysH[countryName] ;
+            else
+                return 'нет информации о стране ' + countryName + '!' ;
+        }
+    
+        function listCountrys() {
+            var res="";
+            for ( var CN in countrysH )
+                res+='\n'+getCountryInfo(CN);
+            return res;
+        }
+    
+        addCountry('Германия','Берлин');
+        addCountry('Венгрия','Будапешт');
+        addCountry('Франция','Париж');
+    
+        console.log( "список стран:" + listCountrys() );
+    
+    </script>
+</body>
+</html>

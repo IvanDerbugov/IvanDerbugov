@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketplace</title>
-
+    <link rel="icon" href="img/svg/bitcoin-icon.svg" type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
@@ -31,19 +31,26 @@
 
         <div class="flex headerTopRight">
             <button id="close">&#10006;</button>
-            <p class="flex elMenu">
-                Marketplace
-            </p>
-            <p class="flex elMenu">
+            <a href="marketplace.html" target="_blank">
+                <p class="flex elMenu">
+                    Marketplace
+                </p>
+            </a>
+            <a href="rankings.html" target="_blank">
+                <p class="flex elMenu">
                 Rankings
             </p>
-            <p class="flex elMenu">
-                Connect a wallet
-            </p>
-            <button class="buttonWithIcon elMenu">
-                <i class="icon-User"></i>
-                Sign Up
-            </button>
+            <a href="marketplace.html" target="_blank">
+                <p class="flex elMenu">
+                    Connect a wallet
+                </p>
+            </a>
+            <a href="signUp.html" target="_blank">
+                <button class="buttonWithIcon elMenu">
+                    <i class="icon-User"></i>
+                    Sign Up
+                </button>
+            </a>
         </div>
         <button class="burgerMenuMobile">
             <i class="icon-BurgerMenu"></i>
@@ -70,11 +77,11 @@
         </div>
 
         <div class="sampleNFTs container">
-            <div>
-                NFTs <div>302</div>
+            <div class="sampleNFTsItem ">
+                NFTs <div class="sampleNFTsItemNumber">302</div>
             </div>
-            <div>
-                Collections <div>67</div>
+            <div class="sampleNFTsItem">
+                Collections <div class="sampleNFTsItemNumber">67</div>
             </div>
         </div>
 
@@ -248,7 +255,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="moreNFTsCard">
+                <div class="moreNFTsCard tablet">
                     <img src="img/Marketplace/marketplaceNFTsImg6.jpg" alt="NFTsImg6">
                     <div>
                         <p>
@@ -276,12 +283,12 @@
                                 </span>
                                 <p class="fs16">
                                     0.33 wETH
-                                </p>
+                                </p>    
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="moreNFTsCard">
+                <div class="moreNFTsCard tablet">
                     <img src="img/Marketplace/marketplaceNFTsImg7.jpg" alt="NFTsImg7">
                     <div>
                         <p>
@@ -314,7 +321,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="moreNFTsCard">
+                <div class="moreNFTsCard tablet">
                     <img src="img/Marketplace/marketplaceNFTsImg8.jpg" alt="NFTsImg8">
                     <div>
                         <p>
@@ -509,9 +516,15 @@
 
             <div>
                 <h5>Explore</h5>
-                <p>Marketplace</p>
-                <p>Rankings</p>
-                <p>Connect a wallet</p>
+                <a href="marketplace.html" target="_blank">
+                    <p>Marketplace</p>
+                </a>
+                <a href="rankings.html" target="_blank">
+                    <p>Rankings</p>
+                </a>
+                <a href="marketplace.html" target="_blank">
+                    <p>Connect a wallet</p>
+                </a>
             </div>
             <div>
                 <h5>Join our weekly digest</h5>
@@ -531,6 +544,7 @@
         </div>
     </footer>
     <script src="js/burgerMenu.js"></script>
+    <script src="js/marketplace.js"></script>
 </body>
 
 </html>

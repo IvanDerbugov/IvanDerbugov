@@ -46,25 +46,34 @@ h2 {
     display: flex;
 }
 
-.sampleNFTs>div {
+.sampleNFTsItem {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 26px;
     width: 50%;
-    color: #fff;
-    border-bottom: 1px solid #3B3B3B;
+    color: #858584;
+    border-bottom: 3px solid transparent;
     font-size: 22px;
     text-align: center;
+    cursor: pointer;
 }
 
-.sampleNFTs>div>div {
+.sampleNFTsItemNumber {
     border-radius: 20px;
-    background: #858584;
+    background: #3B3B3B;
     padding: 5px 10px;
     font-size: 16px;
 }
 
+.activeSample {
+    border-bottom: 3px solid #858584;
+    color: #fff;
+}
+.activeSampleNumber {
+    background: #858584;
+    transition: background 1s, color 1s;
+}
 
 .wrapNFTsCards {
     width: 100%;
@@ -90,8 +99,23 @@ h2 {
         font-size: 38px;
     }
 
-    
     .nftCards {
         grid-template-columns: repeat(2, 1fr);
     }
+
+}
+
+@media (max-width: 705px) {
+    h2 {
+        font-size: 28px;
+    }
+
+    .nftCards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .sampleNFTsItemNumber {
+        display: none;
+    }
+
 }
