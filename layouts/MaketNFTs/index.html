@@ -9,11 +9,15 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+
     <link rel="stylesheet" href="fonts/css/iconFont.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media1120.css">
     <link rel="stylesheet" href="media705.css">
-    <title>NFTs</title>
+    <title>NFT Marketplace — Buy and Sell Digital Art</title>
 </head>
 
 <body>
@@ -21,8 +25,8 @@
     <header>
         <div class="headerTop flex container-1280">
             <div class="flex">
-                <a href="index.html" target="_blank">
-                    <div class="flex NFTMarketplace">
+                <a href="index.html" target="_blank" title="Go to Home Page">
+                    <div class="flex NFTMarketplace audiTo_index">
                         <i class="icon-Storefront"></i>
                         <h5>NFT Marketplace</h5>
                     </div>
@@ -32,23 +36,23 @@
 
             <div class="flex headerTopRight">
                 <button id="close">&#10006</button>
-                <a href="marketplace.html" target="_blank" class="elMenu">
+                <a href="marketplace.html" target="_blank" class="elMenu" title="Browse the NFT Marketplace">
                     <p class="flex ">
                         Marketplace
                     </p>
                 </a>
-                <a href="rankings.html" target="_blank" class="elMenu">
+                <a href="rankings.html" target="_blank" class="elMenu" title="View NFT Rankings">
                     <p class="flex ">
                         Rankings
                     </p>
                 </a>
-                <a href="marketplace.html" target="_blank" class="elMenu">
+                <a href="connectWallet.html" target="_blank" class="elMenu" title="Connect a Wallet">
                     <p class="flex ">
                         Connect a wallet
                     </p>
                 </a>
-                <a href="signUp.html" target="_blank" class="elMenu">
-                    <button class="buttonWithIcon">
+                <a href="signUp.html" target="_blank" class="elMenu" title="Sign Up for NFT Marketplace">
+                    <button class="buttonWithIcon audioRocket">
                         <i class="icon-User"></i>
                         Sign Up
                     </button>
@@ -60,7 +64,7 @@
         </div>
 
         <div class="container flex headerMain">
-            <div class="headerMainLeft">
+            <div class="headerMainLeft animate__animated animate__backInLeft">
                 <h1>
                     Discover <i class="perenosDesktop"><br></i> digital art & <i class="perenosDesktop"><br></i> Collect
                     NFTs
@@ -71,7 +75,7 @@
                 </p>
                 <div class="tablet">
                     <a href="signUp.html" target="_blank">
-                        <button class="buttonWithIcon">
+                        <button class="buttonWithIcon audioRocket">
                             <i class="icon-Rocket"></i>
                             Get Started
                         </button>
@@ -105,11 +109,11 @@
                 </div>
             </div>
 
-            <div class="headerMainRight">
+            <div class="headerMainRight animate__animated animate__backInRight">
                 <picture>
                     <source srcset="img/headerMainImg1.jpg" media="(min-width: 1120px)">
                     <source srcset="img/headerMainImg1tablet.jpg" media="(max-width: 1120px)">
-                    <img src="img/headerMainImg1.jpg" alt="headerMainImg">
+                    <img src="img/headerMainImg1.jpg" alt="Space Walking NFT" title="Space Walking NFT by Animakid">
                 </picture>
                 <div>
                     <h5>
@@ -125,7 +129,7 @@
             </div>
 
             <div class="mobile">
-                <button class="buttonWithIcon">
+                <button class="buttonWithIcon" id="rocket">
                     <i class="icon-Rocket"></i>
                     Get Started
                 </button>
@@ -173,10 +177,10 @@
         <div class="trendingCollectionsList">
             <!-- первая карточка -->
             <div class="collectionCard">
-                <img src="img/TrendingCollectionBig1.jpg" alt="card_Animals">
+                <img src="img/TrendingCollectionBig1.jpg" alt="DSGN Animals Collection" title="DSGN Animals NFT Collection">
                 <div class="colectionMiniCard">
-                    <img src="img/TrendingCollection1_mini1.jpg" alt="miniCard_1">
-                    <img src="img/TrendingCollection1_mini2.jpg" alt="miniCard_2">
+                    <img src="img/TrendingCollection1_mini1.jpg" alt="DSGN Animals Mini 1" title="DSGN Animals Mini NFT 1">
+                    <img src="img/TrendingCollection1_mini2.jpg" alt="DSGN Animals Mini 2" title="DSGN Animals Mini NFT 2">
                     <div class="cardMore">1025+</div>
                 </div>
                 <div class="collectionCardInfo">
@@ -190,10 +194,10 @@
 
             <!-- вторая карточка -->
             <div class="collectionCard tablet">
-                <img src="img/TrendingCollectionBig2.jpg" alt="card_Mushrooms">
+                <img src="img/TrendingCollectionBig2.jpg" alt="Magic Mushrooms Collection" title="Magic Mushrooms NFT Collection">
                 <div class="colectionMiniCard">
-                    <img src="img/TrendingCollection1_mini2_1.jpg" alt="miniCard_3">
-                    <img src="img/TrendingCollection1_mini2_2.jpg" alt="miniCard_4">
+                    <img src="img/TrendingCollection1_mini2_1.jpg" alt="Magic Mushrooms Mini 1" title="Magic Mushrooms Mini NFT 1">
+                    <img src="img/TrendingCollection1_mini2_2.jpg" alt="Magic Mushrooms Mini 2" title="Magic Mushrooms Mini NFT 2">
                     <div class="cardMore">1025+</div>
                 </div>
                 <div class="collectionCardInfo">
@@ -207,10 +211,10 @@
 
             <!-- третья карточка -->
             <div class="collectionCard desktop">
-                <img src="img/TrendingCollectionBig3.jpg" alt="card_Disco">
+                <img src="img/TrendingCollectionBig3.jpg" alt="Disco Machines Collection" title="Disco Machines NFT Collection">
                 <div class="colectionMiniCard">
-                    <img src="img/TrendingCollection1_mini3_1.jpg" alt="miniCard_5">
-                    <img src="img/TrendingCollection1_mini3_2.jpg" alt="miniCard_6">
+                    <img src="img/TrendingCollection1_mini3_1.jpg" alt="Disco Machines Mini 1" title="Disco Machines Mini NFT 1">
+                    <img src="img/TrendingCollection1_mini3_2.jpg" alt="Disco Machines Mini 2" title="Disco Machines Mini NFT 2">
                     <div class="cardMore">1025+</div>
                 </div>
                 <div class="collectionCardInfo">
@@ -223,7 +227,7 @@
             </div>
         </div>
     </div>
-
+    
     <div class="container topCreators m-160">
         <div class="flex">
             <div>
@@ -235,104 +239,104 @@
                 </p>
             </div>
 
-            <button class="buttonWithIcon tablet">
+            <button class="buttonWithIcon tablet audioRocket">
                 <i class="icon-Rocket"></i>
                 View Rankings
             </button>
         </div>
 
         <div class="topCreatorsGrid">
-            <div class="creatorCard">
+            <div class="creatorCard animate__animated animate__backInLeft">
                 <div class="number">1</div>
-                <img src="img/Avatars/topCreator1.png" alt="topCreator1">
+                <img src="img/Avatars/topCreator1.png" alt="Keepitreal" title="Top Creator: Keepitreal">
                 <div class="creatorCardInfo">
                     <p>Keepitreal</p>
                     <p class="fs16"><span>Total Sales: </span>34.53 ETH</p>
                 </div>
             </div>
-            <div class="creatorCard">
+            <div class="creatorCard animate__animated animate__backInLeft" id="animateL_R">
                 <div class="number">2</div>
-                <img src="img/Avatars/topCreator2.png" alt="topCreator2">
+                <img src="img/Avatars/topCreator2.png" alt="DigiLab" title="Top Creator: DigiLab">
                 <div class="creatorCardInfo">
                     <p>DigiLab</p>
                     <p class="fs16"><span>Total Sales: </span>34.53 ETH</p>
                 </div>
             </div>
-            <div class="creatorCard">
+            <div class="creatorCard animate__animated animate__backInRight">
                 <div class="number">3</div>
-                <img src="img/Avatars/topCreator3.png" alt="topCreator3">
+                <img src="img/Avatars/topCreator3.png" alt="GravityOne" title="Top Creator: GravityOne">
                 <div class="creatorCardInfo">
                     <p>GravityOne</p>
                     <p class="fs16"><span>Total Sales: </span>34.53 ETH</p>
                 </div>
             </div>
-            <div class="creatorCard">
+            <div class="creatorCard animate__animated animate__backInRight">
                 <div class="number">4</div>
-                <img src="img/Avatars/topCreator4.png" alt="topCreator4">
+                <img src="img/Avatars/topCreator4.png" alt="Juaniе" title="Top Creator: Juaniе">
                 <div class="creatorCardInfo">
                     <p>Juaniе</p>
                     <p class="fs16"><span>Total Sales: </span>34.53 ETH</p>
                 </div>
             </div>
-            <div class="creatorCard">
+            <div class="creatorCard animate__animated animate__backInLeft">
                 <div class="number">5</div>
-                <img src="img/Avatars/topCreator5.png" alt="topCreator5">
+                <img src="img/Avatars/topCreator5.png" alt="BlueWhale" title="Top Creator: BlueWhale">
                 <div class="creatorCardInfo">
                     <p>BlueWhale</p>
                     <p class="fs16"><span>Total Sales: </span>34.53 ETH</p>
                 </div>
             </div>
-            <div class="creatorCard tablet">
+            <div class="creatorCard tablet animate__animated animate__backInLeft">
                 <div class="number">6</div>
-                <img src="img/Avatars/topCreator6.png" alt="topCreator6">
+                <img src="img/Avatars/topCreator6.png" alt="topCreator6" title="Top Creator: Mr Fox">
                 <div class="creatorCardInfo">
                     <p>Mr Fox</p>
                     <p class="fs16"><span>Total Sales: </span>34.53 ETH</p>
                 </div>
             </div>
-            <div class="creatorCard desktop">
+            <div class="creatorCard desktop animate__animated animate__backInRight">
                 <div class="number">7</div>
-                <img src="img/Avatars/topCreator7.png" alt="topCreator7">
+                <img src="img/Avatars/topCreator7.png" alt="topCreator7" title="Top Creator: Shroomie">
                 <div class="creatorCardInfo">
                     <p>Shroomie</p>
                     <p class="fs16"><span>Total Sales: </span>34.53 ETH</p>
                 </div>
             </div>
-            <div class="creatorCard desktop">
+            <div class="creatorCard desktop animate__animated animate__backInRight">
                 <div class="number">8</div>
-                <img src="img/Avatars/topCreator8.png" alt="topCreator8">
+                <img src="img/Avatars/topCreator8.png" alt="topCreator8" title="Top Creator: Robotica">
                 <div class="creatorCardInfo">
                     <p>Robotica</p>
                     <p class="fs16"><span>Total Sales: </span>34.53 ETH</p>
                 </div>
             </div>
-            <div class="creatorCard desktop">
+            <div class="creatorCard desktop animate__animated animate__backInLeft">
                 <div class="number">9</div>
-                <img src="img/Avatars/topCreator9.png" alt="topCreator9">
+                <img src="img/Avatars/topCreator9.png" alt="topCreator9" title="Top Creator: RustyRobot">
                 <div class="creatorCardInfo">
                     <p>RustyRobot</p>
                     <p class="fs16"><span>Total Sales: </span>34.53 ETH</p>
                 </div>
             </div>
-            <div class="creatorCard desktop">
+            <div class="creatorCard desktop animate__animated animate__backInLeft">
                 <div class="number">10</div>
-                <img src="img/Avatars/topCreator10.png" alt="topCreator10">
+                <img src="img/Avatars/topCreator10.png" alt="topCreator10" title="Top Creator: Animakid">
                 <div class="creatorCardInfo">
                     <p>Animakid</p>
                     <p class="fs16"><span>Total Sales: </span>34.53 ETH</p>
                 </div>
             </div>
-            <div class="creatorCard desktop">
+            <div class="creatorCard desktop animate__animated animate__backInRight">
                 <div class="number">11</div>
-                <img src="img/Avatars/topCreator11.png" alt="topCreator11">
+                <img src="img/Avatars/topCreator11.png" alt="topCreator11" title="Top Creator: Dotgu">
                 <div class="creatorCardInfo">
                     <p>Dotgu</p>
                     <p class="fs16"><span>Total Sales: </span>34.53 ETH</p>
                 </div>
             </div>
-            <div class="creatorCard desktop">
+            <div class="creatorCard desktop animate__animated animate__backInRight">
                 <div class="number">12</div>
-                <img src="img/Avatars/topCreator12.png" alt="topCreator12">
+                <img src="img/Avatars/topCreator12.png" alt="topCreator12" title="Top Creator: Ghiblier">
                 <div class="creatorCardInfo">
                     <p>Ghiblier</p>
                     <p class="fs16"><span>Total Sales: </span>34.53 ETH</p>
@@ -446,10 +450,12 @@
                 </p>
             </div>
 
-            <button class="btnSeeMore tablet">
-                <i class="icon-eye"></i>
-                See All
-            </button>
+            <a href="marketplace.html" target="_blank" title="Browse the NFT Marketplace audiTo_index">
+                <button class="btnSeeMore tablet audiEye">
+                    <i class="icon-eye"></i>
+                    See All
+                </button>
+            </a>
         </div>
 
 
@@ -558,10 +564,12 @@
                     </div>
                 </div>
             </div>
-            <button class="btnSeeMore mobile">
-                <i class="icon-eye"></i>
-                See All
-            </button>
+            <a href="marketplace.html" target="_blank" title="Browse the NFT Marketplace audiTo_index">
+                <button class="btnSeeMore mobile audiEye">
+                    <i class="icon-eye"></i>
+                    See All
+                </button>
+            </a>
         </div>
     </div>
 
@@ -576,10 +584,12 @@
                     </div>
                 </div>
                 <h2>Magic Mashrooms</h2>
-                <button class="btnSeeMore tablet">
-                    <i class="icon-eye"></i>
-                    See NFT
-                </button>
+                <a href="marketplace.html" target="_blank" title="Browse the NFT Marketplace audiTo_index">
+                    <button class="btnSeeMore tablet audiEye">
+                        <i class="icon-eye"></i>
+                        See NFT
+                    </button>
+                </a>
             </div>
             <div class="timer">
                 <div class="wrapTimer">
@@ -601,7 +611,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btnSeeMore mobile">
+                <button class="btnSeeMore mobile audiEye">
                     <i class="icon-eye"></i>
                     See NFT
                 </button>
@@ -625,7 +635,7 @@
                         <source srcset="img/HowItWorks1Mobile.png" media="(max-width: 705px)">
                         <source srcset="img/HowItWorks1Tablet.png" media="(max-width: 1120px)">
                         <source srcset="img/HowItWorks1.png" media="(min-width: 1120px)">
-                        <img src="img/HowItWorks1.png" alt="HowItWorks1">
+                        <img src="img/HowItWorks1.png" alt="How It Works Step 1" title="How It Works: Setup Your Wallet">
                     </picture>
                 </div>
                 <div class="flex">
@@ -644,7 +654,7 @@
                         <source srcset="img/HowItWorks2Mobile.png" media="(max-width: 705px)">
                         <source srcset="img/HowItWorks2Tablet.png" media="(max-width: 1120px)">
                         <source srcset="img/HowItWorks2.png" media="(min-width: 1120px)">
-                        <img src="img/HowItWorks2.png" alt="HowItWorks2">
+                        <img src="img/HowItWorks2.png" alt="How It Works Step 2" title="How It Works: Create Collection">
                     </picture>
                 </div>
                 <div class="flex">
@@ -663,7 +673,7 @@
                             <source srcset="img/HowItWorks3Mobile.png" media="(max-width: 705px)">
                             <source srcset="img/HowItWorks3Tablet.png" media="(max-width: 1120px)">
                             <source srcset="img/HowItWorks3.png" media="(min-width: 1120px)">
-                            <img src="img/HowItWorks3.png" alt="HowItWorks3">
+                            <img src="img/HowItWorks3.png" alt="How It Works Step 3" title="How It Works: Start Earning">
                         </picture>
                     </div>
                 </div>
@@ -685,7 +695,7 @@
         <picture>
             <source srcset="img/spaceman.jpg" media="(min-width: 1120px)">
             <source srcset="img/spacemanTablet.jpg" media="(max-width: 1120px)">
-            <img src="img/spaceman.jpg" alt="spaceman">
+            <img src="img/spaceman.jpg" alt="Spaceman" title="Join Our Weekly Digest">
         </picture>
         <div>
             <h3>Join our weekly <br> digest</h3>
@@ -703,10 +713,10 @@
     <footer>
         <div class="flex container">
             <div>
-                <div class="flex NFTMarketplace">
+                <a href="index.html" target="_blank" class="flex NFTMarketplace audiTo_index">
                     <i class="icon-Storefront"></i>
                     <h5>NFT Marketplace</h5>
-                </div>
+                </a>
 
                 <p>
                     NFT marketplace UI created with Anima for Figma.
@@ -715,22 +725,22 @@
                     Join our community
                 </p>
                 <div class="flex socialIcons">
-                    <a href="https://discord.com/" target="_blank"><i class="icon-Discord"></i></a>
-                    <a href="https://www.youtube.com/" target="_blank"><i class="icon-youtube"></i></a>
-                    <a href="https://x.com/" target="_blank"><i class="icon-twitter"></i></a>
-                    <a href="https://www.instagram.com/prosto_van/" target="_blank"><i class="icon-instagram"></i></a>
+                    <a href="https://discord.com/" target="_blank" title="Join us on Discord"><i class="icon-Discord"></i></a>
+                    <a href="https://www.youtube.com/" target="_blank" title="Watch us on YouTube"><i class="icon-youtube"></i></a>
+                    <a href="https://x.com/" target="_blank" title="Follow us on Twitter/X"><i class="icon-twitter"></i></a>
+                    <a href="https://www.instagram.com/prosto_van/" target="_blank" title="Follow us on Instagram"><i class="icon-instagram"></i></a>
                 </div>
             </div>
 
             <div>
                 <h5>Explore</h5>
-                <a href="marketplace.html" target="_blank">
+                <a href="marketplace.html" target="_blank" title="Browse the NFT Marketplace audiTo_index">
                     <p>Marketplace</p>
                 </a>
-                <a href="rankings.html" target="_blank">
+                <a href="rankings.html" target="_blank" title="View NFT Rankings">
                     <p>Rankings</p>
                 </a>
-                <a href="marketplace.html" target="_blank">
+                <a href="connectWallet.html" target="_blank" title="Connect a Wallet">
                     <p>Connect a wallet</p>
                 </a>
             </div>
@@ -753,7 +763,9 @@
     </footer>
 
     <script src="js/burgerMenu.js"></script>
+    <script src="js/animate.js"></script>
     <script src="js/timer.js"></script>
+    <script src="js/audio.js"></script>
 </body>
 
 </html>

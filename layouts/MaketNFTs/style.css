@@ -780,6 +780,7 @@ footer h5 {
     font-size: 22px;
     font-weight: 700;
     text-transform: capitalize;
+    cursor: pointer;
 }
 
 footer p {

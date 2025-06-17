@@ -1,0 +1,39 @@
+.BTNconnectWallet {
+
+}
+
+.connectWallet button {
+    width: 320px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 16px 40px;
+    border-radius: 20px;
+    background-color: #3B3B3B;
+    border: 1px solid #A259FF;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.connectWallet button p {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.BTNconnectWallet1 i {
+    width: 40px; height: 40px;
+    background: url('img/Avatars/connectWallet_sprite_3px.png') -3px -3px;
+}
+.BTNconnectWallet2 i {
+    width: 40px; height: 40px;
+    background: url('img/Avatars/connectWallet_sprite_3px.png') -49px -3px;
+}
+.BTNconnectWallet3 i {
+    width: 40px; height: 40px;
+    background: url('img/Avatars/connectWallet_sprite_3px.png') -95px -3px;
+}
+
