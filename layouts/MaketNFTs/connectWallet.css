@@ -1,5 +1,5 @@
-.BTNconnectWallet {
-
+.connectWallet {
+    max-width: 420px;
 }
 
 .connectWallet button {
@@ -25,15 +25,31 @@
 }
 
 .BTNconnectWallet1 i {
-    width: 40px; height: 40px;
+    width: 40px;
+    height: 40px;
     background: url('img/Avatars/connectWallet_sprite_3px.png') -3px -3px;
 }
+
 .BTNconnectWallet2 i {
-    width: 40px; height: 40px;
+    width: 40px;
+    height: 40px;
     background: url('img/Avatars/connectWallet_sprite_3px.png') -49px -3px;
 }
+
 .BTNconnectWallet3 i {
-    width: 40px; height: 40px;
+    width: 40px;
+    height: 40px;
     background: url('img/Avatars/connectWallet_sprite_3px.png') -95px -3px;
 }
 
+@media (max-width: 1120px) {
+    .connectWallet {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 900px) {
+    .connectWallet {
+        max-width: 322px;
+    }
+}

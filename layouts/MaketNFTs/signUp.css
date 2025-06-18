@@ -26,6 +26,13 @@ p {
     margin: 20px 0 40px;
 }
 
+.headerTopRight p {
+    margin: 0;
+}
+.headerTopRight p:last-of-type {
+    margin-bottom: 10px;
+}
+
 .createAccount input, .createAccount button {
     width: 330px;
     height: 46px;
@@ -61,7 +68,7 @@ p {
 
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1120px) {
     main {
         gap: 40px;
     }

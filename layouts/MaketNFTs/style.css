@@ -745,7 +745,7 @@ text-transform: capitalize;
 .JoinUs input {
     height: 60px;
     border-radius: 20px;
-    padding: 0 45px;
+    padding: 0 45px 0 20px;
 }
 
 .JoinUs button {
@@ -790,6 +790,10 @@ footer p {
     margin: 20px 0;
 }
 
+.m_w_290 {
+    max-width: 290px;
+}
+
 .socialIcons {
     font-size: 31px;
     color: #858583;
@@ -799,14 +803,11 @@ footer p {
     margin-right: 10px;
 }
 
-/* footer>.flex>div:last-of-type {
-    margin-right: -40px;
-} */
 
 footer input {
     height: 60px;
     border-radius: 20px;
-    padding: 0 45px;
+    padding: 0 45px 0 20px;
 }
 
 footer button {

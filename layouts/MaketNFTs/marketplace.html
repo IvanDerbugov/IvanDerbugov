@@ -21,44 +21,48 @@
 </head>
 
 <body>
-    <div class="headerTop flex container-1280">
-        <div class="flex">
-            <a href="index.html" target="_blank" title="Go to Home Page">
-                <div class="flex NFTMarketplace audiTo_index">
-                    <i class="icon-Storefront"></i>
-                    <h5>NFT Marketplace</h5>
-                </div>
-            </a>
+    
+    <header>
+        <div class="headerTop flex container-1280">
+            <div class="flex">
+                <a href="index.html" target="_blank" title="Go to Home Page">
+                    <div class="flex NFTMarketplace audiTo_index">
+                        <i class="icon-Storefront"></i>
+                        <h5>NFT Marketplace</h5>
+                    </div>
+                </a>
+            </div>
+    
+    
+            <div class="flex headerTopRight">
+                <button id="close">&#10006</button>
+                <a href="marketplace.html" target="_blank" class="elMenu" title="Browse the NFT Marketplace">
+                    <p class="flex">
+                        Marketplace
+                    </p>
+                </a>
+                <a href="rankings.html" target="_blank" class="elMenu" title="View NFT Rankings">
+                    <p class="flex">
+                        Rankings
+                    </p>
+                </a>
+                <a href="connectWallet.html" target="_blank" class="elMenu" title="Connect a Wallet">
+                    <p class="flex">
+                        Connect a wallet
+                    </p>
+                </a>
+                <a href="signUp.html" target="_blank" class="elMenu" title="Sign Up for NFT Marketplace">
+                    <button class="buttonWithIcon audioRocket">
+                        <i class="icon-User"></i>
+                        Sign Up
+                    </button>
+                </a>
+            </div>
+            <button class="burgerMenuMobile">
+                <i class="icon-BurgerMenu"></i>
+            </button>
         </div>
-
-
-        <div class="flex headerTopRight">
-            <button id="close">&#10006;</button>
-            <a href="marketplace.html" target="_blank" title="Browse the NFT Marketplace audiTo_index">
-                <p class="flex elMenu">
-                    Marketplace
-                </p>
-            </a>
-            <a href="rankings.html" target="_blank" title="View NFT Rankings">
-                <p class="flex elMenu">
-                Rankings
-            </p>
-            <a href="marketplace.html" target="_blank" title="Connect a Wallet">
-                <p class="flex elMenu">
-                    Connect a wallet
-                </p>
-            </a>
-            <a href="signUp.html" target="_blank" title="Sign Up for NFT Marketplace">
-                <button class="buttonWithIcon elMenu audioRocket">
-                    <i class="icon-User"></i>
-                    Sign Up
-                </button>
-            </a>
-        </div>
-        <button class="burgerMenuMobile">
-            <i class="icon-BurgerMenu"></i>
-        </button>
-    </div>
+    </header>
 
 
     <main>
@@ -71,12 +75,14 @@
                 Browse through more than 50k NFTs on the NFT Marketplace.
             </p>
 
-            <div class="wrapInput">
-                <input type="text" placeholder="Search your favourite NFTs">
-                <button>
-                    <i class="icon-search"></i>
-                </button>
-            </div>
+            <form>
+                <div class="wrapInput">
+                    <input type="text" placeholder="Search your favourite NFTs">
+                    <button type="reset">
+                        <i class="icon-search"></i>
+                    </button>
+                </div>
+            </form>
         </div>
 
         <div class="sampleNFTs container">
@@ -531,14 +537,16 @@
             </div>
             <div>
                 <h5>Join our weekly digest</h5>
-                <p>Get exclusive promotions & updates straight to your inbox.</p>
-                <div class="flex">
-                    <input type="text" placeholder="Enter your email here">
-                    <button class="buttonWithIcon">
-                        <i class="icon-Envelope mobile"></i>
-                        Subscribe
-                    </button>
-                </div>
+                <p class="m_w_290">Get exclusive promotions & updates straight to your inbox.</p>
+                <form action="http://fe.it-academy.by/TestForm.php" method="POST" target="_blank">
+                    <div class="flex">
+                        <input type="text" placeholder="Enter your email here" name="email">
+                        <button class="buttonWithIcon" type="submit">
+                            <i class="icon-Envelope mobile"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -549,6 +557,7 @@
     <script src="js/burgerMenu.js"></script>
     <script src="js/marketplace.js"></script>
     <script src="js/audio.js"></script>
+    <script src="js/resetForm.js"></script>
 </body>
 
 </html>
