@@ -18,3 +18,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+document.querySelectorAll('.linkToMetamask').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        window.open('https://metamask.io/ru', '_blank');
+    });
+});
+
+
+document.querySelectorAll('.linkToWalletConnect').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        window.open('https://walletconnect.network/', '_blank');
+    });
+});
+
+
+document.querySelectorAll('.linkToCoinbase').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        window.open('https://www.coinbase.com/en-gb', '_blank');
+    });
+});
+
+
+
+
+

@@ -32,7 +32,7 @@
     
     
             <div class="flex headerTopRight">
-                <button id="close">&#10006</button>
+                <button id="close">&#10006;</button>
                 <a href="marketplace.html" target="_blank" class="elMenu" title="Browse the NFT Marketplace">
                     <p class="flex">
                         Marketplace
@@ -48,12 +48,10 @@
                         Connect a wallet
                     </p>
                 </a>
-                <a href="signUp.html" target="_blank" class="elMenu" title="Sign Up for NFT Marketplace">
-                    <button class="buttonWithIcon audioRocket">
+                    <button class="buttonWithIcon audioRocket linkToSignUp elMenu">
                         <i class="icon-User"></i>
                         Sign Up
                     </button>
-                </a>
             </div>
             <button class="burgerMenuMobile">
                 <i class="icon-BurgerMenu"></i>
@@ -61,8 +59,12 @@
         </div>
     </header>
 
-
-
+    <nav aria-label="breadcrumb" class="breadcrumbs container">
+        <ol>
+            <li class="audioTo_index"><a href="index.html" title="Go to Home Page" target="_blank">Home</a></li>
+            <li>Sign Up</li>
+        </ol>
+    </nav>
 
     <main class="container-1280 flex">
         <picture>
@@ -157,6 +159,8 @@
             <p>&copy; NFT Market. Use this template freely.</p>
         </div>
     </footer>
+
+    <script src="js/linkTo.js"></script>
     <script src="js/burgerMenu.js"></script>
     <script src="js/audio.js"></script>
     <script src="js/resetForm.js"></script>

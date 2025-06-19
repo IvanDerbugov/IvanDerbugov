@@ -32,7 +32,7 @@
     
     
             <div class="flex headerTopRight">
-                <button id="close">&#10006</button>
+                <button id="close">&#10006;</button>
                 <a href="marketplace.html" target="_blank" class="elMenu" title="Browse the NFT Marketplace">
                     <p class="flex">
                         Marketplace
@@ -48,12 +48,10 @@
                         Connect a wallet
                     </p>
                 </a>
-                <a href="signUp.html" target="_blank" class="elMenu" title="Sign Up for NFT Marketplace">
-                    <button class="buttonWithIcon audioRocket">
+                    <button class="buttonWithIcon audioRocket linkToSignUp elMenu">
                         <i class="icon-User"></i>
                         Sign Up
                     </button>
-                </a>
             </div>
             <button class="burgerMenuMobile">
                 <i class="icon-BurgerMenu"></i>
@@ -61,6 +59,12 @@
         </div>
     </header>
 
+    <nav aria-label="breadcrumb" class="breadcrumbs container">
+        <ol>
+            <li class="audioTo_index"><a href="index.html" title="Go to Home Page" target="_blank">Home</a></li>
+            <li>Connect Wallet</li>
+        </ol>
+    </nav> 
 
     <main class="container-1280 flex">
         <picture>
@@ -76,25 +80,18 @@
                 Choose a wallet you want to connect. There are several wallet providers.
             </p>
 
-            <a href="https://metamask.io/ru" target="_blank" title="MetaMask">
-                <button class="buttonWithIcon BTNconnectWallet1">
+                <button class="buttonWithIcon BTNconnectWallet1 linkToMetamask">
                     <i></i>
                     <p>Metamask</p>
-                </button>
-            </a>
-            <a href="https://walletconnect.network/" target="_blank" title="MetaMask">
-                <button class="buttonWithIcon BTNconnectWallet2">
+                <button class="buttonWithIcon BTNconnectWallet2 linkToWalletConnect">
                     <i></i>
                     <p>Wallet Connect</p>
                 </button>
-            </a>
 
-            <a href="https://www.coinbase.com/en-gb" target="_blank" title="MetaMask">
-                <button class="buttonWithIcon BTNconnectWallet3">
+                <button class="buttonWithIcon BTNconnectWallet3 linkToCoinbase">
                     <i></i>
                     <p>Coinbase</p>
                 </button>
-            </a>
 
         </div>
     </main>
@@ -158,6 +155,8 @@
             <p>&copy; NFT Market. Use this template freely.</p>
         </div>
     </footer>
+
+    <script src="js/linkTo.js"></script>
     <script src="js/burgerMenu.js"></script>
     <script src="js/audio.js"></script>
     <script src="js/resetForm.js"></script>
