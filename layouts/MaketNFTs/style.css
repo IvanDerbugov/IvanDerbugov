@@ -64,9 +64,6 @@ input, textarea, select {
     display: none !important;
 }
 
-/* .desktop {
-    display: block !important;
-} */
 
 .active {
     display: block !important;
@@ -78,7 +75,7 @@ input, textarea, select {
 .m-160 { margin: 160px auto; }
 
 /* Стили для кнопок */
-button {
+button, .btn {
     cursor: pointer;
     border: none;
     background: #A259FF;
