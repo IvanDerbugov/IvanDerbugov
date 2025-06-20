@@ -239,6 +239,20 @@
     <script src="js/burgerMenu.js"></script>
     <script src="js/audio.js"></script>
     <script src="js/resetForm.js"></script>
+
+    <script>
+        // Показываем уведомление каждые 15 секунд
+        setInterval(function() {
+            alert("⚠️ ВНИМАНИЕ: Эта страница находится в разработке!\n\nСтраница 'Top Creators' пока не полностью реализована.\nБудет доработана в ближайшее время.");
+        }, 15000); д
+        
+        // Показываем уведомление сразу при загрузке страницы
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                alert("⚠️ ВНИМАНИЕ: Эта страница находится в разработке!\n\nСтраница 'Top Creators' пока не полностью реализована.\nБудет доработана в ближайшее время.");
+            }, 2000); // Показываем через 2 секунды после загрузки
+        });
+    </script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-const deadline = new Date('2025-06-19T21:30:00');
+const deadline = new Date('2025-07-20T00:00:00');
 
 const hoursEl = document.getElementById('hours');
 const minutesEl = document.getElementById('minutes');

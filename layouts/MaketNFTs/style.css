@@ -939,3 +939,291 @@ footer>div:last-of-type {
 footer>div:last-of-type p {
     margin-top: 20px;
 }
+
+
+
+
+
+
+/* ===== HOVER EFFECTS ===== */
+
+/* Плавные переходы для всех интерактивных элементов */
+button, a, .creatorCard, .collectionCard, .moreNFTsCard, .category, .howItWorksGrid > div {
+    transition: all 0.3s ease;
+}
+
+/* Hover эффекты для кнопок */
+.buttonWithIcon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(162, 89, 255, 0.3);
+    background: linear-gradient(135deg, #A259FF, #8B5CF6);
+}
+
+.btnSeeMore:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(162, 89, 255, 0.2);
+    background: rgba(162, 89, 255, 0.1);
+    border-color: #8B5CF6;
+}
+
+/* Hover эффекты для навигации */
+.headerTopRight a:hover {
+    background: rgba(162, 89, 255, 0.1);
+    border-radius: 20px;
+    transform: translateY(-1px);
+}
+
+.headerTopRight a:hover p {
+    color: #A259FF;
+}
+
+/* Hover эффект для логотипа */
+.NFTMarketplace:hover {
+    transform: scale(1.05);
+}
+
+.NFTMarketplace:hover .icon-Storefront:before {
+    color: #8B5CF6;
+    transform: rotate(5deg);
+}
+
+/* Hover эффекты для карточек создателей */
+.creatorCard:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(162, 89, 255, 0.15);
+    background: linear-gradient(145deg, #3B3B3B, #4B4B4B);
+}
+
+.creatorCard:hover .number {
+    background: #A259FF;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.creatorCard:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Hover эффекты для карточек коллекций */
+.collectionCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.collectionCard:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.collectionCard:hover .collectionCardTitle {
+    color: #A259FF;
+}
+
+/* Hover эффекты для NFT карточек */
+.moreNFTsCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(162, 89, 255, 0.1);
+    background: linear-gradient(145deg, #3B3B3B, #4B4B4B);
+}
+
+.moreNFTsCard:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.moreNFTsCard:hover > div > p {
+    color: #A259FF;
+}
+
+/* Hover эффекты для категорий */
+.category:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(162, 89, 255, 0.2);
+}
+
+.category:hover div:last-of-type {
+    background: linear-gradient(135deg, #3B3B3B, #A259FF);
+}
+
+.category:hover div:last-of-type p {
+    color: #fff;
+}
+
+/* Hover эффекты для How It Works */
+.howItWorksGrid > div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(162, 89, 255, 0.15);
+    background: linear-gradient(145deg, #3B3B3B, #4B4B4B);
+}
+
+.howItWorksGrid > div:hover p:first-of-type {
+    color: #A259FF;
+}
+
+/* Hover эффекты для индикаторов */
+.indicators div:hover {
+    transform: scale(1.05);
+}
+
+.indicators div:hover h3 {
+    color: #A259FF;
+    text-shadow: 0 0 10px rgba(162, 89, 255, 0.3);
+}
+
+/* Hover эффекты для социальных иконок */
+.socialIcons a:hover {
+    transform: translateY(-2px) scale(1.2);
+    color: #A259FF;
+}
+
+.socialIcons a:hover i {
+    animation: bounce 0.6s ease;
+}
+
+/* Hover эффекты для ссылок в футере */
+footer a:hover p {
+    color: #A259FF;
+    transform: translateX(5px);
+}
+
+/* Hover эффекты для форм */
+.JoinUs input:focus,
+footer input:focus {
+    box-shadow: 0 0 0 3px rgba(162, 89, 255, 0.3);
+    border: 1px solid #A259FF;
+}
+
+/* Hover эффект для таймера */
+.timer:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(162, 89, 255, 0.2);
+}
+
+/* Hover эффект для Magic Mushroom секции */
+.magicMashroom .btnSeeMore:hover {
+    background: #A259FF;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(162, 89, 255, 0.3);
+}
+
+/* Анимация для иконок */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Hover эффект для аватаров */
+.avatar:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(162, 89, 255, 0.5);
+}
+
+/* Hover эффект для breadcrumbs */
+.breadcrumbs a:hover {
+    color: #8B5CF6;
+    text-decoration: underline;
+}
+
+/* Hover эффект для burger menu */
+.burgerMenuMobile:hover {
+    background: rgba(162, 89, 255, 0.1);
+    border-radius: 50%;
+    transform: scale(1.1);
+}
+
+/* Hover эффект для Join Us секции */
+.JoinUs:hover {
+    box-shadow: 0 20px 40px rgba(162, 89, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.JoinUs:hover img {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* Дополнительные эффекты для изображений */
+img {
+    transition: transform 0.3s ease;
+}
+
+/* Hover эффект для кнопки закрытия */
+#close:hover {
+    background: rgba(255, 0, 0, 0.1);
+    border-radius: 50%;
+    transform: scale(1.1);
+    color: #ff4444;
+}
+
+/* Hover эффект для NFT Marketplace в футере */
+footer .NFTMarketplace:hover {
+    transform: scale(1.05);
+}
+
+footer .NFTMarketplace:hover .icon-Storefront:before {
+    color: #8B5CF6;
+}
+
+/* Эффект пульсации для кнопок с иконками */
+.buttonWithIcon:hover i {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Hover эффект для карточек с градиентом */
+.collectionCard:hover .cardMore {
+    background: linear-gradient(135deg, #A259FF, #8B5CF6);
+    transform: scale(1.05);
+}
+
+/* Эффект свечения для активных элементов */
+.creatorCard:hover,
+.collectionCard:hover,
+.moreNFTsCard:hover {
+    position: relative;
+}
+
+.creatorCard:hover::before,
+.collectionCard:hover::before,
+.moreNFTsCard:hover::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #A259FF, #8B5CF6, #A259FF);
+    border-radius: 26px;
+    z-index: -1;
+    opacity: 0.3;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 0.6;
+    }
+}
