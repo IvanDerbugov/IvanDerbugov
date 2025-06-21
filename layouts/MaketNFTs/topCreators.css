@@ -2,6 +2,10 @@
     margin: 80px auto;
 }
 
+main {
+    transform: translateX(0px);
+}
+
 .periodTime {
     justify-content: space-between;
 }
@@ -29,13 +33,166 @@
 
 .sampleCreators p {
     margin: 12px auto;
-    flex: 1;
+    /* flex: 1; */
+}
+
+.sampleCreators > p:nth-of-type(1) {
+    margin: 0 30px ;
+}
+.sampleCreators > p:nth-of-type(2) {
+    margin: 0 -140px 0 100px ;
+}
+.sampleCreators > p:nth-of-type(4) {
+    margin: 0 0px 0 -60px ;
 }
 
 .creator {
     justify-content: space-between;
     background-color: #3B3B3B;
     border-radius: 20px;
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    align-items: center;
+}
+
+.artist-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sampleCreators,
+.creator {
+    display: flex;
+    align-items: center;
+}
+
+.sampleCreators>p:nth-child(1),
+.creator .number {
+    /* flex-basis: 5%; */
+    text-align: center;
+}
+
+.sampleCreators>p:nth-child(2),
+.creator .artist-info {
+    flex-basis: 35%;
+}
+
+.sampleCreators>p:nth-child(3),
+.creator .change {
+    flex-basis: 20%;
+}
+
+.sampleCreators>p:nth-child(4),
+.creator .sold {
+    flex-basis: 20%;
+}
+
+.sampleCreators>p:nth-child(5),
+.creator .volume {
+    flex-basis: 20%;
+}
+
+
+/* Позиции для каждой иконки */
+.avatar--1 {
+    background-position: -3px -3px;
+}
+/* 1 очкастая девушка */
+.avatar--2 {
+    background-position: -69px -3px;
+}
+/* 2 девушка с чёрным каре */
+.avatar--3 {
+    background-position: -135px -3px;
+}
+/* 3 мужик в очках */
+.avatar--4 {
+    background-position: -201px -3px;
+}
+/* 4 лис в очках */
+.avatar--5 {
+    background-position: -267px -3px;
+}
+/* 5 девушка с синими волосами */
+.avatar--6 {
+    background-position: -334px -3px;
+}
+/* 6 опра с цветными волосами */
+.avatar--7 {
+    background-position: -399px -3px;
+}
+/* 7 японка */
+.avatar--8 {
+    background-position: -465px -3px;
+}
+/* 8 японец с усами и повязкой */
+.avatar--9 {
+    background-position: -531px -3px;
+}
+/* 9 робот с жёлтым лицом */
+.avatar--10 {
+    background-position: -597px -3px;
+}
+/* 10 киборг с полосками на лице */
+.avatar--11 {
+    background-position: -663px -3px;
+}
+/* 11 робот с голубыми глазами */
+.avatar--12 {
+    background-position: -729px -3px;
+}
+/* 12 собака-робот */
+.avatar--13 {
+    background-position: -795px -3px;
+}
+/* 13 робот с круглой головой */
+.avatar--14 {
+    background-position: -861px -3px;
+}
+/* 14 аватар с азиатской внешностью */
+.avatar--15 {
+    background-position: -927px -3px;
+}
+/* 15 парень в шлеме сердечки-глаза */
+.avatar--16 {
+    background-position: -993px -3px;
+}
+/* 16 тёмный аватар */
+.avatar--17 {
+    background-position: -1059px -3px;
+}
+/* 17 робот с цилиндром */
+
+.avatar18-19 {
+    width: 24px;
+    height: 24px;
+    background-image: url('img/Avatars/AvatarSprites1px.png');
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.avatar--18 {
+    background-position: -1px -1px;
+}
+/* 18 горилла */
+.avatar--19 {
+    background-position: -27px -1px;
+}
+/* 19 баба в скафандре */
+
+
+.creator p {
+    font-size: 16px;
+}
+
+.change {
+    color: #00AC4F;
+}
+
+.creator .name {
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .creator p {
@@ -50,4 +207,198 @@
 
 .creator .number {
     position: static;
+}
+
+.number {
+    margin: 0 20px 0 0px;
+}
+
+
+.periodTime>div {
+    flex: 1;
+    text-align: center;
+}
+
+.periodTime p {
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0;
+    padding: 15px 0;
+    border-bottom: 2px solid transparent;
+    color: #858584;
+}
+
+.periodTime p.active {
+    color: white;
+    border-bottom: 2px solid #858584;
+}
+
+
+.sampleCreators {
+    color: #858584;
+}
+
+
+
+
+
+@media (max-width: 1120px) {
+    .number {
+        background: transparent;
+    }
+
+    .creator .avatar {
+        width: 24px;
+        height: 24px;
+        background-image: url('img/Avatars/AvatarSprites3px.png');
+        background-size: 429px 24px;
+        background-repeat: no-repeat;
+        display: inline-block;
+        border-radius: 50%;
+        margin-left: -48px;
+    }
+    
+
+    .avatar--1 {
+        background-position: 0px 0;
+    }
+    .avatar--2 {
+        background-position: -24px 0;
+    }
+    .avatar--3 {
+        background-position: -48px 0;
+    }
+    .avatar--4 {
+        background-position: -72px 0;
+    }
+    .avatar--5 {
+        background-position: -96px 0;
+    }
+    .avatar--6 {
+        background-position: -120px 0;
+    }
+    .avatar--7 {
+        background-position: -144px 0;
+    }
+    .avatar--8 {
+        background-position: -168px 0;
+    }
+    .avatar--9 {
+        background-position: -191px 0;
+    }
+    .avatar--10 {
+        background-position: -215px 0;
+    }
+    .avatar--11 {
+        background-position: -239px 0;
+    }
+    .avatar--12 {
+        background-position: -263px 0;
+    }
+    .avatar--13 {
+        background-position: -286px 0;
+    }
+    .avatar--14 {
+        background-position: -310px 0;
+    }
+    .avatar--15 {
+        background-position: -334px 0;
+    }
+    .avatar--16 {
+        background-position: -358px 0;
+    }
+    .avatar--17 {
+        background-position: -382px 0;
+    }
+
+
+    .sampleCreators > p:nth-of-type(3) {
+        margin: 0 26px 0 99px;
+    }
+
+    .sampleCreators > p:nth-of-type(4) {
+        display: none;
+    }
+
+    .sold {
+        display: none;
+    }
+}
+
+
+@media (max-width: 590px) {
+    .container {
+        max-width: 315px;
+    }
+
+
+    .periodTime div:nth-of-type(1) p {
+        font-size: 0;
+    }
+    .periodTime div:nth-of-type(1) p::after {
+        content: '1d';
+        font-size: 16px;
+    }
+    
+    .periodTime div:nth-of-type(2) p {
+        font-size: 0;
+    }
+    .periodTime div:nth-of-type(2) p::after {
+        content: '7d';
+        font-size: 16px;
+    }
+    
+    .periodTime div:nth-of-type(3) p {
+        font-size: 0;
+    }
+    .periodTime div:nth-of-type(3) p::after {
+        content: '30d';
+        font-size: 16px;
+    }
+    
+    .periodTime div:nth-of-type(4) p {
+        font-size: 0;
+    }
+    .periodTime div:nth-of-type(4) p::after {
+        content: 'All';
+        font-size: 16px;
+    }
+
+
+    .sampleCreators > p:nth-of-type(3), .change {
+        display: none;
+    }
+
+    .creator .avatar {
+        margin-left: -58px;
+    }
+
+    .creator .name {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+
+    .sampleCreators p:nth-of-type(2) {
+        margin: 0 0 0 10px;
+    }
+    .sampleCreators p:last-of-type {
+        margin: 0 25px 0 26%;
+    }
+
+    footer>.flex>div:nth-of-type(3) {
+        max-width: 320px;
+    }
+
+    footer > div div:last-of-type .flex {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    footer > div div:last-of-type .flex input, footer > div div:last-of-type .flex button {
+        width: 315px;
+        height: 46px;
+        position: static;
+        justify-content: center;
+    }
 }

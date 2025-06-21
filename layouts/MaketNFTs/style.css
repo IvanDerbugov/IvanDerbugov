@@ -153,6 +153,7 @@ p {
     background-size: 429px 24px;
     background-repeat: no-repeat;
     display: inline-block;
+    border-radius: 50%;
 }
 
 /* Позиции для каждой иконки */
