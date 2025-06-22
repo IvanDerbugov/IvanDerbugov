@@ -14,6 +14,14 @@
         max-width: 100%;
     }
 
+    .skill-header {
+        cursor: pointer;
+    }
+
+    .skill-icon {
+        display: block; /* Показываем иконку */
+    }
+
     .skill-explanation {
         /* Становится обычным блоком под текстом */
         position: relative;
@@ -33,18 +41,40 @@
         transition: max-height 0.4s ease-out, opacity 0.4s ease-out, padding 0.4s ease-out;
     }
 
-    /* При наведении... */
+    /* Убираем старую логику :hover */
     .skill-item:hover .skill-explanation {
-        /* ...плавно раскрываем блок */
+        max-height: 0;
+        opacity: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        visibility: hidden;
+    }
+
+    /* Логика для раскрытия по клику (через класс .open) */
+    .skill-item.open .skill-explanation {
         max-height: 300px; /* Достаточная высота для любого текста */
         opacity: 1;
         padding-top: 15px;
         padding-bottom: 15px;
+        visibility: visible;
     }
 
+    /* Поворачиваем иконку */
+    .skill-item.open .skill-icon {
+        transform: rotate(180deg);
+    }
+    
     .skill-item:hover .skill-name {
         /* Отменяем сдвиг текста вправо, он больше не нужен */
         transform: none;
+    }
+
+    /* Подсвечиваем активный навык */
+    .skill-item.open .skill-name {
+        color: #fff;
+    }
+    html.light-theme .skill-item.open .skill-name {
+        color: #079e7b;
     }
 
     /* --- Адаптив для страницы "Обо мне" --- */

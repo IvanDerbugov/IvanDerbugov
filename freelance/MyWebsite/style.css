@@ -449,6 +449,20 @@ html.light-theme .skill-card p {
     padding: 15px 0;
 }
 
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.skill-icon {
+    display: none; /* Скрыто на десктопе */
+    fill: currentColor;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
 .skill-name {
     font-size: 2.5rem;
     font-weight: bold;
