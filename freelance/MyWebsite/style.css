@@ -18,9 +18,31 @@ body {
     font-size: 16px;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
-    background-color: #1a242f;
     color: #ffffff;
     margin: 50px;
+    
+    /* --- Анимированный фон "Космическая туманность" --- */
+    /* background: linear-gradient(-45deg, #12181f, #1a242f, #1d2b3e, #2c1d3e);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite; */
+
+    /* --- Анимированный фон "мятное облако" --- */
+    background: linear-gradient(-45deg, #f0faf7, #ffffff, #f5fbf9, #f0f8f8);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 ul,
@@ -519,6 +541,10 @@ main .container {
 
 .portfolio-image-container:hover img {
     transform: scale(1.05); /* Эффект приближения при наведении */
+}
+
+.portfolio-image-link img {
+    border-radius: 8px;
 }
 
 .portfolio-info {
