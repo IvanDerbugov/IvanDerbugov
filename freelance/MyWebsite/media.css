@@ -1,0 +1,168 @@
+@media (max-width: 1100px) {
+    .portfolio-item {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 1020px) {
+
+    /* --- Адаптив для страницы "Навыки" --- */
+
+    .skills-list {
+        /* Убираем лишний отступ слева на мобильных */
+        margin: 0 0 50px 0;
+        max-width: 100%;
+    }
+
+    .skill-explanation {
+        /* Становится обычным блоком под текстом */
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        margin-top: 15px;
+        text-align: left;
+        
+        /* Скрываем его с помощью max-height для плавной анимации */
+        max-height: 0;
+        opacity: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, opacity 0.4s ease-out, padding 0.4s ease-out;
+    }
+
+    /* При наведении... */
+    .skill-item:hover .skill-explanation {
+        /* ...плавно раскрываем блок */
+        max-height: 300px; /* Достаточная высота для любого текста */
+        opacity: 1;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .skill-item:hover .skill-name {
+        /* Отменяем сдвиг текста вправо, он больше не нужен */
+        transform: none;
+    }
+
+    /* --- Адаптив для страницы "Обо мне" --- */
+    .about-me-grid {
+        grid-template-columns: 1fr; /* Меняем 2 колонки на 1 */
+        gap: 50px; /* Увеличиваем отступ между блоками */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        margin: 30px 15px;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+        padding-top: 3rem;
+        text-align: center;
+        padding-top: 0;
+    }
+
+    header .container {
+        margin-bottom: 40px;
+    }
+
+    main .container {
+        padding: 0 20px;
+    }
+
+    /* Адаптация навигации */
+    .top {
+        flex-direction: column-reverse;
+        gap: 25px;
+    }
+
+    .top > div:first-child {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .top .LinkItem {
+        margin-right: 0;
+    }
+
+    /* Адаптация главной страницы */
+    .about {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding-top: 20px;
+    }
+    .about h2 {
+        font-size: 2.2rem;
+        text-align: center;
+        margin-right: 0;
+    }
+    .wrapAnimation {
+        width: 300px;
+        height: 250px;
+    }
+    #code-animation {
+        width: 300px;
+        height: 225px;
+    }
+    .bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* Адаптация страницы портфолио */
+    .portfolio-item {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-details h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Уменьшаем отступы для маленьких экранов */
+    body {
+        margin: 20px 10px;
+    }
+    main .container {
+        padding: 0 15px;
+    }
+
+    /* Уменьшаем заголовки */
+    h1 {
+        font-size: 2.2rem;
+    }
+    .about h2 {
+        font-size: 1.8rem;
+        margin-right: 0;
+    }
+    #skills-page h2, #contact-page h2, #portfolio-page h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+
+    /* Перестраиваем навигацию в одну колонку */
+    .top > div:first-child {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* Делаем шрифт навыков меньше */
+    .skill-name {
+        font-size: 1.8rem;
+    }
+
+    /* Карточки на странице "Обо мне" - в одну колонку */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}

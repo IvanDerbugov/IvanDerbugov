@@ -5,8 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты фрилансера</title>
-
+    <script>
+        // Этот скрипт применяет сохраненную тему до загрузки страницы, чтобы избежать мигания.
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.documentElement.classList.add('light-theme');
+        }
+        // Если в хранилище 'dark' или ничего нет, ничего не делаем, т.к. темная тема по умолчанию.
+    </script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+  
 </head>
 
 <body>

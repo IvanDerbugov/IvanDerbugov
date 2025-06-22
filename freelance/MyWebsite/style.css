@@ -10,6 +10,7 @@
 
 html {
     scroll-behavior: smooth;
+    transition: background 0.5s ease;
 }
 
 body {
@@ -20,17 +21,20 @@ body {
     text-rendering: optimizeSpeed;
     color: #ffffff;
     margin: 50px;
+    transition: color 0.4s ease;
     
-    /* --- Анимированный фон "Космическая туманность" --- */
-    /* background: linear-gradient(-45deg, #12181f, #1a242f, #1d2b3e, #2c1d3e);
+    /* ТЕМНАЯ ТЕМА (по умолчанию) "Космическая туманность" */
+    background: linear-gradient(-45deg, #12181f, #1a242f, #1d2b3e, #2c1d3e);
     background-size: 400% 400%;
-    animation: gradientAnimation 5s ease infinite; */
+    animation: gradientAnimation 10s ease infinite;
+}
 
-    /* --- Анимированный фон "мятное облако" --- */
-    background: linear-gradient(-45deg, #f0faf7, #ffffff, #f5fbf9, #f0f8f8);
+/* СВЕТЛАЯ ТЕМА "Мятное облако" */
+html.light-theme body {
+    color: #1f2937;
+    background: linear-gradient(-45deg, #82dfca, #c5f1f9, #f5fbf9, #f0f8f8);
     background-size: 400% 400%;
-    animation: gradientAnimation 5s ease infinite;
-
+    animation: gradientAnimation 10s ease infinite;
 }
 
 @keyframes gradientAnimation {
@@ -111,12 +115,16 @@ header .container {
 }
 
 main {
-    border: 3px solid #fff;
+    border: 3px solid rgba(255, 255, 255, 0.8);
     border-bottom: none;
     border-radius: 10px 10px 0 0;
     position: relative;
     overflow: hidden;
-    /* padding: 0 50px; */
+    transition: border-color 0.4s ease;
+}
+
+html.light-theme main {
+    border-color: rgba(31, 41, 55, 0.1);
 }
 
 main .container {
@@ -130,29 +138,38 @@ main .container {
     padding: 20px 0;
 }
 
+/* --- Стили навигации (ИСПРАВЛЕНО) --- */
+
+/* 1. Базовые стили для ссылок */
 .top .LinkItem {
-    margin-right: 25px;
-    color: #fff;
-    transition: color 0.3s ease;
-}
-
-.LinkItem:hover {
-    color: #079e7b;
-}
-
-.LinkItem {
     position: relative;
+    margin-right: 25px;
     padding-bottom: 8px;
     font-size: 22px;
     text-align: center;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
+/* 2. Цвета для ТЕМНОЙ темы (по умолчанию) */
+.top .LinkItem {
+    color: #e5e7eb; /* Обычная ссылка */
+}
+.top .LinkItem:hover,
 .top .activeLink {
-    color: #079e7b;
-    border-bottom-color: transparent;
+    color: #079e7b; /* Активная или при наведении */
 }
 
+/* 3. Цвета для СВЕТЛОЙ темы */
+html.light-theme .top .LinkItem {
+    color: #6b7280; /* Обычная ссылка */
+}
+html.light-theme .top .LinkItem:hover,
+html.light-theme .top .activeLink {
+    color: #079e7b; /* Активная или при наведении */
+}
+
+/* 4. Подчеркивание для активной ссылки (общее для всех тем) */
 .activeLink::after {
     content: '';
     position: absolute;
@@ -176,7 +193,7 @@ main .container {
     position: relative;
     width: 70px;
     height: 38px;
-    background-color: #2b3648;
+    background-color: #129cbf73;
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -194,6 +211,7 @@ main .container {
     background-color: #5080b1;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px 10px #56cae7;
 }
 
 .theme-switch-toggle svg {
@@ -210,7 +228,7 @@ main .container {
 .theme-switch-input:checked+.theme-switch-label .theme-switch-toggle {
     transform: translateX(32px);
     background-color: #1a242f;
-    box-shadow: 0 0 10px 3px #21447e;
+    box-shadow: 0 0 10px 8px #21447e;
 }
 
 /* Светлая тема: показать луну (темная), скрыть солнце */
@@ -246,6 +264,7 @@ main .container {
     max-width: 500px;
     line-height: 1.1;
     color: #079e7b;
+    margin-right: 40px;
 }
 
 
@@ -260,8 +279,10 @@ main .container {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
-    height: 300px;
+    /* width: 400px;
+    height: 300px; */
+    min-width: 275px;
+    min-height: 206px;
 }
 
 .bottom {
@@ -293,6 +314,12 @@ main .container {
 
 .bottom>div:last-of-type {
     border: 2px solid #fff;
+    transition: all 0.3s ease;
+}
+
+html.light-theme .bottom>div:last-of-type {
+    border-color: #1f2937;
+    color: #1f2937;
 }
 
 /* Эффекты при наведении */
@@ -304,6 +331,11 @@ main .container {
 .bottom>div:last-of-type:hover {
     background-color: #fff;
     color: #1a242f;
+}
+
+html.light-theme .bottom>div:last-of-type:hover {
+    background-color: #1f2937;
+    color: #fff;
 }
 
 /* Стили для переключения страниц */
@@ -337,6 +369,10 @@ main .container {
     margin-bottom: 15px;
     line-height: 1.6;
 }
+html.light-theme .about-me-text p {
+    color: #4b5563;
+}
+
 .about-me-text h3 {
     margin-top: 30px;
 }
@@ -363,19 +399,32 @@ main .container {
     transition: all 0.3s ease;
 }
 
+html.light-theme .skill-card {
+    background-color: #f9fafb;
+    border-color: #e5e7eb;
+}
+
 .skill-card:hover {
     border-color: #079e7b;
     transform: translateY(-5px);
+    color: #fff;
+}
+
+html.light-theme .skill-card h4 {
+    color: #1f2937;
 }
 
 .skill-card h4 {
     margin-bottom: 10px;
-    color: #fff;
 }
 
 .skill-card p {
     font-size: 14px;
     color: #ccc;
+}
+
+html.light-theme .skill-card p {
+    color: #6b7280;
 }
 
 /* Стили для страницы "Навыки" - НОВЫЙ ВАРИАНТ */
@@ -408,6 +457,10 @@ main .container {
     text-align: left;
 }
 
+html.light-theme .skill-name {
+    color: #d1d5db;
+}
+
 .skill-explanation {
     position: absolute;
     top: 50%;
@@ -420,6 +473,7 @@ main .container {
     padding: 20px;
     border-radius: 8px;
     width: 300px; /* Фиксированная ширина */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     
     opacity: 0; /* Изначально скрыт */
     visibility: hidden;
@@ -428,10 +482,20 @@ main .container {
     z-index: 10;
 }
 
+html.light-theme .skill-explanation {
+    background-color: #ffffff;
+    color: #374151;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
 /* Магический hover-эффект */
 .skill-item:hover .skill-name {
     color: #fff; /* Становится белым и ярким */
     transform: translateX(20px); /* Сдвигается вправо */
+}
+
+html.light-theme .skill-item:hover .skill-name {
+    color: #079e7b;
 }
 
 .skill-item:hover .skill-explanation {
@@ -459,6 +523,10 @@ main .container {
     line-height: 1.6;
 }
 
+html.light-theme #contact-page p {
+    color: #4b5563;
+}
+
 .contact-methods {
     display: flex;
     justify-content: center;
@@ -479,6 +547,12 @@ main .container {
     transition: all 0.3s ease;
 }
 
+html.light-theme .contact-method {
+    border-color: #d1d5db;
+    color: #1f2937;
+    background-color: #f9fafb;
+}
+
 .contact-method:hover {
     background-color: #079e7b;
     border-color: #079e7b;
@@ -487,9 +561,17 @@ main .container {
     box-shadow: 0 5px 15px rgba(7, 158, 123, 0.2);
 }
 
+html.light-theme .contact-method:hover {
+    background-color: #079e7b;
+    color: #fff;
+    border-color: #079e7b;
+    box-shadow: 0 5px 15px rgba(7, 158, 123, 0.2);
+}
+
 .contact-method svg {
     width: 24px;
     height: 24px;
+    transition: color 0.3s ease;
 }
 
 /* Стили для страницы "Портфолио" */
@@ -508,6 +590,10 @@ main .container {
     line-height: 1.6;
 }
 
+html.light-theme .portfolio-intro {
+    color: #4b5563;
+}
+
 .portfolio-item {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -516,6 +602,12 @@ main .container {
     padding: 30px;
     border-radius: 15px;
     align-items: center;
+    transition: background-color 0.4s ease;
+}
+
+html.light-theme .portfolio-item {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
 }
 
 .portfolio-image-container {
@@ -562,6 +654,10 @@ main .container {
     margin-bottom: 25px;
     line-height: 1.6;
 }
+html.light-theme .portfolio-details > p {
+    color: #4b5563;
+}
+
 .portfolio-details h4 {
     font-size: 1.2rem;
     margin-bottom: 15px;
@@ -596,6 +692,10 @@ main .container {
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 14px;
+}
+
+html.light-theme .tech-tag {
+    background-color: #e5e7eb;
 }
 
 .portfolio-button {

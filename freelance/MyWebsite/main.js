@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Функция-обработчик клика
     function handleNavClick(event) {
         const targetPageId = event.currentTarget.dataset.target;
+        if (!targetPageId) return;
         
         // Переключение активной ссылки
         navLinks.forEach(link => {
@@ -31,6 +32,28 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', handleNavClick);
         }
     });
+
+    // --- Theme Switcher ---
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+
+    if (themeToggle) {
+        // Устанавливаем начальное состояние переключателя в соответствии с темой
+        // Если light-theme нет, значит тема темная, и он должен быть checked.
+        themeToggle.checked = !htmlEl.classList.contains('light-theme');
+
+        themeToggle.addEventListener('change', () => {
+            if (themeToggle.checked) {
+                // ПЕРЕКЛЮЧАЕМ НА ТЕМНУЮ ТЕМУ
+                htmlEl.classList.remove('light-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // ПЕРЕКЛЮЧАЕМ НА СВЕТЛУЮ ТЕМУ
+                htmlEl.classList.add('light-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
 
     // --- ЛОГИКА ДЛЯ ХОВЕР-ЭФФЕКТА НАВЫКОВ БОЛЬШЕ НЕ НУЖНА ---
     // Весь эффект теперь реализован на чистом CSS
