@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты фрилансера</title>
+    <title>Иван Дербугов - Веб-разработчик</title>
+
+    <!-- Иконки для вкладки браузера и мобильных устройств -->
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="apple-touch-icon" href="img/favicon.svg">
+
     <script>
         // Этот скрипт применяет сохраненную тему до загрузки страницы, чтобы избежать мигания.
         const savedTheme = localStorage.getItem('theme');
@@ -229,7 +234,10 @@
                 
                 <div class="portfolio-item">
                     <a href="https://ivanderbugov.github.io/IvanDerbugov/layouts/MaketNFTs/index.html" target="_blank" class="portfolio-image-link">
-                        <img src="img/screenDesktop.jpg" alt="NFT Marketplace Project Screenshot">
+                        <picture>
+                            <source media="(max-width: 1020px)" srcset="img/screenTabletMobile.jpg">
+                            <img src="img/screenDesktop.jpg" alt="NFT Marketplace Project Screenshot">
+                        </picture>
                     </a>
                     <div class="portfolio-details">
                         <h3>🚀 NFT Marketplace</h3>
