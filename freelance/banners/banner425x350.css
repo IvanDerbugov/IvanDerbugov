@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #e9eef2;
+    font-family: 'Manrope', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.banner800 {
+    width: 425px;
+    height: 350px;
+    background: #f7fafc;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.banner800-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 32px 40px 0 32px;
+    box-sizing: border-box;
+}
+
+.banner800-logo img {
+    height: 30px;
+}
+
+.banner800-route {
+    color: #3675D3;
+    font-size: 18px;
+    text-align: right;
+    line-height: 1.2;
+    font-weight: 400;
+    margin-top: 2px;
+    max-width: 90px;
+}
+.banner800-route strong {
+    font-size: 20px;
+    font-weight: 800;
+    display: block;
+}
+
+.banner800-content {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 40px 32px 32px;
+    box-sizing: border-box;
+}
+
+.banner800-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    min-width: 0;
+}
+
+.banner800-weight {
+    color: #888;
+    font-size: 13px;
+    font-style: italic;
+    margin: 0 0 2px 2px;
+    align-self: flex-start;
+    width: 250px;
+    text-align: right;
+}
+
+.banner800-left h1 {
+    font-size: 51px;
+    font-weight: 800;
+    color: #3675D3;
+    margin: -9px 0 1px 0;
+    line-height: 1.05;
+}
+
+.banner800-left h2 {
+    font-size: 23px;
+    font-weight: 700;
+    color: #3675D3;
+    margin: 0 0 10px 0;
+}
+
+.banner800-btn {
+    background: linear-gradient(90deg, #ffa63a 0%, #ffe27a 100%);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 11px 20px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: none;
+    transition: transform 0.15s cubic-bezier(.4,0,.2,1), background 0.2s;
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+}
+
+.banner800-btn:hover {
+    transform: scale(1.04);
+    background: linear-gradient(90deg, #ffb84d 0%, #ffe27a 100%);
+}
+
+.banner800-right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.banner800-circle {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: url(img/handsBox.png);
+    background-size: 220px 220px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 8px solid #fee4c3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: -80px;
+    right: 6px;
+}
+
+.banner800-circle img {
+    width: 260px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
