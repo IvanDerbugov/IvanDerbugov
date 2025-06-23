@@ -14,7 +14,6 @@ body {
     width: 950px;
     height: 200px;
     background-color: #fdfdfd;
-    border-radius: 20px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
