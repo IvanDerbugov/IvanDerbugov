@@ -1,0 +1,15 @@
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .breadcrumbs {
+        padding: 15px 20px;
+    }
+    
+    .breadcrumbs ol {
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+    
+    .breadcrumbs li + li:before {
+        margin: 0 0.3em;
+    }
+}
