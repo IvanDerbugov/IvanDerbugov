@@ -108,4 +108,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- ЛОГИКА ДЛЯ ХОВЕР-ЭФФЕКТА НАВЫКОВ БОЛЬШЕ НЕ НУЖНА ---
     // Весь эффект теперь реализован на чистом CSS
+
+    // === Discount Modal ===
+    const openDiscountModalBtn = document.getElementById('openDiscountModal');
+    const discountModal = document.getElementById('discountModal');
+    const closeDiscountModalBtn = document.getElementById('closeDiscountModal');
+    const discountForm = document.getElementById('discountForm');
+    const discountSuccess = document.querySelector('.discount-success');
+
+    if (openDiscountModalBtn && discountModal && closeDiscountModalBtn && discountForm && discountSuccess) {
+        openDiscountModalBtn.addEventListener('click', () => {
+            discountModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        closeDiscountModalBtn.addEventListener('click', () => {
+            discountModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        discountModal.addEventListener('click', (e) => {
+            if (e.target === discountModal) {
+                discountModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        discountForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            discountForm.style.display = 'none';
+            discountSuccess.style.display = 'block';
+            setTimeout(() => {
+                discountModal.classList.remove('active');
+                document.body.style.overflow = '';
+                discountForm.reset();
+                discountForm.style.display = '';
+                discountSuccess.style.display = 'none';
+            }, 12000);
+        });
+    }
 }); 
