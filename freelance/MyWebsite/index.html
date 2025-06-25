@@ -442,7 +442,8 @@
                 <button class="modal-close" id="closeDiscountModal" title="Закрыть">&times;</button>
                 <h3>Получите скидку на первый заказ!</h3>
                 <p class="discount-desc">Оставьте заявку — и получите персональную скидку на первый проект!</p>
-                <form id="discountForm" class="discount-form">
+                <form class="discount-form" action="https://formspree.io/f/xjkrpwqg" method="POST">
+                  <input type="hidden" name="_subject" value="Заявка на скидку с сайта">
                   <label>
                     Что нужно разработать?
                     <textarea name="project" required placeholder="Опишите задачу..." rows="3"></textarea>
