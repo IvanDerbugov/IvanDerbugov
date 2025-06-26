@@ -59,3 +59,264 @@ h1, h2, h3, h4, h5, h6 {
 p {
     margin: 0;
 }
+
+
+
+main .top{
+    position: relative;
+    height: 600px;
+    background: url(img/headerMainTest.jpg) no-repeat center center;
+    background-size: 100% 660px;
+    background-position: 0px -70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.top-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 1;
+}
+
+.top-content {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: #fff;
+    text-align: left;
+    max-width: 700px;
+    width: 100%;
+    padding-left: 40px;
+}
+
+.top-subtitle {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    font-weight: 500;
+    color: #fff;
+    border-right: 4px solid #ffc107;
+    padding-right: 12px;
+    display: inline-block;
+}
+
+.top-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #fff;
+}
+
+.top-price {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 28px;
+    color: #fff;
+}
+.top-price span {
+    font-size: 40px;
+    font-weight: 700;
+    color: #ffc107;
+}
+
+.top-btn {
+    display: inline-block;
+    background: #ffc107;
+    color: #222;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 16px 36px;
+    border-radius: 30px;
+    margin-top: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    transition: background 0.2s;
+    z-index: 2;
+}
+.top-btn:hover {
+    background: #ffb300;
+}
+
+.top-sale-block {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    background: #fff;
+    border-radius: 6px;
+    padding: 24px 0 8px 0;
+    min-width: 600px;
+    text-align: center;
+    z-index: 3;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+.top-sale {
+    display: inline-block;
+    background: #ffc107;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 8px 24px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+.top-sale-desc {
+    color: #888;
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.top-btns {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.top-btn-whatsapp {
+    display: flex;
+    align-items: center;
+    background: #25d366;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 14px 30px 14px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    transition: background 0.2s;
+    z-index: 2;
+}
+.top-btn-whatsapp:hover {
+    background: #1ebe57;
+}
+.wa-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+
+
+.breadcrumbs {
+    padding: 20px 0;
+    margin: 0 auto;
+    max-width: 1200px;
+    /* color: #00441d; */
+}
+.breadcrumbs a {
+    color: #00441d;
+}
+
+.breadcrumbs ol li:last-of-type {
+    color: #263238;
+}
+
+
+.breadcrumbs ol {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.breadcrumbs li:first-of-type {
+    position: relative;
+    top: 2px;
+}
+
+/* Добавляем разделитель "/" через псевдоэлемент :before */
+.breadcrumbs li + li:before {
+    content: "/";
+    margin-right: 6px;
+    color: #263238;
+    font-weight: 300;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+}
+
+/* Стили для ссылок в хлебных крошках */
+.breadcrumbs a {
+    
+    /* color: #263238; */
+    /* transition: color 0.3s ease; */
+}
+
+.breadcrumbs a:hover {
+    /* color: #263238; */
+    text-decoration: underline;
+    font-size: 1.1em;
+}
+
+/* Стили для последнего элемента (текущая страница) */
+.breadcrumbs li:last-child {
+    /* color: #263238; */
+    font-weight: 500;
+}
+
+
+
+.cardsTest {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    margin: 50px auto;
+    position: relative;
+}
+.cardsTest a {
+    padding: 10px;
+    background: #ffc107;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 5px;
+    text-align: center;
+    /* width: 200px; */
+}
+
+.btn-calc {
+    position: absolute;
+    top: 540px;
+    left: 70px;
+}
+.btn1 {
+    position: absolute;
+    top: 540px;
+    left: 281px;
+}
+.btn2 {
+    position: absolute;
+    top: 540px;
+    left: 530px;
+    width: 350px;
+}
+.btn3 {
+    position: absolute;
+    top: 540px;
+    left: 987px;
+    width: 350px;
+}
+
+
+.btn-all {
+    display: block;
+    width: 200px;
+    /* height: 50px; */
+    background: #ffc107;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
