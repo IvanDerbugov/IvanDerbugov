@@ -1,8 +1,10 @@
-document.addEventListener('DOMContentLoaded', function() {
+(function() {
     const toggle = document.getElementById('dropdownToggle');
     const menu = document.getElementById('dropdownMenu');
     const dropdown = document.getElementById('catalogDropdown');
     let hoverTimeout;
+
+    if (!toggle || !menu || !dropdown) return;
 
     // Открытие/закрытие по клику
     toggle.addEventListener('click', function(e) {
@@ -35,4 +37,4 @@ document.addEventListener('DOMContentLoaded', function() {
             menu.classList.toggle('show');
         }
     });
-});
+})();
