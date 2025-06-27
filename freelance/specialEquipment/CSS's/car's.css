@@ -1,3 +1,54 @@
 main {
     height: 100%;
 }
+
+.conteiner1800 {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    background: url(../img/fonTractor.png) no-repeat center center,
+    url(../img/circle1.png) no-repeat center center,
+    url(../img/circle2.png) no-repeat center center,
+    url(../img/circle3.png) no-repeat center center,
+    url(../img/fonBildingDecstop.jpg) no-repeat center center;
+    background-size: 1080px 589px, auto auto, auto auto, auto auto, 1800px 1000px;
+    background-position: 495px 232px, 1075px 68px, 1294px 27px, 1492px 136px, 0 -220px;
+
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bannerMain h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.bannerMain h2 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.bannerMain h3 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.discount {
+    font-size: 20px;
+    font-weight: 400;
+    color: red;
+    text-align: left;
+}
+
