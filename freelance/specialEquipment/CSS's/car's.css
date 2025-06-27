@@ -2,6 +2,16 @@
     width: 100%;
     max-width: 1800px;
     margin: 0 auto;
+}
+
+.conteiner1240 {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+main > .conteiner1800:first-of-type {
+    
     background: url(../img/fonTractor.png) no-repeat center center, url(../img/circle1.png) no-repeat center center, url(../img/circle2.png) no-repeat center center, url(../img/circle3.png) no-repeat center center, url(../img/fonBildingDecstop1.png) no-repeat center center;
     background-size: 1080px 589px, auto auto, auto auto, auto auto, 1800px 1000px;
     background-position: 665px 373px, 1179px 188px, 1390px 157px, 1592px 235px, 0 -100px;
@@ -66,7 +76,7 @@
 
 .bannerMain ul {
     margin: 0 0 18px 0;
-    padding-left: 28px;
+    /* padding-left: 28px; */
 }
 
 .bannerMain ul li {
@@ -119,14 +129,33 @@
     pointer-events: none;
 }
 
-.discount-offer-img {
-    width: 110px;
-    height: auto;
+.discount-offer-wrap {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
     margin: 10px 0 18px 0;
+}
+
+.discount-offer-img {
+    width: 120px;
+    height: 120px;
     display: block;
+}
+
+.discount-offer-svg {
     position: absolute;
-    left: 700px;
-    top: 400px;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+.discount-offer-svg text {
+    font-size: 13px;
+    fill: #fff;
+    font-family: Arial, sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
 }
 
 .bannerMain p {
@@ -136,16 +165,16 @@
 
 .bannerMain > a {
     display: inline-block;
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 600;
     color: #181c28;
     background: #23f472;
     border-radius: 12px;
-    padding: 14px 36px;
+    padding: 14px 70px;
     margin-right: 18px;
     margin-top: 10px;
     text-decoration: none;
-    box-shadow: 0 2px 12px rgba(35,244,114,0.10);
+    box-shadow: 0 2px 12px rgba(35, 244, 114, 0.10);
     transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
     letter-spacing: 0.5px;
     text-align: center;
@@ -163,8 +192,20 @@
         max-width: 98vw;
         padding: 0 8px;
     }
+    .discount-offer-wrap {
+        width: 80px;
+        height: 80px;
+    }
     .discount-offer-img {
-        width: 70px;
+        width: 80px;
+        height: 80px;
+    }
+    .discount-offer-svg {
+        width: 80px;
+        height: 80px;
+    }
+    .discount-offer-svg text {
+        font-size: 9px;
     }
     .bannerMain > a {
         font-size: 16px;
@@ -175,23 +216,31 @@
 .contact-buttons {
     display: flex;
     flex-direction: row;
-    gap: 45px;
-    margin-bottom: 10px;
-    margin-left: 50px;
+    gap: 12px;
+    margin: 0 0 28px -20px;
 }
 
 .contact-buttons a {
     padding: 5px;
+}
+.contact-buttons p {
+    font-size: 27px;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    background: none;
+    border-radius: 0;
+    padding: 20px 0;
+    display: block;
 }
 
 .contact-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
-    background: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
     border: none;
     cursor: pointer;
@@ -201,8 +250,8 @@
 }
 
 .contact-btn svg {
-    width: 28px;
-    height: 28px;
+    width: 56px;
+    height: 56px;
     display: block;
 }
 
@@ -225,3 +274,83 @@
     fill: #fff;
 }
 
+@media (max-width: 900px) {
+    .contact-buttons {
+        gap: 24px;
+    }
+    .contact-btn {
+        width: 56px;
+        height: 56px;
+    }
+    .contact-btn svg {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.breadcrumbs {
+    padding: 20px 0;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.breadcrumbs a {
+    color: #00441d;
+}
+.breadcrumbs ol li:last-of-type {
+    color: #263238;
+}
+.breadcrumbs ol {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+.breadcrumbs li:first-of-type {
+    position: relative;
+    top: 2px;
+}
+.breadcrumbs li + li:before {
+    content: "/";
+    margin-right: 6px;
+    color: #263238;
+    font-weight: 300;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+}
+.breadcrumbs a:hover {
+    text-decoration: underline;
+    font-size: 1.1em;
+}
+.breadcrumbs li:last-child {
+    font-weight: 500;
+}
+@media (max-width: 768px) {
+    .breadcrumbs {
+        padding: 15px 20px;
+    }
+    .breadcrumbs ol {
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+    .breadcrumbs li + li:before {
+        margin: 0 0.3em;
+    }
+}
+
+
+
+.popular-models h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #263238;
+    text-align: center;
+    margin-bottom: 28px;
+    margin-top: 28px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    background: none;
+    border-radius: 0;
+    padding: 0;
+}
