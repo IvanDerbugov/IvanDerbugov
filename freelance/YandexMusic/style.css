@@ -4,6 +4,7 @@
 }
 
 h1 {
+    font-family: "Raleway", sans-serif;
     font-size: 72px;
     font-weight: bold;
 }
@@ -80,13 +81,19 @@ header .bottom div:last-of-type {
 .controlAll {
     background: url(img/substrate.png) no-repeat center center;
     display: flex;
+    gap: 40px;
+    align-items: center;
     width: 1600px;
     height: 838px;
     position: relative;
 }
 
-.controlAll div:last-of-type {
-    
+.controlAllImg {
+    width: 50%;
+    height: 100%;
+    background: url(img/controlAllImg.png) no-repeat center center;
+    background-size: calc(501px * 2.6) calc(293px * 2.6);
+    background-position: -257px 86px;
 }
 
 .controlAll h1 {
@@ -103,7 +110,7 @@ header .bottom div:last-of-type {
     justify-content: center;
     align-items: center;
     gap: 16px;
-    margin: 32px 0 56px 0;
+    margin: 32px 0 170px 0;
 }
 
 .dot {
@@ -118,5 +125,15 @@ header .bottom div:last-of-type {
 
 .dot.active {
     background: #AA80EC;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.feature-card {
+    /* стили карточки */
 }
 

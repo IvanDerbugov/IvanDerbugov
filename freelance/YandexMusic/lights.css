@@ -14,15 +14,15 @@
 
 .l2 {
     position: absolute;
-    left: -272px;
-    top: 251px;
+    left: -294px;
+    top: 315px;
     width: 497px;
     height: 249px;
     background: #EBFF79;
     border-radius: 32px;
     opacity: 1;
     filter: blur(64px);
-    transform: rotate(-27deg);
+    transform: rotate(-12deg);
     z-index: -1;
 }
 
