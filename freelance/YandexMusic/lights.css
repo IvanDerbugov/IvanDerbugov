@@ -1,0 +1,111 @@
+.l1 {
+    position: absolute;
+    left: 531px;
+    top: -93px;
+    width: 291px;
+    height: 249px;
+    background: #B1BFFE;
+    border-radius: 32px;
+    opacity: 1;
+    filter: blur(64px);
+    transform: rotate(146.9deg);
+    z-index: -1;
+}
+
+.l2 {
+    position: absolute;
+    left: -272px;
+    top: 251px;
+    width: 497px;
+    height: 249px;
+    background: #EBFF79;
+    border-radius: 32px;
+    opacity: 1;
+    filter: blur(64px);
+    transform: rotate(-27deg);
+    z-index: -1;
+}
+
+.l3 {
+    position: absolute;
+    left: 850px;
+    top: 281px;
+    width: 227px;
+    height: 249px;
+    background: #AA80EC;
+    border-radius: 32px;
+    opacity: 1;
+    filter: blur(64px);
+    transform: rotate(17deg);
+    z-index: -1;
+}
+
+.l4 {
+    position: absolute;
+    left: 1415px;
+    top: 656px;
+    width: 270px;
+    height: 249px;
+    background: #ADC0FC;
+    border-radius: 32px;
+    opacity: 1;
+    filter: blur(64px);
+    transform: rotate(-15deg);
+    z-index: -1;
+}
+
+.l5 {
+    position: absolute;
+    left: 210px;
+    top: 835px;
+    width: 398px;
+    height: 249px;
+    background: #AA80EC;
+    border-radius: 32px;
+    opacity: 1;
+    filter: blur(64px);
+    transform: rotate(35deg);
+    z-index: -1;
+}
+
+.l6 {
+    position: absolute;
+    left: 117px;
+    top: 1964px;
+    width: 270px;
+    height: 249px;
+    background: #ADC0FC;
+    border-radius: 32px;
+    opacity: 1;
+    filter: blur(64px);
+    transform: rotate(-15deg);
+    z-index: -1;
+}
+
+.l7 {
+    position: absolute;
+    left: 570px;
+    top: 1589px;
+    width: 227px;
+    height: 249px;
+    background: #AA80EC;
+    border-radius: 32px;
+    opacity: 1;
+    filter: blur(64px);
+    transform: rotate(17deg);
+    z-index: -1;
+}
+
+.l8 {
+    position: absolute;
+    left: 1378px;
+    top: 1589px;
+    width: 497px;
+    height: 249px;
+    background: #EBFF79;
+    border-radius: 32px;
+    opacity: 1;
+    filter: blur(64px);
+    transform: rotate(15deg);
+    z-index: -1;
+}

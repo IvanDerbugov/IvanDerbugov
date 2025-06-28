@@ -354,3 +354,10 @@ main > .conteiner1800:first-of-type {
     border-radius: 0;
     padding: 0;
 }
+
+
+.offer-10 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
