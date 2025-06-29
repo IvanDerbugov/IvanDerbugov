@@ -77,9 +77,9 @@ header .bottom div:last-of-type {
     transition: all 0.3s ease;
 }
 
-.controlAll {
+.controlAll, .improvingCosts, .aplicationSettings {
     background: url(img/substrate.png) no-repeat center center;
-    display: flex;
+    display: none;
     gap: 40px;
     align-items: center;
     width: 1600px;
@@ -87,7 +87,16 @@ header .bottom div:last-of-type {
     position: relative;
 }
 
-.controlAllImg {
+.controlAll.active, .improvingCosts.active, .aplicationSettings.active {
+    display: flex;
+}
+
+.improvingCosts {
+    justify-content: space-between;
+    padding-left: 80px;
+}
+
+.controlAllImg, .aplicationSettingsImg, .improvingCostsImg {
     width: 50%;
     height: 100%;
     background: url(img/controlAllImg.png) no-repeat center center;
@@ -95,13 +104,37 @@ header .bottom div:last-of-type {
     background-position: -257px 86px;
 }
 
-.controlAll h1 {
+.improvingCostsImg {
+    background: url(img/icons/improvingCosts.svg) no-repeat center center;
+    background-size: calc(501px * 2.6) calc(293px * 2.6);
+    background-position: -257px 86px;
+}
+
+.aplicationSettingsImg {
+    background: url(img/icons/aplicationSettings.svg) no-repeat center center;
+    background-size: calc(501px * 2.6) calc(293px * 2.6);
+    background-position: -257px 86px;
+}
+
+.controlAll h1, .aplicationSettings h1, .improvingCosts h1 {
     max-width: 430px;
     margin-bottom: 40px;
 }
 
+.improvingCosts h1 {
+    max-width: 450px;
+}
+
 .controlAll p {
     max-width: 450px;
+}
+
+.improvingCosts p {
+    max-width: 500px;
+}
+
+.aplicationSettings p {
+    max-width: 480px;
 }
 
 .pagination-dots {
@@ -141,6 +174,13 @@ header .bottom div:last-of-type {
     padding: 40px;
     background-color: #7272724D;
     border-radius: 32px;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.feature-card:hover {
+    box-shadow: 0 0 32px 0 #AA80EC80, 0 4px 32px 0 #0004;
+    transform: translateY(-8px) scale(1.03);
+    z-index: 2;
 }
 
 .feature-card h3 {
@@ -170,14 +210,55 @@ header .bottom div:last-of-type {
     margin-bottom: calc((231px + 121px)/2);
 }
 
+/* Анимация экранов в .screens */
+@keyframes moveUp {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-60px); }
+}
+@keyframes moveDown {
+  from { transform: translateY(0); }
+  to   { transform: translateY(60px); }
+}
+
 .screens {
-    display: flex;
-    gap: 49px;
+  display: flex;
+  gap: 49px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 120px;
+}
+.screen1, .screen2, .screen3, .screen4, .screen5 {
+  /* Без анимации по умолчанию! */
+}
+
+.screens.animate .screen1 {
+  animation: moveDown 1.2s cubic-bezier(.77,0,.18,1) 0.2s forwards;
+}
+.screens.animate .screen2 {
+  animation: moveUp 1.2s cubic-bezier(.77,0,.18,1) 0.3s forwards;
+}
+.screens.animate .screen3 {
+  animation: moveDown 1.2s cubic-bezier(.77,0,.18,1) 0.4s forwards;
+}
+.screens.animate .screen4 {
+  animation: moveUp 1.2s cubic-bezier(.77,0,.18,1) 0.5s forwards;
+}
+.screens.animate .screen5 {
+  animation: moveDown 1.2s cubic-bezier(.77,0,.18,1) 0.6s forwards;
 }
 
 .screens > div {
     background-color: #fff;
     border-radius: 32px;
+    box-shadow: 0 2px 16px 0 #0002;
+    transition: box-shadow 0.3s, transform 0.3s, border-radius 0.3s;
+    cursor: pointer;
+}
+.screens > div:hover {
+    box-shadow: 0 0 32px 0 #AA80EC80, 0 4px 32px 0 #0004;
+    transform: translateY(-12px) scale(1.04) rotate(-2deg);
+    border-radius: 48px;
+    z-index: 2;
 }
 
 .reviews h1 {
@@ -191,6 +272,13 @@ header .bottom div:last-of-type {
     border-radius: 32px;
     width: 620px !important;
     height: auto !important;    
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.swiper-slide:hover {
+    box-shadow: 0 0 32px 0 #AA80EC80, 0 4px 32px 0 #0004;
+    transform: translateY(-8px) scale(1.03);
+    z-index: 2;
 }
 
 .stars {
@@ -309,6 +397,10 @@ footer .top {
     font-weight: 500;
 }
 
+.columnEl a:nth-of-type(1), .columnEl a:nth-of-type(2) {
+    border-radius: 50%;
+}
+
 .linksToSocial {
     display: flex;
     gap: 21px;
@@ -320,4 +412,89 @@ footer .top {
 
 .swiper-wrapper {
   box-sizing: border-box;
+}
+
+/* Общие анимации */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-80px);}
+  to   { opacity: 1; transform: translateX(0);}
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(80px);}
+  to   { opacity: 1; transform: translateX(0);}
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(80px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95);}
+  to   { opacity: 1; transform: scale(1);}
+}
+
+/* Скрываем по умолчанию */
+.animated-block {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Анимации при появлении */
+.animated-block.animate-left {
+  animation: fadeInLeft 1.1s cubic-bezier(.77,0,.18,1) forwards;
+}
+.animated-block.animate-right {
+  animation: fadeInRight 1.1s cubic-bezier(.77,0,.18,1) forwards;
+}
+.animated-block.animate-up {
+  animation: fadeInUp 1.1s cubic-bezier(.77,0,.18,1) forwards;
+}
+.animated-block.animate-scale {
+  animation: fadeInScale 1.1s cubic-bezier(.77,0,.18,1) forwards;
+}
+
+/* Для features — анимация карточек поочерёдно */
+.features .feature-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.features.animate .feature-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+.features.animate .feature-card:nth-child(1) { transition-delay: 0.1s; }
+.features.animate .feature-card:nth-child(2) { transition-delay: 0.2s; }
+.features.animate .feature-card:nth-child(3) { transition-delay: 0.3s; }
+.features.animate .feature-card:nth-child(4) { transition-delay: 0.4s; }
+
+.linksToSocial img,
+.downloadBtns img {
+  transition: filter 0.3s, transform 0.3s;
+}
+
+.linksToSocial a:hover img,
+.downloadBtns button:hover img {
+  filter: drop-shadow(0 0 8px #AA80EC) brightness(1.2);
+  transform: scale(1.15) rotate(-8deg);
+}
+
+button, .dot, .pagination-dots button, a {
+  transition: box-shadow 0.3s, background 0.3s, color 0.3s, transform 0.3s;
+}
+
+button:hover, .dot:hover, .pagination-dots button:hover, a:hover {
+  box-shadow: 0 0 16px #AA80EC80;
+  background: #B1BFFE;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.linksToSocial a img {
+    transition: box-shadow 0.3s, filter 0.3s, transform 0.3s, border-radius 0.3s;
+}
+.linksToSocial a:hover img {
+    box-shadow: 0 0 16px #AA80EC, 0 0 32px #AA80EC80;
+    filter: brightness(1.2) drop-shadow(0 0 8px #AA80EC);
+    transform: scale(1.15) rotate(-8deg);
+    border-radius: 50%;
 }
