@@ -4,7 +4,6 @@
 }
 
 h1 {
-    font-family: "Raleway", sans-serif;
     font-size: 72px;
     font-weight: bold;
 }
@@ -22,7 +21,7 @@ header {
     margin: 56px auto 242px;
 }
 
-header .top {
+header .top, footer .top {
     display: flex;
     gap: 16px;
     align-items: center;
@@ -130,10 +129,195 @@ header .bottom div:last-of-type {
 .features {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
+    gap: 24px;
+    margin-bottom: 240px;
 }
 
 .feature-card {
-    /* стили карточки */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: #7272724D;
+    border-radius: 32px;
 }
 
+.feature-card h3 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 32px;
+}
+
+.feature-card p {
+    color: #AFAFAF;
+    margin-bottom: 220px;
+}
+
+.feature-num {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    font-family: "Commissioner", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #AFAFAF;
+}
+
+
+.topics h1 {
+    text-align: center;
+    margin-bottom: calc((231px + 121px)/2);
+}
+
+.screens {
+    display: flex;
+    gap: 49px;
+}
+
+.screens > div {
+    background-color: #fff;
+    border-radius: 32px;
+}
+
+.reviews h1 {
+    text-align: center;
+    margin-top: calc((240px + 391px)/2);
+}
+
+.swiper-slide {
+    background-color: #7272724D;
+    padding: 40px;
+    border-radius: 32px;
+    width: 620px !important;
+    height: auto !important;    
+}
+
+.stars {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 40px;
+}
+
+.review-text {
+    color: #AFAFAF;
+    margin-bottom: 74px;
+}
+
+/* Стили для Swiper Pagination */
+.reviews-swiper .swiper-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 40px;
+    position: static;
+}
+
+.reviews-swiper .swiper-pagination-bullet {
+    width: 47px;
+    height: 10px;
+    border-radius: 8px;
+    background: #2C2D31;
+    opacity: 1;
+    transition: background 0.2s;
+    margin: 0 !important;
+}
+
+.reviews-swiper .swiper-pagination-bullet-active {
+    background: #AA80EC;
+}
+
+
+
+.feedback h1 {
+    text-align: center;
+    margin-top: 240px ;
+}
+
+.feedback form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.feedback input {
+    width: 788px;
+    height: 80px;
+    background: #7272724D;
+    padding-left: 64px;
+    border-radius: 16px;
+    font-size: 32px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.feedback button {
+    background-color: #AA80EC;
+    padding: 26px 105px;
+    font-weight: 300;
+    font-size: 40px;
+    margin: 0 auto;
+    margin-top: calc(56px - 32px);
+    border-radius: 16px;
+    color: #fff;
+}
+
+
+footer {
+    background-color: #7272724D;
+}
+
+.wrapElFooter {
+    display: flex;
+    justify-content: space-between;
+    padding: 132px 0 120px 160px;
+}
+
+.columnEl {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.columnEl:nth-of-type(2) {
+    justify-content: flex-end;
+    position: relative;
+    right: 80px;
+}
+
+.columnEl:nth-of-type(3) {
+    position: relative;
+    left: 100px;
+}
+
+footer .top {
+    margin-bottom: 80px;
+}
+
+.noClick {
+    color: #AFAFAF;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.columnEl a {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.linksToSocial {
+    display: flex;
+    gap: 21px;
+}
+
+.reviews-swiper {
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  box-sizing: border-box;
+}

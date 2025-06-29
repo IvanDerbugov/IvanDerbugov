@@ -1,111 +1,168 @@
-.l1 {
+.light {
     position: absolute;
+    width: 270px;
+    height: 249px;
+    border-radius: 32px;
+    opacity: 1;
+    z-index: -1;
+}
+
+.l1 {
     left: 531px;
     top: -93px;
     width: 291px;
-    height: 249px;
     background: #B1BFFE;
-    border-radius: 32px;
-    opacity: 1;
     filter: blur(64px);
     transform: rotate(146.9deg);
-    z-index: -1;
 }
 
 .l2 {
-    position: absolute;
     left: -294px;
     top: 315px;
     width: 497px;
-    height: 249px;
     background: #EBFF79;
-    border-radius: 32px;
-    opacity: 1;
     filter: blur(64px);
     transform: rotate(-12deg);
-    z-index: -1;
 }
 
 .l3 {
-    position: absolute;
     left: 850px;
     top: 281px;
     width: 227px;
-    height: 249px;
     background: #AA80EC;
-    border-radius: 32px;
-    opacity: 1;
     filter: blur(64px);
     transform: rotate(17deg);
-    z-index: -1;
 }
 
 .l4 {
-    position: absolute;
     left: 1415px;
     top: 656px;
     width: 270px;
-    height: 249px;
     background: #ADC0FC;
-    border-radius: 32px;
-    opacity: 1;
     filter: blur(64px);
     transform: rotate(-15deg);
-    z-index: -1;
 }
 
 .l5 {
-    position: absolute;
     left: 210px;
     top: 835px;
     width: 398px;
-    height: 249px;
     background: #AA80EC;
-    border-radius: 32px;
-    opacity: 1;
     filter: blur(64px);
     transform: rotate(35deg);
-    z-index: -1;
 }
 
 .l6 {
-    position: absolute;
-    left: 117px;
-    top: 1964px;
-    width: 270px;
-    height: 249px;
+    left: -113px;
+    top: 1664px;
     background: #ADC0FC;
-    border-radius: 32px;
-    opacity: 1;
     filter: blur(64px);
     transform: rotate(-15deg);
-    z-index: -1;
 }
 
 .l7 {
-    position: absolute;
-    left: 570px;
-    top: 1589px;
+    left: 460px;
+    top: 1409px;
     width: 227px;
-    height: 249px;
     background: #AA80EC;
-    border-radius: 32px;
-    opacity: 1;
     filter: blur(64px);
     transform: rotate(17deg);
-    z-index: -1;
 }
 
 .l8 {
-    position: absolute;
-    left: 1378px;
-    top: 1589px;
+    top: 1459px;
+    left: 1230px;
     width: 497px;
-    height: 249px;
     background: #EBFF79;
-    border-radius: 32px;
-    opacity: 1;
     filter: blur(64px);
+    transform: rotate(-25deg);
+}
+
+.l9 {
+    left: 1103px;
+    top: 1932px;
+    width: 398px;
+    background: #AA80EC;
+    filter: blur(90px);
+    transform: rotate(30deg);
+}
+
+.l10 {
+    left: 359px;
+    top: 2426px;
+    width: 497px;
+    background: #EBFF79;
+    filter: blur(90px);
     transform: rotate(15deg);
-    z-index: -1;
+}
+
+.l11 {
+    left: -255px;
+    top: 2529px;
+    width: 227px;
+    background: #AA80EC;
+    filter: blur(90px);
+    transform: rotate(17deg);
+}
+
+.l12 {
+    left: -8px;
+    top: 2984px;
+    width: 398px;
+    background: #AA80EC;
+    filter: blur(60px);
+    transform: rotate(120deg);
+}
+
+.l13 {
+    left: 298px;
+    top: 3618px;
+    width: 497px;
+    background: #EBFF79;
+    filter: blur(90px);
+    transform: rotate(15deg);
+}
+
+.l14 {
+    left: -228px;
+    top: 4041px;
+    background: #ADC0FC;
+    filter: blur(90px);
+    transform: rotate(-15deg);
+}
+
+.l15 {
+    left: 909px;
+    top: 4359px;
+    background: #ADC0FC;
+    filter: blur(80px);
+    transform: rotate(-15deg);
+}
+
+.l16 {
+    left: 1439px;
+    top: 3474px;
+    width: 1087px;
+    height: 934px;
+    background: #AA80EC;
+    border-radius: 361.59px;
+    filter: blur(227px);
+    transform: rotate(-37.86deg);
+}
+
+.l17 {
+    left: -412px;
+    top: 4543px;
+    width: 398px;
+    background: #AA80EC;
+    filter: blur(90px);
+    transform: rotate(-60deg);
+}
+
+.l18 {
+    left: 1677px;
+    top: 2711px;
+    background: #ADC0FC;
+    filter: blur(90px);
+    transform: rotate(-15deg);
 }

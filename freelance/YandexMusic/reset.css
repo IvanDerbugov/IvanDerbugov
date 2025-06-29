@@ -7,8 +7,9 @@
 /* Сброс стилей для HTML и body */
 html, body {
     height: 100%;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Jost", sans-serif;
     line-height: 1.2;
+    overflow-x: hidden;
 }
 
 /* Сброс стилей для списков */
@@ -51,6 +52,7 @@ input, textarea, select {
 
 /* Сброс стилей для заголовков */
 h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway", sans-serif;
     font-weight: normal;
     font-size: inherit;
 }
