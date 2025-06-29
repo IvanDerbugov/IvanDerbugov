@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Интерактивные эффекты для SVG
   svgIcons.forEach(svg => {
     svg.addEventListener('mouseenter', function() {
-      // Добавляем случайный эффект
-      const effects = ['pulse', 'bounce', 'rotate'];
+      // Добавляем только pulse и bounce, убираем rotate
+      const effects = ['pulse', 'bounce'];
       const randomEffect = effects[Math.floor(Math.random() * effects.length)];
       
       // Убираем предыдущие анимации
@@ -33,9 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Применяем новую анимацию
       this.style.animation = `${randomEffect} 0.6s ease-in-out`;
-      
-      // Добавляем звуковой эффект (если есть)
-      playHoverSound();
+      // Звук убран по требованию заказчика
     });
 
     svg.addEventListener('mouseleave', function() {
@@ -141,12 +139,12 @@ document.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('mouseenter', function() {
       const svg = this.querySelector('svg');
       if (svg) {
-        // Разные эффекты для разных соцсетей
+        // Только pulse и bounce, без rotate
         const effects = [
-          'rotate 0.8s ease-in-out',
-          'pulse 0.6s ease-in-out infinite',
+          'pulse 0.6s ease-in-out',
+          'pulse 0.6s ease-in-out',
           'bounce 0.8s ease-in-out',
-          'rotate 1.2s ease-in-out'
+          'pulse 0.6s ease-in-out'
         ];
         svg.style.animation = effects[index] || effects[0];
         svg.style.filter = 'drop-shadow(0 0 20px #AA80EC) brightness(1.3)';
@@ -227,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }, (1000 * 60 * 5));
   function stop () {
     alert('В данной версии просмотр остановлен');
-    return stop() 
+    stop() 
   }
 
 
@@ -278,8 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Анимация появления блоков
   document.querySelectorAll('.animated-block').forEach(block => {
-    // Не анимируем .controlAll
-    if (block.classList.contains('controlAll')) return;
+    // Возвращаем анимацию для .controlAll
     const obs = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach(entry => {

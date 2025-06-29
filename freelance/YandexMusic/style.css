@@ -122,7 +122,7 @@ header .bottom .headerBottomImg {
 }
 
 .improvingCosts h1 {
-    max-width: 450px;
+    max-width: 610px;
 }
 
 .controlAll p {
@@ -157,6 +157,11 @@ header .bottom .headerBottomImg {
 
 .dot.active {
     background: #AA80EC;
+}
+
+.aboutUs {
+    text-align: center;
+    margin-bottom: 80px;
 }
 
 .features {
@@ -264,6 +269,7 @@ header .bottom .headerBottomImg {
 .reviews h1 {
     text-align: center;
     margin-top: calc((240px + 391px)/2);
+    margin-bottom: 80px;
 }
 
 .swiper-slide {
@@ -350,6 +356,7 @@ header .bottom .headerBottomImg {
     font-size: 40px;
     margin: 0 auto;
     margin-top: calc(56px - 32px);
+    margin-bottom: 240px;
     border-radius: 16px;
     color: #fff;
 }

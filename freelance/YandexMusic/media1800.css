@@ -1,0 +1,96 @@
+@media (max-width: 1800px) {
+    .container {
+        max-width: 1280px;
+    }
+
+    h1 {
+        font-size: 56px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+
+    header .bottom {
+        margin-bottom: 139px;
+    }
+
+    header .bottom .headerBottomImg {
+        position: absolute;
+        right: -55px;
+        top: -85px;
+        width: 737px;
+        height: 504px;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    header .bottom h1 {
+        max-width: 670px;
+    }
+
+    .controlAll,
+    .improvingCosts,
+    .aplicationSettings {
+        background: url(img/substrate.png) no-repeat center center;
+        display: none;
+        gap: 40px;
+        align-items: center;
+        width: 1280px;
+        height: 670px;
+        position: relative;
+        border-radius: 120px;
+    }
+
+    .controlAllImg, .aplicationSettingsImg {
+        background-size: calc(501px * 2.1) calc(293px * 2.1);
+        background-position: -190px 86px;
+    }
+    .improvingCostsImg {
+        background-size: calc(501px * 2.1) calc(293px * 2.1);
+        background-position: -227px 11px;
+    }
+
+    .aplicationSettingsImg {
+        background-position: -190px 46px;
+    }
+
+    .feature-card {
+        padding: 35px;
+    }
+
+    .feature-card p {
+        margin-bottom: 79px;
+    }
+
+    .feature-card h3 {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+
+    .feature-num {
+        font-size: 32px;
+    }
+
+
+    .reviews h1 {
+        margin-top: calc((240px + 391px)/2);
+        margin-bottom: 64px;
+    }
+
+
+    .topics h1 {
+        margin-bottom: calc((185px + 97px) / 2);
+    }
+
+
+    .feedback input {
+        width: 628px;
+    }
+
+    .feedback button {
+        font-size: 32px;
+        padding: 20px 136px;
+    }
+}
