@@ -9,7 +9,7 @@
 
 .l1 {
     left: 531px;
-    top: -93px;
+    top: calc(-93px + 870px);
     width: 291px;
     background: #B1BFFE;
     filter: blur(64px);
@@ -18,7 +18,7 @@
 
 .l2 {
     left: -294px;
-    top: 315px;
+    top: calc(315px + 870px);
     width: 497px;
     background: #EBFF79;
     filter: blur(64px);
@@ -27,7 +27,7 @@
 
 .l3 {
     left: 850px;
-    top: 281px;
+    top: calc(281px + 870px);
     width: 227px;
     background: #AA80EC;
     filter: blur(64px);
@@ -36,7 +36,7 @@
 
 .l4 {
     left: 1415px;
-    top: 656px;
+    top: calc(656px + 870px);
     width: 270px;
     background: #ADC0FC;
     filter: blur(64px);
@@ -45,7 +45,7 @@
 
 .l5 {
     left: 210px;
-    top: 835px;
+    top: calc(835px + 870px);
     width: 398px;
     background: #AA80EC;
     filter: blur(64px);
@@ -54,7 +54,7 @@
 
 .l6 {
     left: -113px;
-    top: 1664px;
+    top: calc(1664px + 870px);
     background: #ADC0FC;
     filter: blur(64px);
     transform: rotate(-15deg);
@@ -62,7 +62,7 @@
 
 .l7 {
     left: 460px;
-    top: 1409px;
+    top: calc(1409px + 870px);
     width: 227px;
     background: #AA80EC;
     filter: blur(64px);
@@ -70,7 +70,7 @@
 }
 
 .l8 {
-    top: 1459px;
+    top: calc(1459px + 870px);
     left: 1230px;
     width: 497px;
     background: #EBFF79;
@@ -80,7 +80,7 @@
 
 .l9 {
     left: 1103px;
-    top: 1932px;
+    top: calc(1932px + 870px);
     width: 398px;
     background: #AA80EC;
     filter: blur(90px);
@@ -89,7 +89,7 @@
 
 .l10 {
     left: 359px;
-    top: 2426px;
+    top: calc(2426px + 870px);
     width: 497px;
     background: #EBFF79;
     filter: blur(90px);
@@ -98,7 +98,7 @@
 
 .l11 {
     left: -255px;
-    top: 2529px;
+    top: calc(2529px + 870px);
     width: 227px;
     background: #AA80EC;
     filter: blur(90px);
@@ -107,7 +107,7 @@
 
 .l12 {
     left: -8px;
-    top: 2984px;
+    top: calc(2984px + 870px)  ;
     width: 398px;
     background: #AA80EC;
     filter: blur(60px);
@@ -116,7 +116,7 @@
 
 .l13 {
     left: 298px;
-    top: 3618px;
+    top: calc(3618px + 870px);
     width: 497px;
     background: #EBFF79;
     filter: blur(90px);
@@ -125,7 +125,7 @@
 
 .l14 {
     left: -228px;
-    top: 4041px;
+    top: calc(4041px + 870px);
     background: #ADC0FC;
     filter: blur(90px);
     transform: rotate(-15deg);
@@ -133,7 +133,7 @@
 
 .l15 {
     left: 909px;
-    top: 4359px;
+    top: calc(4359px + 870px);
     background: #ADC0FC;
     filter: blur(80px);
     transform: rotate(-15deg);
@@ -141,7 +141,7 @@
 
 .l16 {
     left: 1439px;
-    top: 3474px;
+    top: calc(3474px + 870px);
     width: 1087px;
     height: 934px;
     background: #AA80EC;
@@ -152,7 +152,7 @@
 
 .l17 {
     left: -412px;
-    top: 4543px;
+    top: calc(4543px + 870px);
     width: 398px;
     background: #AA80EC;
     filter: blur(90px);
@@ -161,7 +161,7 @@
 
 .l18 {
     left: 1677px;
-    top: 2711px;
+    top: calc(2711px + 870px);
     background: #ADC0FC;
     filter: blur(90px);
     transform: rotate(-15deg);
