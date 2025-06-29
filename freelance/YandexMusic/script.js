@@ -222,13 +222,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Переключение блоков по точкам
-  setTimeout(() => {
-    stop();
-  }, (1000 * 60 * 5));
-  function stop () {
-    alert('В данной версии просмотр остановлен');
-    return stop() 
-  }
+//   setTimeout(() => {
+//     stop();
+//   }, (1000 * 60 * 5));
+//   function stop () {
+//     alert('В данной версии просмотр остановлен');
+//     return stop() 
+//   }
 
 
   const blocks = [
