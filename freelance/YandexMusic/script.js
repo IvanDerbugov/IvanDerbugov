@@ -244,6 +244,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     dots.forEach((d, i) => d.classList.toggle('active', i === idx));
     currentIdx = idx;
+    // Отключаем анимацию для .improvingCosts при каждом показе
+    if (blocks[1]) blocks[1].classList.remove('animate');
   }
   dots.forEach((dot, idx) => {
     dot.addEventListener('click', () => {

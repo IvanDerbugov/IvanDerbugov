@@ -691,7 +691,7 @@ footer .top svg {
 
 /* Ховер только цвет текста для ссылок в футере, кроме соцсетей */
 footer .columnEl a:not(.linksToSocial a):not(.linksToSocial a *) {
-  transition: color 0.3s;
+  /* transition: color 0.3s; */
 }
 footer .columnEl a:not(.linksToSocial a):not(.linksToSocial a *):hover {
   color: #B1BFFE;
