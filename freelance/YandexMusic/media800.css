@@ -49,11 +49,16 @@
         align-items: center;
         justify-content: center;
         gap: 16px;
-        width: 320px;
+        width: 335px;
         height: 64px;
         border-radius: 16px;
         padding: 19px 45px;
         margin-bottom: 200px;
+        background-color: #AA80EC;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
     }
 
     .downloadBtns {
