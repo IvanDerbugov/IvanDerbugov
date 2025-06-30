@@ -361,3 +361,489 @@ main > .conteiner1800:first-of-type {
     top: 0;
     left: 0;
 }
+
+.wrapCardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 32px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    overflow: hidden;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid #eee;
+    transition: box-shadow 0.2s, border-color 0.2s, max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+    max-height: 1000px;
+    opacity: 1;
+}
+.card:hover {
+    box-shadow: 0 8px 32px rgba(255,193,7,0.18);
+    border-color: #ffc107;
+}
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+.card-body {
+    padding: 18px 18px 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.card-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: #222;
+}
+.card-status {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.status-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #4caf50;
+    margin-right: 3px;
+}
+.card-specs {
+    font-size: 15px;
+    color: #263238;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.card-specs span {
+    color: #888;
+    font-weight: 400;
+}
+.card-specs b {
+    font-weight: 600;
+    color: #222;
+}
+.card-price-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 10px;
+}
+.card-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+}
+.card-price b {
+    font-size: 22px;
+    font-weight: 900;
+    color: #000;
+}
+.card-delivery {
+    font-size: 14px;
+    color: #888;
+}
+.card-btns {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.card-btn {
+    flex: 1 1 0;
+    background: #23f472;
+    color: #181c28;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 12px 0;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(35, 244, 114, 0.10);
+    transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.card-btn:hover {
+    background: #ffc107;
+    color: #222;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(255,193,7,0.18);
+}
+
+.card-btn-order {
+    margin-left: 0;
+}
+
+.card-btn-calc {
+    margin-right: 0;
+}
+
+.card-specs-list {
+    list-style: none;
+    margin: 10px 0 14px 0;
+    padding: 0;
+    font-size: 15px;
+}
+.card-specs-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px dotted #ccc;
+    padding: 4px 0 4px 0;
+    color: #263238;
+}
+.card-specs-list li:last-child {
+    border-bottom: none;
+}
+.card-specs-list span {
+    color: #444;
+    font-weight: 400;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+.card-specs-list b {
+    color: #111;
+    font-weight: 700;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.wrapImgCard {
+    margin: 15px;
+    width: 350px;
+    height: 270px;
+    background: url(../img/excavatorLoader/JCB_3CX1.jpeg) no-repeat center center;
+    background-size: 340px 270px;
+    background-position: -20px 0;
+}
+
+.cukurova-img {
+    margin: 15px;
+    width: 323px;
+    height: 270px;
+    background: url(../img/excavatorLoader/Cukurova888.jpg) no-repeat center center;
+    background-size: 340px 270px;
+    background-position: -4px 0;
+}
+
+.komatsu-img {
+    margin: 15px;
+    width: 323px;
+    height: 270px;
+    background: url(../img/excavatorLoader/Komatsu_WB93R_5EO.jpg) no-repeat center center;
+    background-size: 330px 270px;
+    background-position: -4px 0;
+}
+
+.jcb4cx-img {
+    margin: 15px;
+    width: 323px;
+    height: 270px;
+    background: url(../img/excavatorLoader/JCB_4CX.jpg) no-repeat center center;
+    background-size: 460px 340px;
+    background-position: -64px -40px;
+}
+
+.jcb5cx-img {
+    margin: 15px;
+    width: 323px;
+    height: 270px;
+    background: url(../img/excavatorLoader/JCB_5CX.jpg) no-repeat center center;
+    background-size: 360px 270px;
+    background-position: -26px 0;
+}
+
+.terex-tx860-img {
+    margin: 15px;
+    width: 323px;
+    height: 270px;
+    background: url(../img/excavatorLoader/Terex_TX860.jpg) no-repeat center center;
+    background-size: 356px 270px;
+    background-position: -8px 0;
+}
+
+.hitachi-zw220-img {
+    margin: 15px;
+    width: 350px;
+    height: 270px;
+    background: url(../img/excavatorLoader/Hitachi_ZW220.jpg) no-repeat center center;
+    background-size: 330px 270px;
+    background-position: -3px 0;
+}
+
+.caterpillar-440e-img {
+    margin: 15px;
+    width: 350px;
+    height: 270px;
+    background: url(../img/excavatorLoader/Caterpillar_446D.jpg) no-repeat center center;
+    background-size: 350px 270px;
+    background-position: -25px 0;
+}
+
+.case-695sv-img {
+    margin: 15px;
+    width: 350px;
+    height: 270px;
+    background: url(../img/excavatorLoader/CASE_695SV.jpg) no-repeat center center;
+    background-size: 325px 270px;
+    background-position: 0 0;
+}
+
+.seeMore {
+    display: block;
+    margin: 24px auto 0 auto;
+    font-size: 20px;
+    font-weight: 700;
+    background: #23f472;
+    color: #181c28;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 48px;
+    box-shadow: 0 2px 8px rgba(35,244,114,0.10);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.seeMore:hover {
+    background: #ffc107;
+    color: #222;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(255,193,7,0.18);
+}
+
+.card.card-collapsed {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ourAdvantages {
+    background: #D9D9D9F0;
+    padding: 120px 0 80px 0;
+}
+
+.wrapAdvantagesGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 120px;
+}
+
+.titleBlock {
+    font-size: 60px;
+    font-weight: 600;
+    color: #4C2200;
+    text-align: center;
+    margin-bottom: 120px;
+}
+
+.wrapAdvantagesGrid > div {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+}
+
+.advantages-btn {
+    display: block;
+    margin: 36px auto 0 auto;
+    font-size: 28px;
+    font-weight: 600;
+    color: #181c28;
+    background: #23f472;
+    border-radius: 20px;
+    padding: 22px 0;
+    width: 510px;
+    max-width: 100%;
+    text-align: center;
+    border: none;
+    box-shadow: 0 2px 12px rgba(35, 244, 114, 0.10);
+    transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+.advantages-btn:hover {
+    background: #1ad15e;
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(35,244,114,0.18);
+}
+
+
+.infoAboutLoader {
+    background-color: #D9D9D9;
+}
+.infoAboutLoader > .conteiner1240 {
+    display: flex;
+    gap: 100px;
+    padding: 70px 0;
+    position: relative;
+    color: #4C2200;
+    font-size: 30px;
+    align-items: center;
+}
+.infoAboutLoader > .conteiner1240 b {
+    font-size: 35px;
+}
+
+.infoAboutLoader > .conteiner1240 > div {
+    width: 30%;
+}
+
+.frame1, .frame2 {
+    display: block;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    border-left: 1px solid #4C2200;
+}
+
+.frame1 {
+    right: 410px;
+    top: 0px;
+}
+.frame2 {
+    right: 849px;
+    top: 0;
+}
+
+
+.ozerServices .wrapGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* gap: 30px; */
+}
+
+.ozerServices .wrapGrid > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 333px;
+    margin-bottom: 70px;
+}
+
+.ozerServices p {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+    margin-top: 10px;
+}
+
+.ozerServices img {
+    width: 333px;
+    height: 333px;
+}
+
+.ozerServices-btn {
+    display: block;
+    margin: 24px auto 0 auto;
+    font-size: 28px;
+    font-weight: 600;
+    color: #181c28;
+    background: #23f472;
+    border-radius: 20px;
+    padding: 20px 0;
+    width: 487px;
+    max-width: 100%;
+    text-align: center;
+    border: none;
+    box-shadow: 0 2px 12px rgba(35, 244, 114, 0.10);
+    transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+.ozerServices-btn:hover {
+    background: #1ad15e;
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(35,244,114,0.18);
+}
+
+
+.payment {
+    background-color: #D9D9D9;
+    padding: 120px 0 80px 0;
+}
+.payment .titleBlock {
+    margin-bottom: 32px;
+}
+.payment-subtitle {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    color: #4C2200;
+    margin-bottom: 48px;
+}
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+    color: #4C2200;
+    font-size: 24px;
+    font-weight: 500;
+    align-items: start;
+}
+.payment-grid > div {
+    padding: 0 18px;
+    border-right: 1px solid #4C2200;
+}
+.payment-grid > div:last-child {
+    border-right: none;
+}
+.payment-grid b {
+    display: block;
+    font-size: 26px;
+    margin-bottom: 16px;
+    color: #4C2200;
+}
+.payment-grid ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 22px;
+    font-weight: 400;
+}
+.payment-desc {
+    text-align: center;
+    font-size: 26px;
+    color: #222;
+    margin: 48px 0 32px 0;
+    font-weight: 400;
+}
+.payment-btn {
+    display: block;
+    margin: 0 auto;
+    font-size: 28px;
+    font-weight: 600;
+    color: #181c28;
+    background: #23f472;
+    border-radius: 20px;
+    padding: 20px 0;
+    width: 420px;
+    max-width: 100%;
+    text-align: center;
+    border: none;
+    box-shadow: 0 2px 12px rgba(35, 244, 114, 0.10);
+    transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+.payment-btn:hover {
+    background: #1ad15e;
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(35,244,114,0.18);
+}
