@@ -332,7 +332,8 @@ header .bottom .headerBottomImg {
 
 .feedback h1 {
     text-align: center;
-    margin-top: 240px ;
+    margin-top: 240px;
+    margin-bottom: 80px;
 }
 
 .feedback form {
@@ -387,7 +388,7 @@ footer {
 .columnEl:nth-of-type(2) {
     justify-content: flex-end;
     position: relative;
-    right: 80px;
+    right: 100px;
 }
 
 .columnEl:nth-of-type(3) {
@@ -702,10 +703,6 @@ footer .top svg {
     display: none;
 }
 
-/* Ховер только цвет текста для ссылок в футере, кроме соцсетей */
-footer .columnEl a:not(.linksToSocial a):not(.linksToSocial a *) {
-  /* transition: color 0.3s; */
-}
 footer .columnEl a:not(.linksToSocial a):not(.linksToSocial a *):hover {
   color: #B1BFFE;
   background: none !important;
