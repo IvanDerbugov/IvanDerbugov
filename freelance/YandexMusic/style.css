@@ -21,10 +21,12 @@ header {
     margin: 56px auto 242px;
 }
 
-header .top, footer .top {
+footer .top, header .top {
     display: flex;
     gap: 16px;
     align-items: center;
+}
+header .top {
     margin-bottom: 290px;
 }
 
@@ -51,6 +53,10 @@ header .bottom .headerBottomImg {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+}
+
+.mobileBtn {
+    display: none !important;
 }
 
 
@@ -334,7 +340,7 @@ header .bottom .headerBottomImg {
     justify-content: center;
     flex-direction: column;
     gap: 32px;
-    margin: 80px auto;
+    margin: 0px auto;
     text-align: center;
 }
 
@@ -369,7 +375,7 @@ footer {
 .wrapElFooter {
     display: flex;
     justify-content: space-between;
-    padding: 132px 0 120px 160px;
+    padding: 132px 0 120px 0;
 }
 
 .columnEl {
@@ -704,4 +710,8 @@ footer .columnEl a:not(.linksToSocial a):not(.linksToSocial a *):hover {
   color: #B1BFFE;
   background: none !important;
   box-shadow: none !important;
+}
+
+.wrapElFooterMobile {
+    display: none;
 }

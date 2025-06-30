@@ -1,0 +1,211 @@
+@media (max-width: 800px) {
+    .container {
+        max-width: 461px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    header {
+        margin-bottom: 0;
+    }
+
+    header .top svg,
+    footer .top svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    header .top p {
+        font-size: 20px;
+    }
+
+    header .bottom {
+        flex-direction: column-reverse;
+        text-align: center;
+        align-items: center;
+        margin: 56px 0 32px 0;
+    }
+
+    header .bottom .headerBottomImg {
+        position: static;
+        width: 359px;
+        height: auto;
+    }
+
+    header .top {
+        justify-content: center;
+        margin: 0 auto;
+        margin-bottom: 56px;
+    }
+
+    .downloadBtns button:not(.mobileBtn) {
+        display: none;
+    }
+
+    .mobileBtn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        width: 320px;
+        height: 64px;
+        border-radius: 16px;
+        padding: 19px 45px;
+        margin-bottom: 200px;
+    }
+
+    .downloadBtns {
+        margin-bottom: 0;
+    }
+
+    .controlAll h1,
+    .aplicationSettings h1,
+    .improvingCosts h1 {
+        margin-bottom: 16px;
+    }
+
+    .controlAllImg,
+    .aplicationSettingsImg {
+        background-size: calc(501px * 0.7) calc(293px * 0.7);
+        background-position: -121px 26px;
+    }
+
+    .controlAll,
+    .improvingCosts,
+    .aplicationSettings {
+        background: url(img/substrate.png) no-repeat center center;
+        display: none;
+        flex-direction: column-reverse;
+        padding: 32px 24px;
+        gap: 30px;
+        align-items: center;
+        width: 461px;
+        height: 500px;
+        position: relative;
+        border-radius: 48px;
+    }
+
+    .controlAllImg,
+    .aplicationSettingsImg,
+    .improvingCostsImg {
+        width: 100%;
+    }
+
+    .controlAllImg,
+    .aplicationSettingsImg {
+        background-size: calc(501px * 1.2) calc(293px * 1.2);
+        background-position: -121px -13px;
+    }
+
+    .controlAll p {
+        max-width: 310px;
+    }
+
+    .improvingCostsImg {
+        background-size: calc(501px * 1.1) calc(293px * 1.1);
+        background-position: -82px -16px;
+    }
+
+    .controlAllImg,
+    .aplicationSettingsImg {
+        background-size: calc(501px * 1.2) calc(293px * 1.2);
+        background-position: -84px -45px;
+    }
+
+    .controlAll h1,
+    .aplicationSettings h1,
+    .improvingCosts h1 {
+        max-width: 300px;
+    }
+
+    .aplicationSettings p {
+        max-width: 240px;
+    }
+
+    .aboutUs {
+        margin-bottom: 56px;
+    }
+
+    .screens {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+        margin-bottom: 32px;
+        max-width: 405px;
+    }
+    .screens > div {
+        /* width: 48%; */
+        margin-bottom: 24px;
+        display: flex;
+        justify-content: center;
+        background: #000;
+    }
+    .screens > div:nth-child(odd) {
+        margin-right: 4%;
+    }
+    .screens > div:nth-child(even) {
+        margin-right: 0;
+    }
+    .screen5 {
+        display: none !important;
+    }
+
+    .reviews h1 {
+        margin: 200px 0 56px;
+    }
+
+    .feedback input {
+        width: 460px;
+    }
+
+    .wrapElFooter {
+        display: none;
+    }
+
+    .wrapElFooterMobile {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 40px 0;
+    }
+
+    .noClick, .columnEl a {
+        font-size: 20px;
+    }
+
+    .footer-toggle {
+        background: none;
+        border: none;
+        padding: 0 8px;
+        cursor: pointer;
+        vertical-align: middle;
+        font-size: 20px;
+        color: #fff;
+        transition: color 0.2s;
+    }
+    .footer-arrow {
+        display: inline-block;
+        transition: transform 0.3s;
+        font-size: 18px;
+        margin-left: 4px;
+    }
+    .footer-group {
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 12px;
+        margin-left: 8px;
+    }
+    .footer-group .linksToSocial {
+        margin-top: 8px;
+    }
+
+    .wrapElFooterMobile p:last-of-type {
+        margin: 16px 0 8px;
+    }
+}

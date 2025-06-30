@@ -12,8 +12,8 @@
     }
 
 
-    header .bottom {
-        margin-bottom: 139px;
+    header .top p {
+        font-size: 32px;
     }
 
     header .bottom .headerBottomImg {
@@ -24,6 +24,10 @@
         height: 504px;
         object-fit: cover;
         z-index: -1;
+    }
+
+    header .bottom {
+        margin-top: 242px;
     }
 
     header .bottom h1 {
@@ -93,4 +97,27 @@
         font-size: 32px;
         padding: 20px 136px;
     }
+
+
+    .wrapElFooter {
+        padding: 80px 0;
+    }
+
+    footer .top {
+        margin-bottom: 64px;
+    }
+
+    .columnEl:nth-of-type(2) {
+        right: 40px;
+    }
+
+    .feedback h1 {
+        margin-bottom: 64px;
+    }
+
+    .mobileBtn {
+        display: none;
+    }
+    
+    
 }

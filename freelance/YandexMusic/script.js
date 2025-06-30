@@ -220,13 +220,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Переключение блоков по точкам
-  setTimeout(() => {
-    stop();
-  }, (1000 * 60 * 5));
-  function stop () {
-    alert('В данной версии просмотр остановлен');
-    stop() 
-  }
+//   setTimeout(() => {
+//     stop();
+//   }, (1000 * 60 * 5));
+//   function stop () {
+//     alert('В данной версии просмотр остановлен');
+//     stop() 
+//   }
 
 
   const blocks = [
@@ -292,6 +292,32 @@ document.addEventListener('DOMContentLoaded', function() {
       { threshold: 0.2 }
     );
     obs.observe(block);
+  });
+
+  // Мобильный футер: раскрытие/скрытие групп ссылок
+  const toggles = document.querySelectorAll('.footer-toggle');
+  toggles.forEach((btn, idx) => {
+    btn.addEventListener('click', function() {
+      // Найти соответствующую группу
+      const group = btn.parentElement.nextElementSibling;
+      if (!group || !group.classList.contains('footer-group')) return;
+      // Скрыть все группы кроме текущей
+      document.querySelectorAll('.footer-group').forEach(g => {
+        if (g !== group) g.style.display = 'none';
+      });
+      // Повернуть все стрелки вверх кроме текущей
+      document.querySelectorAll('.footer-arrow').forEach(arrow => {
+        if (arrow !== btn.querySelector('.footer-arrow')) arrow.style.transform = '';
+      });
+      // Переключить текущую
+      if (group.style.display === 'none' || !group.style.display) {
+        group.style.display = 'flex';
+        btn.querySelector('.footer-arrow').style.transform = 'rotate(180deg)';
+      } else {
+        group.style.display = 'none';
+        btn.querySelector('.footer-arrow').style.transform = '';
+      }
+    });
   });
 });
 
