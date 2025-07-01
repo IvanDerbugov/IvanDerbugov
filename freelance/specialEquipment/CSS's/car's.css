@@ -358,8 +358,8 @@ main > .conteiner1800:first-of-type {
 
 .offer-10 {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 320px;
+    left: 689px;
 }
 
 .wrapCardGrid {
@@ -942,5 +942,21 @@ main > .conteiner1800:first-of-type {
     }
     .info-col:last-child {
         border-bottom: none;
+    }
+}
+
+.section-limiter {
+    max-width: 2240px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+    width: 100%;
+}
+@media (max-width: 1500px) {
+    .section-limiter {
+        max-width: 100vw;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
