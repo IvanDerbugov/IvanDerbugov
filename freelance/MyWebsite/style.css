@@ -623,20 +623,46 @@ html.light-theme .portfolio-intro {
     color: #4b5563;
 }
 
-.portfolio-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    background-color: #2b3648;
-    padding: 30px;
-    border-radius: 15px;
-    align-items: center;
-    transition: background-color 0.4s ease;
+/* Portfolio Switcher Styles */
+.portfolio-switcher {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    justify-content: center;
 }
-
-html.light-theme .portfolio-item {
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
+.portfolio-btn {
+    padding: 10px 30px;
+    border-radius: 8px;
+    background: #079e7b;
+    color: #fff;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.portfolio-btn.active {
+    background: #08b992;
+}
+.portfolio-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.portfolio-item {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.portfolio-item video {
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(7,158,123,0.10);
+    margin-right: 40px;
+}
+@media (max-width: 900px) {
+    .portfolio-item { flex-direction: column; gap: 20px; }
+    .portfolio-item video { width: 100%; margin-right: 0; }
 }
 
 .portfolio-image-container {

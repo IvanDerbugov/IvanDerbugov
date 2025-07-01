@@ -130,4 +130,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- Portfolio Project Switcher ---
+    const portfolioBtns = document.querySelectorAll('.portfolio-btn');
+    const nftBlock = document.getElementById('project-nft');
+    const subsBlock = document.getElementById('project-subs');
+    if (portfolioBtns.length && nftBlock && subsBlock) {
+        portfolioBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                portfolioBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                if (btn.dataset.project === 'nft') {
+                    nftBlock.style.display = '';
+                    subsBlock.style.display = 'none';
+                    // Останавливаем видео SubScope
+                    const subsVideo = subsBlock.querySelector('video');
+                    if (subsVideo) { subsVideo.pause(); subsVideo.currentTime = 0; }
+                } else {
+                    nftBlock.style.display = 'none';
+                    subsBlock.style.display = '';
+                    // Запускаем видео SubScope
+                    const subsVideo = subsBlock.querySelector('video');
+                    if (subsVideo) { subsVideo.play(); }
+                }
+            });
+        });
+    }
 }); 

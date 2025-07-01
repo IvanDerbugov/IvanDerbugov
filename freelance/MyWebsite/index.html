@@ -281,69 +281,70 @@
             <!-- Секция "Портфолио" (по умолчанию скрыта) -->
             <div id="portfolio-page" class="page-content hidden">
                 <h2>Портфолио</h2>
-                <p class="portfolio-intro">За время обучения и практики мной было реализовано множество учебных и
-                    пет-проектов. Ниже представлен мой крупнейший и наиболее комплексный дипломный проект.</p>
+                <p class="portfolio-intro">За время обучения и практики мной было реализовано множество учебных и пет-проектов. Здесь представлены мои лучшие работы.</p>
 
-                <div class="portfolio-item">
-                    <a href="https://ivanderbugov.github.io/IvanDerbugov/layouts/MaketNFTs/index.html" target="_blank"
-                        class="portfolio-image-link">
-                        <picture>
-                            <source media="(max-width: 1020px)" srcset="img/screenTabletMobile.jpg">
-                            <img src="img/screenDesktop.jpg" alt="NFT Marketplace Project Screenshot">
-                        </picture>
-                    </a>
-                    <div class="portfolio-details">
-                        <h3>🚀 NFT Marketplace</h3>
-                        <p>Современная платформа для покупки, продажи и создания незаменимых токенов. Разработан как
-                            дипломный проект за 2 недели и защищен на IT курсах на максимальный балл (10/10).</p>
-
-                        <h4>Ключевые особенности:</h4>
-                        <ul class="features-list">
-                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                    width="20">
-                                    <path
-                                        d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z">
-                                    </path>
-                                    <path d="M13 7h-2v5.414l3.293 3.293 1.414-1.414L13 11.586z"></path>
-                                </svg>Таймер обратного отсчета до аукциона</li>
-                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                    width="20">
-                                    <path
-                                        d="M20.999 4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zM9 18H5V9h4v9zm5 0h-4V9h4v9zm5 0h-4V9h4v9z">
-                                    </path>
-                                </svg>Полная адаптивность (Desktop, Tablet, Mobile)</li>
-                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                    width="20">
-                                    <path
-                                        d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z">
-                                    </path>
-                                    <path d="M13 7h-2v5.414l3.293 3.293 1.414-1.414L13 11.586z"></path>
-                                </svg>Интерактивные звуковые эффекты</li>
-                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                    width="20">
-                                    <path
-                                        d="m14.629 3.239-1.932 4.196 4.196-1.932-2.264-2.264zM6.28 8.425l-4.196 1.932L4.348 12.62l-2.264-2.264zm8.349 12.336 1.932-4.196L12.365 19l2.264 2.264.001-.003z">
-                                    </path>
-                                    <path
-                                        d="m21.652 10.364-4.196 1.932L19.72 14.56l2.264-2.264-2.264-1.932-2.264 2.264zm-13.436 5.21L12.412 11.38l-4.196-1.932-2.264 2.264 2.264 1.932-1.932 4.196z">
-                                    </path>
-                                </svg>Плавные анимации и hover-эффекты</li>
-                        </ul>
-
-                        <h4>Технологии:</h4>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">Flexbox / Grid</span>
-                            <span class="tech-tag">JavaScript (ES6+)</span>
-                            <span class="tech-tag">CSS Sprites</span>
-                        </div>
-
-                        <a href="https://ivanderbugov.github.io/IvanDerbugov/layouts/MaketNFTs/index.html"
-                            target="_blank" class="portfolio-button">Посмотреть проект</a>
-                    </div>
+                <div class="portfolio-switcher">
+                  <button class="portfolio-btn active" data-project="nft">NFT Marketplace</button>
+                  <button class="portfolio-btn" data-project="subs">SubScope</button>
                 </div>
 
+                <div class="portfolio-projects">
+                  <!-- NFT Marketplace -->
+                  <div class="portfolio-item" id="project-nft">
+                    <a href="https://ivanderbugov.github.io/IvanDerbugov/layouts/MaketNFTs/index.html" target="_blank" class="portfolio-image-link">
+                      <picture>
+                        <source media="(max-width: 1020px)" srcset="img/screenTabletMobile.jpg">
+                        <img src="img/screenDesktop.jpg" alt="NFT Marketplace Project Screenshot">
+                      </picture>
+                    </a>
+                    <div class="portfolio-details">
+                      <h3>🚀 NFT Marketplace</h3>
+                      <p>Современная платформа для покупки, продажи и создания незаменимых токенов. Разработан как дипломный проект за 2 недели и защищен на IT курсах на максимальный балл (10/10).</p>
+                      <h4>Ключевые особенности:</h4>
+                      <ul class="features-list">
+                        <li>Таймер обратного отсчета до аукциона</li>
+                        <li>Полная адаптивность (Desktop, Tablet, Mobile)</li>
+                        <li>Интерактивные звуковые эффекты</li>
+                        <li>Плавные анимации и hover-эффекты</li>
+                      </ul>
+                      <h4>Технологии:</h4>
+                      <div class="tech-stack">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">Flexbox / Grid</span>
+                        <span class="tech-tag">JavaScript (ES6+)</span>
+                        <span class="tech-tag">CSS Sprites</span>
+                      </div>
+                      <a href="https://ivanderbugov.github.io/IvanDerbugov/layouts/MaketNFTs/index.html" target="_blank" class="portfolio-button">Посмотреть проект</a>
+                    </div>
+                  </div>
+                  <!-- SubScope -->
+                  <div class="portfolio-item" id="project-subs" style="display:none;">
+                    <video src="img/yandex.mp4" autoplay loop muted playsinline></video>
+                    <div class="portfolio-details">
+                      <h3>🟣 SubScope — лендинг подписок</h3>
+                      <p>Некоммерческий проект для приложения по управлению подписками. Реализован по макету из Figma за 2,5 дня. Полная адаптивность, анимации, интерактивные SVG-иконки, кастомные эффекты, отзывчивая форма и футер-аккордеон.</p>
+                      <h4>Ключевые особенности:</h4>
+                      <ul class="features-list">
+                        <li>5 адаптивных версий (Desktop, 3 Tablet, Mobile)</li>
+                        <li>Плавные анимации и интерактивные hover-эффекты</li>
+                        <li>SVG-иконки с анимацией</li>
+                        <li>Слайдер отзывов</li>
+                        <li>Форма обратной связи</li>
+                        <li>Адаптивный футер с аккордеоном</li>
+                      </ul>
+                      <h4>Технологии:</h4>
+                      <div class="tech-stack">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">Flexbox / Grid</span>
+                        <span class="tech-tag">JavaScript (ES6+)</span>
+                        <span class="tech-tag">SVG</span>
+                      </div>
+                      <a href="https://ivanderbugov.github.io/IvanDerbugov/freelance/YandexMusic/index.html" target="_blank" class="portfolio-button">Посмотреть проект</a>
+                    </div>
+                  </div>
+                </div>
             </div>
 
             <!-- Секция "Контакты" (по умолчанию скрыта) -->
