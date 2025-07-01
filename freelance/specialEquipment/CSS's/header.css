@@ -6,7 +6,7 @@
 
 
 .top {
-    background-color: #23f472;
+    background-color: #E2DCCD;
 }
 
 .top .container1240 {
@@ -18,8 +18,8 @@
 }
 
 .top-left {
-    width: 102px;
-    height: 40px;
+    width: 132px;
+    height: 50px;
     margin-top: -11px;
     transition: transform 0.2s ease;
 }
@@ -43,11 +43,25 @@
 }
 
 .phone-icon {
-    width: 26px;
-    height: 26px;
+    width: 42px;
+    height: 42px;
     margin-right: 12px;
     display: inline-block;
     transition: transform 0.2s ease;
+}
+
+.phone-icon path {
+    stroke: #063F1B;
+    transition: stroke 0.2s;
+}
+
+.phoneNumber:hover .phone-icon path {
+    stroke: #DF6417;
+}
+
+.phoneNumber span {
+    font-size: 24px;
+    font-weight: 500;
 }
 
 .phoneNumber:hover .phone-icon {
@@ -68,12 +82,30 @@
 
 .user svg {
     transition: transform 0.2s ease;
+    width: 30px;
+    height: 30px;
+}
+
+.user svg path {
+    fill: #063F1B;
+    transition: fill 0.2s;
 }
 
 .user:hover svg {
     transform: scale(1.1);
 }
 
+.user:hover svg path {
+    fill: #DF6417;
+}
+
+.top a[title="WhatsApp"] svg path {
+    fill: #063F1B;
+    transition: fill 0.2s;
+}
+.top a[title="WhatsApp"]:hover svg path {
+    fill: #DF6417;
+}
 
 header .bottom {
     background-color: #EAF5FD;
