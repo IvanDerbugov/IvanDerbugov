@@ -1,0 +1,143 @@
+@media (max-width: 1400px) {
+    .titleBlock, .popular-models h1 {
+        font-size: 50px;
+    }
+
+    
+
+
+
+    main > .conteiner1800:first-of-type {
+        background: url(../img/fonTractor.png) no-repeat center center, url(../img/circle1.png) no-repeat center center, url(../img/circle2.png) no-repeat center center, url(../img/circle3.png) no-repeat center center, url(../img/fonBildingDecstop1.png) no-repeat center center;
+        background-size: 780px 389px, 120px 120px, 120px 120px, 120px 120px, 1400px 800px;
+        background-position: 465px 343px, 959px 188px, 1120px 217px, 1222px 348px, 0 -100px;
+        height: auto;
+        padding: 50px 0;
+    }
+
+    .bannerMain h2 {
+        font-size: 24px;
+    }
+
+    .bannerMain h1 {
+        font-size: 52px;
+    }
+
+    .bannerMain h3 {
+        font-size: 19px;
+        max-width: 520px;
+    }
+
+    .bannerMain ul li {
+        font-size: 17px;
+    }
+
+    .leaveRequest {
+        font-size: 20px;
+    }
+
+    .offer-10 {
+        position: absolute;
+        top: 280px;
+        left: 579px;
+        width: 230px;
+    }
+
+    .contact-buttons p {
+        font-size: 23px;
+    }
+
+    .contact-btn .icon-svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .contact-buttons {
+        gap: 1px;
+    }
+
+
+    .wrapAdvantagesGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 80px;
+    }
+
+    .wrapAdvantagesGrid > div {
+        max-width: 290px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .wrapAdvantagesGrid > div::before {
+        left: 6px;
+    }
+    
+    .advantages-btn {
+        display: block;
+        margin: 70px auto 0 auto;
+        font-size: 22px;
+        padding: 22px 50px;
+        width: auto;
+    }
+
+
+    .infoAboutLoader > .conteiner1240 {
+        padding: 0;
+    }
+
+    .info-col {
+        font-size: 19px;
+    }
+
+    .info-col ul {
+        font-size: 17px;
+    }
+
+    .infoAboutLoader > .conteiner1240 b {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .ozerServices-btn {
+        font-size: 26px;
+        padding: 20px 50px;
+        width: auto;
+    }
+
+    .payment {
+        padding: 60px 0 50px 0;
+    }
+
+    .payment-subtitle {
+        font-size: 25px;
+    }
+
+    .payment-grid b {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .payment-grid ul {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .payment-desc {
+        font-size: 22px;
+        margin: 0 0 30px 0;
+    }
+
+    .payment-btn {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .conteiner1800 {
+        width: 100%;
+        max-width: 1100px;
+    }
+}

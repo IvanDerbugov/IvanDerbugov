@@ -48,12 +48,35 @@ footer a:hover {
 .footer-icon:hover {
     transform: scale(1.12) rotate(-2deg);
     filter: brightness(1.2) drop-shadow(0 2px 8px rgba(0,0,0,0.10));
-    /* Можно добавить смену цвета, если нужно: */
-    /* fill: #965EEB; */
+   
 }
 .footer-icon:hover circle,
 .footer-icon:hover path {
-    fill: #FF4053; /* или любой нужный цвет */
+    fill: #FF4053; 
+}
+
+
+
+@media (max-width: 1400px) {
+    footer .container1240 {
+        padding: 30px 0 40px 0;
+    }
+
+    footer .footer-left,
+    footer .footer-left2,
+    footer .footer-center,
+    footer .footer-right,
+    footer .wrapFoterlinks {
+        gap: 30px;
+    }
+
+    footer a {
+        font-size: 16px;
+    }
+
+    .logo-footer {
+        width: 200px;
+    }
 }
 
 

@@ -364,10 +364,11 @@ main > .conteiner1800:first-of-type {
     transition: box-shadow 0.2s, border-color 0.2s, max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.5s cubic-bezier(0.4,0,0.2,1);
     max-height: 1000px;
     opacity: 1;
+    box-shadow: 0 4px 24px 0 rgba(35, 244, 114, 0.18);
 }
 .card:hover {
-    box-shadow: 0 8px 32px rgba(255,193,7,0.18);
-    border-color: #ffc107;
+    box-shadow: 0 8px 32px 0 rgba(11, 107, 54, 0.28);
+    border-color: #09592A;
 }
 .card-img {
     width: 100%;
@@ -382,7 +383,7 @@ main > .conteiner1800:first-of-type {
     gap: 10px;
 }
 .card-title {
-    font-size: 24px;
+    font-size: 23px;
     font-weight: 700;
     margin-bottom: 2px;
     color: #222;
@@ -449,8 +450,8 @@ main > .conteiner1800:first-of-type {
 }
 .card-btn {
     flex: 1 1 0;
-    background: #DF6417;
-    color: #181c28;
+    background: #063F1B;
+    color: #fff;
     font-size: 20px;
     font-weight: 700;
     padding: 12px 0;
@@ -460,10 +461,10 @@ main > .conteiner1800:first-of-type {
     transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 .card-btn:hover {
-    background: #ffc107;
-    color: #222;
+    background: #09592A;
+    color: #fff;
     transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 6px 24px rgba(255,193,7,0.18);
+    box-shadow: 0 6px 24px rgba(35,244,114,0.18);
 }
 
 .card-btn-order {
@@ -591,8 +592,8 @@ main > .conteiner1800:first-of-type {
     margin: 24px auto 50px auto;
     font-size: 20px;
     font-weight: 700;
-    background: #DF6417;
-    color: #181c28;
+    background: #063F1B;
+    color: #fff;
     border: none;
     border-radius: 12px;
     padding: 16px 48px;
@@ -601,10 +602,10 @@ main > .conteiner1800:first-of-type {
     transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 .seeMore:hover {
-    background: #ffc107;
-    color: #222;
+    background: #09592A;
+    color: #fff;
     transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 6px 24px rgba(255,193,7,0.18);
+    box-shadow: 0 6px 24px rgba(35,244,114,0.18);
 }
 
 .card.card-collapsed {
@@ -617,16 +618,19 @@ main > .conteiner1800:first-of-type {
 }
 
 .ourAdvantages {
-    background: #DEE6E1F0;
+    background: #C4C6C5;
     padding: 120px 0 80px 0;
 }
 
 .wrapAdvantagesGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 120px;
+    gap: 80px;
     counter-reset: advantage;
+    justify-items: center;
+   align-items: center;
 }
+
 
 .wrapAdvantagesGrid > div {
     position: relative;
@@ -668,8 +672,8 @@ main > .conteiner1800:first-of-type {
     margin: 100px auto 0 auto;
     font-size: 28px;
     font-weight: 600;
-    color: #181c28;
-    background: #DF6417;
+    color: #fff;
+    background: #063F1B;
     border-radius: 20px;
     padding: 22px 0;
     width: 510px;
@@ -682,7 +686,7 @@ main > .conteiner1800:first-of-type {
     cursor: pointer;
 }
 .advantages-btn:hover {
-    background: #ffc107;
+    background: #09592A;
     color: #fff;
     transform: translateY(-2px) scale(1.04);
     box-shadow: 0 6px 24px rgba(35,244,114,0.18);
@@ -763,8 +767,8 @@ main > .conteiner1800:first-of-type {
     margin: 24px auto 0 auto;
     font-size: 28px;
     font-weight: 600;
-    color: #181c28;
-    background: #DF6417;
+    color: #fff;
+    background: #063F1B;
     border-radius: 20px;
     padding: 20px 0;
     width: 487px;
@@ -777,7 +781,7 @@ main > .conteiner1800:first-of-type {
     cursor: pointer;
 }
 .ozerServices-btn:hover {
-    background: #ffc107;
+    background: #09592A;
     color: #fff;
     transform: translateY(-2px) scale(1.04);
     box-shadow: 0 6px 24px rgba(35,244,114,0.18);
@@ -785,7 +789,7 @@ main > .conteiner1800:first-of-type {
 
 
 .payment {
-    background-color: #DEE6E1F0;
+    background-color: #C4C6C5;
     padding: 120px 0 80px 0;
 }
 .payment .titleBlock {
@@ -838,8 +842,8 @@ main > .conteiner1800:first-of-type {
     margin: 0 auto;
     font-size: 28px;
     font-weight: 600;
-    color: #181c28;
-    background: #DF6417;
+    color: #fff;
+    background: #063F1B;
     border-radius: 20px;
     padding: 20px 45px;
     text-align: center;
@@ -850,14 +854,14 @@ main > .conteiner1800:first-of-type {
     white-space: nowrap;
 }
 .payment-btn:hover {
-    background: #ffc107;
+    background: #09592A;
     color: #fff;
     transform: translateY(-2px) scale(1.04);
     box-shadow: 0 6px 24px rgba(35,244,114,0.18);
 }
 
 .infoAboutLoader {
-    background-color: #DEE6E1F0;
+    background-color: #C4C6C5;
     padding: 60px 0;
 }
 .infoAboutLoader-grid {

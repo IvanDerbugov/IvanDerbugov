@@ -52,6 +52,13 @@
 
         <div class="bottom">
             <div class="container1240">
+                <button class="burgerMenuMobile" id="burgerMenu" aria-label="Открыть меню">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect y="7" width="36" height="4" rx="2" fill="currentColor" />
+                        <rect y="16" width="36" height="4" rx="2" fill="currentColor" />
+                        <rect y="25" width="36" height="4" rx="2" fill="currentColor" />
+                    </svg>
+                </button>
                 <div class="bottom-left dropdown" id="catalogDropdown">
                     <img src="../img/icons/iconTractor.jpg" alt="logo">
                     <span class="dropdown-toggle" id="dropdownToggle">Каталог спецтехники</span>
@@ -77,11 +84,11 @@
                     </div>
                 </div>
                 <div class="bottom-left-2">
-                    <a href="https://recordica.ru/o-nas/">О нас</a>
-                    <a href="https://recordica.ru/uslugi/">Услуги</a>
-                    <a href="https://recordica.ru/kontakty/">Контакты</a>
-                    <a href="https://recordica.ru/stati/">Статьи</a>
-                    <a href="https://recordica.ru/dostavka-i-oplata/">Доставка и оплата</a>
+                    <a class="elMenu" href="https://recordica.ru/o-nas/">О нас</a>
+                    <a class="elMenu" href="https://recordica.ru/uslugi/">Услуги</a>
+                    <a class="elMenu" href="https://recordica.ru/kontakty/">Контакты</a>
+                    <a class="elMenu" href="https://recordica.ru/stati/">Статьи</a>
+                    <a class="elMenu" href="https://recordica.ru/dostavka-i-oplata/">Доставка и оплата</a>
                 </div>
                 <a href="https://recordica.ru" class="bottom-center">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 512 512">
@@ -120,10 +127,22 @@
                         </svg>
                     </a>
                 </div>
+                <div class="headerTopRight" id="menuMobile">
+                    <div class="menu-card">
+                        <button class="close-burger" id="closeBurger" aria-label="Закрыть меню">&times;</button>
+                        <a class="elMenu" href="https://recordica.ru/o-nas/">О нас</a>
+                        <a class="elMenu" href="https://recordica.ru/uslugi/">Услуги</a>
+                        <a class="elMenu" href="https://recordica.ru/kontakty/">Контакты</a>
+                        <a class="elMenu" href="https://recordica.ru/stati/">Статьи</a>
+                        <a class="elMenu" href="https://recordica.ru/dostavka-i-oplata/">Доставка и оплата</a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
-    <!-- <script src="../JS/DropDownList.js"></script> -->
+
+    <!-- <script src="../JS/burgerMenu.js"></script> -->
+
 </body>
 
 </html>
