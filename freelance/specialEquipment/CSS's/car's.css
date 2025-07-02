@@ -11,11 +11,10 @@
 }
 
 main > .conteiner1800:first-of-type {
-    
     background: url(../img/fonTractor.png) no-repeat center center, url(../img/circle1.png) no-repeat center center, url(../img/circle2.png) no-repeat center center, url(../img/circle3.png) no-repeat center center, url(../img/fonBildingDecstop1.png) no-repeat center center;
-    background-size: 1080px 589px, auto auto, auto auto, auto auto, 1800px 1000px;
-    background-position: 665px 373px, 1179px 188px, 1390px 157px, 1592px 235px, 0 -100px;
-    height: 900px;
+    background-size: 980px 539px, 150px 150px, 150px 150px, 150px 150px, 1800px 860px;
+    background-position: 695px 213px, 1354px 68px, 1520px 107px, 1622px 251px, 0 -100px;
+    padding: 44px 0 87px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,7 +34,7 @@ main > .conteiner1800:first-of-type {
 
 .bannerMain h1 {
     font-size: 62px;
-    font-weight: 900;
+    font-weight: 700;
     color: #fff;
     text-align: left;
     margin-bottom: 12px;
@@ -45,11 +44,12 @@ main > .conteiner1800:first-of-type {
     border-radius: 0;
     padding: 0;
     display: block;
+    width: 1200px;
 }
 
 .bannerMain h2 {
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 600;
     color: #fff;
     text-align: left;
     margin-bottom: 8px;
@@ -58,11 +58,12 @@ main > .conteiner1800:first-of-type {
     border-radius: 0;
     padding: 0;
     display: block;
+    width: 1000px;
 }
 
 .bannerMain h3 {
-    font-size: 22px;
-    font-weight: 400;
+    font-size: 30px;
+    font-weight: 500;
     color: #fff;
     text-align: left;
     margin-bottom: 18px;
@@ -71,18 +72,18 @@ main > .conteiner1800:first-of-type {
     border-radius: 0;
     padding: 0;
     display: block;
-    max-width: 600px;
+    max-width: 750px;
 }
 
 .bannerMain ul {
     margin: 0 0 18px 0;
-    /* padding-left: 28px; */
+    line-height: 40px;
 }
 
 .bannerMain ul li {
     color: #fff;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 30px;
+    font-weight: 500;
     margin-bottom: 8px;
     text-shadow: 0 2px 8px rgba(0,0,0,0.35);
     list-style: disc inside;
@@ -167,7 +168,7 @@ main > .conteiner1800:first-of-type {
     display: inline-block;
     font-size: 26px;
     font-weight: 600;
-    color: #181c28;
+    color: #fff;
     background: #DF6417;
     border-radius: 12px;
     padding: 14px 70px;
@@ -327,21 +328,19 @@ main > .conteiner1800:first-of-type {
 .popular-models h1 {
     font-size: 60px;
     font-weight: 700;
-    color: #263238;
+    color: #023D19;
     text-align: center;
     margin-bottom: 28px;
     margin-top: 28px;
-    /* text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); */
     background: none;
     border-radius: 0;
     padding: 0;
 }
 
-
 .offer-10 {
     position: absolute;
-    top: 320px;
-    left: 689px;
+    top: 260px;
+    left: 719px;
 }
 
 .wrapCardGrid {
@@ -439,6 +438,17 @@ main > .conteiner1800:first-of-type {
     font-weight: 900;
     color: #000;
 }
+.card-dop {
+    font-size: 18px;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 10px;
+}
+.card-dop b {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
 .card-delivery {
     font-size: 14px;
     color: #888;
@@ -450,7 +460,7 @@ main > .conteiner1800:first-of-type {
 }
 .card-btn {
     flex: 1 1 0;
-    background: #063F1B;
+    background: #DF6417;
     color: #fff;
     font-size: 20px;
     font-weight: 700;
@@ -461,7 +471,7 @@ main > .conteiner1800:first-of-type {
     transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 .card-btn:hover {
-    background: #09592A;
+    background: #ffc107;
     color: #fff;
     transform: translateY(-2px) scale(1.04);
     box-shadow: 0 6px 24px rgba(35,244,114,0.18);
@@ -590,13 +600,13 @@ main > .conteiner1800:first-of-type {
 .seeMore {
     display: block;
     margin: 24px auto 50px auto;
-    font-size: 20px;
-    font-weight: 700;
-    background: #063F1B;
+    font-size: 30px;
+    font-weight: 600;
+    background: #DF6417;
     color: #fff;
     border: none;
     border-radius: 12px;
-    padding: 16px 48px;
+    padding: 27px 75px;
     box-shadow: 0 2px 8px rgba(35,244,114,0.10);
     cursor: pointer;
     transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
@@ -625,34 +635,49 @@ main > .conteiner1800:first-of-type {
 .wrapAdvantagesGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 80px;
+    gap: 60px;
     counter-reset: advantage;
     justify-items: center;
-   align-items: center;
+   /* align-items: center; */
 }
 
 
 .wrapAdvantagesGrid > div {
     position: relative;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 500;
-    color: #000;
+    color: #043517;
     z-index: 1;
 }
 
 .wrapAdvantagesGrid > div::before {
     content: counter(advantage, decimal-leading-zero);
     position: absolute;
-    left: -34px;
+    left: -26px;
     top: -26px;
     font-size: 200px;
     font-weight: 800;
-    color: #4C2200;
+    color: #043517;
     opacity: 0.08;
     z-index: 0;
     pointer-events: none;
     line-height: 1;
     font-family: 'Montserrat';
+}
+
+.wrapAdvantagesGrid .text1::before {
+    left: -10px;
+    top: -26px;
+}
+.wrapAdvantagesGrid .text5::before {
+    left: -10px;
+    top: -26px;
+}
+.wrapAdvantagesGrid .text4::before {
+    top: -25px;
+}
+.wrapAdvantagesGrid .text8::before {
+    top: -25px;
 }
 
 .wrapAdvantagesGrid > div {
@@ -662,9 +687,10 @@ main > .conteiner1800:first-of-type {
 .titleBlock {
     font-size: 60px;
     font-weight: 600;
-    color: #4C2200;
+    color: #023D19;
     text-align: center;
-    margin-bottom: 120px;
+    margin-bottom: 60px;
+    white-space: nowrap;
 }
 
 .advantages-btn {
@@ -673,11 +699,10 @@ main > .conteiner1800:first-of-type {
     font-size: 28px;
     font-weight: 600;
     color: #fff;
-    background: #063F1B;
+    background: #DF6417;
     border-radius: 20px;
     padding: 22px 0;
-    width: 510px;
-    max-width: 100%;
+    padding: 27px 75px;
     text-align: center;
     border: none;
     box-shadow: 0 2px 12px rgba(35, 244, 114, 0.10);
@@ -686,12 +711,35 @@ main > .conteiner1800:first-of-type {
     cursor: pointer;
 }
 .advantages-btn:hover {
-    background: #09592A;
+    background: #ffc107;
     color: #fff;
     transform: translateY(-2px) scale(1.04);
     box-shadow: 0 6px 24px rgba(35,244,114,0.18);
 }
 
+.ourAdvantages .titleBlock {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+/* .ourAdvantages .titleBlock::before,
+.ourAdvantages .titleBlock::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 120px;
+    background: #043517;
+    opacity: 0.25;
+    border-radius: 2px;
+}
+@media (max-width: 900px) {
+    .ourAdvantages .titleBlock::before,
+    .ourAdvantages .titleBlock::after {
+        width: 40px;
+    }
+} */
 
 .infoAboutLoader {
     background-color: #DEE6E1F0;
@@ -751,10 +799,11 @@ main > .conteiner1800:first-of-type {
 }
 
 .ozerServices p {
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 600;
     color: #000;
     margin-top: 10px;
+    line-height: 30px;
 }
 
 .ozerServices img {
@@ -768,7 +817,7 @@ main > .conteiner1800:first-of-type {
     font-size: 28px;
     font-weight: 600;
     color: #fff;
-    background: #063F1B;
+    background: #DF6417;
     border-radius: 20px;
     padding: 20px 0;
     width: 487px;
@@ -781,7 +830,7 @@ main > .conteiner1800:first-of-type {
     cursor: pointer;
 }
 .ozerServices-btn:hover {
-    background: #09592A;
+    background: #ffc107;
     color: #fff;
     transform: translateY(-2px) scale(1.04);
     box-shadow: 0 6px 24px rgba(35,244,114,0.18);
@@ -799,7 +848,7 @@ main > .conteiner1800:first-of-type {
     text-align: center;
     font-size: 28px;
     font-weight: 500;
-    color: #4C2200;
+    color: #043517;
     margin-bottom: 48px;
 }
 .payment-grid {
@@ -807,14 +856,14 @@ main > .conteiner1800:first-of-type {
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     margin-bottom: 60px;
-    color: #4C2200;
+    color: #043517;
     font-size: 24px;
     font-weight: 500;
     align-items: start;
 }
 .payment-grid > div {
     padding: 0 18px;
-    border-right: 1px solid #4C2200;
+    border-right: 1px solid #043517;
 }
 .payment-grid > div:last-child {
     border-right: none;
@@ -823,17 +872,18 @@ main > .conteiner1800:first-of-type {
     display: block;
     font-size: 26px;
     margin-bottom: 16px;
-    color: #4C2200;
+    color: #043517;
 }
 .payment-grid ul {
     margin: 0;
-    padding-left: 18px;
+    padding-left: 10px;
     font-size: 22px;
     font-weight: 400;
+    list-style: disc;
 }
 .payment-desc {
     font-size: 26px;
-    color: #222;
+    color: #043517;
     margin: 48px 0 32px 0;
     font-weight: 400;
 }
@@ -843,7 +893,7 @@ main > .conteiner1800:first-of-type {
     font-size: 28px;
     font-weight: 600;
     color: #fff;
-    background: #063F1B;
+    background: #DF6417;
     border-radius: 20px;
     padding: 20px 45px;
     text-align: center;
@@ -854,7 +904,7 @@ main > .conteiner1800:first-of-type {
     white-space: nowrap;
 }
 .payment-btn:hover {
-    background: #09592A;
+    background: #ffc107;
     color: #fff;
     transform: translateY(-2px) scale(1.04);
     box-shadow: 0 6px 24px rgba(35,244,114,0.18);

@@ -62,6 +62,7 @@
 .phoneNumber span {
     font-size: 24px;
     font-weight: 500;
+    color: #063F1B;
 }
 
 .phoneNumber:hover .phone-icon {
@@ -103,13 +104,14 @@
     fill: #063F1B;
     transition: fill 0.2s;
 }
+
 .top a[title="WhatsApp"]:hover svg path {
     fill: #DF6417;
 }
 
 header .bottom {
     background-color: #EAF5FD;
-    
+
 }
 
 header .bottom .container1240 {
@@ -165,6 +167,8 @@ header .bottom .container1240 {
     transition: all 0.2s ease;
     padding: 8px;
     border-radius: 6px;
+    position: relative;
+    top: -4px;
 }
 
 .bottom-center:hover {
@@ -175,7 +179,7 @@ header .bottom .container1240 {
 .bottom-right {
     display: flex;
     gap: 20px;
-    margin-top: -10px;
+    margin-top: -1px;
 }
 
 .bottom-right a {
@@ -191,6 +195,7 @@ header .bottom .container1240 {
 
 .bottom-right a svg {
     transition: transform 0.2s ease;
+    margin-bottom: -8px;
 }
 
 .bottom-right a:hover svg {
@@ -225,7 +230,7 @@ header .bottom .container1240 {
     min-width: 320px;
     background: #fff;
     border-radius: 6px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
     z-index: 100;
     flex-direction: column;
     padding: 8px 0;
@@ -238,6 +243,7 @@ header .bottom .container1240 {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -283,7 +289,8 @@ header .bottom .container1240 {
     width: 4px;
 }
 
-.dropdown-menu img, .dropdown-menu span {
+.dropdown-menu img,
+.dropdown-menu span {
     width: 22px;
     height: 22px;
     object-fit: contain;
@@ -306,6 +313,7 @@ header .bottom .container1240 {
     z-index: 120;
     margin-right: 16px;
 }
+
 .burger-menu span {
     display: block;
     height: 4px;
@@ -323,7 +331,7 @@ header .bottom .container1240 {
     margin: 0;
     background: #fff;
     border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
     padding: 36px 32px 24px 32px;
     min-width: 260px;
     width: 320px;
@@ -331,16 +339,26 @@ header .bottom .container1240 {
     align-items: center;
     gap: 28px;
     z-index: 2100;
-    animation: modalIn 0.25s cubic-bezier(.4,2,.6,1) 1;
+    animation: modalIn 0.25s cubic-bezier(.4, 2, .6, 1) 1;
     display: none;
 }
+
 @keyframes modalIn {
-    0% { transform: scale(0.85) translateY(40px); opacity: 0; }
-    100% { transform: scale(1) translateY(0); opacity: 1; }
+    0% {
+        transform: scale(0.85) translateY(40px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
 }
+
 .burger-modal.active .mobile-nav {
     display: flex;
 }
+
 .close-burger {
     position: absolute;
     top: 18px;
@@ -360,9 +378,11 @@ header .bottom .container1240 {
     justify-content: center;
     padding: 0;
 }
+
 .close-burger:hover {
     color: #ff2a2a;
 }
+
 .mobile-nav a {
     font-size: 22px;
     color: #063F1B;
@@ -374,6 +394,7 @@ header .bottom .container1240 {
     width: 100%;
     text-align: center;
 }
+
 .mobile-nav a:hover {
     background: #23f47222;
     color: #23f472;
@@ -384,28 +405,38 @@ header .bottom .container1240 {
     .bottom-left-2 {
         display: none;
     }
+
     .burger-menu {
         display: flex;
     }
 }
+
 .headerTopRight {
     display: none;
 }
+
 .burger-modal {
     display: none;
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.35);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
     z-index: 2000;
     align-items: flex-start;
     justify-content: flex-start;
     transition: background 0.2s;
 }
+
 .burger-modal-active {
     display: flex;
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.35);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
     z-index: 2000;
     align-items: flex-start;
     justify-content: flex-start;
@@ -422,14 +453,18 @@ header .bottom .container1240 {
     width: 44px;
     height: 44px;
     cursor: pointer;
-    color: #263238; /* или #063F1B для зелёного, или #fff для белого */
+    color: #263238;
+    /* или #063F1B для зелёного, или #fff для белого */
     z-index: 120;
     padding: 0;
     transition: color 0.2s;
 }
+
 .burgerMenuMobile:hover {
-    color: #23f472; /* зелёный при наведении */
+    color: #23f472;
+    /* зелёный при наведении */
 }
+
 .burgerMenuMobile svg {
     display: block;
 }
@@ -440,7 +475,7 @@ header .bottom .container1240 {
     left: 24px;
     background: #fff;
     border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
     padding: 36px 32px 24px 32px;
     min-width: 260px;
     width: 320px;
@@ -449,7 +484,7 @@ header .bottom .container1240 {
     align-items: center;
     gap: 28px;
     z-index: 2100;
-    animation: modalIn 0.25s cubic-bezier(.4,2,.6,1) 1;
+    animation: modalIn 0.25s cubic-bezier(.4, 2, .6, 1) 1;
 }
 
 .close-burger {
@@ -471,9 +506,11 @@ header .bottom .container1240 {
     justify-content: center;
     padding: 0;
 }
+
 .close-burger:hover {
     color: #ff2a2a;
 }
+
 .menu-card a {
     font-size: 22px;
     color: #063F1B;
@@ -485,8 +522,8 @@ header .bottom .container1240 {
     width: 100%;
     text-align: center;
 }
+
 .menu-card a:hover {
     background: #23f47222;
     color: #23f472;
 }
-
