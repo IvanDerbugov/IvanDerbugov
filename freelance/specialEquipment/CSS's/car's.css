@@ -843,6 +843,7 @@ main > .conteiner1800:first-of-type {
 }
 .payment .titleBlock {
     margin-bottom: 32px;
+    transform: translateX(-90px);
 }
 .payment-subtitle {
     text-align: center;
@@ -850,6 +851,7 @@ main > .conteiner1800:first-of-type {
     font-weight: 500;
     color: #043517;
     margin-bottom: 48px;
+    transform: translateX(-90px);
 }
 .payment-grid {
     display: grid;
