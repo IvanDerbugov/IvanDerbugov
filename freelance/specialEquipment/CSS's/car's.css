@@ -810,8 +810,8 @@ main > .conteiner1800:first-of-type {
     display: block;
 }
 .info-col ul {
-    list-style: disc inside;
-    margin: 12px 0 0 -7px;
+    list-style: disc;
+    margin: 12px 0 0 0;
     /* padding-left: 0px; */
     font-size: 20px;
     color: #043517;
@@ -819,12 +819,12 @@ main > .conteiner1800:first-of-type {
 .info-col li {
     margin-bottom: 8px;
     list-style-type: disc;
-    margin-left: -19px;
+    /* margin-left: -19px; */
 }
-.info-col li::marker {
+/* .info-col li::marker {
     color: #043517;
     font-size: 1.2em;
-}
+} */
 
 /* Вертикальные разделители */
 .info-col:not(:last-child)::after {
@@ -835,7 +835,7 @@ main > .conteiner1800:first-of-type {
     width: 2px;
     height: 80%;
     background: #043517;
-    opacity: 0.18;
+    /* opacity: 0.18; */
     border-radius: 2px;
 }
 
@@ -933,7 +933,7 @@ main > .conteiner1800:first-of-type {
     align-items: start;
 }
 .payment-grid > div {
-    padding: 0 33px;
+    padding: 0 53px;
     border-right: 1px solid #043517;
     height: 310px;
 }
@@ -949,8 +949,8 @@ main > .conteiner1800:first-of-type {
 }
 .payment-grid ul {
     margin: 0;
-    padding-left: 33px;
-    font-size: 22px;
+    /* padding-left: 33px; */
+    font-size: 21px;
     font-weight: 400;
     list-style: disc;
 }

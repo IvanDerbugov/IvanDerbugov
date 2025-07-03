@@ -24,6 +24,17 @@ footer a:hover {
     max-width: 300px;
 }
 
+.footer-center-text {
+    font-size: 13px;
+    max-width: 223px;
+    color: #263238;
+    /* margin-top: 60px; */
+}
+.footer-center-text a {
+    font-size: 13px;
+    color: #2b7397;
+}
+
 .footer-left {
     position: relative;
     top: -26px;
