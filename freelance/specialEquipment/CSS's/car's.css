@@ -913,7 +913,7 @@ main > .conteiner1800:first-of-type {
     font-size: 25px;
     margin-bottom: 16px;
     color: #043517;
-    text-align: center;
+    /* text-align: center; */
 }
 .payment-grid ul {
     margin: 0;
