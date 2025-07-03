@@ -21,6 +21,7 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    max-width: 300px;
 }
 
 .footer-left {
@@ -35,10 +36,9 @@ footer a:hover {
 
 .bankCards {
     display: flex;
-    gap: 15px;
-    position: relative;
-    bottom: -64px;
-    right: 50px;
+    gap: 25px;
+    flex-direction: column;
+    margin-top: 30px;
 }
 .footer-icon {
     transition: transform 0.2s, filter 0.2s;
@@ -55,7 +55,20 @@ footer a:hover {
     fill: #FF4053; 
 }
 
+/* Цвет иконки WhatsApp в футере */
+.footer-left a[title="WhatsApp"] svg path {
+    fill: #063F1B;
+    transition: fill 0.2s;
+}
+.footer-left a[title="WhatsApp"]:hover svg path {
+    fill: #DF6417;
+}
 
+.requisites {
+    font-size: 14px;
+    color: #263238;
+   
+}
 
 @media (max-width: 1400px) {
     footer .container1240 {

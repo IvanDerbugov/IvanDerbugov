@@ -363,11 +363,12 @@ main > .conteiner1800:first-of-type {
     transition: box-shadow 0.2s, border-color 0.2s, max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.5s cubic-bezier(0.4,0,0.2,1);
     max-height: 1000px;
     opacity: 1;
-    box-shadow: 0 4px 24px 0 rgba(35, 244, 114, 0.18);
+    /* box-shadow: 0 4px 24px 0 rgba(35, 244, 114, 0.18); */
 }
 .card:hover {
-    box-shadow: 0 8px 32px 0 rgba(11, 107, 54, 0.28);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 0, 0.28);
     border-color: #09592A;
+    /* background-color: yellow; */
 }
 .card-img {
     width: 100%;
@@ -759,13 +760,16 @@ main > .conteiner1800:first-of-type {
     flex: 1 1 0;
     padding: 38px 32px 38px 32px;
     font-size: 22px;
-    line-height: 1.1;
+    line-height: 1.2;
     color: #043517;
     background: none;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     position: relative;
+}
+.info-col-2 {
+    line-height: 0.9;
 }
 .info-col b {
     font-size: 28px;
@@ -876,7 +880,7 @@ main > .conteiner1800:first-of-type {
 }
 .payment .titleBlock {
     margin-bottom: 32px;
-    transform: translateX(-90px);
+    /* transform: translateX(-90px); */
 }
 .payment-subtitle {
     text-align: center;
@@ -884,12 +888,12 @@ main > .conteiner1800:first-of-type {
     font-weight: 500;
     color: #043517;
     margin-bottom: 48px;
-    transform: translateX(-90px);
+    /* transform: translateX(-90px); */
 }
 .payment-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 10px;
     margin-bottom: 60px;
     color: #043517;
     font-size: 24px;
@@ -897,7 +901,7 @@ main > .conteiner1800:first-of-type {
     align-items: start;
 }
 .payment-grid > div {
-    padding: 0 18px;
+    padding: 0 33px;
     border-right: 1px solid #043517;
 }
 .payment-grid > div:last-child {
@@ -905,9 +909,10 @@ main > .conteiner1800:first-of-type {
 }
 .payment-grid b {
     display: block;
-    font-size: 26px;
+    font-size: 25px;
     margin-bottom: 16px;
     color: #043517;
+    text-align: center;
 }
 .payment-grid ul {
     margin: 0;
