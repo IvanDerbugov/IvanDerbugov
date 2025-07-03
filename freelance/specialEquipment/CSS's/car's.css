@@ -903,6 +903,7 @@ main > .conteiner1800:first-of-type {
 .payment-grid > div {
     padding: 0 33px;
     border-right: 1px solid #043517;
+    height: 310px;
 }
 .payment-grid > div:last-child {
     border-right: none;
@@ -916,7 +917,7 @@ main > .conteiner1800:first-of-type {
 }
 .payment-grid ul {
     margin: 0;
-    padding-left: 10px;
+    padding-left: 33px;
     font-size: 22px;
     font-weight: 400;
     list-style: disc;
@@ -1131,4 +1132,22 @@ main > .conteiner1800:first-of-type {
         font-size: 15px;
         padding: 10px 8px;
     }
+}
+
+.link-hover {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: #063F1B;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    margin-left: 18px;
+}
+
+.link-hover:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #DF6417;
+    /* text-decoration: underline; */
 }
