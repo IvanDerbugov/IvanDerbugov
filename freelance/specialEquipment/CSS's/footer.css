@@ -77,8 +77,11 @@ footer a:hover {
 
 .requisites {
     font-size: 14px;
-    color: #263238;
-   
+    color: #263238;   
+}
+
+.requisites div:first-of-type {
+    margin-top: -15px;
 }
 
 .link-footer {
