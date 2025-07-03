@@ -1,9 +1,9 @@
 .version {
     width: 150px;
     height: 150px;
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 0;
+    right: 50%;
     font-size: 40px;
     font-weight: 700;
     color: #fff;
@@ -198,8 +198,21 @@ main > .conteiner1800:first-of-type {
     letter-spacing: 0.5px;
     text-align: center;
 }
+.phone-icon-main {
+    width: 42px;
+    height: 42px;
+    /* margin-right: 12px; */
+    display: inline-block;
+    transition: transform 0.2s ease;
+    /* border-radius: 50%; */
+}
+.phone-icon-main path {
+    stroke: #fff;
+    transition: stroke 0.2s;
+    /* border-radius: 50%; */
+}
 
-.bannerMain a:hover {
+.bannerMain a:hover::not(.phone-icon-main) {
     background: #ffc107;
     color: #fff;
     transform: translateY(-2px) scale(1.04);

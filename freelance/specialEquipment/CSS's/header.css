@@ -35,6 +35,7 @@
     transition: all 0.2s ease;
     padding: 8px 12px;
     border-radius: 6px;
+    color: #fff;
 }
 
 .phoneNumber:hover {
