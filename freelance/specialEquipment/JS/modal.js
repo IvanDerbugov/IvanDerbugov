@@ -63,8 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Открытие модального окна
     btn.addEventListener('click', function () {
-        modalOverlay.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
+        openModal(true);
     });
     // Закрытие по крестику
     modalWindow.querySelector('.modal-close').addEventListener('click', function () {
@@ -96,10 +95,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // Открытие модального окна по всем кнопкам с классом .open-modal-btn
     document.querySelectorAll('.open-modal-btn').forEach(function(el) {
         el.addEventListener('click', function(e) {
-            // Для <a> отменяем переход по ссылке
             if (el.tagName === 'A') e.preventDefault();
-            modalOverlay.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+            openModal(false);
         });
     });
+
+    function openModal(isDiscount) {
+        modalOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        // Меняем заголовок и текст кнопки
+        const h2 = modalWindow.querySelector('h2');
+        const submitBtn = modalWindow.querySelector('.modal-submit');
+        if (isDiscount) {
+            h2.textContent = 'Оставьте свои контакты и зафиксируйте свою скидку';
+            submitBtn.textContent = 'Зафиксировать скидку';
+        } else {
+            h2.textContent = 'Оставьте свои контакты';
+            submitBtn.textContent = 'Отправить';
+        }
+    }
 }); 
