@@ -789,8 +789,8 @@ main > .conteiner1800:first-of-type {
 }
 .info-col {
     flex: 1 1 0;
-    padding: 38px 32px 38px 32px;
-    font-size: 22px;
+    padding: 38px 32px 38px 58px;
+    font-size: 21px;
     line-height: 1.2;
     color: #043517;
     background: none;
@@ -819,6 +819,7 @@ main > .conteiner1800:first-of-type {
 .info-col li {
     margin-bottom: 8px;
     list-style-type: disc;
+    margin-left: -19px;
 }
 .info-col li::marker {
     color: #043517;
