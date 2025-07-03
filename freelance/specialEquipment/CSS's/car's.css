@@ -398,7 +398,7 @@ main > .conteiner1800:first-of-type {
 }
 .card:hover {
     box-shadow: 0 8px 32px 0 rgba(255, 255, 0, 0.28);
-    border-color: #09592A;
+    border-color: #ffc107;
     /* background-color: yellow; */
 }
 .card-img {
@@ -644,7 +644,7 @@ main > .conteiner1800:first-of-type {
     transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 .seeMore:hover {
-    background: #09592A;
+    background: #ffc107;
     color: #fff;
     transform: translateY(-2px) scale(1.04);
     box-shadow: 0 6px 24px rgba(35,244,114,0.18);

@@ -92,4 +92,14 @@ document.addEventListener('DOMContentLoaded', function () {
             modalBtnWrap.style.display = 'none';
         }, 2000);
     });
+
+    // Открытие модального окна по всем кнопкам с классом .open-modal-btn
+    document.querySelectorAll('.open-modal-btn').forEach(function(el) {
+        el.addEventListener('click', function(e) {
+            // Для <a> отменяем переход по ссылке
+            if (el.tagName === 'A') e.preventDefault();
+            modalOverlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    });
 }); 
