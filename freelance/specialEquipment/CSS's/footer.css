@@ -94,6 +94,16 @@ footer a:hover {
     color: #023D19;
 }
 
+.footer-contacts-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 0;
+}
+.footer-avito-row {
+    margin-top: 8px;
+}
+
 @media (max-width: 1400px) {
     footer .container1240 {
         padding: 30px 0 40px 0;
@@ -116,6 +126,49 @@ footer a:hover {
     }
 }
 
+@media (max-width: 1100px) {
+    footer .container1240 {
+        padding: 30px 15px 52px 10px;
+        gap: 15px;
+    }
+
+    .footer-left img {
+        position: relative;
+        right: 0px;
+        width: 170px;
+    }
+    .footer-contacts-row {
+        justify-content: center;
+        gap: 16px;
+    }
+    .footer-avito-row {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+
+    footer .footer-left, footer .footer-left2, footer .footer-center, footer .footer-right, footer .wrapFoterlinks {
+        gap: 20px;
+    }
+    
+    footer a {
+        font-size: 13px;
+    }
+
+    .footer-center-text {
+        font-size: 11px;
+    }
+
+    .phone-number-footer {
+        margin-top: -16px;
+        font-size: 15px;
+    }
+
+    .link-footer {
+        margin-top: 11px;
+        font-size: 15px;
+    }
+}
 /* Только для SVG шириной 79px (ваш логотип) */
 footer .footer-icon[width="79"] path {
     fill: #023D19 ;

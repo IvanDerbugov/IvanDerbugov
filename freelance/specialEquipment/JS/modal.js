@@ -82,14 +82,49 @@ document.addEventListener('DOMContentLoaded', function () {
     const success = modalWindow.querySelector('.modal-success');
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        form.style.display = 'none';
-        success.style.display = 'block';
-        // Скрыть модалку и кнопку через 2 секунды
-        setTimeout(() => {
-            modalOverlay.style.display = 'none';
-            document.body.style.overflow = '';
-            modalBtnWrap.style.display = 'none';
-        }, 2000);
+        // Скрываем прошлые сообщения
+        success.style.display = 'none';
+
+        // Собираем данные
+        const formData = new FormData(form);
+
+        // Отключаем кнопку, чтобы не спамили
+        const submitBtn = modalWindow.querySelector('.modal-submit');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Отправка...';
+
+        fetch('send-form.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitBtn.dataset.defaultText || 'Отправить';
+            if (data.success) {
+                form.style.display = 'none';
+                success.textContent = 'Заявка отправлена!';
+                success.style.display = 'block';
+                setTimeout(() => {
+                    modalOverlay.style.display = 'none';
+                    document.body.style.overflow = '';
+                    modalBtnWrap.style.display = 'none';
+                    // Показываем форму снова для следующего раза
+                    form.reset();
+                    form.style.display = '';
+                    success.style.display = 'none';
+                }, 2000);
+            } else {
+                success.textContent = data.message || 'Ошибка отправки!';
+                success.style.display = 'block';
+            }
+        })
+        .catch(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitBtn.dataset.defaultText || 'Отправить';
+            success.textContent = 'Ошибка соединения!';
+            success.style.display = 'block';
+        });
     });
 
     // Открытие модального окна по всем кнопкам с классом .open-modal-btn
@@ -103,15 +138,16 @@ document.addEventListener('DOMContentLoaded', function () {
     function openModal(isDiscount) {
         modalOverlay.style.display = 'flex';
         document.body.style.overflow = 'hidden';
-        // Меняем заголовок и текст кнопки
         const h2 = modalWindow.querySelector('h2');
         const submitBtn = modalWindow.querySelector('.modal-submit');
         if (isDiscount) {
             h2.textContent = 'Оставьте свои контакты и зафиксируйте свою скидку';
             submitBtn.textContent = 'Зафиксировать скидку';
+            submitBtn.dataset.defaultText = 'Зафиксировать скидку';
         } else {
             h2.textContent = 'Оставьте свои контакты';
             submitBtn.textContent = 'Отправить';
+            submitBtn.dataset.defaultText = 'Отправить';
         }
     }
 }); 

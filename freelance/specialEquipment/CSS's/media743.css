@@ -1,0 +1,18 @@
+@media (max-width: 743px) {
+    .nonono {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        color: #fff;
+        font-size: 100px;
+        z-index: 10;
+    }
+    .payment-grid ul {
+        list-style: none;
+        padding-left: 0;
+    }
+}
