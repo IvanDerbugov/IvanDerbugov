@@ -29,9 +29,9 @@
 }
 
 main > .conteiner1800:first-of-type {
-    background: url(../img/fonTractor.png) no-repeat center center, url(../img/circle1.png) no-repeat center center, url(../img/circle2.png) no-repeat center center, url(../img/circle3.png) no-repeat center center, url(../img/fonBildingDecstop1.png) no-repeat center center;
-    background-size: 980px 539px, 150px 150px, 150px 150px, 150px 150px, 1800px 860px;
-    background-position: 695px 213px, 1354px 68px, 1520px 107px, 1622px 251px, 0 -100px;
+    background: url(../img/fonTractor.png) no-repeat center center, url(../img/circle1.png) no-repeat center center, url(../img/circle2.png) no-repeat center center, url(../img/circle3.png) no-repeat center center, url(../img/fonBildingDecstop1.jpg) no-repeat center center;
+    background-size: 980px 539px, 150px 150px, 150px 150px, 150px 150px, 1800px 1060px;
+    background-position: 695px 213px, 1354px 68px, 1520px 107px, 1622px 251px, 0 -260px;
     padding: 44px 0 87px;
     display: flex;
     flex-direction: column;
