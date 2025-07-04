@@ -91,6 +91,7 @@ footer a:hover {
 .phone-number-footer {
     margin-top: -28px;
     font-size: 21px;
+    color: #023D19;
 }
 
 @media (max-width: 1400px) {
@@ -113,6 +114,14 @@ footer a:hover {
     .logo-footer {
         width: 200px;
     }
+}
+
+/* Только для SVG шириной 79px (ваш логотип) */
+footer .footer-icon[width="79"] path {
+    fill: #023D19 ;
+}
+footer .footer-icon[width="79"] path:hover {
+    fill: #FF4053 ;
 }
 
 
