@@ -538,6 +538,19 @@ header .bottom .container1240 {
 }
 
 @media (max-width: 743px) {
+    .phone-icon {
+        width: 37px;
+        height: 37px;
+        margin-top: -9px;
+        margin-right: -5px;
+    }
+
+    .user svg {
+        margin-top: -5px;
+        width: 34px;
+        height: 34px;
+    }
+    
     .menu-card {
         top: 24px;
         left: 10px;

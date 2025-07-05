@@ -26,9 +26,9 @@
     }
 
     main > .conteiner1800:first-of-type {
-        background: url(../img/fonTractorMobile.png) no-repeat center center, url(../img/fonBildingTablet1.jpg) no-repeat center center;
-        background-size: 300px 188px, 1100px 781px;
-        background-position: -11px 403px, -277px -118px;
+        background: url(../img/fonBildingTablet1.jpg) no-repeat center center;
+        background-size: 1100px 781px;
+        background-position: -277px -118px;
         height: auto;
         padding: 20px 0;
     }
