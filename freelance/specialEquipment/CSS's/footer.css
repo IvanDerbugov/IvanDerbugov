@@ -45,6 +45,12 @@ footer a:hover {
     right: 21px;
 }
 
+.footer-right .mobileCard {
+    display: none;
+}
+.footer-right .desktopCard {
+    display: flex;
+}
 .bankCards {
     display: flex;
     gap: 25px;
@@ -168,6 +174,110 @@ footer a:hover {
         margin-top: 11px;
         font-size: 15px;
     }
+}
+
+@media (max-width: 743px) {
+    footer .container1240 {
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 0 90px;
+        gap: 0;
+    }
+
+  .footer-left, .footer-left2, .footer-center, .footer-right, .wrapFoterlinks {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-left {
+    top: 0;
+    margin-bottom: 12px;
+  }
+
+  .logo-footer img {
+    width: 200px;
+    margin: 0 auto 8px auto;
+    display: block;
+}
+
+  .footer-left > p {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .footer-contacts-row {
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+
+  .footer-avito-row {
+    justify-content: center;
+    margin: 10px 0 0 0;
+  }
+
+  .desktopCard {
+    display: none;
+  }
+  .footer-right .mobileCard {
+    display: block;
+  }
+  .bankCards {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    margin: 10px 0 0 0;
+  }
+
+  .footer-left2, .footer-center {
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* .footer-left2 a, .footer-center a {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+  } */
+
+  /* .link-footer, .phone-number-footer {
+    font-size: 25px;
+    margin: 0;
+} */
+
+.link-footer, .phone-number-footer {
+    font-size: 25px;
+    margin: 0;
+}
+
+  .footer-center-text, .requisites {
+    font-size: 11px;
+    max-width: 95vw;
+    margin: 10px auto 0 auto;
+    text-align: center;
+  }
+
+  .requisites div {
+    margin-top: 0;
+  }
+
+  /* Убираем лишние отступы */
+  .footer-right {
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  footer .footer-left, footer .footer-left2, footer .footer-center, footer .footer-right, footer .wrapFoterlinks {
+    gap: 10px;
+}
 }
 /* Только для SVG шириной 79px (ваш логотип) */
 footer .footer-icon[width="79"] path {

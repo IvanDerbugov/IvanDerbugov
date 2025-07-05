@@ -232,7 +232,7 @@ header .bottom .container1240 {
     background: #fff;
     border-radius: 6px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
-    z-index: 100;
+    z-index: 10;
     flex-direction: column;
     padding: 8px 0;
     border: 1px solid #e0e0e0;
@@ -311,7 +311,7 @@ header .bottom .container1240 {
     height: 38px;
     cursor: pointer;
     gap: 6px;
-    z-index: 120;
+    z-index: 11;
     margin-right: 16px;
 }
 
@@ -339,7 +339,7 @@ header .bottom .container1240 {
     flex-direction: column;
     align-items: center;
     gap: 28px;
-    z-index: 2100;
+    z-index: 11;
     animation: modalIn 0.25s cubic-bezier(.4, 2, .6, 1) 1;
     display: none;
 }
@@ -415,7 +415,7 @@ header .bottom .container1240 {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.35);
-    z-index: 2000;
+    z-index: 11;
     align-items: flex-start;
     justify-content: flex-start;
     transition: background 0.2s;
@@ -429,7 +429,7 @@ header .bottom .container1240 {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.35);
-    z-index: 2000;
+    z-index: 11;
     align-items: flex-start;
     justify-content: flex-start;
 }
@@ -446,7 +446,7 @@ header .bottom .container1240 {
     height: 44px;
     cursor: pointer;
     color: #263238;
-    z-index: 120;
+    z-index: 10;
     padding: 0;
     transition: color 0.2s;
 }
@@ -474,7 +474,7 @@ header .bottom .container1240 {
     flex-direction: column;
     align-items: center;
     gap: 28px;
-    z-index: 2100;
+    z-index: 11;
     animation: modalIn 0.25s cubic-bezier(.4, 2, .6, 1) 1;
 }
 
@@ -534,5 +534,32 @@ header .bottom .container1240 {
 @media (max-width: 810px) {
     .link-hover {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 743px) {
+    .menu-card {
+        top: 24px;
+        left: 10px;
+        width: 270px;
+    }
+
+    .link-hover {
+        display: none;
+    }
+
+    .dropdown-toggle {
+        font-size: 15px;
+    }
+
+    .bottom-right {
+        display: flex;
+        gap: 6px;
+    }
+
+    .bottom-right-links {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
     }
 }

@@ -381,6 +381,10 @@ main > .conteiner1800:first-of-type {
     left: 719px;
 }
 
+.offer-10Mobile {
+    display: none;
+}
+
 .wrapCardGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));

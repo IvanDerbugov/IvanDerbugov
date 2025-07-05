@@ -21,7 +21,7 @@
         <div id="header-container">
         </div>
     </div>
-    <div class="version">V12</div>
+    <!-- <div class="version">V12</div> -->
     <div class="nonono">Это будет мобильная версия, она ещё не готова</div>
     <main>
 
@@ -42,9 +42,12 @@
 
                 <img src="../img/discontOffer1.png" alt="offer-10%" class="offer-10">
                 <div class="contact-buttons-wrap">
-                        <a href="tel:+79011856562" class="leaveRequest open-modal-btn">
-                            Оставить заявку
-                        </a>
+                        <div class="leaveRequest-wrap">
+                            <a href="tel:+79011856562" class="leaveRequest open-modal-btn">
+                                Оставить заявку
+                            </a>
+                            <img src="../img/discontOffer1.png" alt="offer-10%" class="offer-10Mobile">
+                        </div>
                     <div class="contact-buttons">
                         <a href="tel:+79011856562" class="phoneNumber">
                             <svg class="phone-icon-main" width="26" height="26" viewBox="0 0 26 26" fill="none"
@@ -284,7 +287,7 @@
         <div class="section-limiter">
             <div class="ourAdvantages">
                 <div class="conteiner1240">
-                    <h1 class="titleBlock">8 ключевых преимуществ <br>работы с нами</h1>
+                    <h1 class="titleBlock">8 ключевых преимуществ <span class="br"><br></span>работы с нами</h1>
                     <div class="wrapAdvantagesGrid">
                         <div class="text1">
                             Собственный парк техники – все машины проходят регулярное ТО.
@@ -319,6 +322,7 @@
         <div class="conteiner1800">
             <picture>
                 <source srcset="../img/loader.jpg" media="(min-width: 1100px)">
+                <source srcset="../img/loader743.jpg" media="(max-width: 743.98px)">
                 <source srcset="../img/loader1100.jpg" media="(max-width: 1099.98px)">
                 <img src="../img/loader.jpg" alt="loader" class="loader-img">
             </picture>
@@ -328,11 +332,13 @@
             <div class="infoAboutLoader">
                 <div class="conteiner1240 infoAboutLoader-grid">
                     <div class="info-col">
-                        <b>Экскаватор-погрузчик</b><br>
-                        – это многофункциональная машина, сочетающая возможности экскаватора и фронтального погрузчика,
-                        способная выполнять широкий спектр работ в строительстве, коммунальном хозяйстве и других
-                        сферах,
-                        там, где требуется высокая производительность и гибкость.
+                        <b>Экскаватор-погрузчик</b>
+                        <span>
+                            – это многофункциональная машина, сочетающая возможности экскаватора и фронтального погрузчика,
+                            способная выполнять широкий спектр работ в строительстве, коммунальном хозяйстве и других
+                            сферах,
+                            там, где требуется высокая производительность и гибкость.
+                        </span>
                     </div>
                     <div class="info-col info-col-2">
                         <b>Техника востребована для:</b>
