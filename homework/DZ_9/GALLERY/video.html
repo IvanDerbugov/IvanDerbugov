@@ -9,8 +9,24 @@
             display: block;
             /* width: 827px;
             height: 468px; */
-            max-width: 100%;
-            max-height: 100%;
+            /* max-width: 100%;
+            max-height: 100%; */
+        }
+        video {
+            display: block;
+            /* width: 100%;
+            max-width: 827px; */
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            background: #000;
+        }
+        .video-list {
+            scroll-behavior: smooth;
+            /* max-height: 1000px; */
+            overflow-y: auto;
+            padding: 10px 0;
         }
         /* div{
             scroll-behavior: smooth;
@@ -26,9 +42,9 @@
     <h1>
         Если вам нужен ведущий, то это я
     </h1>
-    <div>
-        <video src="video_2025-07-05_11-59-26.mp4" controls autoplay style="display:block; width:100%; max-width:827px; height:auto; margin-bottom:20px;"></video>
-        <video src="video_2025-07-05_11-59-33.mp4" controls style="display:block; width:100%; max-width:827px; height:auto;"></video>
+    <div class="video-list">
+        <video src="video_2025-07-05_11-59-26.mp4" controls autoplay loop></video>
+        <video src="video_2025-07-05_11-59-33.mp4" controls loop></video>
     </div>
 
     
