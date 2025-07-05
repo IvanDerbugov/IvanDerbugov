@@ -733,7 +733,7 @@ main > .conteiner1800:first-of-type {
     color: #023D19;
     text-align: center;
     margin-bottom: 60px;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 .advantages-btn {
