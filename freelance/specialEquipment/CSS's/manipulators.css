@@ -16,7 +16,21 @@
     z-index: 10;
 } 
 .nonono { 
-    position: fixed;
+    display: none;
+}
+@media (max-width: 1400px) {
+    .nonono { 
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        color: #fff;
+        font-size: 70px;
+        z-index: 15;
+    }
 }
 
 
@@ -33,10 +47,10 @@
 }
 
 main > .conteiner1800:first-of-type {
-    background: url(../img/fonTractor.png) no-repeat center center, url(../img/circle1.png) no-repeat center center, url(../img/circle2.png) no-repeat center center, url(../img/circle3.png) no-repeat center center, url(../img/fonBildingDecstop1.jpg) no-repeat center center;
-    background-size: 980px 539px, 150px 150px, 150px 150px, 150px 150px, 1800px 1060px;
-    background-position: 695px 213px, 1354px 68px, 1520px 107px, 1622px 251px, 0 -260px;
-    padding: 44px 0 87px;
+    background: url(../img/manipulator/manipulatorFon.jpg);
+    background-size: auto;
+    background-position: auto;
+    padding: 112px 117px 156px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,8 +63,7 @@ main > .conteiner1800:first-of-type {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5em;
-    max-width: 853px;
-    margin-left: 100px;
+    /* max-width: 853px; */
     margin-right: auto;
 }
 
@@ -67,20 +80,6 @@ main > .conteiner1800:first-of-type {
     padding: 0;
     display: block;
     width: 1200px;
-}
-
-.bannerMain h2 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #fff;
-    text-align: left;
-    margin-bottom: 8px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
-    background: none;
-    border-radius: 0;
-    padding: 0;
-    display: block;
-    width: 1000px;
 }
 
 .bannerMain h3 {
@@ -100,6 +99,7 @@ main > .conteiner1800:first-of-type {
 .bannerMain ul {
     margin: 0 0 18px 0;
     line-height: 40px;
+    margin-bottom: 75px;
 }
 
 .bannerMain ul li {
@@ -188,14 +188,12 @@ main > .conteiner1800:first-of-type {
 
 .leaveRequest {
     display: inline-block;
-    font-size: 26px;
+    font-size: 29px;
     font-weight: 600;
     color: #fff;
     background: #DF6417;
     border-radius: 12px;
     padding: 14px 70px;
-    margin-right: 18px;
-    margin-top: 10px;
     text-decoration: none;
     box-shadow: 0 2px 12px rgba(35, 244, 114, 0.10);
     transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
@@ -275,8 +273,8 @@ main > .conteiner1800:first-of-type {
 }
 
 .contact-btn .icon-svg {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
     display: block;
     transition: filter 0.2s;
     color: #fff;
@@ -284,9 +282,10 @@ main > .conteiner1800:first-of-type {
 
 .contact-buttons-wrap {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 16px;
-    margin: 0 0 28px 0;
+    gap: 63px;
+    /* margin: 0 0 28px 0; */
 }
 
 .phone-btn:hover, .whatsapp-btn:hover {
@@ -377,8 +376,9 @@ main > .conteiner1800:first-of-type {
 
 .offer-10 {
     position: absolute;
-    top: 260px;
-    left: 719px;
+    top: 350px;
+    left: 834px;
+    width: 460px;
 }
 
 .offer-10Mobile {
@@ -563,7 +563,7 @@ main > .conteiner1800:first-of-type {
     margin: 15px;
     width: 350px;
     height: 270px;
-    background: url(../img/excavatorLoader/JCB_3CX1.jpeg) no-repeat center center;
+    background: url(../img/manipulator/manipulatorCard1.jpg) no-repeat center center;
     background-size: 340px 270px;
     background-position: -20px 0;
 }
@@ -572,7 +572,7 @@ main > .conteiner1800:first-of-type {
     margin: 15px;
     width: 323px;
     height: 270px;
-    background: url(../img/excavatorLoader/Cukurova888.jpg) no-repeat center center;
+    background: url(../img/manipulator/manipulatorCard2.jpg) no-repeat center center;
     background-size: 340px 270px;
     background-position: -4px 0;
 }
@@ -581,7 +581,7 @@ main > .conteiner1800:first-of-type {
     margin: 15px;
     width: 323px;
     height: 270px;
-    background: url(../img/excavatorLoader/Komatsu_WB93R_5EO.jpg) no-repeat center center;
+    background: url(../img/manipulator/manipulatorCard3.jpg) no-repeat center center;
     background-size: 330px 270px;
     background-position: -4px 0;
 }
@@ -590,7 +590,7 @@ main > .conteiner1800:first-of-type {
     margin: 15px;
     width: 323px;
     height: 270px;
-    background: url(../img/excavatorLoader/JCB_4CX.jpg) no-repeat center center;
+    background: url(../img/manipulator/manipulatorCard4.jpg) no-repeat center center;
     background-size: 460px 340px;
     background-position: -64px -40px;
 }
@@ -599,7 +599,7 @@ main > .conteiner1800:first-of-type {
     margin: 15px;
     width: 323px;
     height: 270px;
-    background: url(../img/excavatorLoader/JCB_5CX.jpg) no-repeat center center;
+    background: url(../img/manipulator/manipulatorCard5.jpg) no-repeat center center;
     background-size: 360px 270px;
     background-position: -26px 0;
 }
@@ -608,7 +608,7 @@ main > .conteiner1800:first-of-type {
     margin: 15px;
     width: 323px;
     height: 270px;
-    background: url(../img/excavatorLoader/Terex_TX860.jpg) no-repeat center center;
+    background: url(../img/manipulator/manipulatorCard6.jpg) no-repeat center center;
     background-size: 356px 270px;
     background-position: -8px 0;
 }
@@ -617,7 +617,7 @@ main > .conteiner1800:first-of-type {
     margin: 15px;
     width: 350px;
     height: 270px;
-    background: url(../img/excavatorLoader/Hitachi_ZW220.jpg) no-repeat center center;
+    background: url(../img/manipulator/manipulatorCard7.jpg) no-repeat center center;
     background-size: 330px 270px;
     background-position: -3px 0;
 }
@@ -626,7 +626,7 @@ main > .conteiner1800:first-of-type {
     margin: 15px;
     width: 350px;
     height: 270px;
-    background: url(../img/excavatorLoader/Caterpillar_446D.jpg) no-repeat center center;
+    background: url(../img/manipulator/manipulatorCard8.jpg) no-repeat center center;
     background-size: 350px 270px;
     background-position: -25px 0;
 }
@@ -635,7 +635,7 @@ main > .conteiner1800:first-of-type {
     margin: 15px;
     width: 350px;
     height: 270px;
-    background: url(../img/excavatorLoader/CASE_695SV.jpg) no-repeat center center;
+    background: url(../img/manipulator/manipulatorCard9.jpg) no-repeat center center;
     background-size: 325px 270px;
     background-position: 0 0;
 }
