@@ -33,6 +33,9 @@
     }
 }
 
+body {
+    background-color: #eaeae8;
+}
 
 .conteiner1800 {
     width: 100%;
@@ -44,6 +47,9 @@
     width: 100%;
     max-width: 1240px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main > .conteiner1800:first-of-type {
@@ -387,7 +393,7 @@ main > .conteiner1800:first-of-type {
 
 .wrapCardGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     justify-content: space-between;
     margin-bottom: 40px;
@@ -395,17 +401,15 @@ main > .conteiner1800:first-of-type {
 
 .card {
     background: #fff;
-    border-radius: 14px;
-    overflow: hidden;
-    width: 360px;
+    padding: 15px;
+    /* overflow: hidden; */
+    /* width: 441px; */
     display: flex;
     flex-direction: column;
     position: relative;
-    /* border: 1px solid #eee; */
     transition: box-shadow 0.2s, border-color 0.2s, max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.5s cubic-bezier(0.4,0,0.2,1);
-    max-height: 1000px;
+    /* max-height: 1000px; */
     opacity: 1;
-    /* box-shadow: 0 4px 24px 0 rgba(35, 244, 114, 0.18); */
 }
 .card:hover {
     box-shadow: 0 8px 32px 0 rgba(255, 255, 0, 0.28);
@@ -425,7 +429,7 @@ main > .conteiner1800:first-of-type {
     gap: 10px;
 }
 .card-title {
-    font-size: 23px;
+    font-size: 22px;
     font-weight: 700;
     margin-bottom: 2px;
     color: #222;
@@ -505,7 +509,7 @@ main > .conteiner1800:first-of-type {
     flex: 1 1 0;
     background: #DF6417;
     color: #fff;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
     padding: 12px 0;
     border-radius: 6px;
@@ -530,114 +534,73 @@ main > .conteiner1800:first-of-type {
 
 .card-specs-list {
     list-style: none;
-    margin: 6px 0 10px 0;
+    margin: 10px 0 16px 0;
     padding: 0;
-    font-size: 15px;
-    line-height: 1.2;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
 }
 .card-specs-list li {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px dotted #ccc;
-    padding: 2px 0 2px 0;
+    padding: 4px 0 4px 0;
     color: #263238;
 }
 .card-specs-list li:last-child {
     border-bottom: none;
 }
 .card-specs-list span {
-    color: #444;
+    color: #888;
     font-weight: 400;
     margin-right: 10px;
     white-space: nowrap;
+    font-size: 16px;
 }
 .card-specs-list b {
-    color: #111;
+    color: #181c28;
     font-weight: 700;
     margin-left: 10px;
     white-space: nowrap;
+    font-size: 17.5px;
 }
 
+/* Унифицируем размеры всех карточек и картинок */
 .wrapImgCard {
-    margin: 15px;
-    width: 350px;
-    height: 270px;
+    width: 441px;
+    height: 276px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto 0 auto;
+}
+.imgCard1 {
     background: url(../img/manipulator/manipulatorCard1.jpg) no-repeat center center;
-    background-size: 340px 270px;
-    background-position: -20px 0;
 }
-
-.cukurova-img {
-    margin: 15px;
-    width: 323px;
-    height: 270px;
+.imgCard2 {
     background: url(../img/manipulator/manipulatorCard2.jpg) no-repeat center center;
-    background-size: 340px 270px;
-    background-position: -4px 0;
 }
-
-.komatsu-img {
-    margin: 15px;
-    width: 323px;
-    height: 270px;
+.imgCard3 {
     background: url(../img/manipulator/manipulatorCard3.jpg) no-repeat center center;
-    background-size: 330px 270px;
-    background-position: -4px 0;
 }
-
-.jcb4cx-img {
-    margin: 15px;
-    width: 323px;
-    height: 270px;
+.imgCard4 {
     background: url(../img/manipulator/manipulatorCard4.jpg) no-repeat center center;
-    background-size: 460px 340px;
-    background-position: -64px -40px;
 }
-
-.jcb5cx-img {
-    margin: 15px;
-    width: 323px;
-    height: 270px;
+.imgCard5 {
     background: url(../img/manipulator/manipulatorCard5.jpg) no-repeat center center;
-    background-size: 360px 270px;
-    background-position: -26px 0;
 }
-
-.terex-tx860-img {
-    margin: 15px;
-    width: 323px;
-    height: 270px;
+.imgCard6 {
     background: url(../img/manipulator/manipulatorCard6.jpg) no-repeat center center;
-    background-size: 356px 270px;
-    background-position: -8px 0;
 }
-
-.hitachi-zw220-img {
-    margin: 15px;
-    width: 350px;
-    height: 270px;
+.imgCard7 {
     background: url(../img/manipulator/manipulatorCard7.jpg) no-repeat center center;
-    background-size: 330px 270px;
-    background-position: -3px 0;
 }
-
-.caterpillar-440e-img {
-    margin: 15px;
-    width: 350px;
-    height: 270px;
+.imgCard8 {
     background: url(../img/manipulator/manipulatorCard8.jpg) no-repeat center center;
-    background-size: 350px 270px;
-    background-position: -25px 0;
 }
-
-.case-695sv-img {
-    margin: 15px;
-    width: 350px;
-    height: 270px;
+.imgCard9 {
     background: url(../img/manipulator/manipulatorCard9.jpg) no-repeat center center;
-    background-size: 325px 270px;
-    background-position: 0 0;
 }
 
 .seeMore {
@@ -728,12 +691,11 @@ main > .conteiner1800:first-of-type {
 }
 
 .titleBlock {
-    font-size: 60px;
+    font-size: 55px;
     font-weight: 600;
     color: #023D19;
     text-align: center;
     margin-bottom: 60px;
-    /* white-space: nowrap; */
 }
 
 .advantages-btn {
@@ -767,22 +729,6 @@ main > .conteiner1800:first-of-type {
     justify-content: center;
     gap: 32px;
 }
-/* .ourAdvantages .titleBlock::before,
-.ourAdvantages .titleBlock::after {
-    content: '';
-    display: block;
-    height: 2px;
-    width: 120px;
-    background: #043517;
-    opacity: 0.25;
-    border-radius: 2px;
-}
-@media (max-width: 900px) {
-    .ourAdvantages .titleBlock::before,
-    .ourAdvantages .titleBlock::after {
-        width: 40px;
-    }
-} */
 
 .infoAboutLoader {
     background: #C4C6C5;
@@ -795,42 +741,46 @@ main > .conteiner1800:first-of-type {
     align-items: stretch;
     position: relative;
     border-radius: 18px;
-    /* box-shadow: 0 4px 32px rgba(4, 53, 23, 0.08); */
     overflow: hidden;
+    flex-direction: row;
 }
 .info-col {
     flex: 1 1 0;
-    padding: 38px 32px 38px 58px;
-    font-size: 21px;
-    line-height: 1.2;
+    padding: 38px 80px 38px 100px;
+    font-size: 22px;
+    line-height: 1.55;
     color: #043517;
     background: none;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     position: relative;
+    font-weight: 500;
 }
 .info-col-2 {
-    line-height: 0.9;
+    /* line-height: 0.9; */
 }
 .info-col b {
-    font-size: 28px;
+    font-size: 25px;
     font-weight: 700;
-    color: #043517;
+    color: #023D19;
     margin-bottom: 12px;
     display: block;
 }
 .info-col ul {
     list-style: disc;
     margin: 12px 0 0 0;
-    /* padding-left: 0px; */
-    font-size: 20px;
+    font-size: 21px;
     color: #043517;
+    line-height: 1.55;
+    font-weight: 500;
 }
 .info-col li {
     margin-bottom: 8px;
     list-style-type: disc;
-    /* margin-left: -19px; */
+    font-size: 21px;
+    line-height: 1.55;
+    color: #263238;
+    font-weight: 500;
 }
 /* .info-col li::marker {
     color: #043517;
@@ -841,12 +791,11 @@ main > .conteiner1800:first-of-type {
 .info-col:not(:last-child)::after {
     content: '';
     position: absolute;
-    top: 10%;
+    top: 0%;
     right: 0;
     width: 2px;
-    height: 80%;
+    height: 100%;
     background: #043517;
-    /* opacity: 0.18; */
     border-radius: 2px;
 }
 
