@@ -142,6 +142,11 @@ footer a:hover {
     margin-top: 8px;
 }
 
+.privacyPolicy {
+    color: #040809;
+    font-size: 17px;
+}
+
 @media (max-width: 1400px) {
     footer .container1240 {
         padding: 30px 0 40px 0;
