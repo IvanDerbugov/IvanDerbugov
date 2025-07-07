@@ -43,7 +43,6 @@ footer a:hover {
     font-size: 13px;
     max-width: 223px;
     color: #263238;
-    /* margin-top: 60px; */
 }
 
 .footer-center-text a {
@@ -73,7 +72,6 @@ footer a:hover {
     display: flex;
     gap: 25px;
     flex-direction: column;
-    /* margin-top: 30px; */
 }
 
 .bankCards .bankCardPng {
@@ -126,7 +124,6 @@ footer a:hover {
 }
 
 .phone-number-footer {
-    /* margin-top: -28px; */
     font-size: 21px;
     color: #023D19;
 }
@@ -209,7 +206,6 @@ footer a:hover {
     }
 
     .phone-number-footer {
-        /* margin-top: -16px; */
         font-size: 15px;
     }
 
