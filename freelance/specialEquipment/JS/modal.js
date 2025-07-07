@@ -51,9 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
     modalWindow.innerHTML = `
         <button class="modal-close" title="Закрыть">&times;</button>
         <h2>Оставьте свои контакты и зафиксируйте свою скидку</h2>
-        <form class="modal-form">
+        <form class="modal-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="d759a276-7f88-4a85-a572-a472510fd51b">
             <input type="text" name="name" placeholder="Ваше имя" required autocomplete="name">
             <input type="text" name="contact" placeholder="Телефон или e-mail" required autocomplete="tel">
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
             <button type="submit" class="modal-submit">Зафиксировать скидку</button>
         </form>
         <div class="modal-success" style="display:none;text-align:center;font-size:22px;font-weight:600;color:#DF6417;margin-top:18px;">Скидка зафиксирована!</div>
@@ -82,22 +84,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const success = modalWindow.querySelector('.modal-success');
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        // Скрываем прошлые сообщения
         success.style.display = 'none';
-
-        // Собираем данные
         const formData = new FormData(form);
-
-        // Отключаем кнопку, чтобы не спамили
         const submitBtn = modalWindow.querySelector('.modal-submit');
         submitBtn.disabled = true;
         submitBtn.textContent = 'Отправка...';
-
-        fetch('send-form.php', {
+        fetch('https://api.web3forms.com/submit', {
             method: 'POST',
             body: formData
         })
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
             submitBtn.disabled = false;
             submitBtn.textContent = submitBtn.dataset.defaultText || 'Отправить';
@@ -109,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     modalOverlay.style.display = 'none';
                     document.body.style.overflow = '';
                     modalBtnWrap.style.display = 'none';
-                    // Показываем форму снова для следующего раза
                     form.reset();
                     form.style.display = '';
                     success.style.display = 'none';
