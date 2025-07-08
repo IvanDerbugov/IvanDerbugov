@@ -1,0 +1,578 @@
+.container1240 {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+
+
+.top {
+    background-color: #E2DCCD;
+}
+
+.top .container1240 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 64px;
+}
+
+.top-left {
+    width: 132px;
+    height: 50px;
+    margin-top: -11px;
+    transition: transform 0.2s ease;
+}
+
+.top-left:hover {
+    transform: scale(1.05);
+}
+
+.phoneNumber {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.phoneNumber:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.phone-icon {
+    width: 42px;
+    height: 42px;
+    margin-right: 12px;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.phone-icon path {
+    stroke: #063F1B;
+    transition: stroke 0.2s;
+}
+
+.phoneNumber:hover .phone-icon path {
+    stroke: #DF6417;
+}
+
+.phoneNumber span {
+    font-size: 24px;
+    font-weight: 500;
+    color: #063F1B;
+}
+
+.phoneNumber:hover .phone-icon {
+    transform: scale(1.1);
+}
+
+.user {
+    margin-bottom: -8px;
+    transition: all 0.2s ease;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.user:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.user svg {
+    transition: transform 0.2s ease;
+    width: 30px;
+    height: 30px;
+}
+
+.user svg path {
+    fill: #063F1B;
+    transition: fill 0.2s;
+}
+
+.user:hover svg {
+    transform: scale(1.1);
+}
+
+.user:hover svg path {
+    fill: #DF6417;
+}
+
+.top a[title="WhatsApp"] svg path {
+    fill: #063F1B;
+    transition: fill 0.2s;
+}
+
+.top a[title="WhatsApp"]:hover svg path {
+    fill: #DF6417;
+}
+
+header .bottom {
+    background-color: #EAF5FD;
+
+}
+
+header .bottom .container1240 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 10px 10px 10px 20px;
+}
+
+.bottom-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.bottom-left:hover {
+    background-color: rgba(35, 244, 114, 0.1);
+}
+
+.bottom-left img {
+    margin-top: -3px;
+    transition: transform 0.2s ease;
+}
+
+.bottom-left:hover img {
+    transform: scale(1.05);
+}
+
+.bottom-left-2 {
+    display: flex;
+    gap: 20px;
+}
+
+.bottom-left-2 a {
+    transition: all 0.2s ease;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: rgba(87, 86, 126, 1);
+    text-decoration: none;
+}
+
+.bottom-left-2 a:hover {
+    background-color: rgba(35, 244, 114, 0.1);
+    color: #23f472;
+    transform: translateY(-1px);
+}
+
+.bottom-center {
+    transition: all 0.2s ease;
+    padding: 8px;
+    border-radius: 6px;
+    position: relative;
+    top: -4px;
+}
+
+.bottom-center:hover {
+    background-color: rgba(35, 244, 114, 0.1);
+    transform: scale(1.1);
+}
+
+.bottom-right {
+    display: flex;
+    gap: 20px;
+    margin-top: -1px;
+}
+
+.bottom-right a {
+    transition: all 0.2s ease;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.bottom-right a:hover {
+    background-color: rgba(35, 244, 114, 0.1);
+    transform: translateY(-2px);
+}
+
+.bottom-right a svg {
+    transition: transform 0.2s ease;
+    margin-bottom: -8px;
+}
+
+.bottom-right a:hover svg {
+    transform: scale(1.1);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 0 8px;
+    height: 40px;
+    color: rgba(87, 86, 126, 1);
+    transition: all 0.2s ease;
+}
+
+.dropdown-toggle:hover {
+    color: #23f472;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    min-width: 320px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+    z-index: 10;
+    flex-direction: column;
+    padding: 8px 0;
+    border: 1px solid #e0e0e0;
+    animation: fadeInDown 0.3s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-menu.show {
+    display: flex;
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    color: #263238;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    color: rgba(87, 86, 126, 1);
+    position: relative;
+}
+
+.dropdown-menu a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: #23f472;
+    transition: width 0.2s ease;
+    z-index: -1;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(35, 244, 114, 0.1);
+    color: #23f472;
+    transform: translateX(5px);
+}
+
+.dropdown-menu a:hover::before {
+    width: 4px;
+}
+
+.dropdown-menu img,
+.dropdown-menu span {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.dropdown-menu a:hover img {
+    transform: scale(1.1);
+}
+
+/* Бургер скрыт на десктопе */
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 11;
+    margin-right: 16px;
+}
+
+.burger-menu span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #263238;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Мобильное меню скрыто по умолчанию */
+.mobile-nav {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    margin: 0;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    padding: 36px 32px 24px 32px;
+    min-width: 260px;
+    width: 320px;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    z-index: 11;
+    animation: modalIn 0.25s cubic-bezier(.4, 2, .6, 1) 1;
+    display: none;
+}
+
+@keyframes modalIn {
+    0% {
+        transform: scale(0.85) translateY(40px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.burger-modal.active .mobile-nav {
+    display: flex;
+}
+
+.close-burger {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 38px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 2;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.close-burger:hover {
+    color: #ff2a2a;
+}
+
+.mobile-nav a {
+    font-size: 22px;
+    color: #063F1B;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 0;
+    border-radius: 8px;
+    transition: background 0.18s, color 0.18s;
+    width: 100%;
+    text-align: center;
+}
+
+.mobile-nav a:hover {
+    background: #23f47222;
+    color: #23f472;
+}
+
+
+
+.headerTopRight {
+    display: none;
+}
+
+.burger-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 11;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: background 0.2s;
+}
+
+.burger-modal-active {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 11;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+
+
+.burgerMenuMobile {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    color: #263238;
+    z-index: 10;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.burgerMenuMobile:hover {
+    color: #23f472;
+    /* зелёный при наведении */
+}
+
+.burgerMenuMobile svg {
+    display: block;
+}
+
+.menu-card {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    padding: 36px 32px 24px 32px;
+    min-width: 260px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    z-index: 11;
+    animation: modalIn 0.25s cubic-bezier(.4, 2, .6, 1) 1;
+}
+
+.close-burger {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 38px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 2;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.close-burger:hover {
+    color: #ff2a2a;
+}
+
+.menu-card a {
+    font-size: 22px;
+    color: #063F1B;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 0;
+    border-radius: 8px;
+    transition: background 0.18s, color 0.18s;
+    width: 100%;
+    text-align: center;
+}
+
+.menu-card a:hover {
+    background: #23f47222;
+    color: #23f472;
+}
+
+
+/* Медиа-запрос для адаптива */
+@media (max-width: 1100px) {
+    .bottom-left-2 {
+        display: none;
+    }
+
+    .burgerMenuMobile {
+        display: flex;
+    }
+}
+
+@media (max-width: 810px) {
+    .link-hover {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 743px) {
+    .phone-icon {
+        width: 37px;
+        height: 37px;
+        margin-top: -9px;
+        margin-right: -5px;
+    }
+
+    .user svg {
+        margin-top: -5px;
+        width: 34px;
+        height: 34px;
+    }
+    
+    .menu-card {
+        top: 24px;
+        left: 10px;
+        width: 270px;
+    }
+
+    .link-hover {
+        display: none;
+    }
+
+    .dropdown-toggle {
+        font-size: 15px;
+    }
+
+    .bottom-right {
+        display: flex;
+        gap: 6px;
+    }
+
+    .bottom-right-links {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+}
