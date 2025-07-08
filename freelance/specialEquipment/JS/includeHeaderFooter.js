@@ -10,16 +10,16 @@ function includeHTML(selector, url, callback) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    includeHTML('#header-container', '../HTML/header.html', function() {
+    includeHTML('#header-container', 'HTML/header.html', function() {
         // Динамически подключаем DropDownList.js после вставки header
         const script1 = document.createElement('script');
-        script1.src = '../JS/DropDownList.js';
+        script1.src = 'JS/DropDownList.js';
         document.body.appendChild(script1);
 
         // Динамически подключаем burgerMenu.js после вставки header
         const script2 = document.createElement('script');
-        script2.src = '../JS/burgerMenu.js';
+        script2.src = 'JS/burgerMenu.js';
         document.body.appendChild(script2);
     });
-    includeHTML('#footer-container', '../HTML/footer.html');
+    includeHTML('#footer-container', 'HTML/footer.html');
 }); 
