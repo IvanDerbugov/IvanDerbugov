@@ -443,8 +443,8 @@
                 <button class="modal-close" id="closeDiscountModal" title="Закрыть">&times;</button>
                 <h3>Получите скидку на первый заказ!</h3>
                 <p class="discount-desc">Оставьте заявку — и получите персональную скидку на первый проект!</p>
-                <form class="discount-form" action="https://formspree.io/f/xjkrpwqg" method="POST">
-                  <input type="hidden" name="_subject" value="Заявка на скидку с сайта">
+                <form class="discount-form" id="discountForm" method="POST">
+                    <input type="hidden" name="access_key" value="07f909b3-f825-4acb-87e5-6a6541514d3a">
                   <label>
                     Что нужно разработать?
                     <textarea name="project" required placeholder="Опишите задачу..." rows="3"></textarea>
@@ -457,9 +457,12 @@
                     Желаемые сроки
                     <input type="text" name="deadline" placeholder="Например: 2 недели">
                   </label>
-                  <button type="submit" class="discount-submit">Получить скидку</button>
+                  <button type="submit" id="discountSubmitBtn" class="discount-submit">Получить скидку</button>
                 </form>
-                <div class="discount-success" style="display:none;">Спасибо! Ваша заявка отправлена. Я свяжусь с вами в течение дня и предложу скидку!</div>
+                <div class="discount-success" id="discountSuccess" style="display:none;">Спасибо! Ваша заявка отправлена. Я свяжусь с вами в течение дня и предложу скидку!</div>
+                <div class="discount-loading" id="discountLoading" style="display:none;">
+                    <span class="spinner"></span> Отправка...
+                </div>
               </div>
             </div>
 
