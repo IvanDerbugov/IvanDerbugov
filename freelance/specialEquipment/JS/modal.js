@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     modalWindow.innerHTML = `
         <button class="modal-close" title="Закрыть">&times;</button>
         <h2>Оставьте свои контакты и зафиксируйте свою скидку</h2>
-        <form class="modal-form" action="https://api.web3forms.com/submit" id="send_form" method="POST">
+        <form class="modal-form" action="https://api.web3forms.com/submit" id="forma" method="POST">
             <input type="hidden" name="access_key" value="d759a276-7f88-4a85-a572-a472510fd51b">
             <input type="text" name="name" placeholder="Ваше имя" required autocomplete="name">
             <input type="text" name="contact" placeholder="Телефон или e-mail" required autocomplete="tel">
