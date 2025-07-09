@@ -1,6 +1,8 @@
 @font-face {
     font-family: 'EurostileExtendedBlack';
-    src: url('Fonts/EurostileExtendedBlack.ttf') format('truetype');
+    src: url('Fonts/EurostileExtendedBlack.woff2') format('woff2'),
+        url('Fonts/EurostileExtendedBlack.woff') format('woff'),
+        url('Fonts/EurostileExtendedBlack.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -11,8 +13,10 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap');
+
 body {
-    font-family: 'EurostileExtendedBlack', Arial, sans-serif;
+    font-family: 'Orbitron', Arial, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     display: flex;
@@ -24,7 +28,7 @@ body {
 h1 {
     font-size: 4rem;
     text-align: center;
-} 
+}
 
 p {
     font-weight: bold;

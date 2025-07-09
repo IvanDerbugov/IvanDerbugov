@@ -35,13 +35,13 @@ footer a:hover {
 .wrapFoterlinks {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 15px;
     max-width: 300px;
 }
 
 .footer-center-text {
     font-size: 13px;
-    max-width: 223px;
+    max-width: 242px;
     color: #263238;
 }
 
@@ -55,7 +55,7 @@ footer a:hover {
     top: -26px;
 }
 
-.footer-left img {
+.footer-left img:not(.bankCardPng) {
     position: relative;
     right: 21px;
 }
@@ -131,12 +131,28 @@ footer a:hover {
 .footer-contacts-row {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 10px;
     margin-bottom: 0;
+}
+
+.phone-icon {
+    width: 25px;
+    height: 25px;
 }
 
 .footer-avito-row {
     margin-top: 8px;
+}
+
+.bubble {
+    position: relative;
+    top: 3px;
+    left: -11px;
+}
+
+.avitoText {
+    position: relative;
+    left: -10px;
 }
 
 .privacyPolicy {
