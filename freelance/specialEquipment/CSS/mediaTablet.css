@@ -18,7 +18,7 @@
 
 
     main > .conteiner1800:first-of-type {
-        background: url(../img/fonTractor.png) no-repeat center center, url(../img/circle1.png) no-repeat center center, url(../img/circle2.png) no-repeat center center, url(../img/circle3.png) no-repeat center center, url(../img/fonBildingDecstop1.png) no-repeat center center;
+        background: url(../img/fonTractor.png) no-repeat center center, url(../img/circle1.png) no-repeat center center, url(../img/circle2.png) no-repeat center center, url(../img/circle3.png) no-repeat center center, url(../fonBildingTablet1.jpg) no-repeat center center;
         background-size: 780px 499px, 120px 120px, 120px 120px, 120px 120px, 1400px 840px;
         background-position: 445px 173px, 1043px 65px, 1156px 154px, 1202px 287px, 0 -140px;
         height: auto;
