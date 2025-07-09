@@ -98,6 +98,11 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.disabled = false;
             submitBtn.textContent = submitBtn.dataset.defaultText || 'Отправить';
             if (data.success) {
+                // Отправка события в Яндекс.Метрику
+                if (typeof ym === 'function') {
+                    ym(103255331, 'reachGoal', 'forma');
+                    console.log('Цель "Отправка формы" отправлена в Яндекс Метрику (forma)');
+                }
                 form.style.display = 'none';
                 success.textContent = 'Заявка отправлена!';
                 success.style.display = 'block';
