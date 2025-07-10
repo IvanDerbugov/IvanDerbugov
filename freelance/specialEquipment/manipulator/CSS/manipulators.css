@@ -64,7 +64,7 @@ body {
 main > .conteiner1800:first-of-type {
     background: url(../img/manipulator/manipulatorFon.jpg) no-repeat center center;
     background-size: auto;
-    background-position: auto;
+    background-position: 0 0;
     padding: 112px 117px 156px;
     display: flex;
     flex-direction: column;

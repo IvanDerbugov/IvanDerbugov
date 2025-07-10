@@ -28,8 +28,8 @@
 
     main > .conteiner1800:first-of-type {
         background: url(../img/manipulator/manipulatorFonMobile.jpg) no-repeat center center;
-        background-size: 743px 452px;
-        background-position: -230px 0;
+        background-size: 846px 514px;
+        background-position: -120px 0px;
         height: auto;
         padding: 20px 0;
     }
@@ -96,16 +96,8 @@
         display: none;
     }
 
-    main > .conteiner1800:first-of-type {
-        background: url(../img/manipulator/manipulatorFonMobile.jpg) no-repeat center center;
-        background-size: 846px 514px;
-        background-position: -260px 0px;
-        height: auto;
-        padding: 20px 0;
-    }
-
     .offer-15 {
-        top: 345px;
+        top: 272px;
         left: 178px;
         width: 150px;
     }
@@ -219,6 +211,14 @@
         padding: 15px 20px;
         width: 270px;
     }
+}
 
+@media (max-width: 500px) {
+    main > .conteiner1800:first-of-type {
+        background-position: -288px 0px;
+    }
 
+    .offer-15 {
+        top: 345px;
+    }
 }
