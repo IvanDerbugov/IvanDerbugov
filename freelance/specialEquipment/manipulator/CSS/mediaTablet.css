@@ -357,9 +357,9 @@
     .wrapImgCard {
         margin: 0;
         width: 272px;
-        height: 220px;
-        background-size: 272px 220px;
-        background-position: -20px 0;
+        height: 170px;
+        background-size: 272px 170px;
+        background-position: 10px 0;
     }
 
     .card-body {
