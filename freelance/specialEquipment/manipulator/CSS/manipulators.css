@@ -1,4 +1,4 @@
-.version {
+.versionDesktop, .versionTablet1400, .versionTablet1100, .versionMobile {
     width: 150px;
     height: 150px;
     position: fixed;
@@ -15,6 +15,10 @@
     justify-content: center;
     z-index: 10;
 } 
+.versionTablet1400, .versionTablet1100, .versionMobile {
+    display: none;
+}
+
 .nonono { 
     display: none;
 }
@@ -32,6 +36,11 @@
         z-index: 15;
     }
 }
+
+
+
+
+
 
 body {
     background-color: #eaeae8;
@@ -53,7 +62,7 @@ body {
 }
 
 main > .conteiner1800:first-of-type {
-    background: url(../img/manipulator/manipulatorFon.jpg);
+    background: url(../img/manipulator/manipulatorFon.jpg) no-repeat center center;
     background-size: auto;
     background-position: auto;
     padding: 112px 117px 156px;
@@ -269,11 +278,6 @@ main > .conteiner1800:first-of-type {
     justify-content: center;
     width: 67px;
     height: 67px;
-    border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
     padding: 0;
     outline: none;
 }
@@ -291,15 +295,11 @@ main > .conteiner1800:first-of-type {
     flex-direction: column;
     align-items: center;
     gap: 63px;
-    /* margin: 0 0 28px 0; */
-}
-
-.phone-btn:hover, .whatsapp-btn:hover {
-    background: #DF6417;
-    box-shadow: 0 4px 16px rgba(223,100,23,0.18);
-    transform: scale(1.08);
 }
 .phone-btn:hover .icon-svg, .whatsapp-btn:hover .icon-svg {
+    filter: brightness(0) invert(1);
+}
+.contact-btn.whatsapp-btn:hover .icon-svg {
     filter: brightness(0) invert(1);
 }
 
@@ -672,7 +672,7 @@ main > .conteiner1800:first-of-type {
 }
 
 .wrapAdvantagesGrid .text1::before {
-    left: -10px;
+    left: 5px;
     top: -26px;
 }
 .wrapAdvantagesGrid .text5::before {

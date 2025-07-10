@@ -38,6 +38,15 @@
     color: #fff;
 }
 
+.phoneNumberHeader {
+    margin-top: -5px;
+}
+
+.phoneNumberHeader .phone-icon-header {
+    width: 30px;
+    height: 30px;
+}
+
 .phoneNumber:hover {
     background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-1px);
@@ -517,6 +526,10 @@ header .bottom .container1240 {
 .menu-card a:hover {
     background: #23f47222;
     color: #23f472;
+}
+
+.link-hover {
+    font-weight: 600;
 }
 
 
