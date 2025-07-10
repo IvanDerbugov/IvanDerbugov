@@ -350,13 +350,14 @@ main > .conteiner1800:first-of-type {
     padding: 0;
 }
 
-.offer-10 {
+.offer-15 {
     position: absolute;
     top: 260px;
     left: 719px;
+    width: 300px;
 }
 
-.offer-10Mobile {
+.offer-15Mobile {
     display: none;
 }
 

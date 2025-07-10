@@ -5,12 +5,19 @@ footer {
 footer .container1240 {
     display: flex;
     justify-content: space-between;
-    padding: 40px 0 60px 0;
+    padding: 40px 0 120px 0;
 }
 
 footer a {
-    color: rgba(87, 86, 126, 1);
+    color: #023D19;
     font-size: 18px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.footer-mail, .privacyPolicy, .footer-center-text a{
+    text-decoration: none;
+    font-weight: 400;
 }
 
 footer a:hover {
@@ -35,13 +42,13 @@ footer a:hover {
 .wrapFoterlinks {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     max-width: 300px;
 }
 
 .footer-center-text {
     font-size: 13px;
-    max-width: 223px;
+    max-width: 242px;
     color: #263238;
 }
 
@@ -53,11 +60,16 @@ footer a:hover {
 .footer-left {
     position: relative;
     top: -26px;
+    gap: 10px;
 }
 
-.footer-left img {
+.footer-left img:not(.bankCardPng) {
     position: relative;
     right: 21px;
+}
+
+.footer-right {
+    gap: 10px;
 }
 
 .footer-right .mobileCard {
@@ -131,12 +143,28 @@ footer a:hover {
 .footer-contacts-row {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 10px;
     margin-bottom: 0;
+}
+
+.phone-icon {
+    width: 25px;
+    height: 25px;
 }
 
 .footer-avito-row {
     margin-top: 8px;
+}
+
+.bubble {
+    position: relative;
+    top: 3px;
+    left: -11px;
+}
+
+.avitoText {
+    position: relative;
+    left: -10px;
 }
 
 .privacyPolicy {
@@ -146,7 +174,7 @@ footer a:hover {
 
 @media (max-width: 1400px) {
     footer .container1240 {
-        padding: 30px 0 40px 0;
+        padding: 30px 0 100px 0;
     }
 
     footer .footer-left,
@@ -168,7 +196,7 @@ footer a:hover {
 
 @media (max-width: 1100px) {
     footer .container1240 {
-        padding: 30px 15px 52px 10px;
+        padding: 30px 15px 78px 10px;
         gap: 15px;
     }
 
@@ -179,14 +207,24 @@ footer a:hover {
     }
 
     .footer-contacts-row {
-        justify-content: center;
-        gap: 16px;
+        flex-wrap: wrap;
+        row-gap: 10px;
+        column-gap: 16px;
+        justify-content: flex-start; /* или center, если нужно по центру */
     }
-
-    .footer-avito-row {
+    .footer-contact.phone {
+        order: 1;
+        flex-basis: 0;
+    }
+    .footer-contact.whatsapp {
+        order: 2;
+        flex-basis: 0;
+    }
+    .footer-contact.avito {
+        order: 1;
+        flex-basis: 0;
         display: flex;
-        justify-content: flex-start;
-        margin-top: 10px;
+        align-items: center;
     }
 
     footer .footer-left,
@@ -262,6 +300,17 @@ footer a:hover {
     .footer-avito-row {
         justify-content: center;
         margin: 10px 0 0 0;
+    }
+
+    .avitoText, .bubble {
+        position: static;
+    }
+
+    .phone-icon {
+        width: 28px;
+        height: 28px;
+        margin-top: 0;
+        margin-right: -5px;
     }
 
     .desktopCard {
