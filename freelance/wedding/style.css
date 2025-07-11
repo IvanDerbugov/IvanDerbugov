@@ -214,20 +214,35 @@ header {
     font-size: 64px;
     font-weight: 700;
     color: #E7EC5A;
-    margin-top: auto;
+    margin: auto;
+    margin-bottom: 0;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
 }
 
 .tariff-old-price {
     font-family: 'Oswald', sans-serif;
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 400;
     color: #fff;
     opacity: 0.6;
-    text-decoration: line-through;
     margin-left: 16px;
     position: relative;
     top: 8px;
+}
+.tariff-old-price::after {
+    content: url(img/cross2.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.price-discount {
+    margin-top: -11px;
 }
 
 .tariff-desc-item.first {
@@ -317,4 +332,82 @@ header {
 
 .aboutMe-right {
     border-radius: 24px;
+}
+
+
+
+.chooseUs {
+    padding: 100px 0 15px;
+    background: linear-gradient(310deg, #FC9379 0%, #FE7082 50%, #FF8181 100%);
+}
+
+.chooseUs h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 96px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 104px;
+    text-align: left;
+}
+
+.chooseUs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.chooseUs-card {
+    background: #83000080;
+    border-radius: 48px;
+    padding: 64px 44px 56px 56px;
+    display: flex;
+    flex-direction: column;
+    min-height: 598px; 
+    position: relative;
+}
+
+.chooseUs-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 32px;
+}
+
+.chooseUs-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.chooseUs-accent {
+    font-weight: 400;
+    color: #fff;
+}
+
+.chooseUs-desc2 {
+    font-size: 24px;
+    font-weight: 300;
+    color: #fff;
+    display: block;
+    margin-top: 12px;
+}
+
+.chooseUs-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 64px;
+    font-weight: 500;
+    color: #E7EC5A;
+    position: absolute;
+    left: 220px;
+    bottom: -172px;
+    letter-spacing: 0;
+}
+
+.chooseUs-num-last {
+    bottom: -111px;
 }
