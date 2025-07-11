@@ -108,3 +108,140 @@ header {
     display: flex;
     gap: 48px;
 }
+
+
+
+.examplesWorks {
+    padding: 100px 0 183px;
+}
+
+.examplesWorks h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 96px;
+    font-weight: 700;
+    color: #FF9898;
+    margin-bottom: 140px;
+}
+
+.works {
+    display: flex;
+    gap: 24px;
+}
+
+.works img {
+    border-radius: 48px;
+}
+
+.works-dots {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.works-dots .dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #D9D9D9;
+    display: inline-block;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.works-dots .dot.active {
+    background: #FF7482;
+    transform: scale(1.15);
+}
+
+
+.tariffs {
+    background: linear-gradient(310deg, #FC9379 0%, #FE7082 50%, #FF8181 100%);
+    padding: 100px 0 80px;
+}
+
+.tariffs h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 96px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 140px;
+}
+
+.tariffsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.tariff {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #83000080;
+    border-radius: 48px;
+    padding: 64px 48px 48px 48px;
+    min-height: 742px;
+    min-width: 0;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.05);
+}
+
+.tariff-active {
+    background: #CC0101CC;
+}
+
+.tariff-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 64px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 32px;
+}
+
+.tariff-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 64px;
+    line-height: 1.2;
+}
+
+.tariff-price {
+    font-family: 'Oswald', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: #E7EC5A;
+    margin-top: auto;
+    position: relative;
+}
+
+.tariff-old-price {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #fff;
+    opacity: 0.6;
+    text-decoration: line-through;
+    margin-left: 16px;
+    position: relative;
+    top: 8px;
+}
+
+.tariff-desc-item.first {
+    margin-top: 64px;
+}
+
+.tariff-desc-item.second {
+    margin-top: 56px;
+}
+
+.tariff-desc-item.third {
+    margin-top: 56px;
+}
+
+/* Убираем верхний отступ у первого элемента, если он первый в списке */
+.tariff-desc-item:first-child {
+    margin-top: 64px;
+}
