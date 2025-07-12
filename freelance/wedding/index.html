@@ -22,11 +22,15 @@
         <div class="modal-backdrop"></div>
         <div class="modal-content">
             <button class="modal-close" aria-label="Закрыть">×</button>
-            <form class="modal-form" action="">
-                <input type="text" placeholder="Имя">
-                <input type="text" placeholder="Телефон">
+            <form class="modal-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="fa085b50-4fa0-47ca-8a8a-61efd80f6a46">
+                <input type="text" name="name" placeholder="Имя" required>
+                <input type="text" name="phone" placeholder="Телефон" required>
+                <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
                 <button type="submit">Оставить заявку</button>
             </form>
+            <div class="modal-spinner" style="display:none;"><div class="spinner"></div></div>
+            <div class="modal-success" style="display:none;">Ваша заявка принята, вскоре мы с вами свяжемся!</div>
         </div>
     </div>
     <header>
@@ -307,9 +311,11 @@
                 </h2>
             </div>
 
-            <form action="">
-                <input type="text" placeholder="Имя">
-                <input type="text" placeholder="Телефон">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="fa085b50-4fa0-47ca-8a8a-61efd80f6a46">
+                <input type="text" name="name" placeholder="Имя" required>
+                <input type="text" name="phone" placeholder="Телефон" required>
+                <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
                 <div>
                     <button type="submit">Оставить заявку</button>
                     <a href="https://t.me/@RonniMaks">

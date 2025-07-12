@@ -758,3 +758,41 @@ footer {
     height: 48px;
 }
 
+.modal-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+    width: 100%;
+}
+.spinner {
+    width: 64px;
+    height: 64px;
+    border: 7px solid #fff;
+    border-top: 7px solid #F90F4A;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.modal-success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+    width: 100%;
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #fff;
+    background: none;
+    text-align: center;
+    animation: fadeIn 0.4s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+

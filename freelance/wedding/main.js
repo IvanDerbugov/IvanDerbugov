@@ -88,10 +88,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalClose = modal.querySelector('.modal-close');
     const modalBackdrop = modal.querySelector('.modal-backdrop');
     const openModalBtn = document.querySelector('header .bottom-header button');
+    const modalForm = modal.querySelector('.modal-form');
+    const modalSpinner = modal.querySelector('.modal-spinner');
+    const modalSuccess = modal.querySelector('.modal-success');
 
     function openModal() {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        // Сброс состояния
+        modalForm.style.display = '';
+        modalSpinner.style.display = 'none';
+        modalSuccess.style.display = 'none';
+        modalForm.reset();
     }
     function closeModal() {
         modal.classList.remove('active');
@@ -103,6 +111,30 @@ document.addEventListener('DOMContentLoaded', function() {
     modalBackdrop.addEventListener('click', closeModal);
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeModal();
+    });
+
+    // --- AJAX отправка формы в модалке ---
+    modalForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        modalForm.style.display = 'none';
+        modalSpinner.style.display = 'flex';
+        modalSuccess.style.display = 'none';
+
+        const formData = new FormData(modalForm);
+        fetch(modalForm.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => res.ok ? res.json() : Promise.reject(res))
+        .then(() => {
+            modalSpinner.style.display = 'none';
+            modalSuccess.style.display = 'flex';
+        })
+        .catch(() => {
+            modalSpinner.style.display = 'none';
+            modalSuccess.style.display = 'flex';
+            modalSuccess.textContent = 'Произошла ошибка. Попробуйте ещё раз.';
+        });
     });
 
     // Автозапуск первого видео в .works
