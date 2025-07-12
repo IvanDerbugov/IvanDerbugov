@@ -11,6 +11,23 @@
 </head>
 
 <body>
+    <div class="nonono">
+        <div class="nonono-container">
+            ЭТО ПЛАНШЕТНАЯ И МОБИЛЬНАЯ ВЕРСИЯ, ОНИ ЕЩЁ НЕ ГОТОВЫ, УМЕНЬШИТЕ МАСШТАБ ДЛЯ ПРОСМОТРА КОМПЬЮТЕРНОЙ ВЕРСИИ
+        </div>
+    </div>
+    <!-- Модальное окно -->
+    <div class="modal" id="modalRequest">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Закрыть">×</button>
+            <form class="modal-form" action="">
+                <input type="text" placeholder="Имя">
+                <input type="text" placeholder="Телефон">
+                <button type="submit">Оставить заявку</button>
+            </form>
+        </div>
+    </div>
     <header>
         <div class="header-container container">
             <div class="top-header">
@@ -72,16 +89,16 @@
             </h2>
 
             <div class="works">
-                <img src="img/work1.jpg" alt="work1">
-                <img src="img/work2.jpg" alt="work2">
-                <img src="img/work3.jpg" alt="work3">
+                <video src="img/work1_524n.mp4" poster="img/work1.jpg" controls preload="none" muted></video>
+                <video src="img/work2_524n.mp4" poster="img/work2.jpg" controls preload="none"></video>
+                <video src="img/work3_524n.mp4" poster="img/work3.jpg" controls preload="none"></video>
             </div>
-            <div class="works-dots">
+            <!-- <div class="works-dots">
                 <span class="dot active"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
-            </div>
+            </div> -->
         </div>
 
         <div class="tariffs">
@@ -107,7 +124,8 @@
                             <div class="tariff-desc-item second">Свадебный фильм (хронометраж ~1 час)</div>
                             <div class="tariff-desc-item third">2 Reels-клипа (вертикальные клипы для соцсетей)</div>
                         </div>
-                        <div class="tariff-price price-discount">95 000₽ <span class="tariff-old-price">150 000₽</span></div>
+                        <div class="tariff-price price-discount">95 000₽ <span class="tariff-old-price">150 000₽</span>
+                        </div>
                     </div>
                     <div class="tariff">
                         <div class="tariff-title">VIP</div>
@@ -126,17 +144,18 @@
 
         <div class="aboutMe">
             <div class="container">
-                <div class="light1"></div> <div class="light2"></div>
+                <div class="light1"></div>
+                <div class="light2"></div>
 
                 <div class="aboutMe-left">
                     <h2>
                         ОБО МНЕ
                     </h2>
-    
+
                     <h3>
                         Привет, меня зовут Ронни Макс.
                     </h3>
-    
+
                     <p>
                         Основатель продакшна «The Hype Universe»
                     </p>
@@ -163,48 +182,204 @@
                 </h2>
                 <div class="chooseUs-grid">
                     <div class="chooseUs-card">
-                        <div class="chooseUs-title">Профессиональная техника</div>
-                        <div class="chooseUs-desc">
-                            В нашем арсенале <span class="chooseUs-accent">Sony FX-30 / FX-3 / FX-6, Cinema Line</span><br>
-                            <span class="chooseUs-desc2">Главное движение, глубина кадра, объёмный звук и премиальная картинка</span>
-                            <div class="chooseUs-num">01</div>
+                        <div class="wrapInfo">
+                            <div class="chooseUs-title">Профессиональная техника</div>
+                            <div class="chooseUs-desc">
+                                В нашем арсенале <span class="chooseUs-accent">Sony FX-30 / FX-3 / FX-6, Cinema
+                                    Line</span><br>
+                                <span class="chooseUs-desc2">Главное движение, глубина кадра, объёмный звук и
+                                    премиальная картинка</span>
+                            </div>
                         </div>
-                        
+                        <div class="chooseUs-num">01</div>
                     </div>
                     <div class="chooseUs-card">
-                        <div class="chooseUs-title">Максимальный комфорт</div>
-                        <div class="chooseUs-desc">
-                            Мы подскажем, <span class="chooseUs-accent">как встать, что делать, когда улыбнуться</span> — чтобы выглядело красиво, но ощущалось естественно.<br>
-                            Создаём <span class="chooseUs-accent">расслабленную атмосферу.</span>
-                            <div class="chooseUs-num">02</div>
+                        <div class="wrapInfo">
+                            <div class="chooseUs-title">Максимальный комфорт</div>
+                            <div class="chooseUs-desc">
+                                Мы подскажем, <span class="chooseUs-accent">как встать, что делать, когда
+                                    улыбнуться</span> — чтобы выглядело красиво, но ощущалось естественно.<br>
+                                Создаём <span class="chooseUs-accent">расслабленную атмосферу.</span>
+                            </div>
                         </div>
-                        
+                        <div class="chooseUs-num">02</div>
                     </div>
                     <div class="chooseUs-card">
-                        <div class="chooseUs-title">Мы снимаем уже более 7 лет</div>
-                        <div class="chooseUs-desc">
-                            Снято более <span class="chooseUs-accent">200</span> свадеб, <span class="chooseUs-accent">98%</span> довольных отзывов.<br>
-                            Опыт, который позволяет предусмотреть всё: от света и тайминга — до настроения жениха и невесты.
-                            <div class="chooseUs-num">03</div>
+                        <div class="wrapInfo">
+                            <div class="chooseUs-title">Мы снимаем уже более 7 лет</div>
+                            <div class="chooseUs-desc">
+                                Снято более <span class="chooseUs-accent">200</span> свадеб, <span
+                                    class="chooseUs-accent">98%</span> довольных отзывов.<br>
+                                Опыт, который позволяет предусмотреть всё: от света и тайминга — до настроения жениха и
+                                невесты.
+                            </div>
                         </div>
-                        
+                        <div class="chooseUs-num">03</div>
                     </div>
                     <div class="chooseUs-card">
-                        <div class="chooseUs-title">Прозрачные условия</div>
-                        <div class="chooseUs-desc">
-                            Мы не любим скрытых доплат и путаницы. <span class="chooseUs-accent">Честные цены, прозрачный договор, гибкие условия.</span><br>
-                            Подарки, скидки при раннем бронировании и дополнительные материалы по желанию.
-                            <div class="chooseUs-num chooseUs-num-last">04</div>
+                        <div class="wrapInfo">
+                            <div class="chooseUs-title">Прозрачные условия</div>
+                            <div class="chooseUs-desc">
+                                Мы не любим скрытых доплат и путаницы. <span class="chooseUs-accent">Честные цены,
+                                    прозрачный договор, гибкие условия.</span><br>
+                                Подарки, скидки при раннем бронировании и дополнительные материалы по желанию.
+                            </div>
                         </div>
-                        
+                        <div class="chooseUs-num">04</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="reviews">
+        <div class="reviews container">
+            <h2>
+                ОТЗЫВЫ
+            </h2>
+            <div class="reviews-flex">
+                <div class="reviews-card">
+                    <div class="wrapTextReviews">
+                        <p>
+                            Съёмка с Максимом была настолько лёгкой, что мы даже забывали, что нас снимают. Он создавал
+                            спокойную атмосферу, и это видно
+                            в кадрах - живые эмоции, искренние улыбки. Очень рады, что выбрали именно его.
+                        </p>
+                        <p>
+                            Анастасия
+                        </p>
+                    </div>
+                </div>
+                <div class="reviews-card">
+                    <div class="wrapTextReviews">
+                        <p>
+                            Максим - настоящий профессионал. Мы переживали, что будем скованы на камеру, но он всё взял
+                            в свои руки. Подсказывал, где встать, как повернуться. В итоге - съёмка прошла на одном
+                            дыхании, а видео превзошло все ожидания. Спасибо огромное!
+                        </p>
+                        <p>
+                            Мария
+                        </p>
+                    </div>
+                </div>
+                <div class="reviews-card">
+                    <div class="wrapTextReviews">
+                        <p>
+                            Видео получилось как трейлер к нашему фильму - стильно, красиво и эмоционально. Работа
+                            отдана точно в срок, без единой правки. Максим чувствует настроение пары и делает
+                            по-настоящему уникальный продукт.
+                        </p>
+                        <p>
+                            Дмитрий
+                        </p>
+                    </div>
+                </div>
+                <div class="reviews-card">
+                    <div class="wrapTextReviews">
+                        <p>
+                            Мы остались в восторге! Максим не просто оператор - он художник. Всё чётко, уверенно и с
+                            уважением к нам и к моменту. Родные пересматривают видео по несколько раз, всем нравится.
+                            Рекомендуем от всей души!
+                        </p>
+                        <p>
+                            Никита
+                        </p>
+                    </div>
+                </div>
+                <div class="reviews-card">
+                    <div class="wrapTextReviews">
+                        <p>
+                            С Максимом легко и безопасно. Он сразу создал ощущение, будто мы уже знакомы. Никакой
+                            скованности, только кайф и наслаждение от процесса. Видео - просто волшебство. Спасибо!
+                        </p>
+                        <p>
+                            София
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews-dots"></div>
+        </div>
+
+        <div class="leaveRequest">
+            <div class="container">
+                <h2>
+                    ОСТАВИТЬ ЗАЯВКУ
+                </h2>
+            </div>
+
+            <form action="">
+                <input type="text" placeholder="Имя">
+                <input type="text" placeholder="Телефон">
+                <div>
+                    <button type="submit">Оставить заявку</button>
+                    <a href="https://t.me/@RonniMaks">
+                        <svg class="telegram" width="48" height="48" viewBox="0 0 48 48" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M24 0C10.752 0 0 10.752 0 24C0 37.248 10.752 48 24 48C37.248 48 48 37.248 48 24C48 10.752 37.248 0 24 0ZM35.136 16.32C34.776 20.112 33.216 29.328 32.424 33.576C32.088 35.376 31.416 35.976 30.792 36.048C29.4 36.168 28.344 35.136 27 34.248C24.888 32.856 23.688 31.992 21.648 30.648C19.272 29.088 20.808 28.224 22.176 26.832C22.536 26.472 28.68 20.88 28.8 20.376C28.8167 20.2997 28.8145 20.2204 28.7935 20.1451C28.7726 20.0698 28.7337 20.0008 28.68 19.944C28.536 19.824 28.344 19.872 28.176 19.896C27.96 19.944 24.6 22.176 18.048 26.592C17.088 27.24 16.224 27.576 15.456 27.552C14.592 27.528 12.96 27.072 11.736 26.664C10.224 26.184 9.048 25.92 9.144 25.08C9.192 24.648 9.792 24.216 10.92 23.76C17.928 20.712 22.584 18.696 24.912 17.736C31.584 14.952 32.952 14.472 33.864 14.472C34.056 14.472 34.512 14.52 34.8 14.76C35.04 14.952 35.112 15.216 35.136 15.408C35.112 15.552 35.16 15.984 35.136 16.32Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/79961260245">
+                        <svg class="WhatsApp" width="48" height="53" viewBox="0 0 48 53" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M24 0C10.7448 0 0 10.7448 0 24C0 28.536 1.26 32.784 3.4512 36.4032L1.3104 43.68C1.18748 44.0978 1.1794 44.541 1.28699 44.963C1.39458 45.385 1.61387 45.7702 1.92182 46.0782C2.22977 46.3861 2.615 46.6054 3.037 46.713C3.459 46.8206 3.9022 46.8125 4.32 46.6896L11.5968 44.5488C15.3378 46.8119 19.6278 48.0056 24 48C37.2552 48 48 37.2552 48 24C48 10.7448 37.2552 0 24 0ZM18.5712 29.4312C23.4264 34.284 28.0608 34.9248 29.6976 34.9848C32.1864 35.076 34.6104 33.1752 35.5536 30.9696C35.6717 30.695 35.7143 30.3939 35.6772 30.0973C35.6401 29.8007 35.5245 29.5194 35.3424 29.2824C34.0272 27.6024 32.2488 26.3952 30.5112 25.1952C30.1486 24.9438 29.7026 24.8428 29.2671 24.9135C28.8315 24.9842 28.4404 25.2211 28.176 25.5744L26.736 27.7704C26.6599 27.888 26.5419 27.9723 26.406 28.0062C26.2701 28.04 26.1264 28.021 26.004 27.9528C25.0272 27.3936 23.604 26.4432 22.5816 25.4208C21.5592 24.3984 20.6664 23.04 20.1648 22.1256C20.1041 22.0091 20.087 21.8748 20.1164 21.7468C20.1459 21.6187 20.2201 21.5054 20.3256 21.4272L22.5432 19.7808C22.8606 19.5062 23.0655 19.1242 23.1186 18.7079C23.1718 18.2916 23.0694 17.8703 22.8312 17.5248C21.756 15.9504 20.5032 13.9488 18.6864 12.6216C18.4514 12.4528 18.1768 12.3475 17.8892 12.316C17.6016 12.2844 17.3108 12.3277 17.0448 12.4416C14.8368 13.3872 12.9264 15.8112 13.0176 18.3048C13.0776 19.9416 13.7184 24.576 18.5712 29.4312Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                </div>
+            </form>
         </div>
     </main>
+
+    <footer class="container">
+        <div class="footer-title">
+            <span class="footer-main">The Hype</span>
+            <span class="footer-sub">Universe</span>
+        </div>
+        <div class="footer-contacts">
+            <p>
+                Контакты
+            </p>
+            <a href="tel:+79961260245">
+                +7 (996) 126-02-45
+            </a>
+            <a href="mailto:Ronnimaks@yandex.ru">
+                Ronnimaks@yandex.ru
+            </a>
+            <div class="footer-social">
+                <a href="tel:+79961260245" aria-label="WhatsApp">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M24 0C10.7448 0 0 10.7448 0 24C0 28.536 1.26 32.784 3.4512 36.4032L1.3104 43.68C1.18748 44.0978 1.1794 44.541 1.28699 44.963C1.39458 45.385 1.61387 45.7702 1.92182 46.0782C2.22977 46.3861 2.615 46.6054 3.037 46.713C3.459 46.8206 3.9022 46.8125 4.32 46.6896L11.5968 44.5488C15.3378 46.8119 19.6278 48.0056 24 48C37.2552 48 48 37.2552 48 24C48 10.7448 37.2552 0 24 0ZM18.5712 29.4312C23.4264 34.284 28.0608 34.9248 29.6976 34.9848C32.1864 35.076 34.6104 33.1752 35.5536 30.9696C35.6717 30.695 35.7143 30.3939 35.6772 30.0973C35.6401 29.8007 35.5245 29.5194 35.3424 29.2824C34.0272 27.6024 32.2488 26.3952 30.5112 25.1952C30.1486 24.9438 29.7026 24.8428 29.2671 24.9135C28.8315 24.9842 28.4404 25.2211 28.176 25.5744L26.736 27.7704C26.6599 27.888 26.5419 27.9723 26.406 28.0062C26.2701 28.04 26.1264 28.021 26.004 27.9528C25.0272 27.3936 23.604 26.4432 22.5816 25.4208C21.5592 24.3984 20.6664 23.04 20.1648 22.1256C20.1041 22.0091 20.087 21.8748 20.1164 21.7468C20.1459 21.6187 20.2201 21.5054 20.3256 21.4272L22.5432 19.7808C22.8606 19.5062 23.0655 19.1242 23.1186 18.7079C23.1718 18.2916 23.0694 17.8703 22.8312 17.5248C21.756 15.9504 20.5032 13.9488 18.6864 12.6216C18.4514 12.4528 18.1768 12.3475 17.8892 12.316C17.6016 12.2844 17.3108 12.3277 17.0448 12.4416C14.8368 13.3872 12.9264 15.8112 13.0176 18.3048C13.0776 19.9416 13.7184 24.576 18.5712 29.4312Z"
+                            fill="url(#paint0_linear_75_295)" />
+                        <defs>
+                            <linearGradient id="paint0_linear_75_295" x1="0" y1="24" x2="48" y2="24"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FF8181" />
+                                <stop offset="0.552885" stop-color="#FF7682" />
+                                <stop offset="1" stop-color="#FC9379" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </a>
+                <a href="https://t.me/@RonniMaks" aria-label="Telegram">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M24 0C10.752 0 0 10.752 0 24C0 37.248 10.752 48 24 48C37.248 48 48 37.248 48 24C48 10.752 37.248 0 24 0ZM35.136 16.32C34.776 20.112 33.216 29.328 32.424 33.576C32.088 35.376 31.416 35.976 30.792 36.048C29.4 36.168 28.344 35.136 27 34.248C24.888 32.856 23.688 31.992 21.648 30.648C19.272 29.088 20.808 28.224 22.176 26.832C22.536 26.472 28.68 20.88 28.8 20.376C28.8167 20.2997 28.8145 20.2204 28.7935 20.1451C28.7726 20.0698 28.7337 20.0008 28.68 19.944C28.536 19.824 28.344 19.872 28.176 19.896C27.96 19.944 24.6 22.176 18.048 26.592C17.088 27.24 16.224 27.576 15.456 27.552C14.592 27.528 12.96 27.072 11.736 26.664C10.224 26.184 9.048 25.92 9.144 25.08C9.192 24.648 9.792 24.216 10.92 23.76C17.928 20.712 22.584 18.696 24.912 17.736C31.584 14.952 32.952 14.472 33.864 14.472C34.056 14.472 34.512 14.52 34.8 14.76C35.04 14.952 35.112 15.216 35.136 15.408C35.112 15.552 35.16 15.984 35.136 16.32Z"
+                            fill="url(#paint0_linear_75_294)" />
+                        <defs>
+                            <linearGradient id="paint0_linear_75_294" x1="0" y1="24" x2="48" y2="24"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FF8181" />
+                                <stop offset="0.552885" stop-color="#FF7682" />
+                                <stop offset="1" stop-color="#FC9379" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+    </footer>
 
     <script src="main.js"></script>
 </body>

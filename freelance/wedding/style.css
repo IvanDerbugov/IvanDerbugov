@@ -1,3 +1,21 @@
+.nonono {
+    display: none;
+}
+@media (max-width: 1600px) {
+    .nonono {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        color: #fff;
+        font-size: 120px;
+        z-index: 10;
+    }
+}
+
 .container {
     max-width: 1600px;
     margin: 0 auto;
@@ -112,7 +130,7 @@ header {
 
 
 .examplesWorks {
-    padding: 100px 0 183px;
+    padding: 100px 0;
 }
 
 .examplesWorks h2 {
@@ -128,8 +146,14 @@ header {
     gap: 24px;
 }
 
-.works img {
+.works video {
     border-radius: 48px;
+    /* width: 100%;
+    max-width: 524px; */
+    width: 524px;
+    height: 218px;
+    display: block;
+    background: #000;
 }
 
 .works-dots {
@@ -359,11 +383,16 @@ header {
 .chooseUs-card {
     background: #83000080;
     border-radius: 48px;
-    padding: 64px 44px 56px 56px;
+    padding: 64px 44px 56px 56px; 
+    min-height: 598px;
     display: flex;
     flex-direction: column;
-    min-height: 598px; 
+    justify-content: space-between;
     position: relative;
+}
+.wrapInfo {
+    display: flex;
+    flex-direction: column;
 }
 
 .chooseUs-title {
@@ -402,12 +431,330 @@ header {
     font-size: 64px;
     font-weight: 500;
     color: #E7EC5A;
-    position: absolute;
-    left: 220px;
-    bottom: -172px;
     letter-spacing: 0;
+    text-align: right;
 }
 
-.chooseUs-num-last {
-    bottom: -111px;
+.reviews {
+    padding: 100px 0 171px;
+    overflow: hidden;
 }
+
+.reviews h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 96px;
+    font-weight: 700;
+    color: #FF9898;
+    margin-bottom: 135px;
+    text-align: left;
+}
+
+.reviews-flex {
+    display: flex;
+    gap: 24px;
+    max-width: 100%;
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.reviews-card {
+    background: #62626299;
+    border-radius: 48px;
+    padding: 80px 64px;
+    flex: 0 0 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s;
+    max-width: 790px;
+}
+
+
+.wrapTextReviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 540px;
+    max-width: 796px;
+}
+
+.wrapTextReviews p:nth-of-type(1) {
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.wrapTextReviews p:nth-of-type(2) {
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.reviews-dots {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.reviews-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #D9D9D9;
+    display: inline-block;
+    transition: background 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+.reviews-dot.active {
+    background: #FF7482;
+    transform: scale(1.15);
+}
+
+
+.leaveRequest {
+    padding: 100px 0 276px;
+    background: linear-gradient(310deg, #FC9379 0%, #FE7082 50%, #FF8181 100%);
+}
+
+.leaveRequest h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 96px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 240px;
+}
+
+.leaveRequest form {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+}
+
+.leaveRequest form input {
+    width: auto;
+    min-width: 796px;
+    height: 89px;
+    background: #8300004D;
+    border-radius: 16px;
+    padding: 0 48px;
+    color: #FFFFFF;
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    border: none;
+    outline: none;
+}
+
+.leaveRequest form input::placeholder {
+    color: #FFFFFF80;
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+}
+
+.leaveRequest form div {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 56px;
+}
+
+.leaveRequest form button {
+    padding: 0px 137px;
+    border-radius: 24px;
+    background: #F90F4A;
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    text-align: center;
+    height: 80px;
+}
+
+.leaveRequest form a {
+}
+
+.leaveRequest form a svg {
+    width: 80px;
+    height: 80px;
+}
+
+.leaveRequest .WhatsApp {
+    height: 87px;
+}
+
+
+footer {
+    padding: 178px 0 153px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-title {
+    text-align: center;
+}
+.footer-main {
+    display: block;
+    font-family: 'Russo One', sans-serif;
+    font-size: 180px;
+    font-weight: 400;
+    background: linear-gradient(310deg, #FC9379 0%, #FE7082 50%, #FF8181 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+}
+.footer-sub {
+    display: block;
+    font-family: 'Russo One', sans-serif;
+    font-size: 96px;
+    letter-spacing: 0.24em;
+    background: linear-gradient(310deg, #FC9379 0%, #FE7082 50%, #FF8181 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-top: -8px; /* уменьшает расстояние между строками */
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.footer-contacts p {
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #000;
+    background: linear-gradient(310deg, #FC9379 0%, #FE7082 50%, #FF8181 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer-contacts > a {
+    font-family: 'Jost', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #000;
+}
+
+.footer-social {
+    display: flex;
+    gap: 24px;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.modal.active {
+    display: flex;
+}
+.modal-backdrop {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+}
+.modal-content {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(310deg, #FC9379 0%, #FE7082 50%, #FF8181 100%);
+    border-radius: 32px;
+    padding: 64px 48px 48px 48px;
+    min-width: 540px;
+    box-shadow: 0 8px 48px 0 rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: modalIn 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes modalIn {
+    from { transform: translateY(40px) scale(0.98); opacity: 0; }
+    to { transform: none; opacity: 1; }
+}
+.modal-close {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    background: none;
+    border: none;
+    font-size: 48px;
+    color: #F90F4A;
+    cursor: pointer;
+    z-index: 3;
+    line-height: 1;
+}
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+}
+.modal-form input {
+    width: 400px;
+    height: 64px;
+    background: #8300004D;
+    border-radius: 16px;
+    padding: 0 32px;
+    color: #FFFFFF;
+    font-family: 'Jost', sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    border: none;
+    outline: none;
+}
+.modal-form input::placeholder {
+    color: #FFFFFF80;
+    font-family: 'Jost', sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+}
+.modal-form div {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+.modal-form button {
+    padding: 0px 64px;
+    border-radius: 24px;
+    background: #F90F4A;
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    height: 64px;
+}
+.modal-form a svg {
+    width: 48px;
+    height: 48px;
+}
+
