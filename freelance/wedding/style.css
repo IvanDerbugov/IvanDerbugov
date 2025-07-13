@@ -1,6 +1,7 @@
 .nonono {
     display: none;
 }
+
 @media (max-width: 1600px) {
     .nonono {
         display: block;
@@ -27,6 +28,10 @@
     border-radius: 50%;
     font-size: 120px;
     z-index: 10;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -105,6 +110,7 @@ header {
     position: relative;
     left: -32px;
 }
+
 .center-header-right .full-price::before {
     content: url(img/cross.png);
     position: absolute;
@@ -162,10 +168,12 @@ header {
     display: flex;
     gap: 24px;
 }
+
 .video-wrapper {
     position: relative;
     display: inline-block;
 }
+
 .unmute-btn {
     position: absolute;
     right: 7px;
@@ -183,18 +191,29 @@ header {
     justify-content: center;
     animation: pulse 1.2s infinite;
     transition: opacity 0.3s;
-    box-shadow: 0 0 0 0 rgba(249,15,74,0.5);
+    box-shadow: 0 0 0 0 rgba(249, 15, 74, 0.5);
     padding: 0;
 }
+
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(249,15,74,0.5); }
-    70% { box-shadow: 0 0 0 16px rgba(249,15,74,0); }
-    100% { box-shadow: 0 0 0 0 rgba(249,15,74,0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(249, 15, 74, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 16px rgba(249, 15, 74, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(249, 15, 74, 0);
+    }
 }
+
 .unmute-btn.hidden {
     opacity: 0;
     pointer-events: none;
 }
+
 .works video {
     border-radius: 48px;
     width: 524px;
@@ -255,7 +274,7 @@ header {
     min-width: 0;
     box-sizing: border-box;
     position: relative;
-    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.05);
+    box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.05);
     cursor: pointer;
 }
 
@@ -304,6 +323,7 @@ header {
     position: relative;
     top: 8px;
 }
+
 .tariff-old-price::after {
     content: url(img/cross2.png);
     position: absolute;
@@ -312,6 +332,7 @@ header {
     width: 100%;
     height: 100%;
 }
+
 .price-discount {
     margin-top: -11px;
 }
@@ -338,25 +359,31 @@ header {
     padding: 100px 0 80px;
 }
 
-.light1, .light2 {
+.light1,
+.light2 {
     position: absolute;
     left: -34px;
     width: 102px;
     height: 102px;
     border-radius: 50%;
     background: linear-gradient(310deg, #FC9379 0%, #FE7082 50%, #FF8181 100%);
-    opacity: 0.5; /* полупрозрачность */
-    filter: blur(60px); /* сильное размытие */
+    opacity: 0.5;
+    /* полупрозрачность */
+    filter: blur(60px);
+    /* сильное размытие */
     z-index: 0;
     pointer-events: none;
 }
+
 .light1 {
     top: 570px;
 }
+
 .light2 {
     top: 780px;
 }
-.aboutMe > .container {
+
+.aboutMe>.container {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -430,13 +457,14 @@ header {
 .chooseUs-card {
     background: #83000080;
     border-radius: 48px;
-    padding: 64px 44px 56px 56px; 
+    padding: 64px 44px 56px 56px;
     min-height: 598px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
 }
+
 .wrapInfo {
     display: flex;
     flex-direction: column;
@@ -625,8 +653,7 @@ header {
     height: 80px;
 }
 
-.leaveRequest form a {
-}
+.leaveRequest form a {}
 
 .leaveRequest form a svg {
     width: 80px;
@@ -648,6 +675,7 @@ footer {
 .footer-title {
     text-align: center;
 }
+
 .footer-main {
     display: block;
     font-family: 'Russo One', sans-serif;
@@ -660,6 +688,7 @@ footer {
     color: transparent;
     line-height: 1;
 }
+
 .footer-sub {
     display: block;
     font-family: 'Russo One', sans-serif;
@@ -670,7 +699,8 @@ footer {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-    margin-top: -8px; /* уменьшает расстояние между строками */
+    margin-top: -8px;
+    /* уменьшает расстояние между строками */
 }
 
 .footer-contacts {
@@ -691,7 +721,7 @@ footer {
     color: transparent;
 }
 
-.footer-contacts > a {
+.footer-contacts>a {
     font-family: 'Jost', sans-serif;
     font-size: 24px;
     font-weight: 300;
@@ -715,17 +745,23 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
 .modal.active {
     display: flex;
 }
+
 .modal-backdrop {
     position: absolute;
-    left: 0; top: 0; right: 0; bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0, 0, 0, 0.45);
     z-index: 1;
 }
+
 .modal-content {
     position: relative;
     z-index: 2;
@@ -733,16 +769,25 @@ footer {
     border-radius: 32px;
     padding: 64px 48px 48px 48px;
     min-width: 540px;
-    box-shadow: 0 8px 48px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 8px 48px 0 rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: modalIn 0.25s cubic-bezier(0.4,0,0.2,1);
+    animation: modalIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 @keyframes modalIn {
-    from { transform: translateY(40px) scale(0.98); opacity: 0; }
-    to { transform: none; opacity: 1; }
+    from {
+        transform: translateY(40px) scale(0.98);
+        opacity: 0;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
 }
+
 .modal-close {
     position: absolute;
     top: 24px;
@@ -755,12 +800,14 @@ footer {
     z-index: 3;
     line-height: 1;
 }
+
 .modal-form {
     display: flex;
     flex-direction: column;
     gap: 32px;
     align-items: center;
 }
+
 .modal-form input {
     width: 400px;
     height: 64px;
@@ -774,12 +821,14 @@ footer {
     border: none;
     outline: none;
 }
+
 .modal-form input::placeholder {
     color: #FFFFFF80;
     font-family: 'Jost', sans-serif;
     font-size: 28px;
     font-weight: 300;
 }
+
 .modal-form div {
     margin-top: 16px;
     display: flex;
@@ -787,6 +836,7 @@ footer {
     align-items: center;
     gap: 32px;
 }
+
 .modal-form button {
     padding: 0px 64px;
     border-radius: 24px;
@@ -800,6 +850,7 @@ footer {
     text-align: center;
     height: 64px;
 }
+
 .modal-form a svg {
     width: 48px;
     height: 48px;
@@ -812,6 +863,7 @@ footer {
     min-height: 120px;
     width: 100%;
 }
+
 .spinner {
     width: 64px;
     height: 64px;
@@ -820,10 +872,17 @@ footer {
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
+
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
+
 .modal-success {
     display: flex;
     justify-content: center;
@@ -838,8 +897,13 @@ footer {
     text-align: center;
     animation: fadeIn 0.4s;
 }
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
