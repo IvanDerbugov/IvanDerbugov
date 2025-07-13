@@ -373,6 +373,7 @@ header {
     justify-content: center;
     gap: 16px;
     margin-top: 32px;
+    height: 35px;
 }
 
 .works-dots .dot {
