@@ -1,0 +1,59 @@
+@media (max-width: 1570px) {
+    .center-header h1 {
+        font-size: 152px;
+        max-width: 786px;
+    }
+
+    .center-header-right {
+        gap: 50px;
+    }
+
+    .center-header-right img {
+        margin-top: 25px;
+        width: 420px;
+    }
+
+    .center-header-right .full-price {
+        font-size: 142px;
+        position: relative;
+        left: -32px;
+    }
+
+    .center-header-right .full-price::before {
+        position: absolute;
+        top: 11px;
+        left: 34px;
+        width: 310px;
+        height: auto;
+    }
+
+    .center-header-right .discount-price {
+        font-size: 148px;
+    }
+
+    .examplesWorks h2 {
+        font-size: 80px;
+    }
+
+    .tariffs h2 {
+        font-size: 80px;
+    }
+
+    .tariff-title {
+        font-size: 48px;
+    }
+
+    .tariff-desc {
+        font-size: 24px;
+    }
+
+    .tariff-price {
+        font-size: 48px;
+    }
+
+    .tariff-old-price {
+    font-size: 32px;
+    margin-left: -8px;
+    position: static;
+}
+}

@@ -16,6 +16,23 @@
     }
 }
 
+.version {
+    position: fixed;
+    padding: 30px;
+    top: 10px;
+    right: 50%;
+    color: #fff;
+    background-color: blue;
+    opacity: 0.5;
+    border-radius: 50%;
+    font-size: 120px;
+    z-index: 10;
+}
+
+body {
+    overflow-x: hidden;
+}
+
 .container {
     max-width: 1600px;
     margin: 0 auto;
@@ -180,8 +197,6 @@ header {
 }
 .works video {
     border-radius: 48px;
-    /* width: 100%;
-    max-width: 524px; */
     width: 524px;
     height: 218px;
     display: block;
