@@ -233,56 +233,56 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- Popup скриншоты отзывов ---
-    const reviewCard1 = document.querySelector('.reviews-card:nth-child(1)');
-    const reviewPopup1 = document.getElementById('review-popup-img-1');
-    if (reviewCard1 && reviewPopup1) {
-        reviewCard1.addEventListener('mouseenter', () => {
-            reviewPopup1.style.display = 'block';
-        });
-        reviewCard1.addEventListener('mouseleave', () => {
-            reviewPopup1.style.display = 'none';
-        });
-    }
-    const reviewCard2 = document.querySelector('.reviews-card:nth-child(2)');
-    const reviewPopup2 = document.getElementById('review-popup-img-2');
-    if (reviewCard2 && reviewPopup2) {
-        reviewCard2.addEventListener('mouseenter', () => {
-            reviewPopup2.style.display = 'block';
-        });
-        reviewCard2.addEventListener('mouseleave', () => {
-            reviewPopup2.style.display = 'none';
-        });
-    }
-    const reviewCard3 = document.querySelector('.reviews-card:nth-child(3)');
-    const reviewPopup3 = document.getElementById('review-popup-img-3');
-    if (reviewCard3 && reviewPopup3) {
-        reviewCard3.addEventListener('mouseenter', () => {
-            reviewPopup3.style.display = 'block';
-        });
-        reviewCard3.addEventListener('mouseleave', () => {
-            reviewPopup3.style.display = 'none';
-        });
-    }
-    const reviewCard4 = document.querySelector('.reviews-card:nth-child(4)');
-    const reviewPopup4 = document.getElementById('review-popup-img-4');
-    if (reviewCard4 && reviewPopup4) {
-        reviewCard4.addEventListener('mouseenter', () => {
-            reviewPopup4.style.display = 'block';
-        });
-        reviewCard4.addEventListener('mouseleave', () => {
-            reviewPopup4.style.display = 'none';
-        });
-    }
-    const reviewCard5 = document.querySelector('.reviews-card:nth-child(5)');
-    const reviewPopup5 = document.getElementById('review-popup-img-5');
-    if (reviewCard5 && reviewPopup5) {
-        reviewCard5.addEventListener('mouseenter', () => {
-            reviewPopup5.style.display = 'block';
-        });
-        reviewCard5.addEventListener('mouseleave', () => {
-            reviewPopup5.style.display = 'none';
-        });
-    }
+    // const reviewCard1 = document.querySelector('.reviews-card:nth-child(1)');
+    // const reviewPopup1 = document.getElementById('review-popup-img-1');
+    // if (reviewCard1 && reviewPopup1) {
+    //     reviewCard1.addEventListener('mouseenter', () => {
+    //         reviewPopup1.style.display = 'block';
+    //     });
+    //     reviewCard1.addEventListener('mouseleave', () => {
+    //         reviewPopup1.style.display = 'none';
+    //     });
+    // }
+    // const reviewCard2 = document.querySelector('.reviews-card:nth-child(2)');
+    // const reviewPopup2 = document.getElementById('review-popup-img-2');
+    // if (reviewCard2 && reviewPopup2) {
+    //     reviewCard2.addEventListener('mouseenter', () => {
+    //         reviewPopup2.style.display = 'block';
+    //     });
+    //     reviewCard2.addEventListener('mouseleave', () => {
+    //         reviewPopup2.style.display = 'none';
+    //     });
+    // }
+    // const reviewCard3 = document.querySelector('.reviews-card:nth-child(3)');
+    // const reviewPopup3 = document.getElementById('review-popup-img-3');
+    // if (reviewCard3 && reviewPopup3) {
+    //     reviewCard3.addEventListener('mouseenter', () => {
+    //         reviewPopup3.style.display = 'block';
+    //     });
+    //     reviewCard3.addEventListener('mouseleave', () => {
+    //         reviewPopup3.style.display = 'none';
+    //     });
+    // }
+    // const reviewCard4 = document.querySelector('.reviews-card:nth-child(4)');
+    // const reviewPopup4 = document.getElementById('review-popup-img-4');
+    // if (reviewCard4 && reviewPopup4) {
+    //     reviewCard4.addEventListener('mouseenter', () => {
+    //         reviewPopup4.style.display = 'block';
+    //     });
+    //     reviewCard4.addEventListener('mouseleave', () => {
+    //         reviewPopup4.style.display = 'none';
+    //     });
+    // }
+    // const reviewCard5 = document.querySelector('.reviews-card:nth-child(5)');
+    // const reviewPopup5 = document.getElementById('review-popup-img-5');
+    // if (reviewCard5 && reviewPopup5) {
+    //     reviewCard5.addEventListener('mouseenter', () => {
+    //         reviewPopup5.style.display = 'block';
+    //     });
+    //     reviewCard5.addEventListener('mouseleave', () => {
+    //         reviewPopup5.style.display = 'none';
+    //     });
+    // }
 
     // --- Модальное окно для скрина отзыва ---
     const reviewModal = document.getElementById('reviewModal');
@@ -326,4 +326,84 @@ document.addEventListener('DOMContentLoaded', function() {
             if (e.target === reviewModal) closeReviewModal();
         });
     }
+
+    // --- Карусель "Примеры работ" ---
+    const worksFlex = document.querySelector('.works-flex');
+    const worksSlides = document.querySelectorAll('.works-slide');
+    const worksDotsContainer = document.querySelector('.works-dots');
+    let worksCurrent = 0;
+    const worksTotal = worksSlides.length;
+
+    function renderWorksDots() {
+        worksDotsContainer.innerHTML = '';
+        for (let i = 0; i < worksTotal; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'works-dot' + (i === worksCurrent ? ' active' : '');
+            dot.addEventListener('click', () => goToWorks(i));
+            worksDotsContainer.appendChild(dot);
+        }
+    }
+    function goToWorks(idx) {
+        worksCurrent = idx;
+        worksFlex.style.transform = `translateX(-${idx * (worksSlides[0].offsetWidth + 24)}px)`;
+        Array.from(worksDotsContainer.children).forEach((dot, i) => {
+            dot.classList.toggle('active', i === idx);
+        });
+    }
+    // Swipe logic
+    let worksStartX = 0;
+    let worksDragging = false;
+    let worksDeltaX = 0;
+    worksFlex.addEventListener('mousedown', e => {
+        worksDragging = true;
+        worksStartX = e.clientX;
+        worksFlex.style.transition = 'none';
+    });
+    worksFlex.addEventListener('mousemove', e => {
+        if (!worksDragging) return;
+        worksDeltaX = e.clientX - worksStartX;
+        worksFlex.style.transform = `translateX(${-worksCurrent * (worksSlides[0].offsetWidth + 24) + worksDeltaX}px)`;
+    });
+    worksFlex.addEventListener('mouseup', () => {
+        worksFlex.style.transition = '';
+        if (Math.abs(worksDeltaX) > 50) {
+            if (worksDeltaX < 0 && worksCurrent < worksTotal - 1) goToWorks(worksCurrent + 1);
+            else if (worksDeltaX > 0 && worksCurrent > 0) goToWorks(worksCurrent - 1);
+            else goToWorks(worksCurrent);
+        } else goToWorks(worksCurrent);
+        worksDragging = false;
+        worksDeltaX = 0;
+    });
+    worksFlex.addEventListener('mouseleave', () => {
+        if (worksDragging) {
+            worksFlex.style.transition = '';
+            goToWorks(worksCurrent);
+            worksDragging = false;
+            worksDeltaX = 0;
+        }
+    });
+    // Touch
+    worksFlex.addEventListener('touchstart', e => {
+        worksDragging = true;
+        worksStartX = e.touches[0].clientX;
+        worksFlex.style.transition = 'none';
+    });
+    worksFlex.addEventListener('touchmove', e => {
+        if (!worksDragging) return;
+        worksDeltaX = e.touches[0].clientX - worksStartX;
+        worksFlex.style.transform = `translateX(${-worksCurrent * (worksSlides[0].offsetWidth + 24) + worksDeltaX}px)`;
+    });
+    worksFlex.addEventListener('touchend', () => {
+        worksFlex.style.transition = '';
+        if (Math.abs(worksDeltaX) > 50) {
+            if (worksDeltaX < 0 && worksCurrent < worksTotal - 1) goToWorks(worksCurrent + 1);
+            else if (worksDeltaX > 0 && worksCurrent > 0) goToWorks(worksCurrent - 1);
+            else goToWorks(worksCurrent);
+        } else goToWorks(worksCurrent);
+        worksDragging = false;
+        worksDeltaX = 0;
+    });
+    // Инициализация
+    renderWorksDots();
+    goToWorks(0);
 });
