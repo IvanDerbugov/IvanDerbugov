@@ -138,9 +138,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Автозапуск первого видео в .works
-    const worksFirstVideo = document.querySelector('.works video');
+    const worksFirstVideo = document.getElementById('mainWorkVideo');
     if (worksFirstVideo) {
         worksFirstVideo.muted = true;
         worksFirstVideo.play().catch(() => {});
+    }
+
+    // --- Кнопка включения звука на первом видео ---
+    const unmuteBtn = document.getElementById('unmuteBtn');
+    if (worksFirstVideo && unmuteBtn) {
+        unmuteBtn.addEventListener('click', function() {
+            worksFirstVideo.muted = false;
+            worksFirstVideo.volume = 1;
+            worksFirstVideo.play();
+            unmuteBtn.classList.add('hidden');
+        });
+        // Если пользователь сам включил звук через controls
+        worksFirstVideo.addEventListener('volumechange', function() {
+            if (!worksFirstVideo.muted && worksFirstVideo.volume > 0) {
+                unmuteBtn.classList.add('hidden');
+            }
+        });
     }
 });

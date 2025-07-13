@@ -145,7 +145,39 @@ header {
     display: flex;
     gap: 24px;
 }
-
+.video-wrapper {
+    position: relative;
+    display: inline-block;
+}
+.unmute-btn {
+    position: absolute;
+    right: 7px;
+    bottom: 8px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 4px solid #F90F4A;
+    background: none;
+    cursor: pointer;
+    z-index: 2;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 1.2s infinite;
+    transition: opacity 0.3s;
+    box-shadow: 0 0 0 0 rgba(249,15,74,0.5);
+    padding: 0;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(249,15,74,0.5); }
+    70% { box-shadow: 0 0 0 16px rgba(249,15,74,0); }
+    100% { box-shadow: 0 0 0 0 rgba(249,15,74,0); }
+}
+.unmute-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
 .works video {
     border-radius: 48px;
     /* width: 100%;
