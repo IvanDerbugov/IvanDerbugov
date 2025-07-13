@@ -100,6 +100,13 @@ header {
 
 .center-header-right img {
     margin-top: 25px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.center-header-right img:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 8px 16px rgba(255, 255, 255, 0.3));
 }
 
 .center-header-right .full-price {
@@ -125,6 +132,12 @@ header {
     font-size: 184px;
     font-weight: 700;
     color: #FFFB81;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.center-header-right .discount-price:hover {
+    transform: scale(1.05);
+    text-shadow: 0 8px 24px rgba(255, 251, 129, 0.4);
 }
 
 
@@ -134,6 +147,7 @@ header {
     align-items: center;
 }
 
+/* Hover эффекты для кнопок */
 .bottom-header button {
     background-color: #F90F4A;
     border-radius: 24px;
@@ -142,15 +156,75 @@ header {
     font-size: 40px;
     font-weight: 400;
     color: #FFFFFF;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
+.bottom-header button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.bottom-header button:hover {
+    background: linear-gradient(135deg, #F90F4A 0%, #FF6B8A 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(249, 15, 74, 0.3);
+}
+
+.bottom-header button:hover::before {
+    left: 100%;
+}
+
+.bottom-header button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(249, 15, 74, 0.25);
+}
+
+/* Hover эффекты для контактов в хедере */
+.headerContacts a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.headerContacts a:hover {
+    transform: translateY(-4px) scale(1.1);
+    filter: drop-shadow(0 8px 16px rgba(255, 255, 255, 0.3));
+}
+
+/* SVG иконки в headerContacts — смена цвета при ховере */
+.headerContacts a svg {
+    transition: filter 0.3s, fill 0.3s, color 0.3s;
+}
+.headerContacts a:hover svg {
+    filter: none;
+    /* Для поддержки разных браузеров */
+    color: #F90F4A;
+    fill: #F90F4A;
+}
+.headerContacts a:hover .WhatsApp {
+    color: #25D366;
+    fill: #25D366;
+}
+.headerContacts a:hover .telegram {
+    color: #2AABEE;
+    fill: #2AABEE;
+}
+.headerContacts a:hover .phone {
+    color: #FFB800;
+    fill: #FFB800;
+}
 
 .headerContacts {
     display: flex;
     gap: 48px;
 }
-
-
 
 .examplesWorks {
     padding: 100px 0;
@@ -190,7 +264,7 @@ header {
     align-items: center;
     justify-content: center;
     animation: pulse 1.2s infinite;
-    transition: opacity 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 0 0 0 rgba(249, 15, 74, 0.5);
     padding: 0;
 }
@@ -214,12 +288,31 @@ header {
     pointer-events: none;
 }
 
+.unmute-btn:hover {
+    transform: scale(1.15);
+    border-color: #FF6B8A;
+    box-shadow: 0 0 0 8px rgba(249, 15, 74, 0.3);
+}
+
+.unmute-btn:hover svg {
+    filter: brightness(1.2);
+}
+
+/* Hover эффекты для видео */
 .works video {
     border-radius: 48px;
     width: 524px;
     height: 218px;
     display: block;
     background: #000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.works video:hover {
+    transform: scale(1.02);
+    box-shadow: 0 16px 48px rgba(255, 152, 152, 0.25);
+    border-radius: 56px;
 }
 
 .works-dots {
@@ -263,6 +356,7 @@ header {
     gap: 24px;
 }
 
+/* Hover эффекты для тарифов */
 .tariff {
     display: flex;
     flex-direction: column;
@@ -276,6 +370,21 @@ header {
     position: relative;
     box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.05);
     cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.tariff::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 48px;
 }
 
 .tariff-active {
@@ -288,6 +397,7 @@ header {
     font-weight: 500;
     color: #fff;
     margin-bottom: 32px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tariff-desc {
@@ -311,6 +421,7 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tariff-old-price {
@@ -400,6 +511,40 @@ header {
     margin-bottom: 104px;
 }
 
+/* Эффекты для заголовков секций */
+.examplesWorks h2,
+.tariffs h2,
+.aboutMe h2,
+.chooseUs h2,
+.reviews h2,
+.leaveRequest h2 {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.examplesWorks h2:hover,
+.tariffs h2:hover,
+.aboutMe h2:hover,
+.chooseUs h2:hover,
+.reviews h2:hover,
+.leaveRequest h2:hover {
+    transform: scale(1.02);
+    text-shadow: 0 4px 12px rgba(255, 152, 152, 0.3);
+}
+
+/* Эффекты для изображения в секции "Обо мне" */
+.aboutMe-right {
+    border-radius: 24px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.aboutMe-right:hover {
+    transform: scale(1.02) rotate(1deg);
+    box-shadow: 0 16px 48px rgba(255, 152, 152, 0.25);
+    border-radius: 32px;
+}
+
+/* Дополнительные эффекты для текста */
 .aboutMe h3 {
     font-family: 'Jost', sans-serif;
     font-size: 80px;
@@ -408,6 +553,12 @@ header {
     margin-bottom: 20px;
     line-height: 1.2;
     max-width: 750px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.aboutMe h3:hover {
+    color: #F90F4A;
+    transform: translateX(4px);
 }
 
 .aboutMe p {
@@ -454,6 +605,7 @@ header {
     gap: 24px;
 }
 
+/* Hover эффекты для карточек "Почему выбирают нас" */
 .chooseUs-card {
     background: #83000080;
     border-radius: 48px;
@@ -463,6 +615,36 @@ header {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.chooseUs-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(231, 236, 90, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 48px;
+}
+
+.chooseUs-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
+    background: #830000CC;
+}
+
+.chooseUs-card:hover::before {
+    opacity: 1;
+}
+
+.chooseUs-card:hover .chooseUs-num {
+    transform: scale(1.1) rotate(5deg);
+    color: #FFFB81;
 }
 
 .wrapInfo {
@@ -508,6 +690,7 @@ header {
     color: #E7EC5A;
     letter-spacing: 0;
     text-align: right;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reviews {
@@ -533,6 +716,7 @@ header {
     will-change: transform;
 }
 
+/* Hover эффекты для отзывов */
 .reviews-card {
     background: #62626299;
     border-radius: 48px;
@@ -540,10 +724,39 @@ header {
     flex: 0 0 100%;
     min-width: 0;
     box-sizing: border-box;
-    transition: box-shadow 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     max-width: 790px;
+    position: relative;
+    overflow: hidden;
 }
 
+.reviews-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 152, 152, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 48px;
+}
+
+.reviews-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 16px 40px rgba(255, 152, 152, 0.2);
+    background: #626262CC;
+}
+
+.reviews-card:hover::before {
+    opacity: 1;
+}
+
+.reviews-card:hover .wrapTextReviews p:nth-of-type(2) {
+    color: #FFFB81;
+    transform: translateX(4px);
+}
 
 .wrapTextReviews {
     display: flex;
@@ -566,6 +779,7 @@ header {
     font-size: 40px;
     font-weight: 400;
     color: #fff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reviews-dots {
@@ -575,14 +789,21 @@ header {
     margin-top: 32px;
 }
 
+/* Hover эффекты для точек в отзывах */
 .reviews-dot {
     width: 24px;
     height: 24px;
     border-radius: 50%;
     background: #D9D9D9;
     display: inline-block;
-    transition: background 0.2s, transform 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+}
+
+.reviews-dot:hover {
+    background: #FF7482;
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(255, 116, 130, 0.4);
 }
 
 .reviews-dot.active {
@@ -611,6 +832,7 @@ header {
     align-items: center;
 }
 
+/* Hover эффекты для формы */
 .leaveRequest form input {
     width: auto;
     min-width: 796px;
@@ -624,6 +846,18 @@ header {
     font-weight: 300;
     border: none;
     outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.leaveRequest form input:focus {
+    background: #83000080;
+    box-shadow: 0 0 0 3px rgba(255, 152, 152, 0.3);
+    transform: translateY(-2px);
+}
+
+.leaveRequest form input:hover {
+    background: #83000066;
+    transform: translateY(-1px);
 }
 
 .leaveRequest form input::placeholder {
@@ -651,9 +885,51 @@ header {
     font-weight: 400;
     text-align: center;
     height: 80px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
 }
 
-.leaveRequest form a {}
+.leaveRequest form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.leaveRequest form button:hover {
+    background: linear-gradient(135deg, #F90F4A 0%, #FF6B8A 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(249, 15, 74, 0.3);
+}
+
+.leaveRequest form button:hover::before {
+    left: 100%;
+}
+
+.leaveRequest form button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(249, 15, 74, 0.25);
+}
+
+.leaveRequest form a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.leaveRequest form a:hover {
+    transform: translateY(-4px) scale(1.1);
+    filter: drop-shadow(0 8px 16px rgba(255, 255, 255, 0.3));
+}
+
+.leaveRequest form a:hover svg {
+    filter: brightness(1.2);
+}
 
 .leaveRequest form a svg {
     width: 80px;
@@ -689,6 +965,19 @@ footer {
     line-height: 1;
 }
 
+/* Эффекты для футера */
+.footer-main,
+.footer-sub {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.footer-main:hover,
+.footer-sub:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 8px 16px rgba(252, 147, 121, 0.3));
+}
+
 .footer-sub {
     display: block;
     font-family: 'Russo One', sans-serif;
@@ -721,16 +1010,48 @@ footer {
     color: transparent;
 }
 
-.footer-contacts>a {
+/* Hover эффекты для футера */
+.footer-contacts a {
     font-family: 'Jost', sans-serif;
     font-size: 24px;
     font-weight: 300;
     color: #000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.footer-contacts a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #FC9379, #FE7082, #FF8181);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-contacts a:hover {
+    color: #F90F4A;
+    transform: translateX(4px);
+}
+
+.footer-contacts a:hover::after {
+    width: 100%;
 }
 
 .footer-social {
     display: flex;
     gap: 24px;
+}
+
+.footer-social a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social a:hover {
+    transform: translateY(-4px) scale(1.1);
+    filter: drop-shadow(0 8px 16px rgba(252, 147, 121, 0.3));
 }
 
 /* Модальное окно */
@@ -799,6 +1120,12 @@ footer {
     cursor: pointer;
     z-index: 3;
     line-height: 1;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close:hover {
+    color: #FF6B8A;
+    transform: scale(1.1) rotate(90deg);
 }
 
 .modal-form {
@@ -808,6 +1135,7 @@ footer {
     align-items: center;
 }
 
+/* Hover эффекты для модального окна */
 .modal-form input {
     width: 400px;
     height: 64px;
@@ -820,6 +1148,18 @@ footer {
     font-weight: 300;
     border: none;
     outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form input:focus {
+    background: #83000080;
+    box-shadow: 0 0 0 3px rgba(255, 152, 152, 0.3);
+    transform: translateY(-2px);
+}
+
+.modal-form input:hover {
+    background: #83000066;
+    transform: translateY(-1px);
 }
 
 .modal-form input::placeholder {
@@ -849,6 +1189,39 @@ footer {
     cursor: pointer;
     text-align: center;
     height: 64px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.modal-form button:hover {
+    background: linear-gradient(135deg, #F90F4A 0%, #FF6B8A 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(249, 15, 74, 0.3);
+}
+
+.modal-form button:hover::before {
+    left: 100%;
+}
+
+.modal-form a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form a:hover {
+    transform: translateY(-3px) scale(1.1);
+    filter: drop-shadow(0 6px 12px rgba(255, 255, 255, 0.3));
 }
 
 .modal-form a svg {
@@ -990,4 +1363,42 @@ footer {
         font-size: 13px;
         padding: 2px 8px;
     }
+}
+
+/* Тарифы: яркий градиентный фон при ховере */
+.tariff:hover {
+    background: linear-gradient(120deg, #FFB8B8 0%, #FF6B8A 60%, #FFF3B0 100%);
+    box-shadow: 0 24px 64px 0 rgba(255, 152, 152, 0.18), 0 4px 32px 0 rgba(0, 0, 0, 0.08);
+    border: 2px solid #FFB800;
+}
+.tariff.tariff-active:hover {
+    background: linear-gradient(120deg, #FF6B8A 0%, #FFB800 100%);
+    border: 2px solid #F90F4A;
+}
+
+/* Базовый цвет для SVG-иконок */
+.headerContacts a svg,
+.leaveRequest form a svg {
+    color: #fff;
+    fill: currentColor;
+    transition: filter 0.3s, fill 0.3s, color 0.3s;
+}
+
+/* Ховер-эффекты для SVG в форме заявки */
+.leaveRequest form a:hover svg {
+    filter: none;
+    color: #F90F4A;
+    fill: #F90F4A;
+}
+.leaveRequest form a:hover .WhatsApp {
+    color: #25D366;
+    fill: #25D366;
+}
+.leaveRequest form a:hover .telegram {
+    color: #2AABEE;
+    fill: #2AABEE;
+}
+.leaveRequest form a:hover .phone {
+    color: #FFB800;
+    fill: #FFB800;
 }
