@@ -160,4 +160,75 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // --- Фиксированная кнопка с таймером (wedding) ---
+    (function() {
+        const btnWrap = document.querySelector('.fixed-modal-btn-wrap-wedding');
+        const timerEl = document.querySelector('.modal-timer-wedding');
+        const btn = document.querySelector('.fixed-modal-btn-wedding');
+        if (!btnWrap || !timerEl || !btn) return;
+        let timeLeft = 10 * 60; // 10 минут в секундах
+        function updateTimer() {
+            const min = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+            const sec = String(timeLeft % 60).padStart(2, '0');
+            timerEl.textContent = `${min}:${sec}`;
+            if (timeLeft > 0) {
+                timeLeft--;
+            } else {
+                timerEl.style.display = 'none';
+                btn.textContent = 'Зафиксировать скидку 10%';
+            }
+        }
+        updateTimer();
+        const interval = setInterval(() => {
+            updateTimer();
+            if (timeLeft < 0) clearInterval(interval);
+        }, 1000);
+        // Открытие модального окна по клику
+        btn.addEventListener('click', function() {
+            const modal = document.getElementById('modalRequest');
+            if (modal) {
+                const modalForm = modal.querySelector('.modal-form');
+                if (modalForm) {
+                    const submitBtn = modalForm.querySelector('button[type="submit"]');
+                    if (submitBtn) submitBtn.textContent = 'Зафиксировать скидку';
+                }
+            }
+            if (typeof openModal === 'function') {
+                openModal();
+            } else {
+                // fallback: клик по основной кнопке в header
+                const openBtn = document.querySelector('header .bottom-header button');
+                if (openBtn) openBtn.click();
+            }
+        });
+        // Скрытие кнопки после успешной отправки формы
+        const modal = document.getElementById('modalRequest');
+        if (modal) {
+            const modalForm = modal.querySelector('.modal-form');
+            const modalSuccess = modal.querySelector('.modal-success');
+            if (modalForm && modalSuccess) {
+                const observer = new MutationObserver(() => {
+                    if (modalSuccess.style.display !== 'none') {
+                        btnWrap.style.display = 'none';
+                    }
+                });
+                observer.observe(modalSuccess, { attributes: true, attributeFilter: ['style'] });
+            }
+        }
+    })();
+
+    // При обычном открытии модалки — возвращаем текст кнопки
+    if (openModalBtn) {
+        openModalBtn.addEventListener('click', function() {
+            const modal = document.getElementById('modalRequest');
+            if (modal) {
+                const modalForm = modal.querySelector('.modal-form');
+                if (modalForm) {
+                    const submitBtn = modalForm.querySelector('button[type="submit"]');
+                    if (submitBtn) submitBtn.textContent = 'Оставить заявку';
+                }
+            }
+        });
+    }
 });
