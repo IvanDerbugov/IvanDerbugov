@@ -231,4 +231,99 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // --- Popup скриншоты отзывов ---
+    const reviewCard1 = document.querySelector('.reviews-card:nth-child(1)');
+    const reviewPopup1 = document.getElementById('review-popup-img-1');
+    if (reviewCard1 && reviewPopup1) {
+        reviewCard1.addEventListener('mouseenter', () => {
+            reviewPopup1.style.display = 'block';
+        });
+        reviewCard1.addEventListener('mouseleave', () => {
+            reviewPopup1.style.display = 'none';
+        });
+    }
+    const reviewCard2 = document.querySelector('.reviews-card:nth-child(2)');
+    const reviewPopup2 = document.getElementById('review-popup-img-2');
+    if (reviewCard2 && reviewPopup2) {
+        reviewCard2.addEventListener('mouseenter', () => {
+            reviewPopup2.style.display = 'block';
+        });
+        reviewCard2.addEventListener('mouseleave', () => {
+            reviewPopup2.style.display = 'none';
+        });
+    }
+    const reviewCard3 = document.querySelector('.reviews-card:nth-child(3)');
+    const reviewPopup3 = document.getElementById('review-popup-img-3');
+    if (reviewCard3 && reviewPopup3) {
+        reviewCard3.addEventListener('mouseenter', () => {
+            reviewPopup3.style.display = 'block';
+        });
+        reviewCard3.addEventListener('mouseleave', () => {
+            reviewPopup3.style.display = 'none';
+        });
+    }
+    const reviewCard4 = document.querySelector('.reviews-card:nth-child(4)');
+    const reviewPopup4 = document.getElementById('review-popup-img-4');
+    if (reviewCard4 && reviewPopup4) {
+        reviewCard4.addEventListener('mouseenter', () => {
+            reviewPopup4.style.display = 'block';
+        });
+        reviewCard4.addEventListener('mouseleave', () => {
+            reviewPopup4.style.display = 'none';
+        });
+    }
+    const reviewCard5 = document.querySelector('.reviews-card:nth-child(5)');
+    const reviewPopup5 = document.getElementById('review-popup-img-5');
+    if (reviewCard5 && reviewPopup5) {
+        reviewCard5.addEventListener('mouseenter', () => {
+            reviewPopup5.style.display = 'block';
+        });
+        reviewCard5.addEventListener('mouseleave', () => {
+            reviewPopup5.style.display = 'none';
+        });
+    }
+
+    // --- Модальное окно для скрина отзыва ---
+    const reviewModal = document.getElementById('reviewModal');
+    const reviewModalImg = document.getElementById('reviewModalImg');
+    const reviewModalClose = document.querySelector('.review-modal-close');
+    const reviewModalBackdrop = document.querySelector('.review-modal-backdrop');
+    // Карта соответствия: номер отзыва -> путь к картинке
+    const reviewScreens = {
+        1: 'img/reviewScreen1.jpg',
+        2: 'img/reviewScreen2.jpg',
+        3: 'img/reviewScreen3.jpg',
+        4: 'img/reviewScreen4.jpg',
+        5: 'img/reviewScreen5.jpg',
+    };
+    // Навесим обработчики на все .seeReview
+    document.querySelectorAll('.reviews-card .seeReview').forEach((btn, idx) => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const num = idx + 1;
+            if (reviewModal && reviewModalImg && reviewScreens[num]) {
+                reviewModalImg.src = reviewScreens[num];
+                reviewModal.classList.add('active');
+                reviewModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    function closeReviewModal() {
+        if (reviewModal) {
+            reviewModal.classList.remove('active');
+            reviewModal.style.display = 'none';
+            document.body.style.overflow = '';
+            if (reviewModalImg) reviewModalImg.src = '';
+        }
+    }
+    if (reviewModalClose) reviewModalClose.addEventListener('click', closeReviewModal);
+    if (reviewModalBackdrop) reviewModalBackdrop.addEventListener('click', closeReviewModal);
+    // Закрытие по клику вне окна
+    if (reviewModal) {
+        reviewModal.addEventListener('mousedown', function(e) {
+            if (e.target === reviewModal) closeReviewModal();
+        });
+    }
 });

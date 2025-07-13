@@ -718,68 +718,56 @@ header {
 
 /* Hover эффекты для отзывов */
 .reviews-card {
-    background: #62626299;
+    background: linear-gradient(310deg, #FC9379E5 0%, #FE7082E5 50%, #FF8181E5 100%);
     border-radius: 48px;
-    padding: 80px 64px;
+    padding: 40px 64px;
     flex: 0 0 100%;
     min-width: 0;
-    box-sizing: border-box;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     max-width: 790px;
     position: relative;
     overflow: hidden;
-}
-
-.reviews-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 152, 152, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    border-radius: 48px;
-}
-
-.reviews-card:hover {
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 16px 40px rgba(255, 152, 152, 0.2);
-    background: #626262CC;
-}
-
-.reviews-card:hover::before {
-    opacity: 1;
-}
-
-.reviews-card:hover .wrapTextReviews p:nth-of-type(2) {
-    color: #FFFB81;
-    transform: translateX(4px);
-}
-
-.wrapTextReviews {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 540px;
-    max-width: 796px;
 }
 
-.wrapTextReviews p:nth-of-type(1) {
+.textReview {
+    color: #000;
+    background-color: #fff;
     font-family: 'Jost', sans-serif;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 300;
-    color: #fff;
+    border-radius: 24px;
+    padding: 24px;
     line-height: 1.5;
+    position: relative;
 }
 
-.wrapTextReviews p:nth-of-type(2) {
-    font-family: 'Oswald', sans-serif;
-    font-size: 40px;
+.seeReview {
+    font-family: 'Jost', sans-serif;
+    font-size: 24px;
     font-weight: 400;
     color: #fff;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: underline;
+    position: absolute;
+    left: 0;
+    bottom: -43px;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.nameFotoReview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 85px;
+}
+
+.nameFotoReview p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    color: #fff;
 }
 
 .reviews-dots {
@@ -1401,4 +1389,146 @@ footer {
 .leaveRequest form a:hover .phone {
     color: #FFB800;
     fill: #FFB800;
+}
+
+/* Hover-эффекты для новых отзывов */
+.reviews-card {
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+.reviews-card:hover {
+    box-shadow: 0 8px 32px 0 rgba(255, 152, 152, 0.18), 0 2px 8px 0 rgba(0,0,0,0.08);
+    transform: translateY(-6px) scale(1.01);
+}
+.reviews-card:hover .seeReview {
+    color: #F90F4A;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #fff3;
+}
+.reviews-card:hover .nameFotoReview p {
+    color: #FFFB81;
+    transform: translateX(6px) scale(1.05);
+}
+.reviews-card .nameFotoReview p {
+    transition: color 0.3s, transform 0.3s;
+}
+.reviews-card .nameFotoReview img {
+    border-radius: 50%;
+    transition: box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 2px 8px #fff3;
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+}
+.reviews-card:hover .nameFotoReview img {
+    box-shadow: 0 8px 32px #FFB80055, 0 2px 8px #fff3;
+    transform: scale(1.08) rotate(-2deg);
+}
+.textReview {
+    transition: box-shadow 0.3s, background 0.3s;
+}
+.reviews-card:hover .textReview {
+    box-shadow: 0 4px 24px #fff6;
+    background: #fffbe9;
+}
+.review-popup-img {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 24px;
+    left: auto;
+    transform: none;
+    z-index: 20;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18), 0 2px 8px 0 rgba(255,152,152,0.12);
+    padding: 8px;
+    animation: fadeInReviewPopup 0.25s;
+}
+@media (max-width: 900px) {
+    .review-popup-img {
+        right: 50%;
+        left: 50%;
+        transform: translateX(50%);
+    }
+}
+.review-popup-img img {
+    display: block;
+    max-width: 380px;
+    max-height: 420px;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px #fff3;
+}
+@keyframes fadeInReviewPopup {
+    from { opacity: 0; transform: translateX(-50%) translateY(10px) scale(0.98); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(-10px) scale(1); }
+}
+.reviews-card { position: relative; }
+
+.review-modal {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    left: 0; top: 0; right: 0; bottom: 0;
+    width: 100vw; height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.review-modal.active {
+    display: flex;
+}
+.review-modal-backdrop {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+}
+.review-modal-content {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 8px 48px 0 rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    animation: modalIn 0.25s cubic-bezier(0.4,0,0.2,1);
+    max-width: 90vw;
+    max-height: 90vh;
+}
+.review-modal-content img {
+    max-width: 80vw;
+    max-height: 80vh;
+    border-radius: 16px;
+    display: block;
+}
+.review-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: #F90F4A;
+    cursor: pointer;
+    z-index: 3;
+    line-height: 1;
+    transition: color 0.2s, transform 0.2s;
+}
+.review-modal-close:hover {
+    color: #FF6B8A;
+    transform: scale(1.15) rotate(90deg);
+}
+@media (max-width: 600px) {
+    .review-modal-content img {
+        max-width: 98vw;
+        max-height: 60vh;
+    }
+    .review-modal-content {
+        padding: 4vw;
+    }
 }
