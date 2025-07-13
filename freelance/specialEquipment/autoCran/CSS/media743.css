@@ -211,6 +211,14 @@
         padding: 15px 20px;
         width: 270px;
     }
+
+    .seeMoreShow {
+        margin: -490px auto 24px auto;
+        font-size: 20px;
+        padding: 15px 40px;
+        max-width: 98%;
+        
+    }
 }
 
 @media (max-width: 500px) {

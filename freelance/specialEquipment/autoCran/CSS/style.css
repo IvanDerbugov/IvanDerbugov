@@ -402,13 +402,11 @@ main > .conteiner1800:first-of-type {
 .card {
     background: #fff;
     padding: 15px;
-    /* overflow: hidden; */
-    /* width: 441px; */
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     position: relative;
     transition: box-shadow 0.2s, border-color 0.2s, max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.5s cubic-bezier(0.4,0,0.2,1);
-    /* max-height: 1000px; */
     opacity: 1;
 }
 .card:hover {
@@ -511,7 +509,7 @@ main > .conteiner1800:first-of-type {
     color: #fff;
     font-size: 24px;
     font-weight: 700;
-    padding: 12px 0;
+    padding: 12px 5px;
     border-radius: 6px;
     text-align: center;
     box-shadow: 0 2px 8px rgba(35, 244, 114, 0.10);
