@@ -354,7 +354,7 @@ header {
 /* Hover эффекты для видео */
 .works video {
     border-radius: 48px;
-    width: 1048px;
+    width: 1064px;
     height: 446px;
     display: block;
     background: #000;
@@ -362,11 +362,11 @@ header {
     cursor: pointer;
 }
 
-.works video:hover {
+/* .works video:hover {
     transform: scale(1.02);
     box-shadow: 0 16px 48px rgba(255, 152, 152, 0.25);
     border-radius: 56px;
-}
+} */
 
 .works-dots {
     display: flex;
