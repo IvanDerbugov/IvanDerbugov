@@ -34,6 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < totalDots; i++) {
             const dot = document.createElement('span');
             dot.className = 'reviews-dot';
+            // Добавляем обработчик клика по dot для отзывов
+            dot.addEventListener('click', function() {
+                goToPage(i + 1); // +1, т.к. первый реальный слайд — индекс 1
+            });
             reviewsDotsContainer.appendChild(dot);
         }
     }
@@ -334,6 +338,10 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < worksTotal; i++) {
             const dot = document.createElement('span');
             dot.className = 'works-dot';
+            // Добавляем обработчик клика по dot для works
+            dot.addEventListener('click', function() {
+                goToWorks(i + 1); // +1, т.к. первый реальный слайд — индекс 1
+            });
             worksDotsContainer.appendChild(dot);
         }
     }
