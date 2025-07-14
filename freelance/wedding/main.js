@@ -11,66 +11,98 @@ document.addEventListener('DOMContentLoaded', function() {
     const reviewsFlex = document.querySelector('.reviews-flex');
     const reviewsCards = document.querySelectorAll('.reviews-card');
     const reviewsDotsContainer = document.querySelector('.reviews-dots');
-    let currentPage = 0;
-    const totalSlides = reviewsCards.length; // 5
-    const totalDots = totalSlides - 1; // 4 точки
+    const reviewsArrowPrev = document.querySelector('.reviews-arrow-prev');
+    const reviewsArrowNext = document.querySelector('.reviews-arrow-next');
 
+    // --- Бесшовный loop-слайдер для отзывов ---
+    // Удаляем старую реализацию (всё, что было до этого для reviewsFlex, reviewsCards, reviewsDotsContainer, currentPage, totalSlides, totalDots, renderDots, goToPage, swipe logic)
+    // Оставляем только новую реализацию ниже:
+    if (reviewsCards.length > 1) {
+        const firstClone = reviewsCards[0].cloneNode(true);
+        const lastClone = reviewsCards[reviewsCards.length - 1].cloneNode(true);
+        firstClone.classList.add('clone');
+        lastClone.classList.add('clone');
+        reviewsFlex.appendChild(firstClone);
+        reviewsFlex.insertBefore(lastClone, reviewsCards[0]);
+    }
+    let allReviewsCards = document.querySelectorAll('.reviews-card');
+    let currentPage = 1;
+    const totalSlides = allReviewsCards.length - 2;
+    const totalDots = totalSlides;
     function renderDots() {
         reviewsDotsContainer.innerHTML = '';
         for (let i = 0; i < totalDots; i++) {
             const dot = document.createElement('span');
-            dot.className = 'reviews-dot' + (i === currentPage ? ' active' : '');
-            dot.addEventListener('click', () => {
-                goToPage(i);
-            });
+            dot.className = 'reviews-dot';
             reviewsDotsContainer.appendChild(dot);
         }
     }
-
-    function goToPage(page) {
-        currentPage = page;
-        reviewsFlex.style.transform = `translateX(-${page * (796 + 24)}px)`; // 796px ширина + 24px gap
-        Array.from(reviewsDotsContainer.children).forEach((dot, i) => {
-            dot.classList.toggle('active', i === page);
-        });
+    function updateReviewsDots() {
+        const dots = reviewsDotsContainer.children;
+        let activeIdx = currentPage - 1;
+        if (currentPage === 0) activeIdx = totalDots - 1;
+        if (currentPage === allReviewsCards.length - 1) activeIdx = 0;
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.toggle('active', i === activeIdx);
+        }
     }
-
+    function setReviewsTransition(val) {
+        reviewsFlex.style.transition = val;
+    }
+    function goToPage(page) {
+        setReviewsTransition('transform 0.5s cubic-bezier(0.4,0,0.2,1)');
+        currentPage = page;
+        reviewsFlex.style.transform = `translateX(-${page * (allReviewsCards[0].offsetWidth + 24)}px)`;
+        updateReviewsDots();
+    }
+    reviewsFlex.addEventListener('transitionend', () => {
+        if (currentPage === 0) {
+            setReviewsTransition('none');
+            currentPage = totalDots;
+            reviewsFlex.style.transform = `translateX(-${currentPage * (allReviewsCards[0].offsetWidth + 24)}px)`;
+            updateReviewsDots();
+        }
+        if (currentPage === allReviewsCards.length - 1) {
+            setReviewsTransition('none');
+            currentPage = 1;
+            reviewsFlex.style.transform = `translateX(-${currentPage * (allReviewsCards[0].offsetWidth + 24)}px)`;
+            updateReviewsDots();
+        }
+    });
+    if (reviewsArrowPrev) reviewsArrowPrev.addEventListener('click', () => {
+        goToPage(currentPage - 1);
+    });
+    if (reviewsArrowNext) reviewsArrowNext.addEventListener('click', () => {
+        goToPage(currentPage + 1);
+    });
     // Swipe logic (по одной карточке)
     let startX = 0;
     let isDragging = false;
     let deltaX = 0;
-
     function onDragStart(e) {
         isDragging = true;
         startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-        reviewsFlex.style.transition = 'none';
+        setReviewsTransition('none');
     }
-
     function onDragMove(e) {
         if (!isDragging) return;
         const x = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
         deltaX = x - startX;
-        reviewsFlex.style.transform = `translateX(${-currentPage * (796 + 24) + deltaX}px)`;
+        reviewsFlex.style.transform = `translateX(${-currentPage * (allReviewsCards[0].offsetWidth + 24) + deltaX}px)`;
     }
-
     function onDragEnd() {
+        setReviewsTransition('transform 0.5s cubic-bezier(0.4,0,0.2,1)');
         if (!isDragging) return;
-        reviewsFlex.style.transition = '';
         if (Math.abs(deltaX) > 50) {
-            if (deltaX < 0 && currentPage < totalDots - 1) {
-                goToPage(currentPage + 1);
-            } else if (deltaX > 0 && currentPage > 0) {
-                goToPage(currentPage - 1);
-            } else {
-                goToPage(currentPage);
-            }
+            if (deltaX < 0) goToPage(currentPage + 1);
+            else if (deltaX > 0) goToPage(currentPage - 1);
+            else goToPage(currentPage);
         } else {
             goToPage(currentPage);
         }
         isDragging = false;
         deltaX = 0;
     }
-
     reviewsFlex.addEventListener('mousedown', onDragStart);
     reviewsFlex.addEventListener('mousemove', onDragMove);
     reviewsFlex.addEventListener('mouseup', onDragEnd);
@@ -78,10 +110,11 @@ document.addEventListener('DOMContentLoaded', function() {
     reviewsFlex.addEventListener('touchstart', onDragStart);
     reviewsFlex.addEventListener('touchmove', onDragMove);
     reviewsFlex.addEventListener('touchend', onDragEnd);
-
     // Инициализация
     renderDots();
-    goToPage(0);
+    setReviewsTransition('none');
+    reviewsFlex.style.transform = `translateX(-${currentPage * (allReviewsCards[0].offsetWidth + 24)}px)`;
+    updateReviewsDots();
 
     // --- Модальное окно заявки ---
     const modal = document.getElementById('modalRequest');
@@ -232,58 +265,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Popup скриншоты отзывов ---
-    // const reviewCard1 = document.querySelector('.reviews-card:nth-child(1)');
-    // const reviewPopup1 = document.getElementById('review-popup-img-1');
-    // if (reviewCard1 && reviewPopup1) {
-    //     reviewCard1.addEventListener('mouseenter', () => {
-    //         reviewPopup1.style.display = 'block';
-    //     });
-    //     reviewCard1.addEventListener('mouseleave', () => {
-    //         reviewPopup1.style.display = 'none';
-    //     });
-    // }
-    // const reviewCard2 = document.querySelector('.reviews-card:nth-child(2)');
-    // const reviewPopup2 = document.getElementById('review-popup-img-2');
-    // if (reviewCard2 && reviewPopup2) {
-    //     reviewCard2.addEventListener('mouseenter', () => {
-    //         reviewPopup2.style.display = 'block';
-    //     });
-    //     reviewCard2.addEventListener('mouseleave', () => {
-    //         reviewPopup2.style.display = 'none';
-    //     });
-    // }
-    // const reviewCard3 = document.querySelector('.reviews-card:nth-child(3)');
-    // const reviewPopup3 = document.getElementById('review-popup-img-3');
-    // if (reviewCard3 && reviewPopup3) {
-    //     reviewCard3.addEventListener('mouseenter', () => {
-    //         reviewPopup3.style.display = 'block';
-    //     });
-    //     reviewCard3.addEventListener('mouseleave', () => {
-    //         reviewPopup3.style.display = 'none';
-    //     });
-    // }
-    // const reviewCard4 = document.querySelector('.reviews-card:nth-child(4)');
-    // const reviewPopup4 = document.getElementById('review-popup-img-4');
-    // if (reviewCard4 && reviewPopup4) {
-    //     reviewCard4.addEventListener('mouseenter', () => {
-    //         reviewPopup4.style.display = 'block';
-    //     });
-    //     reviewCard4.addEventListener('mouseleave', () => {
-    //         reviewPopup4.style.display = 'none';
-    //     });
-    // }
-    // const reviewCard5 = document.querySelector('.reviews-card:nth-child(5)');
-    // const reviewPopup5 = document.getElementById('review-popup-img-5');
-    // if (reviewCard5 && reviewPopup5) {
-    //     reviewCard5.addEventListener('mouseenter', () => {
-    //         reviewPopup5.style.display = 'block';
-    //     });
-    //     reviewCard5.addEventListener('mouseleave', () => {
-    //         reviewPopup5.style.display = 'none';
-    //     });
-    // }
-
     // --- Модальное окно для скрина отзыва ---
     const reviewModal = document.getElementById('reviewModal');
     const reviewModalImg = document.getElementById('reviewModalImg');
@@ -331,25 +312,70 @@ document.addEventListener('DOMContentLoaded', function() {
     const worksFlex = document.querySelector('.works-flex');
     const worksSlides = document.querySelectorAll('.works-slide');
     const worksDotsContainer = document.querySelector('.works-dots');
-    let worksCurrent = 0;
-    const worksTotal = worksSlides.length;
+    const worksArrowPrev = document.querySelector('.works-arrow-prev');
+    const worksArrowNext = document.querySelector('.works-arrow-next');
+    // --- Бесшовный loop-слайдер для "Примеры работ" ---
+    // Клонируем первый и последний слайды
+    if (worksSlides.length > 1) {
+        const firstClone = worksSlides[0].cloneNode(true);
+        const lastClone = worksSlides[worksSlides.length - 1].cloneNode(true);
+        firstClone.classList.add('clone');
+        lastClone.classList.add('clone');
+        worksFlex.appendChild(firstClone);
+        worksFlex.insertBefore(lastClone, worksSlides[0]);
+    }
+    // Обновляем коллекцию слайдов
+    let allWorksSlides = document.querySelectorAll('.works-slide');
+    let worksCurrent = 1; // начинаем с первого реального слайда
+    const worksTotal = allWorksSlides.length - 2; // без клонов
 
     function renderWorksDots() {
         worksDotsContainer.innerHTML = '';
         for (let i = 0; i < worksTotal; i++) {
             const dot = document.createElement('span');
-            dot.className = 'works-dot' + (i === worksCurrent ? ' active' : '');
-            dot.addEventListener('click', () => goToWorks(i));
+            dot.className = 'works-dot';
             worksDotsContainer.appendChild(dot);
         }
     }
-    function goToWorks(idx) {
-        worksCurrent = idx;
-        worksFlex.style.transform = `translateX(-${idx * (worksSlides[0].offsetWidth + 24)}px)`;
-        Array.from(worksDotsContainer.children).forEach((dot, i) => {
-            dot.classList.toggle('active', i === idx);
-        });
+    function updateWorksDots() {
+        const dots = worksDotsContainer.children;
+        let activeIdx = worksCurrent - 1;
+        if (worksCurrent === 0) activeIdx = worksTotal - 1;
+        if (worksCurrent === allWorksSlides.length - 1) activeIdx = 0;
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.toggle('active', i === activeIdx);
+        }
     }
+    function setWorksTransition(val) {
+        worksFlex.style.transition = val;
+    }
+    function goToWorks(idx) {
+        setWorksTransition('transform 0.5s cubic-bezier(0.4,0,0.2,1)');
+        worksCurrent = idx;
+        worksFlex.style.transform = `translateX(-${idx * (allWorksSlides[0].offsetWidth + 24)}px)`;
+        updateWorksDots();
+    }
+    // После анимации: если на клоне — мгновенно переключить на реальный
+    worksFlex.addEventListener('transitionend', () => {
+        if (worksCurrent === 0) {
+            setWorksTransition('none');
+            worksCurrent = worksTotal;
+            worksFlex.style.transform = `translateX(-${worksCurrent * (allWorksSlides[0].offsetWidth + 24)}px)`;
+            updateWorksDots();
+        }
+        if (worksCurrent === allWorksSlides.length - 1) {
+            setWorksTransition('none');
+            worksCurrent = 1;
+            worksFlex.style.transform = `translateX(-${worksCurrent * (allWorksSlides[0].offsetWidth + 24)}px)`;
+            updateWorksDots();
+        }
+    });
+    if (worksArrowPrev) worksArrowPrev.addEventListener('click', () => {
+        goToWorks(worksCurrent - 1);
+    });
+    if (worksArrowNext) worksArrowNext.addEventListener('click', () => {
+        goToWorks(worksCurrent + 1);
+    });
     // Swipe logic
     let worksStartX = 0;
     let worksDragging = false;
@@ -357,18 +383,18 @@ document.addEventListener('DOMContentLoaded', function() {
     worksFlex.addEventListener('mousedown', e => {
         worksDragging = true;
         worksStartX = e.clientX;
-        worksFlex.style.transition = 'none';
+        setWorksTransition('none');
     });
     worksFlex.addEventListener('mousemove', e => {
         if (!worksDragging) return;
         worksDeltaX = e.clientX - worksStartX;
-        worksFlex.style.transform = `translateX(${-worksCurrent * (worksSlides[0].offsetWidth + 24) + worksDeltaX}px)`;
+        worksFlex.style.transform = `translateX(${-worksCurrent * (allWorksSlides[0].offsetWidth + 24) + worksDeltaX}px)`;
     });
     worksFlex.addEventListener('mouseup', () => {
-        worksFlex.style.transition = '';
+        setWorksTransition('transform 0.5s cubic-bezier(0.4,0,0.2,1)');
         if (Math.abs(worksDeltaX) > 50) {
-            if (worksDeltaX < 0 && worksCurrent < worksTotal - 1) goToWorks(worksCurrent + 1);
-            else if (worksDeltaX > 0 && worksCurrent > 0) goToWorks(worksCurrent - 1);
+            if (worksDeltaX < 0) goToWorks(worksCurrent + 1);
+            else if (worksDeltaX > 0) goToWorks(worksCurrent - 1);
             else goToWorks(worksCurrent);
         } else goToWorks(worksCurrent);
         worksDragging = false;
@@ -376,7 +402,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     worksFlex.addEventListener('mouseleave', () => {
         if (worksDragging) {
-            worksFlex.style.transition = '';
+            setWorksTransition('transform 0.5s cubic-bezier(0.4,0,0.2,1)');
             goToWorks(worksCurrent);
             worksDragging = false;
             worksDeltaX = 0;
@@ -386,18 +412,18 @@ document.addEventListener('DOMContentLoaded', function() {
     worksFlex.addEventListener('touchstart', e => {
         worksDragging = true;
         worksStartX = e.touches[0].clientX;
-        worksFlex.style.transition = 'none';
+        setWorksTransition('none');
     });
     worksFlex.addEventListener('touchmove', e => {
         if (!worksDragging) return;
         worksDeltaX = e.touches[0].clientX - worksStartX;
-        worksFlex.style.transform = `translateX(${-worksCurrent * (worksSlides[0].offsetWidth + 24) + worksDeltaX}px)`;
+        worksFlex.style.transform = `translateX(${-worksCurrent * (allWorksSlides[0].offsetWidth + 24) + worksDeltaX}px)`;
     });
     worksFlex.addEventListener('touchend', () => {
-        worksFlex.style.transition = '';
+        setWorksTransition('transform 0.5s cubic-bezier(0.4,0,0.2,1)');
         if (Math.abs(worksDeltaX) > 50) {
-            if (worksDeltaX < 0 && worksCurrent < worksTotal - 1) goToWorks(worksCurrent + 1);
-            else if (worksDeltaX > 0 && worksCurrent > 0) goToWorks(worksCurrent - 1);
+            if (worksDeltaX < 0) goToWorks(worksCurrent + 1);
+            else if (worksDeltaX > 0) goToWorks(worksCurrent - 1);
             else goToWorks(worksCurrent);
         } else goToWorks(worksCurrent);
         worksDragging = false;
@@ -405,5 +431,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     // Инициализация
     renderWorksDots();
-    goToWorks(0);
+    setWorksTransition('none');
+    worksFlex.style.transform = `translateX(-${worksCurrent * (allWorksSlides[0].offsetWidth + 24)}px)`;
+    updateWorksDots();
 });
