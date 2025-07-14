@@ -282,18 +282,22 @@ document.addEventListener('DOMContentLoaded', function() {
         4: 'img/reviewScreen4.jpg',
         5: 'img/reviewScreen5.jpg',
     };
-    // Навесим обработчики на все .seeReview
-    document.querySelectorAll('.reviews-card .seeReview').forEach((btn, idx) => {
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const num = idx + 1;
-            if (reviewModal && reviewModalImg && reviewScreens[num]) {
-                reviewModalImg.src = reviewScreens[num];
-                reviewModal.classList.add('active');
-                reviewModal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            }
-        });
+    // Навесим обработчики на все .seeReview только для реальных отзывов
+    const realReviewCards = document.querySelectorAll('.reviews-flex .reviews-card:not(.clone)');
+    realReviewCards.forEach((card, idx) => {
+        const btn = card.querySelector('.seeReview');
+        if (btn) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const num = idx + 1;
+                if (reviewModal && reviewModalImg && reviewScreens[num]) {
+                    reviewModalImg.src = reviewScreens[num];
+                    reviewModal.classList.add('active');
+                    reviewModal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        }
     });
     function closeReviewModal() {
         if (reviewModal) {
@@ -318,38 +322,41 @@ document.addEventListener('DOMContentLoaded', function() {
     const worksDotsContainer = document.querySelector('.works-dots');
     const worksArrowPrev = document.querySelector('.works-arrow-prev');
     const worksArrowNext = document.querySelector('.works-arrow-next');
-    // --- Бесшовный loop-слайдер для "Примеры работ" ---
-    // Клонируем первый и последний слайды
+    // --- Бесшовный loop-слайдер для "Примеры работ" с 3 видимыми слайдами и кусками по краям ---
+    // Клонируем первые и последние 2 слайда для seamless loop
+    const VISIBLE_WORKS = 3;
+    const CLONE_COUNT = VISIBLE_WORKS - 1; // по 2 куска слева и справа
     if (worksSlides.length > 1) {
-        const firstClone = worksSlides[0].cloneNode(true);
-        const lastClone = worksSlides[worksSlides.length - 1].cloneNode(true);
-        firstClone.classList.add('clone');
-        lastClone.classList.add('clone');
-        worksFlex.appendChild(firstClone);
-        worksFlex.insertBefore(lastClone, worksSlides[0]);
+        for (let i = 0; i < CLONE_COUNT; i++) {
+            const firstClone = worksSlides[i % worksSlides.length].cloneNode(true);
+            const lastClone = worksSlides[worksSlides.length - 1 - i].cloneNode(true);
+            firstClone.classList.add('clone');
+            lastClone.classList.add('clone');
+            worksFlex.appendChild(firstClone);
+            worksFlex.insertBefore(lastClone, worksSlides[0]);
+        }
     }
     // Обновляем коллекцию слайдов
     let allWorksSlides = document.querySelectorAll('.works-slide');
-    let worksCurrent = 1; // начинаем с первого реального слайда
-    const worksTotal = allWorksSlides.length - 2; // без клонов
+    let worksCurrent = CLONE_COUNT + 1; // начинаем со второго реального слайда
+    const worksTotal = allWorksSlides.length - 2 * CLONE_COUNT; // без клонов
 
     function renderWorksDots() {
         worksDotsContainer.innerHTML = '';
         for (let i = 0; i < worksTotal; i++) {
             const dot = document.createElement('span');
             dot.className = 'works-dot';
-            // Добавляем обработчик клика по dot для works
             dot.addEventListener('click', function() {
-                goToWorks(i + 1); // +1, т.к. первый реальный слайд — индекс 1
+                goToWorks(i + CLONE_COUNT); // +CLONE_COUNT, т.к. первый реальный слайд — индекс CLONE_COUNT
             });
             worksDotsContainer.appendChild(dot);
         }
     }
     function updateWorksDots() {
         const dots = worksDotsContainer.children;
-        let activeIdx = worksCurrent - 1;
-        if (worksCurrent === 0) activeIdx = worksTotal - 1;
-        if (worksCurrent === allWorksSlides.length - 1) activeIdx = 0;
+        let activeIdx = worksCurrent - CLONE_COUNT;
+        if (worksCurrent < CLONE_COUNT) activeIdx = worksTotal - 1;
+        if (worksCurrent >= allWorksSlides.length - CLONE_COUNT) activeIdx = 0;
         for (let i = 0; i < dots.length; i++) {
             dots[i].classList.toggle('active', i === activeIdx);
         }
@@ -360,21 +367,24 @@ document.addEventListener('DOMContentLoaded', function() {
     function goToWorks(idx) {
         setWorksTransition('transform 0.5s cubic-bezier(0.4,0,0.2,1)');
         worksCurrent = idx;
-        worksFlex.style.transform = `translateX(-${idx * (allWorksSlides[0].offsetWidth + 24)}px)`;
+        const slideWidth = allWorksSlides[0].offsetWidth + 24;
+        worksFlex.style.transform = `translateX(-${(idx - (VISIBLE_WORKS - 1)/2) * slideWidth}px)`;
         updateWorksDots();
     }
     // После анимации: если на клоне — мгновенно переключить на реальный
     worksFlex.addEventListener('transitionend', () => {
-        if (worksCurrent === 0) {
+        if (worksCurrent < CLONE_COUNT) {
             setWorksTransition('none');
-            worksCurrent = worksTotal;
-            worksFlex.style.transform = `translateX(-${worksCurrent * (allWorksSlides[0].offsetWidth + 24)}px)`;
+            worksCurrent = worksTotal + CLONE_COUNT - 1;
+            const slideWidth = allWorksSlides[0].offsetWidth + 24;
+            worksFlex.style.transform = `translateX(-${(worksCurrent - (VISIBLE_WORKS - 1)/2) * slideWidth}px)`;
             updateWorksDots();
         }
-        if (worksCurrent === allWorksSlides.length - 1) {
+        if (worksCurrent >= allWorksSlides.length - CLONE_COUNT) {
             setWorksTransition('none');
-            worksCurrent = 1;
-            worksFlex.style.transform = `translateX(-${worksCurrent * (allWorksSlides[0].offsetWidth + 24)}px)`;
+            worksCurrent = CLONE_COUNT;
+            const slideWidth = allWorksSlides[0].offsetWidth + 24;
+            worksFlex.style.transform = `translateX(-${(worksCurrent - (VISIBLE_WORKS - 1)/2) * slideWidth}px)`;
             updateWorksDots();
         }
     });
@@ -396,7 +406,8 @@ document.addEventListener('DOMContentLoaded', function() {
     worksFlex.addEventListener('mousemove', e => {
         if (!worksDragging) return;
         worksDeltaX = e.clientX - worksStartX;
-        worksFlex.style.transform = `translateX(${-worksCurrent * (allWorksSlides[0].offsetWidth + 24) + worksDeltaX}px)`;
+        const slideWidth = allWorksSlides[0].offsetWidth + 24;
+        worksFlex.style.transform = `translateX(${-((worksCurrent - (VISIBLE_WORKS - 1)/2) * slideWidth) + worksDeltaX}px)`;
     });
     worksFlex.addEventListener('mouseup', () => {
         setWorksTransition('transform 0.5s cubic-bezier(0.4,0,0.2,1)');
@@ -425,7 +436,8 @@ document.addEventListener('DOMContentLoaded', function() {
     worksFlex.addEventListener('touchmove', e => {
         if (!worksDragging) return;
         worksDeltaX = e.touches[0].clientX - worksStartX;
-        worksFlex.style.transform = `translateX(${-worksCurrent * (allWorksSlides[0].offsetWidth + 24) + worksDeltaX}px)`;
+        const slideWidth = allWorksSlides[0].offsetWidth + 24;
+        worksFlex.style.transform = `translateX(${-((worksCurrent - (VISIBLE_WORKS - 1)/2) * slideWidth) + worksDeltaX}px)`;
     });
     worksFlex.addEventListener('touchend', () => {
         setWorksTransition('transform 0.5s cubic-bezier(0.4,0,0.2,1)');
@@ -440,6 +452,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Инициализация
     renderWorksDots();
     setWorksTransition('none');
-    worksFlex.style.transform = `translateX(-${worksCurrent * (allWorksSlides[0].offsetWidth + 24)}px)`;
+    const slideWidth = allWorksSlides[0].offsetWidth + 24;
+    worksFlex.style.transform = `translateX(-${(worksCurrent - (VISIBLE_WORKS - 1)/2) * slideWidth}px)`;
     updateWorksDots();
 });

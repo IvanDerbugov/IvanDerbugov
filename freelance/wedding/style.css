@@ -241,7 +241,7 @@ header {
 .works {
     position: relative;
     overflow: hidden;
-    width: 1048px;
+    width: 1600px;
     margin: 0 auto;
 }
 .works-flex {
@@ -252,10 +252,11 @@ header {
 }
 .works-slide {
     flex: 0 0 1048px;
-    max-width: 1048px;
+    max-width: 741px;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* margin-left: 20px; */
 }
 .works-dots {
     display: flex;
@@ -354,21 +355,22 @@ header {
 /* Hover эффекты для видео */
 .works video {
     border-radius: 48px;
-    width: calc(1920px / 2);
-    height: calc(804px / 2);
+    width: calc(1920px / 2.55);
+    height: calc(804px / 2.55);
     display: block;
     background: #000;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    margin-left: -690px;
 }
 
 .works video[src*="img/work2"] {
-    width: calc(1920px / 2);
-    height: calc(818px / 2);
+    width: calc(1920px / 2.55);
+    height: calc(818px / 2.55);
 }
 .works video[src*="img/work3"] {
-    width: calc(1920px / 2);
-    height: calc(818px / 2);
+    width: calc(1920px / 2.55);
+    height: calc(818px / 2.55);
 }
 
 .works-dots {
@@ -582,6 +584,7 @@ header {
 .tariffs h2:hover,
 .aboutMe h2:hover,
 .chooseUs h2:hover,
+.reviews h2:hover,
 .leaveRequest h2:hover {
     transform: scale(1.02);
     text-shadow: 0 4px 12px rgba(255, 152, 152, 0.3);
@@ -760,6 +763,7 @@ header {
     font-weight: 700;
     color: #FF9898;
     margin-bottom: 135px;
+    margin-left: 11px;
     text-align: left;
 }
 
@@ -780,12 +784,13 @@ header {
     flex: 0 0 100%;
     min-width: 0;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    max-width: 790px;
+    max-width: 772px;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-left: 4px;
 }
 
 .textReview {
@@ -1454,7 +1459,7 @@ footer {
 }
 .reviews-card:hover {
     box-shadow: 0 8px 32px 0 rgba(255, 152, 152, 0.18), 0 2px 8px 0 rgba(0,0,0,0.08);
-    transform: translateY(-6px) scale(1.01);
+    /* transform: translateY(-6px) scale(1.01); */
 }
 .reviews-card:hover .seeReview {
     color: #fff;
@@ -1608,28 +1613,31 @@ footer {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: #fff;
-    color: #F90F4A;
-    border: 3px solid #F90F4A;
+    background: transparent;
+    color: #fff;
+    border: none;
     font-size: 38px;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 2px 12px #ff748233;
+    box-shadow: none;
     transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s;
     opacity: 0.92;
 }
 .works-arrow:hover, .reviews-arrow:hover {
-    background: #F90F4A;
-    color: #fff;
-    border: 3px solid #fff;
+    background: transparent;
+    color: #F90F4A;
+    border: none;
     transform: translateY(-50%) scale(1.08);
     opacity: 1;
 }
-.works-arrow-prev, .reviews-arrow-prev {
+.works-arrow-prev {
     left: 2px;
+}
+.reviews-arrow-prev {
+    left: 22px;
 }
 .works-arrow-next, .reviews-arrow-next {
     right: 2px;
@@ -1656,5 +1664,36 @@ footer {
     }
     .works-arrow-next, .reviews-arrow-next {
         right: 0;
+    }
+}
+.works-slide, .video-wrapper {
+    position: relative;
+}
+.play-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    pointer-events: none;
+    animation: playPulse 1.4s infinite;
+}
+.play-btn svg {
+    display: block;
+    filter: drop-shadow(0 0 16px #F90F4A44);
+    transition: filter 0.3s;
+}
+@keyframes playPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        filter: drop-shadow(0 0 0 #F90F4A44);
+    }
+    60% {
+        transform: translate(-50%, -50%) scale(1.12);
+        filter: drop-shadow(0 0 24px #F90F4A88);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        filter: drop-shadow(0 0 0 #F90F4A44);
     }
 }
