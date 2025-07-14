@@ -354,12 +354,21 @@ header {
 /* Hover эффекты для видео */
 .works video {
     border-radius: 48px;
-    width: 1064px;
-    height: 446px;
+    width: calc(1920px / 2);
+    height: calc(804px / 2);
     display: block;
     background: #000;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+}
+
+.works video[src*="img/work2"] {
+    width: calc(1920px / 2);
+    height: calc(818px / 2);
+}
+.works video[src*="img/work3"] {
+    width: calc(1920px / 2);
+    height: calc(818px / 2);
 }
 
 .works-dots {
@@ -573,7 +582,6 @@ header {
 .tariffs h2:hover,
 .aboutMe h2:hover,
 .chooseUs h2:hover,
-.reviews h2:hover,
 .leaveRequest h2:hover {
     transform: scale(1.02);
     text-shadow: 0 4px 12px rgba(255, 152, 152, 0.3);
