@@ -282,22 +282,34 @@ document.addEventListener('DOMContentLoaded', function() {
         4: 'img/reviewScreen4.jpg',
         5: 'img/reviewScreen5.jpg',
     };
-    // Навесим обработчики на все .seeReview только для реальных отзывов
-    const realReviewCards = document.querySelectorAll('.reviews-flex .reviews-card:not(.clone)');
-    realReviewCards.forEach((card, idx) => {
-        const btn = card.querySelector('.seeReview');
-        if (btn) {
-            btn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const num = idx + 1;
-                if (reviewModal && reviewModalImg && reviewScreens[num]) {
-                    reviewModalImg.src = reviewScreens[num];
-                    reviewModal.classList.add('active');
-                    reviewModal.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
-                }
-            });
+    // Присваиваем data-review-index всем .reviews-card (реальным и клонам)
+    document.querySelectorAll('.reviews-flex .reviews-card').forEach((card, idx) => {
+        // idx по порядку, но для клонов нужно вычислить реальный индекс
+        // Считаем, что всего 5 отзывов (можно сделать динамически)
+        const realCount = document.querySelectorAll('.reviews-flex .reviews-card:not(.clone)').length;
+        let reviewIdx = idx;
+        if (card.classList.contains('clone')) {
+            // Клон в начале: idx < realCount ? последний : первый
+            if (idx < realCount) reviewIdx = realCount;
+            else reviewIdx = 1;
+        } else {
+            reviewIdx = idx + 1;
         }
+        card.setAttribute('data-review-index', reviewIdx);
+    });
+    // Навесим обработчики на все .seeReview (и клоны тоже)
+    document.querySelectorAll('.reviews-card .seeReview').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const card = btn.closest('.reviews-card');
+            const num = Number(card.getAttribute('data-review-index'));
+            if (reviewModal && reviewModalImg && reviewScreens[num]) {
+                reviewModalImg.src = reviewScreens[num];
+                reviewModal.classList.add('active');
+                reviewModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        });
     });
     function closeReviewModal() {
         if (reviewModal) {
