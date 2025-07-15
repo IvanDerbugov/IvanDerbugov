@@ -339,13 +339,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const VISIBLE_WORKS = 3;
     const CLONE_COUNT = VISIBLE_WORKS - 1; // по 2 куска слева и справа
     if (worksSlides.length > 1) {
+        // Создаем клоны в правильном порядке для seamless loop
+        // Слева должны быть клоны последних 2 слайдов (3, 1)
+        // Справа должны быть клоны первых 2 слайдов (2, 3)
+        
+        // Клоны слева (последние 2 слайда)
         for (let i = 0; i < CLONE_COUNT; i++) {
-            const firstClone = worksSlides[i % worksSlides.length].cloneNode(true);
-            const lastClone = worksSlides[worksSlides.length - 1 - i].cloneNode(true);
-            firstClone.classList.add('clone');
-            lastClone.classList.add('clone');
-            worksFlex.appendChild(firstClone);
-            worksFlex.insertBefore(lastClone, worksSlides[0]);
+            const cloneIndex = worksSlides.length - CLONE_COUNT + i; // последние 2 слайда
+            const leftClone = worksSlides[cloneIndex].cloneNode(true);
+            leftClone.classList.add('clone');
+            worksFlex.insertBefore(leftClone, worksSlides[0]);
+        }
+        
+        // Клоны справа (первые 2 слайда)
+        for (let i = 0; i < CLONE_COUNT; i++) {
+            const rightClone = worksSlides[i].cloneNode(true);
+            rightClone.classList.add('clone');
+            worksFlex.appendChild(rightClone);
         }
     }
     // Обновляем коллекцию слайдов
