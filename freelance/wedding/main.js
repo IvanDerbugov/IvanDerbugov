@@ -473,6 +473,33 @@ document.addEventListener('DOMContentLoaded', function() {
         const allVideos = document.querySelectorAll('.works-slide video');
         const allPlayBtns = document.querySelectorAll('.works-slide .play-btn');
         
+        // Создаем карту соответствия: клон -> оригинал
+        const cloneToOriginalMap = new Map();
+        const originalToClonesMap = new Map();
+        
+        // Находим соответствия между клонами и оригиналами
+        document.querySelectorAll('.works-slide').forEach((slide, index) => {
+            const video = slide.querySelector('video');
+            if (slide.classList.contains('clone') && video) {
+                // Определяем, какой это клон (первый или последний)
+                const isFirstClone = index < CLONE_COUNT;
+                const originalIndex = isFirstClone ? 
+                    allWorksSlides.length - 2 * CLONE_COUNT - 1 : // последний оригинал
+                    0; // первый оригинал
+                
+                const originalSlide = document.querySelectorAll('.works-slide')[originalIndex];
+                const originalVideo = originalSlide.querySelector('video');
+                
+                if (originalVideo) {
+                    cloneToOriginalMap.set(video, originalVideo);
+                    if (!originalToClonesMap.has(originalVideo)) {
+                        originalToClonesMap.set(originalVideo, []);
+                    }
+                    originalToClonesMap.get(originalVideo).push(video);
+                }
+            }
+        });
+        
         document.querySelectorAll('.works-slide').forEach(slide => {
             const playBtn = slide.querySelector('.play-btn');
             const video = slide.querySelector('video');
@@ -490,6 +517,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     allVideos.forEach(otherVideo => {
                         if (otherVideo !== video) {
                             otherVideo.pause();
+                            // Также останавливаем связанные клоны/оригиналы
+                            const relatedVideos = getRelatedVideos(otherVideo, cloneToOriginalMap, originalToClonesMap);
+                            relatedVideos.forEach(relatedVideo => {
+                                if (relatedVideo !== otherVideo) {
+                                    relatedVideo.pause();
+                                }
+                            });
                         }
                     });
                     
@@ -502,27 +536,104 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Скрываем текущую кнопку и запускаем видео
                     playBtn.style.display = 'none';
-                    video.play();
+                    
+                    // Если это клон, синхронизируем с оригиналом
+                    if (slide.classList.contains('clone')) {
+                        const originalVideo = cloneToOriginalMap.get(video);
+                        if (originalVideo) {
+                            // Запускаем оригинал без звука
+                            originalVideo.muted = true;
+                            originalVideo.currentTime = video.currentTime;
+                            originalVideo.play();
+                            // Запускаем клон со звуком
+                            video.play();
+                        } else {
+                            video.play();
+                        }
+                    } else {
+                        // Если это оригинал, синхронизируем с клонами
+                        const clones = originalToClonesMap.get(video) || [];
+                        clones.forEach(clone => {
+                            clone.muted = true;
+                            clone.currentTime = video.currentTime;
+                            clone.play();
+                        });
+                        video.play();
+                    }
                 });
                 
-                // Скрываем кнопку при воспроизведении
+                // Синхронизация при воспроизведении
                 video.addEventListener('play', function() {
                     playBtn.style.display = 'none';
+                    
+                    // Синхронизируем связанные видео
+                    const relatedVideos = getRelatedVideos(video, cloneToOriginalMap, originalToClonesMap);
+                    relatedVideos.forEach(relatedVideo => {
+                        if (relatedVideo !== video && relatedVideo.paused) {
+                            relatedVideo.currentTime = video.currentTime;
+                            relatedVideo.muted = true;
+                            relatedVideo.play();
+                        }
+                    });
                 });
                 
-                // Показываем кнопку при паузе (если видео не закончилось)
+                // Синхронизация при паузе
                 video.addEventListener('pause', function() {
                     if (video.currentTime < video.duration) {
                         playBtn.style.display = 'block';
                     }
+                    
+                    // Останавливаем связанные видео
+                    const relatedVideos = getRelatedVideos(video, cloneToOriginalMap, originalToClonesMap);
+                    relatedVideos.forEach(relatedVideo => {
+                        if (relatedVideo !== video) {
+                            relatedVideo.pause();
+                        }
+                    });
+                });
+                
+                // Синхронизация при изменении времени
+                video.addEventListener('timeupdate', function() {
+                    const relatedVideos = getRelatedVideos(video, cloneToOriginalMap, originalToClonesMap);
+                    relatedVideos.forEach(relatedVideo => {
+                        if (relatedVideo !== video && Math.abs(relatedVideo.currentTime - video.currentTime) > 0.1) {
+                            relatedVideo.currentTime = video.currentTime;
+                        }
+                    });
                 });
                 
                 // Показываем кнопку при окончании видео
                 video.addEventListener('ended', function() {
                     playBtn.style.display = 'block';
+                    
+                    // Останавливаем связанные видео
+                    const relatedVideos = getRelatedVideos(video, cloneToOriginalMap, originalToClonesMap);
+                    relatedVideos.forEach(relatedVideo => {
+                        if (relatedVideo !== video) {
+                            relatedVideo.pause();
+                            relatedVideo.currentTime = 0;
+                        }
+                    });
                 });
             }
         });
+        
+        // Функция для получения связанных видео (клоны/оригиналы)
+        function getRelatedVideos(video, cloneToOriginalMap, originalToClonesMap) {
+            const related = [];
+            
+            // Если это клон, добавляем оригинал
+            if (cloneToOriginalMap.has(video)) {
+                related.push(cloneToOriginalMap.get(video));
+            }
+            
+            // Если это оригинал, добавляем клоны
+            if (originalToClonesMap.has(video)) {
+                related.push(...originalToClonesMap.get(video));
+            }
+            
+            return related;
+        }
     }
     
     // Инициализируем кнопки play
