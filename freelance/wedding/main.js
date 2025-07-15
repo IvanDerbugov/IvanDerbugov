@@ -491,14 +491,17 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.works-slide').forEach((slide, index) => {
             const video = slide.querySelector('video');
             if (slide.classList.contains('clone') && video) {
-                // Определяем, какой это клон (первый или последний)
-                const isFirstClone = index < CLONE_COUNT;
-                const originalIndex = isFirstClone ? 
-                    allWorksSlides.length - 2 * CLONE_COUNT - 1 : // последний оригинал
-                    0; // первый оригинал
+                // Определяем оригинал по содержимому видео (src)
+                const videoSrc = video.src;
+                let originalVideo = null;
                 
-                const originalSlide = document.querySelectorAll('.works-slide')[originalIndex];
-                const originalVideo = originalSlide.querySelector('video');
+                // Ищем оригинал с тем же src среди не-клонов
+                document.querySelectorAll('.works-slide:not(.clone)').forEach(originalSlide => {
+                    const origVideo = originalSlide.querySelector('video');
+                    if (origVideo && origVideo.src === videoSrc) {
+                        originalVideo = origVideo;
+                    }
+                });
                 
                 if (originalVideo) {
                     cloneToOriginalMap.set(video, originalVideo);
