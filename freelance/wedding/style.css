@@ -1671,11 +1671,12 @@ footer {
 }
 .play-btn {
     position: absolute;
-    left: 50%;
+    left: 4%;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 3;
-    pointer-events: none;
+    pointer-events: auto;
+    cursor: pointer;
     animation: playPulse 1.4s infinite;
 }
 .play-btn svg {

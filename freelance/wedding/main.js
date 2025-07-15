@@ -467,4 +467,45 @@ document.addEventListener('DOMContentLoaded', function() {
     const slideWidth = allWorksSlides[0].offsetWidth + 24;
     worksFlex.style.transform = `translateX(-${(worksCurrent - (VISIBLE_WORKS - 1)/2) * slideWidth}px)`;
     updateWorksDots();
+
+    // --- Функциональность кнопок play для видео в works ---
+    function setupPlayButtons() {
+        document.querySelectorAll('.works-slide').forEach(slide => {
+            const playBtn = slide.querySelector('.play-btn');
+            const video = slide.querySelector('video');
+            
+            if (playBtn && video) {
+                // Показываем кнопку изначально
+                playBtn.style.display = 'block';
+                playBtn.style.pointerEvents = 'auto';
+                
+                // Обработчик клика по кнопке play
+                playBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    playBtn.style.display = 'none';
+                    video.play();
+                });
+                
+                // Скрываем кнопку при воспроизведении
+                video.addEventListener('play', function() {
+                    playBtn.style.display = 'none';
+                });
+                
+                // Показываем кнопку при паузе (если видео не закончилось)
+                video.addEventListener('pause', function() {
+                    if (video.currentTime < video.duration) {
+                        playBtn.style.display = 'block';
+                    }
+                });
+                
+                // Показываем кнопку при окончании видео
+                video.addEventListener('ended', function() {
+                    playBtn.style.display = 'block';
+                });
+            }
+        });
+    }
+    
+    // Инициализируем кнопки play
+    setupPlayButtons();
 });
