@@ -213,11 +213,17 @@
     }
 
     .seeMoreShow {
-        margin: -490px auto 24px auto;
+        margin: -90px auto 44px auto;
         font-size: 20px;
         padding: 15px 40px;
         max-width: 98%;
-        
+    }
+
+    .seeMoreHide {
+        margin: 10px auto 50px auto;
+        font-size: 20px;
+        padding: 15px 40px;
+        max-width: 98%;
     }
 }
 
