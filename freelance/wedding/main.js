@@ -561,30 +561,26 @@ document.addEventListener('DOMContentLoaded', function() {
                             video.play();
                         }
                     } else {
-                        // Если это оригинал, синхронизируем с клонами
-                        const clones = originalToClonesMap.get(video) || [];
-                        clones.forEach(clone => {
-                            clone.muted = true;
-                            clone.currentTime = video.currentTime;
-                            clone.play();
-                        });
+                        // Если это оригинал, просто запускаем его (без синхронизации с клонами)
                         video.play();
                     }
                 });
                 
-                // Синхронизация при воспроизведении
+                // Синхронизация при воспроизведении (только для клонов)
                 video.addEventListener('play', function() {
                     playBtn.style.display = 'none';
                     
-                    // Синхронизируем связанные видео
-                    const relatedVideos = getRelatedVideos(video, cloneToOriginalMap, originalToClonesMap);
-                    relatedVideos.forEach(relatedVideo => {
-                        if (relatedVideo !== video && relatedVideo.paused) {
-                            relatedVideo.currentTime = video.currentTime;
-                            relatedVideo.muted = true;
-                            relatedVideo.play();
-                        }
-                    });
+                    // Синхронизируем связанные видео только если это клон
+                    if (slide.classList.contains('clone')) {
+                        const relatedVideos = getRelatedVideos(video, cloneToOriginalMap, originalToClonesMap);
+                        relatedVideos.forEach(relatedVideo => {
+                            if (relatedVideo !== video && relatedVideo.paused) {
+                                relatedVideo.currentTime = video.currentTime;
+                                relatedVideo.muted = true;
+                                relatedVideo.play();
+                            }
+                        });
+                    }
                 });
                 
                 // Синхронизация при паузе
@@ -602,14 +598,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 });
                 
-                // Синхронизация при изменении времени
+                // Синхронизация при изменении времени (только для клонов)
                 video.addEventListener('timeupdate', function() {
-                    const relatedVideos = getRelatedVideos(video, cloneToOriginalMap, originalToClonesMap);
-                    relatedVideos.forEach(relatedVideo => {
-                        if (relatedVideo !== video && Math.abs(relatedVideo.currentTime - video.currentTime) > 0.1) {
-                            relatedVideo.currentTime = video.currentTime;
-                        }
-                    });
+                    if (slide.classList.contains('clone')) {
+                        const relatedVideos = getRelatedVideos(video, cloneToOriginalMap, originalToClonesMap);
+                        relatedVideos.forEach(relatedVideo => {
+                            if (relatedVideo !== video && Math.abs(relatedVideo.currentTime - video.currentTime) > 0.1) {
+                                relatedVideo.currentTime = video.currentTime;
+                            }
+                        });
+                    }
                 });
                 
                 // Показываем кнопку при окончании видео
