@@ -470,6 +470,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Функциональность кнопок play для видео в works ---
     function setupPlayButtons() {
+        const allVideos = document.querySelectorAll('.works-slide video');
+        const allPlayBtns = document.querySelectorAll('.works-slide .play-btn');
+        
         document.querySelectorAll('.works-slide').forEach(slide => {
             const playBtn = slide.querySelector('.play-btn');
             const video = slide.querySelector('video');
@@ -482,6 +485,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Обработчик клика по кнопке play
                 playBtn.addEventListener('click', function(e) {
                     e.stopPropagation();
+                    
+                    // Ставим на паузу все остальные видео
+                    allVideos.forEach(otherVideo => {
+                        if (otherVideo !== video) {
+                            otherVideo.pause();
+                        }
+                    });
+                    
+                    // Показываем кнопки play для всех остальных видео
+                    allPlayBtns.forEach(otherBtn => {
+                        if (otherBtn !== playBtn) {
+                            otherBtn.style.display = 'block';
+                        }
+                    });
+                    
+                    // Скрываем текущую кнопку и запускаем видео
                     playBtn.style.display = 'none';
                     video.play();
                 });
