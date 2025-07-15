@@ -1637,10 +1637,10 @@ footer {
     left: 2px;
 }
 .reviews-arrow-prev {
-    left: -7px;
+    left: 7px;
 }
 .works-arrow-next, .reviews-arrow-next {
-    right: 2px;
+    right: 18px;
 }
 .works-arrow, .reviews-arrow {
     z-index: 20;

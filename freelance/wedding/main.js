@@ -281,6 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
         3: 'img/reviewScreen3.jpg',
         4: 'img/reviewScreen4.jpg',
         5: 'img/reviewScreen5.jpg',
+        6: 'img/reviewScreen6.jpg',
     };
     // Присваиваем data-review-index всем .reviews-card (реальным и клонам)
     document.querySelectorAll('.reviews-flex .reviews-card').forEach((card, idx) => {
@@ -310,6 +311,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.style.overflow = 'hidden';
             }
         });
+    });
+    
+    // Отдельный обработчик для отзыва Ольги (reviewScreen6.jpg)
+    document.querySelectorAll('.reviews-card').forEach(card => {
+        const textReview = card.querySelector('.textReview');
+        const seeReviewBtn = card.querySelector('.seeReview');
+        
+        if (textReview && seeReviewBtn && textReview.textContent.includes('Мы остались в восторге!')) {
+            // Это отзыв Ольги - добавляем специальный обработчик
+            seeReviewBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (reviewModal && reviewModalImg) {
+                    reviewModalImg.src = 'img/reviewScreen6.jpg';
+                    reviewModal.classList.add('active');
+                    reviewModal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        }
     });
     function closeReviewModal() {
         if (reviewModal) {
