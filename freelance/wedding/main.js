@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentPage = 1;
     const totalSlides = allReviewsCards.length - 2;
     const totalDots = totalSlides;
+    let isTransitioning = false; // Флаг для защиты от множественных кликов
+    
     function renderDots() {
         reviewsDotsContainer.innerHTML = '';
         for (let i = 0; i < totalDots; i++) {
@@ -36,7 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
             dot.className = 'reviews-dot';
             // Добавляем обработчик клика по dot для отзывов
             dot.addEventListener('click', function() {
-                goToPage(i + 1); // +1, т.к. первый реальный слайд — индекс 1
+                if (!isTransitioning) {
+                    goToPage(i + 1); // +1, т.к. первый реальный слайд — индекс 1
+                }
             });
             reviewsDotsContainer.appendChild(dot);
         }
@@ -54,6 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
         reviewsFlex.style.transition = val;
     }
     function goToPage(page) {
+        if (isTransitioning) return; // Защита от множественных кликов
+        
+        isTransitioning = true;
         setReviewsTransition('transform 0.5s cubic-bezier(0.4,0,0.2,1)');
         currentPage = page;
         reviewsFlex.style.transform = `translateX(-${page * (allReviewsCards[0].offsetWidth + 24)}px)`;
@@ -72,18 +79,24 @@ document.addEventListener('DOMContentLoaded', function() {
             reviewsFlex.style.transform = `translateX(-${currentPage * (allReviewsCards[0].offsetWidth + 24)}px)`;
             updateReviewsDots();
         }
+        isTransitioning = false; // Разрешаем новые переходы
     });
     if (reviewsArrowPrev) reviewsArrowPrev.addEventListener('click', () => {
-        goToPage(currentPage - 1);
+        if (!isTransitioning) {
+            goToPage(currentPage - 1);
+        }
     });
     if (reviewsArrowNext) reviewsArrowNext.addEventListener('click', () => {
-        goToPage(currentPage + 1);
+        if (!isTransitioning) {
+            goToPage(currentPage + 1);
+        }
     });
     // Swipe logic (по одной карточке)
     let startX = 0;
     let isDragging = false;
     let deltaX = 0;
     function onDragStart(e) {
+        if (isTransitioning) return; // Защита от свайпов во время перехода
         isDragging = true;
         startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
         setReviewsTransition('none');
@@ -95,8 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
         reviewsFlex.style.transform = `translateX(${-currentPage * (allReviewsCards[0].offsetWidth + 24) + deltaX}px)`;
     }
     function onDragEnd() {
-        setReviewsTransition('transform 0.5s cubic-bezier(0.4,0,0.2,1)');
         if (!isDragging) return;
+        setReviewsTransition('transform 0.5s cubic-bezier(0.4,0,0.2,1)');
         if (Math.abs(deltaX) > 50) {
             if (deltaX < 0) goToPage(currentPage + 1);
             else if (deltaX > 0) goToPage(currentPage - 1);
@@ -382,6 +395,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let allWorksSlides = document.querySelectorAll('.works-slide');
     let worksCurrent = CLONE_COUNT + 1; // начинаем со второго реального слайда
     const worksTotal = allWorksSlides.length - 2 * CLONE_COUNT; // без клонов
+    let isWorksTransitioning = false; // Флаг для защиты от множественных кликов
 
     function renderWorksDots() {
         worksDotsContainer.innerHTML = '';
@@ -389,7 +403,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const dot = document.createElement('span');
             dot.className = 'works-dot';
             dot.addEventListener('click', function() {
-                goToWorks(i + CLONE_COUNT); // +CLONE_COUNT, т.к. первый реальный слайд — индекс CLONE_COUNT
+                if (!isWorksTransitioning) {
+                    goToWorks(i + CLONE_COUNT); // +CLONE_COUNT, т.к. первый реальный слайд — индекс CLONE_COUNT
+                }
             });
             worksDotsContainer.appendChild(dot);
         }
@@ -407,6 +423,9 @@ document.addEventListener('DOMContentLoaded', function() {
         worksFlex.style.transition = val;
     }
     function goToWorks(idx) {
+        if (isWorksTransitioning) return; // Защита от множественных кликов
+        
+        isWorksTransitioning = true;
         setWorksTransition('transform 0.5s cubic-bezier(0.4,0,0.2,1)');
         worksCurrent = idx;
         const slideWidth = allWorksSlides[0].offsetWidth + 24;
@@ -429,18 +448,24 @@ document.addEventListener('DOMContentLoaded', function() {
             worksFlex.style.transform = `translateX(-${(worksCurrent - (VISIBLE_WORKS - 1)/2) * slideWidth}px)`;
             updateWorksDots();
         }
+        isWorksTransitioning = false; // Разрешаем новые переходы
     });
     if (worksArrowPrev) worksArrowPrev.addEventListener('click', () => {
-        goToWorks(worksCurrent - 1);
+        if (!isWorksTransitioning) {
+            goToWorks(worksCurrent - 1);
+        }
     });
     if (worksArrowNext) worksArrowNext.addEventListener('click', () => {
-        goToWorks(worksCurrent + 1);
+        if (!isWorksTransitioning) {
+            goToWorks(worksCurrent + 1);
+        }
     });
     // Swipe logic
     let worksStartX = 0;
     let worksDragging = false;
     let worksDeltaX = 0;
     worksFlex.addEventListener('mousedown', e => {
+        if (isWorksTransitioning) return; // Защита от свайпов во время перехода
         worksDragging = true;
         worksStartX = e.clientX;
         setWorksTransition('none');
@@ -452,6 +477,7 @@ document.addEventListener('DOMContentLoaded', function() {
         worksFlex.style.transform = `translateX(${-((worksCurrent - (VISIBLE_WORKS - 1)/2) * slideWidth) + worksDeltaX}px)`;
     });
     worksFlex.addEventListener('mouseup', () => {
+        if (!worksDragging) return;
         setWorksTransition('transform 0.5s cubic-bezier(0.4,0,0.2,1)');
         if (Math.abs(worksDeltaX) > 50) {
             if (worksDeltaX < 0) goToWorks(worksCurrent + 1);
@@ -471,6 +497,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     // Touch
     worksFlex.addEventListener('touchstart', e => {
+        if (isWorksTransitioning) return; // Защита от свайпов во время перехода
         worksDragging = true;
         worksStartX = e.touches[0].clientX;
         setWorksTransition('none');
@@ -482,6 +509,7 @@ document.addEventListener('DOMContentLoaded', function() {
         worksFlex.style.transform = `translateX(${-((worksCurrent - (VISIBLE_WORKS - 1)/2) * slideWidth) + worksDeltaX}px)`;
     });
     worksFlex.addEventListener('touchend', () => {
+        if (!worksDragging) return;
         setWorksTransition('transform 0.5s cubic-bezier(0.4,0,0.2,1)');
         if (Math.abs(worksDeltaX) > 50) {
             if (worksDeltaX < 0) goToWorks(worksCurrent + 1);
