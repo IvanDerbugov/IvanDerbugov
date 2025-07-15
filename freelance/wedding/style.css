@@ -1679,6 +1679,9 @@ footer {
     cursor: pointer;
     animation: playPulse 1.4s infinite;
 }
+.main-play-btn {
+    left: -472%;
+}
 .play-btn svg {
     display: block;
     filter: drop-shadow(0 0 16px #F90F4A44);
