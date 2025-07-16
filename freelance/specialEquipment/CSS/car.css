@@ -401,12 +401,12 @@ main > .conteiner1800:first-of-type {
     font-size: 23px;
     font-weight: 700;
     margin-bottom: 2px;
-    color: #222;
+    color: #043517;
     line-height: 1.15;
 }
 .card-status {
     font-size: 14px;
-    color: #888;
+    color: #043517;
     margin-bottom: 4px;
     display: flex;
     align-items: center;
@@ -430,12 +430,12 @@ main > .conteiner1800:first-of-type {
     gap: 2px;
 }
 .card-specs span {
-    color: #888;
+    color: #043517;
     font-weight: 400;
 }
 .card-specs b {
     font-weight: 600;
-    color: #222;
+    color: #043517;
 }
 .card-price-row {
     display: flex;
@@ -447,27 +447,27 @@ main > .conteiner1800:first-of-type {
 .card-price {
     font-size: 20px;
     font-weight: 700;
-    color: #111;
+    color: #043517;
 }
 .card-price b {
     font-size: 22px;
     font-weight: 900;
-    color: #000;
+    color: #043517;
 }
 .card-dop {
     font-size: 18px;
     font-weight: 500;
-    color: #111;
+    color: #043517;
     margin-bottom: 10px;
 }
 .card-dop b {
     font-size: 20px;
     font-weight: 700;
-    color: #000;
+    color: #043517;
 }
 .card-delivery {
     font-size: 14px;
-    color: #888;
+    color: #043517;
 }
 .card-btns {
     display: flex;
@@ -520,13 +520,13 @@ main > .conteiner1800:first-of-type {
     border-bottom: none;
 }
 .card-specs-list span {
-    color: #444;
+    color: #043517;
     font-weight: 400;
     margin-right: 10px;
     white-space: nowrap;
 }
 .card-specs-list b {
-    color: #111;
+    color: #043517;
     font-weight: 700;
     margin-left: 10px;
     white-space: nowrap;

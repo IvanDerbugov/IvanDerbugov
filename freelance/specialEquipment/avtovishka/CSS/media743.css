@@ -225,6 +225,16 @@
         padding: 15px 40px;
         max-width: 98%;
     }
+
+    .wrapAdvantagesGrid .text1::before {
+        left: 30px;
+        top: -26px;
+    }
+    
+    .wrapAdvantagesGrid .text5::before {
+        left: 9px;
+        top: -26px;
+    }
 }
 
 @media (max-width: 500px) {
