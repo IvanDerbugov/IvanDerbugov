@@ -1484,8 +1484,7 @@ footer {
     border-radius: 50%;
     transition: box-shadow 0.3s, transform 0.3s;
     box-shadow: 0 2px 8px #fff3;
-    width: 64px;
-    height: 64px;
+    width: 100px;
     object-fit: cover;
 }
 .reviews-card:hover .nameFotoReview img {
