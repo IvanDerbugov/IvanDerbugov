@@ -391,7 +391,7 @@ main > .conteiner1800:first-of-type {
 }
 .card-status {
     font-size: 14px;
-    color: #888;
+    color: #043517;
     margin-bottom: 4px;
     display: flex;
     align-items: center;
@@ -415,12 +415,12 @@ main > .conteiner1800:first-of-type {
     gap: 2px;
 }
 .card-specs span {
-    color: #888;
+    color: #043517;
     font-weight: 400;
 }
 .card-specs b {
     font-weight: 600;
-    color: #222;
+    color: #043517;
 }
 .card-price-row {
     display: flex;
