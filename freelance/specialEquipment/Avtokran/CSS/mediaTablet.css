@@ -157,7 +157,7 @@
     }
 
     .wrapAdvantagesGrid>div {
-        max-width: 290px;
+        max-width: 270px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -274,6 +274,11 @@
 
     .infoAboutLoader {
         padding: 60px 20px;
+    }
+
+    .wrapAdvantagesGrid .text5::before {
+        left: 6px;
+        top: -26px;
     }
 }
 
