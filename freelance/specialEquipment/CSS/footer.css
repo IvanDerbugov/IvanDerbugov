@@ -68,6 +68,10 @@ footer a:hover {
     right: 21px;
 }
 
+.phone-number-mobile {
+    display: none;
+}
+
 .footer-right {
     gap: 10px;
 }
@@ -143,13 +147,14 @@ footer a:hover {
 .footer-contacts-row {
     display: flex;
     align-items: center;
-    gap: 9px;
+    gap: 10px;
     margin-bottom: 0;
 }
 
 .phone-icon {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
+    margin: 1px 5px 0 0;
 }
 
 .footer-avito-row {
@@ -174,7 +179,7 @@ footer a:hover {
 
 @media (max-width: 1400px) {
     footer .container1240 {
-        padding: 30px 0 100px 0;
+        padding: 30px 10px 110px;
     }
 
     footer .footer-left,
@@ -196,7 +201,7 @@ footer a:hover {
 
 @media (max-width: 1100px) {
     footer .container1240 {
-        padding: 30px 15px 78px 10px;
+        padding: 30px 15px 100px 10px;
         gap: 15px;
     }
 
@@ -207,24 +212,14 @@ footer a:hover {
     }
 
     .footer-contacts-row {
-        flex-wrap: wrap;
-        row-gap: 10px;
-        column-gap: 16px;
-        justify-content: flex-start; /* или center, если нужно по центру */
+        justify-content: center;
+        gap: 5px;
     }
-    .footer-contact.phone {
-        order: 1;
-        flex-basis: 0;
-    }
-    .footer-contact.whatsapp {
-        order: 2;
-        flex-basis: 0;
-    }
-    .footer-contact.avito {
-        order: 1;
-        flex-basis: 0;
+
+    .footer-avito-row {
         display: flex;
-        align-items: center;
+        justify-content: flex-start;
+        margin-top: 10px;
     }
 
     footer .footer-left,
@@ -240,6 +235,10 @@ footer a:hover {
     }
 
     .footer-center-text {
+        font-size: 10px;
+    }
+
+    .requisites {
         font-size: 11px;
     }
 
@@ -250,6 +249,10 @@ footer a:hover {
     .link-footer {
         margin-top: 11px;
         font-size: 15px;
+    }
+
+    .privacyPolicy {
+        font-size: 14px;
     }
 }
 
@@ -300,17 +303,6 @@ footer a:hover {
     .footer-avito-row {
         justify-content: center;
         margin: 10px 0 0 0;
-    }
-
-    .avitoText, .bubble {
-        position: static;
-    }
-
-    .phone-icon {
-        width: 28px;
-        height: 28px;
-        margin-top: 0;
-        margin-right: -5px;
     }
 
     .desktopCard {
@@ -380,6 +372,11 @@ footer a:hover {
     .wrapFoter-left2_footer-center {
         display: flex;
         gap: 15px;
+    }
+
+    .phone-number-mobile {
+        display: block;
+        font-size: 25px;
     }
 }
 
