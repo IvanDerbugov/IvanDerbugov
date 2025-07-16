@@ -724,12 +724,12 @@ main>.conteiner1800:first-of-type {
 }
 
 .wrapAdvantagesGrid .text1::before {
-    left: 5px;
+    left: 30px;
     top: -26px;
 }
 
 .wrapAdvantagesGrid .text5::before {
-    left: -10px;
+    left: 9px;
     top: -26px;
 }
 
