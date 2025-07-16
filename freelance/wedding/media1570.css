@@ -1,4 +1,12 @@
 @media (max-width: 1570px) {
+    .versionDesktop, .versionTablet1400, .versionTablet1100, .versionMobile {
+        display: none;
+    }
+
+    .versionTablet1400 {
+        display: flex;
+    }
+
     .container {
         padding-right: 30px;
         padding-left: 30px;
@@ -166,5 +174,54 @@
 
     .reviews-card .nameFotoReview img {
         width: 80px;
+    }
+
+    /* Сдвигаем отзывы влево для лучшего отображения */
+    .reviews-flex {
+        transform: translateX(-1100px);
+    }
+
+    .reviews-card {
+        max-width: 648px;
+    }
+
+    .reviews-slider-wrap .reviews-arrow-prev, 
+    .reviews-slider-wrap .reviews-arrow-next {
+        top: 50%;
+    }
+    .reviews-slider-wrap .reviews-arrow-prev {
+        left: 6px;
+    }
+    .reviews-slider-wrap .reviews-arrow-next {
+        right: -23px;
+    }
+
+    .leaveRequest form input {
+        min-width: 648px;
+        height: 64px;
+        font-size: 24px;
+    }
+
+    .leaveRequest form button {
+        padding: 0px 115px;
+        font-size: 28px;
+        height: 64px;
+    }
+
+    .leaveRequest form a svg {
+        width: 64px;
+        height: 64px;
+    }
+
+    .leaveRequest form div {
+        gap: 49px;
+    }
+
+
+    .footer-main {
+        font-size: 128px;
+    }
+    .footer-sub {
+        font-size: 64px;
     }
 }

@@ -2,7 +2,7 @@
     display: none;
 }
 
-@media (max-width: 1700px) {
+@media (max-width: 1300px) {
     .nonono {
         display: block;
         position: fixed;
@@ -17,17 +17,25 @@
     }
 }
 
-.version {
+.versionDesktop, .versionTablet1400, .versionTablet1100, .versionMobile {
+    width: 150px;
+    height: 150px;
     position: fixed;
-    padding: 30px;
-    top: 10px;
+    top: 0;
     right: 50%;
+    font-size: 30px;
+    font-weight: 700;
     color: #fff;
     background-color: blue;
-    opacity: 0.5;
-    border-radius: 50%;
-    font-size: 120px;
+    /* border-radius: 50%; */
+    opacity: 0.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 10;
+} 
+.versionTablet1400, .versionTablet1100, .versionMobile {
+    display: none;
 }
 
 html {
