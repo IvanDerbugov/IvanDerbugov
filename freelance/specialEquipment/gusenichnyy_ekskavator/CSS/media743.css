@@ -27,7 +27,7 @@
     }
 
     main > .conteiner1800:first-of-type {
-        background: url(../img/manipulator/manipulatorFonMobile.jpg) no-repeat center center;
+        background: url(../img/manipulator/avtovishkaFonMobile.jpg) no-repeat center center;
         background-size: 846px 514px;
         background-position: -120px 0px;
         height: auto;
@@ -120,15 +120,9 @@
         line-height: 1.3;
     }
 
-    .seeMoreShow {
+    .seeMore {
         font-size: 20px;
         padding: 14px 20px;
-        max-width: 98%;
-    }
-    .seeMoreHide {
-        margin: 10px auto 50px auto;
-        font-size: 20px;
-        padding: 15px 40px;
         max-width: 98%;
     }
 
@@ -216,6 +210,30 @@
         font-size: 22px;
         padding: 15px 20px;
         width: 270px;
+    }
+
+    .seeMoreShow {
+        margin: -90px auto 44px auto;
+        font-size: 20px;
+        padding: 15px 40px;
+        max-width: 98%;
+    }
+
+    .seeMoreHide {
+        margin: 10px auto 50px auto;
+        font-size: 20px;
+        padding: 15px 40px;
+        max-width: 98%;
+    }
+
+    .wrapAdvantagesGrid .text1::before {
+        left: 30px;
+        top: -26px;
+    }
+    
+    .wrapAdvantagesGrid .text5::before {
+        left: 9px;
+        top: -26px;
     }
 }
 

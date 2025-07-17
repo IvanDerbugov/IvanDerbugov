@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </a>
             </div>
             
-            <form class="modal-form" action="https://api.web3forms.com/submit" method="POST" id="formaAvtovyschky">
+            <form class="modal-form" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="d759a276-7f88-4a85-a572-a472510fd51b">
                 <input type="text" name="name" placeholder="Ваше имя" required autocomplete="name">
                 <input type="text" name="contact" placeholder="Телефон или e-mail" required autocomplete="tel">
@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.textContent = 'Отправить заявку';
                 if (data.success) {
                     if (typeof ym === 'function') {
-                        ym(103296307, 'reachGoal', 'formaAvtovyschky');
-                        console.log('Цель "Отправка формы из модального окна" отправлена в Яндекс Метрику (formaAvtovyschky)');
+                        ym(103296307, 'reachGoal', 'contactModalForm');
+                        console.log('Цель "Отправка формы из модального окна" отправлена в Яндекс Метрику (contactModalForm)');
                     }
                     form.style.display = 'none';
                     success.textContent = 'Заявка отправлена!';
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
             clearTimeout(modalTimer);
         }
         
-        // Запускаем новый таймер на 20 секунд
+        // Запускаем новый таймер на 30 секунд
         modalTimer = setTimeout(() => {
             showContactModal();
         }, 20000); // 20 секунд

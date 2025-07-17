@@ -559,7 +559,7 @@ main > .conteiner1800:first-of-type {
     background: url(../img/manipulator/manipulatorCard9.jpg) no-repeat center center;
 }
 
-.seeMore {
+.seeMoreShow {
     display: block;
     margin: 24px auto 50px auto;
     font-size: 30px;
@@ -573,7 +573,7 @@ main > .conteiner1800:first-of-type {
     cursor: pointer;
     transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-.seeMore:hover {
+.seeMoreShow:hover {
     background: #ffc107;
     color: #fff;
     transform: translateY(-2px) scale(1.04);
@@ -1137,4 +1137,133 @@ main > .conteiner1800:first-of-type {
     background-color: rgba(255, 255, 255, 0.2);
     color: #DF6417;
     /* text-decoration: underline; */
+}
+/* Стили для модального окна с контактной информацией */
+.contact-modal-window {
+    max-width: 480px;
+}
+
+.contact-modal-text {
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+.contact-modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.contact-modal-phone,
+.contact-modal-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+}
+
+.contact-modal-phone {
+    background: #DF6417;
+    color: #fff;
+    border-color: #DF6417;
+}
+
+.contact-modal-phone:hover {
+    background: #ffc107;
+    color: #fff;
+    border-color: #ffc107;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(223, 100, 23, 0.3);
+}
+
+.contact-modal-whatsapp {
+    background: #25D366;
+    color: #fff;
+    border-color: #25D366;
+}
+
+.contact-modal-whatsapp:hover {
+    background: #128C7E;
+    color: #fff;
+    border-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+}
+
+.contact-modal-phone .phone-icon-main,
+.contact-modal-whatsapp .icon-svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.contact-modal-phone .phone-icon-main path {
+    stroke: #fff;
+}
+
+.contact-modal-whatsapp .icon-svg {
+    filter: brightness(0) invert(1);
+}
+
+@media (max-width: 600px) {
+    .contact-modal-window {
+        max-width: 98vw;
+        padding: 20px 16px;
+    }
+    
+    .contact-modal-text {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .contact-modal-buttons {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .contact-modal-phone,
+    .contact-modal-whatsapp {
+        padding: 14px 16px;
+        font-size: 16px;
+    }
+    
+    .contact-modal-phone .phone-icon-main,
+    .contact-modal-whatsapp .icon-svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.seeMoreHide {
+    display: block;
+    margin: 60px auto 50px auto;
+    font-size: 30px;
+    font-weight: 600;
+    background: #DF6417;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 27px 75px;
+    box-shadow: 0 2px 8px rgba(35, 244, 114, 0.10);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.seeMoreHide:hover {
+    background: #ffc107;
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(35, 244, 114, 0.18);
 }

@@ -1,3 +1,79 @@
+@media (max-width: 1500px) {
+    .card {
+        width: 325px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .wrapImgCard {
+        width: 305px;
+        height: 190px;
+        background-size: cover;
+        background-position: center;
+        margin: 0 auto;
+    }
+
+    .card-body {
+        padding: 10px 8px 8px 8px;
+        gap: 4px;
+    }
+
+    .card-title {
+        font-size: 17px;
+        margin-bottom: 2px;
+    }
+
+    .card-specs-list {
+        font-size: 13px;
+        margin: 6px 0 8px 0;
+    }
+
+    .card-specs-list span {
+        font-size: 13px;
+        margin-right: 6px;
+    }
+
+    .card-specs-list b {
+        font-size: 14px;
+        margin-left: 6px;
+    }
+
+    .card-price {
+        font-size: 15px;
+    }
+
+    .card-price b {
+        font-size: 16px;
+    }
+
+    .card-delivery {
+        font-size: 11px;
+    }
+
+    .card-btns {
+        gap: 4px;
+        margin-top: 2px;
+    }
+
+    .card-btn {
+        font-size: 17px;
+        padding: 7px 5px;
+        border-radius: 5px;
+    }
+
+    .popular-models h1 {
+        font-size: 38px;
+        margin-bottom: 18px;
+        margin-top: 18px;
+    }
+
+    .seeMoreShow {
+        font-size: 22px;
+        padding: 20px 50px;
+    }
+
+}
+
 @media (max-width: 1400px) {
     .versionDesktop {
         display: none;
@@ -128,8 +204,12 @@
     }
 
     .infoAboutLoader>.conteiner1240 b {
-        font-size: 28px;
+        font-size: 20px;
         text-align: center;
+    }
+
+    .info-col li {
+        font-size: 16px;
     }
 
     .ozerServices-btn {
@@ -148,12 +228,10 @@
 
     .payment-grid b {
         font-size: 24px;
-        text-align: center;
     }
 
     .payment-grid ul {
         font-size: 20px;
-        text-align: center;
     }
 
     .payment-desc {
@@ -176,73 +254,7 @@
         margin-bottom: 32px;
     }
 
-    .card {
-        width: 325px;
-        padding: 10px;
-        border-radius: 10px;
-    }
 
-    .wrapImgCard {
-        width: 305px;
-        height: 190px;
-        background-size: cover;
-        background-position: center;
-        margin: 0 auto;
-    }
-
-    .card-body {
-        padding: 10px 8px 8px 8px;
-        gap: 4px;
-    }
-
-    .card-title {
-        font-size: 17px;
-        margin-bottom: 2px;
-    }
-
-    .card-specs-list {
-        font-size: 13px;
-        margin: 6px 0 8px 0;
-    }
-
-    .card-specs-list span {
-        font-size: 13px;
-        margin-right: 6px;
-    }
-
-    .card-specs-list b {
-        font-size: 14px;
-        margin-left: 6px;
-    }
-
-    .card-price {
-        font-size: 15px;
-    }
-
-    .card-price b {
-        font-size: 16px;
-    }
-
-    .card-delivery {
-        font-size: 11px;
-    }
-
-    .card-btns {
-        gap: 4px;
-        margin-top: 2px;
-    }
-
-    .card-btn {
-        font-size: 17px;
-        padding: 7px 0;
-        border-radius: 5px;
-    }
-
-    .popular-models h1 {
-        font-size: 38px;
-        margin-bottom: 18px;
-        margin-top: 18px;
-    }
 
     .ozerServices .wrapGrid {
         gap: 35px;
@@ -252,11 +264,19 @@
         padding: 40px 35px 80px;
     }
 
-    .seeMoreShow {
+    .seeMore {
         font-size: 25px;
         padding: 20px 50px;
     }
-    
+
+    .seeMoreShow {
+        margin: -29px auto 64px auto;
+    }
+
+    .infoAboutLoader {
+        padding: 60px 20px;
+    }
+
     .wrapAdvantagesGrid .text5::before {
         left: 6px;
         top: -26px;
@@ -384,10 +404,15 @@
     }
 
     .card-specs-list span {
+        font-size: 10px;
+        margin-right: 6px;
         color: #444;
         font-weight: 400;
-        margin-right: 6px;
         white-space: wrap;
+    }
+
+    .card-specs-list b {
+        font-size: 12px;
     }
 
     .card-dop {
@@ -427,7 +452,17 @@
     }
 
     .payment-grid>div {
+        flex: 1 1 0;
+        padding: 0 30px;
         height: auto;
+    }
+
+    .payment-grid b {
+        font-size: 20px;
+    }
+
+    .payment-grid ul {
+        font-size: 18px;
     }
 
     /* --- CARD ADAPTIVE STYLES --- */
@@ -518,13 +553,13 @@
         gap: 8px;
     }
 
-    .seeMoreShow {
+    .seeMore {
         margin: 0px auto 30px;
         font-size: 20px;
     }
 
     .infoAboutLoader {
-        padding: 20px 0;
+        padding: 20px 10px;
     }
 
     .ozerServices {
@@ -562,6 +597,14 @@
 
     .ozerServices-btn {
         margin: 50px auto 0 auto;
+    }
+
+    li span.longSpan {
+        font-size: 9px;
+    }
+
+    li b.long {
+        font-size: 8px;
     }
 }
 
