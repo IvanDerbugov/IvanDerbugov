@@ -1,3 +1,26 @@
+.versionDesktop, .versionTablet1400, .versionTablet1100, .versionMobile {
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    top: 0;
+    right: 50%;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    background-color: blue;
+    border-radius: 50%;
+    opacity: 0.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+} 
+.versionTablet1400, .versionTablet1100, .versionMobile {
+    display: none;
+}
+
+
+
 body {
     background-color: #eaeae8;
 }
@@ -18,10 +41,11 @@ body {
 }
 
 main>.conteiner1800:first-of-type {
-    background: url(../img/manipulator/avtovishkaFon.jpg) no-repeat center center;
+    background: url(../img/manipulator/fonDark.png) no-repeat center center,
+    url(../img/manipulator/gusenichnyy_ekskavatorFon.jpg) no-repeat center center;
     background-size: auto;
     background-position: 0 0;
-    padding: 112px 117px 156px;
+    padding: 90px 117px 106px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,7 +93,7 @@ main>.conteiner1800:first-of-type {
 .bannerMain ul {
     margin: 0 0 18px 0;
     line-height: 40px;
-    margin-bottom: 75px;
+    margin-bottom: 40px;
 }
 
 .bannerMain ul li {
@@ -575,39 +599,39 @@ main>.conteiner1800:first-of-type {
 }
 
 .imgCard1 {
-    background: url(../img/manipulator/avtovishkaCranCard1.jpg) no-repeat center center;
+    background: url(../img/manipulator/gusenichnyy_ekskavatorCard1.jpg) no-repeat center center;
 }
 
 .imgCard2 {
-    background: url(../img/manipulator/avtovishkaCranCard2.jpg) no-repeat center center;
+    background: url(../img/manipulator/gusenichnyy_ekskavatorCard2.jpg) no-repeat center center;
 }
 
 .imgCard3 {
-    background: url(../img/manipulator/avtovishkaCranCard3.jpg) no-repeat center center;
+    background: url(../img/manipulator/gusenichnyy_ekskavatorCard3.jpg) no-repeat center center;
 }
 
 .imgCard4 {
-    background: url(../img/manipulator/avtovishkaCranCard4.jpg) no-repeat center center;
+    background: url(../img/manipulator/gusenichnyy_ekskavatorCard4.jpg) no-repeat center center;
 }
 
 .imgCard5 {
-    background: url(../img/manipulator/avtovishkaCranCard5.jpg) no-repeat center center;
+    background: url(../img/manipulator/gusenichnyy_ekskavatorCard5.jpg) no-repeat center center;
 }
 
 .imgCard6 {
-    background: url(../img/manipulator/avtovishkaCranCard6.jpg) no-repeat center center;
+    background: url(../img/manipulator/gusenichnyy_ekskavatorCard6.jpg) no-repeat center center;
 }
 
 .imgCard7 {
-    background: url(../img/manipulator/avtovishkaCranCard7.jpg) no-repeat center center;
+    background: url(../img/manipulator/gusenichnyy_ekskavatorCard7.jpg) no-repeat center center;
 }
 
 .imgCard8 {
-    background: url(../img/manipulator/avtovishkaCranCard8.jpg) no-repeat center center;
+    background: url(../img/manipulator/gusenichnyy_ekskavatorCard8.jpg) no-repeat center center;
 }
 
 .imgCard9 {
-    background: url(../img/manipulator/avtovishkaCranCard9.jpg) no-repeat center center;
+    background: url(../img/manipulator/gusenichnyy_ekskavatorCard9.jpg) no-repeat center center;
 }
 
 
@@ -783,8 +807,8 @@ main>.conteiner1800:first-of-type {
 
 .info-col {
     flex: 1 1 0;
-    padding: 38px 40px 38px 60px;
-    font-size: 22px;
+    padding: 38px 30px 38px 57px;
+    font-size: 20px;
     line-height: 1.55;
     color: #043517;
     background: none;
@@ -796,6 +820,17 @@ main>.conteiner1800:first-of-type {
 
 .info-col:nth-child(1) {
     padding-left: 38px;
+    flex: 1.1 1 0;
+}
+.info-col:nth-child(2) {
+    /* padding-left: 38px; */
+    flex: 1.1 1 0;
+}
+
+.info-col:nth-child(3) {
+    padding-right: 0px;
+    /* flex: 0.8 1 0; */
+    /* flex-grow: 1; */
 }
 
 .info-col b {
@@ -809,7 +844,7 @@ main>.conteiner1800:first-of-type {
 .info-col ul {
     list-style: disc;
     margin: 12px 0 0 0;
-    font-size: 21px;
+    font-size: 19px;
     color: #043517;
     line-height: 1.55;
     font-weight: 500;
@@ -818,7 +853,7 @@ main>.conteiner1800:first-of-type {
 .info-col li {
     margin-bottom: 8px;
     list-style-type: disc;
-    font-size: 21px;
+    font-size: 19px;
     line-height: 1.3;
     font-weight: 500;
 }
@@ -853,25 +888,19 @@ main>.conteiner1800:first-of-type {
 
 .ozerServices .wrapGrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 100px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px;
 }
 
 .ozerServices .wrapGrid>div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 333px;
     box-sizing: border-box;
-    margin-bottom: 70px;
 }
-
-.ozerServices .wrapGrid>div:first-child {
-    margin-left: -20px;
-}
-
-.ozerServices .wrapGrid>div:last-child {
-    margin-right: -20px;
+.ozerServices .wrapGrid>div:nth-of-type(3),
+.ozerServices .wrapGrid>div:nth-of-type(4) {
+    margin-bottom: 55px;
 }
 
 @media (max-width: 1100px) {
@@ -900,10 +929,10 @@ main>.conteiner1800:first-of-type {
 }
 
 .ozerServices img {
-    width: 100%;
-    max-width: 333px;
+    /* width: 100%; */
+    max-width: 585px;
     height: auto;
-    aspect-ratio: 1/1;
+    /* aspect-ratio: 1/1; */
     object-fit: cover;
 }
 

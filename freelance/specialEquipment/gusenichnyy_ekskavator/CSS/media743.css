@@ -27,9 +27,10 @@
     }
 
     main > .conteiner1800:first-of-type {
-        background: url(../img/manipulator/avtovishkaFonMobile.jpg) no-repeat center center;
-        background-size: 846px 514px;
-        background-position: -120px 0px;
+        background: url(../img/manipulator/fonDark.png) no-repeat center center,
+                url(../img/manipulator/gusenichnyy_ekskavatorFonMobile.jpg) no-repeat center center;
+        background-size: auto auto, 1000px 540px;
+        background-position: 0 0, -120px -102px;
         height: auto;
         padding: 20px 0;
     }
@@ -64,6 +65,7 @@
         gap: 0px;
         margin-top: -5px;
         align-items: flex-start;
+        margin-bottom: -10px;
     }
 
     .leaveRequest {
@@ -97,7 +99,7 @@
     }
 
     .offer-15 {
-        top: 272px;
+        top: 317px;
         left: 178px;
         width: 150px;
     }
@@ -176,10 +178,10 @@
         margin-bottom: 20px;
     }
 
-    .ozerServices img {
+    /* .ozerServices img {
         width: 300px;
         height: 250px;
-    }
+    } */
 
     .ozerServices p {
         font-size: 18px;
@@ -192,6 +194,10 @@
         font-size: 23px;
         padding: 20px 30px;
         width: 300px;
+    }
+
+    .ozerServices .wrapGrid>div:nth-of-type(3) {
+        margin-bottom: 0;
     }
 
     .payment-subtitle {
@@ -239,10 +245,10 @@
 
 @media (max-width: 500px) {
     main > .conteiner1800:first-of-type {
-        background-position: -288px 0px;
+        background-position: -288px -2px;
     }
 
     .offer-15 {
-        top: 345px;
+        top: 379px;
     }
 }

@@ -43,6 +43,10 @@
     transform: translateY(-1px);
 }
 
+/* .top .phoneNumber {
+    margin: 0 0 0 0;
+} */
+
 .phone-icon {
     width: 42px;
     height: 42px;
@@ -538,7 +542,7 @@ header .bottom .container1240 {
 }
 
 @media (max-width: 743px) {
-    .phone-icon {
+    .top .phone-icon {
         width: 37px;
         height: 37px;
         margin-top: -9px;

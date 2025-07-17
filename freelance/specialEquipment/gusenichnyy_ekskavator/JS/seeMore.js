@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </a>
             </div>
             
-            <form class="modal-form" action="https://api.web3forms.com/submit" method="POST">
+            <form class="modal-form" action="https://api.web3forms.com/submit" method="POST" id="formaGusenichnyexkavator">
                 <input type="hidden" name="access_key" value="d759a276-7f88-4a85-a572-a472510fd51b">
                 <input type="text" name="name" placeholder="Ваше имя" required autocomplete="name">
                 <input type="text" name="contact" placeholder="Телефон или e-mail" required autocomplete="tel">
@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.textContent = 'Отправить заявку';
                 if (data.success) {
                     if (typeof ym === 'function') {
-                        ym(103296307, 'reachGoal', 'contactModalForm');
-                        console.log('Цель "Отправка формы из модального окна" отправлена в Яндекс Метрику (contactModalForm)');
+                        ym(103296307, 'reachGoal', 'formaGusenichnyexkavator');
+                        console.log('Цель "Отправка формы из модального окна" отправлена в Яндекс Метрику (formaGusenichnyexkavator)');
                     }
                     form.style.display = 'none';
                     success.textContent = 'Заявка отправлена!';
