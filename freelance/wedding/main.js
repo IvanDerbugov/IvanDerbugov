@@ -466,6 +466,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let worksDeltaX = 0;
     worksFlex.addEventListener('mousedown', e => {
         if (isWorksTransitioning) return; // Защита от свайпов во время перехода
+        
+        // Проверяем, не кликнули ли мы по кнопке play
+        const playBtn = e.target.closest('.play-btn');
+        if (playBtn) return; // Если кликнули по кнопке play, не начинаем свайп
+        
         worksDragging = true;
         worksStartX = e.clientX;
         setWorksTransition('none');
@@ -498,6 +503,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Touch
     worksFlex.addEventListener('touchstart', e => {
         if (isWorksTransitioning) return; // Защита от свайпов во время перехода
+        
+        // Проверяем, не кликнули ли мы по кнопке play
+        const playBtn = e.target.closest('.play-btn');
+        if (playBtn) return; // Если кликнули по кнопке play, не начинаем свайп
+        
         worksDragging = true;
         worksStartX = e.touches[0].clientX;
         setWorksTransition('none');
@@ -572,6 +582,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Обработчик клика по кнопке play
                 playBtn.addEventListener('click', function(e) {
+                    // Предотвращаем конфликт со свайпами слайдера
+                    e.preventDefault();
                     e.stopPropagation();
                     
                     // Ставим на паузу все остальные видео

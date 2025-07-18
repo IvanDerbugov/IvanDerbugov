@@ -120,4 +120,8 @@
     .works-arrow, .reviews-arrow {
         top: 62%;
     }
+
+    .works-dots {
+        margin-left: -435px;
+    }
 }
