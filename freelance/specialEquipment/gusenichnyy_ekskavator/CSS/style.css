@@ -825,14 +825,12 @@ main>.conteiner1800:first-of-type {
     flex: 1.1 1 0;
 }
 .info-col:nth-child(2) {
-    /* padding-left: 38px; */
-    flex: 1.1 1 0;
+    flex: 1.5 1 0;
 }
 
 .info-col:nth-child(3) {
     padding-right: 0px;
-    /* flex: 0.8 1 0; */
-    /* flex-grow: 1; */
+    flex: 1.1 1 0;
 }
 
 .info-col b {
