@@ -920,7 +920,7 @@ header {
 .leaveRequest form input::placeholder {
     color: #FFFFFF80;
     font-family: 'Jost', sans-serif;
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 300;
 }
 
@@ -1222,7 +1222,7 @@ footer {
 .modal-form input::placeholder {
     color: #FFFFFF80;
     font-family: 'Jost', sans-serif;
-    font-size: 28px;
+    font-size: 18px;
     font-weight: 300;
 }
 
