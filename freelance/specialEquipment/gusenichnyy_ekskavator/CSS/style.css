@@ -873,17 +873,6 @@ main>.conteiner1800:first-of-type {
     border-radius: 2px;
 }
 
-@media (max-width: 1024px) {
-    .infoAboutLoader>.conteiner1240 {
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    .info-col:not(:last-child)::after {
-        display: none;
-    }
-}
-
 .ozerServices {
     padding: 120px 0 80px 0;
 }

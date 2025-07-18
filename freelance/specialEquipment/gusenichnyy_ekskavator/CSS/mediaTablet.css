@@ -205,7 +205,6 @@
 
     .infoAboutLoader>.conteiner1240 b {
         font-size: 20px;
-        text-align: center;
     }
 
     .info-col li {
@@ -282,8 +281,8 @@
         top: -26px;
     }
 
-    .info-col:nth-child(1) {
-        flex: 1.3 1 0;
+    .info-col:nth-child(2) {
+        flex: 1.25 1 0;
     }
 
     .ozerServices img {
@@ -292,6 +291,15 @@
         object-fit: cover;
     }
 
+    .info-col b {
+        line-height: 20px;
+    }
+
+    .info-col ul li,
+    .info-col p {
+        font-size: 17px;
+        line-height: 17px;
+    }
     
 }
 
@@ -640,6 +648,15 @@
         margin: 0px auto 50px auto;
         font-size: 22px;
         padding: 20px 60px;
+    }
+
+    .infoAboutLoader>.conteiner1240 {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .info-col:not(:last-child)::after {
+        display: none;
     }
 }
 

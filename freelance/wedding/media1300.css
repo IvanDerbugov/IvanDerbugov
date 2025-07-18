@@ -124,4 +124,73 @@
     .works-dots {
         margin-left: -435px;
     }
+
+    .works-dot {
+        width: 20px;
+        height: 20px;
+    }
+
+    .tariffs {
+        padding: 80px 0 128px;
+    }
+
+    .tariff {
+        padding: 40px 32px;
+    }
+
+    .tariff-desc-item:first-child {
+        margin-top: 32px;
+    }
+
+    .tariff-desc-item.second {
+        margin-top: 24px;
+    }
+
+    .tariff-title {
+        font-size: 32px;
+    }
+
+    .tariff-desc {
+        font-size: 15px;
+        margin-bottom: 51px;
+    }
+
+    .tariff-desc-item.third {
+        margin-top: 24px;
+    }
+
+    .tariff-price {
+        font-size: 32px;
+    }
+
+    .tariff-old-price {
+        font-size: 24px;
+        margin-left: -8px;
+        position: static;
+    }
+
+    .tariff-old-price::after {
+        content: url(img/cross2_2.png);
+        position: absolute;
+        top: 48px;
+        left: 7px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .tariff-price {
+        gap: 13px;
+    }
+
+    .aboutMe h3 {
+        font-size: 40px;
+    }
+
+    .aboutMe p {
+        font-size: 16px;
+    }
+
+    .aboutMe p:nth-of-type(2) {
+        margin: 64px 0 56px;
+    }
 }
