@@ -803,6 +803,8 @@ main>.conteiner1800:first-of-type {
     border-radius: 18px;
     overflow: hidden;
     flex-direction: row;
+    width: 95%;
+    max-width: 1700px;
 }
 
 .info-col {
