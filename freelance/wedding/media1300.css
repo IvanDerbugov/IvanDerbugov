@@ -1,0 +1,123 @@
+@media (max-width: 1300px) {
+
+    .versionDesktop,
+    .versionTablet1400,
+    .versionMobile {
+        display: none;
+    }
+
+    .versionTablet1100 {
+        display: flex;
+    }
+
+    .top-header p {
+        font-size: 20px;
+    }
+
+    .top-header p span {
+        font-size: 11px;
+    }
+
+
+    .center-header h1 {
+        font-size: 80px;
+        line-height: 85px;
+        max-width: 416px;
+    }
+
+    .center-header-right img {
+        margin-top: 5px;
+        width: 240px;
+    }
+
+    .center-header-right .full-price {
+        font-size: 80px;
+        position: relative;
+        left: -15px;
+    }
+
+    .center-header-right .full-price::before {
+        content: url(img/cross_2.png);
+        position: absolute;
+        top: 14px;
+        left: 59px;
+    }
+
+    .center-header-right .discount-price {
+        font-size: 83px;
+    }
+
+    .center-header-right {
+        gap: 0px;
+    }
+
+
+    .bottom-header button {
+        border-radius: 8px;
+        padding: 25px 51px;
+        font-size: 20px;
+    }
+
+    .headerContacts svg {
+        width: 39px;
+        height: 39px;
+    }
+
+    .headerContacts .WhatsApp {
+        height: 45px;
+    }
+
+    .headerContacts {
+        gap: 40px;
+    }
+
+    .examplesWorks h2,
+    .tariffs h2,
+    .aboutMe h2,
+    .chooseUs h2,
+    .reviews h2,
+    .leaveRequest h2 {
+        font-size: 40px;
+    }
+
+    .works video {
+        border-radius: 48px;
+        width: calc(1920px / 4);
+        height: calc(804px / 4);
+        margin-left: -390px;
+    }
+    
+    .works video[src*="img/work2"] {
+        width: calc(1920px / 4);
+        height: calc(818px / 4);
+    }
+
+    .works video[src*="img/work3"] {
+        width: calc(1920px / 4);
+        height: calc(818px / 4);
+        /* margin-left: -795px; */
+    }
+
+    .works-slide {
+        max-width: 470px;
+    }
+
+    .unmute-btn svg {
+        width: 48px;
+        height: 48px;
+    }
+
+    .unmute-btn {
+        width: 75px;
+        height: 75px;
+        border: 6px solid #F90F4A;
+    }
+    
+    .main-play-btn {
+        left: -167%;
+    }
+
+    .works-arrow, .reviews-arrow {
+        top: 62%;
+    }
+}
