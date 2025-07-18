@@ -215,6 +215,7 @@
         font-size: 26px;
         padding: 20px 50px;
         width: auto;
+        height: auto;
     }
 
     .payment {
@@ -300,7 +301,12 @@
         font-size: 17px;
         line-height: 17px;
     }
-    
+
+    .ozerServices .wrapGrid>div:nth-of-type(3),
+    .ozerServices .wrapGrid>div:nth-of-type(4) {
+        margin-top: 0;
+    }
+
 }
 
 @media (max-width: 1250px) {
