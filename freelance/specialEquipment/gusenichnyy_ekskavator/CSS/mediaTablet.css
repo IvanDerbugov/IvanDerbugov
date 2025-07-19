@@ -75,21 +75,7 @@
 }
 
 @media (max-width: 1400px) {
-    .versionDesktop {
-        display: none;
-    }
-
-    .versionTablet1400 {
-        display: flex;
-        border-radius: 5px;
-        width: auto;
-        height: auto;
-        padding: 10px 20px;
-    }
-
-
-
-    body {
+body {
         overflow-x: hidden;
     }
 
@@ -316,19 +302,7 @@
 }
 
 @media (max-width: 1100px) {
-
-    .versionTablet1400 {
-        display: none;
-    }
-
-    .versionTablet1100 {
-        display: flex;
-        border-radius: 5px;
-        width: auto;
-        height: auto;
-        padding: 10px 20px;
-    }
-
+    
     .conteiner1800 {
         width: 100%;
         max-width: 1100px;
