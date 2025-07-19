@@ -7,9 +7,14 @@
         display: flex;
     }
 
+    body {
+        overflow-x: hidden;
+    }
+
     .container {
         padding-right: 30px;
         padding-left: 30px;
+        overflow-x: hidden;
     }
 
     .center-header h1 {

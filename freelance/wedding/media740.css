@@ -403,6 +403,7 @@
 
     .reviews {
         padding: 40px 20px;
+        /* max-width: 320px; */
     }
 
     .reviews h2 {
@@ -411,6 +412,7 @@
 
     .reviews-card {
         padding: 18px 16px 16px;
+        max-width: 320px;
     }
 
     .reviews-slider-wrap .reviews-arrow-prev,
@@ -433,6 +435,11 @@
 
     .reviews-card .nameFotoReview img {
         width: 38px;
+    }
+
+    .reviews-dot {
+        width: 12px;
+        height: 12px;
     }
 
     .nameFotoReview {
