@@ -1,0 +1,188 @@
+@media (max-width: 740px) {
+    .versionDesktop, .versionTablet1400, .versionTablet1100 {
+        display: none;
+    }
+    .versionMobile {
+        display: flex;
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+        text-align: center;
+        border-radius: 50%;
+    }
+
+    .container {
+        max-width: 740px;
+        padding: 0 20px;
+    }
+
+    header {
+        padding: 23px 0 50px;
+    }
+
+    .header-container {
+        gap: 49px;
+    }
+
+    .top-header {
+        justify-content: center;
+    }
+
+    .top-header p {
+        font-size: 16px;
+    }
+
+    .top-header p span {
+        font-size: 8px;
+    }
+
+    .center-header {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .center-header h1 {
+        font-size: 44px;
+        line-height: 51px;
+        max-width: 233px;
+        text-align: center;
+    }
+
+    .center-header-right {
+        align-items: center;
+        gap: 1px;
+    }
+
+    .center-header-right img {
+        margin-top: 0px;
+        width: 148px;
+    }
+
+    .center-header-right .full-price {
+        font-size: 38px;
+        position: relative;
+        left: -9px;
+    }
+
+    .center-header-right .full-price::before {
+        content: url(img/cross_3.png);
+        position: absolute;
+        top: 8px;
+        left: 21px;
+    }
+
+    .center-header-right .discount-price {
+        font-size: 40px;
+    }
+
+    .bottom-header {
+        flex-direction: column;
+        gap: 24px;
+        margin-top: -17px;
+    }
+
+    .bottom-header button {
+        padding: 0px 57px;
+        font-size: 16px;
+        height: 44px;
+    }
+
+    .headerContacts {
+        gap: 52px;
+    }
+
+    .examplesWorks h2, .tariffs h2, .aboutMe h2, .chooseUs h2, .reviews h2, .leaveRequest h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .examplesWorks {
+        padding: 40px 0 142px;
+    }
+
+    /* Мобильная версия - показываем только один ролик */
+    .works {
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .works-flex {
+        display: flex;
+        transition: none;
+        transform: none !important;
+    }
+
+    .works-slide {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Скрываем все слайды кроме первого */
+    .works-slide:not(:first-child) {
+        display: none;
+    }
+
+    /* Показываем только первый слайд */
+    .works-slide:first-child {
+        display: flex;
+    }
+
+    .works video {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 8px;
+        margin: 0;
+    }
+
+    .works video[src*="img/work2"] {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .works video[src*="img/work3"] {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    /* Скрываем стрелки и точки в мобильной версии */
+    .works-arrow {
+        display: none;
+    }
+
+    .works-dots {
+        margin-left: -44px;
+    }
+
+    /* Адаптируем кнопку play */
+    .play-btn {
+        width: 60px;
+        height: 60px;
+    }
+
+    .play-btn svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Адаптируем unmute кнопку */
+    .unmute-btn {
+        width: 40px;
+        height: 40px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .unmute-btn svg {
+        width: 40px;
+        height: 40px;
+    }
+
+}
