@@ -16,6 +16,11 @@
         padding: 0 20px;
     }
 
+    /* Центрируем слайдер на мобилке */
+    .examplesWorks .container {
+        padding: 0;
+    }
+
     header {
         padding: 23px 0 50px;
     }
@@ -94,13 +99,14 @@
     .examplesWorks h2, .tariffs h2, .aboutMe h2, .chooseUs h2, .reviews h2, .leaveRequest h2 {
         font-size: 24px;
         text-align: center;
+        padding: 0 20px;
     }
 
     .examplesWorks {
         padding: 40px 0 142px;
     }
 
-    /* Мобильная версия - показываем только один ролик */
+    /* Мобильная версия - показываем только один слайд */
     .works {
         position: relative;
         max-width: 100%;
@@ -109,32 +115,22 @@
 
     .works-flex {
         display: flex;
-        transition: none;
-        transform: none !important;
+        transform: translateX(0);
+        transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
     }
 
     .works-slide {
-        flex: 0 0 100%;
-        max-width: 100%;
-        width: 100%;
+        flex: 0 0 100vw;
+        max-width: 100vw;
+        width: 100vw;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    /* Скрываем все слайды кроме первого */
-    .works-slide:not(:first-child) {
-        display: none;
-    }
-
-    /* Показываем только первый слайд */
-    .works-slide:first-child {
-        display: flex;
-    }
-
     .works video {
         width: 100%;
-        max-width: 400px;
+        max-width: 350px;
         height: auto;
         border-radius: 8px;
         margin: 0;
@@ -142,29 +138,46 @@
 
     .works video[src*="img/work2"] {
         width: 100%;
-        max-width: 400px;
+        max-width: 350px;
         height: auto;
     }
 
     .works video[src*="img/work3"] {
         width: 100%;
-        max-width: 400px;
+        max-width: 350px;
         height: auto;
     }
 
-    /* Скрываем стрелки и точки в мобильной версии */
+    /* Адаптируем стрелки для мобильной версии */
     .works-arrow {
         display: none;
     }
 
+    .works-arrow-prev {
+        left: 10px;
+    }
+
+    .works-arrow-next {
+        right: 10px;
+    }
+
     .works-dots {
         margin-left: -44px;
+        display: flex !important;
+    }
+
+    .works-dot {
+        width: 12px;
+        height: 12px;
+        margin: 0 4px;
     }
 
     /* Адаптируем кнопку play */
     .play-btn {
         width: 60px;
         height: 60px;
+        display: block !important;
+        pointer-events: auto !important;
     }
 
     .play-btn svg {
@@ -178,6 +191,7 @@
         height: 40px;
         right: 10px;
         bottom: 10px;
+        display: block !important;
     }
 
     .unmute-btn svg {
