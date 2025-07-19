@@ -611,11 +611,11 @@
     }
 
     /* Адаптив для модального окна отзывов */
-    .review-modal-content {
+    /* .review-modal-content {
         max-width: 95vw;
         max-height: 80vh;
         padding: 16px;
-    }
+    } */
 
     .review-modal-content img {
         max-width: 90vw;
