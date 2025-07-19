@@ -306,3 +306,13 @@
         height: 39px;
     }
 }
+
+@media (max-width: 1100px) {
+    .works-dots {
+        margin-left: 0%;
+    }
+}
+
+@media (max-width: 900px) {
+    
+}

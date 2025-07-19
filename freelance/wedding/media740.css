@@ -18,6 +18,7 @@
     .container {
         max-width: 740px;
         padding: 0 20px;
+        /* overflow-x: hidden; */
     }
 
     /* Центрируем слайдер на мобилке */
@@ -171,7 +172,7 @@
     }
 
     .works-dots {
-        margin-left: -44px;
+        margin-left: 0;
         display: flex !important;
     }
 

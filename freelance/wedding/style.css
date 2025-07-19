@@ -27,7 +27,6 @@
     font-weight: 700;
     color: #fff;
     background-color: blue;
-    /* border-radius: 50%; */
     opacity: 0.3;
     display: flex;
     align-items: center;
@@ -50,6 +49,8 @@ body {
     max-width: 1600px;
     margin: 0 auto;
     width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 header {
@@ -70,6 +71,7 @@ header {
     text-align: center;
     line-height: 0.5;
     color: #FFFFFF99;
+    margin-top: revert-layer;
 }
 
 .top-header p span {
@@ -539,11 +541,7 @@ header {
 
 .aboutMe .aboutMe-Desktop {
     display: flex;
-}
-
-.aboutMe .aboutMe-Mobile {
-    display: none;
-}   
+} 
 
 .light1,
 .light2 {
@@ -576,7 +574,12 @@ header {
     gap: 24px;
     position: relative;
     z-index: 1;
+    overflow-x: clip;
 }
+
+.aboutMe .aboutMe-Mobile {
+    display: none;
+}  
 
 .aboutMe h2 {
     color: #FF9898;
