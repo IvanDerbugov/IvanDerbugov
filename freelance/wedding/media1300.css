@@ -1,39 +1,33 @@
 @media (max-width: 1300px) {
 
     .versionDesktop,
-    .versionTablet1400,
+    .versionTablet1570,
+    .versionTablet1300,
+    .versionTablet1100,
     .versionMobile {
         display: none;
     }
 
-    .versionTablet1100 {
+    .versionTablet1300 {
         display: flex;
-    }
-
-    .top-header p {
-        font-size: 20px;
-    }
-
-    .top-header p span {
-        font-size: 11px;
     }
 
 
     .center-header h1 {
-        font-size: 80px;
-        line-height: 85px;
-        max-width: 416px;
+        font-size: 112px;
+        line-height: 120px;
+        max-width: 583px;
     }
 
     .center-header-right img {
-        margin-top: 5px;
-        width: 240px;
+        margin-top: 20px;
+        width: 360px;
     }
 
     .center-header-right .full-price {
-        font-size: 80px;
+        font-size: 100px;
         position: relative;
-        left: -15px;
+        left: 16px;
     }
 
     .center-header-right .full-price::before {
@@ -44,7 +38,7 @@
     }
 
     .center-header-right .discount-price {
-        font-size: 83px;
+        font-size: 122px;
     }
 
     .center-header-right {
@@ -53,18 +47,18 @@
 
 
     .bottom-header button {
-        border-radius: 8px;
-        padding: 25px 51px;
-        font-size: 20px;
+        border-radius: 20px;
+        padding: 30px 100px;
+        font-size: 30px;
     }
 
     .headerContacts svg {
-        width: 39px;
-        height: 39px;
+        width: auto;
+        height: auto;
     }
 
     .headerContacts .WhatsApp {
-        height: 45px;
+        height: auto;
     }
 
     .headerContacts {
@@ -283,6 +277,158 @@
         width: 40px;
         height: 40px;
     }
+}
+
+@media (max-width: 1100px) {
+
+    .versionTablet1300 {
+        display: none;
+    }
+
+    .versionTablet1100 {
+        display: flex;
+    }
+
+
+    .works-dots {
+        margin-left: 0%;
+    }
+
+
+    .center-header h1 {
+        font-size: 95px;
+        line-height: 106px;
+        max-width: 492px;
+    }
+
+    .center-header-right img {
+        margin-top: 19px;
+        width: 315px;
+    }
+
+    .center-header-right .full-price {
+        font-size: 89px;
+        position: relative;
+        left: 7px;
+    }
+
+    .center-header-right .full-price::before {
+        content: url(img/cross_2.png);
+        position: absolute;
+        top: 14px;
+        left: 59px;
+    }
+
+    .center-header-right .discount-price {
+        font-size: 107px;
+    }
+
+    .center-header-right {
+        gap: 0px;
+    }
+
+
+    .bottom-header button {
+        border-radius: 14px;
+        padding: 27px 80px;
+        font-size: 26px;
+    }
+
+    .headerContacts svg {
+        width: auto;
+        height: auto;
+    }
+
+    .headerContacts .WhatsApp {
+        height: auto;
+    }
+
+    .headerContacts {
+        gap: 40px;
+    }
+
+
+
+
+
+    .footer-main {
+        font-size: 100px;
+    }
+
+    .footer-sub {
+        font-size: 52px;
+    }
+
+    .footer-contacts {
+        gap: 20px;
+    }
+
+}
+
+@media (max-width: 950px) {
+
+    .versionTablet1100 {
+        display: none;
+    }
+
+    .versionTablet950 {
+        display: flex;
+    }
+
+
+
+    .center-header h1 {
+        font-size: 80px;
+        line-height: 85px;
+        max-width: 416px;
+    }
+
+    .center-header-right img {
+        margin-top: 5px;
+        width: 240px;
+    }
+
+    .center-header-right .full-price {
+        font-size: 80px;
+        position: relative;
+        left: -15px;
+    }
+
+    .center-header-right .full-price::before {
+        content: url(img/cross_2.png);
+        position: absolute;
+        top: 14px;
+        left: 59px;
+    }
+
+    .center-header-right .discount-price {
+        font-size: 83px;
+    }
+
+    .center-header-right {
+        gap: 0px;
+    }
+
+
+    .bottom-header button {
+        border-radius: 8px;
+        padding: 25px 51px;
+        font-size: 20px;
+    }
+
+    .headerContacts svg {
+        width: 39px;
+        height: 39px;
+    }
+
+    .headerContacts .WhatsApp {
+        height: 45px;
+    }
+
+    .headerContacts {
+        gap: 40px;
+    }
+
 
 
     .footer-main {
@@ -305,14 +451,4 @@
         width: 39px;
         height: 39px;
     }
-}
-
-@media (max-width: 1100px) {
-    .works-dots {
-        margin-left: 0%;
-    }
-}
-
-@media (max-width: 900px) {
-    
 }

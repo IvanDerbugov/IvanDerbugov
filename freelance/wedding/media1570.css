@@ -1,9 +1,15 @@
 @media (max-width: 1570px) {
-    .versionDesktop, .versionTablet1400, .versionTablet1100, .versionMobile {
+
+    .versionDesktop,
+    .versionTablet1570,
+    .versionTablet1300,
+    .versionTablet1100,
+    .versionTablet950,
+    .versionMobile {
         display: none;
     }
 
-    .versionTablet1400 {
+    .versionTablet1570 {
         display: flex;
     }
 
@@ -85,7 +91,8 @@
         position: static;
     }
 
-    .works-arrow, .reviews-arrow {
+    .works-arrow,
+    .reviews-arrow {
         top: 65%;
     }
 
@@ -95,7 +102,7 @@
         height: calc(804px / 3);
         margin-left: -590px;
     }
-    
+
     .works video[src*="img/work2"] {
         width: calc(1920px / 3);
         height: calc(818px / 3);
@@ -115,11 +122,13 @@
         margin-left: -150px;
     }
 
-    .works-arrow-next, .reviews-arrow-next {
+    .works-arrow-next,
+    .reviews-arrow-next {
         right: -4px;
     }
-    
-    .works-arrow-prev, .reviews-arrow-prev {
+
+    .works-arrow-prev,
+    .reviews-arrow-prev {
         left: 18px;
     }
 
@@ -190,13 +199,15 @@
         max-width: 648px;
     }
 
-    .reviews-slider-wrap .reviews-arrow-prev, 
+    .reviews-slider-wrap .reviews-arrow-prev,
     .reviews-slider-wrap .reviews-arrow-next {
         top: 50%;
     }
+
     .reviews-slider-wrap .reviews-arrow-prev {
         left: 6px;
     }
+
     .reviews-slider-wrap .reviews-arrow-next {
         right: -23px;
     }
@@ -226,6 +237,7 @@
     .footer-main {
         font-size: 128px;
     }
+
     .footer-sub {
         font-size: 64px;
     }

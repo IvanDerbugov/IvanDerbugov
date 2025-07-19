@@ -1,10 +1,17 @@
 @media (max-width: 740px) {
 
     .versionDesktop,
-    .versionTablet1400,
-    .versionTablet1100 {
+    .versionTablet1570,
+    .versionTablet1300,
+    .versionTablet1100,
+    .versionTablet950 {
         display: none;
     }
+
+    .versionMobile {
+        display: flex;
+    }
+
 
     .versionMobile {
         display: flex;
