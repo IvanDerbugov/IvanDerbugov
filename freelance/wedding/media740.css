@@ -514,4 +514,19 @@
     .footer-sub {
         font-size: 24px;
     }
+
+
+
+    .fixed-modal-btn-wrap-wedding {
+        right: 10px;
+        bottom: 10px;
+    }
+    .fixed-modal-btn-wedding {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
+    .modal-timer-wedding {
+        font-size: 13px;
+        padding: 2px 8px;
+    }
 }

@@ -1402,20 +1402,6 @@ footer {
     transform: translateY(-2px) scale(1.04);
     box-shadow: 0 6px 24px rgba(249,15,74,0.22);
 }
-@media (max-width: 600px) {
-    .fixed-modal-btn-wrap-wedding {
-        right: 10px;
-        bottom: 10px;
-    }
-    .fixed-modal-btn-wedding {
-        font-size: 16px;
-        padding: 12px 18px;
-    }
-    .modal-timer-wedding {
-        font-size: 13px;
-        padding: 2px 8px;
-    }
-}
 
 /* Тарифы: яркий градиентный фон при ховере */
 .tariff:hover {
@@ -1595,15 +1581,7 @@ footer {
     color: #FF6B8A;
     transform: scale(1.15) rotate(90deg);
 }
-/* @media (max-width: 600px) {
-    .review-modal-content img {
-        max-width: 98vw;
-        max-height: 60vh;
-    }
-    .review-modal-content {
-        padding: 4vw;
-    }
-} */
+
 .works, .reviews-slider-wrap {
     position: relative;
 }
