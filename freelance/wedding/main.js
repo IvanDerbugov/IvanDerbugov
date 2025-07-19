@@ -393,7 +393,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     // Обновляем коллекцию слайдов
     let allWorksSlides = document.querySelectorAll('.works-slide');
-    let worksCurrent = CLONE_COUNT + 1; // начинаем со второго реального слайда
+    
+    // Проверяем, мобильное ли устройство
+    const isMobile = window.innerWidth <= 740;
+    
+    // На мобилке начинаем с третьего слайда, на десктопе со второго
+    let worksCurrent = isMobile ? CLONE_COUNT + 2 : CLONE_COUNT + 1;
+    
     const worksTotal = allWorksSlides.length - 2 * CLONE_COUNT; // без клонов
     let isWorksTransitioning = false; // Флаг для защиты от множественных кликов
 

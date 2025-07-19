@@ -1,7 +1,11 @@
 @media (max-width: 740px) {
-    .versionDesktop, .versionTablet1400, .versionTablet1100 {
+
+    .versionDesktop,
+    .versionTablet1400,
+    .versionTablet1100 {
         display: none;
     }
+
     .versionMobile {
         display: flex;
         width: 60px;
@@ -96,7 +100,12 @@
         gap: 52px;
     }
 
-    .examplesWorks h2, .tariffs h2, .aboutMe h2, .chooseUs h2, .reviews h2, .leaveRequest h2 {
+    .examplesWorks h2,
+    .tariffs h2,
+    .aboutMe h2,
+    .chooseUs h2,
+    .reviews h2,
+    .leaveRequest h2 {
         font-size: 24px;
         text-align: center;
         padding: 0 20px;
@@ -115,8 +124,8 @@
 
     .works-flex {
         display: flex;
-        transform: translateX(0);
-        transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+        /* transform: translateX(-200vw); */
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .works-slide {
@@ -174,10 +183,13 @@
 
     /* Адаптируем кнопку play */
     .play-btn {
-        width: 60px;
-        height: 60px;
-        display: block !important;
-        pointer-events: auto !important;
+        position: absolute;
+        left: 48%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        pointer-events: auto;
+        animation: playPulse 1.4s infinite;
     }
 
     .play-btn svg {
@@ -187,16 +199,20 @@
 
     /* Адаптируем unmute кнопку */
     .unmute-btn {
-        width: 40px;
-        height: 40px;
-        right: 10px;
-        bottom: 10px;
-        display: block !important;
+        width: 70px;
+        height: 70px;
+        right: 11px;
+        bottom: 12px;
     }
 
     .unmute-btn svg {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
     }
+
+    .tariff {
+        min-width: 226px;
+    }
+
 
 }
