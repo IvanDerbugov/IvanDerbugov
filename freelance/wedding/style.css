@@ -1711,3 +1711,74 @@ footer {
         filter: drop-shadow(0 0 0 #F90F4A44);
     }
 }
+
+/* Мобильный слайдер тарифов */
+.tariffs-mobile-slider {
+    display: none;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.tariffs-flex {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tariffs-flex .tariff {
+    min-width: 100%;
+    flex-shrink: 0;
+}
+
+.tariffs-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    color: #F90F4A;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.tariffs-arrow:hover {
+    background: #F90F4A;
+    color: white;
+}
+
+.tariffs-arrow-prev {
+    left: 10px;
+}
+
+.tariffs-arrow-next {
+    right: 10px;
+}
+
+.tariffs-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.tariffs-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(249, 15, 74, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tariffs-dot:hover {
+    background: rgba(249, 15, 74, 0.6);
+}
+
+.tariffs-dot.active {
+    background: #F90F4A;
+}

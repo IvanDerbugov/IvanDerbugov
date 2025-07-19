@@ -210,8 +210,57 @@
         height: 50px;
     }
 
+
+    .tariffs-container h2 {
+        margin-bottom: 32px;
+    }
+
+    .tariffs {
+        padding: 40px 0 77px;
+    }
+
     .tariff {
         min-width: 226px;
+    }
+
+    /* Показываем мобильный слайдер, скрываем десктопную версию */
+    .tariffsGrid {
+        display: none;
+    }
+
+    .tariffs-mobile-slider {
+        display: block;
+        overflow: hidden;
+        position: relative;
+        padding: 0 20px;
+    }
+
+    .tariffs-flex {
+        display: flex;
+        gap: 8px;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .tariffs-flex .tariff {
+        width: 226px;
+        flex-shrink: 0;
+        margin: 0;
+    }
+
+    .tariffs-arrow {
+        display: none;
+    }
+
+    .tariffs-dots {
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .tariffs-flex .tariff {
+        min-width: auto;
     }
 
 

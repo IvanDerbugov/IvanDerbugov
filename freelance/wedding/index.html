@@ -165,6 +165,7 @@
                     ТАРИФЫ
                 </h2>
 
+                <!-- Десктопная версия -->
                 <div class="tariffsGrid">
                     <a href="#leaveRequestForm" class="tariff">
                         <div class="tariff-title">Basic</div>
@@ -196,6 +197,45 @@
                         </div>
                         <div class="tariff-price">175 000₽</div>
                     </a>
+                </div>
+
+                <!-- Мобильная версия слайдера -->
+                <div class="tariffs-mobile-slider">
+                    <button class="tariffs-arrow tariffs-arrow-prev" aria-label="Назад">&#10094;</button>
+                    <div class="tariffs-flex">
+                        <a href="#leaveRequestForm" class="tariff">
+                            <div class="tariff-title">Basic</div>
+                            <div class="tariff-desc">
+                                <div class="tariff-desc-item first">Съёмочная смена (с утра до вечера, без ограничения по
+                                    времени)</div>
+                                <div class="tariff-desc-item second">Монтаж свадебного клипа</div>
+                            </div>
+                            <div class="tariff-price">85 000₽</div>
+                        </a>
+                        <a href="#leaveRequestForm" class="tariff tariff-active">
+                            <div class="tariff-title">Standard</div>
+                            <div class="tariff-desc">
+                                <div class="tariff-desc-item first">Всё из Basic</div>
+                                <div class="tariff-desc-item second">Свадебный фильм (хронометраж ~1 час)</div>
+                                <div class="tariff-desc-item third">2 Reels-клипа (вертикальные клипы для соцсетей)</div>
+                            </div>
+                            <div class="tariff-price price-discount">95 000₽ <span class="tariff-old-price">150 000₽</span>
+                            </div>
+                        </a>
+                        <a href="#leaveRequestForm" class="tariff">
+                            <div class="tariff-title">VIP</div>
+                            <div class="tariff-desc">
+                                <div class="tariff-desc-item first">Всё из Standard</div>
+                                <div class="tariff-desc-item second">SDE-ролик (монтируется в день свадьбы, показывается на
+                                    банкете)</div>
+                                <div class="tariff-desc-item third">Love Story (предсвадебная съёмка, нежный клип под
+                                    музыку)</div>
+                            </div>
+                            <div class="tariff-price">175 000₽</div>
+                        </a>
+                    </div>
+                    <button class="tariffs-arrow tariffs-arrow-next" aria-label="Вперёд">&#10095;</button>
+                    <div class="tariffs-dots"></div>
                 </div>
             </div>
         </div>
@@ -493,11 +533,13 @@
             </div>
     </footer>
 
-    <script src="main.js"></script>
+    
     <div class="fixed-modal-btn-wrap-wedding">
         <div class="modal-timer-wedding">10:00</div>
         <button class="fixed-modal-btn-wedding" type="button">Зафиксировать скидку 15%</button>
     </div>
+    <script src="main.js"></script>
+    <script src="tariffMobile.js"></script>
 </body>
 
 </html>
