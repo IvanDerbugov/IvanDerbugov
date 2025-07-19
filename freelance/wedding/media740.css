@@ -530,3 +530,101 @@
         padding: 2px 8px;
     }
 }
+
+@media (max-width: 600px) {
+    /* Адаптив для модального окна */
+    .modal-content {
+        min-width: auto;
+        width: 90vw;
+        max-width: 320px;
+        padding: 32px 24px 24px 24px;
+        margin: 20px;
+    }
+
+    .modal-close {
+        top: 3px;
+        right: 11px;
+        font-size: 36px;
+    }
+
+    .modal-form {
+        gap: 24px;
+    }
+
+    .modal-form input {
+        width: 100%;
+        max-width: 280px;
+        height: 48px;
+        font-size: 16px;
+        padding: 0 20px;
+    }
+
+    .modal-form input::placeholder {
+        font-size: 14px;
+    }
+
+    .modal-form button {
+        width: 100%;
+        max-width: 280px;
+        padding: 0 32px;
+        font-size: 17px;
+        height: 48px;
+    }
+
+    .modal-form div {
+        margin-top: 16px;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .modal-form a svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .modal-success {
+        font-size: 18px;
+        padding: 0 16px;
+    }
+
+    .spinner {
+        width: 48px;
+        height: 48px;
+        border-width: 5px;
+    }
+
+    /* Адаптив для фиксированной кнопки */
+    .fixed-modal-btn-wrap-wedding {
+        right: 8px;
+        bottom: 8px;
+    }
+
+    .fixed-modal-btn-wedding {
+        font-size: 14px;
+        padding: 10px 16px;
+        border-radius: 20px;
+    }
+
+    .modal-timer-wedding {
+        font-size: 12px;
+        padding: 2px 6px;
+    }
+
+    /* Адаптив для модального окна отзывов */
+    .review-modal-content {
+        max-width: 95vw;
+        max-height: 80vh;
+        padding: 16px;
+    }
+
+    .review-modal-content img {
+        max-width: 90vw;
+        max-height: 70vh;
+    }
+
+    .review-modal-close {
+        top: 8px;
+        right: 12px;
+        font-size: 32px;
+    }
+}
