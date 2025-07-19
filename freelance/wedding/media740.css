@@ -282,6 +282,10 @@
         align-items: center;
         position: relative;
         overflow: hidden;
+        width: 304px;
+        margin: 0 auto;
+        padding: 0;
+        border-radius: 8px;
     }
 
     .aboutMe-Mobile-text {
@@ -320,6 +324,7 @@
         from {
             bottom: -315px;
         }
+
         to {
             bottom: 0;
         }
@@ -329,6 +334,7 @@
         from {
             bottom: 0;
         }
+
         to {
             bottom: -315px;
         }
@@ -364,4 +370,133 @@
         margin: 31px 0 0px;
     }
 
+
+    .chooseUs {
+        padding: 40px 0 91px;
+    }
+
+    .chooseUs-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .chooseUs-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-radius: 8px;
+        padding: 22px;
+    }
+
+    .chooseUs-desc {
+        display: none;
+    }
+
+    .chooseUs-title {
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+
+    .chooseUs-num {
+        font-size: 24px;
+    }
+
+
+    .reviews {
+        padding: 40px 20px;
+    }
+
+    .reviews h2 {
+        margin-bottom: 32px;
+    }
+
+    .reviews-card {
+        padding: 18px 16px 16px;
+    }
+
+    .reviews-slider-wrap .reviews-arrow-prev,
+    .reviews-slider-wrap .reviews-arrow-next {
+        display: none;
+    }
+
+    .textReview {
+        font-size: 14px;
+    }
+
+    .seeReview {
+        font-size: 14px;
+        bottom: -28px;
+    }
+
+    .nameFotoReview p {
+        font-size: 16px;
+    }
+
+    .reviews-card .nameFotoReview img {
+        width: 38px;
+    }
+
+    .nameFotoReview {
+        margin-top: 48px;
+    }
+
+
+    .leaveRequest {
+        padding: 40px 0 214px;
+    }
+
+    .leaveRequest h2 {
+        margin-bottom: 131px;
+    }
+
+    .leaveRequest form input {
+        min-width: auto;
+        max-width: 350px;
+        width: 304px;
+        height: 44px;
+        font-size: 16px;
+        border-radius: 8px;
+        padding-left: 24px;
+    }
+
+    .leaveRequest form button {
+        padding: 0px 38px;
+        font-size: 16px;
+        height: 44px;
+    }
+
+    .leaveRequest form div {
+        margin-top: -19px;
+        gap: 20px;
+    }
+
+
+    footer.container {
+        padding: 40px 0 80px;
+        flex-direction: column;
+        gap: 61px;
+    }
+
+    .footer-title {
+        order: 2;
+    }
+
+    .footer-contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        order: 1;
+    }
+
+    .footer-contacts p:first-of-type {
+        margin-bottom: 8px;
+    }
+
+    .footer-main {
+        font-size: 44px;
+    }
+
+    .footer-sub {
+        font-size: 24px;
+    }
 }
