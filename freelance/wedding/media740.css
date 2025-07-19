@@ -264,4 +264,104 @@
     }
 
 
+    .aboutMe {
+        padding: 40px 0 32px;
+    }
+
+    .aboutMe h2 {
+        margin-bottom: 23px;
+    }
+
+    .aboutMe .aboutMe-Desktop {
+        display: none;
+    }
+
+    .aboutMe .aboutMe-Mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .aboutMe-Mobile-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        padding: 12px 24px 32px;
+        background: linear-gradient(180deg, #FF9898 0%, #FF6666 100%);
+        border-radius: 8px;
+        width: 304px;
+        gap: 24px;
+        color: #fff;
+        font-family: 'Jost', sans-serif;
+        position: absolute;
+        bottom: -315px;
+        cursor: pointer;
+        transition: bottom 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 3;
+    }
+
+    .aboutMe-Mobile-text.expanded {
+        bottom: 0;
+    }
+
+    .aboutMe-Mobile-text svg {
+        margin: 0 auto;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .aboutMe-Mobile-text.expanded svg {
+        transform: rotate(180deg);
+    }
+
+    /* Анимация для плавного выезда блока */
+    @keyframes slideUp {
+        from {
+            bottom: -315px;
+        }
+        to {
+            bottom: 0;
+        }
+    }
+
+    @keyframes slideDown {
+        from {
+            bottom: 0;
+        }
+        to {
+            bottom: -315px;
+        }
+    }
+
+    .aboutMe-Mobile-text.sliding-up {
+        animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .aboutMe-Mobile-text.sliding-down {
+        animation: slideDown 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .aboutMe-Mobile-text h3 {
+        color: #fff;
+        font-size: 32px;
+        text-align: left;
+        margin-bottom: 0;
+    }
+
+    .aboutMe-Mobile-text p {
+        font-size: 14px;
+        color: #fff;
+        line-height: 1.23;
+    }
+
+    .aboutMe-Mobile-text p:first-of-type {
+        font-size: 16px;
+        margin-top: -24px;
+    }
+
+    .aboutMe p:nth-of-type(2) {
+        margin: 31px 0 0px;
+    }
+
 }

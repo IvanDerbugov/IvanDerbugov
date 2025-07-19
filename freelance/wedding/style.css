@@ -537,6 +537,14 @@ header {
     padding: 100px 0 80px;
 }
 
+.aboutMe .aboutMe-Desktop {
+    display: flex;
+}
+
+.aboutMe .aboutMe-Mobile {
+    display: none;
+}   
+
 .light1,
 .light2 {
     position: absolute;

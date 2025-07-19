@@ -715,4 +715,50 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Инициализируем кнопки play
     setupPlayButtons();
+
+    // Мобильная версия блока "Обо мне" - анимация при клике
+    const aboutMeMobileText = document.getElementById('aboutMeMobileText');
+    
+    function setupAboutMeMobile() {
+        if (aboutMeMobileText && window.innerWidth <= 740) {
+            // Удаляем старый обработчик, если есть
+            aboutMeMobileText.removeEventListener('click', toggleAboutMeMobile);
+            // Добавляем новый обработчик
+            aboutMeMobileText.addEventListener('click', toggleAboutMeMobile);
+        } else if (aboutMeMobileText && window.innerWidth > 740) {
+            // Убираем обработчик на десктопе
+            aboutMeMobileText.removeEventListener('click', toggleAboutMeMobile);
+            aboutMeMobileText.classList.remove('expanded', 'sliding-up', 'sliding-down');
+        }
+    }
+    
+    function toggleAboutMeMobile() {
+        const element = this;
+        
+        if (element.classList.contains('expanded')) {
+            // Скрываем блок
+            element.classList.remove('expanded');
+            element.classList.add('sliding-down');
+            
+            // Убираем класс анимации после завершения
+            setTimeout(() => {
+                element.classList.remove('sliding-down');
+            }, 500);
+        } else {
+            // Показываем блок
+            element.classList.add('sliding-up');
+            
+            // Добавляем класс expanded после завершения анимации
+            setTimeout(() => {
+                element.classList.remove('sliding-up');
+                element.classList.add('expanded');
+            }, 500);
+        }
+    }
+    
+    // Инициализируем при загрузке
+    setupAboutMeMobile();
+    
+    // Обновляем при изменении размера окна
+    window.addEventListener('resize', setupAboutMeMobile);
 });
