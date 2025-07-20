@@ -135,23 +135,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const portfolioBtns = document.querySelectorAll('.portfolio-btn');
     const nftBlock = document.getElementById('project-nft');
     const subsBlock = document.getElementById('project-subs');
-    if (portfolioBtns.length && nftBlock && subsBlock) {
+    const weddingBlock = document.getElementById('project-wedding');
+    if (portfolioBtns.length && nftBlock && subsBlock && weddingBlock) {
         portfolioBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 portfolioBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
+                
+                // Скрываем все проекты
+                nftBlock.style.display = 'none';
+                subsBlock.style.display = 'none';
+                weddingBlock.style.display = 'none';
+                
+                // Останавливаем видео SubScope
+                const subsVideo = subsBlock.querySelector('video');
+                if (subsVideo) { subsVideo.pause(); subsVideo.currentTime = 0; }
+                
+                // Показываем нужный проект
                 if (btn.dataset.project === 'nft') {
                     nftBlock.style.display = '';
-                    subsBlock.style.display = 'none';
-                    // Останавливаем видео SubScope
-                    const subsVideo = subsBlock.querySelector('video');
-                    if (subsVideo) { subsVideo.pause(); subsVideo.currentTime = 0; }
-                } else {
-                    nftBlock.style.display = 'none';
+                } else if (btn.dataset.project === 'subs') {
                     subsBlock.style.display = '';
                     // Запускаем видео SubScope
-                    const subsVideo = subsBlock.querySelector('video');
                     if (subsVideo) { subsVideo.play(); }
+                } else if (btn.dataset.project === 'wedding') {
+                    weddingBlock.style.display = '';
                 }
             });
         });
