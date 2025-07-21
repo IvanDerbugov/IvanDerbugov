@@ -83,11 +83,15 @@
     .versionTablet1400 {
         display: flex;
     }
-    .versionDesktop, .versionTablet1100, .versionMobile, .version450 {
+
+    .versionDesktop,
+    .versionTablet1100,
+    .versionMobile,
+    .version450 {
         display: none;
     }
 
-body {
+    body {
         overflow-x: hidden;
     }
 
@@ -316,10 +320,14 @@ body {
     .versionTablet1100 {
         display: flex;
     }
-    .versionDesktop, .versionTablet1400, .versionMobile, .version450 {
+
+    .versionDesktop,
+    .versionTablet1400,
+    .versionMobile,
+    .version450 {
         display: none;
     }
-    
+
     .conteiner1800 {
         width: 100%;
         max-width: 1100px;
@@ -658,6 +666,7 @@ body {
     .equipment {
         font-size: 9px;
     }
+
     .equipment .lightGreen {
         width: 7px;
         height: 7px;

@@ -1,4 +1,4 @@
-.versionDesktop, .versionTablet1400, .versionTablet1100, .versionMobile, .version450 {
+/* .versionDesktop, .versionTablet1400, .versionTablet1100, .versionMobile, .version450 {
     width: 180px;
     height: 180px;
     position: fixed;
@@ -18,7 +18,7 @@
 }
 .versionTablet1400, .versionTablet1100, .versionMobile, .version450 {
     display: none;
-}
+} */
 
 body {
     background-color: #eaeae8;
