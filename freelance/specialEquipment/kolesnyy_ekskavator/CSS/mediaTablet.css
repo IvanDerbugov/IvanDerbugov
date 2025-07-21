@@ -72,6 +72,11 @@
         padding: 20px 50px;
     }
 
+
+    .equipment {
+        font-size: 13px;
+    }
+
 }
 
 @media (max-width: 1400px) {
@@ -647,6 +652,17 @@ body {
 
     .info-col:not(:last-child)::after {
         display: none;
+    }
+
+
+    .equipment {
+        font-size: 9px;
+    }
+    .equipment .lightGreen {
+        width: 7px;
+        height: 7px;
+        box-shadow: 0 0 7px 0 rgba(12, 137, 60, 0.5);
+        padding: 3px;
     }
 }
 

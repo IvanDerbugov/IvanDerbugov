@@ -441,6 +441,7 @@ main>.conteiner1800:first-of-type {
     display: flex;
     align-items: center;
     gap: 5px;
+    font-size: 16px;
 }
 
 .equipment .lightGreen {
@@ -449,6 +450,7 @@ main>.conteiner1800:first-of-type {
     border-radius: 50%;
     background: #0C893C;
     box-shadow: 0 0 10px 0 rgba(12, 137, 60, 0.5);
+    padding: 5px;
 }
 
 .card-status {
