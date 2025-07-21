@@ -278,3 +278,20 @@
         width: 150px;
     }
 }
+
+@media (max-width: 350px) {
+    main>.conteiner1800:first-of-type {
+        background-size: auto, calc(1144px * 0.2) calc(1118px * 0.2), calc(743px * 1.4) calc(451px * 1.4);
+        padding: 5px;
+    }
+
+    .bannerMain {
+        margin-left: 0px;
+    }
+
+    .offer-15 {
+        top: 408px;
+        left: 175px;
+        width: 130px;
+    }
+}
