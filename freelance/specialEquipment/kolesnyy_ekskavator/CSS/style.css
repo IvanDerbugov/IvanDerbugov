@@ -1073,8 +1073,8 @@ main>.conteiner1800:first-of-type {
 .section-limiter {
     max-width: 1850px;
     margin: 0 auto;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 4px;
+    padding-right: 4px;
     box-sizing: border-box;
     width: 100%;
 }
