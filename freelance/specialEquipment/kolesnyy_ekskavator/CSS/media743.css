@@ -265,7 +265,7 @@
 
     main>.conteiner1800:first-of-type {
         background-size: auto, calc(1144px * 0.25) calc(1118px * 0.25), calc(743px * 1.3) calc(451px * 1.3);
-        padding: 10px 10px 20px;
+        padding: 10px 10px 25px;
     }
 
     
