@@ -147,6 +147,33 @@ function addAnimationStyles() {
 const whayManyDogs = document.getElementById('whayManyDogs');
 whayManyDogs.textContent = quantityDogs;
 
+// Функция для воспроизведения звука гавканья
+function playBarkSound() {
+    // Создаем аудио контекст для генерации звука
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    
+    // Создаем осциллятор для генерации звука
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    
+    // Подключаем узлы
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    
+    // Настраиваем звук гавканья
+    oscillator.type = 'sine';
+    oscillator.frequency.setValueAtTime(800, audioContext.currentTime); // Высокий тон
+    oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.1); // Снижение тона
+    
+    // Настраиваем громкость
+    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime); // Негромкий звук
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2); // Затухание
+    
+    // Воспроизводим звук
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 0.2);
+}
+
 // Добавляем обработчик для кнопки добавления собаки
 const addDog = document.getElementById('addDog');
 addDog.addEventListener('click', function() {
@@ -159,10 +186,14 @@ addDog.addEventListener('click', function() {
     quantityDogs = dogs.length;
     whayManyDogs.textContent = quantityDogs;
     
+    // Воспроизводим звук гавканья
+    playBarkSound();
+    
     // Перерисовываем всех собак
     displayAllDogs();
     
-    // Проверяем условие победы
+    // Проверяем условие победы (только когда количество достигает 10)
+    console.log(quantityDogs);
     if (quantityDogs === 10) {
         setTimeout(() => {
             const win = document.querySelector('.win');
