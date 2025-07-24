@@ -54,7 +54,7 @@ function getDogGradient(color) {
 function createDogSVG(color) {
     const gradient = getDogGradient(color);
     return `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" width="100" height="80">
+        <svg class="dog-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" width="100" height="80">
             <defs>
                 <linearGradient id="dogGradient-${color}" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" style="stop-color:${gradient.start};stop-opacity:1" />
@@ -82,9 +82,9 @@ function createDogSVG(color) {
             <circle cx="65.5" cy="30" r="0.8" fill="#000"/>
             
             <!-- Лапы -->
-            <ellipse class="leg" cx="30" cy="60" rx="4" ry="8" fill="url(#dogGradient-${color})" stroke="${gradient.stroke}" stroke-width="2"/>
-            <ellipse class="leg" cx="45" cy="60" rx="4" ry="8" fill="url(#dogGradient-${color})" stroke="${gradient.stroke}" stroke-width="2"/>
-            <ellipse class="leg" cx="60" cy="60" rx="4" ry="8" fill="url(#dogGradient-${color})" stroke="${gradient.stroke}" stroke-width="2"/>
+            <ellipse cx="30" cy="60" rx="4" ry="8" fill="url(#dogGradient-${color})" stroke="${gradient.stroke}" stroke-width="2"/>
+            <ellipse cx="45" cy="60" rx="4" ry="8" fill="url(#dogGradient-${color})" stroke="${gradient.stroke}" stroke-width="2"/>
+            <ellipse cx="60" cy="60" rx="4" ry="8" fill="url(#dogGradient-${color})" stroke="${gradient.stroke}" stroke-width="2"/>
             
             <!-- Хвост -->
             <path d="M 25 40 Q 15 30 10 20 Q 8 15 12 12" stroke="url(#dogGradient-${color})" stroke-width="4" fill="none" stroke-linecap="round"/>
@@ -137,6 +137,7 @@ function addAnimationStyles() {
     let css = '';
     dogs.forEach((dog, index) => {
         css += `.dog${index + 1} { animation-delay: ${index}s; }\n`;
+        css += `.dog${index + 1} .dog-svg { animation-delay: ${index}s; }\n`;
     });
     
     styleElement.textContent = css;
@@ -160,7 +161,29 @@ addDog.addEventListener('click', function() {
     
     // Перерисовываем всех собак
     displayAllDogs();
+    
+    // Проверяем условие победы
+    if (quantityDogs === 10) {
+        setTimeout(() => {
+            const win = document.querySelector('.win');
+            if (win) {
+                win.style.display = 'flex';
+            }
+        }, 1500);
+    }
 });
+
+// Добавляем обработчик для кнопки следующего уровня
+const nextLevel = document.getElementById('nextLevel');
+if (nextLevel) {
+    nextLevel.addEventListener('click', function() {
+        const win = document.querySelector('.win');
+        if (win) {
+            win.style.display = 'none';
+        }
+        alert('Следующий уровень будет позже');
+    });
+}
 
 // Отображаем всех собак при загрузке страницы
 document.addEventListener('DOMContentLoaded', displayAllDogs);
