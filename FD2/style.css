@@ -1,0 +1,65 @@
+body {
+    background-color: #14cd0e;
+}
+
+.dog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    background: transparent;
+    animation: dog-walk 8s linear infinite;
+}
+
+.dogName {
+    position: absolute;
+    top: -13px;
+    left: 56px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.dogs-container {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+@keyframes leg-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.leg {
+    animation: leg-animation 1s infinite;
+}
+
+@keyframes dog-walk {
+    0% { 
+        transform: translateX(-100px); 
+    }
+    100% { 
+        transform: translateX(calc(100vw - 150px)); 
+    }
+}
+
+/* Добавляем задержку для каждой следующей собаки */
+.dog1 { animation-delay: 0s; }
+.dog2 { animation-delay: 1s; }
+.dog3 { animation-delay: 2s; }
+.dog4 { animation-delay: 3s; }
+.dog5 { animation-delay: 4s; }

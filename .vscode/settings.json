@@ -13,5 +13,6 @@
     "liveSassCompile.settings.includeItems": [
         "layouts/MaketNFTs/sass/style.sass"
     ],
-    "liveSassCompile.settings.generateMap": false
+    "liveSassCompile.settings.generateMap": false,
+    "liveServer.settings.port": 5501
 } 
