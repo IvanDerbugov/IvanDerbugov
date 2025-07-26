@@ -67,13 +67,6 @@ p {
     transition: opacity .6s ease;
 }
 
-.carousel-indicators [data-bs-target]:hover {
-    opacity: 1;
-    background-color: pink;
-}
-
-
-
 /* Стили для индикаторов карусели */
 .carousel-indicators [data-bs-target] {
     background-color: #fff;
@@ -83,4 +76,24 @@ p {
 .carousel-indicators .active {
     background-color: pink !important;
     opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .carousel-indicators [data-bs-target] {
+        width: 10px;
+        height: 10px;
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+
+    .carousel-control-next-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .carousel-control-prev-icon {
+        width: 50px;
+        height: 50px;
+    }
+
 }
