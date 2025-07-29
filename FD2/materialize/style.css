@@ -1,0 +1,99 @@
+/* Дополнительные стили для Materialize параллакса */
+
+/* Улучшенные стили для параллакс контейнеров */
+.parallax-container {
+    height: 500px;
+}
+
+/* Стили для контента поверх параллакса */
+.parallax-container .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Улучшенные тени для текста */
+.parallax-container h1,
+.parallax-container h2 {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+    font-weight: 300;
+}
+
+.parallax-container p {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8) !important;
+}
+
+/* Стили для карточек */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card-image img {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+/* Стили для панелей */
+.card-panel {
+    transition: transform 0.3s ease;
+}
+
+.card-panel:hover {
+    transform: translateY(-3px);
+}
+
+/* Стили для статистики */
+.section.blue h3 {
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.section.blue p {
+    opacity: 0.9;
+}
+
+/* Адаптивность */
+@media only screen and (max-width: 600px) {
+    .parallax-container {
+        height: 300px;
+    }
+    
+    .parallax-container h1 {
+        font-size: 2rem;
+    }
+    
+    .parallax-container h2 {
+        font-size: 1.5rem;
+    }
+    
+    .parallax-container .container {
+        padding-top: 50px;
+    }
+}
+
+/* Плавная прокрутка */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Стили для кнопок */
+.btn-large {
+    margin: 10px;
+}
+
+/* Улучшенные стили для навигации */
+nav {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Стили для футера */
+footer.page-footer {
+    margin-top: 0;
+}
