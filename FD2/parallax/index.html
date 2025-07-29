@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Effect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="parallax-container">
+        <!-- Первая секция с параллакс эффектом -->
+        <section class="parallax-section" id="section1">
+            <div class="parallax-bg"></div>
+            <div class="content">
+                <h1>Добро пожаловать</h1>
+                <p>Прокрутите вниз, чтобы увидеть параллакс эффект</p>
+            </div>
+        </section>
+
+        <!-- Обычная секция -->
+        <section class="content-section">
+            <div class="container">
+                <h2>О нас</h2>
+                <p>Это обычная секция с контентом. Здесь вы можете разместить любую информацию о вашем проекте или компании.</p>
+                <p>Параллакс эффект создает глубину и делает сайт более интерактивным.</p>
+            </div>
+        </section>
+
+        <!-- Вторая секция с параллакс эффектом -->
+        <section class="parallax-section" id="section2">
+            <div class="parallax-bg"></div>
+            <div class="content">
+                <h2>Наши услуги</h2>
+                <p>Мы предлагаем качественные решения для вашего бизнеса</p>
+            </div>
+        </section>
+
+        <!-- Обычная секция -->
+        <section class="content-section">
+            <div class="container">
+                <h2>Контакты</h2>
+                <p>Свяжитесь с нами для получения дополнительной информации.</p>
+                <p>Email: info@example.com</p>
+                <p>Телефон: +7 (999) 123-45-67</p>
+            </div>
+        </section>
+
+        <!-- Третья секция с параллакс эффектом -->
+        <section class="parallax-section" id="section3">
+            <div class="parallax-bg"></div>
+            <div class="content">
+                <h2>Спасибо за внимание</h2>
+                <p>Это демонстрация простого параллакс эффекта</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Простой JavaScript для усиления параллакс эффекта
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax-bg');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
