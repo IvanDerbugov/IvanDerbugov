@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+</head>
+
+<style>
+    .catalog {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 200px;
+        gap: 20px;
+    }
+
+    .card {
+        width: 50px;
+        height: 50px;
+    }
+
+    .card:nth-of-type(odd) {
+        background-color: aqua;
+    }
+
+    .card:nth-of-type(even) {
+        background-color: blueviolet;
+    }
+
+    .wrapBtn {
+        width: 200px;
+        text-align: center;
+    }
+
+    button {
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .none {
+        display: none;
+    }
+</style>
+
+<body>
+
+    <div class="catalog">
+        <div class="card">1</div>
+        <div class="card">2</div>
+        <div class="card">3</div>
+        <div class="card none">4</div>
+        <div class="card none">5</div>
+        <div class="card none">6</div>
+        <div class="card none">7</div>
+        <div class="card none">8</div>
+        <div class="card none">9</div>
+    </div>
+    <div class="wrapBtn">
+        <button id="seeMore">Показать все карточки</button>
+        <button id="seeLess" class="none">Скрыть все карточки</button>
+        <button id="btnBig">увеличить карточки</button>
+        <button id="btnReset">сбросить размер<br> карточки</button>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function ($) {
+            // Создаём кастомный метод для jQuery
+            $.fn.slideFadeToggle = function (speed, easing, callback) {
+                return this.animate({ opacity: 'toggle', height: 'toggle' }, speed, easing, callback);
+            };
+            //увеличиваем размеры карточек кликом
+            $('#btnBig').css('fontSize', '10px').on('click', function () {
+                var widthCard = $('.card').width();
+                var newWidthCard = widthCard * 1.1
+                $('.card').css('width', newWidthCard + 'px')
+                var heightCard = $('.card').height();
+                var newHeightCard = heightCard * 1.1
+                $('.card').css('height', newHeightCard + 'px')
+
+            })
+            //сбрасываем увеличенный размер
+            $('#btnReset').css('color', 'red').click(function () {
+                $('.card').css('width', '50px').css('height', '50px')
+            })
+            //обработка показать больше
+            $('#seeMore').on('click', function () {
+                $('#seeLess').css('display', 'inline-block');
+                $('#seeMore').css('display', 'none');
+                if ($('.card').hasClass('none')) {
+                    // $('.card').removeClass('none');
+                    // $('.card').slideDown();
+                    $('.card.none').slideFadeToggle('slow');
+                    // $('.card').fadeIn();
+                }
+            })
+            //обработка показать меньше
+            $('#seeLess').on('click', function () {
+                $('#seeMore').css('display', 'inline-block');
+                $('#seeLess').css('display', 'none');
+                // $('.card').slice(3).addClass('none');
+                // $('.card').slice(3).slideUp();
+                // $('.card').slice(3).fadeOut();
+                $('.card.none').slideFadeToggle('slow');
+            })
+        })
+    </script>
+</body>
+
+</html>
