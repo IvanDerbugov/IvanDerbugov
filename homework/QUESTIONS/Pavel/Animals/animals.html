@@ -94,7 +94,12 @@
             background: url(img/hourse.jpg) no-repeat;
             background-size: 150px;
         }
-
+        .koza {
+            width: 150px;
+            height: 166px;
+            background: url(img/koza.jpg) no-repeat;
+            background-size: 150px;
+        }
 
 
     </style>
@@ -122,6 +127,7 @@
 
 <div class="wrap">
     <div class="hourse"></div>
+    <div class="koza"></div>
 </div>
 
 
@@ -202,6 +208,15 @@
         document.querySelector('.hourse').addEventListener('mouseout', () => {
             audioHourse.pause();
             audioHourse.currentTime = 0;
+        });
+
+        const audioKoza = new Audio('img/koza.mp3');
+        document.querySelector('.koza').addEventListener('mouseover', () => {
+            audioKoza.play();
+        });
+        document.querySelector('.koza').addEventListener('mouseout', () => {
+            audioKoza.pause();
+            audioKoza.currentTime = 0;
         });
     </script>
 </body>
