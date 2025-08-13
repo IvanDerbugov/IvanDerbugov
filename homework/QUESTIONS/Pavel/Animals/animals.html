@@ -88,6 +88,12 @@
             background: url(img/ram.jpg) no-repeat;
             background-size: 150px;
         }
+        .hourse {
+            width: 150px;
+            height: 166px;
+            background: url(img/hourse.jpg) no-repeat;
+            background-size: 150px;
+        }
 
 
 
@@ -112,6 +118,10 @@
     <div class="hedgehog"></div>
 
     <div class="ram"></div>
+</div>
+
+<div class="wrap">
+    <div class="hourse"></div>
 </div>
 
 
@@ -183,6 +193,15 @@
         document.querySelector('.ram').addEventListener('mouseout', () => {
             audioRam.pause();
             audioRam.currentTime = 0;
+        });
+
+        const audioHourse = new Audio('img/hourse.mp3');
+        document.querySelector('.hourse').addEventListener('mouseover', () => {
+            audioHourse.play();
+        });
+        document.querySelector('.hourse').addEventListener('mouseout', () => {
+            audioHourse.pause();
+            audioHourse.currentTime = 0;
         });
     </script>
 </body>
