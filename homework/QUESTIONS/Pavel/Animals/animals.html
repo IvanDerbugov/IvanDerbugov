@@ -6,32 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Животные</title>
     <style>
-        .overlay {
-            width: 400px;
-            height: 400px;
-            background: url(img/bigBitTefal.png) no-repeat, url(img/littleTefal.png) no-repeat, url(img/BigTefal.png) no-repeat;
-            background-size: calc(100% / 2 - 44px), calc(100% / 2 - 69px), calc(100% / 2);
-            background-position: 163px 308px, 178px 280px, 143px 181px;
-
-        }
-
-        @keyframes move {
-            0% {
-                background-position: 163px 308px, 178px 280px, 143px 181px;
-            }
-
-            50% {
-                background-position: 163px 308px, 178px 140px, 143px 181px;
-            }
-
-            100% {
-                background-position: 163px 308px, 178px 280px, 143px 181px;
-            }
-        }
-
-        .overlay:hover {
-            animation: move 3s;
-        }
 
 
 
@@ -534,15 +508,6 @@
     </div>
 
     <script>
-        const audio = new Audio('img/tefal.mp3');
-        audio.loop = true;
-        document.querySelector('.overlay').addEventListener('mouseover', () => {
-            audio.play();
-        });
-        document.querySelector('.overlay').addEventListener('mouseout', () => {
-            audio.pause();
-            audio.currentTime = 0;
-        });
 
 
 
