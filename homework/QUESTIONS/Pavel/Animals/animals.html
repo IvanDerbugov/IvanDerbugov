@@ -101,6 +101,97 @@
             background-size: 150px;
         }
 
+        /* Стили для игры с цифрами */
+        .number-game {
+            margin-top: 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .number-display {
+            width: 200px;
+            height: 200px;
+            background: white;
+            border: 5px solid #ff6b6b;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            font-weight: bold;
+            color: #ff6b6b;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .number-display.show {
+            transform: scale(1.1);
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .number-buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .number-btn {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .number-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #45b7aa, #3d8b7a);
+        }
+
+        .number-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .game-title {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .clear-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .clear-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
 
     </style>
 </head>
@@ -130,7 +221,32 @@
     <div class="koza"></div>
 </div>
 
-
+<!-- Игра с цифрами для детей -->
+<div class="number-game">
+    <h2 class="game-title">🎯 Игра с цифрами! 🎯</h2>
+    <p style="color: #666; font-size: 14px; margin-bottom: 15px;">
+        💡 Нажимайте кнопки мышкой или цифры на клавиатуре! (Escape - очистить)
+    </p>
+    <button id="soundToggle" style="margin-bottom: 15px; padding: 8px 15px; background: #4ecdc4; color: white; border: none; border-radius: 15px; cursor: pointer; font-size: 14px;">
+        🔊 Звук включен
+    </button>
+    <div class="number-display" id="numberDisplay">?</div>
+    
+    <div class="number-buttons">
+        <button class="number-btn" data-number="0">0</button>
+        <button class="number-btn" data-number="1">1</button>
+        <button class="number-btn" data-number="2">2</button>
+        <button class="number-btn" data-number="3">3</button>
+        <button class="number-btn" data-number="4">4</button>
+        <button class="number-btn" data-number="5">5</button>
+        <button class="number-btn" data-number="6">6</button>
+        <button class="number-btn" data-number="7">7</button>
+        <button class="number-btn" data-number="8">8</button>
+        <button class="number-btn" data-number="9">9</button>
+    </div>
+    
+    <button class="clear-btn" id="clearBtn">Очистить</button>
+</div>
 
     <script>
         const audio = new Audio('img/tefal.mp3');
@@ -217,6 +333,137 @@
         document.querySelector('.koza').addEventListener('mouseout', () => {
             audioKoza.pause();
             audioKoza.currentTime = 0;
+        });
+
+        // Игра с цифрами
+        const numberDisplay = document.getElementById('numberDisplay');
+        const numberButtons = document.querySelectorAll('.number-btn');
+        const clearBtn = document.getElementById('clearBtn');
+        const soundToggle = document.getElementById('soundToggle');
+        
+        // Переменная для управления звуком
+        let soundEnabled = true;
+
+        // Обработчики для кнопок с цифрами
+        numberButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const number = button.getAttribute('data-number');
+                showNumber(number);
+                
+                // Добавляем анимацию нажатия
+                button.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    button.style.transform = '';
+                }, 150);
+            });
+        });
+
+        // Функция для отображения цифры
+        function showNumber(number) {
+            numberDisplay.textContent = number;
+            numberDisplay.classList.add('show');
+            
+            // Голосовая озвучка на русском языке
+            speakNumber(number);
+            
+            // Убираем эффект через некоторое время
+            setTimeout(() => {
+                numberDisplay.classList.remove('show');
+            }, 500);
+        }
+
+        // Функция голосовой озвучки
+        function speakNumber(number) {
+            if (!soundEnabled) return; // Не озвучиваем, если звук выключен
+            
+            const numberNames = {
+                '0': 'цифра ноль',
+                '1': 'цифра один',
+                '2': 'цифра два',
+                '3': 'цифра три',
+                '4': 'цифра четыре',
+                '5': 'цифра пять',
+                '6': 'цифра шесть',
+                '7': 'цифра семь',
+                '8': 'цифра восемь',
+                '9': 'цифра девять'
+            };
+
+            const text = numberNames[number];
+            if (text) {
+                // Используем Web Speech API для озвучки
+                if ('speechSynthesis' in window) {
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    utterance.lang = 'ru-RU'; // Русский язык
+                    utterance.rate = 0.8; // Немного медленнее для детей
+                    utterance.pitch = 1.2; // Чуть выше тон для детского голоса
+                    utterance.volume = 0.8; // Громкость
+                    
+                    // Останавливаем предыдущую озвучку, если она есть
+                    speechSynthesis.cancel();
+                    speechSynthesis.speak(utterance);
+                }
+            }
+        }
+
+        // Обработчик для кнопки очистки
+        clearBtn.addEventListener('click', () => {
+            numberDisplay.textContent = '?';
+            numberDisplay.classList.remove('show');
+        });
+
+        // Обработчик для кнопки включения/выключения звука
+        soundToggle.addEventListener('click', () => {
+            soundEnabled = !soundEnabled;
+            if (soundEnabled) {
+                soundToggle.textContent = '🔊 Звук включен';
+                soundToggle.style.background = '#4ecdc4';
+            } else {
+                soundToggle.textContent = '🔇 Звук выключен';
+                soundToggle.style.background = '#ff6b6b';
+                // Останавливаем текущую озвучку
+                speechSynthesis.cancel();
+            }
+        });
+
+        // Добавляем звуковые эффекты (опционально)
+        function playClickSound() {
+            // Можно добавить звук клика, если есть аудиофайл
+            // const clickSound = new Audio('img/click.mp3');
+            // clickSound.play();
+        }
+
+        // Добавляем звук к кнопкам
+        numberButtons.forEach(button => {
+            button.addEventListener('click', playClickSound);
+        });
+
+        // Обработчик клавиатуры
+        document.addEventListener('keydown', (event) => {
+            const key = event.key;
+            
+            // Проверяем, что нажата цифра от 0 до 9
+            if (key >= '0' && key <= '9') {
+                showNumber(key);
+                playClickSound();
+                
+                // Подсвечиваем соответствующую кнопку
+                const button = document.querySelector(`[data-number="${key}"]`);
+                if (button) {
+                    button.style.transform = 'scale(0.9)';
+                    button.style.background = 'linear-gradient(45deg, #ff6b6b, #ee5a52)';
+                    setTimeout(() => {
+                        button.style.transform = '';
+                        button.style.background = '';
+                    }, 150);
+                }
+            }
+            
+            // Обработка клавиши Escape для очистки
+            if (key === 'Escape') {
+                numberDisplay.textContent = '?';
+                numberDisplay.classList.remove('show');
+            }
         });
     </script>
 </body>
