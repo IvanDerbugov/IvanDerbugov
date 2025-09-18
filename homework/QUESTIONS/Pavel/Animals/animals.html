@@ -154,6 +154,12 @@
             background: url(img/hourse.jpg) no-repeat;
             background-size: 150px;
         }
+        .hourse2 {
+            width: 150px;
+            height: 166px;
+            background: url(img/hourse2.jpg) no-repeat;
+            background-size: 150px;
+        }
 
         .koza {
             width: 150px;
@@ -423,6 +429,7 @@
         <div class="ram"></div>
         <div class="hourse"></div>
         <div class="koza"></div>
+        <div class="hourse2"></div>
     </div>
 
     <!-- Игры для детей -->
@@ -576,6 +583,15 @@
             audioHourse.currentTime = 0;
         });
 
+        const audioHourse2 = new Audio('img/hourse2.mp3');
+        document.querySelector('.hourse2').addEventListener('mouseover', () => {
+            audioHourse2.play();
+        });
+        document.querySelector('.hourse2').addEventListener('mouseout', () => {
+            audioHourse2.pause();
+            audioHourse2.currentTime = 0;
+        });
+
         const audioKoza = new Audio('img/koza.mp3');
         document.querySelector('.koza').addEventListener('mouseover', () => {
             audioKoza.play();
@@ -641,7 +657,7 @@
                 '0': 'цифра ноль',
                 '1': 'цифра один',
                 '2': 'цифра два',
-                '3': 'цифра три',
+                '3': 'цифра три, столько годиков детёнку Паше',
                 '4': 'цифра четыре',
                 '5': 'цифра пять',
                 '6': 'цифра шесть',
@@ -736,7 +752,7 @@
                 'М': 'Эм мама, любит Пашу',
                 'Н': 'Эн, нос у Паши',
                 'О': 'Ооо, овечка, которую паша водит на поводке',
-                'П': 'Пээ, Паша, большой детёнок',
+                'П': 'Пээ, Павловская колбаса',
                 'Р': 'Эр, рак, которого словил Паша',
                 'С': 'Эс, слон',
                 'Т': 'Тэ, тыква, которую Паша есть не хочет',
