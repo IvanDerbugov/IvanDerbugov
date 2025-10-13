@@ -1,0 +1,9 @@
+main {
+    margin: 0 auto;
+    text-align: center;
+}
+
+p>span{
+font-size: 0.8em;
+color: grey;
+}
