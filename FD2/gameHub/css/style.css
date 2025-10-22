@@ -1,0 +1,112 @@
+.container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    background: linear-gradient(-45deg, #2072cf, #1f5899, #1c3e64);
+    padding: 10px;
+}
+
+.findGame,
+.headerBtns {
+    gap: 10px;
+    position: relative;
+}
+
+header .logo {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.magnifier {
+    position: absolute;
+    left: 2px;
+}
+
+input[placeholder="Найти игру"] {
+    padding-left: 15px;
+    background: #ffffff99;
+    height: 30px;
+    width: 400px;
+}
+
+.languageBtn {
+    margin-right: 30px;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.compilations {
+    justify-content: center;
+    gap: 20px;
+}
+
+.compilations>div {
+    padding: 7px;
+    cursor: pointer;
+}
+
+.actionOpntionGame {
+    border: 1px solid #000;
+    border-top: none;
+    background-color: #ff000099;
+}
+
+
+.games {
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 600px;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.fastClick>span {
+    font-size: 150px;
+}
+
+.fastClick>img {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+}
+
+.containerGame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 100px auto;
+}
+
+.face {
+    font-size: 400px;
+    text-align: center;
+}
+
+#startFastClick {
+    padding: 10px 20px;
+    background-color: green;
+    border: 1px solid #000;
+    border-radius: 10px;
+    font-size: 40px;
+    cursor: pointer;
+}
