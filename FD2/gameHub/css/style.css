@@ -97,9 +97,14 @@ input[placeholder="Найти игру"] {
     margin: 100px auto;
 }
 
-.face {
-    font-size: 400px;
+.face::before {
+    content: attr(data-message);
+    display: var(--before-display, block);
+    font-size: 38px;
+    color: #ff0000;
+    font-weight: bold;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 #startFastClick {
@@ -109,4 +114,25 @@ input[placeholder="Найти игру"] {
     border-radius: 10px;
     font-size: 40px;
     cursor: pointer;
+    position: relative;
+}
+#startFastClick span {
+    display: none;
+    position: absolute;
+    color: red;
+    font-size: 150px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -100px;
+}
+
+div:has(#timeToEnd), div:has(#score) {
+    display: none;
+    font-size: 20px;
+}
+div:has(#timeToEnd) {
+    font-size: 40px;
+}
+#timeToEnd {
+    color: red;
 }
