@@ -29,11 +29,73 @@
     a:hover {
       color: red;
     }
+
+    .course-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin: 30px 0;
+      position: sticky;
+      top: 20px;
+      z-index: 100;
+    }
+
+    .course-btn {
+      padding: 15px 40px;
+      font-size: 0.5em;
+      font-weight: bold;
+      border: 3px solid #333;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.7);
+      color: #333;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .course-btn:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .course-btn.active {
+      background-color: rgba(255, 100, 0, 0.9);
+      color: white;
+      border-color: #ff6400;
+    }
+
+    .content-section {
+      display: none;
+    }
+
+    .content-section.active {
+      display: block;
+    }
   </style>
 </head>
 
 <body>
 
+  <div class="course-buttons">
+    <button class="course-btn active" data-course="fd2">FD2 JS</button>
+    <button class="course-btn" data-course="fd1">FD1 HTML && CSS</button>
+  </div>
+
+  <div id="fd2-content" class="content-section active">
+    <p>N.03ANKETA</p>
+    <a href="FD2/HOMEWORK/N.03ANKETA/index.html" target="fd2-a1"></a>
+
+    <p>МОЁ</p>
+    <a href="FD2/persons/persons.html" target="f1">persons</a> <br><br>
+    <a href="FD2/bootstrap/bootstrap.html" target="f1">Туры в bootstrap</a> <br><br>
+    <a href="FD2/materialize/materialize.html" target="f1">Туры в materialize</a> <br><br>
+    <a href="FD2/jQuery/index.html" target="f1">jQuery</a> <br><br>
+    <a href="FD2/циклы/index.html" target="f1">циклы</a> <br><br>
+    <a href="FD2/gameHub/index.html" target="f1">Game Hub</a> <br><br>
+  </div>
+
+  <div id="fd1-content" class="content-section">
   <p>HTML1</p>
   <a href="homework/DZ_1/DIARY/diary.html" target=".1a">diary</a> <br><br>
 
@@ -162,14 +224,31 @@
   <p>Моё</p>
   <a href="homework/QUESTIONS/Pavel/Animals/animals.html" target="q1">Animals1</a> <br><br>
   <a href="homework/QUESTIONS/Draft/forAnna/imgAnna.html" target="q3">imgAnna</a> <br><br>
-  
-  <p>FD2</p>
-  <a href="FD2/persons/persons.html" target="f1">persons</a> <br><br>
-  <a href="FD2/bootstrap/bootstrap.html" target="f1">Туры в bootstrap</a> <br><br>
-  <a href="FD2/materialize/materialize.html" target="f1">Туры в materialize</a> <br><br>
-  <a href="FD2/jQuery/index.html" target="f1">jQuery</a> <br><br>
-  <a href="FD2/циклы/index.html" target="f1">циклы</a> <br><br>
+  </div>
 
+  <script>
+    // Переключение между курсами
+    const courseButtons = document.querySelectorAll('.course-btn');
+    const contentSections = document.querySelectorAll('.content-section');
+
+    courseButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const course = button.getAttribute('data-course');
+        
+        // Убираем активный класс со всех кнопок
+        courseButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Добавляем активный класс к нажатой кнопке
+        button.classList.add('active');
+        
+        // Скрываем все секции
+        contentSections.forEach(section => section.classList.remove('active'));
+        
+        // Показываем нужную секцию
+        document.getElementById(`${course}-content`).classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 

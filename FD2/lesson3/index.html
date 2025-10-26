@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+
+        () => {
+            const color = parseInt(prompt('color', '5'));
+            // debugger
+            switch (color) {
+                case 1:
+                    console.log('red');
+                    break;
+                case 2:
+                    console.log('orange');
+                    break;
+                case 3:
+                    console.log('yellow');
+                    break;
+                case 4:
+                    console.log('color4');
+                    break;
+                case 5:
+                    console.log('color5');
+                    break;
+                default:
+                    console.log('notHavColor')
+            }
+        }
+
+        // const age = 17;
+        // if (age >= 18) {
+        //     console.log('ok')
+        // }
+        // else {
+        //     console.log('no')
+        // }
+
+
+        // const gender = 'M';
+        // let result = age >= 18 ? //разбери чего не работает
+        //  gender === 'M'?
+        //   console.log('1'):
+        //   console.log('2')
+        //  :gender === 'W'?
+        //   console.log('3'):
+        //   console.log('4')
+
+
+        // let age = 1
+        // while (age < 30) {
+        //     // debugger
+        //     console.log(age)
+        //     ++age
+        // }
+
+
+        let age;
+        do {
+            age = Number(prompt());
+        } while (isNaN(age))
+        console.log('age:' + age)
+    </script>
+</body>
+
+</html>
