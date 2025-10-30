@@ -1,4 +1,4 @@
-alert('Запускаем более сложный скрипт - case&question.js')  //можно убрать
+alert('Запустили более сложный скрипт - case&question.js')  //можно убрать
 function strNotEmpty(whatWrite) {
     let str
 

@@ -1,4 +1,4 @@
-alert('Запускаем более простой скрипт - if.js') //можно убрать
+alert('Запустили более простой скрипт - if.js') //можно убрать
 function strNotEmpty(whatWrite) {
     let str
 
