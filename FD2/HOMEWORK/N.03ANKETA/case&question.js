@@ -114,9 +114,10 @@ const havePension = gender_M ?
 // }
 // console.log('havePension: ', havePension)
 
-alert (`Ваше ФИО: ${firstName} ${lastName} ${patronymic}
-        Ваш возраст в годах: ${age}
-        Ваш возраст в днях: ${ageInDays} (с учётом высокосных лет)
-        через 5 лет вам будет: ${(age + 5)}
-        Ваш пол: ${genderForAlert}
-        Вы на пенсии: ${havePension}`)
+alert (`
+    Ваше ФИО: ${firstName} ${lastName} ${patronymic}
+    Ваш возраст в годах: ${age}
+    Ваш возраст в днях: ${ageInDays} (с учётом высокосных лет)
+    через 5 лет вам будет: ${(age + 5)}
+    Ваш пол: ${genderForAlert}
+    Вы на пенсии: ${havePension}`)

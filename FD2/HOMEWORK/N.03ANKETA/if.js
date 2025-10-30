@@ -64,10 +64,11 @@ function calcAgeInDays(age) {
 
     // console.log('года жизни: ', arrYears)
 
+    let ageInDays = 0  // добавили объявление переменной
     arrYears.forEach(year => {
         ageInDays += getDaysInYear(year)
     });
-    console.log('ageInDays: ', ageInDays)
+    // console.log('ageInDays: ', ageInDays)
 
     return ageInDays
 }
