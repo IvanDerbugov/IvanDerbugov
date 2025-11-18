@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const summ1 = x => {
+            return x + x
+        }
+        // или
+        const summ2 = x => x + x
+    </script>
+
+
+    <script>
+        // console.log('varBeforeInit:' + i)
+            (() => {for (var i = 0; i < 5; i++) {
+            setTimeout(() => {
+                console.log('var:' + i)
+            }, 1000)
+        }
+        })()
+
+
+        // for (let i = 0; i < 5; i++) {
+        //     setTimeout(() => {
+        //         console.log('let:' + i)
+        //     }, 1000)
+        // }
+    </script>
+</body>
+
+</html>

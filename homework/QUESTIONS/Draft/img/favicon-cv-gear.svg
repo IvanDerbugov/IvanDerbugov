@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bgGradientGear" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#313f31;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#484149;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Фон -->
+  <rect width="100" height="100" rx="12" fill="url(#bgGradientGear)"/>
+  
+  <!-- Шестеренка -->
+  <g fill="#b1b1b1">
+    <!-- Основной круг -->
+    <circle cx="50" cy="50" r="25"/>
+    <!-- Центральное отверстие -->
+    <circle cx="50" cy="50" r="10" fill="url(#bgGradientGear)"/>
+    <!-- Зубцы -->
+    <rect x="45" y="15" width="10" height="10" rx="2"/>
+    <rect x="45" y="15" width="10" height="10" rx="2" transform="rotate(45 50 50)"/>
+    <rect x="45" y="15" width="10" height="10" rx="2" transform="rotate(90 50 50)"/>
+    <rect x="45" y="15" width="10" height="10" rx="2" transform="rotate(135 50 50)"/>
+    <rect x="45" y="15" width="10" height="10" rx="2" transform="rotate(180 50 50)"/>
+    <rect x="45" y="15" width="10" height="10" rx="2" transform="rotate(225 50 50)"/>
+    <rect x="45" y="15" width="10" height="10" rx="2" transform="rotate(270 50 50)"/>
+    <rect x="45" y="15" width="10" height="10" rx="2" transform="rotate(315 50 50)"/>
+  </g>
+</svg>
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <script>
+
+        // let result = 1
+        // function pow1(x, n) {
+
+        //     for (let i = 0; i < n; i++) {
+        //         result = result * x //2 4
+        //     }
+        //     return result
+        // }
+        // const r = pow1(2, 3)
+        // console.log('result: ', r)
+
+        function pow(x, n) {
+            if (n === 1) {
+                return x
+            }
+            else {
+                // let result = pow(x, n-1) 
+                // console.log('result: ', result)
+                // return x = x * result 
+                return x *= pow(x, n - 1)
+            }
+        }
+        console.log('m-f: ', pow(2, 10))
+        // console.log('i: ', i)
+    </script> -->
+
+    <!-- <script>
+        function sumTo(n) { 
+            let sum = 0
+            for (i = 0; i < n ; n--) {
+                sum += n
+            }
+            return sum
+         }
+
+        console.log('sumTo', sumTo(100)); 
+
+        function sumToRec(n) { 
+            if (n === 1) {
+                return n
+            }
+            else return n = n + sumToRec(n-1)
+         }
+
+        console.log('sumToRec', sumToRec(9009)); 
+    </script> -->
+
+    <script>
+        function fib(n) {
+            if (n === 0) {
+                return 0
+            }
+            else if (n === 1 || n === 2) {
+                return 1
+            }
+            else return n = fib(n-1) + fib(n-2)
+        }
+
+        console.log ("рекурсия фиб3: ", fib(3))
+        console.log ("рекурсия фиб7: ", fib(7))
+        console.log ("рекурсия фиб100: ", fib(100))
+        // console.log ("рекурсия фиб1000: ", fib(1000))
+        // console.log ("рекурсия фиб9000: ", fib(9000))
+    </script>
+
+</body>
+
+</html>

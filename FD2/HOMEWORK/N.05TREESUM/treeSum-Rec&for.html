@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arrFromUser = JSON.parse(prompt("введите массив или просто подтвердите шаблон", 
+        `[ 5, 7, 
+        [ 4, [2], 8, [1,3], 2 ], 
+        [ 9, [] ], 
+        1, 8
+        ]`))
+        console.log('typeOF: ', typeof(arrFromUser))
+        console.log('prompt: ', arrFromUser)
+
+        function treeSum (arrFromUser) {
+            let sum = 0
+            for(let i of arrFromUser) {
+                if (typeof(i) === 'number') {
+                    sum += i
+                }
+                else {
+                    sum += treeSum(i)
+                }
+            }
+            return sum
+        }
+        console.log('результат treeSum (рекурсия): ', treeSum(arrFromUser))
+
+        // Второй вариант через циклы со стеком
+        function treeSumIterative(arr) {
+            let sum = 0
+            let stack = [arr] // стек для хранения массивов, которые нужно обработать
+            
+            while (stack.length > 0) {
+                let currentArray = stack.pop() // берём последний массив из стека
+                
+                // перебираем все элементы текущего массива
+                for (let i = 0; i < currentArray.length; i++) {
+                    let element = currentArray[i]
+                    
+                    if (typeof element === 'number') {
+                        // если элемент - число, добавляем к сумме
+                        sum += element
+                    } else if (Array.isArray(element)) {
+                        // если элемент - массив, добавляем его в стек для обработки
+                        stack.push(element)
+                    }
+                }
+            }
+            
+            return sum
+        }
+        
+        console.log('результат treeSumIterative (циклы): ', treeSumIterative(arrFromUser))
+    </script>
+</body>
+</html>
