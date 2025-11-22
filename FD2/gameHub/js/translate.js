@@ -35,6 +35,10 @@ function translateAll () {
         'Забрать бонус': {
             'ru': 'Забрать бонус',
             'en': 'Collect the bonus'
+        },
+        'счёт': {
+            'ru': 'счёт',
+            'en': 'count'
         }
     }
     

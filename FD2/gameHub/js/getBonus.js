@@ -1,9 +1,16 @@
+let count = document.getElementById('count')
+// count = JSON.parse(localStorage.getItem('gameScore'))
+const savedScore = localStorage.gameScore
+if (savedScore) count.textContent = savedScore
+
 const minBonusEl = document.getElementById('minBonus')
 const secBonusEl = document.getElementById('secBonus')
 
-
+function setTimer (sec) {
+    
+}
 const timeNow = Math.floor(new Date())
-// let remainsSec = timeNow - (timeNow - 60 * 60 * 1000)
+// 60 * 60 * 1000
 let remainsSec = timeNow - (timeNow - 3 * 1000)
 
 function updateTimer() {
@@ -34,10 +41,31 @@ const windowModalBonus = document.querySelector('.modalGetBonus')
 const btnCloseModalBonus = document.getElementById('closeModalGetBonus')
 const handleOutsideClickBonus = createHandler(windowModalBonus, closeModalGetBonus)
 btnBonus.addEventListener('click', () => {
-    if (remainsSec <= 0) {
+    if (remainsSec < 0) {
         wrapModalBonus.style.setProperty('--modal-display', 'block')
         btnCloseModalBonus.addEventListener('click', closeModalGetBonus)
         setTimeout(() => document.addEventListener('click', handleOutsideClickBonus), 50)
+
+
+        let arrBonus = []
+        for (let i = 1; i <= 100; i++) {
+            arrBonus.push(i)
+        }
+
+        const runString = document.querySelector('.runString')
+        arrBonus.forEach((value) => {
+            const span = document.createElement('span')
+            span.textContent = value
+            runString.appendChild(span)
+        })
+
+
+        let randomValue = Math.random()
+        let resultRandomValue = Math.round(randomValue / 0.01) * 0.01
+        runString.style.setProperty('--value', resultRandomValue)
+
+        count.textContent = Number(count.textContent) + Number((resultRandomValue * 100).toFixed())
+        localStorage.setItem('gameScore', count.textContent)
     }
     else {
         minBonusEl.classList.add('timer-pulse')
@@ -57,19 +85,3 @@ function closeModalGetBonus() {
 
 
 
-let arrBonus = []
-for(let i = 1; i <= 100; i++){
-    arrBonus.push(i)
-}
-
-const runString = document.querySelector('.runString')
-arrBonus.forEach((value) => {
-    const span = document.createElement('span')
-    span.textContent = value
-    runString.appendChild(span)
-})
-
- 
-let randomValue = Math.random()
-let resultRandomValue = Math.round(randomValue / 0.01) * 0.01
-runString.style.setProperty('--value', resultRandomValue)
