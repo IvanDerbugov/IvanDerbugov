@@ -4,7 +4,7 @@ const secBonusEl = document.getElementById('secBonus')
 
 const timeNow = Math.floor(new Date())
 // let remainsSec = timeNow - (timeNow - 60 * 60 * 1000)
-let remainsSec = timeNow - (timeNow - 60 * 60 * 1000)
+let remainsSec = timeNow - (timeNow - 3 * 1000)
 
 function updateTimer() {
     let min = Math.floor(remainsSec / 60 / 1000)
@@ -54,3 +54,22 @@ function closeModalGetBonus() {
     btnCloseModalBonus.removeEventListener('click', closeModalGetBonus)
     document.removeEventListener('click', handleOutsideClickBonus)
 }
+
+
+
+let arrBonus = []
+for(let i = 1; i <= 100; i++){
+    arrBonus.push(i)
+}
+
+const runString = document.querySelector('.runString')
+arrBonus.forEach((value) => {
+    const span = document.createElement('span')
+    span.textContent = value
+    runString.appendChild(span)
+})
+
+ 
+let randomValue = Math.random()
+let resultRandomValue = Math.round(randomValue / 0.01) * 0.01
+runString.style.setProperty('--value', resultRandomValue)

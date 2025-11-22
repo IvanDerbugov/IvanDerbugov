@@ -65,5 +65,3 @@ languageSvg.forEach((svg) => {
 
 
 
-//забрать бонус
-
