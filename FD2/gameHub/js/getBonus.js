@@ -5,32 +5,35 @@ if (savedScore) count.textContent = savedScore
 
 const minBonusEl = document.getElementById('minBonus')
 const secBonusEl = document.getElementById('secBonus')
+let remainsSec
+function setTimer(sec) {
+    const timeNow = Math.floor(new Date())
+    // 60 * 60 * 1000
+    remainsSec = timeNow - (timeNow - sec * 1000)
 
-function setTimer (sec) {
+    function updateTimer() {
+        let min = Math.floor(remainsSec / 60 / 1000)
+        let sec = Math.floor(remainsSec / 1000 % 60)
     
-}
-const timeNow = Math.floor(new Date())
-// 60 * 60 * 1000
-let remainsSec = timeNow - (timeNow - 3 * 1000)
-
-function updateTimer() {
-    let min = Math.floor(remainsSec / 60 / 1000)
-    let sec = Math.floor(remainsSec / 1000 % 60)
-
-    minBonusEl.textContent = String(min).padStart(2, '0')
-    secBonusEl.textContent = String(sec).padStart(2, '0')
-}
-
-function tick() {
-    updateTimer()
-    remainsSec -= 1000
-    if (remainsSec < 0) {
-        clearInterval(timerInterval)
+        minBonusEl.textContent = String(min).padStart(2, '0')
+        secBonusEl.textContent = String(sec).padStart(2, '0')
     }
+    
+    function tick() {
+        updateTimer()
+        remainsSec -= 1000
+        if (remainsSec < 0) {
+            clearInterval(timerInterval)
+        }
+    }
+    
+    updateTimer()
+    const timerInterval = setInterval(tick, 1000)
 }
 
-updateTimer()
-const timerInterval = setInterval(tick, 1000)
+setTimer(3)
+
+
 
 
 
@@ -40,6 +43,7 @@ const wrapModalBonus = document.querySelector('.wrapModalGetBonus')
 const windowModalBonus = document.querySelector('.modalGetBonus')
 const btnCloseModalBonus = document.getElementById('closeModalGetBonus')
 const handleOutsideClickBonus = createHandler(windowModalBonus, closeModalGetBonus)
+
 btnBonus.addEventListener('click', () => {
     if (remainsSec < 0) {
         wrapModalBonus.style.setProperty('--modal-display', 'block')
@@ -65,7 +69,7 @@ btnBonus.addEventListener('click', () => {
         runString.style.setProperty('--value', resultRandomValue)
 
         count.textContent = Number(count.textContent) + Number((resultRandomValue * 100).toFixed())
-        localStorage.setItem('gameScore', count.textContent)
+        localStorage.setItem('gameScore', count.textContent) 
     }
     else {
         minBonusEl.classList.add('timer-pulse')
@@ -81,6 +85,7 @@ function closeModalGetBonus() {
     wrapModalBonus.style.setProperty('--modal-display', 'none')
     btnCloseModalBonus.removeEventListener('click', closeModalGetBonus)
     document.removeEventListener('click', handleOutsideClickBonus)
+    setTimer(3)
 }
 
 

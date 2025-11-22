@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кликер - Game Hub</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        .clicker-game {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            gap: 30px;
+            padding: 50px 20px;
+        }
+
+        .game-info {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .timer-display {
+            font-size: 48px;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        .score-display {
+            font-size: 36px;
+            color: #2072cf;
+        }
+
+        .click-button {
+            padding: 30px 80px;
+            font-size: 32px;
+            background: linear-gradient(-45deg, #2072cf, #1f5899);
+            color: white;
+            border: 3px solid #000;
+            border-radius: 15px;
+            cursor: pointer;
+            font-family: 'Press Start 2P', cursive;
+            transition: transform 0.1s;
+            user-select: none;
+        }
+
+        .click-button:hover {
+            transform: scale(1.05);
+        }
+
+        .click-button:active {
+            transform: scale(0.95);
+        }
+
+        .click-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .start-button {
+            padding: 20px 60px;
+            font-size: 24px;
+            background: #00ff00;
+            color: #000;
+            border: 3px solid #000;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .start-button:hover {
+            background: #00cc00;
+        }
+
+        .result-message {
+            font-size: 28px;
+            color: #ff6600;
+            margin-top: 20px;
+        }
+
+        .instructions {
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+            max-width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container flex">
+            <a href="index.html" class="logo">GAME HUB</a>
+            <div>
+                <span data-translate="счёт">счёт</span>
+                <span id="count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="container clicker-game">
+            <h1 style="font-family: 'Press Start 2P', cursive; font-size: 28px;">КЛИКЕР</h1>
+
+            <div class="instructions">
+                <p>Нажми на кнопку или пробел максимальное количество раз за 5 секунд!</p>
+            </div>
+
+            <div class="game-info">
+                <div class="timer-display">Время: <span id="timer">5</span> сек</div>
+                <div class="score-display">Кликов: <span id="score">0</span></div>
+            </div>
+
+            <button id="startBtn" class="start-button">НАЧАТЬ</button>
+
+            <button id="clickBtn" class="click-button" disabled>КЛИКНИ!</button>
+
+            <div id="result" class="result-message"></div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        const startBtn = document.getElementById('startBtn')
+        const clickBtn = document.getElementById('clickBtn')
+        const timerDisplay = document.getElementById('timer')
+        const scoreDisplay = document.getElementById('score')
+        const resultDisplay = document.getElementById('result')
+
+        let score = 0
+        let timeLeft = 2
+        let gameActive = false
+        let timerInterval = null
+
+        function startGame() {
+            score = 0
+            timeLeft = 2
+            gameActive = true
+            resultDisplay.textContent = ''
+
+            startBtn.disabled = true
+            clickBtn.disabled = false
+            clickBtn.focus()
+
+            updateDisplay()
+
+            timerInterval = setInterval(() => {
+                timeLeft--
+                updateDisplay()
+
+                if (timeLeft <= 0) {
+                    endGame()
+                }
+            }, 1000)
+        }
+
+        function updateDisplay() {
+            timerDisplay.textContent = timeLeft
+            scoreDisplay.textContent = score
+        }
+
+        function handleClick() {
+            if (gameActive) {
+                score++
+                updateDisplay()
+            }
+        }
+
+        function endGame() {
+            gameActive = false
+            clearInterval(timerInterval)
+            clickBtn.disabled = true
+            startBtn.disabled = false
+
+            resultDisplay.textContent = `Игра окончена! Твой результат: ${score} кликов!`
+            setTimeout(() => {
+                const writeResult = confirm('Записать результат?')
+                if (writeResult) {
+                    function writeName() {
+                        const userName = prompt('Ваше имя?')
+                        if (userName) {
+                            if (localStorage.getItem('recordInClick')) {
+                                localStorage.setItem('recordInClick', [])
+                            }
+                            else {
+                                //заменить на let records = JSON.parse(localStorage.getItem('recordInClick')) || []
+                            }
+                        }
+                        else writeName()
+                    }
+                    writeName()
+                }
+            }, 2000)
+
+        }
+
+        startBtn.addEventListener('click', startGame)
+        clickBtn.addEventListener('click', handleClick)
+
+        // Обработка нажатия пробела
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && gameActive) {
+                e.preventDefault()
+                handleClick()
+                // Визуальная обратная связь
+                clickBtn.style.transform = 'scale(0.95)'
+                setTimeout(() => {
+                    clickBtn.style.transform = 'scale(1)'
+                }, 100)
+            }
+        })
+    </script>
+</body>
+
+</html>
