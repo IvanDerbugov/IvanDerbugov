@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function array(string) {
+            let arrResult =
+                string.split(',')
+            if (arrResult.length >= 3) {
+                arrResult.pop()
+                arrResult.shift()
+                return arrResult.join(' ')
+            }
+            else return null
+        }
+
+        //   array()
+        console.log(array(''))
+        console.log(array('1'))
+        console.log(array('1,2'))
+        console.log(array('1,2,3'))
+        console.log(array('1,2,3,4')) 
+    </script>
+</body>
+
+</html>

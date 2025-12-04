@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>//через forEach
+    function countVowelsForEach(str) {
+        let arrStr = str.toLowerCase().split('')
+
+        let countVowels = 0 
+        arrStr.forEach(val => {
+            if (val === 'а' || val === 'е' || val === 'ё' || val === 'и' || val === 'о' || val === 'у' || val === 'ы' || val === 'э' || val === 'ю' || val === 'я') countVowels++  
+        });
+        return countVowels
+    }    
+    
+    
+    let str
+    function validStr () {
+        str = prompt('Введите строку или подтвердите имеющуюся', 'в ЭТОЙ строке 6 гласных')
+        if (str === '' || str === null) validStr ()
+    }
+    validStr()
+
+    console.log ('--Гласных в строке forEach:', countVowelsForEach(str))
+    </script>
+
+
+</body>
+
+</html>

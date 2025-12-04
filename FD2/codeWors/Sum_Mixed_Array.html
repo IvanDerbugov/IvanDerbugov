@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sumMix(x) {
+            // let sum = 0
+            // x.forEach(el => {
+            //     if (typeof el === 'string') sum += +el
+            //     else {sum += el}
+            // });
+            // return sum
+            return x.reduce((akk, val)=> {return akk += parseInt(val)}, 0)
+        }
+
+        console.log(sumMix([9, 1, '1']))
+    </script>
+</body>
+
+</html>

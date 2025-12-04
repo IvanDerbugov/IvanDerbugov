@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>//через ruduce
+    function countVowelsReduce(str) {
+        const vowels = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я']
+        return str.toLowerCase()
+                .split('')
+                .reduce((akk, val) => {
+                    if (vowels.includes(val)) {
+                        return akk += 1
+                    }
+                    return akk
+                }, 0);
+    }
+    let str
+    function validStr() {
+        str = prompt('Введите строку или подтвердите имеющуюся', 'в ЭТОЙ строке 6 гласных')
+        if (str === '' || str === null) validStr()
+    }
+    validStr()
+
+    console.log('--Гласных в строке redece:', countVowelsReduce(str))
+    </script> 
+</body>
+
+</html>

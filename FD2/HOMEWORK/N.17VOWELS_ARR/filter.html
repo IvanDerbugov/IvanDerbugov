@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>//через filter
+    function countVowelsFilter(str) {
+        let arrStr = str.toLowerCase().split('')
+        return arrStr
+            .filter(val => ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я']
+            .includes(val))
+            .length
+    }    
+    
+    let str
+    function validStr () {
+        str = prompt('Введите строку или подтвердите имеющуюся', 'в ЭТОЙ строке 6 гласных')
+        if (str === '' || str === null) validStr ()
+    }
+    validStr()
+
+    console.log ('--Гласных в строке фильтром:', countVowelsFilter(str))
+    </script>
+</body>
+
+</html>
