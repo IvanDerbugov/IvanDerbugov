@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        function del_whitespaces(str) {
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] !== ' ') {
+                    // console.log('не пробел', i)
+                    // console.log('без пробелов в начале:'+str.slice(i))
+                    str = str.slice(i)
+                    break
+                }
+            }
+            for (let i = str.length - 1; i >= 0; i--) {
+                if (str[i] !== ' ') {
+                    // console.log('не пробел', i)
+                    str = str.slice(0, ++i) //потому что не включая - последнюю букву резало бы без +1
+                    // console.log('без пробелов в конце:'+str)
+                    break
+                }
+            }
+            return str
+        }
+        // const whietspace  = ' '.charCodeAt()
+        // console.log(whietspace)
+        // console.log(str.indexOf(!whietspace)) /*не сработало🥲*/
+        const finalStr = del_whitespaces (prompt('введите строку или подтвердите имеющуюся', '           пробелы          ') )
+        console.log('строка без пробелов в начале и конце:' + finalStr)
+    </script>
+</body>
+
+</html>

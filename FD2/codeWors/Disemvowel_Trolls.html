@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function disemvowel(str) {
+            let test = str
+            .split('')
+            // console.log('before split', test)
+            .filter((char) => {
+                const vowels = ['a', 'e', 'i', 'o', 'u']
+                return !vowels.includes(char.toLowerCase())
+            })
+            // console.log('before filter', str)
+            .join('')
+
+            return test;
+        }
+        console.log(disemvowel('This website is for losers LOL'))
+    </script>
+</body>
+
+</html>

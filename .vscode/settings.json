@@ -1,18 +1,18 @@
-{
-    "liveSassCompile.settings.formats": [
-        {
-            "format": "expanded",
-            "extensionName": ".css",
-            "savePath": "~/../css"
-        }
-    ],
-    "liveSassCompile.settings.excludeList": [
-        "**/node_modules/**",
-        ".vscode/**"
-    ],
-    "liveSassCompile.settings.includeItems": [
-        "layouts/MaketNFTs/sass/style.sass"
-    ],
-    "liveSassCompile.settings.generateMap": false,
-    "liveServer.settings.port": 5531
-} 
+// {
+//     "liveSassCompile.settings.formats": [
+//         {
+//             "format": "expanded",
+//             "extensionName": ".css",
+//             "savePath": "~/../css"
+//         }
+//     ],
+//     "liveSassCompile.settings.excludeList": [
+//         "**/node_modules/**",
+//         ".vscode/**"
+//     ],
+//     "liveSassCompile.settings.includeItems": [
+//         "layouts/MaketNFTs/sass/style.sass"
+//     ],
+//     "liveSassCompile.settings.generateMap": false,
+//     "liveServer.settings.port": 5531
+// } 
