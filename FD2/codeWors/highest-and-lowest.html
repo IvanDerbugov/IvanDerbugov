@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function highAndLow(numbers) {
+            let result = 
+            numbers.split(' ')
+            // console.log('----result', result)
+            result = result.map( (v) => {
+                return +v
+            })
+            // console.log('----result-map', result)
+            // result = result.join(',')
+            // console.log('----result-join', result)
+            // console.log('----result-type', typeof(result))
+            const min = Math.min(...result)
+            const max = Math.max(...result)
+            // console.log('min', min)
+            // console.log('max', max)
+            // result.sort((a, b) => {
+            //     if (+a > +b) return 1
+            //     if (+a === +b) return 0
+            //     if (+a < +b) return -1
+            // })
+            // console.log('----afterSort', result)
+            // console.log('----min', result[0])
+            // console.log('----max', result.at(-1))
+            // const min = result[0]
+            // const max = result.at(-1)
+            result = max + ' ' + min
+            return result
+        }
+
+        // console.log(highAndLow("1 2 3 4 5"), '----5 1---'); // return "5 1"
+        console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"), '----42 -9---'); // return "5 -3"
+        // highAndLow("1 9 3 4 -5"); // return "9 -5"
+    </script>
+</body>
+
+</html>

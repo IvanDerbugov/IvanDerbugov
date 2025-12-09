@@ -11,16 +11,37 @@
     <script>
         function accum(s) {
             let result = s.split('')
-            for (i of result) {
-                //для каждой буквы...
-            }
-            return '';
-        }
+            let newArr = [s[0]]
+            result.map((v, i) => {
+                // console.log('---kod', v.charCodeAt())
+                let test = v.toLowerCase()
+                // console.log('---test', test)
+                if (i > 0) {
+                    const arrChar = []
+                    for (let iter = 1; iter < i; i--) {
+                        arrChar.push(test.charCodeAt())
+                    }
+                    // console.log('---arrChar', arrChar)
 
-        // accum("abcd") -> "A-Bb-Ccc-Dddd"
-        // accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
-        // accum("cwAt") -> "C-Ww-Aaa-Tttt"
-        console.log(accum("abcd"), 'A-Bb-Ccc-Dddd так вышло?')
+                    let skleika = String.fromCharCode(test.charCodeAt(), ...arrChar)
+                    // console.log('склейка', skleika)
+                    // console.log('склеили', test[0] + skleika)
+                    newArr.push(test[0] + skleika)
+                    // console.log('newArr', newArr)
+                    // console.log('======')
+                }
+                return test
+            })
+            const finalArr = newArr
+            .map(item => {
+                return item[0].toUpperCase() + item.slice(1)
+            })
+            .join('-')
+
+            return finalArr
+        }
+        
+        console.log(accum("AbCd"), '----A-Bb-Ccc-Dddd так вышло?---')
     </script>
 </body>
 
