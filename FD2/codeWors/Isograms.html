@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isIsogram(str) {
+            const letters = str.toLowerCase().split('')
+            const lettersCount = {}
+            for (let i = 0; i < letters.length; i++) {
+                const letter = letters[i]
+                if (!(letter in lettersCount)) {
+                    lettersCount[letter] = 0
+                }
+                lettersCount[letter]++
+            }
+            const arrValues = Object.values(lettersCount)
+            // console.log('---arrValues', arrValues)
+            let boolean = true
+            arrValues.forEach((v) => {
+                if (v !== 1) boolean = false
+            })
+
+            return boolean
+        }
+
+        console.log('"Dermatoglyphics - true"', isIsogram("Dermatoglyphics"))
+        console.log('"aba - false"', isIsogram("aba"))
+        console.log('"moOse - false"', isIsogram("moOse"))   
+    </script>
+</body>
+
+</html>
