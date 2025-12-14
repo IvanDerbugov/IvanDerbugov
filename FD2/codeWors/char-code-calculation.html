@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calc(x) {
+            let total1 = x.split('')
+            total1 = total1.map((letter) => {
+                return letter.charCodeAt()
+            })
+            let total2 = total1.join('')
+            total2 = total2.split('7').join('1')
+            // console.log('---total1', total1)
+            // console.log('---total2', total2)
+            total2 = total2.split('')
+            // console.log('---total2', total2)
+            total2 = total2.reduce((sum, v) => {
+                return sum += +v
+            } ,0)
+            // console.log('---total2', total2)
+            total1 = total1.join('').split('')
+            // console.log('---total1', total1)
+            
+            total1 = total1.reduce((sum, v) => {
+               return sum += +v
+            } ,0)
+            
+            
+            
+            const result = total1 - total2
+            // console.log('---total1', total1)
+            // console.log('---total2', total2)
+            // console.log('---result', result)
+            return result
+        }
+
+        console.log(calc('abcdef'), '6?');
+        console.log(calc('ifkhchlhfd'), '6?');
+        console.log(calc('aaaaaddddr'), '30?');
+        console.log(calc('jfmgklf8hglbe'), '6?');
+        console.log(calc('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'), '96?');
+    </script>
+</body>
+
+</html>

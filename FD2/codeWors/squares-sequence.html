@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function squares(x, n) {
+            if (n <= 0) {
+                return []
+            }
+            const arr = []
+            arr.push(x)
+            // console.log(arr)
+            for (let i = 1; n > i; i++) {
+                // console.log(arr[0])
+                arr.push(Math.pow(arr.at(-1), 2))
+                // console.log('arr-iter', arr)
+            }
+            return arr
+        }
+        console.log(squares(2, 5), '----[2, 4, 16, 256, 65536]---')
+        console.log(squares(3, 3), '----[3, 9, 81]---')
+        // squares(2, 2)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkConcatenatedSum(number, n) {
+            let numberModul = Math.abs(number)
+
+            const numberArr = numberModul
+            .toString()
+            .split('')
+            // console.log('numberArr', numberArr)
+            const numberArrMap = numberArr.map((v) => v.repeat(n))
+            // console.log('numberArrMap', numberArrMap)
+
+            const sumNumbers = numberArrMap.reduce((sum, strNum) =>{ 
+                return sum += parseInt(strNum)
+            } ,0)
+            // console.log('sumNumbers', sumNumbers)
+            return numberModul === sumNumbers ? true : false
+        }
+
+        console.log(checkConcatenatedSum(2997, 3), 'true?')
+        console.log(checkConcatenatedSum(-2997, 3), 'true?')
+    </script>
+</body>
+</html>
