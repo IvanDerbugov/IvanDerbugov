@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function inter(s1, s2) {
+            const arrValues = []
+            s1.forEach((v) => {
+                arrValues.push(v)
+            });
+            s2.forEach(v => {
+                arrValues.push(v)
+            });
+            // console.log(arrValues, '---arrValues')
+
+            let valueCount = {}
+            for (let i = 0; i < arrValues.length; i++) {
+                const value = arrValues[i]
+                if (!(value in valueCount)) valueCount[value] = 0
+                valueCount[value]++
+            }
+            // for (let value in valueCount) {
+            //     console.log('значение ' + value + ' количество ' + valueCount[value])
+            // }
+            // console.log('----valueCount', valueCount)
+
+            let arrSet = []
+            for (let key in valueCount) {
+                if (valueCount[key] === 1) {
+                    delete valueCount[key]
+                    continue
+                }
+                arrSet.push(key)
+            }
+
+            arrSet = arrSet.map((v) => {
+                const num = Number(v)
+                return isNaN(num) ? v : num
+            })
+            // console.log('---arrSet', arrSet)
+            return new Set(arrSet)
+        }
+
+        
+        A = new Set([1, 2, 'b']);
+        B = new Set([2, 3, 'b']);
+        C = inter(A, B) // -> {2}
+        console.log(C, '{2}?')
+    </script>
+</body>
+
+</html>

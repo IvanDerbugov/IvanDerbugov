@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function killer(suspectInfo, dead) {
+            // const arrPersons = Object.keys(suspectInfo)
+            // console.log( 'arrPersons:', arrPersons)
+            const killerPerson = Object.entries(suspectInfo).forEach(([person, personaSeen]) => {
+                // console.log('person:', person)
+                // console.log('personaSeen:', personaSeen)
+                // console.log('personaSeen.includes(dead)', personaSeen.includes(dead))
+                for (let deadPerson of dead) {
+                    if (!(personaSeen.includes(deadPerson) )) {
+                        delete suspectInfo[person]
+                    }
+                }
+                // console.log('===========')
+            })
+            return Object.keys(suspectInfo)[0]
+        }
+
+
+        console.log(killer({
+            'James': ['Jacob', 'Bill', 'Lucas'],
+            'Johnny': ['David', 'Kyle', 'Lucas'],
+            'Peter': ['Lucy', 'Kyle']
+        },
+            ['Lucas', 'Bill']), 'James?')
+    </script>
+</body>
+
+</html>

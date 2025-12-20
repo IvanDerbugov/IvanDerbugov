@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function divCon(x) {
+            let num = 0
+            let str = 0
+            x.forEach(v => {
+                if(typeof v === "number") num += v
+                else str += Number(v)
+            });
+            return num - str
+        }
+        console.log(divCon([9, 3, '7', '3']), '2?')
+    </script>
+</body>
+
+</html>

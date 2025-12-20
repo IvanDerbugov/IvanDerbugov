@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function findOdd(A) {
+            let numberCount = {}
+            for (let i = 0; i < A.length; i++) {
+
+                const num = A[i];
+
+                if (!(num in numberCount))
+
+                    numberCount[num] = 0;
+
+                numberCount[num]++;
+            }
+            // console.log(numberCount)
+            //{1: 2, 2: 4, 3: 6, 4: 1}
+            let result = 0
+            Object.entries(numberCount).forEach(([key, value]) => {
+                if ((value % 2) !== 0) {
+                    result = key
+                }
+            })
+            // console.log('type', typeof(result))
+            return +result
+            
+        }
+        console.log(findOdd([1,2,2,3,3,3,4,3,3,3,2,2,1]), '4?')
+    </script>
+</body>
+
+</html>
