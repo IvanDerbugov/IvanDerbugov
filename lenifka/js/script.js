@@ -632,16 +632,22 @@ window.addEventListener('scroll', () => {
     function createHeart(x, y) {
         const now = Date.now();
         
-        // Создаём сердечко каждые 50ms (чаще чем в оригинале для большего количества)
-        if (now - lastTime < 50) return;
+        // Определяем, мобильное ли устройство
+        const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
+        
+        // На мобильных создаем сердечки чаще (каждые 15ms), на десктопе каждые 20ms
+        const minDelay = isMobile ? 15 : 20;
+        
+        // Создаём сердечко с минимальной задержкой для плавности
+        if (now - lastTime < minDelay) return;
         
         lastTime = now;
 
-        // Создаем несколько сердечек за раз
-        const heartCount = Math.floor(Math.random() * 3) + 2; // от 2 до 4 сердечек
+        // Создаем сердечки за раз
+        const heartCount = isMobile 
+            ? Math.floor(Math.random() * 3) + 2  // от 2 до 4 сердечек на мобильных
+            : Math.floor(Math.random() * 3) + 2;  // от 2 до 4 сердечек на десктопе
         
-        // Определяем, мобильное ли устройство
-        const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
         const baseSize = isMobile ? 16 : 8; // На мобильных в 2 раза больше
         const sizeRange = isMobile ? 16 : 8;
         
@@ -712,13 +718,25 @@ window.addEventListener('scroll', () => {
 
     // Обработчик для touch устройств
     function handleTouchMove(e) {
-        if (e.touches.length > 0) {
-            createHeart(e.touches[0].clientX, e.touches[0].clientY);
+        // Обрабатываем все измененные точки касания (changedTouches более надежен для touchmove)
+        for (let i = 0; i < e.changedTouches.length; i++) {
+            const touch = e.changedTouches[i];
+            createHeart(touch.clientX, touch.clientY);
+        }
+    }
+    
+    // Обработчик начала касания
+    function handleTouchStart(e) {
+        // Создаем сердечко в точке начала касания
+        for (let i = 0; i < e.touches.length; i++) {
+            const touch = e.touches[i];
+            createHeart(touch.clientX, touch.clientY);
         }
     }
 
     // Добавляем обработчики событий
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
     window.addEventListener('touchmove', handleTouchMove, { passive: true });
 })();
 
