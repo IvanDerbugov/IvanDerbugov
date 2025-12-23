@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function catMouse(map, moves) {
+            const arrMap = map.split('')
+            if (!(arrMap.find((simbol) => simbol === 'C') && arrMap.find((simbol) => simbol === 'm'))) return 'boring without two animals'
+
+            function findLocation(animal) {
+                let countCol = 1
+                let countRow = 1
+                for (let simbol of arrMap) {
+                    if (simbol === animal) {
+                        return [countCol, countRow];
+                    }
+
+                    if (simbol === '\n') {
+                        countCol = 1;
+                        countRow++;
+                    } else {
+                        countCol++;
+                    }
+                }
+            }
+            const locationCat = findLocation('C')
+            const locationMouse = findLocation('m')
+
+            function sortirovka(a, b) {
+                if (a > b) return 1;
+                if (a == b) return 0;
+                if (a < b) return -1;
+            }
+            let calcArrCol = [locationCat[0], locationMouse[0]]
+                .sort(sortirovka)
+            calcArrCol = calcArrCol[1] - calcArrCol[0]
+
+            let calcArrRow = [locationCat[1], locationMouse[1]]
+                .sort(sortirovka)
+            calcArrRow = calcArrRow[1] - calcArrRow[0]
+
+            const calcMoves = calcArrCol + calcArrRow
+            if (moves < calcMoves) return "Escaped!"
+            else return "Caught!"
+        }
+        const map1 =
+`.C.......
+.........
+......m..`
+        console.log(catMouse(map1, 5))
+    </script>
+</body>
+
+</html>
