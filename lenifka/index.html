@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новогодний Подарок ❄️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Новогодний снег -->
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+
+    <!-- Звезды на фоне -->
+    <div class="stars"></div>
+
+    <!-- Заголовок -->
+    <header class="header">
+        <div class="container">
+            <h1 class="title">Наши Воспоминания</h1>
+            <p class="subtitle">С Новым Годом! ✨</p>
+        </div>
+    </header>
+
+    <!-- Галерея -->
+    <main class="main">
+        <div class="container">
+            <div class="gallery" id="gallery">
+                <!-- Фотографии будут добавлены через JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox для полноэкранного просмотра -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-prev" id="lightboxPrev">‹</button>
+        <button class="lightbox-next" id="lightboxNext">›</button>
+        <img class="lightbox-image" id="lightboxImage" src="" alt="">
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
