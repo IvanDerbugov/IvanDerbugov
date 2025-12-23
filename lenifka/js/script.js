@@ -4,32 +4,41 @@ const months = [
     'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
 ];
 
-// Функция для извлечения даты и времени из имени файла и форматирования
+// Функция для извлечения даты из имени файла и форматирования
 function extractDateFromFilename(filename) {
-    // Ищем паттерн даты и времени YYYY-MM-DD_HH-MM-SS в имени файла
-    const fullMatch = filename.match(/(\d{4})-(\d{2})-(\d{2})_(\d{2})-(\d{2})-(\d{2})/);
-    const dateMatch = filename.match(/(\d{4})-(\d{2})-(\d{2})/);
+    // Формат 1: YYYYMMDD_HHMMSS (например: 20240909_194352.jpg)
+    let match = filename.match(/(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})/);
     
-    if (!dateMatch) return null;
-    
-    const year = parseInt(dateMatch[1]);
-    const month = parseInt(dateMatch[2]) - 1; // месяцы в JS начинаются с 0
-    const day = parseInt(dateMatch[3]);
-    
-    let date, formatted;
-    
-    // Если есть полная информация о времени
-    if (fullMatch) {
-        const hour = parseInt(fullMatch[4]);
-        const minute = parseInt(fullMatch[5]);
-        const second = parseInt(fullMatch[6]);
-        date = new Date(year, month, day, hour, minute, second);
-        formatted = `${day} ${months[month]} ${year}`;
-    } else {
-        // Только дата
-        date = new Date(year, month, day);
-        formatted = `${day} ${months[month]} ${year}`;
+    // Формат 2: IMG_YYYYMMDD_HHMMSS_XXX (например: IMG_20241017_094955_741.jpg)
+    if (!match) {
+        match = filename.match(/IMG_(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})/);
     }
+    
+    // Формат 3: YYYYMMDD_HHMMSS_XXX (например: 20250628_204759_156.jpg)
+    if (!match) {
+        match = filename.match(/(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})_\d+/);
+    }
+    
+    // Формат 4: YYYYMMDD (например: 20240830.mp4)
+    if (!match) {
+        match = filename.match(/(\d{4})(\d{2})(\d{2})\.(jpg|mp4)/);
+        if (match) {
+            // Для формата без времени используем начало дня
+            match = [match[0], match[1], match[2], match[3], '00', '00', '00'];
+        }
+    }
+    
+    if (!match) return null;
+    
+    const year = parseInt(match[1]);
+    const month = parseInt(match[2]) - 1; // месяцы в JS начинаются с 0
+    const day = parseInt(match[3]);
+    const hour = match[4] ? parseInt(match[4]) : 0;
+    const minute = match[5] ? parseInt(match[5]) : 0;
+    const second = match[6] ? parseInt(match[6]) : 0;
+    
+    const date = new Date(year, month, day, hour, minute, second);
+    const formatted = `${day} ${months[month]} ${year}`;
     
     return {
         date: date,
@@ -37,26 +46,51 @@ function extractDateFromFilename(filename) {
     };
 }
 
-// Массив всех фотографий
+// Массив всех медиафайлов (фото и видео)
 const allPhotos = [
-    'img/photo_1_2025-12-23_23-06-08.jpg',
-    'img/photo_2_2025-12-23_23-06-08.jpg',
-    'img/photo_3_2025-12-23_23-06-08.jpg',
-    'img/photo_4_2025-12-23_23-06-08.jpg',
-    'img/photo_5_2025-12-23_23-06-08.jpg',
-    'img/photo_6_2025-12-23_23-06-08.jpg',
-    'img/photo_7_2025-12-23_23-06-08.jpg',
-    'img/photo_8_2025-12-23_23-06-08.jpg',
-    'img/photo_9_2025-12-23_23-06-08.jpg',
-    'img/photo_10_2025-12-23_23-06-08.jpg',
-    'img/photo_11_2025-12-23_23-06-08.jpg',
-    'img/photo_12_2025-12-23_23-06-08.jpg',
-    'img/photo_13_2025-12-23_23-06-08.jpg',
-    'img/photo_2025-12-23_22-38-53.jpg',
-    'img/photo_2025-12-23_22-38-57.jpg',
-    'img/photo_2025-12-23_22-38-59.jpg',
-    'img/photo_2025-12-23_22-39-01.jpg',
-    'img/photo_2025-12-23_22-39-02.jpg'
+    'img/20240717_213142.jpg',
+    'img/20240817_234319.jpg',
+    'img/20240824_155745.jpg',
+    'img/20240824_170216.jpg',
+    'img/20240829_222438.mp4',
+    'img/20240830.mp4',
+    'img/20240909_194352.jpg',
+    'img/20240921_153847.jpg',
+    'img/20240921_162941.jpg',
+    'img/20240922_183247.jpg',
+    'img/20241012_170756.jpg',
+    'img/20241012_170759.jpg',
+    'img/IMG_20241017_094955_741.jpg',
+    'img/20241108_194830.jpg',
+    'img/20241125_193429.jpg',
+    'img/20241130_145705.jpg',
+    'img/20241205_210149.jpg',
+    'img/20241223_192748.jpg',
+    'img/20241228_200622.jpg',
+    'img/20241228_203306.jpg',
+    'img/20241228_203523 (1).jpg',
+    'img/20250108_201706.jpg',
+    'img/20250108_211121.jpg',
+    'img/20250130_203808.jpg',
+    'img/20250228_195809.jpg',
+    'img/IMG_20250309_141811_496.jpg',
+    'img/20250412_140354.jpg',
+    'img/20250429_201715.jpg',
+    'img/20250510_171323.jpg',
+    'img/20250628_111342.jpg',
+    'img/20250628_204759_156.jpg',
+    'img/20250702_215710.jpg',
+    'img/20250719_171605.jpg',
+    'img/20250911_190907.mp4',
+    'img/20250911_191033.jpg',
+    'img/20250911_192257.mp4',
+    'img/20250920_174009.jpg',
+    'img/20250921_145236.jpg',
+    'img/20251019_153004.jpg',
+    'img/20251019_153808.jpg',
+    'img/20251029.mp4',
+    'img/20251119_213305.mp4',
+    'img/20251219_203351.jpg'
 ];
 
 // Массив подписей (можно настроить индивидуально)
@@ -81,24 +115,15 @@ const captions = [
     'Счастье рядом с тобой 🌺'
 ];
 
-// Создаём массив фотографий с датами
+// Создаём массив медиафайлов с датами
 let photos = allPhotos.map((src, index) => {
     const dateInfo = extractDateFromFilename(src);
     const caption = captions[index % captions.length];
+    const isVideo = src.toLowerCase().endsWith('.mp4');
     
     let dateString = '';
     if (dateInfo) {
-        const date = dateInfo.date;
-        // Форматируем дату
-        dateString = `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
-        
-        // Если есть информация о времени, добавляем её
-        const hasTime = date.getHours() !== 0 || date.getMinutes() !== 0 || date.getSeconds() !== 0;
-        if (hasTime) {
-            const hours = String(date.getHours()).padStart(2, '0');
-            const minutes = String(date.getMinutes()).padStart(2, '0');
-            dateString += `, ${hours}:${minutes}`;
-        }
+        dateString = dateInfo.formatted;
     }
     
     return {
@@ -106,6 +131,7 @@ let photos = allPhotos.map((src, index) => {
         caption: caption,
         date: dateInfo ? dateInfo.date : new Date(),
         dateString: dateString,
+        isVideo: isVideo,
         fullCaption: dateString ? `${caption}\n${dateString}` : caption
     };
 });
@@ -142,11 +168,81 @@ function createGallery() {
         const rotation = getRandomRotation();
         polaroid.style.transform = `rotate(${rotation}deg)`;
         
-        const img = document.createElement('img');
-        img.src = photo.src;
-        img.alt = photo.caption;
-        img.className = 'photo-image';
-        img.loading = 'lazy';
+        const frameInner = document.createElement('div');
+        frameInner.className = 'frame-inner';
+        frameInner.style.position = 'relative';
+        
+        // Создаём спиннер загрузки
+        const photoSpinner = document.createElement('div');
+        photoSpinner.className = 'photo-spinner';
+        photoSpinner.innerHTML = '<div class="heart-loader-small">❤️</div>';
+        frameInner.appendChild(photoSpinner);
+        
+        if (photo.isVideo) {
+            // Для видео создаём video элемент с poster
+            const video = document.createElement('video');
+            video.src = photo.src;
+            video.className = 'photo-image';
+            video.preload = 'metadata';
+            video.muted = true;
+            video.style.opacity = '0';
+            video.style.position = 'relative';
+            video.style.zIndex = '1';
+            
+            // Скрываем спиннер и показываем видео когда метаданные загрузились
+            video.addEventListener('loadedmetadata', () => {
+                photoSpinner.style.display = 'none';
+                video.style.opacity = '1';
+                video.style.transition = 'opacity 0.3s ease';
+            });
+            
+            video.addEventListener('error', () => {
+                photoSpinner.style.display = 'none';
+                video.style.opacity = '1';
+            });
+            
+            // Создаём play кнопку с SVG
+            const playButton = document.createElement('div');
+            playButton.className = 'video-play-button';
+            const playIcon = document.createElement('img');
+            playIcon.src = 'img/play-button.svg';
+            playIcon.alt = 'Play';
+            playIcon.className = 'play-icon';
+            playButton.appendChild(playIcon);
+            
+            frameInner.appendChild(video);
+            frameInner.appendChild(playButton);
+            
+            // При клике на видео открываем lightbox
+            frameInner.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openLightbox(index);
+            });
+        } else {
+            // Для фото создаём img элемент
+            const img = document.createElement('img');
+            img.src = photo.src;
+            img.alt = photo.caption;
+            img.className = 'photo-image';
+            img.loading = 'lazy';
+            img.style.opacity = '0';
+            img.style.position = 'relative';
+            img.style.zIndex = '1';
+            
+            // Скрываем спиннер и показываем фото когда изображение загрузилось
+            img.addEventListener('load', () => {
+                photoSpinner.style.display = 'none';
+                img.style.opacity = '1';
+                img.style.transition = 'opacity 0.3s ease';
+            });
+            
+            img.addEventListener('error', () => {
+                photoSpinner.style.display = 'none';
+                img.style.opacity = '1';
+            });
+            
+            frameInner.appendChild(img);
+        }
         
         const caption = document.createElement('p');
         caption.className = 'photo-caption';
@@ -157,14 +253,16 @@ function createGallery() {
             caption.textContent = photo.caption;
         }
         
-        polaroid.appendChild(img);
+        polaroid.appendChild(frameInner);
         polaroid.appendChild(caption);
         photoItem.appendChild(polaroid);
         
-        // Обработчик клика для открытия lightbox
-        photoItem.addEventListener('click', () => {
-            openLightbox(index);
-        });
+        // Обработчик клика для открытия lightbox (для фото)
+        if (!photo.isVideo) {
+            photoItem.addEventListener('click', () => {
+                openLightbox(index);
+            });
+        }
         
         gallery.appendChild(photoItem);
         
@@ -181,13 +279,70 @@ function openLightbox(index) {
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
     const lightboxCaption = document.getElementById('lightboxCaption');
+    const photo = photos[index];
     
-    lightboxImage.src = photos[index].src;
-    // В lightbox показываем полную подпись с датой
-    if (photos[index].dateString) {
-        lightboxCaption.innerHTML = `${photos[index].caption}<br><span style="font-size: 0.9em; opacity: 0.9; margin-top: 10px; display: block;">${photos[index].dateString}</span>`;
+    // Очищаем предыдущий контент
+    lightboxImage.innerHTML = '';
+    
+    // Показываем спиннер
+    const spinner = document.createElement('div');
+    spinner.className = 'lightbox-spinner';
+    spinner.innerHTML = '<div class="heart-loader">❤️</div>';
+    lightboxImage.appendChild(spinner);
+    
+    if (photo.isVideo) {
+        // Создаём video элемент
+        const video = document.createElement('video');
+        video.src = photo.src;
+        video.controls = true;
+        video.autoplay = true;
+        video.className = 'lightbox-image';
+        video.style.maxWidth = '90%';
+        video.style.maxHeight = '90%';
+        video.style.objectFit = 'contain';
+        video.style.display = 'none';
+        
+        video.addEventListener('loadeddata', () => {
+            spinner.remove();
+            video.style.display = 'block';
+        });
+        
+        video.addEventListener('error', () => {
+            spinner.remove();
+        });
+        
+        lightboxImage.appendChild(video);
     } else {
-        lightboxCaption.textContent = photos[index].caption;
+        // Используем img элемент
+        const img = document.createElement('img');
+        img.src = photo.src;
+        img.alt = photo.caption;
+        img.className = 'lightbox-image';
+        img.style.display = 'none';
+        
+        // Добавляем обработчики событий
+        img.addEventListener('load', () => {
+            spinner.remove();
+            img.style.display = 'block';
+        });
+        
+        img.addEventListener('error', () => {
+            spinner.remove();
+            // Если изображение не загрузилось, показываем сообщение
+            const errorMsg = document.createElement('div');
+            errorMsg.className = 'lightbox-error';
+            errorMsg.textContent = 'Не удалось загрузить изображение';
+            lightboxImage.appendChild(errorMsg);
+        });
+        
+        lightboxImage.appendChild(img);
+    }
+    
+    // В lightbox показываем полную подпись с датой
+    if (photo.dateString) {
+        lightboxCaption.innerHTML = `${photo.caption}<br><span style="font-size: 0.9em; opacity: 0.9; margin-top: 10px; display: block;">${photo.dateString}</span>`;
+    } else {
+        lightboxCaption.textContent = photo.caption;
     }
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -196,6 +351,15 @@ function openLightbox(index) {
 // Закрытие lightbox
 function closeLightbox() {
     const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    
+    // Останавливаем видео, если оно играет
+    const video = lightboxImage.querySelector('video');
+    if (video) {
+        video.pause();
+        video.currentTime = 0;
+    }
+    
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
 }
@@ -214,18 +378,77 @@ function showPrevPhoto() {
 function updateLightboxImage() {
     const lightboxImage = document.getElementById('lightboxImage');
     const lightboxCaption = document.getElementById('lightboxCaption');
+    const photo = photos[currentPhotoIndex];
     
     lightboxImage.style.opacity = '0';
     
     setTimeout(() => {
-        lightboxImage.src = photos[currentPhotoIndex].src;
-        // В lightbox показываем полную подпись с датой
-        if (photos[currentPhotoIndex].dateString) {
-            lightboxCaption.innerHTML = `${photos[currentPhotoIndex].caption}<br><span style="font-size: 0.9em; opacity: 0.9; margin-top: 10px; display: block;">${photos[currentPhotoIndex].dateString}</span>`;
+        // Очищаем предыдущий контент
+        lightboxImage.innerHTML = '';
+        
+        // Показываем спиннер
+        const spinner = document.createElement('div');
+        spinner.className = 'lightbox-spinner';
+        spinner.innerHTML = '<div class="heart-loader">❤️</div>';
+        lightboxImage.appendChild(spinner);
+        
+        if (photo.isVideo) {
+            // Создаём video элемент
+            const video = document.createElement('video');
+            video.src = photo.src;
+            video.controls = true;
+            video.autoplay = true;
+            video.className = 'lightbox-image';
+            video.style.maxWidth = '90%';
+            video.style.maxHeight = '90%';
+            video.style.objectFit = 'contain';
+            video.style.display = 'none';
+            
+            video.addEventListener('loadeddata', () => {
+                spinner.remove();
+                video.style.display = 'block';
+                lightboxImage.style.opacity = '1';
+            });
+            
+            video.addEventListener('error', () => {
+                spinner.remove();
+                lightboxImage.style.opacity = '1';
+            });
+            
+            lightboxImage.appendChild(video);
         } else {
-            lightboxCaption.textContent = photos[currentPhotoIndex].caption;
+            // Используем img элемент
+            const img = document.createElement('img');
+            img.src = photo.src;
+            img.alt = photo.caption;
+            img.className = 'lightbox-image';
+            img.style.display = 'none';
+            
+            // Добавляем обработчики событий
+            img.addEventListener('load', () => {
+                spinner.remove();
+                img.style.display = 'block';
+                lightboxImage.style.opacity = '1';
+            });
+            
+            img.addEventListener('error', () => {
+                spinner.remove();
+                const errorMsg = document.createElement('div');
+                errorMsg.className = 'lightbox-error';
+                errorMsg.textContent = 'Не удалось загрузить изображение';
+                lightboxImage.appendChild(errorMsg);
+                lightboxImage.style.opacity = '1';
+            });
+            
+            lightboxImage.appendChild(img);
         }
-        lightboxImage.style.opacity = '1';
+        
+        // В lightbox показываем полную подпись с датой
+        if (photo.dateString) {
+            lightboxCaption.innerHTML = `${photo.caption}<br><span style="font-size: 0.9em; opacity: 0.9; margin-top: 10px; display: block;">${photo.dateString}</span>`;
+        } else {
+            lightboxCaption.textContent = photo.caption;
+        }
     }, 150);
 }
 
@@ -290,6 +513,41 @@ document.addEventListener('DOMContentLoaded', () => {
             showPrevPhoto();
         }
     });
+    
+    // Обработчики свайпа для мобильных устройств
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+    const minSwipeDistance = 50; // Минимальное расстояние для свайпа
+    
+    lightbox.addEventListener('touchstart', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+    
+    lightbox.addEventListener('touchend', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
+        
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
+        const absDeltaX = Math.abs(deltaX);
+        const absDeltaY = Math.abs(deltaY);
+        
+        // Проверяем, что это горизонтальный свайп (не вертикальный)
+        if (absDeltaX > absDeltaY && absDeltaX > minSwipeDistance) {
+            if (deltaX > 0) {
+                // Свайп вправо - предыдущее фото
+                showPrevPhoto();
+            } else {
+                // Свайп влево - следующее фото
+                showNextPhoto();
+            }
+        }
+    }, { passive: true });
     
     // Плавная прокрутка для лучшего UX
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -382,12 +640,17 @@ window.addEventListener('scroll', () => {
         // Создаем несколько сердечек за раз
         const heartCount = Math.floor(Math.random() * 3) + 2; // от 2 до 4 сердечек
         
+        // Определяем, мобильное ли устройство
+        const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
+        const baseSize = isMobile ? 16 : 8; // На мобильных в 2 раза больше
+        const sizeRange = isMobile ? 16 : 8;
+        
         for (let i = 0; i < heartCount; i++) {
             const heart = {
                 id: now + i,
                 x: x,
                 y: y,
-                size: Math.random() * 8 + 8, // Размер от 8 до 16 (мелкие)
+                size: Math.random() * sizeRange + baseSize, // Размер от baseSize до baseSize+sizeRange
                 offsetX: (Math.random() - 0.5) * 50, // Смещение по X
                 offsetY: (Math.random() - 0.5) * 50, // Смещение по Y
                 rotation: (Math.random() - 0.5) * 60, // Поворот от -30 до 30 градусов
