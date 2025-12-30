@@ -19,7 +19,12 @@ function extractDateFromFilename(filename) {
         match = filename.match(/(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})_\d+/);
     }
     
-    // Формат 4: YYYYMMDD (например: 20240830.mp4)
+    // Формат 4: photo_YYYY-MM-DD_HH-MM-SS.jpg (например: photo_2024-10-15_23-08-50.jpg)
+    if (!match) {
+        match = filename.match(/photo_(\d{4})-(\d{2})-(\d{2})_(\d{2})-(\d{2})-(\d{2})/);
+    }
+    
+    // Формат 5: YYYYMMDD (например: 20240830.mp4)
     if (!match) {
         match = filename.match(/(\d{4})(\d{2})(\d{2})\.(jpg|mp4)/);
         if (match) {
@@ -46,55 +51,76 @@ function extractDateFromFilename(filename) {
     };
 }
 
-// Массив всех медиафайлов (фото и видео)
+// Массив всех медиафайлов с индивидуальными подписями
+// Если подпись не указана, будет использована подпись по умолчанию из массива captions
 const allPhotos = [
-    'img/20240717_213142.jpg',
-    'img/20240817_234319.jpg',
-    'img/20240824_155745.jpg',
-    'img/20240824_170216.jpg',
-    'img/20240829_222438.mp4',
-    'img/20240830.mp4',
-    'img/20240909_194352.jpg',
-    'img/20240921_153847.jpg',
-    'img/20240921_162941.jpg',
-    'img/20240922_183247.jpg',
-    'img/20241012_170756.jpg',
-    'img/20241012_170759.jpg',
-    'img/IMG_20241017_094955_741.jpg',
-    'img/20241108_194830.jpg',
-    'img/20241125_193429.jpg',
-    'img/20241130_145705.jpg',
-    'img/20241205_210149.jpg',
-    'img/20241223_192748.jpg',
-    'img/20241228_200622.jpg',
-    'img/20241228_203306.jpg',
-    'img/20241228_203523 (1).jpg',
-    'img/20250108_201706.jpg',
-    'img/20250108_211121.jpg',
-    'img/20250130_203808.jpg',
-    'img/20250228_195809.jpg',
-    'img/IMG_20250309_141811_496.jpg',
-    'img/20250412_140354.jpg',
-    'img/20250429_201715.jpg',
-    'img/20250510_171323.jpg',
-    'img/20250628_111342.jpg',
-    'img/20250628_204759_156.jpg',
-    'img/20250702_215710.jpg',
-    'img/20250719_171605.jpg',
-    'img/20250911_190907.mp4',
-    'img/20250911_191033.jpg',
-    'img/20250911_192257.mp4',
-    'img/20250920_174009.jpg',
-    'img/20250921_145236.jpg',
-    'img/20251019_153004.jpg',
-    'img/20251019_153808.jpg',
-    'img/20251029.mp4',
-    'img/20251119_213305.mp4',
-    'img/20251219_203351.jpg'
+    { src: 'img/20240717_213142.jpg', caption: '' },
+    { src: 'img/20240817_234319.jpg', caption: '' },
+    { src: 'img/20240824_155745.jpg', caption: '' },
+    { src: 'img/20240824_170216.jpg', caption: '' },
+    { src: 'img/20240829_222438.mp4', caption: '' },
+    { src: 'img/20240830.mp4', caption: '' },
+    { src: 'img/20240909_194352.jpg', caption: '' },
+    { src: 'img/20240921_153847.jpg', caption: '' },
+    { src: 'img/20240921_162941.jpg', caption: '' },
+    { src: 'img/20240922_183247.jpg', caption: '' },
+    { src: 'img/20241012_170756.jpg', caption: '' },
+    { src: 'img/20241012_170759.jpg', caption: '' },
+    { src: 'img/IMG_20241017_094955_741.jpg', caption: '' },
+    { src: 'img/20241108_194830.jpg', caption: '' },
+    { src: 'img/20241125_193429.jpg', caption: '' },
+    { src: 'img/20241130_145705.jpg', caption: '' },
+    { src: 'img/20241205_210149.jpg', caption: '' },
+    { src: 'img/20241223_192748.jpg', caption: '' },
+    { src: 'img/20241228_200622.jpg', caption: '' },
+    { src: 'img/20241228_203306.jpg', caption: '' },
+    { src: 'img/20241228_203523 (1).jpg', caption: '' },
+    { src: 'img/20250108_201706.jpg', caption: '' },
+    { src: 'img/20250108_211121.jpg', caption: '' },
+    { src: 'img/20250130_203808.jpg', caption: '' },
+    { src: 'img/20250228_195809.jpg', caption: '' },
+    { src: 'img/IMG_20250309_141811_496.jpg', caption: '' },
+    { src: 'img/20250412_140354.jpg', caption: '' },
+    { src: 'img/20250429_201715.jpg', caption: '' },
+    { src: 'img/20250510_171323.jpg', caption: '' },
+    { src: 'img/20250628_111342.jpg', caption: '' },
+    { src: 'img/20250628_204759_156.jpg', caption: '' },
+    { src: 'img/20250702_215710.jpg', caption: '' },
+    { src: 'img/20250719_171605.jpg', caption: '' },
+    { src: 'img/20250911_190907.mp4', caption: '' },
+    { src: 'img/20250911_191033.jpg', caption: '' },
+    { src: 'img/20250911_192257.mp4', caption: '' },
+    { src: 'img/20250920_174009.jpg', caption: '' },
+    { src: 'img/20250921_145236.jpg', caption: '' },
+    { src: 'img/20251019_153004.jpg', caption: '' },
+    { src: 'img/20251019_153808.jpg', caption: '' },
+    { src: 'img/20251029.mp4', caption: '' },
+    { src: 'img/20251119_213305.mp4', caption: '' },
+    { src: 'img/20251219_203351.jpg', caption: '' },
+    // Новые фотографии
+    { src: 'img/photo_2024-10-15_23-08-50.jpg', caption: '' },
+    { src: 'img/photo_2024-10-31_20-39-19.jpg', caption: '' },
+    { src: 'img/photo_2024-11-15_13-58-38.jpg', caption: '' },
+    { src: 'img/photo_2024-12-05_21-56-13.jpg', caption: '' },
+    { src: 'img/photo_2024-12-15_20-40-05.jpg', caption: '' },
+    { src: 'img/photo_2025-02-16_21-19-28.jpg', caption: '' },
+    { src: 'img/photo_2025-02-18_21-46-58.jpg', caption: '' },
+    { src: 'img/photo_2025-02-28_22-19-44.jpg', caption: '' },
+    { src: 'img/photo_2025-02-28_22-19-44 (2).jpg', caption: '' },
+    { src: 'img/photo_2025-04-19_20-52-51.jpg', caption: '' },
+    { src: 'img/photo_2025-04-19_20-52-57.jpg', caption: '' },
+    { src: 'img/photo_2025-08-10_20-07-42.jpg', caption: '' },
+    { src: 'img/photo_2025-08-20_11-17-21.jpg', caption: '' },
+    { src: 'img/photo_2025-09-30_21-51-17.jpg', caption: '' },
+    { src: 'img/photo_2025-10-12_13-36-44.jpg', caption: '' },
+    { src: 'img/photo_2025-10-19_16-23-23.jpg', caption: '' },
+    { src: 'img/photo_2025-11-05_17-54-03.jpg', caption: '' },
+    { src: 'img/photo_2025-12-14_01-31-24.jpg', caption: '' },
+    { src: 'img/20251227_192630.jpg', caption: '' }
 ];
 
-// Массив подписей (можно настроить индивидуально)
-const captions = [
+// Массив подписей по умолчанию (используется если подпись не указана)
+const defaultCaptions = [
     'Наши прекрасные моменты ✨',
     'Каждое воспоминание дорого 💕',
     'Вместе мы создаём историю 🌟',
@@ -107,18 +133,20 @@ const captions = [
     'Наша история продолжается 📖',
     'Кадр за кадром 📸',
     'Эмоции, которые остаются 💫',
-    'Вместе навсегда 💍',
     'Лучшие моменты жизни 🌟',
-    'Новогоднее чудо 🎁',
     'Сердца бьются в унисон 💓',
     'Каждый день - подарок 🎀',
     'Счастье рядом с тобой 🌺'
 ];
 
 // Создаём массив медиафайлов с датами
-let photos = allPhotos.map((src, index) => {
+let photos = allPhotos.map((photo, index) => {
+    const src = typeof photo === 'string' ? photo : photo.src;
     const dateInfo = extractDateFromFilename(src);
-    const caption = captions[index % captions.length];
+    // Используем индивидуальную подпись или подпись по умолчанию
+    const caption = (typeof photo === 'object' && photo.caption) 
+        ? photo.caption 
+        : (defaultCaptions[index % defaultCaptions.length]);
     const isVideo = src.toLowerCase().endsWith('.mp4');
     
     let dateString = '';
