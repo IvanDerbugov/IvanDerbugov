@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Напиточки</title>
+</head>
+
+<body>
+    <button id="addDrink">
+        ввод информации о напитке
+    </button>
+
+    <button id="infoDrink">
+        получение информации о напитке
+    </button>
+
+    <button id="delDrink">
+        удаление информации о напитке
+    </button>
+
+    <button id="listDrinks">
+        перечень всех напитков
+    </button>
+
+    <script>
+        function HashStorageFunc() {
+            const storage = {}
+
+            this.addValue = function (key, value) {
+                storage[key] = value
+            }
+            this.getValue = function (key) {
+                return storage[key]
+            }
+            this.deleteValue = function (key) {
+                if (key in storage) {
+                    delete storage[key]
+                    return true
+                }
+                return false
+            }
+            this.getKeys = function () {
+                return Object.keys(storage)
+            }
+        }
+
+        const drinkStorage = new HashStorageFunc
+        
+        function emptyStr() {
+            let str = prompt('введите название нужного напитка')
+            if (!str) str = emptyStr()
+            str = str.toLowerCase()
+            return str
+        }
+
+        const addDrinkBtn = document.getElementById('addDrink')
+        addDrinkBtn.addEventListener('click', () => {
+            let nameDrink = emptyStr()
+            const isAlcogol = confirm('он алкогольный?\n(отмена - безалкогольный)')
+            const recipe = []
+            let i = 1
+            let ingredient
+            function emptyIngredient() {
+                while (ingredient = prompt(`напишите ингридиент № ${i} для приготовления напитка '${nameDrink}', либо нажите 'отмена для завершения'`)) {
+                    recipe.push(ingredient)
+                    i++
+                }
+                if (!recipe[0]) emptyIngredient()
+            }
+            emptyIngredient()
+            drinkStorage.addValue(nameDrink, { 'алкогольный': isAlcogol, 'рецепт': recipe })
+        })
+
+        const infoDrinkBtn = document.getElementById('infoDrink')
+        infoDrinkBtn.addEventListener('click', () => {
+            const requestedDrink = emptyStr()
+            const drinkInfo = drinkStorage.getValue(requestedDrink)
+            if (drinkInfo) {
+                alert(`
+                напиток: ${requestedDrink}
+                алькогольный: ${drinkInfo.алкогольный ? 'да' : 'нет'}
+                рецепт приготовления: 
+                ${drinkInfo.рецепт.join(', ')}
+                `)
+            }
+            else alert('нет такого напитка! добавьте')
+        })
+
+        const delDrinkBtn = document.getElementById('delDrink')
+        delDrinkBtn.addEventListener('click', () => {
+            const delDrink = emptyStr()
+            if (delDrink) {
+                const deleted = drinkStorage.deleteValue(delDrink)
+                deleted ? alert('напиток удалён') : alert('нет такого напитка, не удалю!')
+            }
+        })
+
+        const listBtn = document.getElementById('listDrinks')
+        listBtn.addEventListener('click', () => {
+            if (drinkStorage.getKeys()[0]) {
+                alert(`все напитки: ${drinkStorage.getKeys().join(', ')}`)
+            }
+            else alert ('нету напитков в базе')
+        })
+    </script>
+</body>
+
+</html>
