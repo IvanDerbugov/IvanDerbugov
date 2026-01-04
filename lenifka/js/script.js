@@ -180,6 +180,9 @@ let globalAudio = null;
 let galleryPlayIcon = null;
 let lightboxPlayIcon = null;
 
+// Массив для хранения всех видео элементов
+let allVideos = [];
+
 // Функция для обновления иконок во всех местах
 function updateAudioIcons() {
     if (globalAudio) {
@@ -277,10 +280,22 @@ function createGallery() {
             playIcon.className = 'play-icon';
             playButton.appendChild(playIcon);
             
+            // Добавляем видео в массив
+            allVideos.push(video);
+            
             // Обработчик клика на кнопку play - воспроизводим видео
             playButton.addEventListener('click', (e) => {
                 e.stopPropagation();
                 if (video.paused) {
+                    // Останавливаем все остальные видео
+                    allVideos.forEach(v => {
+                        if (v !== video && !v.paused) {
+                            v.pause();
+                            // Показываем кнопку play для остановленных видео
+                            const btn = v.parentElement.querySelector('.video-play-button');
+                            if (btn) btn.style.display = 'flex';
+                        }
+                    });
                     video.play();
                     playButton.style.display = 'none';
                 } else {
@@ -291,6 +306,15 @@ function createGallery() {
             
             // Скрываем кнопку play когда видео играет
             video.addEventListener('play', () => {
+                // Останавливаем все остальные видео при запуске этого
+                allVideos.forEach(v => {
+                    if (v !== video && !v.paused) {
+                        v.pause();
+                        // Показываем кнопку play для остановленных видео
+                        const btn = v.parentElement.querySelector('.video-play-button');
+                        if (btn) btn.style.display = 'flex';
+                    }
+                });
                 playButton.style.display = 'none';
             });
             
@@ -461,6 +485,16 @@ function openLightbox(index) {
     lightboxImage.appendChild(spinner);
     
     if (photo.isVideo) {
+        // Останавливаем все видео в галерее
+        allVideos.forEach(v => {
+            if (!v.paused) {
+                v.pause();
+                // Показываем кнопку play для остановленных видео
+                const btn = v.parentElement.querySelector('.video-play-button');
+                if (btn) btn.style.display = 'flex';
+            }
+        });
+        
         // Создаём video элемент
         const video = document.createElement('video');
         video.src = photo.src;
@@ -640,6 +674,16 @@ function updateLightboxImage() {
         lightboxImage.appendChild(spinner);
         
         if (photo.isVideo) {
+            // Останавливаем все видео в галерее
+            allVideos.forEach(v => {
+                if (!v.paused) {
+                    v.pause();
+                    // Показываем кнопку play для остановленных видео
+                    const btn = v.parentElement.querySelector('.video-play-button');
+                    if (btn) btn.style.display = 'flex';
+                }
+            });
+            
             // Создаём video элемент
             const video = document.createElement('video');
             video.src = photo.src;
