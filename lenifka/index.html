@@ -57,6 +57,17 @@
     <!-- Звезды на фоне -->
     <div class="stars"></div>
 
+    <!-- Экран входа -->
+    <div class="entry-screen" id="entryScreen">
+        <div class="hearts-container">
+            <div class="heart-item" data-index="1">❤️</div>
+            <div class="heart-item" data-index="2">💖</div>
+            <div class="heart-item" data-index="3">💕</div>
+            <div class="heart-item" data-index="4">💗</div>
+        </div>
+        <div class="entry-error" id="entryError"></div>
+    </div>
+
     <!-- Заголовок -->
     <header class="header">
         <div class="container">
@@ -77,8 +88,12 @@
     <!-- Lightbox для полноэкранного просмотра -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" id="lightboxClose">&times;</button>
-        <button class="lightbox-prev" id="lightboxPrev">‹</button>
-        <button class="lightbox-next" id="lightboxNext">›</button>
+        <button class="lightbox-prev" id="lightboxPrev">
+            <img src="img/left-arrow.svg" alt="Previous" class="lightbox-arrow-icon">
+        </button>
+        <button class="lightbox-next" id="lightboxNext">
+            <img src="img/right-arrow.svg" alt="Next" class="lightbox-arrow-icon">
+        </button>
         <div class="lightbox-image" id="lightboxImage"></div>
         <p class="lightbox-caption" id="lightboxCaption"></p>
     </div>

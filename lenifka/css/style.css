@@ -611,7 +611,6 @@ body {
     .lightbox-next {
         width: 50px;
         height: 50px;
-        font-size: 3rem;
     }
     
     .lightbox-prev {
@@ -638,4 +637,147 @@ body {
     .title {
         font-size: 2rem;
     }
+}
+
+/* Экран входа */
+.entry-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.entry-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.hearts-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+.heart-item {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    font-size: 15vw;
+    animation: heartFloat 2s ease-in-out infinite;
+}
+
+.heart-item:nth-child(1) {
+    animation-delay: 0s;
+    filter: drop-shadow(0 4px 8px rgba(255, 107, 157, 0.4));
+}
+
+.heart-item:nth-child(2) {
+    animation-delay: 0.2s;
+    filter: drop-shadow(0 4px 8px rgba(255, 182, 193, 0.4));
+}
+
+.heart-item:nth-child(3) {
+    animation-delay: 0.4s;
+    filter: drop-shadow(0 4px 8px rgba(255, 105, 180, 0.4));
+}
+
+.heart-item:nth-child(4) {
+    animation-delay: 0.6s;
+    filter: drop-shadow(0 4px 8px rgba(255, 20, 147, 0.4));
+}
+
+@keyframes heartFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.1);
+    }
+}
+
+.heart-item:hover {
+    transform: scale(1.1);
+}
+
+.heart-item.clicked {
+    transform: scale(1.2);
+    animation: heartPulse 0.5s ease;
+}
+
+.heart-item.correct {
+    animation: heartSuccess 0.6s ease;
+}
+
+@keyframes heartSuccess {
+    0% {
+        transform: scale(1.3) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.5) rotate(-10deg);
+    }
+    50% {
+        transform: scale(1.5) rotate(10deg);
+    }
+    75% {
+        transform: scale(1.5) rotate(-10deg);
+    }
+    100% {
+        transform: scale(1.3) rotate(0deg);
+    }
+}
+
+.entry-error {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ff6b6b;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    min-height: 30px;
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .heart-item {
+        font-size: 20vw;
+    }
+    
+    .entry-error {
+        font-size: 1rem;
+        bottom: 30px;
+    }
+}
+
+.lightbox-prev,
+.lightbox-next {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0;
+}
+
+.lightbox-arrow-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
 }

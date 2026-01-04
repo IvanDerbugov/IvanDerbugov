@@ -277,11 +277,41 @@ function createGallery() {
             playIcon.className = 'play-icon';
             playButton.appendChild(playIcon);
             
+            // Обработчик клика на кнопку play - воспроизводим видео
+            playButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (video.paused) {
+                    video.play();
+                    playButton.style.display = 'none';
+                } else {
+                    video.pause();
+                    playButton.style.display = 'flex';
+                }
+            });
+            
+            // Скрываем кнопку play когда видео играет
+            video.addEventListener('play', () => {
+                playButton.style.display = 'none';
+            });
+            
+            // Показываем кнопку play когда видео на паузе или закончилось
+            video.addEventListener('pause', () => {
+                playButton.style.display = 'flex';
+            });
+            
+            video.addEventListener('ended', () => {
+                playButton.style.display = 'flex';
+            });
+            
             frameInner.appendChild(video);
             frameInner.appendChild(playButton);
             
-            // При клике на видео открываем lightbox
+            // При клике на видео (но не на кнопку play) открываем lightbox
             frameInner.addEventListener('click', (e) => {
+                // Если клик был на кнопке play, не открываем lightbox
+                if (e.target.closest('.video-play-button')) {
+                    return;
+                }
                 e.stopPropagation();
                 openLightbox(index);
             });
@@ -763,10 +793,93 @@ function initScrollAnimations() {
     });
 }
 
+// Инициализация экрана входа
+function initEntryScreen() {
+    const entryScreen = document.getElementById('entryScreen');
+    const hearts = document.querySelectorAll('.heart-item');
+    const entryError = document.getElementById('entryError');
+    
+    // Правильный порядок: справа налево (4, 3, 2, 1)
+    const correctOrder = [4, 3, 2, 1];
+    let clickedOrder = [];
+    let isChecking = false;
+    
+    // Скрываем основной контент
+    document.querySelector('.header').style.display = 'none';
+    document.querySelector('.main').style.display = 'none';
+    document.body.style.overflow = 'hidden';
+    
+    hearts.forEach((heart, index) => {
+        heart.addEventListener('click', () => {
+            if (isChecking) return;
+            
+            const heartIndex = parseInt(heart.getAttribute('data-index'));
+            clickedOrder.push(heartIndex);
+            
+            // Анимация клика
+            heart.classList.add('clicked');
+            setTimeout(() => {
+                heart.classList.remove('clicked');
+            }, 500);
+            
+            // Проверяем правильность после каждого клика
+            if (clickedOrder.length === correctOrder.length) {
+                isChecking = true;
+                
+                // Проверяем совпадение
+                const isCorrect = clickedOrder.every((val, idx) => val === correctOrder[idx]);
+                
+                if (isCorrect) {
+                    // Правильная комбинация
+                    hearts.forEach((h, i) => {
+                        setTimeout(() => {
+                            h.classList.add('correct');
+                        }, i * 100);
+                    });
+                    
+                    setTimeout(() => {
+                        entryScreen.classList.add('hidden');
+                        document.querySelector('.header').style.display = 'block';
+                        document.querySelector('.main').style.display = 'block';
+                        document.body.style.overflow = '';
+                        createGallery();
+                        initScrollAnimations();
+                    }, 1500);
+                } else {
+                    // Неправильная комбинация
+                    entryError.textContent = 'Неверная комбинация. Попробуйте ещё раз 💕';
+                    clickedOrder = [];
+                    
+                    // Сбрасываем все сердечки
+                    hearts.forEach(h => {
+                        h.classList.remove('clicked', 'correct');
+                    });
+                    
+                    setTimeout(() => {
+                        entryError.textContent = '';
+                        isChecking = false;
+                    }, 2000);
+                }
+            } else if (clickedOrder.length > correctOrder.length) {
+                // Слишком много кликов
+                entryError.textContent = 'Слишком много кликов. Начните заново 💕';
+                clickedOrder = [];
+                hearts.forEach(h => {
+                    h.classList.remove('clicked', 'correct');
+                });
+                
+                setTimeout(() => {
+                    entryError.textContent = '';
+                    isChecking = false;
+                }, 2000);
+            }
+        });
+    });
+}
+
 // Обработчики событий
 document.addEventListener('DOMContentLoaded', () => {
-    createGallery();
-    initScrollAnimations();
+    initEntryScreen();
     
     // Lightbox элементы
     const lightboxClose = document.getElementById('lightboxClose');
