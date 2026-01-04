@@ -95,25 +95,26 @@ const allPhotos = [
     { src: 'img/20250628_111342.jpg', caption: 'Комментарии не нужны☺️' },
     { src: 'img/20250628_204759_156.jpg', caption: 'Это мы взади на картинах в прошлых жизнях!' },
     { src: 'img/20250702_215710.jpg', caption: 'Подуставшие, но вместе!' },
-    { src: 'img/20250719_171605.jpg', caption: '' },
-    { src: 'img/photo_2025-08-10_20-07-42.jpg', caption: '' },
-    { src: 'img/photo_2025-08-20_11-17-21.jpg', caption: '' },
-    { src: 'img/20250911_190907.mp4', caption: '' },
-    { src: 'img/20250911_191033.jpg', caption: '' },
-    { src: 'img/20250911_192257.mp4', caption: '' },
-    { src: 'img/20250920_174009.jpg', caption: '' },
-    { src: 'img/20250921_145236.jpg', caption: '' },
-    { src: 'img/photo_2025-09-30_21-51-17.jpg', caption: '' },
-    { src: 'img/20251019_153004.jpg', caption: '' },
-    { src: 'img/20251019_153808.jpg', caption: '' },
-    { src: 'img/photo_2025-10-12_13-36-44.jpg', caption: '' },
-    { src: 'img/photo_2025-10-19_16-23-23.jpg', caption: '' },
-    { src: 'img/20251029.mp4', caption: '' },
-    { src: 'img/photo_2025-11-05_17-54-03.jpg', caption: '' },
-    { src: 'img/20251119_213305.mp4', caption: '' },
-    { src: 'img/20251219_203351.jpg', caption: '' },
-    { src: 'img/photo_2025-12-14_01-31-24.jpg', caption: '' },
-    { src: 'img/20251227_192630.jpg', caption: '' }
+    { src: 'img/20250719_171605.jpg', caption: 'Байка за байкой😁' },
+    { src: 'img/photo_2025-08-10_20-07-42.jpg', caption: 'Фоточка, а на ней ну такая уже красоточка😍' },
+    { src: 'img/photo_2025-08-20_11-17-21.jpg', caption: 'Ты дополняешь прекрасные виды' },
+    { src: 'img/20250911_190907.mp4', caption: 'Ты всегда хочешь обниматься, а я всегда рад обнимать тебя😘' },
+    { src: 'img/20250911_191033.jpg', caption: 'Вместе мы на высоте😎' },
+    { src: 'img/20250911_192257.mp4', caption: 'Качеликии! ухуахуаху' },
+    { src: 'img/20250920_174009.jpg', caption: 'Наш любищий нос🐽' },
+    { src: 'img/20250921_145236.jpg'},
+    { src: 'img/photo_2025-09-30_21-51-17.jpg', caption: 'Кусный чай - наше всё🫖😋' },
+    { src: 'img/photo_2025-10-12_13-36-44.jpg', caption: 'Рядом с тобой нужны часы🕒<br>Время летит, как Джесси бежит гулять' },
+    { src: 'img/20251019_153004.jpg', caption: 'Люблю тебя радовать😚' },
+    { src: 'img/20251019_153808.jpg', caption: 'Ты всегда останешься для меня малышкой🤗' },
+    { src: 'img/photo_2025-10-19_16-23-23.jpg', caption: '🙃' },
+    { src: 'img/20251029.mp4', caption: 'Я люблю тебя☺️' },
+    { src: 'img/photo_2025-11-05_17-54-03.jpg', caption: 'Даже у роботов моторчик начинает работать быстрее при виде тебя!🖤' },
+    { src: 'img/20251119_213305.mp4', caption: 'Ты везучая!🍀' },
+    { src: 'img/20251219_203351.jpg', caption: 'Солнышки для солнышка🌞' },
+    { src: 'img/photo_2025-12-14_01-31-24.jpg', caption: 'Культурно окультуриваемся😇' },
+    { src: 'img/20251227_192630.jpg', caption: 'Окутаны теплом и живой грелкой💞🐶' },
+    { src: 'img/photo_2026-01-02_20-10-50.jpg', caption: 'У тебя классные друзья!<br>А ты классная у них😊' }
 ];
 
 // Массив подписей по умолчанию (используется если подпись не указана)
@@ -173,6 +174,47 @@ photos.sort((a, b) => {
 
 // Текущий индекс для lightbox
 let currentPhotoIndex = 0;
+
+// Глобальные переменные для синхронизации аудио
+let globalAudio = null;
+let galleryPlayIcon = null;
+let lightboxPlayIcon = null;
+
+// Функция для обновления иконок во всех местах
+function updateAudioIcons() {
+    if (globalAudio) {
+        const iconSrc = globalAudio.paused ? 'img/play-button.svg' : 'img/pause.svg';
+        if (galleryPlayIcon) galleryPlayIcon.src = iconSrc;
+        if (lightboxPlayIcon) lightboxPlayIcon.src = iconSrc;
+    }
+}
+
+// Функция для переключения аудио
+function toggleAudio() {
+    if (!globalAudio) {
+        globalAudio = document.createElement('audio');
+        globalAudio.src = 'img/МыИдеальнаяПара.mp3';
+        globalAudio.preload = 'auto';
+        
+        globalAudio.addEventListener('play', () => {
+            updateAudioIcons();
+        });
+        
+        globalAudio.addEventListener('pause', () => {
+            updateAudioIcons();
+        });
+        
+        globalAudio.addEventListener('ended', () => {
+            updateAudioIcons();
+        });
+    }
+    
+    if (globalAudio.paused) {
+        globalAudio.play();
+    } else {
+        globalAudio.pause();
+    }
+}
 
 // Функция для генерации случайного поворота
 function getRandomRotation() {
@@ -269,13 +311,86 @@ function createGallery() {
             frameInner.appendChild(img);
         }
         
-        const caption = document.createElement('p');
-        caption.className = 'photo-caption';
-        // Добавляем дату в подпись
-        if (photo.dateString) {
-            caption.innerHTML = `${photo.caption}<br><span style="font-size: 0.85em; opacity: 0.8;">${photo.dateString}</span>`;
+        let caption;
+        
+        if (photo.src === 'img/20250921_145236.jpg') {
+            // Специальная подпись с аудиоплеером
+            caption = document.createElement('div');
+            caption.className = 'photo-caption';
+            caption.style.display = 'flex';
+            caption.style.flexDirection = 'column';
+            caption.style.padding = '10px 15px';
+            
+            // Контейнер для аудиоплеера (flex row)
+            const audioContainer = document.createElement('div');
+            audioContainer.style.display = 'flex';
+            audioContainer.style.alignItems = 'center';
+            audioContainer.style.justifyContent = 'flex-start';
+            
+            // Создаём кнопку play/pause слева
+            const audioButton = document.createElement('div');
+            audioButton.className = 'audio-play-button';
+            audioButton.style.cursor = 'pointer';
+            audioButton.style.width = '30px';
+            audioButton.style.height = '40px';
+            audioButton.style.display = 'flex';
+            audioButton.style.alignItems = 'center';
+            audioButton.style.justifyContent = 'center';
+            audioButton.style.flexShrink = '0';
+            
+            const playIcon = document.createElement('img');
+            playIcon.src = 'img/play-button.svg';
+            playIcon.alt = 'Play';
+            playIcon.className = 'audio-play-icon';
+            playIcon.style.width = '30px';
+            audioButton.appendChild(playIcon);
+            
+            // Создаём gif справа
+            const voiceGif = document.createElement('img');
+            voiceGif.src = 'img/voice.gif';
+            voiceGif.alt = 'Voice';
+            voiceGif.style.width = '100px';
+            voiceGif.style.height = '50px';
+            voiceGif.style.flexShrink = '0';
+            
+            // Сохраняем ссылку на иконку для синхронизации
+            galleryPlayIcon = playIcon;
+            
+            // Обновляем иконку при загрузке
+            if (globalAudio) {
+                updateAudioIcons();
+            }
+            
+            // Обработчик клика на кнопку
+            audioButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleAudio();
+            });
+            
+            audioContainer.appendChild(audioButton);
+            audioContainer.appendChild(voiceGif);
+            
+            caption.appendChild(audioContainer);
+            
+            // Добавляем дату под аудиоплеером
+            if (photo.dateString) {
+                const dateSpan = document.createElement('span');
+                dateSpan.style.fontSize = '0.85em';
+                dateSpan.style.opacity = '0.8';
+                dateSpan.style.marginTop = '5px';
+                dateSpan.textContent = photo.dateString;
+                caption.appendChild(dateSpan);
+            }
         } else {
-            caption.textContent = photo.caption;
+            // Обычная подпись
+            caption = document.createElement('p');
+            caption.className = 'photo-caption';
+            // Добавляем дату в подпись
+            if (photo.dateString) {
+                caption.innerHTML = `${photo.caption}<br><span style="font-size: 0.85em; opacity: 0.8;">${photo.dateString}</span>`;
+            } else {
+                caption.textContent = photo.caption;
+            }
         }
         
         polaroid.appendChild(frameInner);
@@ -363,10 +478,83 @@ function openLightbox(index) {
         lightboxImage.appendChild(img);
     }
     
-    // В lightbox показываем полную подпись с датой
-    if (photo.dateString) {
+    // В lightbox показываем полную подпись с датой или аудиоплеер
+    if (photo.src === 'img/20250921_145236.jpg') {
+        // Специальная подпись с аудиоплеером для lightbox
+        lightboxCaption.innerHTML = '';
+        lightboxCaption.style.display = 'flex';
+        lightboxCaption.style.flexDirection = 'column';
+        lightboxCaption.style.alignItems = 'center';
+        lightboxCaption.style.padding = '15px 30px';
+        
+        // Контейнер для аудиоплеера (flex row)
+        const audioContainer = document.createElement('div');
+        audioContainer.style.display = 'flex';
+        audioContainer.style.alignItems = 'center';
+        audioContainer.style.justifyContent = 'center';
+        audioContainer.style.gap = '15px';
+        
+        // Создаём кнопку play/pause
+        const audioButton = document.createElement('div');
+        audioButton.className = 'audio-play-button';
+        audioButton.style.cursor = 'pointer';
+        audioButton.style.width = '50px';
+        audioButton.style.height = '50px';
+        audioButton.style.display = 'flex';
+        audioButton.style.alignItems = 'center';
+        audioButton.style.justifyContent = 'center';
+        audioButton.style.flexShrink = '0';
+        
+        const playIcon = document.createElement('img');
+        playIcon.src = 'img/play-button.svg';
+        playIcon.alt = 'Play';
+        playIcon.className = 'audio-play-icon';
+        playIcon.style.width = '100%';
+        playIcon.style.height = '100%';
+        audioButton.appendChild(playIcon);
+        
+        // Создаём gif
+        const voiceGif = document.createElement('img');
+        voiceGif.src = 'img/voice.gif';
+        voiceGif.alt = 'Voice';
+        voiceGif.style.width = '150px';
+        voiceGif.style.height = '75px';
+        voiceGif.style.flexShrink = '0';
+        
+        // Сохраняем ссылку на иконку для синхронизации
+        lightboxPlayIcon = playIcon;
+        
+        // Обновляем иконку при загрузке
+        if (globalAudio) {
+            updateAudioIcons();
+        }
+        
+        // Обработчик клика на кнопку
+        audioButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleAudio();
+        });
+        
+        audioContainer.appendChild(audioButton);
+        audioContainer.appendChild(voiceGif);
+        
+        lightboxCaption.appendChild(audioContainer);
+        
+        // Добавляем дату под аудиоплеером
+        if (photo.dateString) {
+            const dateSpan = document.createElement('span');
+            dateSpan.style.fontSize = '0.9em';
+            dateSpan.style.opacity = '0.9';
+            dateSpan.style.marginTop = '15px';
+            dateSpan.style.display = 'block';
+            dateSpan.textContent = photo.dateString;
+            lightboxCaption.appendChild(dateSpan);
+        }
+    } else if (photo.dateString) {
+        lightboxCaption.style.display = 'block';
         lightboxCaption.innerHTML = `${photo.caption}<br><span style="font-size: 0.9em; opacity: 0.9; margin-top: 10px; display: block;">${photo.dateString}</span>`;
     } else {
+        lightboxCaption.style.display = 'block';
         lightboxCaption.textContent = photo.caption;
     }
     lightbox.classList.add('active');
@@ -384,6 +572,8 @@ function closeLightbox() {
         video.pause();
         video.currentTime = 0;
     }
+    
+    // Аудио продолжает играть при закрытии lightbox (синхронизация)
     
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
@@ -404,6 +594,8 @@ function updateLightboxImage() {
     const lightboxImage = document.getElementById('lightboxImage');
     const lightboxCaption = document.getElementById('lightboxCaption');
     const photo = photos[currentPhotoIndex];
+    
+    // Аудио продолжает играть при переключении (синхронизация)
     
     lightboxImage.style.opacity = '0';
     
@@ -468,10 +660,83 @@ function updateLightboxImage() {
             lightboxImage.appendChild(img);
         }
         
-        // В lightbox показываем полную подпись с датой
-        if (photo.dateString) {
+        // В lightbox показываем полную подпись с датой или аудиоплеер
+        if (photo.src === 'img/20250921_145236.jpg') {
+            // Специальная подпись с аудиоплеером для lightbox
+            lightboxCaption.innerHTML = '';
+            lightboxCaption.style.display = 'flex';
+            lightboxCaption.style.flexDirection = 'column';
+            lightboxCaption.style.alignItems = 'center';
+            lightboxCaption.style.padding = '15px 30px';
+            
+            // Контейнер для аудиоплеера (flex row)
+            const audioContainer = document.createElement('div');
+            audioContainer.style.display = 'flex';
+            audioContainer.style.alignItems = 'center';
+            audioContainer.style.justifyContent = 'center';
+            audioContainer.style.gap = '15px';
+            
+            // Создаём кнопку play/pause
+            const audioButton = document.createElement('div');
+            audioButton.className = 'audio-play-button';
+            audioButton.style.cursor = 'pointer';
+            audioButton.style.width = '50px';
+            audioButton.style.height = '50px';
+            audioButton.style.display = 'flex';
+            audioButton.style.alignItems = 'center';
+            audioButton.style.justifyContent = 'center';
+            audioButton.style.flexShrink = '0';
+            
+            const playIcon = document.createElement('img');
+            playIcon.src = 'img/play-button.svg';
+            playIcon.alt = 'Play';
+            playIcon.className = 'audio-play-icon';
+            playIcon.style.width = '100%';
+            playIcon.style.height = '100%';
+            audioButton.appendChild(playIcon);
+            
+            // Создаём gif
+            const voiceGif = document.createElement('img');
+            voiceGif.src = 'img/voice.gif';
+            voiceGif.alt = 'Voice';
+            voiceGif.style.width = '150px';
+            voiceGif.style.height = '75px';
+            voiceGif.style.flexShrink = '0';
+            
+            // Сохраняем ссылку на иконку для синхронизации
+            lightboxPlayIcon = playIcon;
+            
+            // Обновляем иконку при загрузке
+            if (globalAudio) {
+                updateAudioIcons();
+            }
+            
+            // Обработчик клика на кнопку
+            audioButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleAudio();
+            });
+            
+            audioContainer.appendChild(audioButton);
+            audioContainer.appendChild(voiceGif);
+            
+            lightboxCaption.appendChild(audioContainer);
+            
+            // Добавляем дату под аудиоплеером
+            if (photo.dateString) {
+                const dateSpan = document.createElement('span');
+                dateSpan.style.fontSize = '0.9em';
+                dateSpan.style.opacity = '0.9';
+                dateSpan.style.marginTop = '15px';
+                dateSpan.style.display = 'block';
+                dateSpan.textContent = photo.dateString;
+                lightboxCaption.appendChild(dateSpan);
+            }
+        } else if (photo.dateString) {
+            lightboxCaption.style.display = 'block';
             lightboxCaption.innerHTML = `${photo.caption}<br><span style="font-size: 0.9em; opacity: 0.9; margin-top: 10px; display: block;">${photo.dateString}</span>`;
         } else {
+            lightboxCaption.style.display = 'block';
             lightboxCaption.textContent = photo.caption;
         }
     }, 150);

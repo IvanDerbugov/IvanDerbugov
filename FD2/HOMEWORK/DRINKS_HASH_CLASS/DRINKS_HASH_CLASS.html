@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Напиточки</title>
+
+    <style>
+        button {
+            cursor: pointer;
+        }
+
+        .wrapModal {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            background-color: black;
+            opacity: 0.7;
+            display: none;
+        }
+
+        .modal {
+            min-width: 300px;
+            min-height: 300px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 10px;
+            padding-bottom: 50px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -15px;
+            right: 0;
+            color: #000;
+            font-size: 50px;
+            cursor: pointer;
+        }
+
+        #saveDrink {
+            align-self: center;
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            font-size: 25px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="addDrink">
+        ввод информации о напитке
+    </button>
+
+    <button id="infoDrink">
+        получение информации о напитке
+    </button>
+
+    <button id="delDrink">
+        удаление информации о напитке
+    </button>
+
+    <button id="listDrinks">
+        перечень всех напитков
+    </button>
+
+
+    <div class="wrapModal">
+        <div class="modal">
+            <span class="modal-close">×</span>
+            <div>
+                <label for="drinkName">Название напитка</label> <br>
+                <input type="text" id="drinkName">
+            </div>
+
+            <div>
+                <label for="alcogol">Он алкогольный?</label> <br>
+                <label for="alcogol">Да</label><input type="radio" name="alcogol">
+                <label for="alcogol">Нет</label><input type="radio" name="alcogol">
+            </div>
+
+            <div id="wrapIngredients">
+                <div>
+                    <label for="ingredient">Ингридиент № <span id="ingredientNumber">1</span></label> <br>
+                    <input type="text" id="ingredient">
+                    <button id="addIngredient">добавить ещё ингридиент</button>
+                </div>
+            </div>
+
+            <button id="saveDrink">сохранить напиток</button>
+        </div>
+    </div>
+
+    <script>
+        class HashStorageClass {
+            constructor() {
+                this.storage = {}
+            }
+
+            addValue = function (key, value) {
+                this.storage[key] = value
+            }
+            getValue = function (key) {
+                return this.storage[key]
+            }
+            deleteValue = function (key) {
+                if (key in this.storage) {
+                    delete this.storage[key]
+                    return true
+                }
+                return false
+            }
+            getKeys = function () {
+                return Object.keys(this.storage)
+            }
+        }
+
+        const drinkStorage = new HashStorageClass
+
+        const wrapModal = document.querySelector('.wrapModal')
+        const modal = document.querySelector('.modal')
+        const closeModal = document.querySelector('.modal-close')
+        const addDrinkBtn = document.getElementById('addDrink')
+        const addIngredientBtn = document.getElementById('addIngredient')
+        const saveDrinkBtn = document.getElementById('saveDrink')
+
+        function resetForm() {
+            document.querySelectorAll('input').forEach(input => {
+                input.value = ''
+            })
+            document.querySelectorAll('input[name="alcogol"]:checked').forEach(input => {
+                input.checked = false
+            })
+            const allIngredientDivs = document.querySelectorAll('#wrapIngredients div');
+            allIngredientDivs.forEach((div, idx) => {
+                if (idx > 0) div.remove();
+            });
+        }
+        function validateValues() {
+            const requiredInputs = document.querySelectorAll('input[required]')
+            return Array.from(requiredInputs).every(input => input.value.trim() !== '')
+        }
+
+        let i = 2
+        addIngredientBtn.addEventListener('click', () => {
+            const wrapIngredients = document.getElementById('wrapIngredients')
+            const ingredient = document.createElement('div')
+
+            ingredient.innerHTML = `
+                <label for="ingredient">Ингридиент № <span id="ingredientNumber">${i}</span></label> <br>
+                <input type="text" id="ingredient">
+            `
+            wrapIngredients.appendChild(ingredient)
+            i++
+        })
+
+        closeModal.addEventListener('click', () => {
+            wrapModal.style.display = 'none'
+            resetForm()
+        })
+        wrapModal.addEventListener('click', () => {
+            wrapModal.style.display = 'none'
+            resetForm()
+        })
+        modal.addEventListener('click', (event) => {
+            event.stopPropagation()
+        })
+
+        addDrinkBtn.addEventListener('click', () => {
+            wrapModal.style.display = 'block'
+
+            saveDrinkBtn.addEventListener('click', () => {
+                const drinkName = document.getElementById('drinkName').value
+                const alcogol = document.querySelector('input[name="alcogol"]:checked').value
+                const ingredients = Array.from(document.querySelectorAll('#wrapIngredients div'))
+                const recipe = ingredients.map(ingredient => ingredient.querySelector('input').value)
+                drinkStorage.addValue(drinkName, { 'алкогольный': alcogol, 'рецепт': recipe })
+                wrapModal.style.display = 'none'
+                resetForm()
+                alert('напиток сохранён')
+            })
+        })
+
+        const infoDrinkBtn = document.getElementById('infoDrink')
+        infoDrinkBtn.addEventListener('click', () => {
+            const requestedDrink = emptyStr()
+            const drinkInfo = drinkStorage.getValue(requestedDrink)
+            if (drinkInfo) {
+                alert(`
+                напиток: ${requestedDrink}
+                алькогольный: ${drinkInfo.алкогольный ? 'да' : 'нет'}
+                рецепт приготовления: 
+                ${drinkInfo.рецепт.join(', ')}
+                `)
+            }
+            else alert('нет такого напитка! добавьте')
+        })
+
+        const delDrinkBtn = document.getElementById('delDrink')
+        delDrinkBtn.addEventListener('click', () => {
+            const delDrink = emptyStr()
+            if (delDrink) {
+                const deleted = drinkStorage.deleteValue(delDrink)
+                deleted ? alert('напиток удалён') : alert('нет такого напитка, не удалю!')
+            }
+        })
+
+        const listBtn = document.getElementById('listDrinks')
+        listBtn.addEventListener('click', () => {
+            if (drinkStorage.getKeys()[0]) {
+                alert(`все напитки: ${drinkStorage.getKeys().join(', ')}`)
+            }
+            else alert('нету напитков в базе')
+        })
+    </script>
+</body>
+
+</html>
