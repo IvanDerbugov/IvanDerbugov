@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isPalindrome(str) {
+            str = 
+            str.toLowerCase()
+            .replaceAll(' ', '')
+            .replaceAll('ё', 'е')
+            .replaceAll('ь', '')
+            .replaceAll('ъ', '')
+            .replaceAll(',', '')
+            .replaceAll('.', '')
+            .replaceAll(';', '')
+            .replaceAll(':', '')
+            .replaceAll('?', '')
+            .replaceAll('!', '')
+            .replaceAll('\'', '')
+            .replaceAll('\"', '')
+            .replaceAll('\`', '')
+            .replaceAll('й', 'и')
+
+            for (let i = 1; i < str.length; i++) {
+                if (!(str.charAt(str.length - i) === str.charAt(i - 1))) return false
+            }
+            return true
+        }
+        console.log('true?', isPalindrome('Ася, молоко около мяса.'))
+        console.log('true?', isPalindrome('А роза упала на лапу Азора'))
+        console.log('true?', isPalindrome('Лёша на полке клопа нашёл.'))
+        console.log('true?', isPalindrome('Лидер бодро, гордо бредил.'))
+        console.log('true?', isPalindrome('Сенсация: поп яйца снес!.'))
+        console.log('false?', isPalindrome('мяу'))
+    </script>
+</body>
+
+</html>

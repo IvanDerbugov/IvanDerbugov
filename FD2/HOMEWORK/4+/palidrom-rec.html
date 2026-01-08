@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isPalindrome(str) {
+            str =
+                    str.toLowerCase()
+                    .replaceAll(' ', '')
+                    .replaceAll('ё', 'е')
+                    .replaceAll('ь', '')
+                    .replaceAll('ъ', '')
+                    .replaceAll(',', '')
+                    .replaceAll('.', '')
+                    .replaceAll(';', '')
+                    .replaceAll(':', '')
+                    .replaceAll('?', '')
+                    .replaceAll('!', '')
+                    .replaceAll('\'', '')
+                    .replaceAll('\"', '')
+                    .replaceAll('\`', '')
+                    .replaceAll('й', 'и')
+
+            function rec(str, left, right) {
+                if (left >= right) return true
+
+                if (str[left] === str[right]) {
+                    return rec(str, left + 1, right - 1)
+                }
+                else {
+                    return false
+                }
+            }
+
+            return rec(str, 0, str.length - 1)
+        }
+        console.log('true?', isPalindrome('Ася, молоко около мяса.'))
+        console.log('true?', isPalindrome('А роза упала на лапу Азора'))
+        console.log('true?', isPalindrome('Лёша на полке клопа нашёл.'))
+        console.log('true?', isPalindrome('Лидер бодро, гордо бредил.'))
+        console.log('true?', isPalindrome('Сенсация: поп яйца снес!.'))
+        console.log('false?', isPalindrome('мяу'))
+    </script>
+</body>
+
+</html>
