@@ -8,16 +8,22 @@
 <body>
     <script>
         function getCentury (year) {
-            const birthdayIesus = new Date('0001-01-01').getTime()
-            console.log(birthdayIesus, 'birthdayIesus')
-            const date = 
-            new Date(year, 0, 1, 0)
-            .getTime()
-            // /1000/60/60/24/365
+        year = year
+        .toString()
+        .split('')
+        .filter((v) => v !== '0')
+        .join('')
+        .padEnd(4, '0')
+        
+        year = Math.ceil( Number(year) / 100 )
 
-            return date
+        return year
         }
         console.log(getCentury(2000))
+        console.log(getCentury(3000))
+        console.log(getCentury(3001))
+        console.log(getCentury(1980))
+        console.log(getCentury(2001))
     </script>
 </body>
 </html>
