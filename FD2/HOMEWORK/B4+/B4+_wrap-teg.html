@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function buildWrapper (teg) {
+            return function (text) {
+                text = 
+                text
+                .replaceAll('&' , '&amp;')
+                .replaceAll('"' , '&quot;')
+                .replaceAll("'" , '&apos;')
+                .replaceAll('<' , '&lt;')
+                .replaceAll('>' , '&gt;')
+
+                return '<' + teg + '>' + text + '</' + teg + '>'
+            }
+        }
+
+        var wrapH1 = buildWrapper("H1")
+        var wrapP = buildWrapper("P"); 
+
+        console.log("<P>Вкусные M&amp;M&apos;s</P> ?", wrapP("Вкусные M&M's") );
+        console.log( wrapH1("СТИХИ") );
+    </script>
+</body>
+</html>

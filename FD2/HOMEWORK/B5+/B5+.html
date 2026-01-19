@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function buildWrapper (teg, attributes) {
+            return function (text) {
+                text = 
+                text
+                .replaceAll('&' , '&amp;')
+                .replaceAll('"' , '&quot;')
+                .replaceAll("'" , '&apos;')
+                .replaceAll('<' , '&lt;')
+                .replaceAll('>' , '&gt;')
+
+                return '<' + teg + '>' + text + '</' + teg + '>'
+            }
+        }
+
+        var wrapH1 = buildWrapper("H1")
+        var wrapP = buildWrapper("P"); 
+
+        console.log("<H1 align='center' title='M&amp;M&apos;s'>СТИХИ</H1> так?", wrapH1("СТИХИ",{align:"center",title:"M&M's"}) );
+  // в консоль выводится строка 
+    </script>
+</body>
+</html>
