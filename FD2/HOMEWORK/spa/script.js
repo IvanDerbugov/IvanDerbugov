@@ -23,7 +23,7 @@ function switchToStateFromURLHash() {
             pageHTML += renderMain();
             break;
         case 'Game':
-            pageHTML += "<h3>GamePage</h3>";
+            pageHTML += renderGame();
             break;
         case 'Score':
             pageHTML += "<h3>Score</h3>";
