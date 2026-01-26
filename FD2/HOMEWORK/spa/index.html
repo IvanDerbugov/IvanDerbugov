@@ -36,11 +36,43 @@
     <input type=button value='Очки' onclick='switchToScorePage()'>
     <input type=button value='Правила' onclick='switchToRulesPage()'>
 
-    <script src="pages/Main.js"></script>
-    <script src="pages/Game.js"></script>
-    <script src="js/getBonus.js"></script>
-    <script src="js/translate.js" defer></script>
-    <script src="script.js"></script>
+
+
+    <footer>
+
+    </footer>
+    <div class="wrapModalGetBonus">
+        <div class="modalGetBonus">
+            <span id="closeModalGetBonus">
+                X
+            </span>
+            <img src="img/arrow-down.gif" alt="">
+            <div class="wrapRunString">
+                <div class="runString" aria-label="Бегущая строка бонусов">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- скрипты  подключаются после загрузки DOM-->
+    <script>
+        function loadScripts() {
+            const scripts = [
+                'pages/Main.js',
+                'js/translate.js',
+                'js/getBonus.js',
+                'script.js'
+            ];
+
+            scripts.forEach(src => {
+                const script = document.createElement('script');
+                script.src = src;
+                document.body.appendChild(script);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadScripts);
+    </script>
 
 
 </body>

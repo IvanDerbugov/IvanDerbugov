@@ -72,13 +72,11 @@ input[data-translate-placeholder="Найти игру"] {
     gap: 20px;
 }
 .bonus {
-    position: absolute;
-    right: 0;
-    top: 0;
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
+    justify-content: flex-end;
 }
 .diamond-svg {
  animation: miniRotate 3s infinite;
