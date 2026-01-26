@@ -64,3 +64,12 @@ function switchToRulesPage() {
 }
 
 switchToStateFromURLHash();
+
+
+function createHandler (element, closeFunction) {
+    return function(event) {
+        if(!element.contains(event.target)) {
+            closeFunction()
+        }
+    }
+}

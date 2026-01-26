@@ -17,6 +17,9 @@ return `
             <input type="text" placeholder="Найти игру" data-translate-placeholder="Найти игру">
             <button data-translate="Найти">Найти</button>
         </div>
+        <div class="shop-btn" id="shopBtn" data-translate="магазин">
+            магазин
+        </div>
         <div class="flex headerBtns">
             <div class="languageBtn flex" id="languageBtn">
                 <svg width="15px" height="15px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"

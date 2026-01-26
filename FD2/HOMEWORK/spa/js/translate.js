@@ -36,6 +36,10 @@ function translateAll () {
             'ru': 'Забрать бонус',
             'en': 'Collect the bonus'
         },
+        'магазин': {
+            'ru': 'магазин',
+            'en': 'shop'
+        },
         'счёт': {
             'ru': 'счёт',
             'en': 'count'
@@ -90,13 +94,7 @@ const languageBtn = document.getElementById('languageBtn')
 const listLanguage = document.querySelector('.listLanguage')
 const arrowSeeMore = document.getElementById('arrowSeeMore')
 
-function createHandler (element, closeFunction) {
-    return function(event) {
-        if(!element.contains(event.target)) {
-            closeFunction()
-        }
-    }
-}
+
 const handleOutsideClickLanguage = createHandler(languageBtn, closeListLanguage)
 function closeListLanguage() {
     listLanguage.style.display = 'none'

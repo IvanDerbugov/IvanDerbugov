@@ -1,0 +1,388 @@
+// Переменные
+$primary-blue: #2072cf;
+$dark-blue: #1f5899;
+$darker-blue: #1c3e64;
+$red: #ff0000;
+$red-transparent: #ff000099;
+$white: #fff;
+$white-transparent: #ffffff99;
+$black: #000;
+$black-transparent: #0000003f;
+$green: green;
+
+$font-press-start: 'Press Start 2P', cursive;
+
+$max-width: 1600px;
+$gap-small: 5px;
+$gap-medium: 10px;
+$gap-large: 20px;
+
+// Миксины
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Основные стили
+.container {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+.flex {
+    @include flex-center;
+}
+
+header {
+    background: linear-gradient(-45deg, $primary-blue, $dark-blue, $darker-blue);
+    padding: $gap-medium;
+
+    .logo {
+        font-family: $font-press-start;
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .findGame,
+    .headerBtns {
+        gap: $gap-medium;
+        position: relative;
+    }
+
+    .magnifier {
+        position: absolute;
+        left: 2px;
+    }
+
+    input[data-translate-placeholder="Найти игру"] {
+        padding-left: 15px;
+        background: $white-transparent;
+        height: 30px;
+        width: 160px;
+    }
+
+    .shop-btn {
+        cursor: pointer;
+    }
+
+    .languageBtn {
+        margin-right: 30px;
+        gap: $gap-small;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .listLanguage {
+        display: none;
+        width: fit-content;
+        position: absolute;
+        z-index: 1;
+        top: 20px;
+        padding: 8px;
+        box-shadow: 0 2px 6px 2px rgb(0 0 0 / 15%), 0 1px 2px 0 rgb(0 0 0 / 30%);
+        background: $white;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .activLangage {
+        opacity: 0.3;
+        cursor: default;
+    }
+}
+
+.compilations {
+    position: relative;
+}
+
+.wrapperGroupsGames {
+    justify-content: center;
+    gap: $gap-large;
+
+    > div {
+        padding: 7px;
+        cursor: pointer;
+    }
+}
+
+.bonus {
+    display: flex;
+    align-items: center;
+    gap: $gap-medium;
+    cursor: pointer;
+    justify-content: flex-end;
+
+    &:hover {
+        p {
+            color: $red;
+        }
+
+        .diamond-svg {
+            animation: miniRotateHover 0.2s infinite;
+        }
+    }
+}
+
+.diamond-svg {
+    animation: miniRotate 3s infinite;
+}
+
+@keyframes miniRotate {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    2% {
+        transform: translate(-2px, -1px) rotate(-1deg);
+    }
+    4% {
+        transform: translate(2px, 1px) rotate(1deg);
+    }
+    6% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    8% {
+        transform: translate(1px, -2px) rotate(1deg);
+    }
+    10% {
+        transform: translate(-1px, -1px) rotate(-0.5deg);
+    }
+    12% {
+        transform: translate(1px, 1px) rotate(0.5deg);
+    }
+    14% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes miniRotateHover {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    10% {
+        transform: translate(-6px, -4px) rotate(-5deg);
+    }
+    20% {
+        transform: translate(6px, 4px) rotate(5deg);
+    }
+    30% {
+        transform: translate(-4px, 6px) rotate(-4deg);
+    }
+    40% {
+        transform: translate(4px, -6px) rotate(4deg);
+    }
+    50% {
+        transform: translate(-3px, -3px) rotate(-3deg);
+    }
+    60% {
+        transform: translate(3px, 3px) rotate(3deg);
+    }
+    70% {
+        transform: translate(-2px, -2px) rotate(-2deg);
+    }
+    80% {
+        transform: translate(2px, 2px) rotate(2deg);
+    }
+    90% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+.actionOpntionGame {
+    border: 1px solid $black;
+    border-top: none;
+    background-color: $red-transparent;
+}
+
+.games {
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 600px;
+}
+
+.game {
+    @include flex-column;
+    align-items: center;
+    gap: $gap-medium;
+    position: relative;
+}
+
+.fastClick {
+    > span {
+        font-size: 150px;
+    }
+
+    > img {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        bottom: $gap-medium;
+        right: 0;
+    }
+}
+
+.containerGame {
+    @include flex-column;
+    align-items: center;
+    gap: $gap-large;
+    margin: 100px auto;
+}
+
+.face {
+    &::before {
+        content: attr(data-message);
+        display: var(--before-display, block);
+        font-size: 38px;
+        color: $red;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: $gap-medium;
+    }
+}
+
+#startFastClick {
+    padding: $gap-medium 20px;
+    background-color: $green;
+    border: 1px solid $black;
+    border-radius: $gap-medium;
+    font-size: 40px;
+    cursor: pointer;
+    position: relative;
+
+    span {
+        display: none;
+        position: absolute;
+        color: $red;
+        font-size: 150px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -100px;
+    }
+}
+
+div:has(#timeToEnd), 
+div:has(#score) {
+    display: none;
+    font-size: 20px;
+}
+
+div:has(#timeToEnd) {
+    font-size: 40px;
+}
+
+#timeToEnd {
+    color: $red;
+}
+
+.wrapModalGetBonus {
+    display: var(--modal-display, none);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $black-transparent;
+    z-index: 10;
+}
+
+.modalGetBonus {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    @include absolute-center;
+    background: $white;
+    z-index: 11;
+
+    > img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+    }
+}
+
+#closeModalGetBonus {
+    position: absolute;
+    top: -7px;
+    right: -4px;
+    cursor: pointer;
+}
+
+.wrapRunString {
+    overflow: hidden;
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.runString {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    white-space: nowrap;
+    animation: runingString 5s linear 1 forwards;
+
+    > span {
+        width: 50px;
+        color: blue;
+        font-size: 50px;
+        margin-right: 15px;
+        text-align: center;
+    }
+}
+
+@keyframes runingString {
+    0%, 10% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    50.1% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(calc(-6500px * var(--value) + 85px));
+    }
+}
+
+.timer {
+    color: $red;
+    font-size: 20px;
+}
+
+@keyframes pulseTimer {
+    0% { 
+        transform: scale(1); 
+    }
+    50% { 
+        transform: scale(1.4); 
+    }
+    100% { 
+        transform: scale(1); 
+    }
+}
+
+.timer-pulse {
+    display: inline-block;
+    animation: pulseTimer 0.4s ease-in-out;
+}
