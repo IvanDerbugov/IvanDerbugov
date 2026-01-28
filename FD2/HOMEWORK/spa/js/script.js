@@ -22,8 +22,8 @@ function switchToStateFromURLHash() {
         case 'Main':
             pageHTML += renderMain();
             break;
-        case 'Game':
-            pageHTML += renderGame();
+        case 'Ferm':
+            pageHTML += renderFerm();
             break;
         case 'Score':
             pageHTML += "<h3>Score</h3>";
@@ -31,8 +31,21 @@ function switchToStateFromURLHash() {
         case 'Rules':
             pageHTML += "<h3>Rules</h3>";
             break;
+        case 'Shop':
+            pageHTML += renderShop();
+            break;
     }
     document.getElementById('IPage').innerHTML = pageHTML;
+    
+    // Инициализация Shop страницы
+    if (SPAState.pagename === 'Shop') {
+        // Небольшая задержка для гарантии, что DOM обновлен
+        setTimeout(() => {
+            if (typeof initShopPage === 'function') {
+                initShopPage();
+            }
+        }, 0);
+    }
 }
 
 function switchToState(newState) {
@@ -45,9 +58,9 @@ function switchToMainPage() {
     });
 }
 
-function switchToGamePage() {
+function switchToFerm() {
     switchToState({
-        pagename: 'Game'
+        pagename: 'Ferm'
     });
 }
 
@@ -63,7 +76,15 @@ function switchToRulesPage() {
     });
 }
 
-switchToStateFromURLHash();
+function switchToShopPage() {
+    switchToState({
+        pagename: 'Shop'
+    });
+}
+
+addEventListener('DOMContentLoaded', () => {
+    switchToStateFromURLHash();
+});
 
 
 function createHandler (element, closeFunction) {

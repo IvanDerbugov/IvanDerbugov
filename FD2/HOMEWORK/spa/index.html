@@ -21,20 +21,21 @@
         document.getElementById('headerSPA').innerHTML = renderHeader();
     </script>
 
-    <div class="bonus"></div>
+    <div class="wrapNavBtns flex">
+        <div class="wrapBtns flex">
+            <div onclick='switchToMainPage()' data-translate="Главная">Главная</div>
+            <div onclick='switchToFerm()' data-translate="Ферма">Ферма</div>
+            <div onclick='switchToScorePage()' data-translate="Очки">Очки</div>
+            <div onclick='switchToRulesPage()' data-translate="Правила">Правила</div>
+        </div>
+        <div class="bonus"></div>
+    </div>
     <script type="module">
         import { renderGetBonus } from './moduls/GetBonus.js';
         document.querySelector('.bonus').innerHTML = renderGetBonus();
     </script>
 
-    <h2>ОДНОСТРАНИЧНОЕ ПРИЛОЖЕНИЕ</h2>
-
     <div id='IPage'></div>
-    <br>
-    <input type=button value='Главная' onclick='switchToMainPage()'>
-    <input type=button value='Игра' onclick='switchToGamePage()'>
-    <input type=button value='Очки' onclick='switchToScorePage()'>
-    <input type=button value='Правила' onclick='switchToRulesPage()'>
 
 
 
@@ -60,6 +61,9 @@
             const scripts = [
                 'js/script.js',
                 'pages/Main.js',
+                'pages/Shop.js',
+                'pages/Ferm.js',
+                'js/shop.js',
                 'js/translate.js',
                 'js/getBonus.js'
             ];

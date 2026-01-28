@@ -41,6 +41,7 @@ $gap-large: 20px;
     width: 100%;
     max-width: $max-width;
     margin: 0 auto;
+    padding: 0 50px;
 }
 
 .flex {
@@ -63,6 +64,10 @@ header {
         position: relative;
     }
 
+    .count {
+        gap: 5px;
+    }
+
     .magnifier {
         position: absolute;
         left: 2px;
@@ -77,6 +82,13 @@ header {
 
     .shop-btn {
         cursor: pointer;
+        gap: $gap-small;
+
+        svg {
+            width: 12px;
+            height: 12px;
+            fill: $black;
+        }
     }
 
     .languageBtn {
@@ -113,10 +125,16 @@ header {
     justify-content: center;
     gap: $gap-large;
 
-    > div {
+    >div {
         padding: 7px;
         cursor: pointer;
     }
+}
+
+.wrapBtns {
+    align-items: flex-start;
+    gap: $gap-medium;
+    cursor: pointer;
 }
 
 .bonus {
@@ -142,60 +160,80 @@ header {
 }
 
 @keyframes miniRotate {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translate(0, 0) rotate(0deg);
     }
+
     2% {
         transform: translate(-2px, -1px) rotate(-1deg);
     }
+
     4% {
         transform: translate(2px, 1px) rotate(1deg);
     }
+
     6% {
         transform: translate(-1px, 2px) rotate(-1deg);
     }
+
     8% {
         transform: translate(1px, -2px) rotate(1deg);
     }
+
     10% {
         transform: translate(-1px, -1px) rotate(-0.5deg);
     }
+
     12% {
         transform: translate(1px, 1px) rotate(0.5deg);
     }
+
     14% {
         transform: translate(0, 0) rotate(0deg);
     }
 }
 
 @keyframes miniRotateHover {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translate(0, 0) rotate(0deg);
     }
+
     10% {
         transform: translate(-6px, -4px) rotate(-5deg);
     }
+
     20% {
         transform: translate(6px, 4px) rotate(5deg);
     }
+
     30% {
         transform: translate(-4px, 6px) rotate(-4deg);
     }
+
     40% {
         transform: translate(4px, -6px) rotate(4deg);
     }
+
     50% {
         transform: translate(-3px, -3px) rotate(-3deg);
     }
+
     60% {
         transform: translate(3px, 3px) rotate(3deg);
     }
+
     70% {
         transform: translate(-2px, -2px) rotate(-2deg);
     }
+
     80% {
         transform: translate(2px, 2px) rotate(2deg);
     }
+
     90% {
         transform: translate(0, 0) rotate(0deg);
     }
@@ -222,11 +260,11 @@ header {
 }
 
 .fastClick {
-    > span {
+    >span {
         font-size: 150px;
     }
 
-    > img {
+    >img {
         width: 80px;
         height: 80px;
         position: absolute;
@@ -274,7 +312,7 @@ header {
     }
 }
 
-div:has(#timeToEnd), 
+div:has(#timeToEnd),
 div:has(#score) {
     display: none;
     font-size: 20px;
@@ -310,7 +348,7 @@ div:has(#timeToEnd) {
     background: $white;
     z-index: 11;
 
-    > img {
+    >img {
         position: absolute;
         top: 0;
         left: 50%;
@@ -341,7 +379,7 @@ div:has(#timeToEnd) {
     white-space: nowrap;
     animation: runingString 5s linear 1 forwards;
 
-    > span {
+    >span {
         width: 50px;
         color: blue;
         font-size: 50px;
@@ -351,15 +389,20 @@ div:has(#timeToEnd) {
 }
 
 @keyframes runingString {
-    0%, 10% {
+
+    0%,
+    10% {
         transform: translateX(0%);
     }
+
     50% {
         transform: translateX(-100%);
     }
+
     50.1% {
         transform: translateX(0%);
     }
+
     100% {
         transform: translateX(calc(-6500px * var(--value) + 85px));
     }
@@ -371,18 +414,248 @@ div:has(#timeToEnd) {
 }
 
 @keyframes pulseTimer {
-    0% { 
-        transform: scale(1); 
+    0% {
+        transform: scale(1);
     }
-    50% { 
-        transform: scale(1.4); 
+
+    50% {
+        transform: scale(1.4);
     }
-    100% { 
-        transform: scale(1); 
+
+    100% {
+        transform: scale(1);
     }
 }
 
 .timer-pulse {
     display: inline-block;
     animation: pulseTimer 0.4s ease-in-out;
+}
+
+
+.shop {
+
+    h3 {
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .mutants-list {
+        display: grid;
+        grid-template-columns: repeat(3, 400px);
+        justify-content: center;
+        gap: 40px;
+    }
+
+
+    // .shop .mutant-item {
+    .mutant-item {
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 20px;
+        border: 1px solid #000;
+        padding: 40px 20px 20px;
+        border-radius: 10px;
+        position: relative;
+        height: 579px;
+
+        &.stretched {
+            height: auto;
+        }
+
+        &-img {
+            width: 100%;
+        }
+
+        &-info {
+            
+            h4 {
+                text-align: center;
+                font-size: 40px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            .mutant-description {
+                font-size: 13px;
+                max-height: 50px;
+                overflow: hidden;
+                position: relative;
+                transition: max-height 0.3s ease;
+                margin-bottom: 25px;
+                line-height: 1.4;
+
+                &.expanded {
+                    max-height: 1000px;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 25px;
+                    background: linear-gradient(to bottom, transparent, $white);
+                    z-index: 1;
+                } 
+
+                &.expanded::after {
+                    display: none;
+                }
+            }
+
+            .read-more-btn {
+                position: absolute;
+                bottom: 10px;
+                left:  50%;
+                transform: translateX(-50%);
+                background: $white;
+                border: 1px solid $black;
+                padding: 4px 8px;
+                font-size: 12px;
+                cursor: pointer;
+                border-radius: 4px;
+                z-index: 2;
+                transition: opacity 0.2s ease;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+
+            //.shop .mutant-item-info .mutant-price {
+            .mutant-price {
+                justify-content: flex-start;
+                gap: 4px;
+                position: absolute;
+                top: 5px;
+                right: 5px;
+
+                span {
+                    font-size: 25px;
+                }
+
+                img {
+                    width: 19px;
+                    height: 19px;
+                }
+            }
+
+            //.shop .mutant-item-info .buy-btn {
+            .buy-btn {
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                background: green;
+                border: 1px solid $black;
+                padding: 4px 8px;
+                font-size: 18px;
+                border-radius: 10px;
+            }
+        }
+    }
+
+}
+
+// Магическая полянка фермы
+.ferm-location {
+    padding: 0;
+    min-height: 70vh;
+}
+
+.magical-meadow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.meadow-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        #2d5016 0%, 
+        #4a7c2a 25%, 
+        #6ba347 50%, 
+        #4a7c2a 75%, 
+        #2d5016 100%);
+    z-index: 1;
+}
+
+.magical-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+    transform: translateZ(0);
+    will-change: transform;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(173, 216, 230, 0.6) 50%, transparent 100%);
+    border-radius: 50%;
+    transform: translateZ(0);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    animation: float var(--duration, 3s) ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+    box-shadow: 0 0 8px rgba(173, 216, 230, 0.6);
+    
+    // Случайное позиционирование от top: 4%, left: 4% до top: 24%, left: 97%
+    top: var(--top, 4%);
+    left: var(--left, 4%);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateZ(0) translateY(0) translateX(0);
+        opacity: var(--opacity1, 0.5);
+    }
+    25% {
+        transform: translateZ(0) translateY(var(--move-y1, -10px)) translateX(var(--move-x1, 8px));
+        opacity: var(--opacity2, 0.9);
+    }
+    50% {
+        transform: translateZ(0) translateY(var(--move-y2, -5px)) translateX(var(--move-x2, -4px));
+        opacity: var(--opacity3, 0.7);
+    }
+    75% {
+        transform: translateZ(0) translateY(var(--move-y3, -12px)) translateX(var(--move-x3, 12px));
+        opacity: var(--opacity4, 0.85);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        opacity: 0.7;
+        filter: brightness(1);
+    }
+    50% {
+        opacity: 1;
+        filter: brightness(1.5);
+    }
+}
+
+.mutants-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: calc(100vh - 120px);
+    z-index: 4;
+    padding: 20px;
+    box-sizing: border-box;
 }
