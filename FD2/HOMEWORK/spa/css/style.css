@@ -1,4 +1,33 @@
 @charset "UTF-8";
+*:hover {
+  cursor: auto;
+}
+@media (max-width: 768px) {
+  *:hover {
+    cursor: auto;
+  }
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 140px;
+  height: 140px;
+  background-image: url("../img/cursor.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.1s ease;
+  opacity: 0;
+}
+@media (max-width: 768px) {
+  .custom-cursor {
+    display: none;
+  }
+}
+
 .container {
   width: 100%;
   max-width: 1600px;
@@ -373,7 +402,7 @@ div:has(#timeToEnd) {
 .shop .mutant-item.stretched {
   height: auto;
 }
-.shop .mutant-item-img {
+.shop .mutant-item-img, .shop .mutant-item-svg {
   width: 100%;
 }
 .shop .mutant-item-info h4 {
@@ -457,7 +486,7 @@ div:has(#timeToEnd) {
 .magical-meadow {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 120px);
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
@@ -530,10 +559,11 @@ div:has(#timeToEnd) {
   }
 }
 .mutants-area {
-  position: relative;
+  position: absolute;
+  border: 1px solid #000;
+  bottom: 0;
   width: 100%;
-  height: 100%;
-  min-height: calc(100vh - 120px);
+  height: calc(60vh - 120px);
   z-index: 4;
   padding: 20px;
   box-sizing: border-box;

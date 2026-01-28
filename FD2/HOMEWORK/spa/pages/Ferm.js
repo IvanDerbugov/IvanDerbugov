@@ -42,10 +42,10 @@ const renderFerm = () => {
         <div class="magical-meadow">
             <div class="meadow-background">
                 <div class="magical-particles">
-                    ${Array.from({ length: 100 }, (_, i) => {
+                    ${Array.from({ length: 1000 }, (_, i) => {
                         // Случайное распределение от top: 4%, left: 4% до top: 24%, left: 97%
-                        const top = 4 + Math.random() * 20; // от 4% до 24%
-                        const left = 4 + Math.random() * 93; // от 4% до 97%
+                        const top = 0 + Math.random() * 25; // от 4% до 24%
+                        const left = 0 + Math.random() * 99; // от 4% до 97%
                         
                         // Генерируем уникальные параметры движения для каждой частицы
                         const movement = generateParticleMovement();
@@ -70,6 +70,7 @@ const renderFerm = () => {
                     }).join('')}
                 </div>
             </div>
+
             <div class="mutants-area" id="mutantsArea">
                 <!-- Здесь будут ходить мутанты -->
             </div>

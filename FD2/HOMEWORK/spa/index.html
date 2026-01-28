@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <div class="custom-cursor"></div>
     <header id="headerSPA"></header>
     <script type="module">
         import { renderHeader } from './moduls/Header.js';
@@ -60,6 +61,8 @@
         function loadScripts() {
             const scripts = [
                 'js/script.js',
+                'js/audio.js',
+                'js/cursor.js',
                 'pages/Main.js',
                 'pages/Shop.js',
                 'pages/Ferm.js',
