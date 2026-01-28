@@ -35,11 +35,23 @@ function initCustomCursor() {
     const mouseX = 25; // смещение по X
     const mouseY = 13; // смещение по Y
 
-    // Отслеживаем движение мыши
+    // Отслеживаем движение мыши с оптимизацией через requestAnimationFrame
+    let rafId = null;
+    let lastX = 0;
+    let lastY = 0;
+    
     document.addEventListener('mousemove', (e) => {
-        cursor.style.left = `${e.clientX - mouseX}px`;
-        cursor.style.top = `${e.clientY - mouseY}px`;
-        cursor.style.opacity = '1';
+        // Используем requestAnimationFrame для оптимизации обновлений
+        if (rafId === null) {
+            rafId = requestAnimationFrame(() => {
+                cursor.style.left = `${lastX - mouseX}px`;
+                cursor.style.top = `${lastY - mouseY}px`;
+                cursor.style.opacity = '1';
+                rafId = null;
+            });
+        }
+        lastX = e.clientX;
+        lastY = e.clientY;
     });
 
     // Скрываем курсор, когда мышь выходит за пределы окна

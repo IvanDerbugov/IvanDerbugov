@@ -64,16 +64,22 @@
                 'js/audio.js',
                 'js/cursor.js',
                 'pages/Main.js',
-                'pages/Shop.js',
+                { src: 'pages/Shop.js', type: 'module' },
                 'pages/Ferm.js',
+                'js/particlesCanvas.js',
                 'js/shop.js',
                 'js/translate.js',
                 'js/getBonus.js'
             ];
 
-            scripts.forEach(src => {
+            scripts.forEach(scriptConfig => {
                 const script = document.createElement('script');
-                script.src = src;
+                if (typeof scriptConfig === 'string') {
+                    script.src = scriptConfig;
+                } else {
+                    script.src = scriptConfig.src;
+                    script.type = scriptConfig.type;
+                }
                 document.body.appendChild(script);
             });
         }

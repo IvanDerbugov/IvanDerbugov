@@ -35,6 +35,12 @@ function switchToStateFromURLHash() {
             pageHTML += renderShop();
             break;
     }
+    // Очистка предыдущей страницы (остановка Canvas анимации если была)
+    if (window.particlesCleanup) {
+        window.particlesCleanup();
+        window.particlesCleanup = null;
+    }
+    
     document.getElementById('IPage').innerHTML = pageHTML;
     
     // Инициализация Shop страницы
@@ -45,6 +51,15 @@ function switchToStateFromURLHash() {
                 initShopPage();
             }
         }, 0);
+    }
+    
+    // Инициализация Ferm страницы (Canvas частицы)
+    if (SPAState.pagename === 'Ferm') {
+        setTimeout(() => {
+            if (typeof initParticlesCanvas === 'function') {
+                window.particlesCleanup = initParticlesCanvas();
+            }
+        }, 100);
     }
 }
 

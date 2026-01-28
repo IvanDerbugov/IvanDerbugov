@@ -39,8 +39,9 @@ $gap-large: 20px;
 // Кастомный курсор - скрываем стандартный курсор на всех элементах
 * {
     // cursor: none;
+    cursor: none !important;
     &:hover {
-        cursor: auto;
+        cursor: none !important;
 
         @media (max-width: 768px) {
             cursor: auto;
@@ -53,8 +54,8 @@ $gap-large: 20px;
     position: fixed;
     top: 0;
     left: 0;
-    width: 140px;
-    height: 140px;
+    width: 100px;
+    height: 100px;
     background-image: url('../img/cursor.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -497,8 +498,9 @@ div:has(#timeToEnd) {
             height: auto;
         }
 
-        &-img, &-svg {
+        &-img, svg {
             width: 100%;
+            height: auto;
         }
 
         &-info {
@@ -630,8 +632,9 @@ div:has(#timeToEnd) {
     z-index: 3;
     pointer-events: none;
     transform: translateZ(0);
-    will-change: transform;
     overflow: hidden;
+    contain: layout style paint;
+    isolation: isolate;
 }
 
 .particle {
@@ -641,11 +644,11 @@ div:has(#timeToEnd) {
     background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(173, 216, 230, 0.6) 50%, transparent 100%);
     border-radius: 50%;
     transform: translateZ(0);
-    will-change: transform, opacity;
     backface-visibility: hidden;
     animation: float var(--duration, 3s) ease-in-out infinite;
     animation-delay: var(--delay, 0s);
     box-shadow: 0 0 8px rgba(173, 216, 230, 0.6);
+    contain: strict;
     
     // Случайное позиционирование от top: 4%, left: 4% до top: 24%, left: 97%
     top: var(--top, 4%);
@@ -654,19 +657,19 @@ div:has(#timeToEnd) {
 
 @keyframes float {
     0%, 100% {
-        transform: translateZ(0) translateY(0) translateX(0);
+        transform: translate3d(0, 0, 0);
         opacity: var(--opacity1, 0.5);
     }
     25% {
-        transform: translateZ(0) translateY(var(--move-y1, -10px)) translateX(var(--move-x1, 8px));
+        transform: translate3d(var(--move-x1, 8px), var(--move-y1, -10px), 0);
         opacity: var(--opacity2, 0.9);
     }
     50% {
-        transform: translateZ(0) translateY(var(--move-y2, -5px)) translateX(var(--move-x2, -4px));
+        transform: translate3d(var(--move-x2, -4px), var(--move-y2, -5px), 0);
         opacity: var(--opacity3, 0.7);
     }
     75% {
-        transform: translateZ(0) translateY(var(--move-y3, -12px)) translateX(var(--move-x3, 12px));
+        transform: translate3d(var(--move-x3, 12px), var(--move-y3, -12px), 0);
         opacity: var(--opacity4, 0.85);
     }
 }

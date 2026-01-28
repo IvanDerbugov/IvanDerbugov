@@ -41,7 +41,9 @@ function initShopPage() {
         if (element && audio) {
             audio.volume = volume;
             element.addEventListener('mouseenter', () => {
-                audio.play();
+                audio.play().catch(() => {
+                    // Игнорируем ошибку автовоспроизведения (требуется взаимодействие пользователя)
+                });
             });
             element.addEventListener('mouseleave', () => {
                 audio.pause();
@@ -69,7 +71,9 @@ function initShopPage() {
         if (currentCount >= price) {
             countElement.textContent = currentCount - price;
             audioBuy.volume = 0.3;
-            audioBuy.play();
+            audioBuy.play().catch(() => {
+                // Игнорируем ошибку автовоспроизведения
+            });
             return true;
         }
         return false;
@@ -87,7 +91,9 @@ function initShopPage() {
                 // Недостаточно денег
                 console.log('Недостаточно денег');
                 audioLessMoney.volume = 0.5;
-                audioLessMoney.play();
+                audioLessMoney.play().catch(() => {
+                    // Игнорируем ошибку автовоспроизведения
+                });
             }
         });
     });
@@ -118,10 +124,16 @@ function initShopPage() {
             // Получаем позицию SVG элемента на странице
             const svgRect = svgElement.getBoundingClientRect();
             
+            // Проверяем, что SVG элемент видим и имеет размеры
+            if (!svgRect.width || !svgRect.height) return;
+            
             // Получаем viewBox SVG
             const viewBox = svgElement.viewBox.baseVal;
             const svgWidth = viewBox.width || svgElement.clientWidth;
             const svgHeight = viewBox.height || svgElement.clientHeight;
+
+            // Проверяем валидность размеров
+            if (!svgWidth || !svgHeight) return;
 
             // Конвертируем координаты мыши в координаты SVG
             const mouseX = ((e.clientX - svgRect.left) / svgRect.width) * svgWidth;
@@ -132,22 +144,31 @@ function initShopPage() {
             const deltaY = mouseY - eyeCenterY;
             const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 
+            // Проверяем валидность distance
+            if (isNaN(distance) || !isFinite(distance)) return;
+
             // Ограничиваем расстояние максимальным смещением
             let offsetX = deltaX;
             let offsetY = deltaY;
 
-            if (distance > maxOffset) {
+            if (distance > maxOffset && distance > 0) {
                 offsetX = (deltaX / distance) * maxOffset;
                 offsetY = (deltaY / distance) * maxOffset;
             }
+
+            // Проверяем валидность перед применением transform
+            if (isNaN(offsetX) || isNaN(offsetY) || !isFinite(offsetX) || !isFinite(offsetY)) return;
 
             // Вычисляем transform с учетом начального смещения
             // transform должен переместить зрачок из начальной позиции в новую позицию
             const transformX = offsetX - initialOffsetX;
             const transformY = offsetY - initialOffsetY;
 
+            // Проверяем валидность перед применением transform
+            if (isNaN(transformX) || isNaN(transformY) || !isFinite(transformX) || !isFinite(transformY)) return;
+
             // Применяем transform к зрачку
-            pupil.setAttribute('transform', `translate(${transformX}, ${transformY})`);
+            pupil.setAttribute('transform', `translate(${transformX.toFixed(2)}, ${transformY.toFixed(2)})`);
         });
     }
 
@@ -171,10 +192,16 @@ function initShopPage() {
             // Получаем позицию SVG элемента на странице
             const svgRect = svgElement.getBoundingClientRect();
             
+            // Проверяем, что SVG элемент видим и имеет размеры
+            if (!svgRect.width || !svgRect.height) return;
+            
             // Получаем viewBox SVG
             const viewBox = svgElement.viewBox.baseVal;
             const svgWidth = viewBox.width || svgElement.clientWidth;
             const svgHeight = viewBox.height || svgElement.clientHeight;
+
+            // Проверяем валидность размеров
+            if (!svgWidth || !svgHeight) return;
 
             // Конвертируем координаты мыши в координаты SVG
             const mouseX = ((e.clientX - svgRect.left) / svgRect.width) * svgWidth;
@@ -185,17 +212,23 @@ function initShopPage() {
             const deltaY = mouseY - eyeCenterY;
             const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 
+            // Проверяем валидность distance
+            if (isNaN(distance) || !isFinite(distance)) return;
+
             // Ограничиваем расстояние максимальным смещением
             let offsetX = deltaX;
             let offsetY = deltaY;
 
-            if (distance > maxOffset) {
+            if (distance > maxOffset && distance > 0) {
                 offsetX = (deltaX / distance) * maxOffset;
                 offsetY = (deltaY / distance) * maxOffset;
             }
 
-            // Применяем transform к зрачку
-            pupil.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
+            // Проверяем валидность перед применением transform
+            if (isNaN(offsetX) || isNaN(offsetY) || !isFinite(offsetX) || !isFinite(offsetY)) return;
+
+            // Применяем transform к зрачку (для mutant2 начальное смещение = 0, так как зрачок в центре)
+            pupil.setAttribute('transform', `translate(${offsetX.toFixed(2)}, ${offsetY.toFixed(2)})`);
         });
     }
 
