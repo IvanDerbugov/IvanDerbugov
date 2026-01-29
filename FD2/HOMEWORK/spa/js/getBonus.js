@@ -85,7 +85,7 @@ function closeModalGetBonus() {
     wrapModalBonus.style.setProperty('--modal-display', 'none')
     btnCloseModalBonus.removeEventListener('click', closeModalGetBonus)
     document.removeEventListener('click', handleOutsideClickBonus)
-    setTimer(3)
+    setTimer(1)
 }
 
 

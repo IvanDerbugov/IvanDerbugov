@@ -4,7 +4,7 @@ const renderFerm = () => {
         <div class="magical-meadow">
             <div class="meadow-background">
                 <div class="magical-particles">
-                    <!-- Canvas будет создан через JavaScript -->
+                    <!-- Canvas -->
                 </div>
             </div>
 

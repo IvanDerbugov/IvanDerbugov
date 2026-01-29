@@ -38,10 +38,9 @@ $gap-large: 20px;
 
 // Кастомный курсор - скрываем стандартный курсор на всех элементах
 * {
-    // cursor: none;
-    cursor: none !important;
+    // cursor: none !important;
     &:hover {
-        cursor: none !important;
+        // cursor: none !important;
 
         @media (max-width: 768px) {
             cursor: auto;

@@ -1,6 +1,8 @@
 "use strict";
 
 function initShopPage() {
+    const purchasedMutants = JSON.parse(localStorage.getItem('purchasedMutants')) || {};
+
     const descriptions = document.querySelectorAll('.mutant-description');
 
     descriptions.forEach(description => {
@@ -86,7 +88,15 @@ function initShopPage() {
             const price = parseInt(btn.dataset.price);
             if (price && buyMutant(price)) {
                 // Покупка успешна, можно добавить логику добавления мутанта
-                console.log('Куплен мутант за', price);
+                if (!purchasedMutants[btn.id]) {
+                    purchasedMutants[btn.id] = 1;
+                    
+                } else {
+                    purchasedMutants[btn.id]++;
+                }
+                localStorage.gameScore = parseInt(localStorage.gameScore) - price;
+                localStorage.setItem('purchasedMutants', JSON.stringify(purchasedMutants));
+                console.log('purchasedMutantsLocalStorage', localStorage.getItem('purchasedMutants'));
             } else {
                 // Недостаточно денег
                 console.log('Недостаточно денег');

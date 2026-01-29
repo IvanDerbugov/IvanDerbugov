@@ -1,10 +1,4 @@
 @charset "UTF-8";
-* {
-  cursor: none !important;
-}
-*:hover {
-  cursor: none !important;
-}
 @media (max-width: 768px) {
   *:hover {
     cursor: auto;
