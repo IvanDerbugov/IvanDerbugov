@@ -87,7 +87,6 @@ function initShopPage() {
         btn.addEventListener('click', () => {
             const price = parseInt(btn.dataset.price);
             if (price && buyMutant(price)) {
-                // Покупка успешна, можно добавить логику добавления мутанта
                 if (!purchasedMutants[btn.id]) {
                     purchasedMutants[btn.id] = 1;
                     
@@ -97,6 +96,16 @@ function initShopPage() {
                 localStorage.gameScore = parseInt(localStorage.gameScore) - price;
                 localStorage.setItem('purchasedMutants', JSON.stringify(purchasedMutants));
                 console.log('purchasedMutantsLocalStorage', localStorage.getItem('purchasedMutants'));
+
+                // Покупка успешна, можно добавить логику добавления мутанта
+                setTimeout(() => {
+                    window.location.hash = 'Ferm';
+                    const mutantId = btn.id.replace('buy', ''); // "buyBacteria" -> "Bacteria"
+                    if (window.createMutantOnFerm) {
+                        // Передаем true для анимации падения при покупке
+                        window.createMutantOnFerm(mutantId, true);
+                    }
+                }, 1000);
             } else {
                 // Недостаточно денег
                 console.log('Недостаточно денег');

@@ -24,6 +24,11 @@ function switchToStateFromURLHash() {
             break;
         case 'Ferm':
             pageHTML += renderFerm();
+            setTimeout(() => {
+                if (window.initFermPage) {
+                    window.initFermPage();
+                }
+            }, 0);
             break;
         case 'Score':
             pageHTML += "<h3>Score</h3>";
@@ -50,7 +55,7 @@ function switchToStateFromURLHash() {
             if (typeof initShopPage === 'function') {
                 initShopPage();
             }
-        }, 0);
+        }, 10);
     }
     
     // Инициализация Ferm страницы (Canvas частицы)
