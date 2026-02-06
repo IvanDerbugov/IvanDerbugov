@@ -44,6 +44,8 @@ const windowModalBonus = document.querySelector('.modalGetBonus')
 const btnCloseModalBonus = document.getElementById('closeModalGetBonus')
 const handleOutsideClickBonus = createHandler(windowModalBonus, closeModalGetBonus)
 
+let pendingBonus = 0;
+
 btnBonus.addEventListener('click', () => {
     if (remainsSec < 0) {
         wrapModalBonus.style.setProperty('--modal-display', 'block')
@@ -68,8 +70,7 @@ btnBonus.addEventListener('click', () => {
         let resultRandomValue = Math.round(randomValue / 0.01) * 0.01
         runString.style.setProperty('--value', resultRandomValue)
 
-        count.textContent = Number(count.textContent) + Number((resultRandomValue * 100).toFixed())
-        localStorage.setItem('gameScore', count.textContent) 
+        pendingBonus = Number((resultRandomValue * 100).toFixed())
     }
     else {
         minBonusEl.classList.add('timer-pulse')
@@ -85,6 +86,14 @@ function closeModalGetBonus() {
     wrapModalBonus.style.setProperty('--modal-display', 'none')
     btnCloseModalBonus.removeEventListener('click', closeModalGetBonus)
     document.removeEventListener('click', handleOutsideClickBonus)
+    
+    // Начисление монет при закрытии окна
+    if (pendingBonus > 0) {
+        count.textContent = Number(count.textContent) + pendingBonus;
+        localStorage.setItem('gameScore', count.textContent);
+        pendingBonus = 0; // Сбрасываем после начисления
+    }
+    
     setTimer(1)
 }
 

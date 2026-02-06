@@ -69,7 +69,7 @@ function initShopPage() {
     function buyMutant(price) {
         const countElement = document.getElementById('count');
         const currentCount = parseInt(countElement.textContent);
-        
+
         if (currentCount >= price) {
             countElement.textContent = currentCount - price;
             audioBuy.volume = 0.3;
@@ -87,24 +87,39 @@ function initShopPage() {
         btn.addEventListener('click', () => {
             const price = parseInt(btn.dataset.price);
             if (price && buyMutant(price)) {
-                if (!purchasedMutants[btn.id]) {
-                    purchasedMutants[btn.id] = 1;
-                    
-                } else {
-                    purchasedMutants[btn.id]++;
-                }
-                localStorage.gameScore = parseInt(localStorage.gameScore) - price;
-                localStorage.setItem('purchasedMutants', JSON.stringify(purchasedMutants));
-                console.log('purchasedMutantsLocalStorage', localStorage.getItem('purchasedMutants'));
+
 
                 // Покупка успешна, можно добавить логику добавления мутанта
                 setTimeout(() => {
                     window.location.hash = 'Ferm';
                     const mutantId = btn.id.replace('buy', ''); // "buyBacteria" -> "Bacteria"
-                    if (window.createMutantOnFerm) {
-                        // Передаем true для анимации падения при покупке
-                        window.createMutantOnFerm(mutantId, true);
-                    }
+
+                    // Ждем, пока страница Ferm загрузится и mutantsArea будет доступен
+                    const checkAndCreateMutant = () => {
+                        const mutantsArea = document.getElementById('mutantsArea');
+                        if (mutantsArea && window.createMutantOnFerm) {
+                            // Передаем true для анимации падения при покупке
+                            window.createMutantOnFerm(mutantId, true);
+                        } else {
+                            // Если еще не загрузилось, проверяем снова через 50ms
+                            setTimeout(checkAndCreateMutant, 50);
+                        }
+                    };
+
+                    // Начинаем проверку после небольшой задержки для переключения страницы
+                    setTimeout(checkAndCreateMutant, 100);
+
+                    setTimeout(() => {
+                        if (!purchasedMutants[btn.id]) {
+                            purchasedMutants[btn.id] = 1;
+
+                        } else {
+                            purchasedMutants[btn.id]++;
+                        }
+                        localStorage.gameScore = parseInt(localStorage.gameScore) - price;
+                        localStorage.setItem('purchasedMutants', JSON.stringify(purchasedMutants));
+                        console.log('purchasedMutantsLocalStorage', localStorage.getItem('purchasedMutants'));
+                    }, 1000);
                 }, 1000);
             } else {
                 // Недостаточно денег
@@ -131,7 +146,7 @@ function initShopPage() {
         const eyeRadius = 55.652; // радиус большого круга
         const pupilRadius = 16.696; // радиус зрачка
         const maxOffset = eyeRadius - pupilRadius; // максимальное смещение зрачка
-        
+
         // Начальная позиция зрачка (из path d="M272.696,256...")
         const initialPupilX = 272.696;
         const initialPupilY = 256;
@@ -142,10 +157,10 @@ function initShopPage() {
         document.addEventListener('mousemove', (e) => {
             // Получаем позицию SVG элемента на странице
             const svgRect = svgElement.getBoundingClientRect();
-            
+
             // Проверяем, что SVG элемент видим и имеет размеры
             if (!svgRect.width || !svgRect.height) return;
-            
+
             // Получаем viewBox SVG
             const viewBox = svgElement.viewBox.baseVal;
             const svgWidth = viewBox.width || svgElement.clientWidth;
@@ -210,10 +225,10 @@ function initShopPage() {
         document.addEventListener('mousemove', (e) => {
             // Получаем позицию SVG элемента на странице
             const svgRect = svgElement.getBoundingClientRect();
-            
+
             // Проверяем, что SVG элемент видим и имеет размеры
             if (!svgRect.width || !svgRect.height) return;
-            
+
             // Получаем viewBox SVG
             const viewBox = svgElement.viewBox.baseVal;
             const svgWidth = viewBox.width || svgElement.clientWidth;

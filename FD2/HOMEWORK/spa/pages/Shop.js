@@ -18,10 +18,10 @@ return `
                     вид и не особо дружелюбное поведение из-за своего размера особой опасности не представляют.</p>
                 <button class="read-more-btn" data-translate="читать полностью">читать полностью</button>
                 <div class="mutant-price flex">
-                    <span>100</span>
+                    <span>10</span>
                     <img src="img/coin.svg" alt="коины">
                 </div>
-                <button class="buy-btn" id="buyBacteria" data-price="100" data-translate="купить">купить</button>
+                <button class="buy-btn" id="buyBacteria" data-price="10" data-translate="купить">купить</button>
             </div>
         </div>
         <div class="mutant-item flex">
@@ -42,10 +42,10 @@ return `
                     мирное сосуществование.</p>
                 <button class="read-more-btn" data-translate="читать полностью">читать полностью</button>
                 <div class="mutant-price flex">
-                    <span>250</span>
+                    <span>25</span>
                     <img src="img/coin.svg" alt="коины">
                 </div>
-                <button class="buy-btn" id="buyMutant1" data-price="250" data-translate="купить">купить</button>
+                <button class="buy-btn" id="buyMutant1" data-price="25" data-translate="купить">купить</button>
             </div>
         </div>
         <div class="mutant-item flex">
@@ -66,10 +66,10 @@ return `
                     предупреждая других об угрозе.</p>
                 <button class="read-more-btn" data-translate="читать полностью">читать полностью</button>
                 <div class="mutant-price flex">
-                    <span>400</span>
+                    <span>4</span>
                     <img src="img/coin.svg" alt="коины">
                 </div>
-                <button class="buy-btn" id="buyMutant2" data-price="400" data-translate="купить">купить</button>
+                <button class="buy-btn" id="buyMutant2" data-price="4" data-translate="купить">купить</button>
             </div>
         </div>
     </div>
