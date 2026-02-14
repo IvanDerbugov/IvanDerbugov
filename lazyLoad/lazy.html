@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="artem-prev.png" width="2000" data-src="artem.png" alt="">
+
+    <script>
+        const prevImg = document.querySelector('img');
+        const fullImg = prevImg.getAttribute('data-src');
+
+        const tempImg = new Image();
+        tempImg.onload = () => {
+            prevImg.src = fullImg;
+        }
+        tempImg.src = fullImg;
+    </script>
+</body>
+</html>
